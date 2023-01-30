@@ -1,0 +1,23 @@
+<!-- Entities -->
+
+<!ENTITY ti.SignalGroup "SignalGroup">
+
+<!-- Elements -->
+
+<!ELEMENT SignalGroup   (%C.DefAttr;,ATTRLink*, GenAttrList?, SignalLink*, PDUTiming?)>
+
+<!ATTLIST SignalGroup
+	      %A.ConfigItem; 
+>
+
+<!-- Links -->
+<!ELEMENT SignalGroupLink EMPTY>
+<!ATTLIST SignalGroupLink %A.LinkGUID;
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.SignalGroup;"
+          %A.LinkName; CDATA ""
+>
+
+

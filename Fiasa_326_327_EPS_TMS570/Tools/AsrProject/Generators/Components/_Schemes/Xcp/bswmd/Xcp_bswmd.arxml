@@ -1,0 +1,1696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by vishr (Vector Informatik GmbH) -->
+<AUTOSAR xmlns="http://autosar.org/3.0.1">
+	<ADMIN-DATA>
+		<DOC-REVISIONS>
+			<DOC-REVISION>
+				<REVISION-LABEL>1.00.00</REVISION-LABEL>
+				<STATE>beta</STATE>
+				<ISSUED-BY>vishr</ISSUED-BY>
+				<DATE>2009-08-31T12:31:24</DATE>
+				<MODIFICATIONS>
+					<MODIFICATION>
+						<CHANGE>
+							<L-2 L="EN">Initial version</L-2>
+						</CHANGE>
+					</MODIFICATION>
+				</MODIFICATIONS>
+			</DOC-REVISION>
+			<DOC-REVISION>
+				<REVISION-LABEL>1.01.00</REVISION-LABEL>
+				<STATE>released</STATE>
+				<ISSUED-BY>vishr</ISSUED-BY>
+				<DATE>2009-08-31T12:34:42</DATE>
+				<MODIFICATIONS>
+					<MODIFICATION>
+						<CHANGE>
+							<L-2 L="EN">Added two new Parameters in XcpGeneral</L-2>
+						</CHANGE>
+					</MODIFICATION>
+				</MODIFICATIONS>
+			</DOC-REVISION>
+			<DOC-REVISION>
+				<REVISION-LABEL>1.01.01</REVISION-LABEL>
+				<STATE>released</STATE>
+				<ISSUED-BY>vishr</ISSUED-BY>
+				<DATE>2009-10-12T14:33:28</DATE>
+				<MODIFICATIONS>
+					<MODIFICATION>
+						<CHANGE>
+							<L-2 L="EN">Changed 3 parameters to enumerations</L-2>
+						</CHANGE>
+					</MODIFICATION>
+				</MODIFICATIONS>
+			</DOC-REVISION>
+			<DOC-REVISION>
+				<REVISION-LABEL>1.01.02</REVISION-LABEL>
+				<STATE>released</STATE>
+				<ISSUED-BY>visore</ISSUED-BY>
+				<DATE>2011-07-20T15:04:58</DATE>
+				<MODIFICATIONS>
+					<MODIFICATION>
+						<CHANGE>
+							<L-2 L="EN">Updated due to "SW version number" update of BSW-IMPLEMENTATION, added XcpGenericMeasurement due to ESCAN00049868</L-2>
+						</CHANGE>
+					</MODIFICATION>
+				</MODIFICATIONS>
+			</DOC-REVISION>
+		</DOC-REVISIONS>
+	</ADMIN-DATA>
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:9ffa7458-25e5-46ee-a2fb-f3aac4b54354">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-DEF UUID="DCE:0df4e448-bd94-4794-b902-89f84c2fedf9">
+					<SHORT-NAME>Xcp</SHORT-NAME>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.25.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vishr</ISSUED-BY>
+								<DATE>2009-08-13T10:21:41</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Initial version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:9f45e964-b447-4662-ba8b-936ab641cdce">
+							<SHORT-NAME>XcpGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">XCP Protocol Layer basic information.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="DCE:829c5441-01a6-46dc-8ff4-43fb540e8f3c">
+									<SHORT-NAME>XcpStationIdentifier</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The 'XCP Station Identifier' is an ASAM-MC2 filename without path and extension that identifies the ECU's software program version.
+It is used for slave device identification and automatic session configuration.
+
+The Master Control System (MCS) can interpret this identifier as file name for the ECU database. The ECU developer should change the XCP station identifier with each program change. This will prevent database mixups and grant the correct access of measurement and calibration objects from the MCS to the ECU.
+
+Another benefit of the usage of the XCP station identifier is the automatic assignment of the correct ECU database at program start of the MCS via the Plug&amp;Play mechanism. The Plug&amp;Play mechanism prevents the user to choose the wrong ECU database.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:bfb78f0b-b060-4145-b634-0b209bacedeb">
+									<SHORT-NAME>XcpCommandParameterCheck</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Command Parameter Check' enables checks of the range and validity of Command Transfer Object (CTO) and Data Transfer Object (DTO) parameters.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="287ba9fd-01c8-443b-9737-707357b974f3">
+									<SHORT-NAME>XcpUseAsrFileNames</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'XcpUseAsrFileNames' generates ASR compatible file names.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:c31a9ffe-b61c-41fb-a348-8f2aadaf93d4">
+									<SHORT-NAME>XcpEventCodes</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">'Event Codes' are transmitted within event packets (EV) from the slave device to the master device.
+The transmission is not guaranteed since event packets are not acknowledged.
+
+Please refer to the XCP Protocol Layer specification for the 'Table of Event codes'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:f6d82bdd-4363-470c-a1fb-eb17e4212e65">
+									<SHORT-NAME>XcpBootloaderDownload</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">In order to reprogram the internal flash of some microcontrollers it is necessary to use a bootloader, because code cannot be executed from flash while programming flash.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:0afdfa3e-896c-4c22-bc5f-62fd2f00cb73">
+									<SHORT-NAME>XcpMemoryWriteProtection</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Memory Write Protection' enables write access to memory areas.
+
+I.e. prior to carrying out write access to RAM an application callback function is called and the memory address is passed as parameter. The application has to either grant or deny the memory access.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:21038efc-32d5-4d36-9f21-3956d2bcc0f0">
+									<SHORT-NAME>XcpMemoryReadProtection</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Memory Read Protection' enables read access to memory areas.
+
+I.e. prior to carrying out read access to RAM an application callback function is called and the memory address is passed as parameter. The application has to either grant or deny the memory access.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:7012fc0f-2a92-4549-a906-fb61ab968390">
+									<SHORT-NAME>XcpControl</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'XCP Control' enables an API to en-/disable the whole XCP module by one API call.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:7cef7c10-c8aa-4131-a9bf-c4d02b9a8e7b">
+									<SHORT-NAME>XcpGetDataPointer</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Get Xcp Data Pointer' enables the API $$Xcp_GetXcpDataPointer which can be used to request the pointer to the internal data of the XCP module.
+Using this pointer the internal data can be set to specific value (e.g. after entering a boot mode, where a certain connection set shall be preset).</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:43374ac0-0343-44db-839b-99f95a852d6a">
+									<SHORT-NAME>XcpOpenCommandInterface</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The 'Open Command Interface' option provides the possibility for the user to implement unsupported commands in the application.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:cc5bbc1f-3107-4e1f-950f-aaa1ee5aced4">
+									<SHORT-NAME>XcpUserConfigFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">A configuration file (xcp_cfg.h) is generated by GENy. If you want to overwrite settings in the generated configuration file, you can specify a path to a user defined configuration file.
+
+The user defined configuration file will be included at the end of the generated file. Therefore definitions in the user defined configuration file can overwrite definitions in the generated configuration file.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:445dae21-0793-479d-828d-822c81112385">
+									<SHORT-NAME>XcpEEPROMReadAccess</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Read Access' allows read access to EEPROM.
+
+The routines for accessing the EEPROM have to be implemented in the application.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:a5de0d70-2499-4892-ab8e-028ce1a5dc54">
+									<SHORT-NAME>XcpEEPROMWriteAccess</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Write Access' allows write access to EEPROM.
+
+The routines for accessing the EEPROM have to be implemented in the application.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:8beebf7f-4cff-4b6f-acee-37cc1c049b31">
+									<SHORT-NAME>XcpSynchronousDataAquisition</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Data elements located in the slave's memory are transmitted in Data Transfer Objects (DTOs) from slave to master (DAQ) and from master to slave (STIM).
+
+The Object Description Table (ODT) describes the mapping between the synchronous data transfer objects and the slave's memory.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:6287a4af-f792-4266-b96c-ed3be4686514">
+									<SHORT-NAME>XcpSendQueue</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The 'Send Queue' should be enabled if more than one ODT (Object Description Table) is used and if the Transport Layer does not support data queuing or data buffering.
+
+The 'Send Queue' has to be enabled if the Vector XCP Transport Layer for CAN is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:1349ea83-3503-480a-95a1-26cc5e23b02a">
+									<SHORT-NAME>XcpMemorySize</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">A memory area has to be reserved for the dynamic allocation of DAQ and ODT (Object Description Table) lists and for the transmit queue.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>256</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:d29d4b43-6b1d-45bc-b0a3-5f9c2bf41e2b">
+									<SHORT-NAME>XcpPrescaler</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If the option 'Prescaler' is enabled all DAQ lists support the prescaler for reducing the transmission period.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:14e5dc8b-1b13-4f58-b27d-6c58595ee764">
+									<SHORT-NAME>XcpOverrunIndication</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Overrun situations are indicated to the Master Control System.
+
+An overrun situation is e.g. an overflow of the transmit queue.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:c083b43a-f183-4462-bce1-13bc3ea9bdea">
+									<SHORT-NAME>XcpWriteDAQMultiple</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If the feature is disabled the command will not be supported. Thus a Write DAQ Multiple request results in a negative response.
+The Write DAQ Multiple command is only applicable on communication busses with a MAX_CTO value of at least 16 bytes (e.g. on FlexRay or Ethernet).</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:06ffab6c-9228-400b-adbb-bafe12e8ad49">
+									<SHORT-NAME>XcpDAQODTMessageHeader</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If the option 'DAQ/ODT message header' is enabled the 2 byte DAQ/ODT XCP Packet Identification is used: Relative ODT number (1 byte), absolute DAQ list number (1 byte).
+
+If the option 'DAQ/ODT message header' is disabled a 1 byte Packet Identification (PID) is used: Absolute ODT number.
+
+Attention: The 'DAQ/ODT Message Header' must not be enabled if the XCP Transport Layer for CAN is enabled.
+
+ODT = Object Description Table</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:e448a61a-d969-4bc1-9d5d-01c494accb73">
+									<SHORT-NAME>XcpResumeMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Resume Mode' or often also called 'Cold Start Measurement' allows automatic data transfer (DAQ, STIM) directly after power-up of the slave without prior connection to the master calibration system.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:985721da-08e5-4071-9465-578492956369">
+									<SHORT-NAME>XcpGeneralInfo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'General Info' enables the XCP command GET_DAQ_PROCESSOR_INFO, which provides general information on DAQ lists.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:58d17ef8-88f0-4cf3-9a6e-60033dd1d9d9">
+									<SHORT-NAME>XcpResolutionInfo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Resolution Info' enables the command GET_DAQ_RESOLUTION_INFO, which provides information on the resolution of DAQ lists.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:016bda5d-1824-480a-80b5-f9e08dd7c29a">
+									<SHORT-NAME>XcpSynchronousDataStimulation</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">'Synchronous Data Stimulation (STIM)' is the inverse mode of 'Synchronous Data Acquisition (DAQ)'.
+
+Data elements located in the slave's memory are transmitted in Data Transfer Objects from the master device to the slave device.
+These data elements are written to RAM upon XCP events.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:c6c57683-7307-4d05-a2f2-6539becc95fe">
+									<SHORT-NAME>XcpNumberofODTsforSTIM</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The maximum number of Object Descriptor Tables (ODTs) for Synchronous Data Stimulation (STIM) has to be configured.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:7d41d468-4916-4ce7-91c5-fd68e7404102">
+									<SHORT-NAME>XcpEventInfo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Event Info' enables the generation of event information to the a2l file. This feature provides infomration about:
+
+ - Number of event channel
+ - Name of event channel
+ - Measurement cycle time of event channel
+ - Direction of event channel: DAQ, STIM, DAQ&amp;STIM</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:f9343985-fc31-4c85-896b-c89164c10787">
+									<SHORT-NAME>XcpDAQTimestamp</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Timestamps can be attached to Data Transfer Object (DTO) Packets, to avoid measurement errors due to bus latency.
+
+The timestamp unit and ticks per unit have to be defined if timestamps are used.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:f7715c68-6071-4518-b1d9-019fb4bdeb06">
+									<SHORT-NAME>XcpFixedTimestamp</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If the 'Fixed Timestamp' option is selected the slave always sends Data Transfer Object (DTO) Packets in time stamped mode.
+Otherwise timestamps are dynamically and individually enabled for each DAQ list.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="DCE:c336560a-8116-4487-95a1-8b8268ef5a60">
+									<SHORT-NAME>XcpTimestampUnit</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>DAQ_TIMESTAMP_UNIT_1MS</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:03eeafd3-5679-424a-9e7f-17057adc6599">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_1NS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:07b5d7ea-15cc-4c97-a735-b59b5e21a608">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_10NS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:d177c94b-2998-439b-9c95-030c3068fc96">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_100NS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:635e2f63-4a6e-4982-a774-2b10078a9c0a">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_1US</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:be45ee5b-721d-4e65-85ad-c481a0450cdc">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_10US</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:4ecd5823-9ab3-4362-a195-fa37a8af137f">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_100US</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:933019b2-cef3-4b42-9bcf-5cd1a57f094b">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_1MS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:92d8f592-3645-4704-84d5-2d2ad6238eed">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_10MS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:5e7d6a05-8144-4324-aedf-5dd8817b0e67">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_100MS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:e3e48380-6784-42b8-9f16-274db837ae3c">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_1S</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:cc7657d1-0871-4856-b5bd-dbde1588d92b">
+									<SHORT-NAME>XcpTimestampTicksPerUnit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The timestamp will increment per unit by the value specified here and wrap around if an overflow occurs.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:f5125975-309b-4fe4-ab6f-ebab5115034c">
+									<SHORT-NAME>XcpCommunicationModeInfo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The XCP command 'GET_COMM_MODE_INFO' returns optional information on different Communication Modes supported by the slave and also the version number of the Protocol Layer implementation.
+
+If the master block mode is supported, also the maximum allowed block size and the minimum separation time are returned.
+The XCP Protocol Layer supports the Standard Communication model and also the Master Block Transfer Mode and the Slave Block Transfer Mode.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:c6827b25-3d9b-424e-8092-968f829dcc19">
+									<SHORT-NAME>XcpSeedKey</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Resources within the slave device can be protected by a 'Seed &amp; Key' mechanism.
+
+The following resources can be protected:
+ - synchronous data acquisition (DAQ)
+ - synchronous data stimulation (STIM)
+ - online calibration (CAL)
+ - programming (PGM)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:5c24d029-51f8-4597-b796-42e81b54206b">
+									<SHORT-NAME>XcpModifyBits</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If the feature is disabled the command will not be supported. Thus a modify bit request results in a negative response and no change of any bits.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:9fc51b68-4f44-4f5d-9992-4487cdfe9b30">
+									<SHORT-NAME>XcpShortDownload</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If the feature is disabled the command will not be supported. Thus a short download request results in a negative response.
+As the short download command is only applicable on communication busses with a data length greater eight bytes (e.g. FlexRay).</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:dd21a630-e716-478a-8c2c-cff1c17cbe0a">
+									<SHORT-NAME>XcpUserDefinedCommand</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The 'User Defined Command' is optional and can be implemented within the application.
+
+However it must not be used to implement functionalities done by other services.
+
+The application callback function 'ApplXcpUserService()' is provided to perform application specific actions.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:75f97b1e-b8d6-4963-a706-8ccbca5b58f2">
+									<SHORT-NAME>XcpTransportLayerCommand</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Transport Layer Command' has to be enabled if transport layer specific commands are used and supported by the transport layer component.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:78993e00-7536-4b30-a26e-56e41981a6e2">
+									<SHORT-NAME>XcpBlockUpload</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The Slave Block Transfer Mode speeds up memory uploads by transmitting an entire block of continuous response packets. There is only a response packet before and after transmission of the entire block.
+
+There are no limitations allowed for the master device.
+
+The slave returns whether it supports Slave Block Transfer Model in the response of the request 'CONNECT'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:8fc4edbf-066d-4a9a-8542-f1d84fde3d28">
+									<SHORT-NAME>XcpBlockDownload</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The Master Block Transfer Mode speeds up memory downloads by transmitting an entire block of continuous request packets. There is only one response packet after transmission of the entire block.
+
+The XCP Master has to meet the slave's limitations of the maximum block size and the minimum separation time. These communication parameters are responded within the response to 'GET_COMM_MODE_INFO'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:1f40375f-bd69-4031-8528-7b56edb585e4">
+									<SHORT-NAME>XcpMIN_STForBlockDownload</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">MIN_ST indicates the required minimum separation time between the packets of a block transfer from the master device to the slave device in units of 100 microseconds.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:605769e1-097a-4920-aa6d-62f5e1ebe795">
+									<SHORT-NAME>XcpChecksum</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The XCP command BUILD_CHECKSUM returns a checksum that is calculated over the memory block defined by the Memory Transfer Address (MTA) and block size. The MTA will be post-incremented by the block size.
+
+The checksum type (size of the checksum) and the calculation method can be configured.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:bbf0bce4-3cf1-4f8b-9145-674a1741888c">
+									<SHORT-NAME>XcpAUTOSARCRCModuleSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If 'AUTOSAR CRC Module Support' is enabled only the following checksum calculation methods are available:
+ - CRC16_CCITT : CRC16 CCITT algorithm (for details please refer to the XCP Protocol Layer Specification)
+ - CRC32            : CRC32 algorithm (for details please refer to the XCP Protocol Layer Specification)
+
+The CRC32 algorithm is only supported if the AUTOSAR CRC Module is used.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="DCE:b7f35a3c-6bf9-4909-9eac-956f58523008">
+									<SHORT-NAME>XcpCRCCalculationMethod</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the algorithm used for calculation of the checksum.
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>ADD_12</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:93ffa209-92fb-46f6-bdae-e8eed558b5c1">
+											<SHORT-NAME>ADD_11</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:aa5aac40-410a-41ef-9b9e-f781e9fcd739">
+											<SHORT-NAME>ADD_12</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:e75b8cbf-e62e-4267-8299-8f26940caf4a">
+											<SHORT-NAME>ADD_14</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:434b1d90-0215-4e12-98e0-a2b13792f1ef">
+											<SHORT-NAME>ADD_22</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:e49f2426-abf3-4423-83c6-8cb72985ce8b">
+											<SHORT-NAME>ADD_24</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:ad0af2eb-25a9-429b-a546-a51060773cf4">
+											<SHORT-NAME>ADD_44</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:87e7a68b-b3b2-47e5-a52a-ca5292af57e5">
+											<SHORT-NAME>CRC16_CCITT</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:abd8a88f-448c-4cdc-ad4c-f2b8718e73ee">
+											<SHORT-NAME>CRC32</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:60008293-8a97-4cf0-8eb0-170f7ade018b">
+									<SHORT-NAME>XcpCRCBlockSize</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Please refer to the help of 'Checksum'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>256</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:596d508c-5e6f-4145-bc7f-fa14aa44329f">
+									<SHORT-NAME>XcpPageSwitching</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If calibration page switching (PAG) is enabled the access mode calibration data segments can be set.
+Calibration data segments and their pages are specified by logical numbers.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:a4ee1b67-423e-4a0c-977c-65043c92bdcf">
+									<SHORT-NAME>XcpGeneralPagingInfo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If 'General Paging Info' is enabled the XCP command 'GET_PAG_PROCESSOR_INFO' returns general information on paging.
+
+The following information is transferred from the slave device to the master device:
+ - The total number of segments
+ - Whether the freeze mode is supported
+
+Specific information for segments or pages is so far not supported.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:2cb128bc-aa89-4a3f-ae5b-20224b1d1acd">
+									<SHORT-NAME>XcpCopyPage</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If more than one calibration page is defined, the slave can copy a calibration page into another.
+
+In principle any page of any segment can be copied to any page of any segment. However, restrictions might be possible.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:88481251-13dd-408a-9ff9-311a938b3c18">
+									<SHORT-NAME>XcpFreezeMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If enahble the commands SET_SEGMENT_MODE and GET_SEGMENT_MODE are enabled and forwarded to the application.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:c0f9ca90-b84b-4478-8057-aa05c616e8ea">
+									<SHORT-NAME>XcpProgramming</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Programming' enables the programming of non-volatile memory.
+
+If the internal flash of the microcontroller cannot be programmed while execution of code from the flash, the 'bootloader download' functionality has to be used instead.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:1ea755c1-7fa1-4d13-9618-9bd97b84a4b1">
+									<SHORT-NAME>XcpMinStPgm</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is evaluated by the XCP Master and defines the requested delay between two consecutive PROGRAM_NEXT frames. Increase this value if the Slave is not fast enough to process multiple PROGRAM_NEXT frames in Block Mode received during a short time frame.
+Please note that this is a feature that must be supported by the XCP Master.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:95ced902-5f31-427b-8f71-6defbbdf2b7a">
+									<SHORT-NAME>XcpProcessorAndSectorInfo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Processor and Sector Info' enables the commands:
+
+ - GET_PGM_PROCESSOR_INFO
+   Transfers the general properties for programming and the total number of available sectors from the slave device to the master device.
+
+ - GET_SECTOR_INFO
+   Transfers information on a specific sector from the slave device to the master device.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:cb850784-31f5-45bd-b296-84f038b34f20">
+									<SHORT-NAME>XcpServiceRequestMessage</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">'Service Request Messages' are always transmitted within service request packets (SERV) by the slave device, in order to request the master device to perform some action.
+
+The transmission is not guaranteed since service request packets are not acknowledged by the master device.
+
+Please also refer to the XCP Protocol Layer specification for the 'Table of service request codes'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:e7d1270a-2348-44a2-91d6-84a873d809c6">
+									<SHORT-NAME>XcpPrintf</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The function XcpPrint(..) can be used for the transmission of service request packets that contain text.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:97229d09-9eb2-4f15-9133-cdef4956890c">
+									<SHORT-NAME>XcpEnableCalibration</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Enable Calibration' unlocks the commands
+- DOWNLOAD
+- DOWNLOAD_NEXT
+- DOWNLOAD_MAX
+- SHORT_DOWNLOAD
+- MODIFY_BITS
+If this option is disabled, these commands will return an ERR_CMD_UNKNOWN error and calibration of parameters will not be possible!</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:64dc0c38-02d0-4aff-9c39-4f144e50531b">
+									<SHORT-NAME>XcpProgrammingWriteProtection</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Programming Write Protection' enables the programming write protection of non-volatile memory.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="DCE:2c9ffeda-021c-4179-b4fb-a125be1bfa0a">
+									<SHORT-NAME>XcpTimeStampSize</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>TIMESTAMP_SIZE_WORD</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:48328f13-3322-4556-a9a1-1a1189ab5e8c">
+											<SHORT-NAME>TIMESTAMP_SIZE_BYTE</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:8ddb2022-d5ec-4272-853d-a9758b32f4c0">
+											<SHORT-NAME>TIMESTAMP_SIZE_WORD</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:03f70bca-f286-407e-9944-7fe8d00d4eed">
+											<SHORT-NAME>TIMESTAMP_SIZE_DWORD</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="33996274-19ff-4fe6-830a-6fa3571fba4a">
+									<SHORT-NAME>Xcp_ReadCCConfig</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If the “Virtual FlexRay Parameters” feature is enabled, the parameters can be read out in a platform independent way. They will be provided as virtual measurement values that can be read at fixed memory locations.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="7a82927e-73d2-46b0-8f8b-eae54ffb7763">
+									<SHORT-NAME>Xcp_ExtAddrReadCCConfig</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The "Virtual FlexRay Parameters" are accessible with this address extension.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>253</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:f1c1a0c0-05e3-4a51-bdd6-1c1f6b512b22">
+									<SHORT-NAME>XcpDevelopmentErrorDetection</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Detecion of Development Errors like:
+- service call initialization
+- invalid channel handle
+- rejection of service calls
+
+All errors are reported to the Development Error Tracer (if available)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:9d17ea84-cd3f-4ef7-8a1a-00ab9496c2db">
+									<SHORT-NAME>XcpGenericMeasurement</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Generic Measurement is an extension which allows the Master to take addresses for an a2l update directly from the ECU instead of the map file.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="7eefe8e3-b585-4591-9404-f1c50906625b">
+									<SHORT-NAME>XcpSessionStatusAPI</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This API allows to determine the session status of the XCP. It can be used to check the status for keep ECU awake handling.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="5597604c-15d4-401b-a8b3-b5ca37f8667c">
+									<SHORT-NAME>XcpAmdRuntimeMeasurement</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter defines if AMD Runtime Measurement (RTM) is enabled for this module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="e977aecd-2146-4d08-bd6e-c1495b24dde9">
+									<SHORT-NAME>XcpGetDAQEventInfo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The option 'Get DAQ Event Info' enables the XCP command GET_DAQ_EVENT_INFO.
+
+GET_DAQ_EVENT_INFO provides the following information about event channels:
+
+ - Number of event channel
+ - Name of event channel
+ - Measurement cycle time of event channel
+ - Direction of event channel: DAQ, STIM, DAQ&amp;STIM
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="07e53e98-0760-44ee-ba9d-fd7e676f809d">
+									<SHORT-NAME>XcpSendQueueOverflowFirst</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Send Queue replacement behaviour
+False: Linear buffer
+True: Ring buffer</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<FLOAT-PARAM-DEF UUID="9c0e5924-92c8-4680-bc47-095713ccc7fd">
+									<SHORT-NAME>XcpMainFunctionPeriod</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.005</DEFAULT-VALUE>
+								</FLOAT-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="e8858ba4-1f6f-4ad8-b480-98111d554406">
+									<SHORT-NAME>XcpVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables/disables the existence of the Xcp_GetVersionInfo() API service
+
+true: Xcp_GetVersionInfo() API service exists
+false: Xcp_GetVersionInfo() API service does not exist</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="6936a055-a362-4b6a-99da-2895938ecdf8">
+									<SHORT-NAME>XcpVxSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables support for the Vx measurement hardware.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="38226643-50cd-430e-b906-bd2f48f9f06f">
+									<SHORT-NAME>XcpGetIdGeneric</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The XCP GET_ID command is used for identification purposes.
+This option enables an call-back that is called when the XCP Master sends the GET_ID command and can be used to return the requested information (e.g. Map Filename, EPK Number, ...)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="693a65b7-623d-4268-b9f1-ea4fe7b265d7">
+									<SHORT-NAME>XcpCustomCRC</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The CustomCRC Option enables a call-back that allows the user to implement his own CRC calculation method instead of the built in methods.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+							<SUB-CONTAINERS>
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:c06a912e-c8d8-4a62-91bb-00b906315a6e">
+									<SHORT-NAME>XcpChannelConfig</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container contains the configuration (parameters) of the bus channel(s). The channel parameter shall be harmonized within the whole communication stack.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<REFERENCES>
+										<REFERENCE-PARAM-DEF UUID="DCE:be06892f-e233-437c-bfc8-b85be0ed2827">
+											<SHORT-NAME>XcpComMChannelRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This is needed for GENy module activation of non-AUTOSAR components.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/ComM/ComMChannel</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:4c09b0cf-27ff-499d-9ba5-39f5bb5d929a">
+							<SHORT-NAME>XcpEvent</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">XCP Protocol Layer event specific information</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="DCE:3d173c9f-eb78-4f0a-800f-30156936d419">
+									<SHORT-NAME>XcpName</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:44b9fbbe-3127-475b-9daf-39211c0ee17a">
+									<SHORT-NAME>XcpCycleTime</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="DCE:f3834de1-75ce-4257-a1db-d7963817bbc8">
+									<SHORT-NAME>XcpEventInfoUnit</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:038da7fa-6711-4393-bc88-2f534dd5694d">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_1NS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:5a59391c-abf7-4c37-b6b3-80f199b4e4db">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_10NS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:37807836-2df9-4e8e-bf6f-995063ffdff4">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_100NS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:1bcc6536-397c-4cf0-91f6-1c3a10d5388a">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_1US</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:3926026e-6b0f-4f0f-b02f-62a9deb8a4d8">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_10US</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:3a23d905-2266-4a43-b9d5-9bcc76fe8808">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_100US</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:ac601ca9-92ec-4599-b26b-a1970901fe6e">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_1MS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:586a0074-6904-487b-9804-01b9104c501d">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_10MS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:3b07d827-db64-47aa-95c9-0049a43e2140">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_100MS</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:e84f1ceb-abd1-4e82-8635-0ca9d2792d8a">
+											<SHORT-NAME>DAQ_TIMESTAMP_UNIT_1S</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:d6058b1c-4b7a-40f0-9fc5-d4a496736a2f">
+									<SHORT-NAME>XcpDAQ</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:6b6d35ef-81c0-41d3-8501-8d1094a4ac1d">
+									<SHORT-NAME>XcpSTIM</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="983239df-a600-4d0e-b577-77a3477e5cdc">
+									<SHORT-NAME>XcpEventId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter specifies the ID of this Event Info</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:ff0904e7-3b67-4402-b87e-c60c28f634fe">
+							<SHORT-NAME>XcpSector</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">XCP Protocol Layer flash sector information</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<INTEGER-PARAM-DEF UUID="DCE:9742e5a5-38c6-4889-861e-4473b7e70024">
+									<SHORT-NAME>XcpStartAddress</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Start Address of Sector</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:f04a1558-c3c7-4abe-b38d-d7d70c7a38f5">
+									<SHORT-NAME>XcpEndAddress</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">End Address of Sector</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="f386bab3-e477-4d86-aa46-998fcf971c24">
+									<SHORT-NAME>XcpSectorName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Name of Sector</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<BSW-IMPLEMENTATION UUID="DCE:69ce7bc8-2059-460e-82f5-2d757f35bc95">
+					<SHORT-NAME>Xcp_Impl</SHORT-NAME>
+					<CODE-GENERATOR>GENy</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>2</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>04</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>00</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>3</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>0</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>1</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Xcp_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Xcp_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/Xcp</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-CONFIGURATION UUID="DCE:9191a00a-3bb5-451e-8679-1e537018fbc7">
+					<SHORT-NAME>Xcp_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Xcp</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="DCE:bbae2c51-b9b3-400f-b8a3-cd515f6cfa18">
+					<SHORT-NAME>Xcp_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Xcp</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

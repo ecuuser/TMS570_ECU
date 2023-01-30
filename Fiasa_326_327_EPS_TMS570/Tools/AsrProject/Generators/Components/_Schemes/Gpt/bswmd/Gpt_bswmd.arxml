@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+=======================================================================================================================
+Copyright (c) 2009 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+=======================================================================================================================
+FILE DESCRIPTION
+=======================================================================================================================
+File:           	Gpt_bswmd.arxml
+Component:          DrvGpt_Tms570Tirti01Asr    
+Module:         	DrvGpt
+Generator:     	    -
+
+Description:        -
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xmlns="http://autosar.org/3.0.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="fdbcad06-9128-4b08-89c6-703346422b4c">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-DEF UUID="e0cad57c-3155-4513-bb4c-25378749d401">
+					<SHORT-NAME>Gpt</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of the Gpt (General Purpose Timer) module.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.00</REVISION-LABEL>
+								<ISSUED-BY>virrsu</ISSUED-BY>
+								<DATE>2008-10-30T15:23:25</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Initial release of Asr3.0 implementation</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virrsu</ISSUED-BY>
+								<DATE>2009-01-09T10:38:54</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set release state, incremented SW patch version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00032263</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virlg</ISSUED-BY>
+								<DATE>2011-02-02T10:34:10</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Addind SCHM recommended file</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00045220</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virlg</ISSUED-BY>
+								<DATE>2011-08-09T10:52:16</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adding GptChannelId parameter to Indentifier.xml</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00052054</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.04</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virlg</ISSUED-BY>
+								<DATE>2011-08-09T10:52:16</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adding register access via OS interface</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00054736</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.05</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virlg</ISSUED-BY>
+								<DATE>2012-02-24T09:49:17+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Correcting macro</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">-</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.06</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virlg</ISSUED-BY>
+								<DATE>2012-03-27T09:01:04+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Removing unnecessary version number</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00057895</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.07</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virlg</ISSUED-BY>
+								<DATE>2012-04-16T04:50:53+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Correction of the register modification macro usage</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00058371</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/Gpt</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Parameter Container Definition: CommonPublishedInformation -->
+						<!-- Parameter Container Definition: GptChannelConfigSet -->
+						<!-- Parameter Container Definition: GptConfigurationOfOptApiServices -->
+						<!-- Parameter Container Definition: GptDriverConfiguration -->
+						<PARAM-CONF-CONTAINER-DEF UUID="058f2492-40d5-4a91-bdfe-1e612ec180aa">
+							<SHORT-NAME>GptChannelConfigSet</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container is the base of an Configuration Set which contains the configured GPT channels. This way, different configuration sets can be defined for post-build process.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<POST-BUILD-CHANGEABLE>false</POST-BUILD-CHANGEABLE>
+							<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="b4ec88d7-94ac-43bb-9c0b-aac1c1a01570">
+									<SHORT-NAME>GptClockFrequency</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Clock Frequency derived from Mcu RTICLK</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="00293631-06b6-46b5-add4-4e89c051aba0">
+									<SHORT-NAME>GptMainclock</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Clock Source derived from Mcu (RTICLK1 or RTICLK2)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="e96dac21-c5a9-457f-a643-80ed06cc426f">
+									<SHORT-NAME>GptMcuClockconfig</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Clock Configuration derived from Mcu</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="b452405c-a2cc-4d43-9cc1-7a044fd6c399">
+									<SHORT-NAME>GptMcuVariant</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Runtime derived from Mcu</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="37a9e95d-815b-4af0-8501-d10bccddc505">
+									<SHORT-NAME>GptChannelPrescaleClk0</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Prescale Value for Counter Block 0</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="005bc480-0e20-4657-9163-3d0c3438fc6e">
+									<SHORT-NAME>GptChannelPrescaleClk1</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Prescale Value for Counter Block 1</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+							</PARAMETERS>
+							<SUB-CONTAINERS>
+								<!-- Parameter Container Definition: GptChannelConfiguration -->
+								<PARAM-CONF-CONTAINER-DEF UUID="2dc544bb-1df0-4fec-9ac3-b9433f8194d0">
+									<SHORT-NAME>GptChannelConfiguration</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container contains the channel-wide configuration (parameters) of the GPT Driver</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>2</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: GptChannelClkSrc -->
+										<INTEGER-PARAM-DEF UUID="383bd3e0-c360-44d1-b6b4-95df3350d28e">
+											<SHORT-NAME>GptChannelClkSrc</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The GPT module specific clock input for the timer unit can statically be configured and allows to select different clock sources (external clock, internal GPT specific clock) per channel</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>1</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: GptChannelId -->
+										<INTEGER-PARAM-DEF UUID="24a75431-5082-46ef-b87e-92968ddca05d">
+											<SHORT-NAME>GptChannelId</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Channel Id of the GPT channel. This value will be assigned to the symbolic name derived of the GptChannelConfiguration container short name.
+
+Parameter not used.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>1</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: GptChannelMode -->
+										<ENUMERATION-PARAM-DEF UUID="3d1557da-37e3-425c-b25a-b60fb918cd5f">
+											<SHORT-NAME>GptChannelMode</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies the behaviour of the timerchannel after the timeout has expired</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>GPT_MODE_ONESHOT</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="c233b74b-d11d-4693-b85d-dbe7b899ecee">
+													<SHORT-NAME>GPT_MODE_CONTINUOUS</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="dd3adaf7-824e-43aa-bdf4-36d8a0b2c664">
+													<SHORT-NAME>GPT_MODE_ONESHOT</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: GptChannelPrescale -->
+										<INTEGER-PARAM-DEF UUID="82cf7512-0c6d-4e98-a077-d65c82275f24">
+											<SHORT-NAME>GptChannelPrescale</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">GPT module specific prescaler factor per channel</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>1</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: GptEnableWakeup -->
+										<BOOLEAN-PARAM-DEF UUID="fc77b48f-1a1b-4091-95bc-1b87d836dfda">
+											<SHORT-NAME>GptEnableWakeup</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Enables wakeup capability of CPU for a channel when timeout period expires. This might be different to enabling the notification depending on hardware capabilities</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: GptNotification -->
+										<FUNCTION-NAME-DEF UUID="1c42306e-b332-4f66-9705-700dab2d5dc6">
+											<SHORT-NAME>GptNotification</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Function pointer to callback function</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>NULL_PTR</DEFAULT-VALUE>
+										</FUNCTION-NAME-DEF>
+										<STRING-PARAM-DEF UUID="8b03f0c7-84dd-4838-9199-d537693bee50">
+											<SHORT-NAME>GptHwChannel</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter describes the hardware module where the timer channel is assigned to</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>COMP0_on_Counter0</DEFAULT-VALUE>
+										</STRING-PARAM-DEF>
+										<FLOAT-PARAM-DEF UUID="5d8c9dac-3754-44bf-ba2b-b2a0df3220fa">
+											<SHORT-NAME>GptResolution</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter contents the calculated resolution value in ms for 1000 ticks depending on Clock Prescaler and Clock Frequency</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MIN>0</MIN>
+										</FLOAT-PARAM-DEF>
+									</PARAMETERS>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: GptWakeupConfiguration -->
+										<PARAM-CONF-CONTAINER-DEF UUID="1e810eab-759f-48e2-997d-fa916a47e86b">
+											<SHORT-NAME>GptWakeupConfiguration</SHORT-NAME>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<REFERENCES>
+												<!-- Symbolic Name Reference Definition: GptWakeupSourceRef -->
+												<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="e71857a2-39f8-47e1-83e8-a10e40f957e8">
+													<SHORT-NAME>GptWakeupSourceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">In case the wakeup-capability is true this value is transmitted to the Ecu
+State Manager.
+
+Implementation Type: reference to EcuM_WakeupSourceType</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuM/EcuMConfiguration/EcuMWakeupSource</DESTINATION-REF>
+												</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+											</REFERENCES>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="5414a6f8-db24-4eee-824f-98140a14d2e4">
+							<SHORT-NAME>GptConfigurationOfOptApiServices</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container contains all configuration switches for configuring optional API services of the GPT driver</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: GptDeinitApi -->
+								<BOOLEAN-PARAM-DEF UUID="b005ae6c-41b1-4d83-9316-cb1afa87f206">
+									<SHORT-NAME>GptDeinitApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Adds / removes the service Gpt_DeInit() from the code.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: GptEnableDisableNotificationApi -->
+								<BOOLEAN-PARAM-DEF UUID="974e542d-ad9b-4a3d-89ed-609b244be758">
+									<SHORT-NAME>GptEnableDisableNotificationApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Adds / removes the services Gpt_EnableNotification() and Gpt_DisableNotification from the code.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: GptTimeElapsedApi -->
+								<BOOLEAN-PARAM-DEF UUID="59057de6-2fa1-4086-b697-4e9243b22940">
+									<SHORT-NAME>GptTimeElapsedApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Adds / removes the service Gpt_GetTimeElapsed() from the code</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: GptTimeRemainingApi -->
+								<BOOLEAN-PARAM-DEF UUID="3e0b6296-2960-454a-bc5b-097c68441702">
+									<SHORT-NAME>GptTimeRemainingApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Adds / removes the service Gpt_GetTimeRemaining() from the code.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: GptVersionInfoApi -->
+								<BOOLEAN-PARAM-DEF UUID="e32a04a0-a648-48aa-bc5f-4a283529f9b4">
+									<SHORT-NAME>GptVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Adds / removes the service Gpt_GetVersionInfo() from the code.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: GptWakeupFunctionalityApi -->
+								<BOOLEAN-PARAM-DEF UUID="4c2363e7-b71b-49fa-98b4-c623a24e39fa">
+									<SHORT-NAME>GptWakeupFunctionalityApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Adds / removes the services Gpt_SetMode(), Gpt_EnableWakeup() Gpt_DisableWakeup() and Gpt_Cbk_CheckWakeup() from the code.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="2edc3278-177c-4a1a-95e4-f7b62d91f6d3">
+							<SHORT-NAME>GptDriverConfiguration</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container contains the module-wide configuration (parameters) of the GPT Driver</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: GptDevErrorDetect -->
+								<BOOLEAN-PARAM-DEF UUID="b10f5ba3-e5c9-449d-9134-5cf44358d5ad">
+									<SHORT-NAME>GptDevErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables/Disables development error detection</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="60d70639-c30e-4234-a7c8-b06489f43053">
+									<SHORT-NAME>GptSpecRegAccEnabled</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Register Access Via OS Functions</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Enables/disables all access to the peripheral registers via a special function. The special function allows the access to the registers even if they are protected by MPU or supervisor mode. The function is provided by the Os.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="347225f0-5b89-45b2-b912-8db54a4391fb">
+									<SHORT-NAME>GptSpecRegAccOnlyForWrite</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Special Register Access Only For Write</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter disables the usage of the special function to access the periphery registers for the read access.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="4dc9dfb2-415e-4f6f-8a28-70ebfa125d84">
+									<SHORT-NAME>GptSpecRegAccOnlyForPrivModeReg</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Special Register Access Only For Privileged Mode Registers</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter disables the usage of the special function to access the periphery registers for the read and write access. Only the registers which need supervisor rights will be accessed with the special function.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="05ba8aa4-e0f6-4652-bd89-ed10b2687242">
+									<SHORT-NAME>GptSpecRegAccNotInInit</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Special Register Access Not During Initialization</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter disables the usage of the special function to access the periphery registers during the initialization.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: GptReportWakeupSource -->
+								<BOOLEAN-PARAM-DEF UUID="69cd46e6-4aac-4d3a-bd94-3fbdf1c546d5">
+									<SHORT-NAME>GptReportWakeupSource</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables/Disables wakeup source reporting</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<FUNCTION-NAME-DEF UUID="59c61ca8-7c8d-4a13-a640-13538bd9a625">
+									<SHORT-NAME>GptErrorhook</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The name of the Errorhook function</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det_ReportError</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<STRING-PARAM-DEF UUID="2b2aa617-e8de-4ac7-bb52-9e921e5e7978">
+									<SHORT-NAME>GptCfgIncludeDet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Name of the include-file which contains Errorhook function (the file name has to be an absolute path)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="cd4df99c-98c2-4ffe-8371-b6b69aba06cf">
+									<SHORT-NAME>GptCfgChkUninit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the driver has not been initialized</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="0d4edf31-596f-49e2-b4b2-3c2292f7afca">
+									<SHORT-NAME>GptCfgChkParamChl</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the channel number is in valid range</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="11c8da01-7938-4301-9cd0-5e744c9ada1f">
+									<SHORT-NAME>GptCfgChkParamMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the mode ID is in valid range</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="eb145551-fae1-426a-8ad7-f1d1526a9c42">
+									<SHORT-NAME>GptCfgChkParamValue</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the value for a time out period is not zero</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="c2ac4af6-adc6-44c1-8702-cff8f74bd02c">
+									<SHORT-NAME>GptCfgChkParamVinfo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the pointer passed to Gpt_GetVersionInfo() is not NULL_PTR</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="324a340e-c1f6-436c-913f-a33702bb5a51">
+									<SHORT-NAME>GptCfgChkBusy</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the timer channel is still busy</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="6cf0f24b-001f-4668-af17-4a0c759a5464">
+									<SHORT-NAME>GptCfgIncludeList</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specifies additional include files for the configured notification functions</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="51b309a2-fe52-49f5-94a1-bce56c0fbc5a">
+									<SHORT-NAME>GptCfgChkParamConfig</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the Configuration Structure Pointer is NULL_PTR</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="65c86deb-e695-426a-84c9-2db4fd7e31f4">
+									<SHORT-NAME>GptCfgDoParamChk</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the parameter checks</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="688bee1d-d8aa-4ad9-b948-6cb79ab152c8">
+									<SHORT-NAME>GptCfgChkParamWakeupchl</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the channel is configured as wakeup capable</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="feb75a8d-34fc-4c93-8bdd-6b617e8ac37f">
+									<SHORT-NAME>GptCfgChkNotifptr</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the configured notification function is not NULL_PTR</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="000b0ee3-976d-4845-bda6-9606a3cacde4">
+									<SHORT-NAME>GptCfgDebugReporting</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether development errors shall be reported to Det</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="47486f32-6a22-425b-9c2b-8e3108ae7cbd">
+									<SHORT-NAME>GptCfgChkAlreadyInit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the driver has already been initialized</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="67c8362a-0e90-4c2d-9751-1e99ce2d860f">
+									<SHORT-NAME>GptCfgChkNotStarted</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Option to enable/disable the check whether the timer channel has not been started before</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="2dcb103d-a0e5-4574-84ac-8f0d03daad1d">
+									<SHORT-NAME>GptCfgWakeupInclude</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Include File for Wakeup Functionalities</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="4cb0d787-e851-48ff-8162-ec69e221e000">
+									<SHORT-NAME>GptNativeIsr</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">ISR Implementation - here the user can choose, which kind of interrupt he wants to use:
+- Category 1: use compilers interrupt declaration mechanism
+- Category 2: use OSEK interrupts
+- void Functions</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>GPT_ISR_CAT1</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="81e87994-ce89-4494-b24e-091693108e63">
+											<SHORT-NAME>GPT_ISR_CAT1</SHORT-NAME>
+											<LONG-NAME>
+												<L-4>Category 1</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="8254d964-4e05-415c-bf4a-817c38d6d173">
+											<SHORT-NAME>GPT_ISR_CAT2</SHORT-NAME>
+											<LONG-NAME>
+												<L-4>Category 2</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="e84849ea-9d39-4b85-b1c6-019cfdd9c7ea">
+											<SHORT-NAME>GPT_ISR_VOID</SHORT-NAME>
+											<LONG-NAME>
+												<L-4>Void Function</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<REFERENCE-PARAM-DEF UUID="524f25e9-220e-4222-a254-a34c5b9cefd0">
+									<SHORT-NAME>GptIrqHandling</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This specifies the used functions to handle Interrupt locking and unlocking.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="5268b9cc-7c6c-443f-98ce-0eef9b2a973f">
+							<SHORT-NAME>VectorCommonData</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This configuration container contains Vector specific vendor data, which are relevant for configuration management purposes.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="f105f8bb-a924-4de2-9035-e191c91a523d">
+									<SHORT-NAME>BswmdVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter specifies the version of this bswmd file. </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1.00.07</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<BSW-IMPLEMENTATION UUID="75df2f65-fbfd-4bc1-8c45-a2b66d41a4db">
+					<SHORT-NAME>Gpt_Impl</SHORT-NAME>
+					<CODE-GENERATOR>cMICROSAR</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>1</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>0</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>6</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>2</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>2</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>0</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Gpt_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Gpt_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/Gpt</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-CONFIGURATION UUID="d7904b62-e3d5-4d89-b56c-a7388caf8d39">
+					<SHORT-NAME>Gpt_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Gpt</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="62e7f6e2-d36f-4c07-bd74-51ea69d72fb3">
+					<SHORT-NAME>Gpt_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Gpt</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

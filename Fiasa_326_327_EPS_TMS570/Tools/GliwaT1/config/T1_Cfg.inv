@@ -1,0 +1,30 @@
+-timeoutRx=100u                                 ; maximum time allowed between reception of two frames of the same message (multiple of t1HandlerPeriodMs of comm core)
+-timeoutTx=100u                                 ; maximum time allowed for (retrying) the sending of a frame (multiple of t1HandlerPeriodMs of comm core)
+-timeoutResponse=1000u                          ; maximum time permitted between transmitting the last frame of a message that requires acknowledgement and receiving the last frame of that acknowledgement (multiple of t1HandlerPeriodMs of comm core)
+-usingMulticoreLibs=false                       ; using multicore libs for single core system? [true/false]
+-bigEndian=true									; target is Big Endian (e.g. Freescale MPCs) [true/false]
+
+-txCycle=10                                     ; TX cycle of T1-HOST-SW in [t in ms]
+-canBitrate=500000                              ; [Bit/s]
+-canHardware=VECTOR                             ; [U2C,VECTOR]
+-connectionType=pure T1                         ; [pure T1,Diagnosis]
+-canTxID=0x7F0                                  ; CAN ID T1-HOST-SW -> T1-TARGET-SW
+-canRxID=0x7F1                                  ; CAN ID T1-TARGET-SW -> T1-HOST-SW
+-canExtendedIds=false                           ; [true,false]
+-useSameRxTxChannel=true                        ; same settings for RX and [TX true,false]
+-canUseFixedBlockSize=true
+
+#system 0:
+-sid=3                                          ; system ID
+-systemType=AUTOSAR OS                          ; [OSEK/ErcosEK/gliwOS/RTA OSEK/AUTOSAR OS/Unknown]
+-tickDurationNs=6.25                            ; tick duration [t in ns]
+-t1ScopeOverheadNs=332                          ; duration of one T1_TraceEventNoSusp_ call [t in ns]
+-t1FlexOverheadNs=2013                          ; duration of one T1.flex SWF-measurement - T1.flex overhead [t in ns]
+-nofFlexStopwatches=70                          ; number of used T1.flex stopwatches [0..255]
+-nofFlexAddrs=70                                ; number of T1.flex addresses (must be >= nofFlexStopwatches) [0..255]
+-pTimer=0xFFFFFC10                              ; address of memory mapped timer (Not used.)
+-traceTimerDownCounting=false                   ; trace timer counts down: [true/false]
+-32BitCpuWithSmallerTimer=false                 ; 32 Bit core with smaller trace timer: [true/false]
+-t1HandlerPeriodMs=10                           ; period of T1_Handler() [t in ms]
+-cpuLoadTxPeriod=100                            ; Transmit CPU load every x CPU load frames (BSF-frame) [0..255]
+-cpuLoadAvgSamples=100                          ; Number of samples taken within period [1 or cpuLoadTxPeriod]

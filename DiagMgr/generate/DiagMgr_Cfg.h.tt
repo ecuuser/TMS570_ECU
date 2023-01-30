@@ -1,0 +1,268 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : DiagMgr_Cfg.h
+* Module Description: Configuration file of DiagMgr module
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          3.1.2 %
+ * %date_modified:    Fri Feb 28 09:35:24 2014 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 07/13/12   1       JJW       Initial template creation
+ * 02/28/14   4       JWJ       Updated to add new #define for MTO programs to support snapshot data changes   11531
+ */
+
+#ifndef DIAGMGR_CFG_H
+#define DIAGMGR_CFG_H
+
+<#
+	/* Generated Output Formatting Options*/
+	const int COLWIDTH = 50;
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) );
+	Dictionary<string, bool> CPEnableDic = new Dictionary<string, bool>();
+#>
+
+
+/*******************************************************************************
+**                      Include Section                                       **
+*******************************************************************************/
+
+/*** Public Part (used by DiagMgr API) *****************************************/
+
+#include "Std_Types.h"                   /* Standard type definitions      */
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) ); 
+	string diagMgrFailActionApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "DiagMgrGeneral/DiagMgrFailActionOsAppRef" ));
+	string diagMgrDemIfApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "DiagMgrGeneral/DiagMgrDemIfOsAppRef" ));
+#>
+<#
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "Os" ) ); 
+#> 
+<# !LOOP( Xp.ContainerAtDefRefTo( "OsApplication" ) ) #>
+<#  string osApp1 = ValueOf( "ar:SHORT-NAME" );
+    int eventId = 0;
+    int BswEventCnt = 0; 
+
+	/* Assume the Application short name is the last "word" in the Os Application name delimited with '_' */
+	string[] osAppWords1 = osApp1.Split('_');
+	string osAppSuffix1 = osAppWords1[osAppWords1.Length -1];
+#>
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) ); 
+#>
+<# !LOOP( Xp.ContainerAtDefRefTo( "DiagMgrConfigSet/DiagMgrEventParameter" ) ) #>
+<#
+	string eventApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "OsApplicationRef" ));
+	if ( eventApp == osApp1 ) { 
+		eventId++;
+	
+		string eventKind = ValueOf( Xp.ValueAtDefRefTo( "DiagMgrEventKind" ));
+		if(0 == String.Compare(eventKind, "DIAGMGR_EVENT_KIND_BSW", false)){
+			BswEventCnt++;
+		}
+	} 
+#>
+<# !ENDLOOP #>
+<#if ( 0 != eventId ) { #>
+extern FUNC(Std_ReturnType, RTE_AP_DIAGMGR_APPL_CODE) NxtrDiagMgr<#=osAppSuffix1#>_GetNTCFailed( VAR(NTCNumber, AUTOMATIC) NTC_Cnt_T_enum, P2VAR(boolean, AUTOMATIC, AUTOMATIC) NTCFailed_Ptr_T_lgc );
+extern FUNC(Std_ReturnType, RTE_AP_DIAGMGR_APPL_CODE) NxtrDiagMgr<#=osAppSuffix1#>_GetNTCActive( VAR(NTCNumber, AUTOMATIC) NTC_Cnt_T_enum, P2VAR(boolean, AUTOMATIC, AUTOMATIC) NTCActive_Ptr_T_lgc );
+extern FUNC(Std_ReturnType, RTE_AP_DIAGMGR_APPL_CODE) NxtrDiagMgr<#=osAppSuffix1#>_GetNTCStatus( VAR(NTCNumber, AUTOMATIC) NTC_Cnt_T_enum, P2VAR(uint8, AUTOMATIC, AUTOMATIC) Status_Ptr_T_u08 );
+extern FUNC(Std_ReturnType, RTE_AP_DIAGMGR_APPL_CODE) NxtrDiagMgr<#=osAppSuffix1#>_SetNTCStatus( VAR(NTCNumber, AUTOMATIC) NTC_Cnt_T_enum, VAR(uint8, AUTOMATIC) Param_Cnt_T_u08, VAR(NxtrDiagMgrStatus, AUTOMATIC) Status_Cnt_T_enum );
+<#}#>
+<#if ( 0 != BswEventCnt ) { #>
+extern FUNC(Std_ReturnType, RTE_AP_DIAGMGR_APPL_CODE) NxtrDiagMgr<#=osAppSuffix1#>_ReportNTCStatus( VAR(NTCNumber, AUTOMATIC) NTC_Cnt_T_enum, VAR(uint8, AUTOMATIC) Param_Cnt_T_u08, VAR(NxtrDiagMgrStatus, AUTOMATIC) Status_Cnt_T_enum );
+<#}#>
+
+<# !ENDLOOP #>
+
+
+/*** Private Part (used by DiagMgr.c only) *************************************/
+#ifdef DIAGMGR_C
+<#
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) );
+#>
+<#  string osApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "DiagMgrGeneral/DiagMgrDemIfOsAppRef" ));
+	/* Assume the Application short name is the last "word" in the Os Application name delimited with '_' */
+	string[] osAppWords = osApp.Split('_');
+	string osAppSuffix = osAppWords[osAppWords.Length -1];
+#>
+/* Provide access to the direct access S/R port definitions for black box data */
+#if defined(DIAGMGR_DEMIF_RTEHEADER)	
+#include "Rte_Ap_DiagMgr<#=osAppSuffix#>.h"
+#elif defined(DIAGMGR_FAILACTION_RTEHEADER)
+<#  osApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "DiagMgrGeneral/DiagMgrFailActionOsAppRef" ));
+	/* Assume the Application short name is the last "word" in the Os Application name delimited with '_' */
+	osAppWords = osApp.Split('_');
+	osAppSuffix = osAppWords[osAppWords.Length -1];
+#>
+/* Provide access to the direct access S/R port definitions for black box data */
+#include "Rte_Ap_DiagMgr<#=osAppSuffix#>.h"
+#else
+#endif
+<# bool apiEnableVersionInfo = ValueOf( Xp.ValueAtDefRefTo( "DiagMgrGeneral/DiagMgrVersionInfoApi" ) );
+   bool devErrorDetect = ValueOf( Xp.ValueAtDefRefTo( "DiagMgrGeneral/DiagMgrDevErrorDetect" ) ); 
+  
+   if ( devErrorDetect == true ) { 
+#>
+#define DIAGMGR_DEV_ERROR_DETECT					STD_ON
+<# } else { #>
+#define DIAGMGR_DEV_ERROR_DETECT					STD_OFF
+<# } #>
+
+#define NxtrDiagMgrDemIf_ReportNTCStatus			NxtrDiagMgr<#=osAppSuffix#>_ReportNTCStatus
+
+<# bool isMtoProgram = ValueOf( Xp.ValueAtDefRefTo( "DiagMgrGeneral/DiagMgrIsMtoProgram" ) );
+   if (isMtoProgram == true) { #>
+#define DIAGMGR_IS_MTO_PROGRAM						STD_ON
+<# } else { #>
+#define DIAGMGR_IS_MTO_PROGRAM						STD_OFF
+<# } #>
+
+<# string NumOfDemEvents = ValueOf( Xp.ValueAtDefRefTo( "DiagMgrGeneral/NumOfDemEvents" ) ); 
+#>
+#define D_NUMOFDEMEVENTS_CNT_U08					<#=NumOfDemEvents#>
+
+/* DiagMgr Event Block Configuration Definitions */
+typedef struct {
+	uint8 Param;
+   	uint8 Status;
+	uint8 AgingCounter;
+} NTCInfo_Str;
+
+typedef struct {
+	NTCNumber NTC;
+	uint8 Param;
+   	NxtrDiagMgrStatus Status;
+} NTCInfoQueue_Str;
+
+typedef struct {
+	P2VAR(NTCInfo_Str, AUTOMATIC, AUTOMATIC) NTCInfoPtr;
+   	uint8 NumElements;
+} DiagMgrNtcInfoMap_Str;
+
+typedef struct {
+	uint8 AppIdx;	/* Application index, key to DiagMgrNtcInfoMap_Str table */
+   	uint8 InfoIdx;  /* NTCInfo index of of table found by using the AppIdx into the DiagMgrNtcInfoMap_Str table */
+} DiagMgrNtcAppMap_Str;
+
+<#  int osAppCnt = 0;
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "Os" ) ); 
+#> 
+<# !LOOP( Xp.ContainerAtDefRefTo( "OsApplication" ) ) #>
+<#  osApp = ValueOf( "ar:SHORT-NAME" );
+    int eventId = 0;
+    int BswEventCnt = 0; 
+
+	/* Assume the Application short name is the last "word" in the Os Application name delimited with '_' */
+	osAppWords = osApp.Split('_');
+	osAppSuffix = osAppWords[osAppWords.Length -1];
+#>
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) ); #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "DiagMgrConfigSet/DiagMgrEventParameter" ) ) #>
+<#
+	string eventApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "OsApplicationRef" ));
+	if ( eventApp == osApp ) { 
+		eventId++;
+	
+		string eventKind = ValueOf( Xp.ValueAtDefRefTo( "DiagMgrEventKind" ));
+		if(0 == String.Compare(eventKind, "DIAGMGR_EVENT_KIND_BSW", false)){
+			BswEventCnt++;
+		}
+	} 
+#>
+<# !ENDLOOP #>
+<# if ( 0 != eventId ) {
+    string apEventDefine = string.Format( "DIAGMGR_EVENTNUM_{0}", osAppSuffix ).ToUpper();
+    string apIdDefine = string.Format( "DIAGMGR_APID_{0}", osAppSuffix ).ToUpper();
+
+    if (osApp == diagMgrFailActionApp)
+	{
+		CPEnableDic.Add( "DiagMgr_Per1_CP0", false);
+		CPEnableDic.Add( "DiagMgr_Per1_CP1", false);
+	}
+	if (osApp == diagMgrDemIfApp)
+	{
+		CPEnableDic.Add( "DiagMgr_Per2_CP0", false);
+		CPEnableDic.Add( "DiagMgr_Per2_CP1", false);
+	}
+
+	CPEnableDic.Add( "DiagMgr"+osAppSuffix+"_Per_CP0", false);
+	CPEnableDic.Add( "DiagMgr"+osAppSuffix+"_Per_CP1", false);
+
+	osAppCnt++;
+#>
+
+/* <#= osApp#> Application SWC Internal Defs*/
+#define <#= apEventDefine.PadRight(COLWIDTH)#><#= eventId#>u
+#define <#= apIdDefine.PadRight(COLWIDTH)#><#= osAppCnt - 1 #>u
+
+extern VAR(uint8, AP_DIAGMGR_VAR) ActDiagSts<#=osAppSuffix#>_Cnt_M_u08;
+extern VAR(uint8, AP_DIAGMGR_VAR) ResetNTCFlag<#=osAppSuffix#>_Cnt_M_u08;
+<# if ( osApp == diagMgrDemIfApp ) { #>
+extern VAR(uint8, AP_DIAGMGR_VAR) ResetNTCFlag_Cnt_M_u08;
+<#}#>
+extern VAR(uint16, AP_DIAGMGR_VAR) DiagSts<#=osAppSuffix#>_Cnt_M_b16[2u];
+extern VAR(float32, AP_DIAGMGR_VAR) ActiveRmpRate<#=osAppSuffix#>_UlspmS_M_f32[2u];
+extern VAR(boolean, AP_DIAGMGR_VAR) DiagMgrInitComp<#=osAppSuffix#>_Cnt_M_lgc;
+extern VAR(NTCInfo_Str, AP_DIAGMGR_VAR)	DiagMgr_NTCInfo<#= osAppSuffix#>_Cnt_M_str[<#= apEventDefine#>];
+extern CONST(NTCNumber, AUTOMATIC) T_NTCMapTbl<#= osAppSuffix#>_Cnt_enum[<#= apEventDefine#>];
+<#}
+	if ( 0 != BswEventCnt ) { #>
+extern VAR(uint8, AP_DIAGMGR_VAR) NTCQueueIndex<#=osAppSuffix#>_Cnt_M_u08;
+extern VAR(NTCInfoQueue_Str, AP_DIAGMGR_VAR)	NTCInfoQueue<#= osAppSuffix#>_Cnt_M_str[<#= BswEventCnt#>];
+<#}#>
+<# !ENDLOOP #>
+
+<# string numAppsDefine = "DIAGMGR_NUMAPPS"; #>
+#define <#=numAppsDefine.PadRight(COLWIDTH)#><#=osAppCnt#>u
+extern CONST(DiagMgrNtcAppMap_Str, AP_DIAGMGR_CONST) T_DiagMgrNtcAppInfoMap_Cnt_Str[512u];
+extern CONST(DiagMgrNtcInfoMap_Str, AP_DIAGMGR_CONST) T_DiagMgrNtcInfoPtr_Cnt_Str[DIAGMGR_NUMAPPS];
+extern CONSTP2VAR(uint16, AUTOMATIC, AP_DIAGMGR_CONST) T_DiagMgrDiagSts_Ptr_b16[DIAGMGR_NUMAPPS];
+extern CONSTP2VAR(float32, AUTOMATIC, AP_DIAGMGR_CONST) T_DiagMgrRmpRate_Ptr_f32[DIAGMGR_NUMAPPS];
+
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) ); #>
+<# !LOOP( Xp.ValueAtDefRefTo( "DiagMgrGeneral/DiagMgrCPEnable" ) ) #>
+/* <#=ValueOf( "." )#> Checkpoint is enabled */
+<#CPEnableDic[ValueOf( "." )] = true;#>
+<# !ENDLOOP #>
+
+/* Disable all checkpoints that are not enabled */
+<# foreach ( KeyValuePair<string, bool> cp in CPEnableDic) {
+	 if(false == cp.Value) { #>
+#define Rte_Call_<#=cp.Key#>_CheckpointReached()		(void)0 /* Checkpoint disabled */	 
+<# } 
+} #>
+
+#endif /* DIAGMGR_C                                                            */
+
+
+/*******************************************************************************
+**                      Global Macros                                         **
+*******************************************************************************/
+
+/*** Public Part (DiagMgr API) *****************************************/
+
+/*
+ * File version information
+ */
+#define DIAGMGR_CFG_H_MAJOR_VERSION   1u
+#define DIAGMGR_CFG_H_MINOR_VERSION   0u
+#define DIAGMGR_CFG_H_PATCH_VERSION   0u
+
+/*
+ * API enable settings
+ */
+
+   
+#endif /* DIAGMGR_CFG_H */
+
+/*** End of file **************************************************************/

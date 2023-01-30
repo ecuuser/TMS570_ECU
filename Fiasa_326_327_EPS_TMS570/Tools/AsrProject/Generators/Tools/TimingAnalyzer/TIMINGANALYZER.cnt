@@ -1,0 +1,19 @@
+:Base TIMINGANALYZER.hlp
+:Title osCAN TimingAnalyzer Help
+1 Menus
+2 File menu=menu_file
+2 Objects menu=menu_objects
+2 View menu=menu_view
+2 Scheduling menu=menu_schedule
+2 Help menu=menu_help
+1 Creating and importing task sets
+2 Creating a task set=sets_create
+2 Importing a task set=sets_import
+1 Scheduling
+2 Selecting schedule method=schedule_method
+2 Performing schedulability analysis=schedule_analysis
+1 Trace visualization
+2 Visual concepts=trace_legend
+2 Navigating within a trace=trace_navigate
+1 Exports
+2 Exporting a trace=export_trace

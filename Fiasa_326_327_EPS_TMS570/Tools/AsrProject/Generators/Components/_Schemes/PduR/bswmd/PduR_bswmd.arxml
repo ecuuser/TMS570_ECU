@@ -1,0 +1,3393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<AUTOSAR xmlns="http://autosar.org/3.2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.2.1 AUTOSAR.XSD">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:6e8b43c6-b202-4bfa-97db-7dda539843b1">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="DCE:0b3d621e-f0bf-422a-be7b-85b25ecf6ef2">
+					<SHORT-NAME>PduR_Impl</SHORT-NAME>
+					<CODE-GENERATOR>GENy</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>3</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>21</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>02</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>2</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>2</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>1</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/PduR_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/PduR_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/PduR</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-DEF UUID="ECUC:fadc19f9-cb7a-425e-bb8a-1c29a01e6c62">
+					<SHORT-NAME>PduR</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of the PduR (PDU Router) module.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.02.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vishs</ISSUED-BY>
+								<DATE>2008-06-23T15:18:28</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Rename module definition from PduR_Def to PduR</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00027803</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vishs</ISSUED-BY>
+								<DATE>2008-07-01T12:57:42</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">New implementation version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.03.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vishs</ISSUED-BY>
+								<DATE>2008-08-21T16:05:36</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added recommended configuration and preconfiguration</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00028926</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.03.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vishs</ISSUED-BY>
+								<DATE>2008-08-21T16:14:06</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Removed SVN revision history</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00028927</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.04.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vishs</ISSUED-BY>
+								<DATE>2008-09-19T14:46:51</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added application access to TP layer and IF layer. Added vendor specific containerfor configuration</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00029986</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.05.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vishs</ISSUED-BY>
+								<DATE>2008-11-19T17:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support of intra ECU communication</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.06.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2008-03-16T17:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Renamed PduRIPduMSupport to PduRIpduMSupport</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.06.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2008-03-16T17:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added PduROptimizedIpdumSupport</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.06.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2008-04-16T17:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00034423,ESCAN00034424,ESCAN00034426,ESCAN00034476</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.06.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vishs</ISSUED-BY>
+								<DATE>2009-04-24T14:35:43</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">New implementation version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.07.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2008-06-12T17:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added PduRMostIFSupport</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.07.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2008-06-12T17:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added PduRMostTpSupport</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.08.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2008-06-22T17:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00035910 Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.09.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2009-07-29T12:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00036728
+ESCAN00036726
+ESCAN00036727
+ Updated BswmdVersion</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.09.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2009-07-29T12:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00036790</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.09.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2009-09-18T12:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Updated Sw Version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.10.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2009-09-21T12:49:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00037908 Support  IpTp</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.11.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2009-11-06T13:13:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00038621
+Support Dobt-CanTp Switch</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.11.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2009-11-10T13:13:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00037984
+Start address for the postbuild tables should be Link Time Config Variant in the Postbuild Config phase</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.12.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2010-02-02T13:13:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00040520
+Call CddDobt_PduRCanTpCallout only for Dobt capable CanTp Rx Pdus</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.12.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2010-03-01T14:31:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00041039</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.13.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2010-03-24T13:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00041838, Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.13.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visssa</ISSUED-BY>
+								<DATE>2010-06-11T17:53:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00043380, Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.14.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visssa</ISSUED-BY>
+								<DATE>2010-07-14T14:04:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00043970, ESCAN00043613, autosar schema reference updated</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.14.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2010-08-09T14:04:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00044549 Support CanNm, FrNm and Nm_DirOsek</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.14.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2010-08-09T14:04:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00044695 Support Optimized Routing with FrTp</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.15.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2010-09-28T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00045165 AR3-1221 Provide2RxBufferCalls shall be configurable for each Network</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.15.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2010-10-21T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.15.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2010-10-22T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.15.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2010-10-22T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.16.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2010-12-01T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00046663</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.16.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2010-12-08T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00041845, ESCAN00047166</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.16.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2011-02-22T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added PduRBswModules</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.16.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2011-02-22T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.16.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2011-02-22T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.16.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2011-04-18T21:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.16.04</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2011-05-17T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.16.05</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2011-05-23T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.17.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2011-05-23T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.17.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visswa</ISSUED-BY>
+								<DATE>2011-05-25T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00051135</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.17.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visswa</ISSUED-BY>
+								<DATE>2011-05-25T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00051310 Removed PduRGeneral.PduRUsePduInfoType</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.17.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visswa</ISSUED-BY>
+								<DATE>2011-06-14T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00051604 Added parameter PduRBswModules/PduRReadParameterRequestApi</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.17.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visswa</ISSUED-BY>
+								<DATE>2011-06-14T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00051603 Removed parameters PduR&lt;Module&gt;ReceiveCancellation and PduR&lt;Module&gt;TransmitCancellation</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.17.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2011-06-14T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00051728
+Support PduRRoutingPathGroups in the EcuC file as Specified in ASR 3.2.1</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.17.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2011-09-26T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.17.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2011-09-26T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN"> Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.17.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2011-11-28T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.17.04</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2012-04-30T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.18.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visms</ISSUED-BY>
+								<DATE>2012-08-08T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.19.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2012-11-12T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Updated SW-VERSION</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.20.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2013-02-05T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00063075:AR3-2378: Implement AMD timemeasurement support</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.20.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2013-03-20T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">updated SW version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.20.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visehs</ISSUED-BY>
+								<DATE>2013-10-02T04:07:01+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">updated SW version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/PduR</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-LINK-TIME</SUPPORTED-CONFIG-VARIANT>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Parameter Container Definition: PduRBswModules-->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:997d76ea-72d8-49b4-9d45-745f5fc8a62c">
+							<SHORT-NAME>PduRBswModules</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Each container describes a specific BSW module (upper/CDD/lower/IpduM) that the PDU Router shall interface to.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: PduRCommunicationInterface -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:16c87b44-59d6-4e04-8589-2f7911733287">
+									<SHORT-NAME>PduRCommunicationInterface</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specifies if the BSW module supports the Communication Interface APIs or not. Value true the APIs are supported.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRLowerModule -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:f826ff0e-67ef-4568-a6a5-655cc7e01686">
+									<SHORT-NAME>PduRLowerModule</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The PduRLowerModule will decide who will call the APIs and who will implement the APIs.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRTransportProtocol -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:dfbd27a5-9ad4-493b-b5a3-a67b94dd7b0d">
+									<SHORT-NAME>PduRTransportProtocol</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The PDU Router module shall use the API parameters specified for transport protocol interface.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRTriggertransmit -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:e9dcf261-f9fa-4915-a7e9-850cb1d42dee">
+									<SHORT-NAME>PduRTriggertransmit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specifies if the BSW module supports the TriggerTransmit API or not. Value true the API is supported.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRDataProvision-->
+								<ENUMERATION-PARAM-DEF UUID="DCE:c0bf0b97-17fd-40e1-8e7c-df29ea4630b7">
+									<SHORT-NAME>PduRDataProvision</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specifies the used data provision type of the BSW module.
+NONE: No data provision used
+DIRECT: Data provision in &lt;Lo&gt;_Transmit() context
+TRIGGER_TRANSMIT: Data provision in PduR_&lt;Lo&gt;TriggerTransmit() context
+USER_DEFINED: Mixed usage of DIRECT and TRIGGER_TRANSMIT data provision</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="ECUC:92b43df2-1ebd-49ee-8979-3c842e0bc4cb">
+											<SHORT-NAME>NONE</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="ECUC:07ae1a0a-87a8-4c9e-905d-5fa2b66d867f">
+											<SHORT-NAME>DIRECT</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="ECUC:233dbba4-4701-42da-ad2d-2a252ba6bb4f">
+											<SHORT-NAME>TRIGGER_TRANSMIT</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="ECUC:303bfa8d-0368-4624-90d4-6a1ecc5f3c85">
+											<SHORT-NAME>USER_DEFINED</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRUpperModule-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:9bdba5f3-a21b-4fb2-a2fe-9073981fd3e4">
+									<SHORT-NAME>PduRUpperModule</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The PduRUpperModule will decide who will call the APIs and who will implement the APIs.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRCancelReceive-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:3cb1c397-ca99-4534-8eb0-fdfff56f8a26">
+									<SHORT-NAME>PduRCancelReceive</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter, if set to true, enables the PduR_&lt;UpTp&gt;CancelReceive Api for this Module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRCancelTransmit-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:46177b6e-b1ff-4a46-b18b-8804c79a18b4">
+									<SHORT-NAME>PduRCancelTransmit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter, if set to true, enables the PduR_&lt;UpTp&gt;CancelTransmit Api for this Module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRChangeParameterRequestApi-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:51a6a251-4454-4352-93b9-188752999f8a">
+									<SHORT-NAME>PduRChangeParameterRequestApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter, if set to true, enables the PduR_&lt;UpTp&gt;ChangeParameterRequest Api for this Module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRReadParameterRequestApi-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:77af6b04-9f50-4f83-bb14-11a60bfc5d77">
+									<SHORT-NAME>PduRReadParameterRequestApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter, if set to true, enables the PduR_&lt;UpTp&gt;ReadParameterRequest Api for this Module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRUseTag-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:ad83d2b0-862e-11e0-9d78-0800200c9a66">
+									<SHORT-NAME>PduRUseTag</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter, if set to true, enables the usage of the tag (&lt;up&gt;) in the following API calls:
+* PduR_&lt;UpTp&gt;CancelReceive
+* PduR_&lt;UpTp&gt;CancelTransmit
+* PduR_&lt;UpTp&gt;ChangeParameter
+* PduR_&lt;UpTp&gt;ReadParameter
+
+Example for module Dcm: If parameter is enabled, the API PduR_DcmCancelTransmit() instead of PduR_CancelTransmit() is used.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: PduRGeneral -->
+						<PARAM-CONF-CONTAINER-DEF UUID="ECUC:92bfa44f-5c0a-408f-b100-ca90c67b8b61">
+							<SHORT-NAME>PduRGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container is a subcontainer of PduR and specifies the general configuration parameters of the PDU Router.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: PduRCanIfSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:ee8b4fa2-86a9-494b-936a-0ab02d9be399">
+									<SHORT-NAME>PduRCanIfSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for CAN interface.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRCanTpCancelReceive -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:d5df7a28-39b3-4c4a-8fe8-90ab6515f761">
+									<SHORT-NAME>PduRCanTpCancelReceive</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is not used by the PduR.
+Specifies if the Can Transport protocol module supports the CancelReceive API or not. Value true the API is supported.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRCanTpChangeParameterRequestApi -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:9d820819-444c-4c9b-8ad0-1a5c459d6f90">
+									<SHORT-NAME>PduRCanTpChangeParameterRequestApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is not used by the PduR.
+This parameter, if set to true, enables the PduR_CanTpChangeParameterRequest Api for CanTp.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRCanTpSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:cf61209d-68cb-4620-88a0-e63679b633cc">
+									<SHORT-NAME>PduRCanTpSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for CAN TP.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMostTpSupport -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:15173d4d-71c5-4c7a-86f7-3d691c2d1cb0">
+									<SHORT-NAME>PduRMostTpSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for the module MostTp. This parameter must be preconfigured. This feature is an extension to the PduR module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMostIfSupport -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:1cdf606e-3adb-426d-8822-1bbf84b43c45">
+									<SHORT-NAME>PduRMostIfSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for the module MostIf. This parameter must be preconfigured. This feature is an extension to the PduR module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRComSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:02623af0-79db-4b0a-b9a2-a3d8fba8d218">
+									<SHORT-NAME>PduRComSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for COM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRDcmSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:0ffdc557-f57c-4bed-8f6e-3c5dca6c930d">
+									<SHORT-NAME>PduRDcmSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for DCM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRDevErrorDetect -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:87e2a6a8-4a23-42d9-895d-8829dacb4181">
+									<SHORT-NAME>PduRDevErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the Development Error Detection and Notification ON or OFF.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRFifoTxBufferSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:1fc40296-86bc-4d57-8189-e203cc81ec8a">
+									<SHORT-NAME>PduRFifoTxBufferSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for FIFOs as PDU transmit buffers; if PDUR_GATEWAY_OPERATION is disabled, this parameter has to be disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRFrIfSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:b87023cb-775e-4daa-a845-c499a580b9c9">
+									<SHORT-NAME>PduRFrIfSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for FlexRay interface.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRFrTpCancelReceive -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:9f6996ad-1a53-4a10-bcb2-71627d012eca">
+									<SHORT-NAME>PduRFrTpCancelReceive</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is not used by the PduR.
+Specifies if the Flaxray Transport protocol module supports the CancelReceive API or not. Value true the API is supported.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRFrTpChangeParameterRequestApi -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:95d976ad-2924-4b12-a1be-77302562e53f">
+									<SHORT-NAME>PduRFrTpChangeParameterRequestApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is not used by the PduR.
+This parameter, if set to true, enables the PduR_FrTpChangeParameterRequest Api for FrTp.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRFrTpSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:1608d329-22ff-4d6c-9522-0e3481c56f3f">
+									<SHORT-NAME>PduRFrTpSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for FlexRay TP.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRGatewayOperation -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:a72352fa-2297-41ef-8296-c41dae15e91f">
+									<SHORT-NAME>PduRGatewayOperation</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router gateway operation; if PDUR_ZERO_COST_OPERATION is enabled, this parameter has to be disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRIpduMSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:32f5648f-fb9f-4c9b-88a0-716d41ff4231">
+									<SHORT-NAME>PduRIpduMSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for IPDUM; if PDUR_ZERO_COST_OPERATION is enabled, this parameter has to be disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRIpduMUpSupport-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:fd505a77-566a-4585-abcb-6d2830577b30">
+									<SHORT-NAME>PduRIpduMUpSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for the upper layer interface of the BSW module IPdu Multiplexer. This parameter must be preconfigured.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRLinIfSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:c9cc87dd-6ae1-4ba5-9b87-ee4d5fb40de6">
+									<SHORT-NAME>PduRLinIfSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for LIN interface.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRLinTpChangeParameterRequestApi -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:e364c89a-3b02-4b32-a043-214d510ab88e">
+									<SHORT-NAME>PduRLinTpChangeParameterRequestApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is not used by the PduR.
+This parameter, if set to true, enables the PduR_LinTpChangeParameterRequest Api for LinTp.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRLinTpSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:ee7a7ae4-43da-4daf-b48b-755462f0578e">
+									<SHORT-NAME>PduRLinTpSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for LIN TP.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMemorySize -->
+								<INTEGER-PARAM-DEF UUID="ECUC:7c8ec792-7e59-4faa-8c43-e614a4678f43">
+									<SHORT-NAME>PduRMemorySize</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Reserves buffer. Should post build configurations require additional buffer, it should be allocated at linktime. Parameter required for gateway operation only.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMulticastFromIfSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:9388670c-b6a8-4be7-bf85-316ec473d69d">
+									<SHORT-NAME>PduRMulticastFromIfSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for multicasts from an interface module to upper layer modules or lower layer interface modules; if PDUR_ZERO_COST_OPERATION is enabled, this parameter has to be disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMulticastFromTpSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:6b078042-f465-4b94-acde-3c207b11673b">
+									<SHORT-NAME>PduRMulticastFromTpSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to enable or disable PDU Router support for multicasts from a TP module to upper layer modules or lower layer TP modules; if PDUR_ZERO_COST_OPERATION is enabled, this parameter has to be disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMulticastToIfSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:b2fe5a99-caa9-43bc-b5e3-5138ea62ff28">
+									<SHORT-NAME>PduRMulticastToIfSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is not used by the PduR.
+Configuration parameter to enable or disable PDU Router support for multicasts from an upper layer module to interface modules; if PDUR_ZERO_COST_OPERATION is enabled, this parameter has to be disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMulticastToTpSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:ffe57563-013b-437e-b1a8-43d5f303dfab">
+									<SHORT-NAME>PduRMulticastToTpSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is not used by the PduR.
+Configuration parameter to enable or disable PDU Router support for multicasts from an upper layer module to TP modules; if PDUR_ZERO_COST_OPERATION is enabled, this parameter has to be disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRSbTxBufferSupport -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:cc54fb3b-d111-4fb7-8ecc-8c34d97f6697">
+									<SHORT-NAME>PduRSbTxBufferSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is not used by the PduR.
+Configuration parameter to enable or disable PDU Router support for single buffers as PDU transmit buffers; if PDUR_GATEWAY_OPERATION is disabled, this parameter has to be disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRVersionInfoApi -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:32d6ed3e-46fd-4315-a3db-aa69215a7163">
+									<SHORT-NAME>PduRVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Activates/Deactivates the Version Info API.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRZeroCostOperation -->
+								<BOOLEAN-PARAM-DEF UUID="ECUC:b9d6831c-1933-4de2-ae7c-5f83dee1dcef">
+									<SHORT-NAME>PduRZeroCostOperation</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is not used by the PduR.
+All routing paths are implicitly defined and the communication modules directly above or below the PDU Router shall directly call each other without using PDU Router functions (zero cost operation). The configuration parameters PDUR_SINGLE_IF and PDUR_SINGLE_TP are used to specify the related lower layer module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRPBStartAddress -->
+								<INTEGER-PARAM-DEF UUID="DCE:436dac49-91fe-4f0a-b112-126ab8312b92">
+									<SHORT-NAME>PduRPBStartAddress</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This is the start address of the memory block in ROM where the post build configuration data is located. Required for variant post-build only.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRProdErrorDetect -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:d6f6de45-271d-44f9-a02e-68f9313301b4">
+									<SHORT-NAME>PduRProdErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable to report production relevant errors to the Diagnostics Event Manager (DEM). If disabled no errors will be reported to DEM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRRouting2CSFSupport -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:367dc0c0-2d0d-11df-8a39-0800200c9a66">
+									<SHORT-NAME>PduRRouting2CSFSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable support for the BSW module CanTp 4.0 API. Accepts a new routing request for a single frame while the previous is being routed.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRUserConfigurationFile -->
+								<STRING-PARAM-DEF UUID="DCE:dca5bbf9-1abc-4a5b-a1a8-66a9f31bc270">
+									<SHORT-NAME>PduRUserConfigurationFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Choose a user configuration file whose content will be appended to the generated PduR_Cfg.h at the end overwritting configuration settings in PduR_Cfg.h.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMaxNumberOfRxCanTpPdus -->
+								<INTEGER-PARAM-DEF UUID="DCE:ac188430-2530-11df-8a39-0800200c9a66">
+									<SHORT-NAME>PduRMaxNumberOfRxCanTpPdus</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Define the maximum number of CanTp Routings possible.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MAX>65535</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMaxNumberOfRxFrTpPdus -->
+								<INTEGER-PARAM-DEF UUID="DCE:cd85a074-9f66-4fbb-aaf6-ad81937d2627">
+									<SHORT-NAME>PduRMaxNumberOfRxFrTpPdus</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Define the maximum number of FrTp Routings possible.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MAX>65535</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRJ1939Support -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:89ab8981-8402-484e-b240-ca00b4feaeeb">
+									<SHORT-NAME>PduRJ1939Support</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for the module J1939Tp. This parameter must be preconfigured. This feature is an extension to the PduR module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRApplIfSupport -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:75cb9f17-694e-44f0-9138-13ea04cbab4a">
+									<SHORT-NAME>PduRApplIfSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for direct application access to If layer PDUs in the PduR. This parameter must be preconfigured. This feature is an extension to the PduR module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRApplTpSupport -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:0679e0df-5d93-490d-9642-dd3b61433af6">
+									<SHORT-NAME>PduRApplTpSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for direct application access to Tp layer PDUs in the PduR. This parameter must be preconfigured. This feature is an extension to the PduR module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRSoAdSupport -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:50fff3e2-631e-4bca-9d5a-99e0aa8a1755">
+									<SHORT-NAME>PduRSoAdSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for module SoAd interface access to Tp layer PDUs. This feature is an extension to the PduR module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRCanNmSupport -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:f08be355-9e2f-404b-aa27-13699ed78485">
+									<SHORT-NAME>PduRCanNmSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for module CanNm interface access to If layer PDUs. This feature is an extension to the PduR module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRNmOsekSupport -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:62a7cad8-5476-4aca-8896-2f4a9b7fee26">
+									<SHORT-NAME>PduRNmOsekSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for module NmOsek interface access to If layer PDUs. This feature is an extension to the PduR module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRFrNmSupport -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:4976fd30-1b4f-4859-8153-6e2e55085911">
+									<SHORT-NAME>PduRFrNmSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for module FrNm interface access to If layer PDUs. This feature is an extension to the PduR module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMaxRoutingPathGroups-->
+								<INTEGER-PARAM-DEF UUID="DCE:89a8dcad-a2e7-4a47-b078-9dfe3b797141">
+									<SHORT-NAME>PduRMaxRoutingPathGroups</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the maximum number of PduRRoutingPathGroups in one Identity.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRMaxRoutingPathsInRPGs-->
+								<INTEGER-PARAM-DEF UUID="DCE:0daf00eb-e18b-4a89-9585-9cfb6de77b4e">
+									<SHORT-NAME>PduRMaxRoutingPathsInRPGs</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the maximum number of PduRRoutingPaths in PduRRoutingPathGroups in one Identity.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRRoutingPathGroupSupport-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:61c3d5fe-1ebd-440e-8fea-72d3016b636d">
+									<SHORT-NAME>PduRRoutingPathGroupSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for PduRRoutingPathGroups.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRFrTp2ProvideRxBufferCalls-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:5d177fb0-c726-11df-bd3b-0800200c9a66">
+									<SHORT-NAME>PduRFrTp2ProvideRxBufferCalls</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for CanTp to support two ProvideRxBuffer calls</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRCanTp2ProvideRxBufferCalls-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:a4bf0130-c726-11df-bd3b-0800200c9a66">
+									<SHORT-NAME>PduRCanTp2ProvideRxBufferCalls</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable / Disable PduR support for CanTp to support two ProvideRxBuffer calls.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRBalanceRoutingTime-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:a3b2fe70-0c3d-11e0-81e0-0800200c9a66">
+									<SHORT-NAME>PduRBalanceRoutingTime</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Multiple Chunks of the TP buffer are blocked by the Tx TP until the data is transmitted. The Rx TP has to wait until the buffer is free. The TP timings have to take this effect into account and the timings have to be very tolerant and the routing latency is reduced. Due to this, the TP transmission shall be managed by the PDUR with chunks to provide fast buffer for the reception TP.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRDynamicDlcSupport-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:b7a03f11-2fc8-4ea8-9c7a-bfb9e02915da">
+									<SHORT-NAME>PduRDynamicDlcSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If this feature is activated, the received data length (PduInfoPtr-&gt;SduLength) is checked in the function PduR_&lt;Lo&gt;RxIndication and only completely received bytes are processed.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PduRAmdRuntimeMeasurement-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:8f6b6240-2fbd-11e2-81c1-0800200c9a66">
+									<SHORT-NAME>PduRAmdRuntimeMeasurement</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter defines if AMD Runtime Measurement (RTM) is enabled for this module</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: PduRGlobalConfig -->
+						<PARAM-CONF-CONTAINER-DEF UUID="ECUC:278d644b-290e-4404-a833-1f94cec37e04">
+							<SHORT-NAME>PduRGlobalConfig</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container contains the global configuration parameter of the PduR. 
+                        It is a MultipleConfigurationContainer, i.e. this container and its sub-containers exit once per configuration set.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: PduRConfigurationId -->
+								<INTEGER-PARAM-DEF UUID="ECUC:09b8f8b9-fcbc-47ce-800c-e8b72c849fe2">
+									<SHORT-NAME>PduRConfigurationId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">unique configuration identifier of post-build time configuration; this parameter shall be used if PDUR_ZERO_COST_OPERATION is disabled; otherwise it shall not be used.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</INTEGER-PARAM-DEF>
+							</PARAMETERS>
+							<SUB-CONTAINERS>
+								<!-- Parameter Container Definition: PduRRoutingPathGroup -->
+								<PARAM-CONF-CONTAINER-DEF UUID="ECUC:6387b928-a0d0-4325-9b6e-ee2784f5ff88">
+									<SHORT-NAME>PduRRoutingPathGroup</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container groups routing path destinations. Destinations are used instead of routing paths since a routing path can be 1:n. It is desirable to be able to enable/disable a specific bus (i.e. a destination) rather than a routing path. Of course it is possible to create groups that covers specific routing paths as well.
+
+                                Enabling and disabling of routing path groups are made using the PduR API.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: PduRIsEnabledAtInit -->
+										<BOOLEAN-PARAM-DEF UUID="ECUC:21ec348e-d75d-485e-8463-a051974e7d1b">
+											<SHORT-NAME>PduRIsEnabledAtInit</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If set to true this routing path group will be enabled after initializing the PDU Router module (i.e. enabled in the PduR_Init function).</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: PduRRoutingPathGroupId -->
+										<INTEGER-PARAM-DEF UUID="ECUC:f59da8c5-6033-45a5-babf-661d5d9c41b4">
+											<SHORT-NAME>PduRRoutingPathGroupId</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Identification of the routing group.
+
+                                        The identification will be used by the disable/enable API in the PDU Router module API.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+											<MAX>65535</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Reference Definition: PduRDestPduRef -->
+										<REFERENCE-PARAM-DEF UUID="ECUC:595cbcfc-729b-4708-aa81-69f1d20a4690">
+											<SHORT-NAME>PduRDestPduRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This reference selects one destination of the routing path.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/PduR/PduRGlobalConfig/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: PduRRoutingTable -->
+								<PARAM-CONF-CONTAINER-DEF UUID="ECUC:3f936906-4415-43fb-9363-5c46e7cd63b6">
+									<SHORT-NAME>PduRRoutingTable</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">PDU Router routing table is a subcontainer ofPduR. This container shall only be considered by the PDU Router Configuration Generator if PduRGeneral/PDUR_ZERO_COST_OPERATION is disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: PduRRoutingPath -->
+										<PARAM-CONF-CONTAINER-DEF UUID="ECUC:b34f639c-dc43-4ee1-874f-2af20abf1420">
+											<SHORT-NAME>PduRRoutingPath</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container is a subcontainer of PduRRoutingTable and specifies the routing path of a PDU.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: SduLength -->
+												<INTEGER-PARAM-DEF UUID="ECUC:6230b478-25c9-46e6-b3c3-69ca50bc786b">
+													<SHORT-NAME>SduLength</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter is not used by the PduR.
+Length of PDU data (SDU). Only required if a Tx buffer is configured.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>255</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: TpChunkSize -->
+												<INTEGER-PARAM-DEF UUID="ECUC:7b644b47-fd0c-4af9-9616-cb47324c0f5a">
+													<SHORT-NAME>TpChunkSize</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Chunk size for routing on the fly. Defines the number of bytes which shall be received before transmission on the destination bus may start. Only required for TP gateway PDUs. The TpChunkSize shall not be larger than the length of the related TP Buffer.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>7</DEFAULT-VALUE>
+													<MAX>65535</MAX>
+													<MIN>1</MIN>
+												</INTEGER-PARAM-DEF>
+											</PARAMETERS>
+											<SUB-CONTAINERS>
+												<!-- Parameter Container Definition: PduRDefaultValue -->
+												<PARAM-CONF-CONTAINER-DEF UUID="ECUC:1f0d235b-3a07-49ff-82f3-f44f25001666">
+													<SHORT-NAME>PduRDefaultValue</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container is a subcontainer of PduRRoutingPath and specifies the default value of the I-PDU. Only required for gateway operation and if at least one PDU specified by PduRDestPdu uses TriggerTransmit Data provision.
+
+                                                Represented as an array of IntegerParamDef.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+													<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+													<SUB-CONTAINERS>
+														<!-- Parameter Container Definition: PduRDefaultValueElement -->
+														<PARAM-CONF-CONTAINER-DEF UUID="ECUC:d3da5970-3037-44e6-9144-add5b3ec9f62">
+															<SHORT-NAME>PduRDefaultValueElement</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Each value element is represented by the element and the position in an array.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: DefaultValueElement -->
+																<INTEGER-PARAM-DEF UUID="ECUC:ba80d004-c08d-4071-9649-9dd8b030575b">
+																	<SHORT-NAME>DefaultValueElement</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">The default value consists of a number of elements. Each element is one byte long and the number of elements is specified by SduLength. The position of this parameter in the container is specified by the ElementBytePosition parameter.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<MAX>255</MAX>
+																	<MIN>0</MIN>
+																</INTEGER-PARAM-DEF>
+																<!-- PARAMETER DEFINITION: ElementBytePosition -->
+																<INTEGER-PARAM-DEF UUID="ECUC:f70a2789-5103-4cec-9e84-9bba77bf25f8">
+																	<SHORT-NAME>ElementBytePosition</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter specifies the byte position of the element within the default value</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																</INTEGER-PARAM-DEF>
+															</PARAMETERS>
+														</PARAM-CONF-CONTAINER-DEF>
+													</SUB-CONTAINERS>
+												</PARAM-CONF-CONTAINER-DEF>
+												<!-- Parameter Container Definition: PduRDestPdu -->
+												<PARAM-CONF-CONTAINER-DEF UUID="ECUC:b454f3f4-3809-451b-9d41-9e2a9439efa4">
+													<SHORT-NAME>PduRDestPdu</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container is a subcontainer of PduRRoutingPath and specifies one destination for the PDU to be routed.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+													<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+													<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+													<PARAMETERS>
+														<!-- PARAMETER DEFINITION: DataProvision -->
+														<ENUMERATION-PARAM-DEF UUID="ECUC:28bfa72a-3116-4c8d-a7be-f4fcbc364c52">
+															<SHORT-NAME>DataProvision</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Specifies how data are provided: direct (as part of the Transmit call) or via the TriggerTransmit callback function. Only required for non-TP gateway PDUs.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<LITERALS>
+																<ENUMERATION-LITERAL-DEF UUID="ECUC:2e14a05c-df7f-86cc-2649-9758db317017">
+																	<SHORT-NAME>DIRECT</SHORT-NAME>
+																</ENUMERATION-LITERAL-DEF>
+																<ENUMERATION-LITERAL-DEF UUID="ECUC:3e3d283a-e1c2-9356-4426-f058283bcb86">
+																	<SHORT-NAME>TRIGGER_TRANSMIT</SHORT-NAME>
+																</ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ENUMERATION-PARAM-DEF>
+														<FUNCTION-NAME-DEF UUID="DCE:1b3b7041-cbfe-40f1-ac76-108a41a9fbbc">
+															<SHORT-NAME>RoutingCallout</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Configure a callout function implemented by the application and triggered on the routing event. The return value from the function determines if the routing  
+was executed (E_OK) or canceled (E_NOT_OK). The prototype of the function is provided in PduR_Notifications.h.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+														</FUNCTION-NAME-DEF>
+														<BOOLEAN-PARAM-DEF UUID="DCE:cba30585-fb2c-46a9-9162-ed2aa5db2e22">
+															<SHORT-NAME>DisableRouting</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This parameter allows to suspend a routing without deleting it. If the parameter is not present or set to false, the routing will be generated and active. This parameter is evaluated for TP- and interface layer routing relations.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</BOOLEAN-PARAM-DEF>
+														<BOOLEAN-PARAM-DEF UUID="DCE:6d62721e-045d-4ad7-b518-5bf373a9bc99">
+															<SHORT-NAME>PduRCddDobtSwitch</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">True, if the Tx CanTp Port can be used by CddDobt.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</BOOLEAN-PARAM-DEF>
+													</PARAMETERS>
+													<REFERENCES>
+														<!-- Reference Definition: DestPduRef -->
+														<REFERENCE-PARAM-DEF UUID="ECUC:aec3f7af-e5fd-4278-a8da-c2077fe5576e">
+															<SHORT-NAME>DestPduRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Destination PDU reference; reference to unique PDU identifier which shall be used by the PDU Router instead of the source PDU ID when calling the related function of the destination module.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+														</REFERENCE-PARAM-DEF>
+														<!-- Reference Definition: TxBufferRef -->
+														<REFERENCE-PARAM-DEF UUID="ECUC:d2cc722d-c33a-4c18-8eb6-3e6a901afc9a">
+															<SHORT-NAME>TxBufferRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Specifies the assigned transmit buffer. Only required for specific non-TP gateway PDUs.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/PduR/PduRGlobalConfig/PduRTxBufferTable/PduRTxBuffer</DESTINATION-REF>
+														</REFERENCE-PARAM-DEF>
+													</REFERENCES>
+												</PARAM-CONF-CONTAINER-DEF>
+												<!-- Parameter Container Definition: PduRSrcPdu -->
+												<PARAM-CONF-CONTAINER-DEF UUID="ECUC:91525ed0-6a1c-468b-91ec-479bc8da0b78">
+													<SHORT-NAME>PduRSrcPdu</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container is a subcontainer of PduRRoutingPath and specifies the source of the PDU to be routed.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+													<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+													<PARAMETERS>
+														<!-- PARAMETER DEFINITION: HandleId -->
+														<INTEGER-PARAM-DEF UUID="ECUC:9281db8e-b425-4608-8acf-8622ee8969fd">
+															<SHORT-NAME>HandleId</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">PDU identifier assigned by PDU Router.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+															<MAX>65535</MAX>
+															<MIN>0</MIN>
+														</INTEGER-PARAM-DEF>
+														<BOOLEAN-PARAM-DEF UUID="DCE:187f3ab1-2610-43bf-8317-78dda4d235ab">
+															<SHORT-NAME>PduRCddDobtSwitch</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">True, if the Rx CanTp Port can be used by CddDobt.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</BOOLEAN-PARAM-DEF>
+													</PARAMETERS>
+													<REFERENCES>
+														<!-- Reference Definition: SrcPduRef -->
+														<REFERENCE-PARAM-DEF UUID="ECUC:96fa6c63-feae-4e75-bc15-ad55c4eac4af">
+															<SHORT-NAME>SrcPduRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Source PDU reference; reference to unique PDU identifier which shall be used for the requested PDU Router operation.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+														</REFERENCE-PARAM-DEF>
+													</REFERENCES>
+												</PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: PduRTpBufferTable -->
+								<PARAM-CONF-CONTAINER-DEF UUID="ECUC:4c2d2d1c-ec06-4610-a436-803a8e4c465c">
+									<SHORT-NAME>PduRTpBufferTable</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container is a subcontainer of PduR and contains the definition of all TP buffers (only required for PDU Router gateway operation). This container shall only be considered by the PDU Router Configuration Generator if PduRGeneral/PDUR_GATEWAY_OPERATION is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: PduRMaxTpBufferNumber -->
+										<INTEGER-PARAM-DEF UUID="ECUC:c0883a64-a264-4a61-995f-f7e6fd9a52f7">
+											<SHORT-NAME>PduRMaxTpBufferNumber</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">maximum number of TP buffers.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>65535</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: PduRTpBuffer -->
+										<PARAM-CONF-CONTAINER-DEF UUID="ECUC:d37497a6-ca46-4855-8a76-4c4670b06c1a">
+											<SHORT-NAME>PduRTpBuffer</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container is a subcontainer of PduRTpBufferTable and specifies a TP buffer.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: Length -->
+												<INTEGER-PARAM-DEF UUID="ECUC:e13676af-391a-4c67-94fb-9aa474633d55">
+													<SHORT-NAME>Length</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Length of the buffer.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>65535</MAX>
+													<MIN>1</MIN>
+												</INTEGER-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: PduRTxBufferTable -->
+								<PARAM-CONF-CONTAINER-DEF UUID="ECUC:6bb52dc5-7530-4e4b-b5bd-562dcec3eeb4">
+									<SHORT-NAME>PduRTxBufferTable</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container is a subcontainer of PduR and contains the definition of all transmit buffers (used by specific non-TP PDUs; only required for PDU Router gateway operation). This container shall only be considered by the PDU Router Configuration Generator if PduRGeneral/PDUR_GATEWAY_OPERATION is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: PduRMaxTxBufferNumber -->
+										<INTEGER-PARAM-DEF UUID="ECUC:fdf11635-ff20-4546-af6f-39b242b473a8">
+											<SHORT-NAME>PduRMaxTxBufferNumber</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">maximum number of transmit buffers</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>65535</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: PduRTxBuffer -->
+										<PARAM-CONF-CONTAINER-DEF UUID="ECUC:db4b9b72-bae2-4cfd-af9d-3fa52262f049">
+											<SHORT-NAME>PduRTxBuffer</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container is a subcontainer of PduRTxBufferTable and specifies a transmit buffer for a non-TP PDU.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: Depth -->
+												<INTEGER-PARAM-DEF UUID="ECUC:79719542-96fe-49b6-8142-f124355da8f8">
+													<SHORT-NAME>Depth</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Specifies the depth of the buffer</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>255</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: Length -->
+												<INTEGER-PARAM-DEF UUID="ECUC:4cc900e9-c376-4e0d-aed0-f0e41a0008db">
+													<SHORT-NAME>Length</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter is not used by the PduR.
+Length of the buffer.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>255</MAX>
+													<MIN>1</MIN>
+												</INTEGER-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: PduRApplicationAccess -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:17b112aa-2618-44c2-98f2-d60cba6d7b3f">
+									<SHORT-NAME>PduRApplicationAccess</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Provides Rx and Tx PDUs that can be accessed by the application directly from the PDU Router. 
+For any Rx and Tx PDU the reference to the global PDU and the PDU ID has to be specified.
+This feature is an optional Vector Informatik extension to the AUTOSAR standard. Please note that this feature can only be used if it has been licensed in the configuration tool.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+									<SUB-CONTAINERS>
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:f81a56b6-d01f-4678-8efa-99b65750a856">
+											<SHORT-NAME>PduRApplicationPdu</SHORT-NAME>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+											<SUB-CONTAINERS>
+												<CHOICE-CONTAINER-DEF UUID="DCE:6c551e46-efea-491a-9ba1-e6c3a61c75be">
+													<SHORT-NAME>PduRApplicationPduType</SHORT-NAME>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<CHOICES>
+														<PARAM-CONF-CONTAINER-DEF UUID="DCE:ed7a9a7d-4bf1-4ed6-8345-c553e6e0a4d1">
+															<SHORT-NAME>PduRRxIfApplicationPdu</SHORT-NAME>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+															<PARAMETERS>
+																<INTEGER-PARAM-DEF UUID="DCE:c8af54cb-0f2f-40b8-92ad-9353462937d2">
+																	<SHORT-NAME>PduRHandleId</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Handle ID that is used by the application to access this PDU. The handle space must be contineous and zero based.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>0</DEFAULT-VALUE>
+																	<MAX>65535</MAX>
+																	<MIN>0</MIN>
+																</INTEGER-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="DCE:b717c871-dde6-439c-bfd6-1a85aec7004a">
+																	<SHORT-NAME>PduRPduRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Reference to the global PDU. Establishes a link to the PduRRoutingPaths source interface layer I-PDU.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="DCE:8aeff54a-2ee1-4d63-85f8-3c67eb91b2ce">
+															<SHORT-NAME>PduRTxIfApplicationPdu</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">The handle ID of this routing path is configured by the related PduRRoutingPath that can be found by means of the </L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+															<PARAMETERS>
+																<INTEGER-PARAM-DEF UUID="DCE:593d1ee7-b782-4404-b1ef-262e33d85001">
+																	<SHORT-NAME>PduRHandleId</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Handle ID that is used by the application to access this PDU. The handle space must be contineous and zero based.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>0</DEFAULT-VALUE>
+																	<MAX>65535</MAX>
+																	<MIN>0</MIN>
+																</INTEGER-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="DCE:af6ed378-d6ac-49d4-9e88-837f1450cd09">
+																	<SHORT-NAME>PduRPduRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Reference to the global PDU. Establishes a link to the PduRRoutingPaths destination interface layer PDU.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="DCE:3ec81d7f-9f04-456b-bd2f-d43079fdee41">
+															<SHORT-NAME>PduRRxTpApplicationPdu</SHORT-NAME>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+															<PARAMETERS>
+																<INTEGER-PARAM-DEF UUID="DCE:0809e53a-42b3-4b15-9380-ccff06927cc0">
+																	<SHORT-NAME>PduRHandleId</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Handle ID that is used by the application to access this PDU. The handle space must be contineous and zero based.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>0</DEFAULT-VALUE>
+																	<MAX>65535</MAX>
+																	<MIN>0</MIN>
+																</INTEGER-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="DCE:1ec67d87-fabe-42e8-857a-c8c5e837a5a7">
+																	<SHORT-NAME>PduRPduRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Reference to the global PDU. Establishes a link to the PduRRoutingPaths source TP layer PDU. Please note that TP PDUs which have been referenced here must not be involved in any other routing path.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="DCE:60650c28-30ea-4a31-987a-4a9586e12032">
+															<SHORT-NAME>PduRTxTpApplicationPdu</SHORT-NAME>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+															<PARAMETERS>
+																<INTEGER-PARAM-DEF UUID="DCE:f96e5e13-22f5-42a8-83fd-c80482b83fda">
+																	<SHORT-NAME>PduRHandleId</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Handle ID that is used by the application to access this PDU. The handle space must be contineous and zero based.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>0</DEFAULT-VALUE>
+																	<MAX>65535</MAX>
+																	<MIN>0</MIN>
+																</INTEGER-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="DCE:e0f59f71-51d8-4c9a-a918-9eec413e8cf9">
+																	<SHORT-NAME>PduRPduRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Reference to the global PDU. Establishes a link to the PduRRoutingPaths destination TP layer PDU. Please note that TP PDUs which have been referenced here must not be involved in any other routing path.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+													</CHOICES>
+												</CHOICE-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:4135f552-ee4e-4540-90c8-ff56b96fccea">
+							<SHORT-NAME>VectorCommonData</SHORT-NAME>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="DCE:59fd8ee4-7343-44b4-94e0-1381547aaa77">
+									<SHORT-NAME>BswmdVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Version of the BSWMD file that has been used to set up the ECU configuration</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>NO-AFFECT</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>3.20.02</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<MODULE-CONFIGURATION UUID="DCE:39fe8d84-de15-4cd7-96c6-78004fd7bb56">
+					<SHORT-NAME>PduR_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/PduR</DEFINITION-REF>
+					<CONTAINERS/>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="DCE:dae2777f-f83f-490e-a6f1-8b7d49ac2a86">
+					<SHORT-NAME>PduR_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/PduR</DEFINITION-REF>
+					<CONTAINERS/>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/3.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.0.1 AUTOSAR.xsd">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:9ffa7458-25e5-46ee-a2fb-f3aac4b54353">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-CONFIGURATION UUID="30f52c92-a013-4dc9-942c-e188bedb3673">
+					<SHORT-NAME>Xcp_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Xcp</DEFINITION-REF>
+					<CONTAINERS>
+						<CONTAINER UUID="c4eaa34d-6d57-42d5-9629-98ba29d633e4">
+							<SHORT-NAME>XcpGeneral</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Xcp/XcpGeneral</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Xcp/XcpGeneral/XcpUseAsrFileNames</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>				
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

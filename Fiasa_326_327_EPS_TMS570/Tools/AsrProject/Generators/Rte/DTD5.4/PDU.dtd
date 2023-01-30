@@ -1,0 +1,45 @@
+<!-- Entities -->
+
+<!ENTITY ti.PDU             "PDU">
+<!ENTITY ti.Signal          "Signal">
+<!ENTITY ti.SignalGroup     "SignalGroup">
+
+<!-- Elements -->
+
+<!ELEMENT PDU                  (%C.DefAttr;,ATTRLink*, GenAttrList?, MappedPDUSignal*, MappedPDUSignalGroup*, SignalGroupLink*)>
+<!ELEMENT MappedPDUSignal      (ATTRLink*)>
+<!ELEMENT MappedPDUSignalGroup (ATTRLink*)>
+
+<!ATTLIST PDU
+	      %A.ConfigItem; 
+          ByteOrder         (Motorola|Intel) "Motorola"
+          BitLength         CDATA "0"
+          PDUType           (None|SignalIPDU|DcmIPDU|NmPDU|DataNPDU|FlowControlNPDU) "None"
+          AppType           (None|App|Nm|DiagState|DiagRequest|DiagResponse|TPL|Other|XCPPreConfigured|XCPRuntimeConfigured|Service|BAP) "None"
+          BitPattern        CDATA ""
+>
+
+<!ATTLIST MappedPDUSignal   %A.ChildItem;
+          SignalLink        NMTOKEN #FIXED "&ti.Signal;"
+          StartBit          CDATA "0"
+          UpdateBitPosition CDATA "-1"
+>
+
+<!ATTLIST MappedPDUSignalGroup   %A.ChildItem;
+          SignalGroupLink   NMTOKEN #FIXED "&ti.SignalGroup;"
+          UpdateBitPosition CDATA "-1"
+          ComSignalName     CDATA ""
+          MappingId         CDATA ""
+>
+
+<!-- Links -->
+<!ELEMENT PDULink EMPTY>
+<!ATTLIST PDULink %A.LinkGUID;
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.PDU;"
+          %A.LinkName; CDATA ""
+>
+
+

@@ -1,0 +1,33 @@
+<!-- Entities -->
+
+<!ENTITY ti.ModeDclr               "ModeDclr">
+<!ENTITY ti.ModeDclrGroup          "ModeDclrGroup">
+<!ENTITY ti.ModeDclrGroupPrototype "ModeDclrGroupPrototype">
+
+<!-- Elements -->
+
+<!ELEMENT ModeDclr               (%C.DefAttr;)>
+<!ELEMENT ModeDclrGroup          (%C.DefAttr;,ATTRLink*,ModeDclr+)>
+<!ELEMENT ModeDclrGroupPrototype (%C.DefAttr;,ATTRLink*)>
+
+<!ATTLIST ModeDclrGroup
+          %A.ConfigItem;
+          InitialModeLink   NMTOKEN #FIXED "&ti.ModeDclr;"
+          BSWModule                 CDATA ''
+>
+
+<!ATTLIST ModeDclrGroupPrototype
+          %A.ChildItem;
+          RefMDGroupLink    NMTOKEN #FIXED "&ti.ModeDclrGroup;"
+>
+
+<!-- Links -->
+
+<!ELEMENT ModeDclrLink EMPTY>
+
+<!ATTLIST ModeDclrLink 
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.ModeDclr;"
+          %A.LinkName; CDATA ""
+>

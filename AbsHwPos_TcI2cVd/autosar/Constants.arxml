@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/3.1.4 autosar_314_ext.xsd" xmlns="http://autosar.org/3.1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>Constant</SHORT-NAME>
+			<ELEMENTS>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_2MS_SEC_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+								<SD GID="DV_ReadOnly">1</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_2MS_SEC_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>0.002</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_FALSE_CNT_LGC</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<BOOLEAN-LITERAL>
+							<SHORT-NAME>D_FALSE_CNT_LGC</SHORT-NAME>
+							<TYPE-TREF DEST="BOOLEAN-TYPE">/DataType/Boolean</TYPE-TREF>
+							<VALUE>false</VALUE>
+						</BOOLEAN-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_MANUFMODEINIT_CNT_ENUM</SHORT-NAME>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_MANUFMODEINIT_CNT_ENUM</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/ManufModeType</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ZERO_CNT_U16</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ZERO_CNT_U16</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt16</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ZERO_CNT_U8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ZERO_CNT_U8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ZERO_ULS_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_ZERO_ULS_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>DaVinci</SHORT-NAME>
+			<ELEMENTS/>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

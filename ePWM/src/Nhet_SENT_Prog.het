@@ -1,0 +1,403 @@
+;************************************************************************
+;                      NEXTEER AUTOMOTIVE
+;************************************************************************
+
+
+; ***********************************************************************
+;*  Target:		Hercules Champion				*
+;*  References:		34B-ePWM and NHET Timer Subsystems FDD		*
+;*  Scope :		N2HET1 					        *
+;*  N2HET1 read A1343 sensors & store SENT data into N2HET1 RAM buffer  *
+;*  N2HET1 trigger SPI50, SPI1m and SYNC signal				*
+;*	N2HET1 SENT Trigger, SENT Function Implementation		*
+;************************************************************************
+
+;************************************************************************
+;* Revision History							*
+;* 1.0.0  07-08-2013, Keyur Patel 					*
+;* 	SENT code base from Future Eng input, Architecture 2.5 for  	*
+;*	SPI/SYNC & 7.0 code structure					* 
+;* 1.0.1 07-18-2013, Keyur Patel					*
+;* 	Phase1+ SENT Function 						*
+;* 1.0.2 09/20/2013, Keyur Patel					*
+;* 	Sync Function Test in progress					*
+;* 1.0.3 10/14/2013, Keyur Patel					*
+;* 	DMA Initiate Review						*
+;* 1.0.4 10/29/2013, Keyur Patel					*
+;* 	SENT Logic Fix (DMA Assignment corrected)			*
+;* 1.0.5 11/19/2013, Keyur Patel					*
+;* 	Sync Pulse OFF with Dither OFF periodic issue corrected		*
+;* 2.0.0 12/03/2013, Keyur Patel					*
+;*  resolve denominator zero issue with bufffer data by hr data 1	*
+;*	Release Phase 2 code						*
+;* 2.0.1 3/28/2013, Keyur Patel						*
+;*  remove blankingwindow off timing from period calculation 		*
+;* 2.0.2 8/18/2014, Keyur Patel						*
+;*  remove SPI50 offset & SPI2m calculation Error : Anomaly : 7195	*
+;* 2.0.3 10/7/2014, Keyur Patel						*
+;*  T roll-over issue : Anomaly : 7229					*
+;************************************************************************
+
+;************************************************************************
+
+;************************************************************************
+; NOTE: This Nhet Code Design considering worst case period 1KHz.T Roll	*	 
+; over limit need to change if worst case period over goes below 1KHz	*
+;************************************************************************
+
+;**********************  NHET SETUP *************************************
+;* VCLK2 = 80MHz							*
+;* HR = 80MHz (VCLK2/X) [hr=1]						*
+;* LR = 128 => 625 KHz (HR_clk/YY) = 1.6uS 				*
+;* Number of time slots = 128						*
+;************************************************************************
+
+; ********************* Working Register Useage Chart *******************
+; Reg A - Pulse Width Count [SENT]					*
+; Reg B - Pulse Counter							*
+; Reg R - Temporary Data Buffer [SENT]					*
+; Reg S - calulation [SPI_SYNC] 					*	
+; Reg T - Globle Register						*
+;************************************************************************
+
+;***********
+;* EQUATES *
+;***********
+
+; **********************  Globle Equates - START ****************
+
+;* N2HET1 Channels / Pins *
+SACRIFICIAL_PIN		.equ	26 ; pin we use for 'no pin' ECMP instructions, block other HR uses 
+
+;* Constants *
+DUMMY			.equ 	0  ; DUMMY Use in Instruction only.
+MAX_LR			.equ 	0x1FFFFFF ; max value 	
+RollOverMax		.equ	0x1FFFD8E ; max T toll over limit = [0x1FFFFFF (maxLR) - 625 LR (1KHz)], Assuming Worst case period 1 KHz. 
+
+DMA_REQ4		.equ  	4  ; DMA Transfer Request Number
+HTU_REQ1		.equ  	1  ; HET Transfer Request Number
+HTU_REQ2		.equ  	2  ; HET Transfer Request Number
+
+; **********************  Globle Equates - END ******************
+
+
+; **********************  SPI ePWM SYNC Equates - START *********
+;* N2HET1 Channels / Pins *
+SPI50U_TRG		.equ	14 ; SPI 50U TRIGGER will set/reset pin N2HET1 [14], which trigger SPI 3
+SPI1m_TRG		.equ	18 ; SPI 1m TRIGGER will set/reset pin N2HET1 [18], which trigger SPI 5
+SYNCI_TRG		.equ	16 ; ePWM SYNCI trigger will set/reset pin N2HET1 [16], which trigger ePWM1
+
+;* Constants *
+
+
+; Signal Delays
+SPI50U_PDLY		.equ	2 ; SPI 50U trigger pulse is high for #*LR time period
+SPI1m_PDLY		.equ	2 ; SPI 1m trigger pulse is high for #*LR time period
+SYNCI_PDLY		.equ	2 ; ePWM SYNCI trigger pulse is high for #*LR time period
+
+; initial value for First Cycle 
+SPI50U			.equ	13
+SPI1m			.equ	15
+SYNCI			.equ	39
+BLKWND			.equ	37
+BLKWNDLast		.equ	41
+
+k_BLKWNDStartOff	.equ	1
+k_BLKWNDEndOff		.equ	4
+
+; R4 load this value initially
+k_SPI50UOFF		.equ	3  
+k_SPI1mOFF		.equ	2  
+
+
+; **********************  SPI ePWM SYNC Equates - END ***********
+
+; **********************  SENT Sensor Trigger Equates - START ******************
+
+Phy_DigT1SENTSync	.equ    12  	; Torque Channel 1 Sync Line 
+Phy_DigT2SENTSync	.equ    30  	; Torque Channel 2 Sync Line 
+
+;* Constants *
+k_2msLoopMax		.equ	1251	; Higher Threshold level for 2ms level from this counter will reset = 2.001ms = 2ms (1250) + 1 LR loop
+k_2msLoopMin		.equ	0	; Lower Threshold level for 2ms level from this counter will reset
+ 
+k_SenSyncMin		.equ	15   	; Sync Trigger value from less this value trigger pulse won't reset 
+
+k_SenTrgMin		.equ	1147	; value should be around 1835, when Trigger pulse goes from high to low 
+k_SenTrgMax		.equ	1157	; value should be around 1850, when Trigger pulse goes from Low to high
+
+; **********************  SENT Sensor Trigger Equates - END ********************
+
+
+; **********************  SENT Equates - START ******************
+
+;* N2HET1 Channels / Pins *
+Phy_DigT1SENT        	.equ    10  ; Torque Channel 1 SENT Input Signal (SENT_TRQ1_A)
+Phy_DigT2SENT        	.equ    28  ; Torque Channel 2 SENT Input Signal (SENT_TRQ2_A)
+
+; **********************  SENT Equates - END ********************
+
+
+;*****************************************************************************
+;* * * * * * * * * * * * * * * H E T   L O O P * * * * * * * * * * * * * * * *
+;-----------------------------------------------------------------------------
+
+;----------  Basic Infrastructure- START -------------------------------------
+; Set up Low Resolution Timer Base - Use Register T 
+START: 	
+FRCTR:		CNT 	{ data=0, reg=T, max= 0x1FFFFFF }
+; ----------------------------------------------------------------------------
+
+;-----------------------  SPI ePWM SYNC Module Code - Starts -----------------
+
+;-----------------Infrastructure Counter Reach SPI 50U Check -------------
+SPI50U_CHK:	ECMP	{ next=SPI1m_CHK, cond_addr=SPI50U_DL_CHK, en_pin_action=ON, reg=T, pin=SPI50U_TRG, action=SET,  data= SPI50U,      hr_lr=HIGH } ; T=T+P/2-SPI50U_OFF, go to cond_addr, Pin HIGH	
+SPI50U_DL_CHK:  RADM64	{ next=SPI1m_CHK, cond_addr=SPI1m_CHK,     en_pin_action=ON, reg=T, pin=SPI50U_TRG, action=CLEAR,data=SPI50U_PDLY, hr_data=0, remote=SPI50U_CHK, comp_mode=ECMP } ; T=T+P/2-SPI50U_OFF+SPI50U_PDLY, go to cond addr, Pin LOW
+
+;-----------------Infrastructure Counter Reach SPI 1m Check --------------
+SPI1m_CHK:	ECMP	{ next=SYNCI_CHK, cond_addr=SPI1m_DL_CHK, en_pin_action=ON, reg= T, pin=SPI1m_TRG, action=SET,  data= SPI1m,     hr_lr=HIGH  } ;T=T+P/2-SPI1m_OFF, go to cond. add., Pin HIGH
+SPI1m_DL_CHK:	RADM64	{ next=SYNCI_CHK, cond_addr=SYNCI_CHK,    en_pin_action=ON, reg=T,  pin=SPI1m_TRG, action=CLEAR,data=SPI1m_PDLY, hr_data=0, remote=SPI1m_CHK, comp_mode=ECMP } ; T=T+P/2-SPI1m_OFF+SPI50U_PDLY, go to cond_addr, Pin Low
+
+;-----------------Infrastructure Counter Reach PWM SYNC Check ------------
+SYNCI_CHK:	ECMP	{ next=BLKWND_CHK, cond_addr=SYNCI_DL_CHK, en_pin_action=ON, reg= T, pin=SYNCI_TRG, action=SET, data= SYNCI, 	hr_lr=HIGH } ;T=T+Sync & go to cond.
+SYNCI_DL_CHK:	RADM64 	{ next=BLKWND_CHK, remote=SYNCI_CHK, en_pin_action=ON, cond_addr=BLKWND_CHK, pin=SYNCI_TRG, comp_mode=ECMP, action=CLEAR, reg=T, data=SYNCI_PDLY, hr_data=0} ; T=T+Sync+DL, go to cond_addr, Pin LOW
+
+;-----------------Infrastructure Counter Reach Blanking Window Check -----
+
+BLKWND_CHK:	MCMP  { next=BUF_RDY_FLAG,  cond_addr=BLKWNDLast_CHK,  en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=T, data=BLKWND }; T>= T+P-BlankingWindowstart, go to cond_addr
+
+;-----------------New period/Buffer Data Available Check -----------------
+BUF_RDY_FLAG:	DJZ   { next=START_DMA,    cond_addr=SPISync_END,  reg=NONE,  data=0 } ; If (DF != 0) {decrement ;goto next } else {go to cond_addr}
+START_DMA:	BR    { next=BUF_DATA_SET, cond_addr=BUF_DATA_SET, request=GENREQ,    reqnum=DMA_REQ4, event=NOCOND} ; 
+BUF_DATA_SET:	MOV32 { next=SPISync_END,  remote=BUFData_CHK,     reg=none,  data=1, type=IMTOREG&REM,  } ;
+
+;-------Infrastructure Counter Reach Blanking Window  last Cycle Check ---
+BLKWNDLast_CHK:	MCMP  { next=SPISync_END, cond_addr=SPI50U_BUF1, en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=T, data=BLKWNDLast } ;T= T+P+BlankingWindowEnd, go to cond_addr 
+
+; Transfer value from Buffer 1 (Relative Location to Working Buffer) -----
+SPI50U_BUF1:	MOV32 { next=SPI1m_BUF1, remote=SPI50U_ABS,  type=IMTOREG&REM, reg=none, data=k_SPI50UOFF }	; load the data SPI50B1_OFF for calc
+SPI1m_BUF1:	MOV32 { next=PRD_BUF1,   remote=SPI1m_ABS,   type=IMTOREG&REM, reg=none, data=k_SPI1mOFF }	; load the data SPI1mB1_OFF for calc  
+PRD_BUF1:	MOV32 { next=TRollOverMax_CHK,   remote=SPI_PRD_LD,   type=IMTOREG&REM, reg=S,    data=SYNCI }	; load the Period data to reg S
+
+;---------- T roll-over calculation protection  ------------------------------
+TRollOverMax_CHK:	MCMP  { next=PRD_CAL1, cond_addr=Reset_RegT, en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=T, data=RollOverMax } ;If T >=RollOverMax then go to cond_addr
+; retrive the last stored B value 
+Reset_RegT:	MOV32 	{ type=IMTOREG&REM,  remote=FRCTR ,reg=T,   data=0 };
+
+
+;----------Calculation From Relative to Absolute -------------------------
+
+;----------Period From Relative to Absolute ------------------------------
+PRD_CAL1:	SUB	{ remote=PRD_CAL,   src1=S, src2=IMM, dest=S, rdest=REM, data=k_BLKWNDEndOff } 	; load the Sync value to Reg S
+PRD_CAL:	RADM64 	{ remote=SYNCI_CHK, en_pin_action=ON, cond_addr=SYNCI_DL_CHK, pin=SYNCI_TRG, comp_mode=ECMP, action=SET, reg=T, data=SYNCI };
+
+BLKWND_CAL1:	SUB   { remote=BLKWNDST_CAL,  src1=S, src2=IMM, dest=NONE, rdest=REM, data=k_BLKWNDStartOff } 	; BLANKING WINDOW Start = SYNCI - k_BLKWNDStartOff
+BLKWND_CAL0:	ADD   { remote=BLKWNDEnd_CAL, src1=S, src2=IMM, dest=NONE, rdest=REM, data=k_BLKWNDEndOff   } 	; BLANKING WINDOW Start = SYNCI + k_BLKWNDEndOff
+
+;----------SPI50us Start From Relative to Absolute -----------------------
+SPI_PRD_LD:	MOV32 { next=PRD_MCAL,   type=IMTOREG, reg=S,    data=SYNCI }					; load the Period data to reg S
+PRD_MCAL:	ADD   { remote=SPI_CAL, src1=S, src2=ZERO, dest=NONE, rdest=REM, smode=LSR, scount=1, data=0} 	; period/2 for SPI 
+SPI_CAL:	ADD   { src1=T, src2=IMM, dest=S, data=0 } 							; calculates S <= T + Period/2  
+SPI_BLK_CAL:	SUB   { next=SPI50U_ABS, src1=S, src2=IMM, dest=S, rdest=NONE, data=k_BLKWNDEndOff }  		; SPI50U Start absolute: SPI50U_CHK <= SPI Rel - k_BLKWNDEndOff
+
+SPI50U_ABS:	SUB   { remote=SPI50U_M, src1=S, src2=IMM, dest=NONE, rdest=REM, data=k_SPI50UOFF }  		; SPI50U Start relative: SPI50U_CHK <= S - k_SPI50UOFF
+SPI50U_M:   	MOV64 { remote=SPI50U_CHK, en_pin_action=ON, cond_addr=SPI50U_DL_CHK, pin=SPI50U_TRG, comp_mode=ECMP, action=SET, reg=T, data=0} ; 
+
+;----------SPI1m Start From Relative to Absolute -------------------------
+SPI1m_ABS:	SUB   { remote=SPI1m_M, src1=S, src2=IMM, dest=NONE, rdest=REM, data=k_SPI1mOFF } 		; SPI1m_CHK <= S - SPI1m 
+SPI1m_M:   	MOV64 { remote=SPI1m_CHK, en_pin_action=ON, cond_addr=SPI1m_DL_CHK, pin=SPI1m_TRG, comp_mode=ECMP, action=SET, reg=T, data=0} ;64 for toggle
+
+;----------Blanking Window Start From Relative to Absolute ---------------
+BLKWNDST_CAL:	ADM32 {	remote=BLKWND_CHK,     type=IM&REGTOREM, reg=T, data=0, hr_data=0 };
+BLKWNDEnd_CAL:	ADM32 { remote=BLKWNDLast_CHK, type=IM&REGTOREM, reg=T, data=0, hr_data=0 };
+
+
+;-----------------Buffer Data Received Check -----------------------------
+BUFData_CHK:	DJZ	{ next=SPISync_END, cond_addr=MISSED_UPDATE, reg=NONE, data=0 } ; If (DF != 0) {decrement ;goto next } else {go to cond_addr}
+
+;----------------- Count Missed Buffer Data Available Opportunity  -------
+MISSED_UPDATE:	CNT	{ reg=none, data=0, max=0x1FFFFFF };
+SPISync_END:	MOV32	{ type= IMTOREG, reg= NONE, data=0 }
+
+;-----------------------  SPI ePWM SYNC Module Code - Ends   --------------
+
+;-----------------------  SENT Sensor Trigger Code - Starts ---------------
+
+SYNCNTSAVE:	MOV32	{ type=IMTOREG,  reg=A,   data=0 };
+
+SYNCCTR:	CNT	{ data=k_2msLoopMin, reg=A, max=k_2msLoopMax }; Counter reset when it reaches to max
+
+SYNCRST:	DJZ	{ next=SYNCMIN, cond_addr=T1TRGMIN, reg=NONE, data=0 }; if SYNCRST !=0 {decrement ;goto next } else {go to cond_addr}
+
+; When the Sync Flag detected, it checks the value w.r.t. Sync Min, if Sync Counter >= Sync Min then reset 2ms time line
+SYNCMIN:	MCMP 	{ next=T1TRGMIN,  cond_addr=SYNCNTRST,  en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=A, data=k_SenSyncMin, hr_data=0 };
+
+; if Counter value outside of Min - Max range, do nothing (Check for Pin Trigger Logic) or else reset counter
+SYNCNTRST:	MOV32	{ remote=SYNCCTR, data=k_2msLoopMin, type=IMTOREG&REM, reg=A };
+
+;Here is Pin Set for both
+T1TRGSET:	ECMP	{ next=T2TRGSET, cond_addr=T2TRGSET, en_pin_action=ON, reg= NONE, pin=Phy_DigT1SENTSync, action=SET, data=k_2msLoopMin, hr_lr=LOW  }; 
+T2TRGSET:	ECMP	{ next=TSYNCEND, cond_addr=TSYNCEND, en_pin_action=ON, reg= NONE, pin=Phy_DigT2SENTSync, action=SET, data=k_2msLoopMin, hr_lr=LOW  }; 
+
+; Here is Pin clear for both
+T1TRGMIN:	ECMP	{ next=T2TRGMIN, cond_addr=T2TRGMIN, en_pin_action=ON, reg= A, pin=Phy_DigT1SENTSync, action=CLEAR, data=k_SenTrgMin, hr_lr=LOW  }; 
+T2TRGMIN:	ECMP	{ next=T1TRGMAX, cond_addr=T1TRGMAX, en_pin_action=ON, reg= A, pin=Phy_DigT2SENTSync, action=CLEAR, data=k_SenTrgMin, hr_lr=LOW  }; 
+
+;Here is Pin Set for both
+T1TRGMAX:	ECMP	{ next=T2TRGMAX, cond_addr=T2TRGMAX, en_pin_action=ON, reg= A, pin=Phy_DigT1SENTSync, action=SET, data=k_SenTrgMax, hr_lr=LOW  }; 
+T2TRGMAX:	ECMP	{ next=TSYNCEND, cond_addr=TSYNCEND, en_pin_action=ON, reg= A, pin=Phy_DigT2SENTSync, action=SET, data=k_SenTrgMax, hr_lr=LOW  }; 
+
+TSYNCEND:	MOV32 	{ remote=SYNCNTSAVE,  type=REGTOREM,   reg=A  };
+ 
+;-----------------------  SENT Sensor Trigger Code - END ------------------
+
+
+;-----------------------  SENT Sensor Read Module Code - Starts -----------
+
+;--- Sensor 1 Reading ---
+
+; The SENT Pulse Capture from Fall 2 fall 
+T1SPCAP:  	PCNT    { control=ON, pin=Phy_DigT1SENT, type=FALL2FALL, hr_lr=HIGH, data=0};
+
+; Branch to T1END if Z is NOT SET, indicating this is not a new value on T1
+T1BR:           BR      { next=T1STOREREG, cond_addr=T1END, event=NZ};          
+
+; move PCNT value to working register for sync pulse identification calculation 
+T1STOREREG:  	MOV32   { remote= T1SPCAP,   type= REMTOREG,  reg= R };
+
+; retrive the last stored B value 
+T1RESTREGB:	MOV32 	{ type=IMTOREG,  reg=B,   data=0 };
+
+; load the Register A value with previous stored value, so A can be re-use.
+T1MSGREGA:	MOV32 	{ type=IMTOREG,  reg=A,   data=0 };
+
+; Identify "synch" Pulse is smaller than Min Value
+T1SYNCMinDet:  	MCMP 	{ next=T1FPLSDT, cond_addr=T1SYNCMaxDet, en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=R, data=0xE, hr_data=0 };
+
+; If Field counter >=1 then don't check sync
+T1FPLSDT:  	MCMP 	{ next=T1END, cond_addr=T1FLDCNT, en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=B, data=1 };
+
+; Identify "Synch" Pulse is greater than Max value
+T1SYNCMaxDet:	MCMP 	{ next=T1MSGCNTLDST, cond_addr=T1END, en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=R, data=0x15, hr_data=0 };
+
+; Load the First Bookend Location with Msg Count + 1
+T1MSGCNTLDST:	ADD     { remote=T1MSGCNTST, src1=A, src2=IMM, dest=NONE, rdest=REM, data=1 };
+
+;Reset Counter to zero 
+T1RSTREGB:	MOV32 	{ remote=T1FLDCNT,   type= IMTOREG&REM,  reg=B,   data=0 };	
+
+;Frame Field Count detect
+T1FLDCNT: 	CNT     { reg=B, comp=GE, max=6, data=0};
+
+; Restore Register B in case B required to reuse in other module
+T1RESTREGB1:	MOV32 	{ next=T1SyncB1, remote=T1RESTREGB,  type=REGTOREM,   reg=B  };
+
+; Buffer area for 6 pusles
+T1MSGCNTST:	MOV32	{ remote= T1MSGCNTST, type= IMTOREG&REM, reg= NONE, data=0 };
+T1SyncB1:	MOV32	{ remote= T1SyncB1,   type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };	
+T1StatB2:	MOV32	{ remote= T1SyncB1,   type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };
+T1D0B3:		MOV32	{ remote= T1StatB2,   type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };	
+T1D1B4:		MOV32	{ remote= T1D0B3,     type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };
+T1D2B5:		MOV32	{ remote= T1D1B4,     type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };
+T1CrcB6:	MOV32	{ next=T1STOREREGB0,  remote= T1D2B5,    type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };
+T1MSGCNTED:	MOV32	{ remote= T1MSGCNTED, type= IMTOREG&REM, reg= NONE, data=0 };  	; load the MSG Count into Register
+
+T1STOREREGB0:	MOV32	{ remote= T1CrcB6,    type= REGTOREM,    reg= R,    data=0 };
+
+;Check if entire frame all CRC completes 
+T1FRMCMP:  	MCMP 	{ next=T1END, cond_addr=T1MSGCNT, en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=B, data=6};
+
+;T1 Msg Counter
+T1MSGCNT:	CNT	{ reg=A, data=0, max= 0x1FFFFFF };
+
+; load the MSG Count to start of frame and end of frame to conform data consistancy
+T1MSGCNTLDED0:	MOV32	{ remote= T1MSGCNTED,  type= REGTOREM,    reg= A,    data=0 };
+T1MSGCNTLD:	MOV32	{ remote= T1MSGREGA,   type= REGTOREM,    reg= A,    data=0 };
+
+; Generate the HTU request on HTU 1 for capture all data
+T1HTUCAP:   	BR 	{ next=T1RESTREGB2, cond_addr=T1RESTREGB2, reqnum=HTU_REQ1,  request=GENREQ,  pin=SACRIFICIAL_PIN, event=NOCOND  };
+
+; reset FLD Count and register value set to 0
+T1RESTREGB2:	MOV32 	{ remote=T1FLDCNT,  type=IMTOREG&REM,   reg=NONE,  data=0 };
+T1RESTREGB3:	MOV32 	{ remote=T1RESTREGB,  type=IMTOREG&REM, reg=NONE,  data=0 };
+
+T1END: 		MOV32	{ remote= T1END, type= IMTOREG&REM, reg= NONE, data=0 }
+
+;--- Sensor 2 Reading ---
+
+; The SENT Pulse Capture from Fall 2 fall 
+T2SPCAP:  	PCNT    { next=T2BR, control=ON, pin=Phy_DigT2SENT, type=FALL2FALL, hr_lr=HIGH, data=0};
+
+; Branch to T1END if Z is NOT SET, indicating this is not a new value on T1
+T2BR:           BR      { next=T2STOREREG, cond_addr=T2END, event=NZ}          
+
+; move PCNT value to working register for sync pulse identification calculation 
+T2STOREREG:  	MOV32   { remote= T2SPCAP,   type= REMTOREG,  reg= R };
+
+; retrive the last stored B value 
+T2RESTREGB:	MOV32 	{ type=IMTOREG,  reg=B,   data=0 };
+
+; load the Register A value with previous stored value, so A can be re-use.
+T2MSGREGA:	MOV32 	{ type=IMTOREG,  reg=A,   data=0 };
+
+; Identify "synch" Pulse is smaller than Min Value
+T2SYNCMinDet:  	MCMP 	{ next=T2FPLSDT, cond_addr=T2SYNCMaxDet, en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=R, data=0xE, hr_data=0 };
+
+; If Field counter >=1 then don't check sync
+T2FPLSDT:  	MCMP 	{ next=T2END, cond_addr=T2FLDCNT, en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=B, data=1 };
+
+; Identify "Synch" Pulse is greater than Max value
+T2SYNCMaxDet:	MCMP 	{ next=T2MSGCNTLDST, cond_addr=T2END, en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=R, data=0x15, hr_data=0 };
+
+; Load the First Bookend Location with Msg Count + 1
+T2MSGCNTLDST:	ADD     { remote=T2MSGCNTST, src1=A, src2=IMM, dest=NONE, rdest=REM, data=1 };
+
+;Reset Counter to zero 
+T2RSTREGB:	MOV32 	{ remote=T2FLDCNT,   type= IMTOREG&REM,  reg=B,   data=0 };	
+
+;Frame Field Count detect
+T2FLDCNT: 	CNT     { reg=B, comp=GE, max=6, data=0};
+
+; Restore Register B in case B required to reuse in other module
+T2RESTREGB1:	MOV32 	{ next=T2SyncB1, remote=T2RESTREGB,  type=REGTOREM,   reg=B  };
+
+; Buffer area for 6 pusles
+T2MSGCNTST:	MOV32	{ remote= T2MSGCNTST, type= IMTOREG&REM, reg= NONE, data=0 };
+T2SyncB1:	MOV32	{ remote= T2SyncB1,   type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };	
+T2StatB2:	MOV32	{ remote= T2SyncB1,   type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };
+T2D0B3:		MOV32	{ remote= T2StatB2,   type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };	
+T2D1B4:		MOV32	{ remote= T2D0B3,     type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };
+T2D2B5:		MOV32	{ remote= T2D1B4,     type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };
+T2CrcB6:	MOV32	{ next=T2STOREREGB0,  remote= T2D2B5,    type= IMTOREG&REM, reg= NONE, data=0, hr_data=1 };
+T2MSGCNTED:	MOV32	{ remote= T2MSGCNTED, type= IMTOREG&REM, reg= NONE, data=0 };  	; load the MSG Count into Register
+
+T2STOREREGB0:	MOV32	{ remote= T2CrcB6,    type= REGTOREM,    reg= R,    data=0 };
+
+;Check if entire frame all CRC completes 
+T2FRMCMP:  	MCMP 	{ next=T2END, cond_addr=T2MSGCNT, en_pin_action=OFF, pin=SACRIFICIAL_PIN, order=REG_GE_DATA, reg=B, data=6};
+
+;T1 Msg Counter
+T2MSGCNT:	CNT	{ reg=A, data=0, max= 0x1FFFFFF };
+
+; load the MSG Count to start of frame and end of frame to conform data consistancy
+T2MSGCNTLDED:	MOV32	{ remote= T2MSGCNTED,  type= REGTOREM,    reg= A,    data=0 };
+T2MSGCNTLD:	MOV32	{ remote= T2MSGREGA,   type= REGTOREM,    reg= A,    data=0 };
+
+; Generate the HTU request on HTU 1 for capture all data
+T2HTUCAP:   	BR 	{ next=T2RESTREGB2, cond_addr=T2RESTREGB2, reqnum=HTU_REQ2,  request=GENREQ,  pin=SACRIFICIAL_PIN, event=NOCOND };
+
+; reset FLD Count and register value set to 0
+T2RESTREGB2:	MOV32 	{ remote=T2FLDCNT,  type=IMTOREG&REM,   reg=NONE,  data=0 };
+T2RESTREGB3:	MOV32 	{ remote=T2RESTREGB,  type=IMTOREG&REM, reg=NONE,  data=0 };
+
+T2END:		MOV32	{ remote= T2END, type= IMTOREG&REM, reg= NONE, data=0 }
+;-----------------------  SENT Sensor Read Module Code - Ends   -----------
+
+;----------  Basic Infrastructure- END  -----------------------------------
+END:		BR	{ next=START, cond_addr=START, event= NOCOND}  ; could be removed when program is frozen
+; -------------------------------------------------------------------------
+
+
+
+
+

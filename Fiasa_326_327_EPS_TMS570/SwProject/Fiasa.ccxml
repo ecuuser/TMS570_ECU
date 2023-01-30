@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations XML_version="1.2" id="configurations_0">
+    <configuration XML_version="1.2" id="configuration_0">
+        <instance XML_version="1.2" desc="Spectrum Digital XDS510USB Emulator" href="connections/SD510USB_Connection.xml" id="Spectrum Digital XDS510USB Emulator" xml="SD510USB_Connection.xml" xmlpath="connections"/>
+        <connection XML_version="1.2" id="Spectrum Digital XDS510USB Emulator">
+            <instance XML_version="1.2" href="drivers/sdgoicepickusb_c.xml" id="drivers" xml="sdgoicepickusb_c.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/sdgocs_dapusb.xml" id="drivers" xml="sdgocs_dapusb.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/sdgocortexRusb.xml" id="drivers" xml="sdgocortexRusb.xml" xmlpath="drivers"/>
+            <platform XML_version="1.2" id="platform_0">
+                <instance XML_version="1.2" desc="TMS570LS2125" href="devices/tms570ls2125.xml" id="TMS570LS2125" xml="tms570ls2125.xml" xmlpath="devices"/>
+            </platform>
+        </connection>
+    </configuration>
+</configurations>

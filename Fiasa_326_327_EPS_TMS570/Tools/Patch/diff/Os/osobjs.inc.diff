@@ -1,0 +1,55 @@
+--- ..\..\..\..\SwProject\Source\GenDataOS\osobjs.inc.bak	2013-10-25 10:23:28.063019900 -0400
++++ ..\..\..\..\SwProject\Source\GenDataOS\osobjs.inc	2013-10-25 10:27:12.228019900 -0400
+@@ -6,14 +6,22 @@
+ /* Version of general code: 5.23c */
+ 
+      . = align(16384);   /* align to region size 16384 */
+-     *(.ossDataAp_9:noinit) {START(_ossAppluDataStartAp_9), SIZE(_ossAppluDataSizeAp_9)}
++     _ossAppluDataStartAp_9=.;
++     /* Nexteer patch for TypeH Data */
++     *(.ossDataAp_9:noinit:typeH) {START(Lnk_TypeH9_Start), SIZE(Lnk_TypeH9_Size)}
++     *(.ossDataAp_9:noinit)
+      _ossAppluDataEndAp_9=.;
++     _ossAppluDataSizeAp_9 = _ossAppluDataEndAp_9 - _ossAppluDataStartAp_9 + 1;
+      . = . + 1;
+      . = align(16384); /* Use 8 subregions with size 2048*/
+ 
+      . = align(8192);   /* align to region size 8192 */
+-     *(.ossDataAp_10:noinit) {START(_ossAppluDataStartAp_10), SIZE(_ossAppluDataSizeAp_10)}
++     _ossAppluDataStartAp_10=.;
++     /* Nexteer patch for TypeH Data */
++     *(.ossDataAp_10:noinit:typeH) {START(Lnk_TypeH10_Start), SIZE(Lnk_TypeH10_Size)}
++     *(.ossDataAp_10:noinit)
+      _ossAppluDataEndAp_10=.;
++     _ossAppluDataSizeAp_10 = _ossAppluDataEndAp_10 - _ossAppluDataStartAp_10 + 1;
+      . = . + 1;
+      . = align(8192); /* Use 8 subregions with size 1024*/
+ 
+@@ -30,8 +39,12 @@
+      . = align(2048); /* Use 8 subregions with size 256*/
+ 
+      . = align(1024);   /* align to region size 1024 */
+-     *(.ossDataAp_8:noinit) {START(_ossAppluDataStartAp_8), SIZE(_ossAppluDataSizeAp_8)}
++     _ossAppluDataStartAp_8=.;
++     /* Nexteer patch for TypeH Data */
++     *(.ossDataAp_8:noinit:typeH) {START(Lnk_TypeH8_Start), SIZE(Lnk_TypeH8_Size)}
++     *(.ossDataAp_8:noinit)
+      _ossAppluDataEndAp_8=.;
++     _ossAppluDataSizeAp_8 = _ossAppluDataEndAp_8 - _ossAppluDataStartAp_8 + 1;
+      . = . + 1;
+      . = align(1024); /* Use 8 subregions with size 128*/
+ 
+@@ -246,8 +259,12 @@
+      . = align(256); /* Use 8 subregions with size 32*/
+ 
+      . = align(0);   /* align to region size 0 */
+-     *(.ossDataAp_0:noinit) {START(_ossAppluDataStartAp_0), SIZE(_ossAppluDataSizeAp_0)}
++     _ossAppluDataStartAp_0=.;
++     /* Nexteer patch for TypeH Data */
++     *(.ossDataAp_0:noinit:typeH) {START(Lnk_TypeH0_Start), SIZE(Lnk_TypeH0_Size)}
++     *(.ossDataAp_0:noinit)
+      _ossAppluDataEndAp_0=.;
++     _ossAppluDataSizeAp_0 = _ossAppluDataEndAp_0 - _ossAppluDataStartAp_0 + 1;
+      . = . + 1;
+      . = align(0); /* Use no subregions */
+ 

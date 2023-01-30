@@ -1,0 +1,128 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/3.1.4'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/* Version Control:
+ * Date Created:      Fri Sep  21 08:20:17 2012
+ * %version:          1 %
+ * %derived_by:       nzx5jd %
+ * %date_modified:    Fri Jul 19 14:07:12 2013 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 09/03/11   1       JJW       Initial template creation
+ * 09/27/12   2       JJW       Addition of Global transition vector generation
+ * 01/04/13   3       JJW       Addition of Global transition Inital/Final style generation and outlines to all nodes
+ *								Updated generation looping process to ensure all checkpoint nodes are defined, regardless
+ *                              of whether they are used in a transition.
+ */
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "WdgM" ) ); #>
+digraph G {
+/* Specify a drawing size for 11x17 paper with 0.5 in margins */
+page="11,16";
+ranksep="0.2"; /* Reduce the separation between entities from default to reduce drawing size */
+
+<#	/* Create Dictionary of checkpoint attributes to be used for creating the graph */
+												        /*name  color */
+	Dictionary<string, string> CpColorDic = new Dictionary<string, string>();
+												        /*name  style */
+	Dictionary<string, string> CpStyleDic = new Dictionary<string, string>();
+#>
+<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMConfigSet" ) ) #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMMode" ) ) #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMAliveSupervision" ) ) #>
+<#
+	/* The dictionary is empty at this point, add all checkpoints that have alive supervision with the color attribute pink */
+	string cpName = RefValueOf(Xp.ValueRefAtDefRefTo( "WdgMAliveSupervisionCheckpointRef" ), ".//ar:SHORT-NAME");
+	
+	if(false == CpColorDic.ContainsKey(cpName)){ 
+		CpColorDic.Add(cpName, "pink");
+	}
+#>
+<# !ENDLOOP #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMProgramFlowSupervision" ) ) #>
+<#
+	/* The dictionary is empty at this point, add the Global supervision start with style "bold" and end with style "dashed" */
+	string cpName = RefValueOf(Xp.ValueRefAtDefRefTo( "WdgMGlobalCheckpointInitialRef" ), ".//ar:SHORT-NAME");
+	
+	if(false == CpStyleDic.ContainsKey(cpName)){ 
+		CpStyleDic.Add(cpName, "style=\"filled,bold\" color=darkgreen");
+	}
+	
+	cpName = RefValueOf(Xp.ValueRefAtDefRefTo( "WdgMGlobalCheckpointFinalRef" ), ".//ar:SHORT-NAME");
+	
+	if(false == CpStyleDic.ContainsKey(cpName)){ 
+		CpStyleDic.Add(cpName, "style=\"filled,dashed\" color=darkgreen");
+	}
+#>
+<# !ENDLOOP #>
+<# !ENDLOOP #>
+<# !ENDLOOP #>
+
+
+/* Supervised Entities */
+<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMGeneral" ) ) #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMSupervisedEntity" ) ) #>
+	subgraph cluster_<#=ValueOf( Xp.ValueAtDefRefTo( "WdgMSupervisedEntityId" ))#> {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+	<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMCheckpoint" ) ) #>
+	<#	string init_cp_name = ValueOf(".//ar:SHORT-NAME");
+		string nodeColor = "white";
+		string nodeStyle = "style=filled";
+		if(CpColorDic.ContainsKey(init_cp_name)){
+			nodeColor = CpColorDic[init_cp_name];
+		}
+		
+		if(CpStyleDic.ContainsKey(init_cp_name)){
+			nodeStyle = CpStyleDic[init_cp_name];
+		}
+	/* Append the chepoint id integer to the name displayed on the graph */
+		init_cp_name += "(" + ValueOf(".//ar:VALUE") +")";
+	#>
+		"<#=init_cp_name#>" [fillcolor=<#=nodeColor#>, <#=nodeStyle#>]/* Checkpoint */
+	<# !ENDLOOP #>
+	/* Local transition vectors */
+	<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMLocalTransition" ) ) #>
+	<#	string src_cp_name = RefValueOf(Xp.ValueRefAtDefRefTo( "WdgMLocalTransitionSourceRef" ), ".//ar:SHORT-NAME");
+		string dest_cp_name = RefValueOf(Xp.ValueRefAtDefRefTo( "WdgMLocalTransitionDestRef" ), ".//ar:SHORT-NAME");
+		string trans_lbl = ValueOf( "ar:SHORT-NAME" );
+		
+		string src_cp_id =RefValueOf(Xp.ValueRefAtDefRefTo("WdgMLocalTransitionSourceRef"), ".//ar:VALUE");
+		string dest_cp_id =RefValueOf(Xp.ValueRefAtDefRefTo("WdgMLocalTransitionDestRef"), ".//ar:VALUE");
+	#>
+		"<#=src_cp_name#>(<#=src_cp_id#>)" -> "<#=dest_cp_name#>(<#=dest_cp_id#>)" [ label="<#=trans_lbl#>" ];
+	<# !ENDLOOP #>
+	label = "<#=ValueOf( "ar:SHORT-NAME" )#>";
+	}
+<# !ENDLOOP #>
+<# !ENDLOOP #>
+/* Global Transition Vectors */
+		fontname=Helvetica
+		edge [color=darkgreen, style=dashed, fontname=Helvetica, fontcolor=darkgreen, fontsize=8];
+<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMConfigSet" ) ) #>
+/* WdgMConfigSet - <#=ValueOf( "ar:SHORT-NAME" )#> */
+<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMMode" ) ) #>
+	/* WdgMMode - <#=ValueOf( "ar:SHORT-NAME" )#> */
+<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMProgramFlowSupervision" ) ) #>
+		/* WdgMGlobalTransition - <#=ValueOf( "ar:SHORT-NAME" )#> */
+<# !LOOP( Xp.ContainerAtDefRefTo( "WdgMGlobalTransition" ) ) #>
+	<#	string src_cp_name = RefValueOf(Xp.ValueRefAtDefRefTo("WdgMGlobalTransitionSourceRef"), ".//ar:SHORT-NAME");
+		string dest_cp_name = RefValueOf(Xp.ValueRefAtDefRefTo("WdgMGlobalTransitionDestRef"), ".//ar:SHORT-NAME");
+		string trans_lbl = ValueOf( "ar:SHORT-NAME" );
+		
+		string src_cp_id =RefValueOf(Xp.ValueRefAtDefRefTo("WdgMGlobalTransitionSourceRef"), ".//ar:VALUE");
+		string dest_cp_id =RefValueOf(Xp.ValueRefAtDefRefTo("WdgMGlobalTransitionDestRef"), ".//ar:VALUE");;	
+	#>
+		"<#=src_cp_name#>(<#=src_cp_id#>)" -> "<#=dest_cp_name#>(<#=dest_cp_id#>)" [ label="<#=trans_lbl#>" ];
+<# !ENDLOOP #>
+<# !ENDLOOP #>
+<# !ENDLOOP #>
+<# !ENDLOOP #>
+
+
+}

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<AUTOSAR xmlns="http://autosar.org/3.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.0.1 AUTOSAR.xsd">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:91795653-8083-4d32-b1af-fb971e617c02">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-CONFIGURATION UUID="0ed47de4-cf9a-40a6-8f3c-44e2970e2a5d">
+					<SHORT-NAME>SchM_Rec</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">Configuration of the SchM (BSW Scheduler)  module.</L-2>
+					</DESC>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/SchM</DEFINITION-REF>
+					<IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+					<CONTAINERS>
+						<CONTAINER UUID="37e1e7f5-14a6-4582-bf18-8de7f1dd729f">
+							<SHORT-NAME>CanSM</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleLiteral</DEFINITION-REF>
+									<VALUE>CanSM</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleInclude</DEFINITION-REF>
+									<VALUE>CanSM_SchM.h</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleConfigVersion</DEFINITION-REF>
+									<VALUE>1.0.0</VALUE>
+								</STRING-VALUE>
+							</PARAMETER-VALUES>
+							<REFERENCE-VALUES>
+								<REFERENCE-VALUE>
+									<DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleImplementationRef</DEFINITION-REF>
+									<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/CanSM_Impl</VALUE-REF>
+								</REFERENCE-VALUE>
+							</REFERENCE-VALUES>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="5305bbba-c22c-43f4-a1f2-25150b62c6d7">
+									<SHORT-NAME>SCHM_CANSM_INSTANCE_0</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/SchMInstanceLiteral</DEFINITION-REF>
+											<VALUE>SCHM_CANSM_INSTANCE_0</VALUE>
+										</STRING-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="42d1a234-76c4-41f5-b298-e5bd25dc377c">
+											<SHORT-NAME>CANSM_EXCLUSIVE_AREA_0</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CANSM_EXCLUSIVE_AREA_0</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="ce10de20-e539-4d61-9be3-fdfabb8e722f">
+											<SHORT-NAME>CANSM_EXCLUSIVE_AREA_1</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CANSM_EXCLUSIVE_AREA_1</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="c9a030b9-8090-40a0-8357-3ccbf72b2336">
+											<SHORT-NAME>CANSM_EXCLUSIVE_AREA_2</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CANSM_EXCLUSIVE_AREA_2</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="12da188a-b7ae-4b22-bfd1-93df361d9a60">
+											<SHORT-NAME>CANSM_EXCLUSIVE_AREA_3</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CANSM_EXCLUSIVE_AREA_3</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="246cb93f-c383-4904-98a6-ab1ac43c9f6b">
+											<SHORT-NAME>CANSM_EXCLUSIVE_AREA_4</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CANSM_EXCLUSIVE_AREA_4</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="5960add5-87b4-49ed-9f61-e845e35bd5be">
+											<SHORT-NAME>CANSM_EXCLUSIVE_AREA_5</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CANSM_EXCLUSIVE_AREA_5</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+						<CONTAINER UUID="446ed0ec-2fba-4442-9fa0-332e5fdef85b">
+							<SHORT-NAME>CanSM_MainFunction</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMMainFunctionSymbol</DEFINITION-REF>
+									<VALUE>CanSM_MainFunction</VALUE>
+								</STRING-VALUE>
+							</PARAMETER-VALUES>
+							<REFERENCE-VALUES>
+								<REFERENCE-VALUE>
+									<DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMModuleRef</DEFINITION-REF>
+									<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/SchM_Rec/CanSM</VALUE-REF>
+								</REFERENCE-VALUE>
+							</REFERENCE-VALUES>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="92c83bb2-718e-428a-b656-8620b72176fa">
+									<SHORT-NAME>SchMBswEvent</SHORT-NAME>
+									<DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="74001189-30d2-4d86-8cfd-816d6c3da195">
+											<SHORT-NAME>SchMBswDerivedTimingEvent</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<FLOAT-VALUE>
+													<DEFINITION-REF DEST="FLOAT-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent/SchMMainFunctionPeriodParamScale</DEFINITION-REF>
+													<VALUE>1.0</VALUE>
+												</FLOAT-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent/SchMMainFunctionPeriodParamRef</DEFINITION-REF>
+													<VALUE>/MICROSAR/CanSM/CanStateManagerConfiguration/CanSMMainFctCycleTime</VALUE>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

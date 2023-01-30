@@ -1,0 +1,25 @@
+    /begin XCP_ON_CAN
+      0x0100 /*XCP on CAN version*/
+      CAN_ID_MASTER   0x00000695 /* CMD/STIM */
+      CAN_ID_SLAVE    0x000006e5 /* RES/ERR/EV/SERV/DAQ */
+      BAUDRATE        500000 /* BAUDRATE */ 
+      SAMPLE_POINT    81 /* SAMPLE_POINT */ 
+      SAMPLE_RATE     1 /* SAMPLE_RATE */ 
+      BTL_CYCLES      16 /* BTL_CYCLES */ 
+      SJW             3 /* length synchr. segment */ 
+      MAX_DLC_REQUIRED /* MAX_DLC_REQUIRED */ 
+      /begin PROTOCOL_LAYER
+        0x0100
+        0x07D0
+        0x2710
+        0
+        0
+        0
+        0
+        0
+        8
+        8
+        BYTE_ORDER_MSB_FIRST
+        ADDRESS_GRANULARITY_BYTE
+      /end PROTOCOL_LAYER
+    /end XCP_ON_CAN

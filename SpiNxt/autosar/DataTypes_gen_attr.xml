@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AttributeDefinition xsi:noNamespaceSchemaLocation="DaVinciEx_GenericAttributes_1_0.xsd" dvSchemaVersion="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<AttributeDefinitionTable Version="1.0" ID="{932D3FD0-2F6C-49BF-80CB-D1C3756D3868}">
+		<Attribute Name="AR_UUID_DataType" ObjectType="DataType">
+			<STRING Default=""></STRING>
+		</Attribute>
+	</AttributeDefinitionTable>
+	<ObjectAttributeReference ObjectType="DataType">
+		<ARObjectReference Type="ARRAY-TYPE" Reference="/DataType/Spi_DataPtr"></ARObjectReference>
+		<AttributeDefinitionTableRef Version="1.0" ID="{932D3FD0-2F6C-49BF-80CB-D1C3756D3868}"></AttributeDefinitionTableRef>
+	</ObjectAttributeReference>
+	<ObjectAttributeReference ObjectType="DataType">
+		<ARObjectReference Type="INTEGER-TYPE" Reference="/DataType/Spi_DataType"></ARObjectReference>
+		<AttributeDefinitionTableRef Version="1.0" ID="{932D3FD0-2F6C-49BF-80CB-D1C3756D3868}"></AttributeDefinitionTableRef>
+		<AttributeValue Name="AR_UUID_DataType" Value="uint8"></AttributeValue>
+	</ObjectAttributeReference>
+	<ObjectAttributeReference ObjectType="DataType">
+		<ARObjectReference Type="INTEGER-TYPE" Reference="/DataType/Spi_NumberOfDataType"></ARObjectReference>
+		<AttributeDefinitionTableRef Version="1.0" ID="{932D3FD0-2F6C-49BF-80CB-D1C3756D3868}"></AttributeDefinitionTableRef>
+		<AttributeValue Name="AR_UUID_DataType" Value="uint16"></AttributeValue>
+	</ObjectAttributeReference>
+	<ObjectAttributeReference ObjectType="DataType">
+		<ARObjectReference Type="INTEGER-TYPE" Reference="/DataType/Spi_ChannelType"></ARObjectReference>
+		<AttributeDefinitionTableRef Version="1.0" ID="{932D3FD0-2F6C-49BF-80CB-D1C3756D3868}"></AttributeDefinitionTableRef>
+		<AttributeValue Name="AR_UUID_DataType" Value="uint8"></AttributeValue>
+	</ObjectAttributeReference>
+	<ObjectAttributeReference ObjectType="DataType">
+		<ARObjectReference Type="INTEGER-TYPE" Reference="/DataType/Spi_SequenceType"></ARObjectReference>
+		<AttributeDefinitionTableRef Version="1.0" ID="{932D3FD0-2F6C-49BF-80CB-D1C3756D3868}"></AttributeDefinitionTableRef>
+		<AttributeValue Name="AR_UUID_DataType" Value="uint8"></AttributeValue>
+	</ObjectAttributeReference>
+</AttributeDefinition>

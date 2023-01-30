@@ -1,0 +1,52 @@
+/* Kernbauer Version: 2.04 Konfiguration: TMS570SafeCtx Erzeugungsgangnummer: 633 Zweig: 1 */
+
+/*****************************************************************************
+| Project Name: OIL 3.2
+|    File Name: TMS570LS3x.s32
+|
+|  General code: @Version: 5.23c@
+|  Module version: $vv$=1.04
+|
+|  Description: Definition of implementation specific standard objects
+|
+|-----------------------------------------------------------------------------
+|               C O P Y R I G H T
+|-----------------------------------------------------------------------------
+| Copyright (c) 2001-2010 Vector Informatik GmbH          All rights reserved.
+|****************************************************************************/
+
+
+
+
+RESOURCE RES_SCHEDULER {
+   RESOURCEPROPERTY = STANDARD:"Resource Scheduler. The Resource Scheduler can be requested by all \c
+   \tasks without explicit assignment to the task";
+};
+
+
+//TR:SOSK22:0104 Start
+COUNTER SystemTimer {
+
+   MAXALLOWEDVALUE = 0x7FFFFFFF:"0xFFFFFFFF if UseGeneratedFastAlarm";
+   TICKSPERBASE = 1;
+   MINCYCLE = 1;
+   NANOSECONDSPERTICK = 1234567890:"This value is ignored. The tick time for this timer is stored in \
+   \the OS/SystemTimer=<TimerName>/TickTime attribute";
+   TYPE = SOFTWARE;
+};
+//TR:SOSK22:0104 End
+
+
+
+
+
+/* TR:SOSK22:0027 Start */
+/* TR:SOSK22:0353 Start */
+APPMODE OSDEFAULTAPPMODE;
+/* TR:SOSK22:0027 End */
+/* TR:SOSK22:0353 End */
+
+
+ 
+
+// End of TMS570LS3x.s32

@@ -1,0 +1,169 @@
+
+/* Version Control:
+ * Date Created:      Fri Sep  21 08:20:17 2012
+ * %version:          EA3#10 %
+ * %derived_by:       nzdx8v %
+ * %date_modified:    Fri Jul 19 14:07:12 2013 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 09/03/11   1       JJW       Initial template creation
+ * 09/27/12   2       JJW       Addition of Global transition vector generation
+ * 01/04/13   3       JJW       Addition of Global transition Inital/Final style generation and outlines to all nodes
+ *								Updated generation looping process to ensure all checkpoint nodes are defined, regardless
+ *                              of whether they are used in a transition.
+ */
+digraph G {
+/* Specify a drawing size for 11x17 paper with 0.5 in margins */
+page="11,16";
+ranksep="0.2"; /* Reduce the separation between entities from default to reduce drawing size */
+
+
+
+/* Supervised Entities */
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+				"ChkPtAp10_100msStart_CP(0)" [fillcolor=pink, style=filled]/* Checkpoint */
+				"ChkPtAp10_100msEnd_CP(1)" [fillcolor=white, style=filled]/* Checkpoint */
+		/* Local transition vectors */
+				"ChkPtAp10_100msStart_CP(0)" -> "ChkPtAp10_100msEnd_CP(1)" [ label="LT_100ms_10" ];
+		label = "SE_100ms_10";
+	}
+	subgraph cluster_1 {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+				"ChkPtAp8_100msStart_CP(0)" [fillcolor=white, style=filled]/* Checkpoint */
+				"ChkPtAp8_100msEnd_CP(1)" [fillcolor=white, style=filled]/* Checkpoint */
+		/* Local transition vectors */
+				"ChkPtAp8_100msStart_CP(0)" -> "ChkPtAp8_100msEnd_CP(1)" [ label="LT_100ms_8" ];
+		label = "SE_100ms_8";
+	}
+	subgraph cluster_2 {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+				"ChkPtAp9_100msStart_CP(0)" [fillcolor=white, style=filled]/* Checkpoint */
+				"ChkPtAp9_100msEnd_CP(1)" [fillcolor=pink, style=filled]/* Checkpoint */
+		/* Local transition vectors */
+				"ChkPtAp9_100msStart_CP(0)" -> "ChkPtAp9_100msEnd_CP(1)" [ label="LT_100ms_9" ];
+		label = "SE_100ms_9";
+	}
+	subgraph cluster_3 {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+				"ChkPtAp10_10msStart_CP(0)" [fillcolor=pink, style=filled]/* Checkpoint */
+				"ChkPtAp10_10msEnd_CP(1)" [fillcolor=white, style=filled]/* Checkpoint */
+		/* Local transition vectors */
+				"ChkPtAp10_10msStart_CP(0)" -> "ChkPtAp10_10msEnd_CP(1)" [ label="LT_10ms_10" ];
+		label = "SE_10ms_10";
+	}
+	subgraph cluster_4 {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+				"ChkPtAp9_10msStart_CP(0)" [fillcolor=white, style=filled]/* Checkpoint */
+				"ChkPtAp9_10msEnd_CP(1)" [fillcolor=pink, style=filled]/* Checkpoint */
+		/* Local transition vectors */
+				"ChkPtAp9_10msStart_CP(0)" -> "ChkPtAp9_10msEnd_CP(1)" [ label="LT_10ms_9" ];
+		label = "SE_10ms_9";
+	}
+	subgraph cluster_5 {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+				"ChkPtAp10_4msStart_CP(0)" [fillcolor=pink, style=filled]/* Checkpoint */
+				"ChkPtAp10_4msEnd_CP(1)" [fillcolor=white, style=filled]/* Checkpoint */
+		/* Local transition vectors */
+				"ChkPtAp10_4msStart_CP(0)" -> "ChkPtAp10_4msEnd_CP(1)" [ label="LT_4ms_10" ];
+		label = "SE_4ms_10";
+	}
+	subgraph cluster_6 {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+				"ChkPtAp9_4msStart_CP(0)" [fillcolor=white, style=filled]/* Checkpoint */
+				"ChkPtAp9_4msEnd_CP(1)" [fillcolor=pink, style=filled]/* Checkpoint */
+		/* Local transition vectors */
+				"ChkPtAp9_4msStart_CP(0)" -> "ChkPtAp9_4msEnd_CP(1)" [ label="LT_4ms_9" ];
+		label = "SE_4ms_9";
+	}
+	subgraph cluster_7 {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+				"ChkPtAp10_2msStart_CP(0)" [fillcolor=pink, style="filled,bold" color=darkgreen]/* Checkpoint */
+				"ChkPtAp10_2msEnd_CP(1)" [fillcolor=white, style=filled]/* Checkpoint */
+				"GlbFinal_CP0(2)" [fillcolor=white, style="filled,dashed" color=darkgreen]/* Checkpoint */
+		/* Local transition vectors */
+				"ChkPtAp10_2msStart_CP(0)" -> "ChkPtAp10_2msEnd_CP(1)" [ label="LT_2ms_10" ];
+		label = "SE_2ms_10";
+	}
+	subgraph cluster_8 {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+				"ChkPtAp8_2msStart_CP(0)" [fillcolor=white, style=filled]/* Checkpoint */
+				"ChkPtAp8_2msEnd_CP(1)" [fillcolor=white, style=filled]/* Checkpoint */
+		/* Local transition vectors */
+				"ChkPtAp8_2msStart_CP(0)" -> "ChkPtAp8_2msEnd_CP(1)" [ label="LT_2ms_8" ];
+		label = "SE_2ms_8";
+	}
+	subgraph cluster_9 {
+		style=filled;
+		color=lightgrey;
+		fontname=Helvetica
+		node [height=0.3, fontname=Helvetica, fontcolor=black, fontsize=10];
+		edge [color=blue, fontname=Helvetica, fontcolor=blue, fontsize=8];
+	/* Checkpoint nodes and formatting */
+				"ChkPtAp9_2msStart_CP(0)" [fillcolor=white, style=filled]/* Checkpoint */
+				"ChkPtAp9_2msEnd_CP(1)" [fillcolor=pink, style=filled]/* Checkpoint */
+		/* Local transition vectors */
+				"ChkPtAp9_2msStart_CP(0)" -> "ChkPtAp9_2msEnd_CP(1)" [ label="LT_2ms_9" ];
+		label = "SE_2ms_9";
+	}
+/* Global Transition Vectors */
+		fontname=Helvetica
+		edge [color=darkgreen, style=dashed, fontname=Helvetica, fontcolor=darkgreen, fontsize=8];
+/* WdgMConfigSet - WdgM_Runtime */
+	/* WdgMMode - WdgMMode */
+		/* WdgMGlobalTransition - WdgMProgramFlowSupervision */
+			"ChkPtAp10_100msEnd_CP(1)" -> "ChkPtAp8_100msStart_CP(0)" [ label="GT_100ms_10_8" ];
+			"ChkPtAp10_10msEnd_CP(1)" -> "ChkPtAp9_10msStart_CP(0)" [ label="GT_10ms_10_9" ];
+			"ChkPtAp10_2msEnd_CP(1)" -> "ChkPtAp8_2msStart_CP(0)" [ label="GT_2ms_10_8" ];
+			"ChkPtAp8_2msEnd_CP(1)" -> "ChkPtAp9_2msStart_CP(0)" [ label="GT_2ms_8_9" ];
+			"ChkPtAp8_100msEnd_CP(1)" -> "ChkPtAp9_100msStart_CP(0)" [ label="GT_100ms_8_9" ];
+			"ChkPtAp10_4msEnd_CP(1)" -> "ChkPtAp9_4msStart_CP(0)" [ label="GT_4ms_10_9" ];
+
+
+}

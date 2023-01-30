@@ -1,0 +1,56 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : Ap_MtrTempEst_Cfg.h
+* Module Description: Configuration file of DiagMgr module
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          3 %
+ * %date_modified:    Fri Oct 26 10:22:20 2012 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 09/20/12   1       ssk       Initial template creation
+ * 	 	
+ */
+
+#ifndef AP_MTRTEMPEST_CFG_H
+#define AP_MTRTEMPEST_CFG_H
+
+
+/*******************************************************************************
+**                      Define Section                                       **
+*******************************************************************************/
+
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "MtrTempEst" ) ); 
+	Dictionary<string, bool> CPEnableDic = new Dictionary<string, bool>();
+	/* Initialize the Dictionary with all available Checkpoints set to disabled */
+	CPEnableDic.Add( "MtrTempEst_Per1_CP0", false);
+	CPEnableDic.Add( "MtrTempEst_Per1_CP1", false);
+  
+	
+#>
+<# !LOOP( Xp.ValueAtDefRefTo( "MtrTempEstGeneral/MtrTempEstCPEnable" ) ) #>
+/* <#=ValueOf( "." )#> Checkpoint is enabled */
+<#CPEnableDic[ValueOf( "." )] = true;#>
+<# !ENDLOOP #>
+
+/* Disable all checkpoints that are not enabled */
+<# foreach ( KeyValuePair<string, bool> cp in CPEnableDic) {
+	 if(false == cp.Value) { #>
+#define Rte_Call_<#=cp.Key#>_CheckpointReached()		(void)0 /* Checkpoint disabled */	 
+<# } 
+} #>
+   
+#endif /* MTRTEMPEST_CFG_H */
+
+/*** End of file **************************************************************/

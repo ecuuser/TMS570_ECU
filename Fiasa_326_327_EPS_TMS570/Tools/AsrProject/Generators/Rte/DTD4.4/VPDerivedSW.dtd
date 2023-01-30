@@ -1,0 +1,21 @@
+<!-- Entities -->
+
+<!ENTITY ti.VPDerivedSW         "VPDerivedSW">
+
+<!-- Elements -->
+
+<!ELEMENT VPDerivedSW           (NAME,ATTRLink*,ComponentType*,Constant*,DataType*,PortInterface*)>
+<!ATTLIST VPDerivedSW           %A.ConfigItem;
+          SoftwareArchitectureLink      NMTOKEN #FIXED "ComponentType"
+          SoftwareArchitectureTimeStamp CDATA ""
+>
+
+<!-- Links -->
+
+<!ELEMENT VPDerivedSWLink EMPTY>
+
+<!ATTLIST VPDerivedSWLink 
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType;  "&ti.VPDerivedSW;"
+>

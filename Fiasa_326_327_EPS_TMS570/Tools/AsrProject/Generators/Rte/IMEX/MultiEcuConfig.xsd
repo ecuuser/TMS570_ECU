@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.vector-informatik.de/MultiECUSupport" targetNamespace="http://www.vector-informatik.de/MultiECUSupport" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2">
+	<xs:element name="DVMultiECUConfiguration">
+		<xs:annotation>
+			<xs:documentation>Configuration of a MultiECU from several ECUExtracts</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SourceECUExtracts"/>
+				<xs:element name="NewECUInstanceName" type="xs:string" minOccurs="0"/>
+				<xs:element ref="OverlayPDUs" minOccurs="0"/>
+				<xs:element ref="MatchingSignals" minOccurs="0"/>
+				<xs:element ref="SplitTxRxPDUs" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:decimal" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SourceECUExtracts">
+		<xs:annotation>
+			<xs:documentation>Specifiy the ECUExtracts describing the different instances of the MultiECU</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MasterExtract" type="xs:string"/>
+				<xs:element name="MergingExtract" type="xs:string" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OverlayPDUs">
+		<xs:annotation>
+			<xs:documentation>Specify those PDUs of the communication description that contain semantically equal data and should be overlayed to a single PDU; Requiqures matching layout of the PDUs </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OverlayingPDUs" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PDU" type="xs:string" minOccurs="2" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:attribute name="direction" type="OverlayDirection" default="TxRx"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MatchingSignals">
+		<xs:annotation>
+			<xs:documentation>Specifies sematically equal system signals which should be handled by one united signal instace</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MatchingSignals" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Signal" type="xs:string" maxOccurs="unbounded"/>
+							<xs:element name="NewSignalName" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="direction" type="OverlayDirection" use="optional" default="TxRx"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SplitTxRxPDUs">
+		<xs:annotation>
+			<xs:documentation>Specifies specifically those PDUs sent between instances of the MultiECU. Separate Instances will be created for PDUs and Signals and they will be postfixed according their Tx/Rx direction.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PDU" type="xs:string" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="OverlayDirection">
+		<xs:annotation>
+			<xs:documentation>Specifies the overlay direction. For TxRx elements a split is required before a separarte Tx or Rx overlay can be defined.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TxRx"/>
+			<xs:enumeration value="Tx"/>
+			<xs:enumeration value="Rx"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

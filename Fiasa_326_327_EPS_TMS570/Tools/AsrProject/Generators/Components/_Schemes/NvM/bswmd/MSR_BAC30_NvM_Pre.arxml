@@ -1,0 +1,1392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<!--
+============================================================================
+This file is generated with Eparm 2.0.2.14
+Date: Mon, 29 Jun 2009 10:57:40 GMT
+============================================================================
+-->
+<AUTOSAR xmlns="http://autosar.org/3.0.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="45b37c04-aacd-479a-95cf-c0456cde495a">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-CONFIGURATION UUID="8900ee43-2879-43a5-b9c7-0961c3d41c5d">
+					<SHORT-NAME>NvM_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/NvM</DEFINITION-REF>
+					<CONTAINERS>
+						<CONTAINER UUID="78a466bc-5d18-4a79-9f7d-fa66ea36c6e8">
+							<SHORT-NAME>Nvm_30_CommonVendorParams</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/Nvm_30_CommonVendorParams</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/Nvm_30_CommonVendorParams/NvmCfgCbkIncludeList</DEFINITION-REF>
+									<VALUE>ApplMain.h</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/Nvm_30_CommonVendorParams/NvmCfgCbkIncludeList</DEFINITION-REF>
+									<VALUE>Cdc.h</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/Nvm_30_CommonVendorParams/NvmCfgCbkIncludeList</DEFINITION-REF>
+									<VALUE>sc_ee_data.h</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/Nvm_30_CommonVendorParams/NvmCfgCbkIncludeList</DEFINITION-REF>
+									<VALUE>Darh.h</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/Nvm_30_CommonVendorParams/NvmCfgCbkIncludeList</DEFINITION-REF>
+									<VALUE>Vsm_Client.h</VALUE>
+								</STRING-VALUE>
+								<!--
+-->
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/Nvm_30_CommonVendorParams/NvmCfgCbkIncludeList</DEFINITION-REF>
+									<VALUE>Coding.h</VALUE>
+								</STRING-VALUE>
+								<!--
+-->
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/Nvm_30_CommonVendorParams/NvmCfgCbkIncludeList</DEFINITION-REF>
+									<VALUE>Csm.h</VALUE>
+								</STRING-VALUE>
+								<!--
+-->
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/Nvm_30_CommonVendorParams/NvmCfgCbkIncludeList</DEFINITION-REF>
+									<VALUE>EcuM_Cbk.h</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/Nvm_30_CommonVendorParams/NvmMultiblockId</DEFINITION-REF>
+									<VALUE>MultiBlockRequest</VALUE>
+								</STRING-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<CONTAINER UUID="21ec9b5d-2e55-49c2-89e0-ea98d7acbf6e">
+							<SHORT-NAME>NvmCommon</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmCommon</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmCommon/NvmDevErrorDetect</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmCommon/NvmVersionInfoApi</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmCommon/NvmApiConfigClass</DEFINITION-REF>
+									<VALUE>NvmApiConfigClass3</VALUE>
+								</ENUMERATION-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmCommon/NvmDatasetSelectionBits</DEFINITION-REF>
+									<VALUE>5</VALUE>
+								</INTEGER-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmCommon/NvmMultiBlockCallback</DEFINITION-REF>
+									<VALUE>EcuM_CB_NfyNvMJobEnd</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmCommon/NvmDrvModeSwitch</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<CONTAINER UUID="2107beab-6c11-42e9-a47f-f578f9fb8911">
+							<SHORT-NAME>NVM_BLOCK_BOOT_PROG_STATUS</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_NOCRC</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>11</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>BootProgStatus</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>Init_BootProgStatus</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<CONTAINER UUID="5cc1bab2-a8e6-4525-8f4a-d217b2bab13e">
+							<SHORT-NAME>NVM_BLOCK_BOOT_PROG_COUNTER</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_NOCRC</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>4</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>BootProgCounter</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>Init_BootProgCounter</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<CONTAINER UUID="e36dbdbf-2844-4e60-a5a5-0c2fc11041ee">
+							<SHORT-NAME>NVM_BLOCK_BOOT_PROG_DATA</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_NOCRC</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>47</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>BootProgData</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>Init_BootProgData</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<CONTAINER UUID="afaf4b22-7c67-4a8b-8fdd-2d0bfe5208a6">
+							<SHORT-NAME>NVM_BLOCK_SVK_HISTORY_MEM</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_NOCRC</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>207</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>SvkHistoryMemory</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>Init_SvkHistoryMemory</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<!--
+-->
+						<CONTAINER UUID="dbea6a26-9e01-49e2-84a3-36dfba9ffaa6">
+							<SHORT-NAME>NVM_BLOCK_VSMOMC_DATA</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_NOCRC</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>2</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>Vsm_OmcNvData</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+									<VALUE>Vsm_OmcNvData_Default</VALUE>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<CONTAINER UUID="db55555-9e01-49e2-84a3-36dfba9ffaa6">
+							<SHORT-NAME>NVM_BLOCK_VSMWUR_DATA</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_NOCRC</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>2</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>Vsm_WurNvData</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+									<VALUE>Vsm_WurNvData_Default</VALUE>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<!--
+-->
+						<CONTAINER UUID="aeab6794-8119-42c8-919c-8cfe72be248a">
+							<SHORT-NAME>NVM_BLOCK_CODING_DATA</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>153</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>Coding_NvData</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+									<VALUE>Coding_NvDataDefaults</VALUE>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<CONTAINER UUID="914e16d7-70d4-4534-8fb0-8e5e6b706a31">
+							<SHORT-NAME>NVM_BLOCK_CODING_STATUS</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>Coding_NvStatus</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+									<VALUE>Coding_NvStatusDefaults</VALUE>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<!--
+-->
+						<CONTAINER UUID="843f0d11-91d3-493f-87b6-343b4c8705ad">
+							<SHORT-NAME>NVM_BLOCK_CDC_DATA</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>3</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>Cdc_NvData</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+									<VALUE>Cdc_NvDataDefault</VALUE>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<!--
+-->
+						<CONTAINER UUID="1536bb36-6314-4f98-aaeb-fb65ff1cb50e">
+							<SHORT-NAME>NVM_BLOCK_DARH_DATA</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>8</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>darhNvData</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+									<VALUE>darhNvDefaults</VALUE>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<!--
+-->
+						<CONTAINER UUID="2670f1ca-a28f-447b-92f5-4471e7b08e36">
+							<SHORT-NAME>NVM_BLOCK_DEM_STATUS</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>70</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>Dem_NvStatusData</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<CONTAINER UUID="25a0ac60-81d9-4f6c-bec5-25761e2ccfd7">
+							<SHORT-NAME>NVM_BLOCK_DEM_PRIMARY</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_DATASET</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>40</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>21</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>Dem_NvGateEntryPrimaryData</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>Dem_NvMGateEntryPrimaryBlockCallback</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<CONTAINER UUID="978b2644-3312-4a87-b0e3-3dae5142ec06">
+							<SHORT-NAME>NVM_BLOCK_DEM_SECONDARY</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_DATASET</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>25</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>24</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>Dem_NvGateEntrySecondaryData</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>Dem_NvMGateEntrySecondaryBlockCallback</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<!--
+-->
+						<CONTAINER UUID="a0484740-16e6-46f0-b2c7-b5a5428bc972">
+							<SHORT-NAME>NVM_BLOCK_CSM_NV_DATA</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_NATIVE</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockUsedCrcType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>64</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>42</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+									<VALUE>Csm_NvData</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+									<VALUE>Csm_NvDataDefault</VALUE>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<!--
+-->
+						<CONTAINER UUID="823b6599-ac69-4b6c-9564-7ab5b36ad463">
+							<SHORT-NAME>ConfigBlock</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmBlockManagementType</DEFINITION-REF>
+									<VALUE>NVM_BLOCK_REDUNDANT</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmBlockUseCrc</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmBlockCRCType</DEFINITION-REF>
+									<VALUE>NVM_CRC16</VALUE>
+								</ENUMERATION-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmCalcRamBlockCrc</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmBlockJobPriority</DEFINITION-REF>
+									<VALUE>127</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmNvBlockLength</DEFINITION-REF>
+									<VALUE>2</VALUE>
+								</INTEGER-VALUE>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmNvBlockNum</DEFINITION-REF>
+									<VALUE>2</VALUE>
+								</INTEGER-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmUseServicePorts</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmWriteBlockOnce</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmBlockWriteProt</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmResistantToChangedSw</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmSelectBlockForReadall</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmRamBlockDataAddress</DEFINITION-REF>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmRomBlockDataAddress</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</STRING-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmUseInitCallback</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmInitBlockCallback</DEFINITION-REF>
+									<VALUE>NULL_PTR</VALUE>
+								</FUNCTION-NAME-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmUseJobendCallback</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmJobendCbkAtReadAll</DEFINITION-REF>
+									<VALUE>false</VALUE>
+								</BOOLEAN-VALUE>
+								<FUNCTION-NAME-VALUE>
+									<DEFINITION-REF DEST="FUNCTION-NAME-DEF">/MICROSAR/NvM/NvmConfigBlockDescriptor/NvmSingleBlockCallback</DEFINITION-REF>
+								</FUNCTION-NAME-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

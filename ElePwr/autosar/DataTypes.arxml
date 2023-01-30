@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/3.1.4 autosar_314_ext.xsd" xmlns="http://autosar.org/3.1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>DataType</SHORT-NAME>
+			<ELEMENTS>
+				<REAL-TYPE>
+					<SHORT-NAME>Float</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">Float corresponds to the IEEE single-precision 32-bit floating point type
+[IEEE 754-1985]. The basic value space of float consists of the values 
+m × 2^e, where m is an integer whose absolute value is less than 2^24, 
+and e is an integer between -149 and 104, inclusive. In addition to the basic
+value space described above, the value space of Float also contains the 
+following special values: positive and negative zero, positive and negative 
+infinity and not-a-number. The order-relation on Float is: 
+x &lt; y if y - x is positive. Positive zero is greater than negative zero.
+Not-a-number equals itself and is greater than all float values including positive infinity. 
+
+Float values have a lexical representation consisting of a mantissa followed, 
+optionally, by the character "E" or "e", followed by an exponent. The exponent
+must be an integer. The mantissa must be a decimal number. The representations
+for exponent and mantissa must follow the lexical rules for integer and decimal.
+If the "E" or "e" and the following exponent are omitted, an exponent value 
+of 0 is assumed. 
+
+The special values positive and negative zero, positive and negative infinity
+and not-a-number have lexical representations 0, -0, INF, -INF and NaN, 
+respectively. 
+
+For example, -1E4, 1267.43233E12, 12.78e-2, 12 and INF are all legal literals
+for Float.</L-2>
+					</DESC>
+					<LOWER-LIMIT INTERVAL-TYPE="INFINITE"></LOWER-LIMIT>
+					<UPPER-LIMIT INTERVAL-TYPE="INFINITE"></UPPER-LIMIT>
+					<ALLOW-NAN>false</ALLOW-NAN>
+					<ENCODING>SINGLE</ENCODING>
+				</REAL-TYPE>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>DaVinci</SHORT-NAME>
+			<ELEMENTS/>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

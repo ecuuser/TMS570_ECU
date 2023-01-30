@@ -1,0 +1,47 @@
+<!-- Entities -->
+
+<!ENTITY ti.Constant       "Constant">
+<!ENTITY ti.DataType       "DataType">
+<!ENTITY ti.SignalType     "SignalType">
+<!ENTITY ti.PrivateSigType "PrivateSigType">
+<!ENTITY ti.SignalDefine   "SignalDefine">
+<!ENTITY ti.RecordElement  "RecordElement">
+
+
+<!-- Elements -->
+
+<!ELEMENT Constant  (%C.DefAttr;, ATTRLink*, ArrayElementConstant*, RecordElementConstant*, GenAttrList?)>
+<!ELEMENT ArrayElementConstant  (DESC?, ArrayElementConstant*, RecordElementConstant*, GenAttrList?)>
+<!ELEMENT RecordElementConstant (DESC?, ATTRLink*, ArrayElementConstant*, RecordElementConstant*, GenAttrList?)>
+
+
+<!ATTLIST Constant %A.ConfigItem;
+    Value CDATA ''
+    DataTypeLink       NMTOKEN #FIXED "&ti.DataType;"
+    SignalTypeLink     NMTOKEN #FIXED "&ti.SignalType;"
+    PrivateSigTypeLink NMTOKEN #FIXED "&ti.PrivateSigType;"
+    SignalDefineLink   NMTOKEN #FIXED "&ti.SignalDefine;"
+    FNDerived          CDATA "0"
+>
+
+<!ATTLIST ArrayElementConstant %A.ChildItem;
+    Value      CDATA ''
+    ArrayIndex CDATA '0'
+>
+
+<!ATTLIST RecordElementConstant %A.ChildItem;
+	Value CDATA ''
+	RecordElementLink NMTOKEN #FIXED "&ti.RecordElement;"
+>
+
+
+<!-- Links -->
+
+<!ELEMENT ConstantLink EMPTY>
+
+<!ATTLIST ConstantLink 
+    %A.LinkGUID;
+    %A.LinkChildGUID;
+    %A.LinkVersion;
+    %A.LinkType; "&ti.Constant;"
+>

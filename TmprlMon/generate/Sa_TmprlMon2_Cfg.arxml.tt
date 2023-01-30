@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/3.2.1 autosar_321.xsd" xmlns="http://autosar.org/3.2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+<# 	List<string> cpList = new List<string>();
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "TmprlMon2" ) ); 
+#>
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>ComponentType</SHORT-NAME>
+			<ELEMENTS>
+				<SENSOR-ACTUATOR-SOFTWARE-COMPONENT-TYPE>
+					<SHORT-NAME>Sa_TmprlMon2</SHORT-NAME>
+					<PORTS>
+<# !LOOP( Xp.ValueAtDefRefTo( "TmprlMon2General/TmprlMon2CPEnable" ) ) #>
+						<R-PORT-PROTOTYPE>
+							<SHORT-NAME><#=ValueOf( "." )#></SHORT-NAME>
+							<REQUIRED-COM-SPECS>
+								<CLIENT-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/WdgM_CheckpointReached/CheckpointReached</OPERATION-REF>
+								</CLIENT-COM-SPEC>
+							</REQUIRED-COM-SPECS>
+							<REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PortInterface/WdgM_CheckpointReached</REQUIRED-INTERFACE-TREF>
+						</R-PORT-PROTOTYPE>
+<# !ENDLOOP #>
+					</PORTS>
+				</SENSOR-ACTUATOR-SOFTWARE-COMPONENT-TYPE>
+				<INTERNAL-BEHAVIOR>
+					<SHORT-NAME>Sa_TmprlMon2_InternalBehavior</SHORT-NAME>
+					<COMPONENT-REF DEST="SENSOR-ACTUATOR-SOFTWARE-COMPONENT-TYPE">/ComponentType/Sa_TmprlMon2</COMPONENT-REF>
+					<EVENTS>
+					</EVENTS>
+					<PORT-API-OPTIONS>
+<# !LOOP( Xp.ValueAtDefRefTo( "TmprlMon2General/TmprlMon2CPEnable" ) ) #>
+						<PORT-API-OPTION>
+							<ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+							<INDIRECT-API>false</INDIRECT-API>
+							<PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentType/Sa_TmprlMon2/<#=ValueOf( "." )#></PORT-REF>
+						</PORT-API-OPTION>
+<# !ENDLOOP #>
+					</PORT-API-OPTIONS>
+					<RUNNABLES>
+<# !LOOP( Xp.ValueAtDefRefTo( "TmprlMon2General/TmprlMon2CPEnable" ) ) #>
+<#	/* A runnable name list of the enabled CP's is created to determine which runnable definitions to generate */
+	cpList.Add(ValueOf( "." )); #>
+<# !ENDLOOP #>				
+<#	int i = 0;
+	string cpName="";
+	string[] cpNameElements;
+	string runnable="";
+
+	if( 0 != cpList.Count ){
+		cpList.Sort();
+		cpName = cpList[i];
+		cpNameElements = cpName.Split('_');
+	
+	while( i < cpList.Count) {
+		runnable = cpNameElements[1]; #>
+						<RUNNABLE-ENTITY>
+							<SHORT-NAME>TmprlMon2_<#=runnable#></SHORT-NAME>
+							<CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+							<MINIMUM-START-INTERVAL>0.000000</MINIMUM-START-INTERVAL>
+							<SERVER-CALL-POINTS>
+<#		while((runnable == cpNameElements[1]) && (i < cpList.Count)) { 
+#>
+								<SYNCHRONOUS-SERVER-CALL-POINT>
+									<SHORT-NAME>SC_<#=cpName#>_CheckpointReached</SHORT-NAME>
+									<OPERATION-IREFS>
+										<OPERATION-IREF>
+											<R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentType/Sa_TmprlMon2/<#=cpName#></R-PORT-PROTOTYPE-REF>
+											<OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/PortInterface/WdgM_CheckpointReached/CheckpointReached</OPERATION-PROTOTYPE-REF>
+										</OPERATION-IREF>
+									</OPERATION-IREFS>
+									<TIMEOUT>0.000000000</TIMEOUT>
+								</SYNCHRONOUS-SERVER-CALL-POINT>
+<#			i++;
+			if(i < cpList.Count){
+				cpName = cpList[i];
+				cpNameElements = cpName.Split('_');
+			}
+		} #>
+							</SERVER-CALL-POINTS>
+							<SYMBOL>TmprlMon2_<#=runnable#></SYMBOL>
+						</RUNNABLE-ENTITY>
+<#	}
+}#>
+					</RUNNABLES>
+					<SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+				</INTERNAL-BEHAVIOR>
+				<SWC-IMPLEMENTATION>
+					<SHORT-NAME>Sa_TmprlMon2_Implementation</SHORT-NAME>
+					<CODE-DESCRIPTORS>
+						<CODE>
+							<SHORT-NAME>Code</SHORT-NAME>
+							<TYPE>SRC</TYPE>
+						</CODE>
+					</CODE-DESCRIPTORS>
+					<BEHAVIOR-REF DEST="INTERNAL-BEHAVIOR">/ComponentType/Sa_TmprlMon2_InternalBehavior</BEHAVIOR-REF>
+				</SWC-IMPLEMENTATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>PortInterface</SHORT-NAME>
+			<ELEMENTS>
+				<CLIENT-SERVER-INTERFACE>
+					<SHORT-NAME>WdgM_CheckpointReached</SHORT-NAME>
+					<IS-SERVICE>true</IS-SERVICE>
+					<OPERATIONS>
+						<OPERATION-PROTOTYPE>
+							<SHORT-NAME>CheckpointReached</SHORT-NAME>
+							<DESC>
+								<L-2 L="FOR-ALL">Indicates to the Watchdog Manager that a Checkpoint within a Supervised Entity has been reached.</L-2>
+							</DESC>
+							<POSSIBLE-ERROR-REFS>
+								<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/PortInterface/WdgM_CheckpointReached/E_NOT_OK</POSSIBLE-ERROR-REF>
+							</POSSIBLE-ERROR-REFS>
+						</OPERATION-PROTOTYPE>
+					</OPERATIONS>
+					<POSSIBLE-ERRORS>
+						<APPLICATION-ERROR>
+							<SHORT-NAME>E_NOT_OK</SHORT-NAME>
+							<ERROR-CODE>1</ERROR-CODE>
+						</APPLICATION-ERROR>
+					</POSSIBLE-ERRORS>
+				</CLIENT-SERVER-INTERFACE>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

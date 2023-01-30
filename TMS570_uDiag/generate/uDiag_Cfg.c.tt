@@ -1,0 +1,84 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : uDiag_Cfg.c
+* Module Description: Configuration file of uDiag module
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          4 %
+ * %date_modified:    Thu Oct  4 13:57:17 2012 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 09/17/12   1       JJW       Initial template creation
+ * 10/04/12   2       JJW       Added support for link-time register value determination
+ * 10/04/12   3       JJW       Corrected constant suffixes
+ * 04/07/14   4       KMC       Changed to use sizeof(var) - 1 for offset                                     11435
+ * 04/21/14   5       KMC       Changed to use sizeof(var) + integer offset value (for anomaly 6589)          11803
+ */
+<#
+	/* Generated Output Formatting Options*/
+	const int COLWIDTH = 50;
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "uDiag" ) );
+#>
+#define UDIAG_C
+#include "uDiag.h"
+<#     !LOOP( Xp.ValueAtDefRefTo( "uDiagGeneral/uDiagIncludes" ) ) #>
+#include "<#=ValueOf( "." )#>"
+<#     !ENDLOOP #>
+
+#define UDIAG_START_SEC_CONST_UNSPECIFIED
+#include "MemMap.h" /* PRQA S 5087 */
+
+/* uDiag Configuration Definitions */
+CONST(uDiag_RegChkType, AUTOMATIC) StaticRegTable_Cnt_M_str[ D_NUMOFTESTEDREGS_CNT_U16 ] = {
+/* Register value definitions determined Pre-compile */
+<#     !LOOP( Xp.ContainerAtDefRefTo( "uDiagRegCheck" ) ) #>
+<#	long regAddr = ValueOf(Xp.ValueAtDefRefTo( "uDiagRegAddress" ));
+	long regVal = ValueOf(Xp.ValueAtDefRefTo( "uDiagRegValue" ));
+	string regValStr = "0x" + regVal.ToString("X8") + "ul},";
+
+#>
+	{0x<#= regAddr.ToString("X8")#>ul, <#=regValStr.PadRight(COLWIDTH)#>  /* <#=ValueOf( "ar:SHORT-NAME" )#> */
+<#     !ENDLOOP #>
+/* Register value definitions determined at Link-time */
+<#     !LOOP( Xp.ContainerAtDefRefTo( "uDiagRegCheckLnk" ) ) #>
+<#	long regAddr = ValueOf(Xp.ValueAtDefRefTo( "uDiagRegAddress" ));
+	long regValOfst = ValueOf(Xp.ValueAtDefRefTo( "uDiagRegValueLnkOffset" ));
+	bool regValUseSizeof = ValueOf(Xp.ValueAtDefRefTo( "uDiagRegUseSizeofInOffset" ));
+	string regValStr = "((uint32)&" + ValueOf(Xp.ValueAtDefRefTo( "uDiagRegValueLnk" ));
+	
+	/* Add sizeof var if UseSizeof is true */
+	if(regValUseSizeof == true){
+		regValStr = regValStr + " + sizeof(" + ValueOf(Xp.ValueAtDefRefTo( "uDiagRegValueLnk" )) + ")";
+	}
+
+	/* Skip the generation of offset addition if it is 0 */
+	if(0 != regValOfst){
+		if (regValOfst > 0){
+			regValStr = regValStr + " + " + regValOfst + "UL";
+		}
+		else{
+			regValOfst = 0 - regValOfst;
+			regValStr = regValStr + " - " + regValOfst + "UL";
+		}
+	}
+	/* Close the initializer record*/
+	regValStr = regValStr + ")},";
+#>
+	{0x<#= regAddr.ToString("X8")#>ul, <#=regValStr.PadRight(COLWIDTH)#>  /* <#=ValueOf( "ar:SHORT-NAME" )#> */
+<#     !ENDLOOP #>
+};
+
+
+#define UDIAG_STOP_SEC_CONST_UNSPECIFIED
+#include "MemMap.h" /* PRQA S 5087 */

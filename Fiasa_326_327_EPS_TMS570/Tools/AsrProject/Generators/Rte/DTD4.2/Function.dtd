@@ -1,0 +1,87 @@
+<!-- Entities -->
+
+<!ENTITY ti.Function            "Function">
+<!ENTITY ti.SignalInterface     "SignalInterface">
+<!ENTITY ti.Signal              "Signal">
+<!ENTITY ti.FunctionPort        "FunctionPort">
+<!ENTITY ti.SignalGroupRoot     "SignalGroupRoot">
+<!ENTITY ti.DeviceAccessor      "DeviceAccessor">
+<!ENTITY ti.FunctionConnection  "FNConn">
+<!ENTITY ti.FunctionTrigger     "FunctionTrigger">
+
+<!-- Elements -->
+<!ELEMENT Function              (%C.DefAttr;,CONTENT*,ATTRLink*,FunctionPort*,FunctionStructure*,FunctionTriggerRef?,FileEntry*,GenAttrList?)>
+<!ELEMENT FunctionPort          (%C.DefAttr;,ATTRLink*,GenAttrList?,SignalInterface*)>
+<!ELEMENT SignalInterface       (DESC?,ATTRLink*,GenAttrList?)>
+
+<!ELEMENT FunctionStructure     (CONTENT*,Function*,FunctionLink*,DeviceAccessor*,FNConn*,SequenceDescription?)>
+<!ELEMENT FunctionTriggerRef    (ATTRLink*)>
+<!ELEMENT DeviceAccessor    	(DESC?,ATTRLink*,GenAttrList?)>
+<!ELEMENT FNConn                (ATTRLink*)>
+<!ELEMENT SequenceDescription   (ATTRLink*,FunctionOrder*)>
+<!ELEMENT FunctionOrder         (ATTRLink*)>
+
+<!ATTLIST Function              %A.ConfigItem;
+          ExecutionTime         CDATA "0"
+	      ExecutionTimeUnit     (USEC | MSEC | SEC) "MSEC"
+          TransmitDelay         CDATA "0"
+	      TransmitDelayUnit     (USEC | MSEC | SEC) "MSEC"
+          Deadline              CDATA "0"
+	      DeadlineUnit          (USEC | MSEC | SEC) "MSEC"
+          Priority              CDATA "0"
+>
+
+<!ATTLIST FunctionPort          %A.ChildItem;
+        IsInput                 CDATA "0"
+        RefSignalGroupLink      NMTOKEN #FIXED "&ti.SignalGroupRoot;"
+>
+
+<!ATTLIST SignalInterface       %A.ChildItem;
+        IsInput                 CDATA "0"
+        BaseSignalLink          NMTOKEN #FIXED "&ti.Signal;"
+        TimeOut                 CDATA "0"
+>
+
+<!ATTLIST FunctionStructure     %A.ChildItem;
+>
+
+<!ATTLIST FunctionTriggerRef     %A.ChildItem;
+        FunctionTriggerLink     NMTOKEN #FIXED "&ti.FunctionTrigger;"
+        PrimarySignalLink       NMTOKEN #FIXED "&ti.SignalInterface;"
+        SecondarySignalLink     NMTOKEN #FIXED "&ti.SignalInterface;"
+>
+
+<!ATTLIST DeviceAccessor    	%A.ChildItem;
+          IsInput    		    CDATA "0"
+          BaseSignalLink 	    NMTOKEN #FIXED "&ti.Signal;"
+          TimeOut               CDATA "0"
+>
+
+<!ATTLIST FNConn                %A.ChildItem;
+        SrcIFLink               NMTOKEN #FIXED "&ti.SignalInterface;"
+        DestIFLink              NMTOKEN #FIXED "&ti.SignalInterface;"
+        SrcDALink               NMTOKEN #FIXED "&ti.DeviceAccessor;"
+        DestDALink              NMTOKEN #FIXED "&ti.DeviceAccessor;"
+        SrcFPLink               NMTOKEN #FIXED "&ti.FunctionPort;"
+        DestFPLink              NMTOKEN #FIXED "&ti.FunctionPort;"
+>
+
+<!ATTLIST SequenceDescription   %A.ChildItem;
+>
+
+<!ATTLIST FunctionOrder         %A.ChildItem;
+        Index                   CDATA "0"
+        FunctionLink            NMTOKEN #FIXED "&ti.Function;"
+>
+
+<!-- Links -->
+
+<!ELEMENT FunctionLink EMPTY>
+
+<!ATTLIST FunctionLink 
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.Function;"
+>
+

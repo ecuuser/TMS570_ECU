@@ -1,0 +1,5 @@
+-oilfile=.\EPS.oil										; name and path of oil file for reading OS-configuration
+-tcbcfile=..\..\SwProject\Source\GenDataOS\tcb.c					; name and path of tcb.c for being patched with T1_config.h include (cat2 ISR instrumentation)
+-tcbhfile=..\..\SwProject\Source\GenDataOS\tcb.h					; name and path of tcb.h required for reading OS configuration
+-runnableParseModule=..\..\SwProject\Source\GenDataRte\Rte.c
+-mcuCore=TMS570														; Name of MCU [MPC55xx, v850, XC2000]

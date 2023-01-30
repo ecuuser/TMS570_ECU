@@ -1,0 +1,2271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+============================================================================
+This file is generated with Eparm 2.0.0.7
+Date: Tue, 23 Feb 2010 13:10:22 GMT
+============================================================================
+-->
+<AUTOSAR xmlns="http://autosar.org/3.0.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-DEF UUID="DCE:6e30f024-3468-4f53-a88b-57ac852ae68d">
+					<SHORT-NAME>NvM</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of the NvM (NvRam Manager) module.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.02.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2008-05-09T17:25:48</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Update to AUTOSAR 3.0; Parameter Nvm_BlockActive was deleted out of Container NvmBlockDescriptor and NvmConfigBlockDescriptor</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">eASEE: PI_3611</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.02.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virck</ISSUED-BY>
+								<DATE>2008-06-13T11:30:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed SW-Version Information.
+														Fixed Default Value of Paramter /Nvm_30_CommonVendorParams/NvmSrvPortJobEndPrefix
+											</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Modifications in Implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.02.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virck</ISSUED-BY>
+								<DATE>2008-07-14T14:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Removed ADMIN-DATA at file level</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">obsolete SVN keywords, only one version history is necessary.</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.02.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virck</ISSUED-BY>
+								<DATE>2008-08-22T17:21:40</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added Pre-and Recommended Configuration References</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00028633</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virck</ISSUED-BY>
+								<DATE>2008-12-08T19:30:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added Parameter NvmRequirementId</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00031177</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.03.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2009-02-25T13:54:37</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added Parameter NvmRequirementId also for ConfigIdBlock</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00031177</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.03.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2009-03-02T16:43:45</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed multiplicity of parameter NvmRequirementId from 0:1 to 1:1</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00033484</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.04.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2009-06-19T17:14:07</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added parameter NvmCrcIntBuffer in container Nvm_30_CommonVendorParams</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00034073</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.04.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virck</ISSUED-BY>
+								<DATE>2010-01-08T15:03:49</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed minimum value of NvmCrcNumOfBytes</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00040418</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.05.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virck</ISSUED-BY>
+								<DATE>2010-02-10T15:03:49</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added Vendor Specific Paramters to configure run-time block length checks</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00031315</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.05.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virck</ISSUED-BY>
+								<DATE>2010-11-15T16:55:44</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Updated version information</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">changes in implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.07.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2010-12-07T15:48:26</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Add parameter NvmKillWriteAllApi to Nvm_30_CommonVendorParams</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00047171</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+                            <DOC-REVISION>
+                                <REVISION-LABEL>3.07.01</REVISION-LABEL>
+                                <STATE>released</STATE>
+                                <ISSUED-BY>virck</ISSUED-BY>
+                                <DATE>2011-04-18T11:31:38</DATE>
+                                <MODIFICATIONS>
+                                    <MODIFICATION>
+                                        <CHANGE>
+                                            <L-2 L="EN">Updated version information</L-2>
+                                        </CHANGE>
+                                        <REASON>
+                                            <L-2 L="EN">changes in implementation</L-2>
+                                        </REASON>
+                                    </MODIFICATION>
+                                </MODIFICATIONS>
+                            </DOC-REVISION>
+                        </DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/NvM</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-LINK-TIME</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Parameter Container Definition: CommonPublishedInformation -->
+						<!-- Parameter Container Definition: NvmBlockDescriptor -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:06f37f63-6258-471f-b777-138703191fa0">
+							<SHORT-NAME>NvmBlockDescriptor</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Container for a management structure to configure the composition of a given NVRAM Block Management Type. Its multiplicity describes thenumber of configured NVRAM blocks, one block is required to be configured. The NVRAM block descriptors are condensed in the NVRAM block descriptor table. The start address of the table is configured in the NVMCommon parameters.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>65536</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: NvmBlockCRCType -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:ee5b8d09-0fcf-471e-9a9b-39ca8f4c3b90">
+									<SHORT-NAME>NvmBlockCRCType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines CRC data width for the NVRAM block. Default: NVM_CRC16, i.e. CRC16 will be used  if NVM_BLOCK_USE_CRC==TRUE</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NVM_CRC16</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:daac5d83-0658-4126-af08-b151809cc686">
+											<SHORT-NAME>NVM_CRC16</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:b5a06d03-81d3-4355-bf29-303f067d7729">
+											<SHORT-NAME>NVM_CRC32</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmBlockJobPriority -->
+								<INTEGER-PARAM-DEF UUID="DCE:12312c4f-8691-43b3-b9e3-1de57b11f81a">
+									<SHORT-NAME>NvmBlockJobPriority</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the job priority for a NVRAM block. The lower the number, the higher the priority.									0 defines immediate write priority, i.e. write job with this priority cancels other jobs with lower priority.								Will be ignored, if NvmJobPrioritization is deactivated.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>127</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmBlockManagementType -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:dcba874c-1eb8-4647-a1c4-163e71cdf6e2">
+									<SHORT-NAME>NvmBlockManagementType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the block management type for the NVRAM block.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NVM_BLOCK_NATIVE</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:fda039c0-a42c-4719-8596-9294328f1afd">
+											<SHORT-NAME>NVM_BLOCK_DATASET</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:1e3761dd-d95b-4b7b-8e2d-414b41b5faba">
+											<SHORT-NAME>NVM_BLOCK_NATIVE</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:445b1084-9317-44a7-a52e-df050b448ff6">
+											<SHORT-NAME>NVM_BLOCK_REDUNDANT</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmBlockUseCrc -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:4a53dda6-d438-4b59-aa72-cf335dfc3db5">
+									<SHORT-NAME>NvmBlockUseCrc</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines CRC usage for the NVRAM block, i.e. memory space for CRC is reserved in RAM and NV memory.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmBlockWriteProt -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:57d233a6-3185-4ef5-a365-9e732e09fa23">
+									<SHORT-NAME>NvmBlockWriteProt</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines an initial write protection of the NV block</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmCalcRamBlockCrc -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:3d1d31fe-7142-40c3-a072-706f1ed12498">
+									<SHORT-NAME>NvmCalcRamBlockCrc</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines CRC (re)calculation for the permanent RAM block, when NvM_SetRamBlockStatus was called</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmInitBlockCallback -->
+								<FUNCTION-NAME-DEF UUID="DCE:91d85c60-a640-42f9-9776-6cb4a13c9763">
+									<SHORT-NAME>NvmInitBlockCallback</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Entry address of a block specific callback routine which shall be called if no ROM data is available for initialization of the NVRAM block.				If a NULL pointer is configured, no specific callback routine shall be called for initialization of the NVRAM block with default data.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NULL_PTR</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<!-- PARAMETER DEFINITION: NvmNvBlockLength -->
+								<INTEGER-PARAM-DEF UUID="DCE:821ea741-2913-41a2-af6c-a6c621bba03f">
+									<SHORT-NAME>NvmNvBlockLength</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the NV block data length in bytes</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmNvBlockNum -->
+								<INTEGER-PARAM-DEF UUID="DCE:e872e129-54a1-4c3d-b51c-82fdb05ca413">
+									<SHORT-NAME>NvmNvBlockNum</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the number of multiple NV blocks in a contiguous area according to the given block management type.
+1-255	For NVRAM blocks to be configured of block management type NVM_BLOCK_DATASET
+1	For NVRAM blocks to be configured of block management type NVM_BLOCK_NATIVE
+2	For NVRAM blocks to be configured of block management type NVM_BLOCK_REDUNDANT
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmNvramBlockIdentifier -->
+								<!-- PARAMETER DEFINITION: NvmRamBlockDataAddress -->
+								<STRING-PARAM-DEF UUID="DCE:029dbfde-3105-4a40-9d08-70d16c239982">
+									<SHORT-NAME>NvmRamBlockDataAddress</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the start address of the RAM block data. If a NULL pointer is configured or value is empty (default), no permanent RAM data block is available for the selected block management type.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmResistantToChangedSw -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:fb205344-d164-4b73-b6c7-623c76ec04d8">
+									<SHORT-NAME>NvmResistantToChangedSw</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines whether a NVRAM block shall be treated resistant to configuration changes or not. If there is no default data available at configuration time then the application shall be responsible for providing the default initialization data. In this case the application has to use NvM_GetErrorStatus()to be able to distinguish between first initialization and corrupted data.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmRomBlockDataAddress -->
+								<STRING-PARAM-DEF UUID="DCE:54328179-3078-4c79-9262-0bfd4ab9d1cd">
+									<SHORT-NAME>NvmRomBlockDataAddress</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the start address of the ROM block data. If a NULL pointer is configured or value is empty (default), no ROM block is available for the selected block management type.
+						</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmSelectBlockForReadall -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:1db540ba-3b92-408c-991b-15cfa554ca98">
+									<SHORT-NAME>NvmSelectBlockForReadall</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines whether a NVRAM block shall be processed during NvM_ReadAll or not. This configuration parameter has only influence on those NVRAM blocks which are configured to have a permanent RAM block.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmSingleBlockCallback -->
+								<FUNCTION-NAME-DEF UUID="DCE:40158cb1-b775-49e7-b00a-15eb8de3626b">
+									<SHORT-NAME>NvmSingleBlockCallback</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Entry address of the block specific callback routine which shall be invoked on termination of each asynchronous single block request.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NULL_PTR</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<!-- PARAMETER DEFINITION: NvmWriteBlockOnce -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:3a7fab56-8491-414c-b509-0020027e53e0">
+									<SHORT-NAME>NvmWriteBlockOnce</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines write protection after first write. The NVRAM manager sets the write protection bit after the NV block was written the first time. This means that some of the NV blocks in the NVRAM should never be erased nor be replaced with the default ROM data after first initialization. [NVM276]</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:3e28ad1e-671e-47ea-9b3a-00273da94a1a">
+									<SHORT-NAME>NvmNvramBlockIdentifier</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Numeric handle  of the NVRAM Block to be passed as BlockId parmater to the NVM. This value will be calucuated automatically. In EAD it is not writeable by user.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>2</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:5d0c4ef9-75f7-4590-9ba6-7c7b940844b1">
+									<SHORT-NAME>NvmUseServicePorts</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mark this block as accessible via service ports. The PortName will be derived from the
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="DCE:1567fe5f-359d-483b-9252-fac4c9715834">
+									<SHORT-NAME>NvmBlockUsedCrcType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Internal CRC configuration --&gt; for better graphical configuration</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NVM_NOCRC</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:c7ebcdc6-281b-4e9c-a41f-080e6e131e21">
+											<SHORT-NAME>NVM_NOCRC</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:64fd29df-9182-40b8-a06c-61f996bc6056">
+											<SHORT-NAME>NVM_CRC16</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:88392802-1d1c-4e26-b02d-8604a2adf8ac">
+											<SHORT-NAME>NVM_CRC32</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:6b14022d-87e1-4a97-b084-6f04cf82de68">
+									<SHORT-NAME>NvmDeviceName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Device name, only really needed for active blocks</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:387a2fac-beb5-4a44-a12f-d8a9d49764f8">
+									<SHORT-NAME>NvmUseJobendCallback</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Use the configfured Callback for Single Block Job End Notification, either directly or via Service Port (RTE), depending on the "Use Service Ports" setting</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:e9007273-837d-4d84-a39f-2ff02b4faec0">
+									<SHORT-NAME>NvmUseInitCallback</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Use the configured Init Callback to provide default data.
+Note: Since the initialization status of the RTE during ReadAll processing is currently unclear (according to AUTOSAR it is not initialized)
+The init callback cannot be used by SW-Cs via RTE - the setting will be ignored.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:10a17727-7581-4c88-b8c2-393b202948b2">
+									<SHORT-NAME>NvmJobendCbkAtReadAll</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Invoke the job end notification Callback also during ReadAll processing. 
+Whether to enable/disable this feature depends on the  Integration - whether the related component and/or the RTE it is initialized before the EcuM requests NvM_ReadAll. The default when using Service Ports is FALSE, otherwise it's true.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<DERIVED-INTEGER-PARAM-DEF UUID="DCE:5dcce111-7986-4045-ab7e-47bb11e23c73">
+									<SHORT-NAME>NvmNvBlockBaseNumber</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to perform the link between the NVM_NVRAM_BLOCK_IDENTIFIER used by the SW-Cs and the FEE_BLOCK_NUMBER expected by the memory abstraction modules. The parameter relates directly to the FEE_BLOCK_NUMBER or EA_BLOCK_NUMBER with all configured NVM_DATASET_SELECTION_BITS set to zero (ref. to chapter 7.1.2.1).
+Calculation Formula:
+"value = TargetBlockReference.[Ea/Fee]BlockConfiguration.[Ea/Fee]BlockNumber"</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</DERIVED-INTEGER-PARAM-DEF>
+								<DERIVED-INTEGER-PARAM-DEF UUID="DCE:7b8c6def-9834-49fb-8b42-89ff83585e90">
+									<SHORT-NAME>NvmNvramDeviceId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the NVRAM device ID where the NVRAM block is located.
+Calculation Formula:
+"value = TargetBlockReference.[Ea/Fee]BlockConfiguration.[Ea/Fee]DeviceIndex"</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</DERIVED-INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:af1a9812-f5a7-4906-a296-9ad20eee5e25">
+									<SHORT-NAME>NvmRomBlockNum</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Not used, because Blocks with multiple ROM Blocks are not supported.
+Defines the number of multiple ROM blocks in a contiguous area according to the given block management type.
+0-255	For NVRAM blocks to be configured of block management type NVM_BLOCK_DATASET. The actual range is limited according to NVM148.
+0-1	For NVRAM blocks to be configured of block management type NVM_BLOCK_NATIVE
+0-1	For NVRAM blocks to be configured of block management type NVM_BLOCK_REDUNDANT</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:0e5ddfb6-8333-466e-9b2a-61a6f64a8ee3">
+									<SHORT-NAME>NvmRequirementId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">A requirement ID may be entered here for traceability reasons.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+							<SUB-CONTAINERS>
+								<!-- Choice Container Definition: NvmNvBlockBaseNumber -->
+								<CHOICE-CONTAINER-DEF UUID="DCE:d62d3c8a-0362-4abc-8064-1c4dc278fa77">
+									<SHORT-NAME>NvmTargetBlockReference</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CHOICES>
+										<!-- Parameter Container Definition: NvmEaRef -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:45cff752-25fc-41c4-90f8-d3f8a0035faa">
+											<SHORT-NAME>NvmEaRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">EEPROM Abstraction</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<REFERENCES>
+												<!-- Symbolic Name Reference Definition: NvmNameOfEaBlock -->
+												<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:9d38f611-c6f9-4de8-97db-533c3c341b32">
+													<SHORT-NAME>NvmNameOfEaBlock</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">reference to EaBlock</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Ea/EaBlockConfiguration</DESTINATION-REF>
+												</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+											</REFERENCES>
+										</PARAM-CONF-CONTAINER-DEF>
+										<!-- Parameter Container Definition: NvmFeeRef -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:2214451c-cb4f-4d0c-bf68-d516f5e080a5">
+											<SHORT-NAME>NvmFeeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Flash EEPROM Emulation</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<REFERENCES>
+												<!-- Symbolic Name Reference Definition: NvmNameOfFeeBlock -->
+												<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:50388bed-02c0-4cd1-ae61-8ae6f1761fe9">
+													<SHORT-NAME>NvmNameOfFeeBlock</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">reference to FeeBlock</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Fee/FeeBlockConfiguration</DESTINATION-REF>
+												</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+											</REFERENCES>
+										</PARAM-CONF-CONTAINER-DEF>
+									</CHOICES>
+								</CHOICE-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: NvmCommon -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:9d308d9e-ce7a-450c-86ea-cd907977780a">
+							<SHORT-NAME>NvmCommon</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Container for common configuration options.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: NvmApiConfigClass -->
+								<!-- PARAMETER DEFINITION: NvmVersionInfoApi -->
+								<!-- PARAMETER DEFINITION: NvmDevErrorDetect -->
+								<!-- PARAMETER DEFINITION: NvmDrvModeSwitch -->
+								<!-- PARAMETER DEFINITION: NvmDynamicConfiguration -->
+								<!-- PARAMETER DEFINITION: NvmJobPrioritization -->
+								<!-- PARAMETER DEFINITION: NvmMaxNoOfWriteRetries -->
+								<!-- PARAMETER DEFINITION: NvmMulitBlockCallback -->
+								<!-- PARAMETER DEFINITION: NvmPollingMode -->
+								<!-- PARAMETER DEFINITION: NvmSetRamBlockStatusApi -->
+								<!-- PARAMETER DEFINITION: NvmSizeImmediateJobQueue -->
+								<!-- PARAMETER DEFINITION: NvmSizeStandardJobQueue -->
+								<!-- PARAMETER DEFINITION: NvmCompiledConfigId -->
+								<!-- PARAMETER DEFINITION: NvmCrcNumOfBytes -->
+								<!-- PARAMETER DEFINITION: NvmDatasetSelectionBits -->
+								<!-- PARAMETER DEFINITION: NvmTotalNumOfNvramBlocks -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:8a70fa20-3b10-45a3-8a46-4f54b4a5f8ca">
+									<SHORT-NAME>NvmDevErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable the development error detection</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="DCE:61560352-76fe-4077-932e-3a2c6293005b">
+									<SHORT-NAME>NvmApiConfigClass</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable some API calls which are related to NVM API configuration classes.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NvmApiConfigClass3</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:bd8ac2e4-bf7c-4d3c-bbc7-c1f2ab8baec9">
+											<SHORT-NAME>NvmApiConfigClass1</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:5a650ffe-53a2-499a-97c9-672641aadd17">
+											<SHORT-NAME>NvmApiConfigClass2</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:957bb2e7-f126-42be-81f6-ddc5fbf47376">
+											<SHORT-NAME>NvmApiConfigClass3</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:14496475-4bd8-45aa-9ec0-9e31b60a43e5">
+									<SHORT-NAME>NvmVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable the version info API [NVM285], [NVM286].</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:c4bf7030-b42a-4c08-a238-2b3e50528e42">
+									<SHORT-NAME>NvmSetRamBlockStatusApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable the API NvM_SetRamBlockStatus.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:504d8712-4cbf-40fa-886d-6ee336c6902d">
+									<SHORT-NAME>NvmDrvModeSwitch</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable switching memory drivers to fast mode during performing NvM_ReadAll and NvM_WriteAll</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:9a510167-8a42-46bb-820e-5d8c7a6ef17b">
+									<SHORT-NAME>NvmPollingMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable/disable the polling mode in the NVRAM Manager and at the same time disable/enable the callback functions useable by lower layers
+ON	Polling mode enabled/ callbacks disabled
+OFF	Polling mode disabled/callbacks enabled							</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:90f22083-8187-45a2-b243-eb9cb4b0084d">
+									<SHORT-NAME>NvmDynamicConfiguration</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable the dynamic configuration management handling by the NvM_ReadAll request</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:a099534b-b507-4d1e-87fe-7183e8bb6eaa">
+									<SHORT-NAME>NvmJobPrioritization</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable job prioritization handling</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:024db15f-2cf9-4f26-a751-7d71ea740b67">
+									<SHORT-NAME>NvmCrcNumOfBytes</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If CRC is configured for at least one NVRAM block, this parameter defines the maximum number of bytes which shall be processed within one cycle of job processing.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>64</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:b0757c85-62aa-44bf-ad78-5aa76a60ddf2">
+									<SHORT-NAME>NvmDatasetSelectionBits</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the number of least significant bits which shall be used to address a certain dataset of a NVRAM block within the interface to the memory hardware abstraction.
+0..8: Number of bits which are used for dataset or redundant block addressing.
+0: No dataset or redundant NVRAM blocks are configured at all, no selection bits required.
+1: In case of redundant NVRAM blocks are configured, but no dataset NVRAM blocks.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>4</DEFAULT-VALUE>
+									<MAX>8</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:2cd4292d-eca6-4016-aab9-c8c0788b87f1">
+									<SHORT-NAME>NvmSizeImmediateJobQueue</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the number of queue entries for the immediate priority job queue. If NVM_JOB_PRIORITIZATION is switched OFF this parameter shall be out of scope.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>254</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:0a93be27-210f-4ce1-a756-1f2033e939f9">
+									<SHORT-NAME>NvmSizeStandardJobQueue</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the number of queue entries for the standard job queue.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>8</DEFAULT-VALUE>
+									<MAX>254</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:c981bfd4-72f3-42de-b346-7cc9dd680f2c">
+									<SHORT-NAME>NvmMaxNoOfWriteRetries</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the maximum number of write retries for a NVRAM block with [NVM061]. Regardless of configuration a consistency check (and maybe write retries)  are always forced for each block which is processed by the request NvM_WriteAll.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>7</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<DERIVED-INTEGER-PARAM-DEF UUID="DCE:622b4733-68b7-43bf-b8df-3c2819b03c44">
+									<SHORT-NAME>NvmTotalNumOfNvramBlocks</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter shall publish the total number of configured NVRAM blocks to offer the possibility to do an over-all block handling, e.g. during start-up by a single SW-C.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>2</DEFAULT-VALUE>
+									<MAX>65536</MAX>
+									<MIN>2</MIN>
+								</DERIVED-INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:218feca1-255b-41c3-a7d7-4c9c3fe66d8a">
+									<SHORT-NAME>NvmCompiledConfigId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration ID regarding the NV memory layout. This configuration ID shall be published as e.g. a SW-C shall have the possibility to write it to NV memory.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<FUNCTION-NAME-DEF UUID="DCE:f48a81b1-7f40-434f-a087-99374fded171">
+									<SHORT-NAME>NvmMultiBlockCallback</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Entry address of the common callback routine which shall be invoked on termination of each asynchronous multi block request</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V1.0.0</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NULL_PTR</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:de96580f-77b4-4120-bfb5-c2becb46dbe5">
+							<SHORT-NAME>Nvm_30_CommonVendorParams</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Contains Vector specific Module Configuration Parameters.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<BOOLEAN-PARAM-DEF UUID="DCE:f472b5d4-5d93-4c80-a384-b8bc3a122869">
+									<SHORT-NAME>NvmDebugReporting</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables reporting to DET in Development Mode. Has no effects, if NvmDevErrorDetect == OFF
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:4bd2729e-d529-46e3-b999-697b808ad148">
+									<SHORT-NAME>NvmCfgIncludeDet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Header file, declaring the Devolopment Error reporting function</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:bba169ad-fb15-4d5b-903c-5ea77fa40f25">
+									<SHORT-NAME>NvmErrorhook</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Development error reporting function. Must have following prototype:
+void &lt;Name&gt;(uint16 ModuleId, uint8 InstanceId, uint8 ServiceId, uint8 ErrorCode);
+							</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det_ReportError</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:546e6e17-9ea0-4fad-8899-9ca75ab93e77">
+									<SHORT-NAME>NvmCfgChkStatusUninit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/Disable UNINIT checks</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:64eb4fef-7e82-4220-86e6-402e096af7e9">
+									<SHORT-NAME>NvmCfgChkMngmtType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Check for block's Managmement Type in NvM_SetDatIndex() and NvM_GetDataIndex() APIs</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:49def830-0a6e-4382-9c8c-f6cea20c4f47">
+									<SHORT-NAME>NvmCfgChkBlockProtection</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/Disable check of Block's write protection in NvM_WriteBlock(), NvM_InvalidateNvBlock() and NvM_EraseNvBlock()</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:e8478d29-0dc6-4198-9d90-96059f8a7c08">
+									<SHORT-NAME>NvmCfgChkBlockPending</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/Disable PENDING checks in APIs (There may only one request per Block be pending)
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:c4047dac-82d1-450b-b08f-50a63559824d">
+									<SHORT-NAME>NvmCfgChkDoParamChk</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Globally Enable/Disable parameter checks (BlockId, DataIndex, Pointer)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:c987cdd8-34b0-45a6-bb31-d879a3461dd0">
+									<SHORT-NAME>NvmCfgChkParamBlockid</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/Disable BlockId checks in all services expecting a BlockId as parameter</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:c898ba1e-f487-4aa5-b4eb-91a31322567b">
+									<SHORT-NAME>NvmCfgChkParamDataIndex</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/Disable DataIndex check in NvM_SetDataIndex()</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:85f7412b-242f-4aff-a186-817908298df7">
+									<SHORT-NAME>NvmCfgChkParamPointer</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/Disable NULL_POINTER_CHECKS in NvM_GetVersionInfo(), NvM_ReadBlock(), NvM_WriteBlock(), NvM_RestoreBlockDefaults(), NvM_GetErrorStatus(), NvM_GetDataIndex()</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:f847c6af-63ab-4748-9bc2-979fecbb348d">
+									<SHORT-NAME>NvmCfgIncludeDem</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Dem.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<FUNCTION-NAME-DEF UUID="DCE:300970bf-1ee6-454a-b356-040ceae43b80">
+									<SHORT-NAME>NvmSeterror</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">DEM's error reporting function: void &lt;Name&gt;(Dem_EventNoType  EventNo, DemEventStatusType EventStatus)
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Dem_ReportErrorStatus</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<STRING-PARAM-DEF UUID="DCE:6db2c187-661f-4a09-a29c-89dc9dcc3161">
+									<SHORT-NAME>NvmCfgCbkIncludeList</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">List containing the header file(s) declaring the call back functions, and the blocks' symbol declarations, i.e. the multi block callback the single block call backs, the block init callbacks, the ram block symbols as well as the rom block symbols.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Application.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:b3d91a92-efc4-4373-aeca-a2e65e32f1e0">
+									<SHORT-NAME>NvmMultiblockId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">symbolic name if the multi block ID (Block Id 0). May be used in EcuM.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>MultiBlockRequest</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:064f27b5-1650-43a6-b78c-da649da3593b">
+									<SHORT-NAME>NvmServiceComponentName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Service Component Name in  SWC-Description.
+Used to define a unique name space.
+Proposal: just append an arbitrary name to the default value.
+Note: The maximum lenght are 20 characters, in order to be able to append some specific characters in the SWC-Description.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NvM</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:67305a08-3854-4f06-bd8b-21c83615f2da">
+									<SHORT-NAME>NvmSrvPortJobEndPrefix</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Port Prototype prefix for "Job End Notification" Callback, to be used in
+- SWC Description generation
+- Code Generation</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NvM_RpNotifyJobEnd_</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:0bf54aa0-bd6d-4f52-ba7a-a1d8e8619e7c">
+									<SHORT-NAME>NvmSrvPortInitBlockPrefix</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Port Prototype prefix for "Block Init Notification" Callback, to be used in
+- SWC Description generation
+- Code Generation</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Nvm_RpNotifyInit_</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:1d9ac23b-9a88-4b6d-a781-fac9a04fc22a">
+									<SHORT-NAME>Nvm_UseLongSwcNames</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Generate Long Names for Service Port Names (up to 128 chars, instead of 32). 
+Should be enabled, when using DaVinci.
+Has no effects, if no NVRAM Block was configured for using Service Ports</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="1b7769ee-f120-4764-ace4-b6e3e4d8bf27">
+									<SHORT-NAME>NvmCrcIntBuffer</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enabling and disabling internal Crc Buffer. If Internal Crc Buffer is enabled, NvM handles Crc in an internal buffer. Memory for Crc must not be allocated at the end of Ram Block. Is Internal Crc Buffer disabled, Memory for Crc at the end of Ram Block is necessary!</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="5246205d-5f45-4bd4-9eab-a5e08c5bb02a">
+									<SHORT-NAME>NvmCfgChkRamBlockLengths</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Check RAM Blocks' Lengths at startup  during NvM_Init(), using the sizeof operator
+Related DET Error Code: NVM_E_ROM_BLOCK_LENGTH</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="030bccb0-8d19-475b-a81a-72f69ed8b914">
+									<SHORT-NAME>NvmCfgChkRomBlockLengths</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Check ROM Blocks' Lengths at startup  during NvM_Init(), using the sizeof operator
+Related DET Error Code: NVM_E_RAM_BLOCK_LENGTH</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="6634881a-06b0-4d2b-997a-d9788a227aa6">
+									<SHORT-NAME>NvmCfgChkBlockLengthStrict</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables strict/loose block length checks.
+Strict checks require the RAM/ROM Blocks to match the configured Block Lengths exactly.
+Loose checks require the RAM/ROM Block sizes to be greater than or equal to the related  block sizes.
+
+The strict check shall help to detect alignment issues in compiler, which would make user data larger than specified in NVM configuration. As a result the NVM would not write/read all user data to/from NV memory.
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="bca32182-f62b-4144-ba95-b76510819487">
+									<SHORT-NAME>NvmCrcPreserveValue</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Controls CRC calculation:
+if enabled, the calculated CRC is guaranteed to be independent of the number of steps (depending on NvmCrcNumOfBytes) to be performed to calculate the CRC.
+
+The result is always the (standard) CRC value, as if it was calculated with one step.
+This is important for CRC32.
+
+This parameter enables you to keep compatibility with previous releases: Disable it to keep previous behavior.
+However, disabling is recommended only if you want/need to keep data (with CRC32) already stored in NV memory.
+                                        </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="d7c099eb-b926-47cf-a826-cde590d51dc1">
+									<SHORT-NAME>NvmKillWriteAllApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Gives User (EcuM) the possibility to time-out WriteAll cancellation (NvM_CancelWriteAll)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<REFERENCE-PARAM-DEF UUID="DCE:f82e0c72-aede-40de-87fe-a5e5b3056313">
+									<SHORT-NAME>NvmLockSet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Function set for entering/leaving Critical sections.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:6a8f8767-8f81-443c-bd6d-be855f9d62ba">
+							<SHORT-NAME>NvmConfigBlockDescriptor</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Container to configure the composition the config Id Block (BlockId 1). </L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: NvmBlockCRCType -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:64b132cf-5f80-4b49-bbcc-b12c586ce58f">
+									<SHORT-NAME>NvmBlockCRCType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines CRC data width for the NVRAM block. Default: NVM_CRC16.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NVM_CRC16</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:c7947c05-660c-4347-ba5e-81a2afdbef7e">
+											<SHORT-NAME>NVM_CRC16</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:d64a8527-c5b8-47b3-afc6-b5191234907d">
+											<SHORT-NAME>NVM_CRC32</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmBlockJobPriority -->
+								<INTEGER-PARAM-DEF UUID="DCE:bc371cff-de4c-443b-9142-2ff7fcc52386">
+									<SHORT-NAME>NvmBlockJobPriority</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the job priority for a NVRAM block.
+The lower the number, the higher the priority.
+0 defines immediate write priority, i.e. write job with this priority cancels other jobs with lower priority.
+Will be ignored, if NvmJobPrioritization is deactivated.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>127</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmBlockManagementType -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:b7f80e25-9241-4616-aa48-da599c2efce8">
+									<SHORT-NAME>NvmBlockManagementType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the block management type for the NVRAM block.[NVM137]
+Fixed to "redundant"
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NVM_BLOCK_REDUNDANT</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:2b328ded-f14b-4fc6-ba52-329d6aa12715">
+											<SHORT-NAME>NVM_BLOCK_DATASET</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:8bad4aae-d5bb-4a0b-8f89-e291efd667e8">
+											<SHORT-NAME>NVM_BLOCK_NATIVE</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:61789262-20d6-4060-8a2a-9d10928e88e4">
+											<SHORT-NAME>NVM_BLOCK_REDUNDANT</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmBlockUseCrc -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:93a78552-f2c1-4232-a39a-6a6536f3df3e">
+									<SHORT-NAME>NvmBlockUseCrc</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines CRC usage for the NVRAM block, i.e. memory space for CRC is reserved in RAM and NV memory.
+Fixed to "yes/true/on"
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmBlockWriteProt -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:8923fa98-f9fb-45ab-956c-064a4d367773">
+									<SHORT-NAME>NvmBlockWriteProt</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines an initial write protection (which is set during start-up) of the NV block.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmCalcRamBlockCrc -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:955f33cb-f6a7-45b4-9a5e-f124bad6f958">
+									<SHORT-NAME>NvmCalcRamBlockCrc</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines CRC (re)calculation for the permanent RAM block</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmInitBlockCallback -->
+								<FUNCTION-NAME-DEF UUID="DCE:672e6fcb-3f31-4a48-98a2-6f723e0910ce">
+									<SHORT-NAME>NvmInitBlockCallback</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">For ther Config Id Block it is fixed to a NULL pointer,thus no specific callback routine shall be called for initialization of the NVRAM block with default data.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NULL_PTR</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<!-- PARAMETER DEFINITION: NvmNvBlockLength -->
+								<INTEGER-PARAM-DEF UUID="DCE:4df75670-1e39-4f03-b1b6-612144900491">
+									<SHORT-NAME>NvmNvBlockLength</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the NV block data length in bytes. The ConfigId Block has a fixed length of 2bytes.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>2</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmNvBlockNum -->
+								<INTEGER-PARAM-DEF UUID="DCE:3bd8c047-0fb0-41c5-80be-3a2e2d11e278">
+									<SHORT-NAME>NvmNvBlockNum</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the number of multiple NV blocks in a contiguous area according to the given block management type.
+Fixed to "2" --&gt; redundant block										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>2</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmNvramBlockIdentifier -->
+								<!-- PARAMETER DEFINITION: NvmRamBlockDataAddress -->
+								<STRING-PARAM-DEF UUID="DCE:d6693cc3-5400-47d8-96ae-4caec8a983ba">
+									<SHORT-NAME>NvmRamBlockDataAddress</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the start address of the RAM block data.
+Enter NULL_PTR or leave empty (default) to let NVM create an internal RAM block on its own.
+In this case you cannot access the RAM block!
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmResistantToChangedSw -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:0bee2836-549e-4a02-8cd8-cece78d3a68a">
+									<SHORT-NAME>NvmResistantToChangedSw</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The ConfigId Block must always be resistant against software updates</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmRomBlockDataAddress -->
+								<STRING-PARAM-DEF UUID="DCE:1c3a4713-61f7-4298-82cb-a3631db31e40">
+									<SHORT-NAME>NvmRomBlockDataAddress</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The Config Id BLock does not have ROM defaults.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NULL_PTR</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmSelectBlockForReadall -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:a0afda8d-2ed3-4fbf-bf63-8c332008dfb4">
+									<SHORT-NAME>NvmSelectBlockForReadall</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Config Id Block will always be read during ReadAll</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: NvmSingleBlockCallback -->
+								<FUNCTION-NAME-DEF UUID="DCE:6f780a31-cbcc-4e80-88df-64745ba2d7f3">
+									<SHORT-NAME>NvmSingleBlockCallback</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Entry address of the block specific callback routine which shall be invoked on termination of each asynchronous single block request.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</FUNCTION-NAME-DEF>
+								<!-- PARAMETER DEFINITION: NvmWriteBlockOnce -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:e6879ee3-4247-4d62-9697-569fa3dccb0c">
+									<SHORT-NAME>NvmWriteBlockOnce</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mark this block as write once. The NVRAM manager sets the write protection bit after the NV block was written the first time. This means that some of the NV blocks in the NVRAM should never be erased nor be replaced with the default ROM data after first initialization. [NVM276]</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:4a3fe020-4772-40ca-8f17-e6f7b4c4a058">
+									<SHORT-NAME>NvmNvramBlockIdentifier</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Numeric handle  of the NVRAM Block to be passed as BlockId parmater to the NVM.
+This value will be calucuated automatically. In EAD it is not writeable by user.
+										</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:616775bd-74a7-4a52-a62f-c94e99d0fbeb">
+									<SHORT-NAME>NvmUseServicePorts</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mark this block as accessible via service ports.
+The PortName will be derived from the symbolic block Number (here: 1)!.
+			</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:8581c6af-15d4-400b-be3e-ffb24add7fa7">
+									<SHORT-NAME>NvmDeviceName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Device name</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:4d9cac5b-05c5-4dbe-91a1-e3afc86d1488">
+									<SHORT-NAME>NvmUseJobendCallback</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Use the configfured Callback for Single Block Job End Notification, either directly or via Service Port (RTE), depending on the "Use Service Ports" setting</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:d5a49770-6339-42bb-85d6-1091234fb67b">
+									<SHORT-NAME>NvmUseInitCallback</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Use the configfured Init Callback for , either directly or via Service Port (RTE), depending on the "Use Service Ports" setting.
+For the Configuration Block, no Init callback is allowed, thus this value is fixed to FALSE</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:64b12294-e7b9-4c75-a3e5-a296fe2b7468">
+									<SHORT-NAME>NvmJobendCbkAtReadAll</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Invoke the job end notification Callback also during ReadAll processing. 
+Whether to enable/disable this feature depends on the  Integration - whether the related component and/or the RTE it is initialized before the EcuM requests NvM_ReadAll.
+The default when using Service Ports is FALSE, otherwise it's true.
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="DCE:05d7c36d-5d2e-4e1d-86b2-2b0e9bd0f33c">
+									<SHORT-NAME>NvmBlockUsedCrcType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Internal CRC configuration --&gt; for better graphical configuration</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NVM_CRC16</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:dfb8d348-5712-4ebb-89cc-5bf050a64e43">
+											<SHORT-NAME>NVM_NOCRC</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:40acfa79-9a6d-4d64-b7ac-8cbbd83c334a">
+											<SHORT-NAME>NVM_CRC16</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:0f076253-2151-4c60-9856-36de647f7e78">
+											<SHORT-NAME>NVM_CRC32</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<DERIVED-INTEGER-PARAM-DEF UUID="DCE:80662a0f-45b5-485e-a2f7-9f74d85062da">
+									<SHORT-NAME>NvmNvBlockBaseNumber</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration parameter to perform the link between the NVM_NVRAM_BLOCK_IDENTIFIER used by the SW-Cs and the FEE_BLOCK_NUMBER expected by the memory abstraction modules. The parameter relates directly to the FEE_BLOCK_NUMBER or EA_BLOCK_NUMBER with all configured NVM_DATASET_SELECTION_BITS set to zero (ref. to chapter 7.1.2.1).
+Calculation Formula:
+"value = TargetBlockReference.[Ea/Fee]BlockConfiguration.[Ea/Fee]BlockNumber"</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</DERIVED-INTEGER-PARAM-DEF>
+								<DERIVED-INTEGER-PARAM-DEF UUID="DCE:dfc35128-6e8d-4f7f-b689-626683b3e9c3">
+									<SHORT-NAME>NvmNvramDeviceId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the NVRAM device ID where the NVRAM block is located.
+Calculation Formula:
+"value = TargetBlockReference.[Ea/Fee]BlockConfiguration.[Ea/Fee]DeviceIndex"</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</DERIVED-INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:6a2f1ad5-f300-47e4-8f44-4c8b12e9ae1b">
+									<SHORT-NAME>NvmRomBlockNum</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Not used for the Config Id Block. It does not have any ROM Block, at all</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="2a7494c4-3702-48ed-9e0a-49ee3f631326">
+									<SHORT-NAME>NvmRequirementId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">A requirement ID may be entered here for traceability reasons.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+							<SUB-CONTAINERS>
+								<!-- Choice Container Definition: NvmNvBlockBaseNumber -->
+								<CHOICE-CONTAINER-DEF UUID="DCE:bf76c488-4f8e-4217-86be-6d51e9bca5bc">
+									<SHORT-NAME>NvmTargetBlockReference</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The NV block base number shall be used to access a certain block via the memory abstraction interface. It is needed to make the link between the NVM_NVRAM_BLOCK_IDENTIFIER used by the SW-Cs and the FEE_BLOCK_NUMBER expected by the memory abstraction modules.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CHOICES>
+										<!-- Parameter Container Definition: EaRef -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:cdda7d0c-e3be-47fc-9fac-cc145930dcc9">
+											<SHORT-NAME>NvmEaRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">EEPROM Abstraction</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Symbolic Name Reference Definition: NameOfEaBlock -->
+												<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:8921f5e0-94f0-427b-8be4-9edd06955e5a">
+													<SHORT-NAME>NvmNameOfEaBlock</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">reference to EaBlock</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Ea/EaBlockConfiguration</DESTINATION-REF>
+												</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+											</REFERENCES>
+										</PARAM-CONF-CONTAINER-DEF>
+										<!-- Parameter Container Definition: FeeRef -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:deb292b0-47c6-4f38-8cf4-095382d69f58">
+											<SHORT-NAME>NvmFeeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Flash EEPROM Emulation</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<REFERENCES>
+												<!-- Symbolic Name Reference Definition: NameOfFeeBlock -->
+												<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:6096aba7-cc84-4bf5-b4ee-f62c524a485f">
+													<SHORT-NAME>NvmNameOfFeeBlock</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">reference to FeeBlock</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Fee/FeeBlockConfiguration</DESTINATION-REF>
+												</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+											</REFERENCES>
+										</PARAM-CONF-CONTAINER-DEF>
+									</CHOICES>
+								</CHOICE-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<BSW-IMPLEMENTATION UUID="DCE:855ad04f-489a-4324-a4fc-06b035b34fba">
+					<SHORT-NAME>NvM_Impl</SHORT-NAME>
+					<CODE-GENERATOR>cMICROSAR</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>3</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>7</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>1</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>2</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>2</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>0</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/NvM_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/NvM_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/NvM</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-CONFIGURATION UUID="DCE:48a773d8-d8c5-42d2-837d-2a945a507ca2">
+					<SHORT-NAME>NvM_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/NvM</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="DCE:1f01f8be-2805-48bb-ab74-5c8e8bead43f">
+					<SHORT-NAME>NvM_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/NvM</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,360 @@
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Text" #>
+<#+
+
+/*******************************************************************************
+**                      Member Types                                          **
+*******************************************************************************/
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : Predicate                                                  **
+**                                                                            **
+** DESCRIPTION   : Function that evaluates an XPath expression and returns    **
+**                 true or false depending on the value.                      **
+**                                                                            **
+** PARAMETER     : xpathExpression: XPath expression to evaluate.             **
+**                                                                            **
+** RETURN        : True if node(-set) at XPath fullfills the predicate,       **
+**                 else false.                                                **
+**                                                                            **
+*******************************************************************************/
+delegate bool Predicate( string xpathExpression );
+
+
+/*******************************************************************************
+**                      Member Functions                                      **
+*******************************************************************************/
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : BoolValueOf                                                **
+**                                                                            **
+** DESCRIPTION   : Returns the value of the given value name as a bool value  **
+**                                                                            **
+** PARAMETER     : valueName: name of the value                               **
+**                                                                            **
+** RETURN        : Value of the given value name as a bool value              **
+**                                                                            **
+** THROWS        : ArgumentException if given valueName does not denote a     **
+**                 valid boolean value                                        **
+**                                                                            **
+*******************************************************************************/
+[Obsolete("reason: Use the implict bool operator of NodeValue class instead. I.e. (bool) ValueOf( Xp.ValueAtDefRefTo( valueName ) );")]
+bool BoolValueOf( string valueName )
+{
+   return (bool) ValueOf( Xp.ValueAtDefRefTo( valueName ) );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : Enabled                                                    **
+**                                                                            **
+** DESCRIPTION   : Returns the value of the given value name as a bool value  **
+**                                                                            **
+** PARAMETER     : valueName: name of the value                               **
+**                                                                            **
+** RETURN        : Value of the given value name as a bool value              **
+**                                                                            **
+*******************************************************************************/
+[Obsolete("reason: Use the implict bool operator of NodeValue class instead. I.e. (bool) ValueOf( Xp.ValueAtDefRefTo( valueName ) );")]
+bool Enabled( string valueName )
+{
+   return BoolValueOf( valueName );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : EnumerableToString                                         **
+**                                                                            **
+** DESCRIPTION   : Creates a string that contains the string representations  **
+**                 all elements in the collection seperated by the given      **
+**                 separator.                                                 **
+**                                                                            **
+** PARAMETER     : collection: Collection of arbitrary values.                **
+**                 separator : String to place in between each element's      **
+**                             string representation.                         **
+**                                                                            **
+** RETURN        : String representation of the collection.                   **
+**                                                                            **
+*******************************************************************************/
+string EnumerableToString( IEnumerable collection, string separator )
+{
+   return EnumerableToString( collection, "", separator, "" );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : EnumerableToString                                         **
+**                                                                            **
+** DESCRIPTION   : Creates a string that contains the given prefix / postfix  **
+**                 at the beginning / end and the string representations all  **
+**                 elements in the collection seperated by the given          **
+**                 separator.                                                 **
+**                                                                            **
+** PARAMETER     : collection: Collection of arbitrary values.                **
+**                 prefix    : String to place at the beginning of the result **
+**                             string.                                        **
+**                 separator : String to place in between each element's      **
+**                             string representation.                         **
+**                 postfix   : String to place at the end of the result       **
+**                             string.                                        **
+**                                                                            **
+** RETURN        : String representation of the collection.                   **
+**                                                                            **
+** REMARKS       : This is semantically equivalent to manually looping over   **
+**                 the elements and placing prefix / postfix before / after   **
+**                 the loop except in the case that collection is empty.      **
+**                 In that case the result string will empty, i.e. prefix /   **
+**                 postfix won't be part of the result string if collection   **
+**                 is empty.                                                  **
+**                                                                            **
+*******************************************************************************/
+string EnumerableToString( IEnumerable collection, string prefix, string separator, string postfix )
+{
+   return EnumerableToString( collection, prefix, separator, postfix, 0, int.MaxValue );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : EnumerableToString                                         **
+**                                                                            **
+** DESCRIPTION   : Creates a string that contains the given prefix / postfix  **
+**                 at the beginning / end and the string representations of   **
+**                 the specified elements in the collection seperated by the  **
+**                 given separator.                                           **
+**                                                                            **
+** PARAMETER     : collection: Collection of arbitrary values.                **
+**                 prefix    : String to place at the beginning of the result **
+**                             string.                                        **
+**                 separator : String to place in between each element's      **
+**                             string representation.                         **
+**                 postfix   : String to place at the end of the result       **
+**                             string.                                        **
+**                 startIdx  : Zero-based index of the first element in the   **
+**                             collection to put in the result string.        **
+**                 count     : Number of elements to put in the result string.**
+**                                                                            **
+** RETURN        : String representation of the collection.                   **
+**                                                                            **
+** REMARKS       : This is semantically equivalent to manually looping over   **
+**                 the elements and placing prefix / postfix before / after   **
+**                 the loop except in the case that collection is empty.      **
+**                 In that case the result string will empty, i.e. prefix /   **
+**                 postfix won't be part of the result string if collection   **
+**                 is empty.                                                  **
+**                 Even if startIdx + count is greater than the size of       **
+**                 collection, only elements whose indices are within         **
+**                 collection are put in the result string.                   **
+**                                                                            **
+*******************************************************************************/
+string EnumerableToString( IEnumerable collection, string prefix, string separator, string postfix, int startIdx, int count )
+{
+   StringBuilder result = new StringBuilder();
+
+   int idx = 0;
+
+   foreach( object element in collection )
+   {
+      if( idx - startIdx >= count )
+         break;
+
+      if( idx >= startIdx )
+         result.Append( element.ToString() )
+               .Append( separator );
+
+      ++idx;
+   }
+
+   if( idx > 0 )
+      result.Remove( result.Length - separator.Length, separator.Length )
+            .Insert( 0, prefix )
+            .Append( postfix );
+
+   return result.ToString();
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : Max                                                        **
+**                                                                            **
+** DESCRIPTION   : Returns the greatest value in a collection of comparable   **
+**                 values.                                                    **
+**                                                                            **
+** PARAMETER     : collection: Collection of comparable values.               **
+**                                                                            **
+** RETURN        : Greatest value in the collection.                          **
+**                                                                            **
+*******************************************************************************/
+T Max<T>( IEnumerable<T> collection ) where T : IComparable<T>
+{
+   IEnumerator<T> enumerator = collection.GetEnumerator();
+
+   // Test if collection is empty and implicitly move enumerator to first element.
+   if( !enumerator.MoveNext() )
+      throw new ArgumentException( "Collection must not be empty!" );
+
+   T max = enumerator.Current;
+
+   foreach( T element in collection )
+      if( element.CompareTo( max ) > 0 )
+         max = element;
+
+   return max;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : NumBinaryDigits                                            **
+**                                                                            **
+** DESCRIPTION   : Returns the number of binary digits necessary to represent **
+**                 the number in binary format.                               **
+**                                                                            **
+** PARAMETER     : number: Number to calculate the binary digits of.          **
+**                                                                            **
+** RETURN        : Number of binary digits.                                   **
+**                                                                            **
+*******************************************************************************/
+int NumBinaryDigits( long number )
+{
+   return Convert.ToString( number, 2 ).Length;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : CountIf                                                    **
+**                                                                            **
+** DESCRIPTION   : Counts the number of nodes that match the given XPath      **
+**                 expression and for which the given Predicate is true.      **
+**                                                                            **
+** PARAMETER     : pred           : Function that returns true or false       **
+**                                  depending on the value at the given XPath **
+**                                  location.                                 **
+**                 xpathExpression: XPath to the node set.                    **
+**                                                                            **
+** RETURN        : Number of nodes that fullfill the condition.               **
+**                                                                            **
+*******************************************************************************/
+int CountIf( Predicate pred, string xpathExpression )
+{
+   int count = 0;
+   Loop( xpathExpression, delegate() { if( pred( "." ) ) ++count; } );
+   return count;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : Equals                                                     **
+**                                                                            **
+** DESCRIPTION   : Creates a Predicate that tests if the string value of the  **
+**                 target node equals the given value.                        **
+**                                                                            **
+** PARAMETER     : value: Value to compare against.                           **
+**                                                                            **
+** RETURN        : Predicate that tests equality.                             **
+**                                                                            **
+*******************************************************************************/
+Predicate Equals( string value )
+{
+   return new Predicate( delegate( string xp ) { return value == ValueOf( xp ); } );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : Not                                                        **
+**                                                                            **
+** DESCRIPTION   : Creates a Predicate that returns inverse result of the     **
+**                 given predicate.                                           **
+**                                                                            **
+** PARAMETER     : pred: Predicate to invert.                                 **
+**                                                                            **
+** RETURN        : Inverted predicate.                                        **
+**                                                                            **
+*******************************************************************************/
+Predicate Not( Predicate pred )
+{
+   return new Predicate( delegate( string xp ) { return !pred( xp ); } );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : Any                                                        **
+**                                                                            **
+** DESCRIPTION   : Creates a Predicate that tests if any of the given         **
+**                 predicates return true.                                    **
+**                                                                            **
+** PARAMETER     : preds: Arbitrary number of predicates.                     **
+**                                                                            **
+** RETURN        : Combined predicate.                                        **
+**                                                                            **
+*******************************************************************************/
+Predicate Any( params Predicate[] preds )
+{
+   return new Predicate( delegate( string xp )
+   {
+      foreach( Predicate pred in preds )
+         if( pred( xp ) == true )
+            return true;
+
+      return false;
+   } );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : All                                                        **
+**                                                                            **
+** DESCRIPTION   : Creates a Predicate that tests if all given predicates     **
+**                 return true.                                               **
+**                                                                            **
+** PARAMETER     : preds: Arbitrary number of predicates.                     **
+**                                                                            **
+** RETURN        : Combined predicate.                                        **
+**                                                                            **
+*******************************************************************************/
+Predicate All( params Predicate[] preds )
+{
+   return new Predicate( delegate( string xp )
+   {
+      foreach( Predicate pred in preds )
+         if( pred( xp ) == false )
+            return false;
+
+      return true;
+   } );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : Ref                                                        **
+**                                                                            **
+** DESCRIPTION   : Creates a Predicate that interprets its given XPath as     **
+**                 reference and evaluates the value of the node relative to  **
+**                 the target of the reference specified by relXPath.         **
+**                                                                            **
+** PARAMETER     : relXPath: XPath relative to the target of the reference.   **
+** PARAMETER     : pred    : Predicate.                                       **
+**                                                                            **
+** RETURN        : Predicate that evaluates a referenced value.               **
+**                                                                            **
+*******************************************************************************/
+Predicate Ref( string relXPath, Predicate pred )
+{
+   return new Predicate( delegate( string xp ) { return pred( Xp.AbsShortNamePath( ValueOf( xp )) + "/" + relXPath ); } );
+}
+
+
+/*** End of file **************************************************************/#>

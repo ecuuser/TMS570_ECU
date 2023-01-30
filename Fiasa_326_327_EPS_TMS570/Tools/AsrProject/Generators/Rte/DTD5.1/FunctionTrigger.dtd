@@ -1,0 +1,27 @@
+<!-- Entities -->
+
+<!ENTITY ti.FunctionTrigger "FunctionTrigger">
+
+
+<!-- Elements -->
+
+<!ELEMENT FunctionTrigger           (%C.DefAttr;,GenAttrList?)>
+
+<!ATTLIST FunctionTrigger           %A.ConfigItem;
+        PrimaryType                 (CYCLIC|SPONTANEOUS|SIGNAL) "CYCLIC"         
+        PrimaryCycleTime            CDATA "0"
+        PrimaryCycleTimeUnit        (MSEC|USEC|SEC) "MSEC"
+        SecondaryType               (CYCLIC|SPONTANEOUS|SIGNAL) "CYCLIC"         
+        SecondaryCycleTime          CDATA "0"
+        SecondaryCycleTimeUnit      (MSEC|USEC|SEC) "MSEC"
+>
+
+<!-- Links -->
+
+<!ELEMENT FunctionTriggerLink EMPTY>
+<!ATTLIST FunctionTriggerLink 
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.FunctionTrigger;"
+>

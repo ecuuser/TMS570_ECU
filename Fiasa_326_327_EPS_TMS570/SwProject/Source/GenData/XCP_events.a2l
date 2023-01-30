@@ -1,0 +1,10 @@
+      /begin EVENT
+        "2ms_DAQ" /* EVENT_CHANNEL_NAME */
+        "2ms_DAQ" /* EVENT_CHANNEL_SHORT_NAME */
+        0 /* EVENT_CHANNEL_NUMBER */
+        DAQ
+        1 /* MAX_DAQ_LIST */
+        2 /* TIME_CYCLE */
+        6 /* TIME_UNIT */
+        0 /* PRIORITY */
+      /end EVENT

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE ElementTypeMap [
+  <!ELEMENT ElementTypeMap (ElementType*)>
+  <!ELEMENT ElementType EMPTY>
+  <!ATTLIST ElementType
+  TypeName CDATA #REQUIRED
+    StorageClass CDATA #REQUIRED
+    ConfigType CDATA ""
+    ChildType CDATA ""
+>
+]>
+<ElementTypeMap>
+  <!--Elements supported in eASEE database schema-->
+  <ElementType TypeName="Application" StorageClass="APPL" ConfigType="" ChildType="CHILDAPPL"/>
+  <ElementType TypeName="AssignNADSlot" StorageClass="NADSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="AssignUnassignIDSlot" StorageClass="AUIDSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="AttrDefinition" StorageClass="ATTRDEF" ConfigType="" ChildType="NDO"/>
+  <ElementType TypeName="AttrDefSet" StorageClass="ATTRDEFSET" ConfigType="CONFIGATTR" ChildType=""/>
+  <ElementType TypeName="AttrValue" StorageClass="ATTRVALUE" ConfigType="" ChildType="NDO"/>
+  <ElementType TypeName="BitrateAutomatic" StorageClass="BITRAUTO" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="BitrateScalar" StorageClass="BITRSCALAR" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="BitrateSelect" StorageClass="BITRSELECT" ConfigType="" ChildType="BITRAUTO"/>
+  <ElementType TypeName="BitrateType" StorageClass="BITRTYPE" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="BooleanPrimitive" StorageClass="PRIMBOOL" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="CANBus" StorageClass="CANBUS" ConfigType="CONFIGNET" ChildType="CHILDNET"/>
+  <ElementType TypeName="CANFrame" StorageClass="CANFRAME" ConfigType="" ChildType="CHILDFRAME"/>
+  <ElementType TypeName="Category" StorageClass="CATEGORY" ConfigType="CONFIGCAT" ChildType=""/>
+  <ElementType TypeName="Channel" StorageClass="CHANNEL" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="ClientServer" StorageClass="CSPORTIF" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ComplexType" StorageClass="COMPLXTYPE" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="Component" StorageClass="COMPINST" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="ComponentPrototype" StorageClass="COMPPROTO" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="ComponentType" StorageClass="COMPTYPE" ConfigType="CONFIGCOMP" ChildType="CHILDCOMP"/>
+  <ElementType TypeName="Composition" StorageClass="COMPO" ConfigType="" ChildType="CHILDCOMPO"/>
+  <ElementType TypeName="Constant" StorageClass="CONSTANT" ConfigType="CONFIGCONS" ChildType="CHILDCONS"/>
+  <ElementType TypeName="CONTENT" StorageClass="CONTENT" ConfigType="" ChildType="DVFILE"/>
+  <ElementType TypeName="DataElement" StorageClass="DEINST" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="DataElementPrototype" StorageClass="DEPROTO" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="DataType" StorageClass="DATATYPE" ConfigType="CONFIGDT" ChildType="CHILDDT"/>
+  <ElementType TypeName="Device" StorageClass="DEVICE" ConfigType="CONFIGDEV" ChildType=""/>
+  <ElementType TypeName="DeviceAccessor" StorageClass="DA" ConfigType="" ChildType="CHILDDA"/>
+  <ElementType TypeName="DeviceInst" StorageClass="DEVINST" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="DevicePin" StorageClass="DEVICEPIN" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="DiagnosticFrameSlot" StorageClass="DIAFRMSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="DVW" StorageClass="DVW" ConfigType="CONFIGGRP" ChildType=""/>
+  <ElementType TypeName="ECU" StorageClass="ECU" ConfigType="" ChildType="CHILDECU"/>
+  <ElementType TypeName="ECUPin" StorageClass="ECUPIN" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="ECUProject" StorageClass="ECUPRJ" ConfigType="CONFIGECUP" ChildType=""/>
+  <ElementType TypeName="ECUProjectMap" StorageClass="ECUPRJMAP" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="EventTriggeredFrameSlot" StorageClass="EVTFRMSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="FileEntry" StorageClass="FILEENTRY" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="FlexRayAbsTiming" StorageClass="FRABSTIME" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="FlexRayCluster" StorageClass="FRCLUSTER" ConfigType="CONFIGNET" ChildType="CHILDNET"/>
+  <ElementType TypeName="FlexRayController" StorageClass="FRCTRL" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="FlexRayDynamicSegment" StorageClass="FRDYNAMIC" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="FlexRayFrame" StorageClass="FRFRAME" ConfigType="" ChildType="CHILDFRAME"/>
+  <ElementType TypeName="FlexRayStaticSegment" StorageClass="FRSTATIC" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="FNConn" StorageClass="FNCONN" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="FrameConstraint" StorageClass="FRMCONSTR" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="FrameNodeMap" StorageClass="FRMNODEMAP" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="FreeFormatSlot" StorageClass="FREEFMSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="FuncDAMap" StorageClass="FUNCDAMAP" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="Function" StorageClass="FUNC" ConfigType="CONFIGFUNC" ChildType="CHILDFUNC"/>
+  <ElementType TypeName="FunctionPort" StorageClass="FUNCPORT" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="FunctionStructure" StorageClass="FUNCSTRUCT" ConfigType="" ChildType="CHILDSTRUC"/>
+  <ElementType TypeName="FunctionTrigger" StorageClass="FUNCTRIG" ConfigType="CONFIGTRIG" ChildType=""/>
+  <ElementType TypeName="FunctionTriggerRef" StorageClass="FUNCTRGREF" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="GenAttr" StorageClass="GENATTR" ConfigType="" ChildType="NDO"/>
+  <ElementType TypeName="GenAttrList" StorageClass="ATTRLIST" ConfigType="" ChildType="CHILDATTR"/>
+  <ElementType TypeName="IntegerPrimitive" StorageClass="PRIMINT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="LINBus" StorageClass="LINBUS" ConfigType="CONFIGNET" ChildType="CHILDNET"/>
+  <ElementType TypeName="LINEventTriggeredFrame" StorageClass="LINEVFRM" ConfigType="" ChildType="CHILDFRAME"/>
+  <ElementType TypeName="LINMasterNodeAttributes" StorageClass="LINMAATTR" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="LINRxFrameNodeMap" StorageClass="LINRXFRM" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="LINSlaveNodeAttributes" StorageClass="LINSLATTR" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="LINSporadicFrame" StorageClass="LINSPFRM" ConfigType="" ChildType="CHILDFRAME"/>
+  <ElementType TypeName="LINUnconditionalFrame" StorageClass="LINUCFRM" ConfigType="" ChildType="CHILDFRAME"/>
+  <ElementType TypeName="LINUnconditionalFrameIndex" StorageClass="LINUCFRMIX" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="MappedSignal" StorageClass="MAPPEDSIG" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="MappedSignalGroup" StorageClass="MAPPEDSG" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="MappingConstraint" StorageClass="MAPCONSTR" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="MultiplexorGroup" StorageClass="MULTIGRP" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="NetworkNode" StorageClass="NETNODE" ConfigType="" ChildType="CHILDNODE"/>
+  <ElementType TypeName="NetworkSignal" StorageClass="NETSIGNAL" ConfigType="" ChildType="CHILDNWSIG"/>
+  <ElementType TypeName="NodeMappingRelation" StorageClass="NODEMAPREL" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="OpaquePrimitive" StorageClass="PRIMOPAQUE" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="PinConnection" StorageClass="PINCONN" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="PortConnector" StorageClass="PORTCONN" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="PortInterface" StorageClass="PORTIF" ConfigType="CONFIGPIF" ChildType="CHILDPIF"/>
+  <ElementType TypeName="PortPrototype" StorageClass="PORTPROTO" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="PortAPIOption" StorageClass="PORTAPIOPT" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="PortDAVal" StorageClass="PORTDAV" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="PrimitiveType" StorageClass="PRIMTYPE" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="PrivateSigType" StorageClass="PRVSIGTYPE" ConfigType="" ChildType="CHILDTYPE"/>
+  <ElementType TypeName="RealPrimitive" StorageClass="PRIMREAL" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="RecordElement" StorageClass="RECELEMENT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="RecordElementConstant" StorageClass="RECCONST" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="RecordPrimitive" StorageClass="PRIMREC" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="Runnable" StorageClass="RUNNABLE" ConfigType="" ChildType="CHILDRUN"/>
+  <ElementType TypeName="RunnableDataAccess" StorageClass="RUNACCESS" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="RxNodeRelation" StorageClass="RXNODEREL" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="Scalar" StorageClass="SCALAR" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ScheduleTable" StorageClass="SCHEDTBL" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="SenderReceiver" StorageClass="SRPORTIF" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="SenderReceiverComSpec" StorageClass="SRCOMSPEC" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="SenderReceiverConnectorComSpec" StorageClass="SRCONNSPEC" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="SensorActuator" StorageClass="SA" ConfigType="" ChildType="CHILDSA"/>
+  <ElementType TypeName="Signal" StorageClass="SIGNAL" ConfigType="CONFIGSIG" ChildType="CHILDSIG"/>
+  <ElementType TypeName="SignalDefine" StorageClass="SIGDEFINE" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="SignalGroupRoot" StorageClass="SIGGRP" ConfigType="CONFIGSG" ChildType="CHILDSG"/>
+  <ElementType TypeName="SignalInterface" StorageClass="SIGIF" ConfigType="" ChildType="CHILDIF"/>
+  <ElementType TypeName="SignalLayout" StorageClass="SIGLAYOUT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="SignalType" StorageClass="SIGTYPE" ConfigType="CONFIGTYPE" ChildType="CHILDTYPE"/>
+  <ElementType TypeName="SporadicFrameSlot" StorageClass="SPFRMSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="Task" StorageClass="TASK" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="TaskMap" StorageClass="TASKMAP" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="TimerDefinition" StorageClass="TIMER" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="Trigger" StorageClass="TRIGGER" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="TriggerInput" StorageClass="TRIGGERIN" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="TxNodeRelation" StorageClass="TXNODEREL" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="UnconditionalFrameSlot" StorageClass="UCFRMSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="VehicleConfig" StorageClass="VEHICLECFG" ConfigType="CONFIGVC" ChildType=""/>
+  <ElementType TypeName="VehicleProject" StorageClass="VEHICLEPRJ" ConfigType="CONFIGVP" ChildType=""/>
+  <ElementType TypeName="VPDerivedSW" StorageClass="VPDERIVESW" ConfigType="CONFIGGRP" ChildType=""/>
+  
+  <ElementType TypeName="DataSendCompletionTrigger" StorageClass="DSCTRIG" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="OperationInvocationTrigger" StorageClass="OPITRIG" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="OperationAccess" StorageClass="OPACCESS" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ClientServerConnectorComSpec" StorageClass="CSCONNSPEC" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ClientServer" StorageClass="CSPORTIF" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="OperationPrototype" StorageClass="OPPROTO" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="ArgumentPrototype" StorageClass="ARGPROTO" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ApplicationError" StorageClass="APPERROR" ConfigType="" ChildType="CHILDLEAF"/>
+  
+  <ElementType TypeName="CyclicTiming" StorageClass="CYCLICTIME" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="EvtTiming" StorageClass="EVTTIME" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="ReqTiming" StorageClass="REQTIME" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="TimingCondition" StorageClass="TIMECOND" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="SystemTrigger" StorageClass="SYSTRIG" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="SignalTrigger" StorageClass="SIGTRIG" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="SystemState" StorageClass="SYSSTATE" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="SignalState" StorageClass="SIGSTATE" ConfigType="" ChildType="CHILDLEAF"/>
+
+  <ElementType TypeName="StartingRangeTolerance" StorageClass="RTSTART" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="RepeatingRangeTolerance" StorageClass="RTREPEAT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="DebounceRangeTolerance" StorageClass="RTDEBOUNCE" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ResponseRangeTolerance" StorageClass="RTRESPONSE" ConfigType="" ChildType="CHILDLEAF"/>
+  
+  <ElementType TypeName="ClientServerComSpec" StorageClass="CSCOMSPEC" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="DataMapping" StorageClass="DATAMAP" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="ProxyComponent" StorageClass="PROXYCOMP" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="ProxyPortConnector" StorageClass="PROXYPCONN" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ProxyPortPrototype" StorageClass="PROXYPPROT" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="ECUSWComposition" StorageClass="ECUSWCOMP" ConfigType="" ChildType="CHILDGRP"/>
+  
+  <ElementType TypeName="ExclusiveArea" StorageClass="EXCLAREA" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ExclusiveAreaAccess" StorageClass="EXCLACCESS" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="InterRunnableVariable" StorageClass="IRVAR" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="InterRunnableVariableAccess" StorageClass="IRVACCESS" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="CalibrationParameter" StorageClass="CALPRM" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ArrayPrimitive" StorageClass="PRIMARRAY" ConfigType="" ChildType="CHILDLEAF"/>
+  
+  <ElementType TypeName="NADValue" StorageClass="NADVALUE" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ReadByIdentifierSlot" StorageClass="READIDSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ConditionalChangeNADSlot" StorageClass="CONDSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="DataDumpSlot" StorageClass="DATASLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="SaveConfigurationSlot" StorageClass="SVCFGSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="AssignFrameIDRangeSlot" StorageClass="FRMIDSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="AssignNADviaSNPDSlot" StorageClass="SNPDSLOT" ConfigType="" ChildType="CHILDLEAF"/>
+  
+  <ElementType TypeName="SequenceDescription" StorageClass="SEQDESC" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="FunctionOrder" StorageClass="FUNCORD" ConfigType="" ChildType="CHILDLEAF"/>
+  
+  <ElementType TypeName="EnumerationPrimitive" StorageClass="PRIMENUM" ConfigType="" ChildType="CHILDGRP"/>
+  <ElementType TypeName="EnumerationElement" StorageClass="ENUMELEM" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ArrayElementConstant" StorageClass="ARRAYCONST" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="Generator" StorageClass="GENERATOR" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ExternalTool" StorageClass="EXTTOOL" ConfigType="" ChildType="CHILDLEAF"/>
+  <ElementType TypeName="ECUCommunication" StorageClass="ECUCOMM" ConfigType="" ChildType="CHILDGRP"/>
+  
+  <!-- Currently unsupported elements in eASEE-->
+  <ElementType TypeName="CategoryObjectWrapper" StorageClass="CATOBJWRAP" ConfigType="" ChildType=""/>
+  <ElementType TypeName="ComplexDD" StorageClass="COMPLEXDD" ConfigType="" ChildType=""/>
+  <ElementType TypeName="ECUAbstraction" StorageClass="ECUABSTR" ConfigType="" ChildType=""/>
+  
+</ElementTypeMap>

@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/3.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.1.0 AUTOSAR_ECUC.xsd">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="ECUC:AUTOSAR">
+			<SHORT-NAME>TMS570PSFC66</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="3314e040-dec7-438c-b692-2ac8cb0b41b1">
+					<SHORT-NAME>Fee_Implementation</SHORT-NAME>
+					<CODE-GENERATOR>cMICROSAR</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>2</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>6</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>0</SW-PATCH-VERSION>
+					<VENDOR-ID>44</VENDOR-ID>
+					<AR-MAJOR-VERSION>1</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>2</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>2</AR-PATCH-VERSION>
+				</BSW-IMPLEMENTATION>
+				<ECU-PARAMETER-DEFINITION UUID="ECUC:95593765-60d4-4cbb-bdc7-07dedb06f326">
+					<SHORT-NAME>AUTOSARParameterDefinition</SHORT-NAME>
+					<MODULE-REFS>
+						<MODULE-REF DEST="MODULE-DEF">/TMS570PSFC66/Fee</MODULE-REF>
+					</MODULE-REFS>
+				</ECU-PARAMETER-DEFINITION>
+				<MODULE-DEF UUID="ECUC:176580f8-97a6-49c9-b502-e5389fe1ec1a">
+					<SHORT-NAME>Fee</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN"> Flash EEPROM Emulation Configuration</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.00.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2011-06-29T02:53:29+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">In parameter Fee_BlockConfiguration DatasetSelectionBits are encrypted</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Changes in Spec of Fee Generator from TI</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2011-08-30T10:57:13+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added Parameter FeeDataset into container FeeBlockConfiguration</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Support of variable numbers of datasets</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.01.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2011-10-06T04:09:46+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Parameter FeeBlockConfiguration and FeeBlockNumber swapped</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Incompatibilities to Fee implementation and NvM</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.01.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2011-10-10T11:27:54+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Range of FeeMaximumNumbersOfLinks changed</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of Specification by TI</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.01.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2012-04-17T09:11:15+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">SW version updated</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">New source files from TI delivered</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.02.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2012-11-05T01:45:43+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Some parameters added new, some deleted</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Redesign of Fee implementation by TI</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.02.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virdu</ISSUED-BY>
+								<DATE>2013-03-07T03:30:13+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Add Parameters FeeNumberOfUnconfiguredBlocksToCopy, FeeNumberOfEightByteWrites  to container FeeGeneral</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Email form TI (Reddy Vishwanath)</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.04.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virou</ISSUED-BY>
+								<DATE>2014-10-20T12:39:08+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added FeeTotalBlocksDataSets</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Support TMS570LS05xx, TMS570LS07xx and TMS570LS09xx.</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.05.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virou</ISSUED-BY>
+								<DATE>2015-01-12T09:51:24+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Removed FeeNumberOfEEPS and FeeTotalBlocksDatasets; updated FeeNumberOfVirtualSectorsEEP1, FeeSectorConfiguration, FeeSectorNumber, FeeBlockSize and FeeDeviceName; added FeeNumberOfVirtualSectors, FeeGenerateDeviceandvirtualsectorstruc, FeeVirtualsectorSize and FeePhysicalsectorSize</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update AutoSAR FEE Parameter Configuration.pdf</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/Fee</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<PARAM-CONF-CONTAINER-DEF UUID="ECUC:8fae0d8e-3731-4c35-a489-5988ad57de9e">
+							<SHORT-NAME>FeePublishedInformation</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Fee container. It contains additional published information.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<INTEGER-PARAM-DEF UUID="ECUC:423d0628-d1d2-479b-8949-da54f19790f8">
+									<SHORT-NAME>FeeBlockOverhead</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Block overhead in bytes</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>24</DEFAULT-VALUE>
+									<MAX>24</MAX>
+									<MIN>24</MIN>
+								</INTEGER-PARAM-DEF>
+								<FLOAT-PARAM-DEF UUID="ECUC:bb1a6836-fb3c-467b-8d40-2e1d4b5d6451">
+									<SHORT-NAME>FeeMaximumBlockingTime</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Maximum Blocking Time in uS</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>600.0</DEFAULT-VALUE>
+									<MAX>600.0</MAX>
+									<MIN>600.0</MIN>
+								</FLOAT-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ECUC:1b4ce0bb-d34b-46e3-b99e-f0f0a91f9489">
+									<SHORT-NAME>FeePageOverhead</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Page overhead in bytes - for our methods, there is none.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>0</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ECUC:83215c3a-63a8-4e49-b6d1-882374fe2385">
+									<SHORT-NAME>FeeVirtualSectorOverhead</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Virtual Sector overhead in bytes.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>TEXAS_INSTRUMENTS_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>16</DEFAULT-VALUE>
+									<MAX>16</MAX>
+									<MIN>16</MIN>
+								</INTEGER-PARAM-DEF>
+								<FUNCTION-NAME-DEF UUID="6cb39594-8e55-4bd0-8810-edbc5f009c2c">
+									<SHORT-NAME>FeeCancelApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the API service name of the Fee which is used to cancel a current job.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS xmlns="http://autosar.org/3.1.0">
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee_Cancel</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<FUNCTION-NAME-DEF UUID="ab7cd12e-67a1-41d3-a3e8-f47199ac84a6">
+									<SHORT-NAME>FeeEraseImmediateBlockApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the API service name of the Fee which is used to erase a block on the Flash which is configured to hold high priority data.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee_EraseImmediateBlock</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<FUNCTION-NAME-DEF UUID="e4e6e748-c21b-42fb-9ab3-a28bec7bdcf9">
+									<SHORT-NAME>FeeGetJobResultApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the API service name of the Fee which is used to get the result of the last requested job.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee_GetJobResult</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<FUNCTION-NAME-DEF UUID="cd6bd65a-4dd5-4db9-9b4e-874147e079e0">
+									<SHORT-NAME>FeeGetStatusApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the API service name of the Fee which is used to get the current status of the Fee.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee_GetStatus</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<FUNCTION-NAME-DEF UUID="704d1631-826e-4d7c-866f-82fb7e6e5f46">
+									<SHORT-NAME>FeeInvalidateBlockApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the API service name of the Fee which is used to invalidate a block on the Flash.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee_InvalidateBlock</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<FUNCTION-NAME-DEF UUID="63ba87bd-c8af-4740-9eb2-782d980027c9">
+									<SHORT-NAME>FeeReadApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the API service name of the Fee which is used to read data from the Flash.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee_Read</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<FUNCTION-NAME-DEF UUID="c284d1f6-ef00-4312-b3ab-b1e60148df83">
+									<SHORT-NAME>FeeSetModeApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the API service name of the Fee which is used to set the mode of the Fls driver.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee_SetMode</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<FUNCTION-NAME-DEF UUID="4e1fd51b-c556-40d6-8b23-940190b114fd">
+									<SHORT-NAME>FeeWriteApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the API service name of the Fee which is used to write data to the Flash.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee_Write</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<STRING-PARAM-DEF UUID="ece593e1-90cf-4c87-b524-acf0b69d0742">
+									<SHORT-NAME>FeeIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the include file of the Fee which declares the API service names.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS xmlns="http://autosar.org/3.1.0">
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="ECUC:cad3fcb1-d4a0-4e9f-a676-28f50129d65e">
+							<SHORT-NAME>FeeGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">FeeGeneral Configuration configuration. It contains general device options.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<BOOLEAN-PARAM-DEF UUID="ECUC:f687c359-3ee7-4de2-a5a0-00bad89b8170">
+									<SHORT-NAME>FeeDevErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Indicates if Development Error Detection is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ECUC:70a36134-be93-46d2-bf7c-647c859d5b68">
+									<SHORT-NAME>FeeDeviceIndex</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Instance ID of this module. Should always be 0.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>TEXAS_INSTRUMENTS_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>0</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<FUNCTION-NAME-DEF UUID="ECUC:1861afba-d3c0-4f22-991c-a7338c9f9414">
+									<SHORT-NAME>FeeNvmJobEndNotification</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Job End callback function.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NvM_JobEndNotification</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<FUNCTION-NAME-DEF UUID="ECUC:5517ad91-b19d-4f37-9cab-e20110099146">
+									<SHORT-NAME>FeeNvmJobErrorNotification</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Job Error callback function.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>NvM_JobErrorNotification</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<BOOLEAN-PARAM-DEF UUID="ECUC:ec0a1b7f-2761-4938-b2d0-64becfdfb0fc">
+									<SHORT-NAME>FeePollingMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Indicates if polling mode is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="ECUC:100a3e6b-accf-4b2b-b4ed-2f71b1e98437">
+									<SHORT-NAME>FeeVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Indicates if the user can use the function Fee_GetVersionInfo().</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="ECUC:100a3e6b-accf-4b2b-b4ed-2f71b1e98437">
+									<SHORT-NAME>FeeEnableErrorCorrection</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable error correction.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>TEXAS_INSTRUMENTS_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ECUC:b9b92528-dd49-4739-a16c-4c0c3f10e707">
+									<SHORT-NAME>FeeVirtualPageSize</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the virtual page size.  Our implementation is currently a static 8 byte Page Size.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>8</DEFAULT-VALUE>
+									<MAX>8</MAX>
+									<MIN>8</MIN>
+								</INTEGER-PARAM-DEF>
+								<FLOAT-PARAM-DEF UUID="ECUC:91c8d607-ec5e-4204-9bf9-6ccf1c2688a3">
+									<SHORT-NAME>FeeFrequency</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Input Frequency in MHz</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>TEXAS_INSTRUMENTS_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>160.0</DEFAULT-VALUE>
+									<MAX>180.0</MAX>
+									<MIN>10.0</MIN>
+								</FLOAT-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="54a1bb3a-b1fa-4d9e-bc97-53fa13ce25a9">
+									<SHORT-NAME>FeeCRCEnable</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">CRC Enable</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Pre-processor switch to enable the CRC blocks.
+STD_ON: CRC for blocks is enabled
+STD_OFF: CRC disabled</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="254effae-f601-4546-9247-5102cdc5a327">
+									<SHORT-NAME>FeeWriteCounterSave</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Write Counter Save</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">FEE_FALSH_WRITE_COUNTER_SAVE is set to STD_ON if block wirte counter save is enabled else it is set to STD_OFF</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="365e4bdd-a104-43f5-b2da-97a049424c11">
+									<SHORT-NAME>FeeNumberOfVirtualSectors</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Number Of Virtual Sectors</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the number of Virtual Sectors used for FEE when FEE_GENERATE_DEVICEANDVIRTUALSECTORSTRUC = STD_ON.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>16</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="758d80c4-e86a-40f8-adeb-0b36f3ec0910">
+									<SHORT-NAME>FeeNumberOfVirtualSectorsEEP1</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Number Of Virtual Sectors EEP1</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the number of Virtual Sectors used for EEP1.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>14</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="7c45bce3-d5a8-4a9d-95df-1dc34a21ab79">
+									<SHORT-NAME>FeeNumberOfUnconfiguredBlocksToCopy</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Number Of Unconfigured Blocks To Copy</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Indicates the number of valid blocks which are not configured but need to be copied during Virtual Sector swap.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>65534</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="2a65e3d0-bd67-4ba7-936e-2bf53fa25708">
+									<SHORT-NAME>FeeNumberOfEightByteWrites</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Number of Eight Byte Writes</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Indicates the number of 8 byte writes to perform in a main function..</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="cb127863-32b2-458c-9f4d-5b1867b36c1c">
+									<SHORT-NAME>FeeCheckBank7Access</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Check Bank7 Access</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Pre processor switch to enable EEPROM address range check during read/write. </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="7394a309-fcbf-4e68-82df-cd37e999d347">
+									<SHORT-NAME>FeeGenerateDeviceandvirtualsectorstruc</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Generate Device And Virtual Sector Struc</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Pre processor switch to enable/disable generation of Device and Virtual sector structures.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="19204d46-67f3-4b0d-babb-1c5c2557e816">
+									<SHORT-NAME>FeeVirtualsectorSize</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Virtual Sector Size</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Macro to indicate the required virtual sector size in kilo bytes. This macro is only used when FEE_GENERATE_DEVICEANDVIRTUALSECTORSTRUC is STD_ON. Based on FEE_VIRTUALSECTOR_SIZE and FEE_NUMBER_OF_VIRTUAL_SECTORS, elements of the structure Fee_VirtualSectorConfiguration will be populated during runtime.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>VS_4</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="5b802ca3-ca11-4f3e-98d7-bdef197a9b4b">
+											<SHORT-NAME>VS_4</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="971ae7ba-c919-47e0-ad5d-e8ff0ea6f59e">
+											<SHORT-NAME>VS_8</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="5abf3a5f-b644-4349-980a-0b4d409138b0">
+											<SHORT-NAME>VS_12</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="02130093-071f-4a05-b442-1b49110a2c49">
+											<SHORT-NAME>VS_16</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="b1752fdd-0ef8-477a-9b8c-d2aff8524a11">
+											<SHORT-NAME>VS_32</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="857c3c94-42fa-45de-9f73-23cc88ee7a9d">
+									<SHORT-NAME>FeePhysicalsectorSize</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Physical Sector Size</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Macro to indicate the physical sector size on the device. This macro is only used when FEE_GENERATE_DEVICEANDVIRTUALSECTORSTRUC is STD_OFF. This parameter is used to select device specific files.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>PS_4</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="29864897-9cfc-4e2c-a267-70dee11a09a5">
+											<SHORT-NAME>PS_4</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="0e3cd078-dfc0-45f0-a48d-6efb776b0303">
+											<SHORT-NAME>PS_16</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="ECUC:030f155c-c7e1-4eb0-8bd0-23ee28c5165a">
+							<SHORT-NAME>FeeSectorConfiguration</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Fee Virtual Sector Configuration container.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>16</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<INTEGER-PARAM-DEF UUID="ECUC:79dde146-33f6-48ea-9883-36d9a9f0e1a8">
+									<SHORT-NAME>FeeSectorNumber</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Used to assign a number to the Virtual Sector.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>16</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ECUC:0f3f8707-6afd-4b91-a01f-6c40ec0f89ee">
+									<SHORT-NAME>FeeSectorBank</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Sector's Bank - Bank used for the virtual sector.
+Sector Bank 0 is not allowed!</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>7</DEFAULT-VALUE>
+									<MAX>7</MAX>
+									<MIN>7</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ECUC:82b6e695-dc9e-4dd8-86ee-d623771ebabd">
+									<SHORT-NAME>FeeSectorStart</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Virtual Sectors start sector.
+End Sector must be greater or at least equal to start sector!</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ECUC:b51e9c49-8bad-43bf-8398-454ae24d48a1">
+									<SHORT-NAME>FeeSectorEnd</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Virtual Sectors end sector.
+End Sector must be greater or at least equal to start sector!</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="5da9afd2-7e85-42c5-968b-349bf3dc7b8e">
+									<SHORT-NAME>FeeSectorName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The user-defined name is assigned to a number starting from 0x1. FeeVirtualSectorNumber is set to the number assigned to the Virtual Sector name.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>TEXAS_INSTRUMENTS_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>FeeSectorConfiguration_0</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="ECUC:681c7db3-5474-4ba0-b98a-cb6bc3d60ab8">
+							<SHORT-NAME>FeeBlockConfiguration</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">FeeBlock Configuration container. It contains Flash EEPROM Emulation block information.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<INTEGER-PARAM-DEF UUID="ECUC:9291473b-8179-4136-b962-7cf9e108dab2">
+									<SHORT-NAME>FeeBlockNumber</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Datasetselctionbits are encrypted in this ID.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>65534</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ECUC:d90d9415-c551-4e26-9213-133f7abaa1a1">
+									<SHORT-NAME>FeeBlockSize</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Block's Size - Actual number of bits used is reduced by number of bits used for dataset.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>8</DEFAULT-VALUE>
+									<MAX>65534</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="ECUC:e33a6bcd-8023-4d59-9dfd-6742ef4f9eb3">
+									<SHORT-NAME>FeeImmediateData</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Indicates if the block is used for immediate data.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ECUC:7f7f3760-8b88-4884-b1bd-fde77072821c">
+									<SHORT-NAME>FeeNumberOfWriteCycles</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Number of write cycles this block requires.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="9f2d4bcb-dc21-46c6-aac5-433933d06039">
+									<SHORT-NAME>FeeBlockName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The user-defined name is assigned a number starting from 0x1. FeeBlockNumber is set to the number assigned to the Block name.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>TEXAS_INSTRUMENTS_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee_BlockConfiguration_1</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="98687a5a-4ad2-43bb-8b10-af20d3655739">
+									<SHORT-NAME>FeeDeviceIndex</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Indicates the device index. This will always be 0.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>TEXAS_INSTRUMENTS_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>0</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="226a7b9a-bf49-44b1-92af-b517f91567ca">
+									<SHORT-NAME>FeeBlockConfiguration</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Block Number</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">FEE Block Number - 0 and 0xFFFE values are not allowed
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>TEXAS_INSTRUMENTS_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>65534</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ff778886-da08-4e6c-a245-5af04e5ea412">
+									<SHORT-NAME>FeeDataset</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Number of DataSets for this Block.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="91661f07-46f1-4965-8570-fe155de0a229">
+									<SHORT-NAME>FeeEEPNumber</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Number indicating into which EEP does the block go. 
+0: Block will be configured on EEP1
+1: Block will be configured on EEP2
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Texas Instruments</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>1</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="ECUC:8a7e6304-dc6c-4ff5-a1a1-a428bf35bbf9">
+							<SHORT-NAME>FeeTypes</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">FeeTypes Configuration container. It contains TI Fee/Flash specific information.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<ENUMERATION-PARAM-DEF UUID="ECUC:e49cd7b0-2013-487d-b12e-0ea62e7245ba">
+									<SHORT-NAME>FeeFlashErrCorrHandlingType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">indicates desired action to bit errors.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>TEXAS_INSTRUMENTS_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Fee_None</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="ECUC:738e2f34-28cf-4050-9047-a6be55298019">
+											<SHORT-NAME>Fee_None</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="ECUC:f4611767-70e0-46a3-b9e5-feefc021ae23">
+											<SHORT-NAME>Fee_Fix</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="ECUC:d5c11477-92ec-493d-b1d4-982db3e4baca">
+							<SHORT-NAME>FeeFlashConfiguration</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This Container is the base of multiple configuration sets. It defines the Flash structure of the device.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<ENUMERATION-PARAM-DEF UUID="ECUC:39a95f51-ce8f-4da6-a229-852b2d9114d2">
+									<SHORT-NAME>FeeDeviceName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Device name.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>TEXAS_INSTRUMENTS_ECUC V2.0.2</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>TMS570LS05xx</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="561a17a8-1d2a-4c7e-a50a-537baec21290">
+											<SHORT-NAME>TMS570LS05xx</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="d909221c-fe00-41b0-a085-e9c470c5ec58">
+											<SHORT-NAME>TMS570LS07xx</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="3708a5d2-2d31-4b41-92c7-0270c5e0ff5f">
+											<SHORT-NAME>TMS570LS09xx</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="66a5a601-cb23-42fb-9634-031a0538a6d2">
+											<SHORT-NAME>TMS570LS11xx</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="b2121246-1a01-4155-9122-bb4412b28f1e">
+											<SHORT-NAME>TMS570LS12xx</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

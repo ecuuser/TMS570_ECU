@@ -1,0 +1,150 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : Cd_NvMProxy_PBcfg.h
+* Module Description: Configuration of the Cd_NvMProxy BSW
+* Product           : Gen II Plus - EA3.0
+* Author            : Jeremy Warmbier
+*****************************************************************************/
+/*---------------------------------------------------------------------------
+ * Version Control:
+ * Date Created:      Tue Feb  7 11:23:49 2012
+ * %version:          5 %
+ * %derived_by:       czgng4 %
+ * %date_modified:    Wed Nov 20 08:22:29 2013 % 
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 02/07/12   1        JJW       Initial creation
+ * 10/17/12   2        JJW       Generated output file
+ * 11/20/12   3        JJW       Removed generation of Block status mirror array.  It is defined in the static SWC
+ * 05/30/13   4        JJW       Removed unsuported config feature, added multi-block support
+ * 11/21/13   5        LWW       Added Redundant and CRC block checking
+ */
+
+#include "Std_Types.h"
+#define NVMPROXY_C
+#include "Cd_NvMProxy_Cfg.h"
+#undef NVMPROXY_C
+
+<#	ChangeContext( Xp.ModuleConfAtDefRefTo( "NvMProxy" ) ); #>
+
+/* Global data buffers to be used in NvM cfg for Read All destinations */
+#define NVMPROXY_START_SEC_VAR_NOINIT_8
+#include "MemMap.h"
+
+<# int numberOfBlocks = 1; /* always 1 block for the multi-block support */ #>
+
+<# !LOOP( Xp.ContainerAtDefRefTo( "NvMProxyConfigSet" ) ) #>
+<#
+	numberOfBlocks += Count( Xp.ContainerAtDefRefTo( "NvMProxyBlock" ) ); 
+#>
+<# !LOOP( Xp.ContainerAtDefRefTo( "NvMProxyBlock" ) ) #>
+<#	string secureBlockName = ValueOf( Xp.ValueAtDefRefTo( "NvmRamBlockDataAddressSecure" )); 
+	string initBlockHandling = ValueOf( Xp.ValueAtDefRefTo( "InitBlockHandling" ) );
+	bool nvmRamGlobalShared = ValueOf( Xp.ValueAtDefRefTo( "NvMRamGlobalShared" ) );#>
+	
+<# if ( initBlockHandling == "CRC16" ) { 
+ if ( nvmRamGlobalShared == false) { #>
+#pragma DATA_ALIGN (NvMP_<#=secureBlockName#>, 4U); 
+VAR(uint8, AUTOMATIC) NvMP_<#=secureBlockName#>[sizeof(<#=secureBlockName#>)+D_CRC16SIZE_CNT_U16];<# } 
+ } else if ( initBlockHandling == "Redundant" ){ 
+ if ( nvmRamGlobalShared == false) { #>
+#pragma DATA_ALIGN (NvMP_<#=secureBlockName#>, 4U);
+VAR(uint8, AUTOMATIC) NvMP_<#=secureBlockName#>[sizeof(<#=secureBlockName#>)+sizeof(<#=secureBlockName#>)];<# } 
+ } else { 
+ if ( nvmRamGlobalShared == false) { #>
+#pragma DATA_ALIGN (NvMP_<#=secureBlockName#>, 4U);
+VAR(uint8, AUTOMATIC) NvMP_<#=secureBlockName#>[sizeof(<#=secureBlockName#>)];<# } 
+ } #>	
+<# !ENDLOOP #>
+
+#define NVMPROXY_STOP_SEC_VAR_NOINIT_8
+#include "MemMap.h"
+
+/* Block Test and Copy Configuration */
+#define NVMPROXY_START_SEC_CONST_UNSPECIFIED
+#include "MemMap.h"
+CONST(NvMProxyCfg_Type, AUTOMATIC) NvMProxyCfg[ D_NUMPRXYBLOCKS_CNT_U16 ] = {
+	{0, NULL_PTR,  NULL_PTR, 0, NVMPROXY_NONE, NVMPROXY_NOTAPPLICABLE, NULL_PTR, NULL_PTR}, /* Multi-block fixed config */
+<# !LOOP( Xp.ContainerAtDefRefTo( "NvMProxyBlock" ) ) #>
+<#	string secureBlockName = ValueOf( Xp.ValueAtDefRefTo( "NvmRamBlockDataAddressSecure" )); 
+	string nvmBlockIdSymbol = RefValueOf(Xp.ValueRefAtDefRefTo( "NvmBlockDescriptorRef" ), ".//ar:SHORT-NAME");
+	string initBlockHandling = ValueOf( Xp.ValueAtDefRefTo( "InitBlockHandling" ) );
+	string initCheckFailResponse = ValueOf( Xp.ValueAtDefRefTo( "InitCheckFailResponse" ) );
+	string failactionsymbol = ValueOf( Xp.ValueAtDefRefTo( "ROMDefault_Or_NotificationFunction_Symbol" ) );
+	bool nvmRamGlobalShared = ValueOf( Xp.ValueAtDefRefTo( "NvMRamGlobalShared" ) );
+	string romdefaultfailactionsymbol = ValueOf( Xp.ValueAtDefRefTo( "ROMDefault_Or_NotificationFunction_Symbol" ) );
+	string notificationfailactionsymbol = ValueOf( Xp.ValueAtDefRefTo( "ROMDefault_Or_NotificationFunction_Symbol" ) );
+	string unsecureBlockName = "NvMP_"+ValueOf( Xp.ValueAtDefRefTo( "NvmRamBlockDataAddressSecure" )); 
+	
+	if (initBlockHandling == "CRC16")
+	{
+		initBlockHandling = "NVMPROXY_CRC16";
+	}else if (initBlockHandling == "Redundant")
+	{ 
+		initBlockHandling = "NVMPROXY_REDUNDANT";
+	}else if (initBlockHandling == "ZeroData")
+	{ 
+		initBlockHandling = "NVMPROXY_ZERODATA"; 
+	}else
+	{ 
+		initBlockHandling = "NVMPROXY_NONE";
+	} 
+	
+	if (initCheckFailResponse == "SetNTC_0x0A")
+	{
+		initCheckFailResponse = "NVMPROXY_NTC_0A";
+	}else if (initCheckFailResponse == "SetNTC_0x08_LoadROMDefaults")
+	{ 
+		initCheckFailResponse = "NVMPROXY_NTC_08_ROMDEF";
+		romdefaultfailactionsymbol = failactionsymbol;
+		notificationfailactionsymbol = "NULL_PTR";
+	}else if (initCheckFailResponse == "SetNTC_0x07_LoadROMDefaults")
+	{ 
+		initCheckFailResponse = "NVMPROXY_NTC_07_ROMDEF";
+		romdefaultfailactionsymbol = failactionsymbol;
+		notificationfailactionsymbol = "NULL_PTR";
+	}else if (initCheckFailResponse == "SetNTC_0x06_LoadROMDefaults")
+	{ 
+		initCheckFailResponse = "NVMPROXY_NTC_06_ROMDEF";
+		romdefaultfailactionsymbol = failactionsymbol;
+		notificationfailactionsymbol = "NULL_PTR";
+	}else if (initCheckFailResponse == "SetNTC_0x08_CallNotificationFunction")
+	{ 
+		initCheckFailResponse = "NVMPROXY_NTC_08_NOTIFFUNC"; 
+		romdefaultfailactionsymbol = "NULL_PTR";
+		notificationfailactionsymbol = failactionsymbol;
+	}else if (initCheckFailResponse == "SetNTC_0x07_CallNotificationFunction")
+	{ 
+		initCheckFailResponse = "NVMPROXY_NTC_07_NOTIFFUNC"; 
+		romdefaultfailactionsymbol = "NULL_PTR";
+		notificationfailactionsymbol = failactionsymbol;
+	}else if (initCheckFailResponse == "SetNTC_0x06_CallNotificationFunction")
+	{ 
+		initCheckFailResponse = "NVMPROXY_NTC_06_NOTIFFUNC"; 
+		romdefaultfailactionsymbol = "NULL_PTR";
+		notificationfailactionsymbol = failactionsymbol;
+	}else
+	{ 
+		initCheckFailResponse = "NVMPROXY_NOTAPPLICABLE";
+	} 
+	
+	if (nvmRamGlobalShared == true)
+	{
+		unsecureBlockName = secureBlockName;
+	}
+#>
+	{<#=nvmBlockIdSymbol#>, (uint8*)&<#=unsecureBlockName#>,  (uint8*)&<#=secureBlockName#>, sizeof(<#=secureBlockName#>), <#=initBlockHandling#>, <#=initCheckFailResponse#>, <#=romdefaultfailactionsymbol#>, <#=notificationfailactionsymbol#>},
+<# !ENDLOOP #>
+};
+#define NVMPROXY_STOP_SEC_CONST_UNSPECIFIED
+#include "MemMap.h"
+
+
+<# !ENDLOOP #>

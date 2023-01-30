@@ -1,0 +1,108 @@
+<!-- Entities -->
+
+<!ENTITY ti.DataType       "DataType">
+<!ENTITY ti.Constant       "Constant">
+<!ENTITY ti.SignalType     "SignalType">
+<!ENTITY ti.PrivateSigType "PrivateSigType">
+
+
+<!-- Elements -->
+
+<!ELEMENT DataType  (%C.DefAttr;, ATTRLink*, (PrimitiveType | ComplexType), GenAttrList?)>
+<!ELEMENT PrimitiveType (BooleanPrimitive | IntegerPrimitive | RealPrimitive | OpaquePrimitive | EnumerationPrimitive)>
+<!ELEMENT ComplexType (ArrayPrimitive | RecordPrimitive)>
+
+<!ELEMENT BooleanPrimitive EMPTY>
+<!ELEMENT IntegerPrimitive EMPTY>
+<!ELEMENT RealPrimitive    EMPTY>
+<!ELEMENT OpaquePrimitive  EMPTY>
+<!ELEMENT EnumerationPrimitive (ATTRLink*, EnumerationElement+)>
+<!ELEMENT EnumerationElement (%C.DefAttr;)>
+
+<!ELEMENT ArrayPrimitive (ATTRLink*)>
+<!ELEMENT RecordPrimitive (RecordElement+)>
+<!ELEMENT RecordElement (%C.DefAttr;, ATTRLink*)>
+
+
+<!ATTLIST DataType %A.ConfigItem; 
+          Primitive                 (Boolean|Integer|Real|Opaque|Enumeration|Array|Record) "Integer" 
+          SignalTypeLink            NMTOKEN #FIXED "&ti.SignalType;"
+          PrivateSigTypeLink        NMTOKEN #FIXED "&ti.PrivateSigType;"
+          FNDerived                 CDATA "0"
+>
+
+<!ATTLIST PrimitiveType %A.ChildItem;>
+<!ATTLIST ComplexType   %A.ChildItem;>
+	
+<!ATTLIST BooleanPrimitive %A.ChildItem;>
+
+<!ATTLIST IntegerPrimitive %A.ChildItem;
+    LowerLimit             CDATA '0'
+    UpperLimit             CDATA '255'
+    LowerLimitClosed       CDATA '0'
+    UpperLimitClosed       CDATA '0'
+    UseScaling             CDATA '0'
+    Factor                 CDATA '1'
+    Offset                 CDATA '0'
+    Unit                   CDATA ''
+    UseInvalidValue        CDATA '0'
+    InvalidValue           CDATA '0'
+>
+
+<!ATTLIST RealPrimitive    %A.ChildItem; 
+    LowerLimit             CDATA '-INF'
+    UpperLimit             CDATA '+INF'
+    LowerLimitClosed       CDATA '0'
+    UpperLimitClosed       CDATA '0' 
+    Encoding               (Single|Double) "Single" 
+    AllowNaN               CDATA "0"
+    UseScaling             CDATA '0'
+    Factor                 CDATA '1'
+    Offset                 CDATA '0'
+    Unit                   CDATA ''
+    UseInvalidValue        CDATA '0'
+    InvalidValue           CDATA '0'
+>
+
+<!ATTLIST OpaquePrimitive  %A.ChildItem; 
+        NumBits   CDATA "8"
+>
+
+<!ATTLIST EnumerationPrimitive %A.ChildItem;
+    Old_DataTypeLink NMTOKEN #FIXED "&ti.DataType;"
+    LowerLimit             CDATA '0'
+    UpperLimit             CDATA '255'
+    LowerLimitClosed       CDATA '0'
+    UpperLimitClosed       CDATA '0'
+    UseInvalidValue        CDATA '0'
+    InvalidValue           CDATA '0'
+>
+
+<!ATTLIST EnumerationElement %A.ChildItem;
+    Value      CDATA '0'
+    OrderIndex CDATA '0'
+>
+
+<!ATTLIST ArrayPrimitive  %A.ChildItem;
+    NumElements   CDATA "1"
+    DataTypeLink NMTOKEN #FIXED "&ti.DataType;"
+>
+
+<!ATTLIST RecordPrimitive %A.ChildItem;>
+
+<!ATTLIST RecordElement %A.ChildItem;
+	DataTypeLink NMTOKEN #FIXED "&ti.DataType;"
+	OrderIndex CDATA '0'
+>
+
+
+<!-- Links -->
+
+<!ELEMENT DataTypeLink EMPTY>
+
+<!ATTLIST DataTypeLink 
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.DataType;"
+>

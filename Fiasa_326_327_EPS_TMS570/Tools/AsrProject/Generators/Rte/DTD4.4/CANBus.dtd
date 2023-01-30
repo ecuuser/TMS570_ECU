@@ -1,0 +1,33 @@
+<!-- Entities -->
+
+<!ENTITY ti.CANBus  "CANBus">
+
+
+<!-- Elements -->
+
+<!ELEMENT CANBus               (%C.DefAttr;,CONTENT*,CANFrame*,Channel*,GenAttrList?,NetworkSignal*)>
+<!ATTLIST CANBus               %A.ConfigItem;
+          VehicleProjectGUID   CDATA ""
+	      Manufacturer         CDATA ""
+	      NMType               CDATA ""
+	      Bitrate              CDATA "0"
+	      Framesize            CDATA "0"
+	      ConnectableStations  CDATA "0"
+>
+
+<!ELEMENT CANFrame   (%C.DefAttr;,ATTRLink*,GenAttrList?,MultiplexorGroup*,FrameNodeMap*,FrameConstraint?,MappedSignal*,MappedSignalGroup*)>
+<!ATTLIST CANFrame   %A.ChildItem;
+          MessageID  CDATA "0"
+          DLC        CDATA "0"
+          Format     (CANSTD|CANEXT) "CANSTD"
+>
+
+
+<!-- Links -->
+
+<!ELEMENT CANBusLink EMPTY>
+<!ATTLIST CANBusLink 
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.CANBus;"
+>

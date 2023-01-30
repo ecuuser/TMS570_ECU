@@ -1,0 +1,44 @@
+<!-- Entities -->
+
+<!ENTITY ti.Category              "Category">
+<!ENTITY ti.CategoryObjectWrapper "CategoryObjectWrapper">
+
+
+<!-- Elements -->
+
+<!ELEMENT Category              (%C.DefAttr;,CategoryObjectWrapper*)>
+<!ELEMENT CategoryObjectWrapper (ATTRLink*)>
+
+
+<!ATTLIST Category %A.ConfigItem;>
+
+<!ATTLIST CategoryObjectWrapper %A.ChildItem;
+            SignalTypeLink      NMTOKEN #FIXED "&ti.SignalType;"
+            SignalLink          NMTOKEN #FIXED "&ti.Signal;"
+            FunctionLink        NMTOKEN #FIXED "&ti.Function;"
+            ECULink             NMTOKEN #FIXED "&ti.ECU;"
+            CANBusLink          NMTOKEN #FIXED "&ti.CANBus;"
+            LINBusLink          NMTOKEN #FIXED "&ti.LINBus;"
+            FlexRayCluster      NMTOKEN #FIXED "&ti.FlexRayCluster;"
+            NetworkSignalLink   NMTOKEN #FIXED "&ti.NetworkSignal;"
+            FrameLink           NMTOKEN #FIXED "&ti.Frame;"
+            DeviceAccessorLink  NMTOKEN #FIXED "&ti.DeviceAccessor;"
+            SignalGroupRootLink NMTOKEN #FIXED "&ti.SignalGroupRoot;"
+            DataTypeLink        NMTOKEN #FIXED "&ti.DataType;"
+            PortInterfaceLink   NMTOKEN #FIXED "&ti.PortInterface;"
+            ComponentTypeLink   NMTOKEN #FIXED "&ti.ComponentType;"
+            VehicleProjectLink  NMTOKEN #FIXED "&ti.VehicleProject;"
+            VehicleConfigLink   NMTOKEN #FIXED "&ti.VehicleConfig;"
+            ECUProjectLink      NMTOKEN #FIXED "&ti.ECUProject;"
+>
+
+<!-- Links -->
+
+<!ELEMENT CategoryLink EMPTY>
+<!ATTLIST CategoryLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.Category;"
+>
+

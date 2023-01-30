@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+============================================================================
+This file is generated with Eparm 2.0.1.11
+Date: Mon, 09 Nov 2009 17:07:15 GMT
+============================================================================
+-->
+<AUTOSAR xmlns="http://autosar.org/3.1.4">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="4c5b386a-31d7-4dd9-a743-ed7e47803b9d">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-DEF UUID="d9e9b926-0de4-40b6-88b4-1ab537e31fcf">
+					<SHORT-NAME>Dio</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of the Dio (Digital IO) module.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virtsd</ISSUED-BY>
+								<DATE>2008-11-03T16:59:46</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Creation</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">-</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virtsd</ISSUED-BY>
+								<DATE>2008-11-03T16:59:46</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Release for series production</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">-</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virtsd</ISSUED-BY>
+								<DATE>2010-03-15T16:59:46</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">fixed SW version information</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">-</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virtsd</ISSUED-BY>
+								<DATE>2010-06-14T10:25:50</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">added support for TMS570PSFD62</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00034153</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virtsd</ISSUED-BY>
+								<DATE>2010-06-14T10:27:11</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">added recommended configuration to provide useful default values</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00040218</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.00.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2010-11-25T15:06:46</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">SchM recommended configuration file added</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00046692</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.00.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2011-02-01T14:25:04</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support for Tms570ls30x added</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">-</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2011-08-19T06:42:10+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support of DioMaskedWritePort added</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">-</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>2.01.00</REVISION-LABEL>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2011-09-15T11:20:01+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Correted Pre-Config for RTP port</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00052804</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/Dio</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-LINK-TIME</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Parameter Container Definition: DioGeneral -->
+						<PARAM-CONF-CONTAINER-DEF UUID="7974834e-bb13-432a-9c13-3db5bb324899">
+							<SHORT-NAME>DioGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">General DIO module configuration parameters.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: DioDevErrorDetect -->
+								<BOOLEAN-PARAM-DEF UUID="4fef178c-fd49-4271-9c88-5f918b72e1f6">
+									<SHORT-NAME>DioDevErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the Development Error Detection and Notification 
+ON or OFF</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: DioMaskedWritePortApi -->
+								<BOOLEAN-PARAM-DEF UUID="2ced4755-eed6-4afa-b630-33a0d9b0dcfa">
+									<SHORT-NAME>DioMaskedWritePortApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Adds / removes the service Dio_MaskedWritePort() from the code.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: DioVersionInfoApi -->
+								<BOOLEAN-PARAM-DEF UUID="14d81540-ef1d-4038-9667-b5e434a55290">
+									<SHORT-NAME>DioVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Adds / removes the service Dio_ GetVersionInfo() from the code.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="992ac3b9-e1f7-4d65-bb02-739157544560">
+									<SHORT-NAME>DioCfgSupportGio</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables or disables support of ports, channels and channel groups with GIO register layout.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="6ee3f730-5ef6-4783-b6c8-dd4b5f0b216c">
+									<SHORT-NAME>DioCfgSupportCan</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables or disables support of ports, channels and channel groups located in the CAN hardware.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="f718305f-6830-4d45-bac5-b1907831d80f">
+									<SHORT-NAME>DioCfgDoParamCheck</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables checking of parameter values passed to the API globally.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="3f3ac2a9-6748-43ef-b6f3-124cf0a91d8d">
+									<SHORT-NAME>DioCfgReportDet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables reporting of detected development errors to DET.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="f1feed38-e8e3-4bc5-93ab-2c001eceff10">
+									<SHORT-NAME>DioCfgChkParamChannel</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables checking of parameter ChannelId in Dio_ReadChannel and Dio_WriteChannel.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="f4a7090a-9de5-4e5b-844d-a1f95bfc8d44">
+									<SHORT-NAME>DioCfgChkParamPort</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables cecking of parameter PortId in Dio_ReadPort and Dio_WritePort.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="4c8acc7c-cecf-4386-9ac4-3da40fd9dfd9">
+									<SHORT-NAME>DioCfgChkParamGroup</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables checking of parameter ChannelGroupIdPtr in Dio_ReadChannelGroup and Dio_WriteChannelGroup.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="6a5f1da7-caa8-4a7e-bdec-b5ae8e7a0947">
+									<SHORT-NAME>DioCfgChkParamVinfo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables checking of parameter VersionInfo in Dio_GetVersionInfo.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<FUNCTION-NAME-DEF UUID="759760c9-54cb-47d1-8e36-5929d1f92cc7">
+									<SHORT-NAME>DioReportDet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configures the name of the Det API that should be used for reporting development errors.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det_ReportError</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<STRING-PARAM-DEF UUID="1f8dce40-3923-4c84-b414-29c94fad2256">
+									<SHORT-NAME>DioCfgIncludeDet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specifies the include file in which the prototype for the development error reporting API is defined.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="aaefb470-f406-4329-ab46-42e547bda5f4">
+									<SHORT-NAME>DioCfgChannelApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable Channel Access APIs</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="0ed92c2e-994a-4b34-9dbf-bdc2b20e3477">
+									<SHORT-NAME>DioCfgPortApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable Port Access APIs</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="beabc349-5428-447e-bb6e-ce5f8232f926">
+									<SHORT-NAME>DioCfgGroupApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable Channel Group Access APIs</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="2c25d0ce-b494-4b29-acb8-d7db16aa6ad9">
+									<SHORT-NAME>DioSpecialRegisterAccessEnabled</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Register Access Via OS Functions</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Enables/disables all access to the periphery register via a special function. The special function allows the access to the registers even if they are protected by MPU or supervisor mode. The function shall be provided by the Os.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="c95d7349-1107-4d73-94af-b2eadaa626e8">
+									<SHORT-NAME>DioSpecialRegisterAccessOnlyForWrite</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Special Register Access Only For Write</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter disables the usage of the special function to access the periphery registers for the read access.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="93575a54-889a-4560-9b03-17ceb9f8a7a7">
+									<SHORT-NAME>DioSpecialRegisterAccessOnlyForPrivilegedModeRegisters</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Special Register Access Only For Privileged Mode Registers</L-4>
+									</LONG-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="6f34e539-2bbb-4a0d-b8ee-0f8a66c9e662">
+									<SHORT-NAME>DioSpecialRegisterAccessNotInInit</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Special Register Access Not During Initialization</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter disables the usage of the special function to access the periphery registers during the initialization</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<REFERENCE-PARAM-DEF UUID="93e37d74-bd5c-4c5a-ad2c-e624826738b4">
+									<SHORT-NAME>DioIrqHandling</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the IRQ function set which is used to protect critical sections.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: DioPort -->
+						<PARAM-CONF-CONTAINER-DEF UUID="90fa1b76-33f3-46f1-b55d-1701e29e1068">
+							<SHORT-NAME>DioPort</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Configuration of individual DIO ports, consisting of channels and possible channel groups.
+Nothe that this container definition does not explicitly 
+define a symbolic name parameter. Instead, the container's short name will be used in the Ecu Configuration Description to specify the symbolic name of the port.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: DioPortId -->
+								<INTEGER-PARAM-DEF UUID="cfff32c5-d59c-49b4-99d0-415a1b89994b">
+									<SHORT-NAME>DioPortId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Numeric identifier of the DIO port. Not all MCU ports may be used for DIO, thus there may be "gaps" in the list of all IDs. This value will be
+assigned to the DIO port symbolic name (i.e. the SHORT-NAME of the DioPort container).</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<REFERENCE-PARAM-DEF UUID="7517a740-1f63-492c-8467-0849bdb98875">
+									<SHORT-NAME>DioPortDefRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">reference to the definition of the port (including its attributes)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dio/DioPortDefinition</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+							<SUB-CONTAINERS>
+								<!-- Parameter Container Definition: DioChannel -->
+								<PARAM-CONF-CONTAINER-DEF UUID="e9210392-0518-48b9-bb8b-936b0e21664a">
+									<SHORT-NAME>DioChannel</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Configuration of an individual DIO channel. Besides a HW specific channel name which is typically fixed for a specific micro controller, additional symbolic names can be defined per channel.
+Note hat this container definition does not explicitly 
+define a symbolic name parameter. Instead, the container's short name will be used in the Ecu Configuration Description to specify the symbolic name of the channel.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: DioChannelId -->
+										<INTEGER-PARAM-DEF UUID="6b85ec93-3293-48c5-a03d-cdcf1aa4eea8">
+											<SHORT-NAME>DioChannelId</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Channel Id of the DIO channel. This value will be assigned to the symbolic names.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+											<MAX>31</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: DioChannelGroup -->
+								<PARAM-CONF-CONTAINER-DEF UUID="24147c73-b384-4f5a-bb8f-975a40de722c">
+									<SHORT-NAME>DioChannelGroup</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Definition and configuration of DIO channel groups. A channel group represents several adjoining DIO channels represented by a logical group. 
+Note hat this container definition does not explicitly 
+define a symbolic name parameter. Instead, the container's short name will be used in the Ecu Configuration Description to specify the symbolic name of the channel group.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: DioChannelGroupIdentification -->
+										<STRING-PARAM-DEF UUID="005285d2-67de-4f8a-a16e-de296845b781">
+											<SHORT-NAME>DioChannelGroupIdentification</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The DIO channel group is identified in DIO API by a pointer to a data structure (of type Dio_ChannelGroupType). That data structure contains the channel group information. 
+
+This parameter contains the code fragment that has to be inserted in the API call of the calling module to get the address of the variable in memory which holds the channel group information. Example values are "&amp;MyDioGroup1" or "&amp;MyDioGroupArray[0]"</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+										</STRING-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DioPortMask -->
+										<INTEGER-PARAM-DEF UUID="530237a0-4d4b-4754-ae62-c8a97ef448aa">
+											<SHORT-NAME>DioPortMask</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This shall be the mask which defines the positions of the channel
+group. The data type depends on the port width</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>4294967295</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DioPortOffset -->
+										<DERIVED-INTEGER-PARAM-DEF UUID="3299881c-3a1a-43c5-9666-588b2a2aedef">
+											<SHORT-NAME>DioPortOffset</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The position of the Channel Group on the port, counted
+from the LSB. This value can be derived from DioPortMask.
+calculationFormula = Position of the first bit of DioPortMask which is set to '1' counted from LSB</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>31</MAX>
+											<MIN>0</MIN>
+											<CALCULATION-FORMULA>position of the first bit of dioportmask which is set to '1' counted from lsb</CALCULATION-FORMULA>
+											<CALCULATION-LANGUAGE>INFORMAL</CALCULATION-LANGUAGE>
+										</DERIVED-INTEGER-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="d9a76db1-375c-449e-9382-9183f703f87a">
+							<SHORT-NAME>DioPortDefinition</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Definition of a port. Has to be set in preconfiguration.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="53a6b41f-8bdf-4675-bc6a-86844c1b5f61">
+									<SHORT-NAME>DioPortDefName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Port name.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="1cd7498a-6ca2-48f0-8759-36cec9c9e375">
+									<SHORT-NAME>DioPortDefPortId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Address of the port's data register</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="9c42a2f2-673d-41fc-b215-3679e8226124">
+									<SHORT-NAME>DioPortDefMaskInPkgE</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mask of the physically existent pins in the port in this pin package.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="fbcfbaec-2612-4171-972c-9c260f6dc247">
+									<SHORT-NAME>DioPortDefMaskInPkgC</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mask of the physically existent pins in the port in this pin package.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="9cf6f8ce-8fc4-4667-8637-74767a206a5c">
+									<SHORT-NAME>DioPortDefMaskInPkgB</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mask of the physically existent pins in the port in this pin package.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="f73322fd-430a-46b0-977e-ebc0eee26af5">
+									<SHORT-NAME>DioPortDefMaskInPkgA</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mask of the physically existent pins in the port in this pin package.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="38069210-ac18-4a29-9d4f-c30ed900b60a">
+									<SHORT-NAME>DioPortDefMaskInPkgG</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mask of the physically existent pins in the port in this pin package.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="78a63067-64fb-4bcf-91ca-8e77661922fb">
+									<SHORT-NAME>DioPortDefMaskInPkgF</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mask of the physically existent pins in the port in this pin package.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="1fd4b4f9-291d-4dd9-8cb2-9c66c159faae">
+									<SHORT-NAME>DioPortDefMaskInPkgD</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mask of the physically existent pins in the port in this pin package.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="07966dc9-b02a-497e-b7e6-79c71688f0b6">
+									<SHORT-NAME>DioPortDefMaskInPkgH</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mask of the physically existent pins in the port in this pin package.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="2a98a678-f676-4a70-bfba-e3ad40aef86f">
+									<SHORT-NAME>DioPortDefMaskInPkgI</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mask of the physically existent pins in the port in this pin package.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="ceb31756-6897-48a9-a953-9e1ab75a5b42">
+									<SHORT-NAME>DioPortDefMaskInPkgJ</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mask of the physically existent pins in the port in this pin package.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="c5e72ac9-56e5-478b-bafe-996dc79d3fb8">
+							<SHORT-NAME>VectorCommonData</SHORT-NAME>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="6c68e838-989a-41fe-9ae1-8913cf6492d9">
+									<SHORT-NAME>BswmdVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter specifies the version of this bswmd file. </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik GmbH</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>2.01.00</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="c57aeac6-673f-412a-b473-ae4aa57abd2b">
+							<SHORT-NAME>DioPackageMapping</SHORT-NAME>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="5028075f-8b6a-420e-8348-37f69ae7196e">
+									<SHORT-NAME>DioPortDefMaskName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Name of a port pin mask in container DioPortDefinition.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="edc69ab4-cab7-42c1-b3ef-09824f5032b9">
+									<SHORT-NAME>DioPackageName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Name of a controller's pin package according to module Boards</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<BSW-IMPLEMENTATION UUID="8888a668-6f1f-4a19-9a6d-1212d8b93812">
+					<SHORT-NAME>Dio_Impl</SHORT-NAME>
+					<CODE-GENERATOR>MicrosarGen</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>1</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>1</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>0</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>2</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>3</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>0</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Dio_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Dio_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/Dio</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

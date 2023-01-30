@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:MCS="http://www.vector-informatik.de/MultiConfigSupport" targetNamespace="http://www.vector-informatik.de/MultiConfigSupport" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+	<xs:element name="IdentityConfig">
+		<xs:annotation>
+			<xs:documentation>Configuration of a Multiple Identity ECU from several ECUExtracts.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MCS:Identities"/>
+				<xs:element ref="MCS:MatchingClusters" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="MCS:RenamedSignals" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:decimal" use="required"/>
+		</xs:complexType>
+		
+		<xs:unique name="UniqueClusterName">
+			<xs:annotation>
+				<xs:documentation>Ensures that new cluster names are unique in the scope of the configuration file.</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="MCS:MatchingClusters"/>
+			<xs:field xpath="@newName"/>
+		</xs:unique>
+		
+		<xs:unique name="UniqueIdName">
+			<xs:annotation>
+				<xs:documentation>Ensures that IDs are unique.</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="MCS:Identities/MCS:Identity"/>
+			<xs:field xpath="@name"/>
+		</xs:unique>
+		
+		<xs:keyref name="UniqueIdNameRef" refer="MCS:UniqueIdName">
+			<xs:annotation>
+				<xs:documentation>Ensures that the referenced ID exists.</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="MCS:MatchingClusters/MCS:Cluster"/>
+			<xs:field xpath="@identity"/>
+		</xs:keyref>
+		
+		<xs:keyref name="UniqueIdNameRefSignal" refer="MCS:UniqueIdName">
+			<xs:annotation>
+				<xs:documentation>Ensures that the referenced ID exists.</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="MCS:RenamedSignals/MCS:RenamedSignal/MCS:Signal"/>
+			<xs:field xpath="@identity"/>
+		</xs:keyref>
+	</xs:element>
+	
+	<xs:element name="RenamedSignals">
+		<xs:annotation>
+			<xs:documentation>Rename signals in a specific Identity.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MCS:RenamedSignal" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:unique name="UniqueNewSignalName">
+			<xs:annotation>
+				<xs:documentation>A new signal name may only be used once.</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="MCS:RenamedSignal"/>
+			<xs:field xpath="@newName"/>
+		</xs:unique>
+		
+		<xs:unique name="UniqueNewNamePerSignalOfIdentity">
+			<xs:annotation>
+				<xs:documentation>A signal may only be renamed once per Identity.</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="MCS:RenamedSignal/MCS:Signal"/>
+			<xs:field xpath="."/>
+			<xs:field xpath="@identity"/>
+		</xs:unique>
+	</xs:element>
+	
+	<xs:element name="RenamedSignal">
+		<xs:annotation>
+			<xs:documentation>Rename signals in a specific Identity.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MCS:Signal" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="newName" type="xs:string" use="required"/>
+		</xs:complexType>
+		
+		<xs:unique name="UniqueIdPerRenamedSignal">
+			<xs:annotation>
+				<xs:documentation>It is not allowed to rename different signals from the same ECUExtract.</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="MCS:Signal"/>
+			<xs:field xpath="@identity"/>
+		</xs:unique>
+	</xs:element>
+	
+	<xs:element name="Signal">
+		<xs:annotation>
+			<xs:documentation>Specifies a SystemSignal from a specific ECUExtract.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="identity" type="xs:string" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Identities">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MCS:Identity" minOccurs="2" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Identity">
+		<xs:annotation>
+			<xs:documentation>Specifies an ID for an ECUExtract.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="extract" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="MatchingClusters">
+		<xs:annotation>
+			<xs:documentation>The specified clusters from different Extracts are considered equal.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MCS:Cluster" minOccurs="2" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="newName" type="xs:string" use="required"/>
+		</xs:complexType>
+		
+		<xs:unique name="UniqueIdPerMatchingClusters">
+			<xs:annotation>
+				<xs:documentation>It is not allowed to match different clusters from the same ECUExtract.</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="MCS:Cluster"/>
+			<xs:field xpath="@identity"/>
+		</xs:unique>
+	</xs:element>
+	
+	<xs:element name="Cluster">
+		<xs:annotation>
+			<xs:documentation>Specifies a cluster from a specific ECUExtract.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="identity" type="xs:string" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>

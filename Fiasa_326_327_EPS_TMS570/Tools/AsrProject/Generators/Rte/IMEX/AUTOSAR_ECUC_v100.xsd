@@ -1,0 +1,2009 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:AR="http://autosar.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://autosar.org" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!--
+AUTOSAR Schema Definition
+
+This specification as released by the AUTOSAR Development Partnership is
+intended for the purpose of information only. The use of material contained in
+this specification requires membership within the AUTOSAR Development
+Partnership or an agreement with the AUTOSAR Development Partnership . The
+AUTOSAR Development Partnership will not be liable for any use of this
+Specification.
+
+Following the completion of the development of the AUTOSAR Specifications
+commercial exploitation licenses will be made available to end users by way of
+written License Agreement only.
+
+No part of this publication may be reproduced or utilized in any form or by
+any means, electronic or mechanical, including photocopying and microfilm,
+without permission in writing from the publisher.
+
+The word AUTOSAR and the AUTOSAR logo are registered trademarks.
+
+Copyright (c) 2004-2006 AUTOSAR Development Partnership. All rights reserved.
+-->
+  <!-- $Id: $ -->
+  <!-- Generated with AUTOSAR MDS (model driven schema) on Thu Mar 30 12:48:02 CEST 2006 -->
+  <!-- attribute group for class Infrastructure::ARObject -->
+  <xsd:attributeGroup name="AR-OBJECT">
+    <xsd:annotation>
+      <xsd:documentation>Implicit base class of all classes in metamodel.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="S" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>checksum calculated from the 
+* attributes
+* aggregations and aggregated non-identifiables
+* references</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="T" type="xsd:dateTime">
+      <xsd:annotation>
+        <xsd:documentation>the timestamp of the creation or modification of an instance, its attributes, references or aggregated non-identifiables.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+  <!-- element group for class Infrastructure::ARPackage -->
+  <xsd:group name="AR-PACKAGE">
+    <xsd:annotation>
+      <xsd:documentation>AUTOSAR package, allowing to create top level packages to structure the contained ARElements.
+
+ARPackages are open sets, which means that in a file based description system, multiple files can be used to partially describe the contents of a package.
+
+This is an extended version of MSR&apos;s SW-SYSTEM.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ELEMENTS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="BSW-MODULE-DESCRIPTION" type="AR:BSW-MODULE-DESCRIPTION"/>
+            <xsd:element name="ECU-CONFIGURATION" type="AR:ECU-CONFIGURATION"/>
+            <xsd:element name="ECU-PARAMETER-DEFINITION" type="AR:ECU-PARAMETER-DEFINITION"/>
+            <xsd:element name="MODULE-CONFIGURATION" type="AR:MODULE-CONFIGURATION"/>
+            <xsd:element name="MODULE-DEF" type="AR:MODULE-DEF"/>
+            <xsd:element name="SYSTEM" type="AR:SYSTEM"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SUB-PACKAGES" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="AR-PACKAGE" type="AR:AR-PACKAGE"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class Infrastructure::ARPackage -->
+  <xsd:complexType name="AR-PACKAGE" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>AUTOSAR package, allowing to create top level packages to structure the contained ARElements.
+
+ARPackages are open sets, which means that in a file based description system, multiple files can be used to partially describe the contents of a package.
+
+This is an extended version of MSR&apos;s SW-SYSTEM.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:AR-PACKAGE"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class Infrastructure::AUTOSAR -->
+  <xsd:group name="AUTOSAR">
+    <xsd:annotation>
+      <xsd:documentation>Root element of an AUTOSAR description, also the root element in corresponding XML documents.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="TOP-LEVEL-PACKAGES" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="AR-PACKAGE" type="AR:AR-PACKAGE"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class Infrastructure::AUTOSAR -->
+  <xsd:complexType name="AUTOSAR" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Root element of an AUTOSAR description, also the root element in corresponding XML documents.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:AUTOSAR"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- global element for class Infrastructure::AUTOSAR -->
+  <xsd:element name="AUTOSAR" type="AR:AUTOSAR">
+    <xsd:annotation>
+      <xsd:documentation>Root element of an AUTOSAR description, also the root element in corresponding XML documents.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <!-- element group for class Infrastructure::Identifiable -->
+  <xsd:group name="IDENTIFIABLE">
+    <xsd:annotation>
+      <xsd:documentation>Instances of this class can be referred to by their identifier (while adhering to namespace borders).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="SHORT-NAME" type="AR:IDENTIFIER">
+        <xsd:annotation>
+          <xsd:documentation>A machine readable name of the meta class instance. As defined for the M2 datatype Identifier, the shortName needs to be unique within the namespace it is declared in.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CATEGORY" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>A category allows specifying the particular nature of the object in question. In most cases, this categorization ends up in a subset of information which is appropriate for an object of the category in question.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ADMIN-DATA" type="AR:ADMIN-DATA" minOccurs="0"/>
+      <xsd:element name="DESC" type="AR:ML-DATA-2" minOccurs="0"/>
+      <xsd:element name="LONG-NAME" type="AR:ML-DATA-4" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- attribute group for class Infrastructure::Identifiable -->
+  <xsd:attributeGroup name="IDENTIFIABLE">
+    <xsd:annotation>
+      <xsd:documentation>Instances of this class can be referred to by their identifier (while adhering to namespace borders).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="UUID" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>The purpose of this attribute is to provide a globally unique identifier for an instance of a metaclass. The values of this attribute should be globally unique strings prefixed by the type of identifier.  For example, to include a
+DCE UUID as defined by The Open Group, the UUID would be preceded by &quot;DCE:&quot;. The values of this attribute may be used to support merging of different AUTOSAR models. 
+The form of the UUID (Universally Unique Identifier) is taken from a standard defined by the Open Group (was Open Software Foundation). This standard is widely used, including by Microsoft for COM (GUIDs) and by many companies for DCE, which is based on CORBA. The method for generating these 128-bit IDs is published in the standard and the effectiveness and uniqueness of the IDs is not in practice disputed.
+If the id namespace is omitted, DCE is assumed. 
+An example is &quot;DCE:2fac1234-31f8-11b4-a222-08002b34c003&quot;.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+  <xsd:simpleType name="BYTE-ORDER">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BIG-ENDIAN"/>
+      <xsd:enumeration value="LITTLE-ENDIAN"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- element group for class LanguageDataModel::MlDataModel1 -->
+  <xsd:group name="ML-DATA-MODEL-1">
+    <xsd:sequence>
+      <xsd:element name="L-1" type="AR:SL-DATA-1" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- element group for class LanguageDataModel::MlDataModel10 -->
+  <xsd:group name="ML-DATA-MODEL-10">
+    <xsd:sequence>
+      <xsd:element name="L-10" type="AR:SL-DATA-10" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- element group for class LanguageDataModel::MlDataModel2 -->
+  <xsd:group name="ML-DATA-MODEL-2">
+    <xsd:sequence>
+      <xsd:element name="L-2" type="AR:SL-DATA-2" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- element group for class LanguageDataModel::MlDataModel3 -->
+  <xsd:group name="ML-DATA-MODEL-3">
+    <xsd:sequence>
+      <xsd:element name="L-3" type="AR:SL-DATA-3" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- element group for class LanguageDataModel::MlDataModel4 -->
+  <xsd:group name="ML-DATA-MODEL-4">
+    <xsd:sequence>
+      <xsd:element name="L-4" type="AR:SL-DATA-4" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- element group for class LanguageDataModel::MlDataModel5 -->
+  <xsd:group name="ML-DATA-MODEL-5">
+    <xsd:sequence>
+      <xsd:element name="L-5" type="AR:SL-DATA-5" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- element group for class InlineTextModel::LongName1 -->
+  <xsd:group name="LONG-NAME-1">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;longName1&gt; to create a comprehensive name for the context element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice>
+      <xsd:element name="TT" type="AR:TT" minOccurs="0"/>
+      <xsd:element name="E" type="AR:E-TYPE" minOccurs="0"/>
+      <xsd:element name="SUP" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sup&gt; to display sections of text within a paragraph element, in a smaller font above the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SUB" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sub&gt; to display sections of text within a paragraph element, in a smaller font beneath the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="IE" type="AR:IE" minOccurs="0"/>
+    </xsd:choice>
+  </xsd:group>
+  <!-- complex type for class InlineTextModel::LongName1 -->
+  <xsd:complexType name="LONG-NAME-1" abstract="false" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;longName1&gt; to create a comprehensive name for the context element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:LONG-NAME-1"/>
+    </xsd:choice>
+  </xsd:complexType>
+  <!-- element group for class InlineTextModel::MixedContent1 -->
+  <xsd:group name="MIXED-CONTENT-1">
+    <xsd:choice>
+      <xsd:element name="TT" type="AR:TT" minOccurs="0"/>
+      <xsd:element name="BR" type="AR:BR" minOccurs="0"/>
+      <xsd:element name="XREF" type="AR:XREF" minOccurs="0"/>
+      <xsd:element name="XREF-TARGET" type="AR:XREF-TARGET" minOccurs="0"/>
+      <xsd:element name="E" type="AR:E-TYPE" minOccurs="0"/>
+      <xsd:element name="FT" type="AR:FT" minOccurs="0"/>
+      <xsd:element name="SUP" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sup&gt; to display sections of text within a paragraph element, in a smaller font above the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SUB" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sub&gt; to display sections of text within a paragraph element, in a smaller font beneath the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="IE" type="AR:IE" minOccurs="0"/>
+      <xsd:element name="STD" type="AR:STD" minOccurs="0"/>
+      <xsd:element name="XDOC" type="AR:XDOC" minOccurs="0"/>
+      <xsd:element name="XFILE" type="AR:XFILE" minOccurs="0"/>
+    </xsd:choice>
+  </xsd:group>
+  <!-- element group for class InlineTextModel::MixedContent2 -->
+  <xsd:group name="MIXED-CONTENT-2">
+    <xsd:choice>
+      <xsd:element name="TT" type="AR:TT" minOccurs="0"/>
+      <xsd:element name="XREF" type="AR:XREF" minOccurs="0"/>
+      <xsd:element name="XREF-TARGET" type="AR:XREF-TARGET" minOccurs="0"/>
+      <xsd:element name="E" type="AR:E-TYPE" minOccurs="0"/>
+      <xsd:element name="FT" type="AR:FT" minOccurs="0"/>
+      <xsd:element name="SUP" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sup&gt; to display sections of text within a paragraph element, in a smaller font above the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SUB" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sub&gt; to display sections of text within a paragraph element, in a smaller font beneath the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="IE" type="AR:IE" minOccurs="0"/>
+    </xsd:choice>
+  </xsd:group>
+  <!-- element group for class InlineTextModel::MixedContent3 -->
+  <xsd:group name="MIXED-CONTENT-3">
+    <xsd:choice>
+      <xsd:element name="SUP" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sup&gt; to display sections of text within a paragraph element, in a smaller font above the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SUB" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sub&gt; to display sections of text within a paragraph element, in a smaller font beneath the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:choice>
+  </xsd:group>
+  <!-- element group for class InlineTextModel::MixedContent4 -->
+  <xsd:group name="MIXED-CONTENT-4">
+    <xsd:choice>
+      <xsd:element name="TT" type="AR:TT" minOccurs="0"/>
+      <xsd:element name="E" type="AR:E-TYPE" minOccurs="0"/>
+      <xsd:element name="SUP" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sup&gt; to display sections of text within a paragraph element, in a smaller font above the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SUB" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sub&gt; to display sections of text within a paragraph element, in a smaller font beneath the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="IE" type="AR:IE" minOccurs="0"/>
+    </xsd:choice>
+  </xsd:group>
+  <!-- element group for class InlineTextModel::MixedContent5 -->
+  <xsd:group name="MIXED-CONTENT-5">
+    <xsd:choice>
+      <xsd:element name="E" type="AR:E-TYPE" minOccurs="0"/>
+      <xsd:element name="XREF" type="AR:XREF" minOccurs="0"/>
+      <xsd:element name="BR" type="AR:BR" minOccurs="0"/>
+    </xsd:choice>
+  </xsd:group>
+  <!-- complex type for class Inlines::Br -->
+  <xsd:complexType name="BR" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>This element is the same as function here as in a HTML document i.e. it forces a line break.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:simpleType name="E-ENUM">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BOLD"/>
+      <xsd:enumeration value="ITALIC"/>
+      <xsd:enumeration value="BOLDITALIC"/>
+      <xsd:enumeration value="PLAIN"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="E-ENUM-FONT">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="MONO"/>
+      <xsd:enumeration value="DEFAULT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- attribute group for class Inlines::EType -->
+  <xsd:attributeGroup name="E-TYPE">
+    <xsd:attribute name="COLOR" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class Inlines::EType -->
+  <xsd:complexType name="E-TYPE" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:attributeGroup ref="AR:E-TYPE"/>
+  </xsd:complexType>
+  <!-- element group for class Inlines::Ft -->
+  <xsd:group name="FT">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;ft&gt; , to create a footnote.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice>
+      <xsd:element name="TT" type="AR:TT" minOccurs="0"/>
+      <xsd:element name="E" type="AR:E-TYPE" minOccurs="0"/>
+    </xsd:choice>
+  </xsd:group>
+  <!-- complex type for class Inlines::Ft -->
+  <xsd:complexType name="FT" abstract="false" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;ft&gt; , to create a footnote.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:FT"/>
+    </xsd:choice>
+  </xsd:complexType>
+  <!-- element group for class Inlines::Ie -->
+  <xsd:group name="IE">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;ie&gt; to create an index that is to appear in the index directory.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice>
+      <xsd:element name="SUP" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sup&gt; to display sections of text within a paragraph element, in a smaller font above the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SUB" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;sub&gt; to display sections of text within a paragraph element, in a smaller font beneath the base line.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:choice>
+  </xsd:group>
+  <!-- attribute group for class Inlines::Ie -->
+  <xsd:attributeGroup name="IE">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;ie&gt; to create an index that is to appear in the index directory.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="TYPE" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class Inlines::Ie -->
+  <xsd:complexType name="IE" abstract="false" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;ie&gt; to create an index that is to appear in the index directory.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:IE"/>
+    </xsd:choice>
+    <xsd:attributeGroup ref="AR:IE"/>
+  </xsd:complexType>
+  <xsd:simpleType name="SHOW-CONTENT-ENUM">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SHOW-CONTENT"/>
+      <xsd:enumeration value="NO-SHOW-CONTENT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SHOW-RESOURCE-LONG-NAME-ENUM">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SHOW-LONG-NAME"/>
+      <xsd:enumeration value="NO-SHOW-LONG-NAME"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SHOW-RESOURCE-NUMBER-ENUM">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SHOW-NUMBER"/>
+      <xsd:enumeration value="NO-SHOW-NUMBER"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SHOW-RESOURCE-PAGE-ENUM">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SHOW-PAGE"/>
+      <xsd:enumeration value="NO-SHOW-PAGE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SHOW-RESOURCE-SHORT-NAME-ENUM">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SHOW-SHORT-NAME"/>
+      <xsd:enumeration value="NO-SHOW-SHORT-NAME"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SHOW-RESOURCE-TYPE-ENUM">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SHOW-TYPE"/>
+      <xsd:enumeration value="NO-SHOW-TYPE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SHOW-SEE-ENUM">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SHOW-SEE"/>
+      <xsd:enumeration value="NO-SHOW-SEE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- element group for class Inlines::Std -->
+  <xsd:group name="STD">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;std&gt; to reference external standards within a paragraph element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="LONG-NAME-1" type="AR:LONG-NAME-1" minOccurs="0"/>
+      <xsd:element name="SUBTITLE" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;subtitle&gt; to enter a sub-heading of an external standard.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="STATE-1" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;state1&gt; to enter the version and state of a standard or an external document.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DATE-1" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;date1&gt; , to enter the validity date of a standard document, or the creation date of an external document.
+
+The element is like &lt;date&gt; but is never handled multilingual.
+
+&lt;date&gt; is used to capture a time stamp. It must match to one of the following syntaxes based on Representation of dates and times ISO-8601:
+
+&lt;YYYY&gt;-&lt;MM&gt;-&lt;DD&gt;[T&lt;hh&gt;:&lt;mm&gt;:&lt;ss&gt;]
+&lt;YYYY&gt;.&lt;MM&gt;.&lt;DD&gt;[T&lt;hh&gt;:&lt;mm&gt;:&lt;ss&gt;]
+&lt;YYYY&gt;/&lt;MM&gt;/&lt;DD&gt;[T&lt;hh&gt;:&lt;mm&gt;:&lt;ss&gt;]
+The last pattern is the most preferred one, since it reflects a common use in US.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="URL" type="AR:URL" minOccurs="0"/>
+      <xsd:element name="POSITION" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;position&gt; to enter references to the relevant positions of a standard.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class Inlines::Std -->
+  <xsd:complexType name="STD" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;std&gt; to reference external standards within a paragraph element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:STD"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- attribute group for class Inlines::Tt -->
+  <xsd:attributeGroup name="TT">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;tt&gt; to format technical terms within the paragraph element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="USER-DEFINED-TYPE" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class Inlines::Tt -->
+  <xsd:complexType name="TT" abstract="false" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;tt&gt; to format technical terms within the paragraph element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:attributeGroup ref="AR:TT"/>
+  </xsd:complexType>
+  <xsd:simpleType name="TT-ENUM">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SGMLTAG"/>
+      <xsd:enumeration value="SGML-ATTRIBUTE"/>
+      <xsd:enumeration value="TOOL"/>
+      <xsd:enumeration value="PRODUCT"/>
+      <xsd:enumeration value="VARIABLE"/>
+      <xsd:enumeration value="STATE"/>
+      <xsd:enumeration value="PRM"/>
+      <xsd:enumeration value="MATERIAL"/>
+      <xsd:enumeration value="CONTROL-ELEMENT"/>
+      <xsd:enumeration value="CODE"/>
+      <xsd:enumeration value="ORGANISATION"/>
+      <xsd:enumeration value="OTHER"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- attribute group for class Inlines::Url -->
+  <xsd:attributeGroup name="URL">
+    <xsd:annotation>
+      <xsd:documentation>This element specifies the Uniform Resource Locator (URL) of the context contained in the &lt;url&gt; element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="MIME-TYPE" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class Inlines::Url -->
+  <xsd:complexType name="URL" abstract="false" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation>This element specifies the Uniform Resource Locator (URL) of the context contained in the &lt;url&gt; element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:attributeGroup ref="AR:URL"/>
+  </xsd:complexType>
+  <!-- element group for class Inlines::Xdoc -->
+  <xsd:group name="XDOC">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;xdoc&gt; , to reference an external document.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="LONG-NAME-1" type="AR:LONG-NAME-1" minOccurs="0"/>
+      <xsd:element name="NUMBER" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;number&gt; to enter the version number of an external document that is referenced.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="STATE-1" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;state1&gt; to enter the version and state of a standard or an external document.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DATE-1" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;date1&gt; , to enter the validity date of a standard document, or the creation date of an external document.
+
+The element is like &lt;date&gt; but is never handled multilingual.
+
+&lt;date&gt; is used to capture a time stamp. It must match to one of the following syntaxes based on Representation of dates and times ISO-8601:
+
+&lt;YYYY&gt;-&lt;MM&gt;-&lt;DD&gt;[T&lt;hh&gt;:&lt;mm&gt;:&lt;ss&gt;]
+&lt;YYYY&gt;.&lt;MM&gt;.&lt;DD&gt;[T&lt;hh&gt;:&lt;mm&gt;:&lt;ss&gt;]
+&lt;YYYY&gt;/&lt;MM&gt;/&lt;DD&gt;[T&lt;hh&gt;:&lt;mm&gt;:&lt;ss&gt;]
+The last pattern is the most preferred one, since it reflects a common use in US.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PUBLISHER" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;publisher&gt; to enter the publisher of an external document that is being referenced.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="URL" type="AR:URL" minOccurs="0"/>
+      <xsd:element name="POSITION" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;position&gt; to enter references to the relevant positions of a standard.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class Inlines::Xdoc -->
+  <xsd:complexType name="XDOC" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;xdoc&gt; , to reference an external document.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:XDOC"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class Inlines::Xfile -->
+  <xsd:group name="XFILE">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;xfile&gt; , to reference an external file.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="LONG-NAME-1" type="AR:LONG-NAME-1" minOccurs="0"/>
+      <xsd:element name="URL" type="AR:URL" minOccurs="0"/>
+      <xsd:element name="NOTATION" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>This element indicates the data format of the external file in which the superordinated XFILE is located. The identifier itself must be arranged amongst the project participants. The contents of &lt;notation&gt; are treated in a similar way to an SGML notation format.
+
+Possible values are for example:
+
+
+
+Notation
+
+* Meaning
+
+EPS
+
+* Encapsulated Postscript
+
+PDF
+
+* Portable Document Format
+
+PaCo
+
+* Parameter Contents File in MSRSW2.2 structure
+
+...
+
+* ...</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TOOL" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>This element describes the tool which was used to generate the corresponding &lt;xfile&gt; .</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TOOL-VERSION" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>This element describes the tool version which was used to generate the corresponding &lt;xfile&gt; .</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class Inlines::Xfile -->
+  <xsd:complexType name="XFILE" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;xfile&gt; , to reference an external file.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:XFILE"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- attribute group for class Inlines::Xref -->
+  <xsd:attributeGroup name="XREF">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;xref&gt; , to generate cross-references within the document.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="EXT-ID-CLASS" type="xsd:string"/>
+    <xsd:attribute name="ID-CLASS" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class Inlines::Xref -->
+  <xsd:complexType name="XREF" abstract="false" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;xref&gt; , to generate cross-references within the document.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:attributeGroup ref="AR:XREF"/>
+  </xsd:complexType>
+  <!-- element group for class Inlines::XrefTarget -->
+  <xsd:group name="XREF-TARGET">
+    <xsd:annotation>
+      <xsd:documentation>This element specifies a reference target which can be scattered throughout the text.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="LONG-NAME-1" type="AR:LONG-NAME-1" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class Inlines::XrefTarget -->
+  <xsd:complexType name="XREF-TARGET" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>This element specifies a reference target which can be scattered throughout the text.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:XREF-TARGET"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class AdminData::AdminData -->
+  <xsd:group name="ADMIN-DATA">
+    <xsd:annotation>
+      <xsd:documentation>&lt;adminData&gt; can be used to set administrative information for an element. This administration information is to be treated as metadata such as revision id or state of the file. There are basically four kinds of metadata
+
+* The language and/or used laguages.
+
+* Revision information covering e.g. revision number, state, release date, changes. Note that this information can be given in general as well as related to a particular company.
+
+* Document metadata specific for a company
+
+* Formatting controls that can affect layouts for example.
+
+* Revision information for the element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="LANGUAGE" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>&lt;language&gt; represents the human language used within the file. Its primary use is to prompt the tools to switch to an appropriate language.
+
+This element is in accordance with the ISO 639-1 two letter language codes ( Codes for the Representation of Names of Languages http://www.loc.gov/standards/iso639-2/langcodes.html ). The most frequently used codes are given in :
+
+Most common language codes (alphabetical)
+
+
+Code
+
+* Language
+
+de
+
+* German
+
+en
+
+* English
+
+es
+
+* Spanish
+
+fr
+
+* French
+
+it
+
+* Italian
+
+jp
+
+* Japanese</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="USED-LANGUAGES" type="AR:ML-DATA-10" minOccurs="0"/>
+      <xsd:element name="DOC-REVISIONS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="DOC-REVISION" type="AR:DOC-REVISION"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class AdminData::AdminData -->
+  <xsd:complexType name="ADMIN-DATA" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>&lt;adminData&gt; can be used to set administrative information for an element. This administration information is to be treated as metadata such as revision id or state of the file. There are basically four kinds of metadata
+
+* The language and/or used laguages.
+
+* Revision information covering e.g. revision number, state, release date, changes. Note that this information can be given in general as well as related to a particular company.
+
+* Document metadata specific for a company
+
+* Formatting controls that can affect layouts for example.
+
+* Revision information for the element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:ADMIN-DATA"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- element group for class AdminData::CompanyRevisionInfo -->
+  <xsd:group name="COMPANY-REVISION-INFO">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;companyRevisionInfo&gt; , to generate information on document version within the respective company.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="REVISION-LABEL" type="AR:ML-DATA-10" minOccurs="0"/>
+      <xsd:element name="REVISION-LABEL-P-1" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;revisionLabelP1&gt;, to enter the version number of the ** of the document, or the document section to which administrative is applied.. The syntax is free and refers to the configuration management plan respectively the version management tool being used. This element is used, if the document or document section is the result of a merge process in which two branches are merged in to one new revision.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="REVISION-LABEL-P-2" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;revisionLabelP1&gt;, to enter the version number of the ** of the document, or the document section to which administrative is applied.. The syntax is free and refers to the configuration management plan respectively the version management tool being used. This element is used, if the document or document section is the result of a merge process in which two branches are merged in to one new revision.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="STATE" type="AR:ML-DATA-10" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class AdminData::CompanyRevisionInfo -->
+  <xsd:complexType name="COMPANY-REVISION-INFO" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;companyRevisionInfo&gt; , to generate information on document version within the respective company.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:COMPANY-REVISION-INFO"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- complex type for class AdminData::CompanySpecificInfo -->
+  <xsd:complexType name="COMPANY-SPECIFIC-INFO" abstract="false" mixed="false">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <!-- element group for class AdminData::DocRevision -->
+  <xsd:group name="DOC-REVISION">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;docRevision&gt; , to generate information on the corresponding document version.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="REVISION-LABEL" type="AR:ML-DATA-10" minOccurs="0"/>
+      <xsd:element name="REVISION-LABEL-P-1" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;revisionLabelP1&gt;, to enter the version number of the ** of the document, or the document section to which administrative is applied.. The syntax is free and refers to the configuration management plan respectively the version management tool being used. This element is used, if the document or document section is the result of a merge process in which two branches are merged in to one new revision.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="REVISION-LABEL-P-2" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Use &lt;revisionLabelP1&gt;, to enter the version number of the ** of the document, or the document section to which administrative is applied.. The syntax is free and refers to the configuration management plan respectively the version management tool being used. This element is used, if the document or document section is the result of a merge process in which two branches are merged in to one new revision.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="STATE" type="AR:ML-DATA-10" minOccurs="0"/>
+      <xsd:element name="ISSUED-BY" type="AR:ML-DATA-10" minOccurs="0"/>
+      <xsd:element name="DATE" type="AR:ML-DATA-10" minOccurs="0"/>
+      <xsd:element name="COMPANY-REVISION-INFOS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="COMPANY-REVISION-INFO" type="AR:COMPANY-REVISION-INFO"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MODIFICATIONS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="MODIFICATION" type="AR:MODIFICATION"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class AdminData::DocRevision -->
+  <xsd:complexType name="DOC-REVISION" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;docRevision&gt; , to generate information on the corresponding document version.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:DOC-REVISION"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- element group for class AdminData::Modification -->
+  <xsd:group name="MODIFICATION">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;modification&gt; to record what has changed in a document in comparison to its predecessor.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="CHANGE" type="AR:ML-DATA-2" minOccurs="0"/>
+      <xsd:element name="REASON" type="AR:ML-DATA-2" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class AdminData::Modification -->
+  <xsd:complexType name="MODIFICATION" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Use &lt;modification&gt; to record what has changed in a document in comparison to its predecessor.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:MODIFICATION"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="TYPE-ENUM">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="CONTENT-RELATED"/>
+      <xsd:enumeration value="DOC-RELATED"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- attribute group for class MultilanguageData::MlData1 -->
+  <xsd:attributeGroup name="ML-DATA-1">
+    <xsd:attribute name="HELP-ENTRY" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class MultilanguageData::MlData1 -->
+  <xsd:complexType name="ML-DATA-1" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:ML-DATA-MODEL-1"/>
+    </xsd:choice>
+    <xsd:attributeGroup ref="AR:ML-DATA-1"/>
+  </xsd:complexType>
+  <!-- complex type for class MultilanguageData::MlData10 -->
+  <xsd:complexType name="ML-DATA-10" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:ML-DATA-MODEL-10"/>
+    </xsd:choice>
+  </xsd:complexType>
+  <!-- complex type for class MultilanguageData::MlData2 -->
+  <xsd:complexType name="ML-DATA-2" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:ML-DATA-MODEL-2"/>
+    </xsd:choice>
+  </xsd:complexType>
+  <!-- complex type for class MultilanguageData::MlData3 -->
+  <xsd:complexType name="ML-DATA-3" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:ML-DATA-MODEL-3"/>
+    </xsd:choice>
+  </xsd:complexType>
+  <!-- complex type for class MultilanguageData::MlData4 -->
+  <xsd:complexType name="ML-DATA-4" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:ML-DATA-MODEL-4"/>
+    </xsd:choice>
+  </xsd:complexType>
+  <!-- attribute group for class MultilanguageData::MlData5 -->
+  <xsd:attributeGroup name="ML-DATA-5">
+    <xsd:attribute name="ALLOW-BREAK" type="xsd:string"/>
+    <xsd:attribute name="HELP-ENTRY" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class MultilanguageData::MlData5 -->
+  <xsd:complexType name="ML-DATA-5" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:ML-DATA-MODEL-5"/>
+    </xsd:choice>
+    <xsd:attributeGroup ref="AR:ML-DATA-5"/>
+  </xsd:complexType>
+  <!-- attribute group for class SingleLanguageData::SlData1 -->
+  <xsd:attributeGroup name="SL-DATA-1">
+    <xsd:attribute name="L" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class SingleLanguageData::SlData1 -->
+  <xsd:complexType name="SL-DATA-1" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:MIXED-CONTENT-1"/>
+    </xsd:choice>
+    <xsd:attributeGroup ref="AR:SL-DATA-1"/>
+  </xsd:complexType>
+  <!-- attribute group for class SingleLanguageData::SlData10 -->
+  <xsd:attributeGroup name="SL-DATA-10">
+    <xsd:attribute name="L" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class SingleLanguageData::SlData10 -->
+  <xsd:complexType name="SL-DATA-10" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:attributeGroup ref="AR:SL-DATA-10"/>
+  </xsd:complexType>
+  <!-- attribute group for class SingleLanguageData::SlData2 -->
+  <xsd:attributeGroup name="SL-DATA-2">
+    <xsd:attribute name="L" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class SingleLanguageData::SlData2 -->
+  <xsd:complexType name="SL-DATA-2" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:MIXED-CONTENT-2"/>
+    </xsd:choice>
+    <xsd:attributeGroup ref="AR:SL-DATA-2"/>
+  </xsd:complexType>
+  <!-- attribute group for class SingleLanguageData::SlData3 -->
+  <xsd:attributeGroup name="SL-DATA-3">
+    <xsd:attribute name="L" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class SingleLanguageData::SlData3 -->
+  <xsd:complexType name="SL-DATA-3" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:MIXED-CONTENT-3"/>
+    </xsd:choice>
+    <xsd:attributeGroup ref="AR:SL-DATA-3"/>
+  </xsd:complexType>
+  <!-- attribute group for class SingleLanguageData::SlData4 -->
+  <xsd:attributeGroup name="SL-DATA-4">
+    <xsd:attribute name="L" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class SingleLanguageData::SlData4 -->
+  <xsd:complexType name="SL-DATA-4" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:MIXED-CONTENT-4"/>
+    </xsd:choice>
+    <xsd:attributeGroup ref="AR:SL-DATA-4"/>
+  </xsd:complexType>
+  <!-- attribute group for class SingleLanguageData::SlData5 -->
+  <xsd:attributeGroup name="SL-DATA-5">
+    <xsd:attribute name="L" type="xsd:string"/>
+  </xsd:attributeGroup>
+  <!-- complex type for class SingleLanguageData::SlData5 -->
+  <xsd:complexType name="SL-DATA-5" abstract="false" mixed="true">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="AR:MIXED-CONTENT-5"/>
+    </xsd:choice>
+    <xsd:attributeGroup ref="AR:SL-DATA-5"/>
+  </xsd:complexType>
+  <!-- complex type for class SystemTemplate::System -->
+  <xsd:complexType name="SYSTEM" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>System aggregates all elements that define a system constraint description or system configuration description.
+System is a PropertyContainer since we want to model variants as properties. For each dimension of variability, one property is added. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::BooleanParamDef -->
+  <xsd:group name="BOOLEAN-PARAM-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for Boolean. allowed values are true and false.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DEFAULT-VALUE" type="xsd:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Default value of the boolean configuration parameter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::BooleanParamDef -->
+  <xsd:complexType name="BOOLEAN-PARAM-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for Boolean. allowed values are true and false.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:BOOLEAN-PARAM-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <xsd:simpleType name="CALCULATION-LANGUAGE">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="INFORMAL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- element group for class ECUCParameterDefTemplate::ChoiceContainerDef -->
+  <xsd:group name="CHOICE-CONTAINER-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Used to define configuration containers that provide a choice between several ParamConfContainerDef. But in the actual ECU Configuration Description only one instance from the choice list can be used.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="CHOICES" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="PARAM-CONF-CONTAINER-DEF" type="AR:PARAM-CONF-CONTAINER-DEF"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::ChoiceContainerDef -->
+  <xsd:complexType name="CHOICE-CONTAINER-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Used to define configuration containers that provide a choice between several ParamConfContainerDef. But in the actual ECU Configuration Description only one instance from the choice list can be used.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONTAINER-DEF"/>
+      <xsd:group ref="AR:CHOICE-CONTAINER-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::ChoiceReferenceDef -->
+  <xsd:group name="CHOICE-REFERENCE-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Specify alternative references where in the ECU Configuration description only one of the specified references will actually be used.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DESTINATION-REFS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="DESTINATION-REF" type="AR:REF"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::ChoiceReferenceDef -->
+  <xsd:complexType name="CHOICE-REFERENCE-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Specify alternative references where in the ECU Configuration description only one of the specified references will actually be used.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CHOICE-REFERENCE-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::CommonConfigurationAttributes -->
+  <xsd:group name="COMMON-CONFIGURATION-ATTRIBUTES">
+    <xsd:annotation>
+      <xsd:documentation>Attributes used by Configuration Parameters as well as References.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="IMPLEMENTATION-CONFIG-CLASS" type="AR:CONFIGURATION-CLASS" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Specifying the actual configuration class of a configuration parameter in the &quot;vendor specific module definition&quot; in which it is mandatory.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ORIGIN" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>String specifying if this configuration parameter is an AUTOSAR standardized configuration parameter or if the parameter is hardware- or vendor-specific.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- element group for class ECUCParameterDefTemplate::ConfigParameter -->
+  <xsd:group name="CONFIG-PARAMETER">
+    <xsd:annotation>
+      <xsd:documentation>Abstract class used to define the similarities of all ECU Configuration Parameter types defined as subclasses.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="SYMBOLIC-NAME-VALUE" type="xsd:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Specifies that this parameter&apos;s value is used, together with the aggregating container, to derive a symbolic name definition. E.g.: #define &quot;container_shortName&quot; &quot;this parameter&apos;s value&quot;.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:simpleType name="CONFIGURATION-CLASS">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="PUBLISHED-INFORMATION"/>
+      <xsd:enumeration value="PRE-COMPILE"/>
+      <xsd:enumeration value="LINK"/>
+      <xsd:enumeration value="POST-BUILD-LOADABLE"/>
+      <xsd:enumeration value="POST-BUILD-SELECTABLE"/>
+      <xsd:enumeration value="POST-BUILD"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- element group for class ECUCParameterDefTemplate::ContainerDef -->
+  <xsd:group name="CONTAINER-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Base class used to gather common attributes of configuration container definitions.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="POST-BUILD-CHANGEABLE" type="xsd:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Specifies if the number of instances of this container my be changed postBuild time. This parameter may only be set to true if all of the following conditions hold:
+- the container&apos;s upperMultiplicity &gt; lowerMultiplicity
+- all parameters within the container and subContainers are postBuild changeable.
+If any of the aggregated parameters is either preCompile time or link time this attribute is ignored and may be ommited.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::DerivedBooleanParamDef -->
+  <xsd:complexType name="DERIVED-BOOLEAN-PARAM-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Derived value is of type Boolean</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:BOOLEAN-PARAM-DEF"/>
+      <xsd:group ref="AR:DERIVED-PARAM-TYPE"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- complex type for class ECUCParameterDefTemplate::DerivedEnumerationParamDef -->
+  <xsd:complexType name="DERIVED-ENUMERATION-PARAM-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Derived value is an Enumeration.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:ENUMERATION-PARAM-DEF"/>
+      <xsd:group ref="AR:DERIVED-PARAM-TYPE"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- complex type for class ECUCParameterDefTemplate::DerivedFloatParamDef -->
+  <xsd:complexType name="DERIVED-FLOAT-PARAM-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Derived value is of type Float</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:FLOAT-PARAM-DEF"/>
+      <xsd:group ref="AR:DERIVED-PARAM-TYPE"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- complex type for class ECUCParameterDefTemplate::DerivedIntegerParamDef -->
+  <xsd:complexType name="DERIVED-INTEGER-PARAM-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Derived value is of type Integer.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:INTEGER-PARAM-DEF"/>
+      <xsd:group ref="AR:DERIVED-PARAM-TYPE"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::DerivedParamType -->
+  <xsd:group name="DERIVED-PARAM-TYPE">
+    <xsd:annotation>
+      <xsd:documentation>Allows to define configuration items that are calculated based on the value of 
+* other parameters values
+* elements (attributes /classes) defined in other AUTOSAR templates such as System template and SW component template.
+For these definitions there is no corresponding entry in the ECUC description. Instead, a calculation definition is given that defines how Configuration Editors and Generators can calculate the value from other values when needed to display/use the configuration item </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="CALCULATION-FORMULA" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Definition of the formula used to calculate the value of the configuration element.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CALCULATION-LANGUAGE" type="AR:CALCULATION-LANGUAGE" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Definition of the languag used to specify the formula in attribute calculationFormula.
+Currentlfy, only informal definition of the formula is supported.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::DerivedStringParamDef -->
+  <xsd:complexType name="DERIVED-STRING-PARAM-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Derived value is of type String.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:STRING-PARAM-DEF"/>
+      <xsd:group ref="AR:DERIVED-PARAM-TYPE"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::EcuParameterDefinition -->
+  <xsd:group name="ECU-PARAMETER-DEFINITION">
+    <xsd:annotation>
+      <xsd:documentation>This represents the anchor point of an ECU Parameter Definition within the AUTOSAR templates structure.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="MODULE-REFS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="MODULE-REF" type="AR:REF"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::EcuParameterDefinition -->
+  <xsd:complexType name="ECU-PARAMETER-DEFINITION" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>This represents the anchor point of an ECU Parameter Definition within the AUTOSAR templates structure.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:ECU-PARAMETER-DEFINITION"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- complex type for class ECUCParameterDefTemplate::EnumerationLiteralDef -->
+  <xsd:complexType name="ENUMERATION-LITERAL-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for enumeration literals definition.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::EnumerationParamDef -->
+  <xsd:group name="ENUMERATION-PARAM-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for Enumeration.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DEFAULT-VALUE" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Default value of the enumeration configuration parameter. This string nees to be one of the literals specified for this enumeration.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LITERALS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="ENUMERATION-LITERAL-DEF" type="AR:ENUMERATION-LITERAL-DEF"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::EnumerationParamDef -->
+  <xsd:complexType name="ENUMERATION-PARAM-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for Enumeration.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:ENUMERATION-PARAM-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::FloatParamDef -->
+  <xsd:group name="FLOAT-PARAM-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for Float.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DEFAULT-VALUE" type="xsd:double" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Default value of the float configuration parameter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MAX" type="xsd:double" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>max value allowed for the parameter defined.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MIN" type="xsd:double" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>min value allowed for the parameter defined.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::FloatParamDef -->
+  <xsd:complexType name="FLOAT-PARAM-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for Float.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:FLOAT-PARAM-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::ForeignReferenceDef -->
+  <xsd:group name="FOREIGN-REFERENCE-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Specify a reference to an XML description of an entity desribed in another AUTOSAR template.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DESTINATION-TYPE" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>The type in the AUTOSAR Metamodel to which&apos; instance this reference is allowed to point to. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::ForeignReferenceDef -->
+  <xsd:complexType name="FOREIGN-REFERENCE-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Specify a reference to an XML description of an entity desribed in another AUTOSAR template.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:FOREIGN-REFERENCE-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- complex type for class ECUCParameterDefTemplate::FunctionNameDef -->
+  <xsd:complexType name="FUNCTION-NAME-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for Function Names like those used to specify callback functions.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:STRING-PARAM-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::InstanceReferenceDef -->
+  <xsd:group name="INSTANCE-REFERENCE-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Specify a reference to an XML description of an entity desribed in another AUTOSAR template using the INSTANCE REFERENCE semantics.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DESTINATION-CONTEXT" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>The context in the AUTOSAR Metamodel to which&apos; this reference is allowed to point to.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DESTINATION-TYPE" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>The type in the AUTOSAR Metamodel to which&apos; instance this reference is allowed to point to. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::InstanceReferenceDef -->
+  <xsd:complexType name="INSTANCE-REFERENCE-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Specify a reference to an XML description of an entity desribed in another AUTOSAR template using the INSTANCE REFERENCE semantics.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:INSTANCE-REFERENCE-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::IntegerParamDef -->
+  <xsd:group name="INTEGER-PARAM-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for Integer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DEFAULT-VALUE" type="xsd:integer" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Default value of the integer configuration parameter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MAX" type="xsd:integer" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>max value allowed for the parameter defined.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MIN" type="xsd:integer" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>min value allowed for the parameter defined.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::IntegerParamDef -->
+  <xsd:complexType name="INTEGER-PARAM-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for Integer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:INTEGER-PARAM-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::ModuleDef -->
+  <xsd:group name="MODULE-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Used as the top-level element for configuration definition for Software Modules, including BSW and RTE as well as ECU Infrastructure.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="CONTAINERS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="CHOICE-CONTAINER-DEF" type="AR:CHOICE-CONTAINER-DEF"/>
+            <xsd:element name="PARAM-CONF-CONTAINER-DEF" type="AR:PARAM-CONF-CONTAINER-DEF"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IMPLEMENTATION-CONFIG-VARIANT" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Used to define the actual implemented configuration variant in a specific &quot;vendor specific module definition&quot;, where it is mandatory.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="REFINED-MODULE-DEF-REF" type="AR:REF" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::ModuleDef -->
+  <xsd:complexType name="MODULE-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Used as the top-level element for configuration definition for Software Modules, including BSW and RTE as well as ECU Infrastructure.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:MODULE-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::ParamConfContainerDef -->
+  <xsd:group name="PARAM-CONF-CONTAINER-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Used to define configuration containers that can hierarchically contain other containers and/or parameter definitions.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="PARAMETERS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="BOOLEAN-PARAM-DEF" type="AR:BOOLEAN-PARAM-DEF"/>
+            <xsd:element name="DERIVED-BOOLEAN-PARAM-DEF" type="AR:DERIVED-BOOLEAN-PARAM-DEF"/>
+            <xsd:element name="DERIVED-ENUMERATION-PARAM-DEF" type="AR:DERIVED-ENUMERATION-PARAM-DEF"/>
+            <xsd:element name="DERIVED-FLOAT-PARAM-DEF" type="AR:DERIVED-FLOAT-PARAM-DEF"/>
+            <xsd:element name="DERIVED-INTEGER-PARAM-DEF" type="AR:DERIVED-INTEGER-PARAM-DEF"/>
+            <xsd:element name="DERIVED-STRING-PARAM-DEF" type="AR:DERIVED-STRING-PARAM-DEF"/>
+            <xsd:element name="ENUMERATION-PARAM-DEF" type="AR:ENUMERATION-PARAM-DEF"/>
+            <xsd:element name="FLOAT-PARAM-DEF" type="AR:FLOAT-PARAM-DEF"/>
+            <xsd:element name="FUNCTION-NAME-DEF" type="AR:FUNCTION-NAME-DEF"/>
+            <xsd:element name="INTEGER-PARAM-DEF" type="AR:INTEGER-PARAM-DEF"/>
+            <xsd:element name="STRING-PARAM-DEF" type="AR:STRING-PARAM-DEF"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="REFERENCES" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="CHOICE-REFERENCE-DEF" type="AR:CHOICE-REFERENCE-DEF"/>
+            <xsd:element name="FOREIGN-REFERENCE-DEF" type="AR:FOREIGN-REFERENCE-DEF"/>
+            <xsd:element name="INSTANCE-REFERENCE-DEF" type="AR:INSTANCE-REFERENCE-DEF"/>
+            <xsd:element name="REFERENCE-DEF" type="AR:REFERENCE-DEF"/>
+            <xsd:element name="SYMBOLIC-NAME-REFERENCE-DEF" type="AR:SYMBOLIC-NAME-REFERENCE-DEF"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SUB-CONTAINERS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="CHOICE-CONTAINER-DEF" type="AR:CHOICE-CONTAINER-DEF"/>
+            <xsd:element name="PARAM-CONF-CONTAINER-DEF" type="AR:PARAM-CONF-CONTAINER-DEF"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::ParamConfContainerDef -->
+  <xsd:complexType name="PARAM-CONF-CONTAINER-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Used to define configuration containers that can hierarchically contain other containers and/or parameter definitions.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONTAINER-DEF"/>
+      <xsd:group ref="AR:PARAM-CONF-CONTAINER-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::ParamConfMultiplicity -->
+  <xsd:group name="PARAM-CONF-MULTIPLICITY">
+    <xsd:annotation>
+      <xsd:documentation>Common class used to express multiplicities in the definition of configuration parameters and containers.
+If not stated otherwise the default multiplicity is exactly one mandatory occurrence of the specified element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="LOWER-MULTIPLICITY" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>The lower multiplicity of the specified element.
+0: optional
+1: at least one occurence
+n: at least n occurrences</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UPPER-MULTIPLICITY" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>The upper multiplicity of the specified element.
+1: at most one occurrence
+m: at most m occurrences
+*: arbitrary number of occurrences</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- element group for class ECUCParameterDefTemplate::ReferenceDef -->
+  <xsd:group name="REFERENCE-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Specify references within the ECU Configuration Description between parameter containers.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DESTINATION-REF" type="AR:REF" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::ReferenceDef -->
+  <xsd:complexType name="REFERENCE-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Specify references within the ECU Configuration Description between parameter containers.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:REFERENCE-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCParameterDefTemplate::StringParamDef -->
+  <xsd:group name="STRING-PARAM-DEF">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for String.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DEFAULT-VALUE" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Default value of the string configuration parameter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCParameterDefTemplate::StringParamDef -->
+  <xsd:complexType name="STRING-PARAM-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Configuration parameter type for String.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:CONFIG-PARAMETER"/>
+      <xsd:group ref="AR:STRING-PARAM-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- complex type for class ECUCParameterDefTemplate::SymbolicNameReferenceDef -->
+  <xsd:complexType name="SYMBOLIC-NAME-REFERENCE-DEF" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>This specialization of a ReferenceDef specifies that the implementation of the reference is done using a symbolic name defined by the referenced Container&apos;s shortName.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:COMMON-CONFIGURATION-ATTRIBUTES"/>
+      <xsd:group ref="AR:PARAM-CONF-MULTIPLICITY"/>
+      <xsd:group ref="AR:REFERENCE-DEF"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::BooleanValue -->
+  <xsd:group name="BOOLEAN-VALUE">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type BooleanParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="VALUE" type="xsd:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Stores the value of the Boolean parameter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::BooleanValue -->
+  <xsd:complexType name="BOOLEAN-VALUE" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type BooleanParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:PARAMETER-VALUE"/>
+      <xsd:group ref="AR:BOOLEAN-VALUE"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::ConfigReferenceValue -->
+  <xsd:group name="CONFIG-REFERENCE-VALUE">
+    <xsd:annotation>
+      <xsd:documentation>Abstract class to be used as common parent for all reference values in the ECU Configuration Description.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DEFINITION-REF" type="AR:REF" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- element group for class ECUCDescriptionTemplate::Container -->
+  <xsd:group name="CONTAINER">
+    <xsd:annotation>
+      <xsd:documentation>Represents a Container definition in the ECU Configuration Description.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DEFINITION-REF" type="AR:REF" minOccurs="0"/>
+      <xsd:element name="PARAMETER-VALUES" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="BOOLEAN-VALUE" type="AR:BOOLEAN-VALUE"/>
+            <xsd:element name="ENUMERATION-VALUE" type="AR:ENUMERATION-VALUE"/>
+            <xsd:element name="FLOAT-VALUE" type="AR:FLOAT-VALUE"/>
+            <xsd:element name="FUNCTION-NAME-VALUE" type="AR:FUNCTION-NAME-VALUE"/>
+            <xsd:element name="INTEGER-VALUE" type="AR:INTEGER-VALUE"/>
+            <xsd:element name="STRING-VALUE" type="AR:STRING-VALUE"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="REFERENCE-VALUES" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="INSTANCE-REFERENCE-VALUE" type="AR:INSTANCE-REFERENCE-VALUE"/>
+            <xsd:element name="REFERENCE-VALUE" type="AR:REFERENCE-VALUE"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SUB-CONTAINERS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="CONTAINER" type="AR:CONTAINER"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::Container -->
+  <xsd:complexType name="CONTAINER" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Represents a Container definition in the ECU Configuration Description.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:CONTAINER"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::EcuConfiguration -->
+  <xsd:group name="ECU-CONFIGURATION">
+    <xsd:annotation>
+      <xsd:documentation>This represents the anchor point of the ECU configuration description.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ECU-EXTRACT-REF" type="AR:REF" minOccurs="0"/>
+      <xsd:element name="MODULE-REFS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="MODULE-REF" type="AR:REF"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::EcuConfiguration -->
+  <xsd:complexType name="ECU-CONFIGURATION" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>This represents the anchor point of the ECU configuration description.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:ECU-CONFIGURATION"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::EnumerationValue -->
+  <xsd:group name="ENUMERATION-VALUE">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type EnumerationParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="VALUE" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Stores the chosen literal.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::EnumerationValue -->
+  <xsd:complexType name="ENUMERATION-VALUE" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type EnumerationParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:PARAMETER-VALUE"/>
+      <xsd:group ref="AR:ENUMERATION-VALUE"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::FloatValue -->
+  <xsd:group name="FLOAT-VALUE">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type FloatParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="VALUE" type="xsd:double" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Stores the value of the Float parameter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::FloatValue -->
+  <xsd:complexType name="FLOAT-VALUE" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type FloatParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:PARAMETER-VALUE"/>
+      <xsd:group ref="AR:FLOAT-VALUE"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- complex type for class ECUCDescriptionTemplate::FunctionNameValue -->
+  <xsd:complexType name="FUNCTION-NAME-VALUE" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type FunctionNameParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:PARAMETER-VALUE"/>
+      <xsd:group ref="AR:STRING-VALUE"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::InstanceReferenceValue -->
+  <xsd:group name="INSTANCE-REFERENCE-VALUE">
+    <xsd:sequence>
+      <xsd:element name="VALUE-IREF" type="AR:INSTANCE-REFERENCE-VALUE-VALUE-INSTANCE-REF" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::InstanceReferenceValue -->
+  <xsd:complexType name="INSTANCE-REFERENCE-VALUE" abstract="false" mixed="false">
+    <xsd:sequence>
+      <xsd:group ref="AR:CONFIG-REFERENCE-VALUE"/>
+      <xsd:group ref="AR:INSTANCE-REFERENCE-VALUE"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::IntegerValue -->
+  <xsd:group name="INTEGER-VALUE">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type IntegerParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="VALUE" type="xsd:integer" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Stores the value of the Integer parameter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::IntegerValue -->
+  <xsd:complexType name="INTEGER-VALUE" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type IntegerParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:PARAMETER-VALUE"/>
+      <xsd:group ref="AR:INTEGER-VALUE"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::ModuleConfiguration -->
+  <xsd:group name="MODULE-CONFIGURATION">
+    <xsd:annotation>
+      <xsd:documentation>Head of the configuration of one Module. A Module can be a BSW module as well as the RTE and ECU Infrastructure.
+
+As part of tthe BSW module description, the ModuleConfiguration has two different roles:
+
+The recommendedConfiguration contains parameter values recommended by the BSW module vendor. 
+
+The preconfiguredConfiguration contains values for those parameters which are fixed by the implementation and cannot be changed.
+
+These two ModuleConfigurations are used when the base ModuleConfiguration (as part of the base ECU configuration) is created to fill parameters with initial values.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DEFINITION-REF" type="AR:REF" minOccurs="0"/>
+      <xsd:element name="CONTAINERS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="CONTAINER" type="AR:CONTAINER"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MODULE-DESCRIPTION-REF" type="AR:REF" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::ModuleConfiguration -->
+  <xsd:complexType name="MODULE-CONFIGURATION" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Head of the configuration of one Module. A Module can be a BSW module as well as the RTE and ECU Infrastructure.
+
+As part of tthe BSW module description, the ModuleConfiguration has two different roles:
+
+The recommendedConfiguration contains parameter values recommended by the BSW module vendor. 
+
+The preconfiguredConfiguration contains values for those parameters which are fixed by the implementation and cannot be changed.
+
+These two ModuleConfigurations are used when the base ModuleConfiguration (as part of the base ECU configuration) is created to fill parameters with initial values.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:MODULE-CONFIGURATION"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::ParameterValue -->
+  <xsd:group name="PARAMETER-VALUE">
+    <xsd:annotation>
+      <xsd:documentation>Common class to all types of configuration values</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DEFINITION-REF" type="AR:REF" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- element group for class ECUCDescriptionTemplate::ReferenceValue -->
+  <xsd:group name="REFERENCE-VALUE">
+    <xsd:annotation>
+      <xsd:documentation>Used to represent a configuration value that has a parameter definition of type ConfigReference (used for all of its specializations excluding InstanceReferenceDef).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="VALUE-REF" type="AR:REF" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::ReferenceValue -->
+  <xsd:complexType name="REFERENCE-VALUE" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Used to represent a configuration value that has a parameter definition of type ConfigReference (used for all of its specializations excluding InstanceReferenceDef).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:CONFIG-REFERENCE-VALUE"/>
+      <xsd:group ref="AR:REFERENCE-VALUE"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::StringValue -->
+  <xsd:group name="STRING-VALUE">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type StringParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="VALUE" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Stores the value of the String parameter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::StringValue -->
+  <xsd:complexType name="STRING-VALUE" abstract="false" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Representing a configuration value of definition type StringParamDef</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:group ref="AR:PARAMETER-VALUE"/>
+      <xsd:group ref="AR:STRING-VALUE"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- element group for class ECUCDescriptionTemplate::InstanceReferenceValueValueInstanceRef -->
+  <xsd:group name="INSTANCE-REFERENCE-VALUE-VALUE-INSTANCE-REF">
+    <xsd:sequence>
+      <xsd:element name="CONTEXT-REFS" minOccurs="0">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="CONTEXT-REF" type="AR:REF"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TARGET-REF" type="AR:REF" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class ECUCDescriptionTemplate::InstanceReferenceValueValueInstanceRef -->
+  <xsd:complexType name="INSTANCE-REFERENCE-VALUE-VALUE-INSTANCE-REF" abstract="false" mixed="false">
+    <xsd:sequence>
+      <xsd:group ref="AR:INSTANCE-REFERENCE-VALUE-VALUE-INSTANCE-REF"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- element group for class BswModuleTemplate::BswModuleDescription -->
+  <xsd:group name="BSW-MODULE-DESCRIPTION">
+    <xsd:sequence>
+      <xsd:element name="PRECONFIGURED-CONFIGURATION-REF" type="AR:REF" minOccurs="0"/>
+      <xsd:element name="RECOMMENDED-CONFIGURATION-REF" type="AR:REF" minOccurs="0"/>
+      <xsd:element name="VENDOR-SPECIFIC-MODULE-DEF-REF" type="AR:REF" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:group>
+  <!-- complex type for class BswModuleTemplate::BswModuleDescription -->
+  <xsd:complexType name="BSW-MODULE-DESCRIPTION" abstract="false" mixed="false">
+    <xsd:sequence>
+      <xsd:group ref="AR:IDENTIFIABLE"/>
+      <xsd:group ref="AR:BSW-MODULE-DESCRIPTION"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="AR:AR-OBJECT"/>
+    <xsd:attributeGroup ref="AR:IDENTIFIABLE"/>
+  </xsd:complexType>
+  <!-- Predefined element and attribute types -->
+  <xsd:simpleType name="IDENTIFIER">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[a-zA-Z][a-zA-Z0-9_]{0,31}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="REF">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="/?([a-zA-Z][a-zA-Z0-9_]{0,31})(/[a-zA-Z][a-zA-Z0-9_]{0,31})*"/>
+      <!-- Pattern:
+				 - first slash optional (relative or absolute reference)
+				 - Identifier consisting of [letter][letter|digit|underscore] required
+				 - optionally a sequence of slashes and Identifiers
+			-->
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

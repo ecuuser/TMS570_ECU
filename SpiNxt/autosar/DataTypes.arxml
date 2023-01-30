@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/3.2.1 autosar_321.xsd" xmlns="http://autosar.org/3.2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>DataType</SHORT-NAME>
+			<ELEMENTS>
+				<ARRAY-TYPE>
+					<SHORT-NAME>Spi_DataPtr</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">DataPtr Type to be used by WriteBlock, ReadBlock and RestoreBlockDefaults operations. 	This type is used for all NVRAM blocks</L-2>
+					</DESC>
+					<ELEMENT>
+						<SHORT-NAME>Spi_DataPtr</SHORT-NAME>
+						<TYPE-TREF DEST="INTEGER-TYPE">/DataType/Spi_DataType</TYPE-TREF>
+						<MAX-NUMBER-OF-ELEMENTS>65535</MAX-NUMBER-OF-ELEMENTS>
+					</ELEMENT>
+				</ARRAY-TYPE>
+				<INTEGER-TYPE UUID="uint8">
+					<SHORT-NAME>Spi_ChannelType</SHORT-NAME>
+					<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+					<UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+				</INTEGER-TYPE>
+				<INTEGER-TYPE UUID="uint8">
+					<SHORT-NAME>Spi_DataType</SHORT-NAME>
+					<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+					<UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+				</INTEGER-TYPE>
+				<INTEGER-TYPE UUID="uint16">
+					<SHORT-NAME>Spi_NumberOfDataType</SHORT-NAME>
+					<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+					<UPPER-LIMIT INTERVAL-TYPE="CLOSED">65535</UPPER-LIMIT>
+				</INTEGER-TYPE>
+				<INTEGER-TYPE UUID="uint8">
+					<SHORT-NAME>Spi_SequenceType</SHORT-NAME>
+					<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+					<UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+				</INTEGER-TYPE>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>DaVinci</SHORT-NAME>
+			<ELEMENTS/>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

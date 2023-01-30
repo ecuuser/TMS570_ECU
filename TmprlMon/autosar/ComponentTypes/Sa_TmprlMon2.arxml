@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/3.1.4 autosar_314_ext.xsd" xmlns="http://autosar.org/3.1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>ComponentType</SHORT-NAME>
+			<ELEMENTS>
+				<INTERNAL-BEHAVIOR>
+					<SHORT-NAME>Sa_TmprlMon2_InternalBehavior</SHORT-NAME>
+					<COMPONENT-REF DEST="SENSOR-ACTUATOR-SOFTWARE-COMPONENT-TYPE">/ComponentType/Sa_TmprlMon2</COMPONENT-REF>
+					<EVENTS>
+						<TIMING-EVENT>
+							<SHORT-NAME>TMT_TmprlMon2_Per1</SHORT-NAME>
+							<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentType/Sa_TmprlMon2_InternalBehavior/TmprlMon2_Per1</START-ON-EVENT-REF>
+							<PERIOD>0.002000000</PERIOD>
+						</TIMING-EVENT>
+					</EVENTS>
+					<PORT-API-OPTIONS>
+						<PORT-API-OPTION>
+							<ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+							<INDIRECT-API>false</INDIRECT-API>
+							<PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentType/Sa_TmprlMon2/SystemTime</PORT-REF>
+						</PORT-API-OPTION>
+						<PORT-API-OPTION>
+							<ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+							<INDIRECT-API>false</INDIRECT-API>
+							<PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentType/Sa_TmprlMon2/WdMonitor</PORT-REF>
+						</PORT-API-OPTION>
+					</PORT-API-OPTIONS>
+					<RUNNABLES>
+						<RUNNABLE-ENTITY>
+							<SHORT-NAME>TmprlMon2_Per1</SHORT-NAME>
+							<DESC>
+								<L-2 L="FOR-ALL">Periodic function intended to be placed at the beginning of the 2ms task list to create the rising edge of the WdMonitor signal.</L-2>
+							</DESC>
+							<CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+							<MINIMUM-START-INTERVAL>0.000000</MINIMUM-START-INTERVAL>
+							<SERVER-CALL-POINTS>
+								<SYNCHRONOUS-SERVER-CALL-POINT>
+									<SHORT-NAME>SC_WdMonitor_OP_SET</SHORT-NAME>
+									<OPERATION-IREFS>
+										<OPERATION-IREF>
+											<R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentType/Sa_TmprlMon2/WdMonitor</R-PORT-PROTOTYPE-REF>
+											<OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/PortInterface/WdMonitor/OP_SET</OPERATION-PROTOTYPE-REF>
+										</OPERATION-IREF>
+									</OPERATION-IREFS>
+									<TIMEOUT>0.000000000</TIMEOUT>
+								</SYNCHRONOUS-SERVER-CALL-POINT>
+							</SERVER-CALL-POINTS>
+							<SYMBOL>TmprlMon2_Per1</SYMBOL>
+						</RUNNABLE-ENTITY>
+					</RUNNABLES>
+					<SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+				</INTERNAL-BEHAVIOR>
+				<SENSOR-ACTUATOR-SOFTWARE-COMPONENT-TYPE>
+					<SHORT-NAME>Sa_TmprlMon2</SHORT-NAME>
+					<PORTS>
+						<R-PORT-PROTOTYPE>
+							<SHORT-NAME>SystemTime</SHORT-NAME>
+							<REQUIRED-COM-SPECS>
+								<CLIENT-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/SystemTime/DtrmnElapsedTime_mS_u16</OPERATION-REF>
+								</CLIENT-COM-SPEC>
+								<CLIENT-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/SystemTime/DtrmnElapsedTime_mS_u32</OPERATION-REF>
+								</CLIENT-COM-SPEC>
+								<CLIENT-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/SystemTime/DtrmnElapsedTime_uS_u16</OPERATION-REF>
+								</CLIENT-COM-SPEC>
+								<CLIENT-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/SystemTime/DtrmnElapsedTime_uS_u32</OPERATION-REF>
+								</CLIENT-COM-SPEC>
+								<CLIENT-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/SystemTime/GetSystemTime_mS_u32</OPERATION-REF>
+								</CLIENT-COM-SPEC>
+								<CLIENT-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/SystemTime/GetSystemTime_uS_u32</OPERATION-REF>
+								</CLIENT-COM-SPEC>
+							</REQUIRED-COM-SPECS>
+							<REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PortInterface/SystemTime</REQUIRED-INTERFACE-TREF>
+						</R-PORT-PROTOTYPE>
+						<R-PORT-PROTOTYPE>
+							<SHORT-NAME>WdMonitor</SHORT-NAME>
+							<REQUIRED-COM-SPECS>
+								<CLIENT-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/WdMonitor/OP_SET</OPERATION-REF>
+								</CLIENT-COM-SPEC>
+							</REQUIRED-COM-SPECS>
+							<REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PortInterface/WdMonitor</REQUIRED-INTERFACE-TREF>
+						</R-PORT-PROTOTYPE>
+					</PORTS>
+				</SENSOR-ACTUATOR-SOFTWARE-COMPONENT-TYPE>
+				<SWC-IMPLEMENTATION>
+					<SHORT-NAME>Sa_TmprlMon2_Implementation</SHORT-NAME>
+					<CODE-DESCRIPTORS>
+						<CODE>
+							<SHORT-NAME>Code</SHORT-NAME>
+							<TYPE>SRC</TYPE>
+						</CODE>
+					</CODE-DESCRIPTORS>
+					<BEHAVIOR-REF DEST="INTERNAL-BEHAVIOR">/ComponentType/Sa_TmprlMon2_InternalBehavior</BEHAVIOR-REF>
+				</SWC-IMPLEMENTATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>DaVinci</SHORT-NAME>
+			<ELEMENTS/>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

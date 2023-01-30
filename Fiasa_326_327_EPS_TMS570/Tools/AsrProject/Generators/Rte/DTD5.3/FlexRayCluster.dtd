@@ -1,0 +1,140 @@
+<!-- Entities -->
+
+<!ENTITY ti.FlexRayCluster        "FlexRayCluster">
+<!ENTITY ti.FrTp                  "FrTp">
+<!ENTITY ti.FrTpAddress           "FrTpAddress">
+<!ENTITY ti.FrTpConnection        "FrTpConnection">
+<!ENTITY ti.FrTpConnectionControl "FrTpConnectionControl">
+<!ENTITY ti.FrTpNode              "FrTpNode">
+
+<!ENTITY ti.PDU                   "PDU">
+<!ENTITY ti.NetworkNode           "NetworkNode">
+
+<!-- Elements -->
+
+<!ELEMENT FlexRayCluster               (%C.DefAttr;,CONTENT*,FlexRayFrame*,Channel*,GenAttrList?,NetworkSignal*)>
+<!ATTLIST FlexRayCluster               %A.ConfigItem;
+          VehicleProjectGUID           CDATA ""
+	      Manufacturer                 CDATA ""
+	      NMType                       CDATA ""
+          Baudrate	                   (2.5|5.0|10.0) "10.0"
+          CycleLength                  CDATA "5000"
+          PayloadLengthStatic          CDATA "8"
+          NumberOfStaticSlots          CDATA "100"
+          NumberOfMiniSlots            CDATA "618"
+          StaticSlotLength             CDATA "30"
+          MiniSlotLength               CDATA "3"
+          MacroTick                    CDATA "1.0"
+          WakeupSymbolTxIdle           CDATA "14"
+          WakeupSymbolTxLow            CDATA "14"
+          WakeupSymbolRxWindow         CDATA "76"
+          WakeupSymbolRxIdle           CDATA "45"
+          WakeupSymbolRxLow            CDATA "15"
+          StaticSlotActionPointOffset  CDATA "1"
+          MiniSlotActionPointOffset    CDATA "1"
+          DynamicSlotIdlePhase         CDATA "1"
+          NIT                          CDATA "135"
+          SymbolWindow                 CDATA "9"
+          SampleClockPeriod            CDATA "0.0125"
+          TSSTransmitter               CDATA "5"
+          ListenNoise                  CDATA "2"
+          MacroPerCycle                CDATA "0"
+          MaxInitError                 CDATA "0.450075"
+          MaxWOClockCorrFatal          CDATA "10"
+          MaxWOClockCorrPassive        CDATA "6"
+          NMVectorLength               CDATA "0"
+          SyncNodeMax                  CDATA "4"
+          CasRxLowMax                  CDATA "71"
+          CasRxLowMin                  CDATA "34"
+          ClusterDriftDamping          CDATA "1"
+          OffsetCorrStart              CDATA "4866"
+          ColdStartAttempts            CDATA "8"
+          LimitDynamicPayloadLength    CDATA "12"
+          Protocol                     (FLEXRAY) "FLEXRAY"
+          ProtocolVersion              CDATA "2.0"
+          Medium                       CDATA "0"
+          IsHighLowBitOrder            CDATA "0"
+          BitCounting                  (MONOTONE|SAWTOOTH) "MONOTONE"
+          OffsetCorrectionMax          CDATA "0.0"
+          MaxPropagationDelay          CDATA "0.0"
+          MinPropagationDelay          CDATA "0.0"
+          EnableSymbolWindow           CDATA "0"
+          EnableNetworkManagement      CDATA "0"
+          AssumedPrecision             CDATA "0.0"
+          MaxMicrotick                 CDATA "0.0"
+          NStarPath                    CDATA "0"
+          MacroInitialOffset           CDATA "0"
+          NMNodeDetectionEnabled       CDATA "0"
+          NMNodeIdEnabled              CDATA "0"
+          NMRepeatMessageSupport       CDATA "0"
+>
+
+<!ELEMENT FlexRayFrame        (%C.DefAttr;,ATTRLink*,GenAttrList?,MultiplexorGroup*,FrameNodeMap*,FrameConstraint?,MappedSignal*,MappedSignalGroup*,NetworkNodeLink*,MappedPDU*)>
+<!ATTLIST FlexRayFrame        %A.ChildItem;
+          SchedulingType      (STATIC|DYNAMIC) "STATIC"
+          CycleRepetition     (1|2|4|8|16|32|64) "1"
+          ApplicationType     CDATA ""
+          DLC                 CDATA "0"
+          RepeatingTimeRange  CDATA "0"
+          Tolerance           CDATA "0"
+          DebounceTimeRange   CDATA "0"
+>
+
+<!ELEMENT FrTp (%C.DefAttr;,FrTpAddress*,FrTpConnection*,FrTpConnectionControl*,FrTpNode*)>
+<!ATTLIST FrTp %A.ChildItem;
+>
+
+<!ELEMENT FrTpAddress (%C.DefAttr;)>
+<!ATTLIST FrTpAddress %A.ChildItem;
+          Address     CDATA ""
+>
+
+<!ELEMENT FrTpConnection   (ATTRLink*,FrTpNodeLink*,PDULink*)>
+<!ATTLIST FrTpConnection   %A.ChildItem;
+          ConnectionControlLink NMTOKEN #FIXED "&ti.FrTpConnectionControl;"
+	      MulticastLink         NMTOKEN #FIXED "&ti.FrTpAddress;"
+          TxTpNodeLink          NMTOKEN #FIXED "&ti.FrTpNode;"
+		  DirectSDULink         NMTOKEN #FIXED "&ti.PDU;"
+		  ReversedSDULink       NMTOKEN #FIXED "&ti.PDU;"
+>
+
+<!ELEMENT FrTpConnectionControl (%C.DefAttr;)>
+<!ATTLIST FrTpConnectionControl %A.ChildItem;
+          AckType                    (None | AckWithRt | NoAck) "None"
+          MaxAr                      CDATA "0"
+          MaxAs                      CDATA "0"
+	      MaxBufferRequest           CDATA "0"          
+          MaxBufferSize              CDATA "0"
+          MaxFrIf                    CDATA "0"
+          MaxRetries                 CDATA "0"
+          PduPerCycle                CDATA "0"
+	      SeparationCycles           CDATA "0"
+          TimeBuffer                 CDATA "0.0"
+          TimeFrIf                   CDATA "0.0"
+          TimeoutAr                  CDATA "0.0"
+          TimeoutAs                  CDATA "0.0"
+          TimeoutBs                  CDATA "0.0"
+          TimeoutCr                  CDATA "0.0"
+>
+
+<!ELEMENT FrTpNode   (%C.DefAttr;,ATTRLink*,NetworkNodeLink*)>
+<!ATTLIST FrTpNode   %A.ChildItem;
+          TpAddressLink   NMTOKEN #FIXED "&ti.FrTpAddress;"
+>
+
+<!-- Links -->
+
+<!ELEMENT FlexRayClusterLink EMPTY>
+<!ATTLIST FlexRayClusterLink 
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.FlexRayCluster;"
+>
+
+<!ELEMENT FrTpNodeLink EMPTY>
+<!ATTLIST FrTpNodeLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.FrTpNode;"
+>

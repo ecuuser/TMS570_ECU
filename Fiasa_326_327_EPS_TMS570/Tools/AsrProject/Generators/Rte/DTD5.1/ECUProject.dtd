@@ -1,0 +1,128 @@
+<!-- Entities -->
+
+<!ENTITY ti.ECUProject          	"ECUProject">
+<!ENTITY ti.Component           	"Component">
+<!ENTITY ti.Task                	"Task">
+<!ENTITY ti.Runnable            	"Runnable">
+<!ENTITY ti.ECUSWComposition    	"ECUSWComposition">
+<!ENTITY ti.ProxyComponent      	"ProxyComponent">
+<!ENTITY ti.ProxyPortConnector  	"ProxyPortConnector">
+<!ENTITY ti.ServicePortConnector	"ServicePortConnector">
+<!ENTITY ti.DataMapping         	"DataMapping">
+<!ENTITY ti.ExternalTool        	"ExternalTool">
+<!ENTITY ti.Generator           	"Generator">
+<!ENTITY ti.NVMBlock           	    "NVMBlock">
+<!ENTITY ti.PerInstanceMemory       "PerInstanceMemory">
+<!ENTITY ti.OsApplication           "OsApplication">
+
+<!-- Elements -->
+
+<!ELEMENT ECUProject            (%C.DefAttr;,CONTENT*,ATTRLink*,FileEntry*,Task*,TaskMap*,NVMBlock*,MemoryMap*,ECUSWComposition,ECUCommunication?,ExternalTool*,Generator*,GenAttrList?,OsApplication*)>
+<!ELEMENT ECUCommunication      (ATTRLink*,Signal*,SignalType*,SignalGroupRoot*,ECU*,CANBus*,LINBus*,FlexRayCluster*,FrTp*)>
+<!ELEMENT Task                  (%C.DefAttr;,CONTENT*,ATTRLink*,GenAttrList?)>
+<!ELEMENT TaskMap               (ATTRLink*,GenAttrList?)>
+<!ELEMENT NVMBlock              (%C.DefAttr;)>
+<!ELEMENT MemoryMap             (ATTRLink*)>
+<!ELEMENT ProxyComponent        (ATTRLink*,GenAttrList?,ProxyPortPrototype*)>
+<!ELEMENT ProxyPortConnector    (ATTRLink*)>
+<!ELEMENT DataMapping           (ATTRLink*,DataElement*)>
+<!ELEMENT ECUSWComposition      (%C.DefAttr;,ATTRLink*,ProxyComponent*,ProxyPortPrototype*,ProxyPortConnector*,ComponentPrototype*,PortConnector*,PortPrototype*,DataMapping?,ServicePortConnector*,GenAttrList?)>
+<!ELEMENT ExternalTool           EMPTY>
+<!ELEMENT Generator				 EMPTY>
+<!ELEMENT ServicePortConnector  (ATTRLink*)>
+<!ELEMENT OsApplication         (%C.DefAttr;)>
+
+<!ATTLIST ECUProject					%A.ConfigItem;
+          ECULink						NMTOKEN #FIXED "&ti.ECU;"
+          GenOutputLevel				CDATA "0"
+          BSWMDFileCom					CDATA ""
+          BSWMDFileNvM					CDATA ""
+          BSWMDFileOs					CDATA ""
+          ECUCFile						CDATA ""
+          ECUCFileLastUpdate			CDATA ""
+          CommunicationMode				(VP|LOC|NONE)   "VP"
+          ECUCFileModificationTime		CDATA ""
+		  AllowGenerationOfUnsavedData	CDATA "1"
+>
+
+<!ATTLIST ECUSWComposition      %A.ChildItem;
+>
+
+<!ATTLIST ECUCommunication      %A.ChildItem;
+>
+
+<!ATTLIST DataMapping           %A.ChildItem;
+>
+
+<!ATTLIST ProxyComponent            %A.ChildItem;
+          ComponentLink             NMTOKEN #FIXED "&ti.Component;"
+          ReplacementCompTypeLink   NMTOKEN #FIXED "&ti.ComponentType;"
+          ReplacementType          (NONE|REPLACE|INACTIVE) "NONE"
+>
+
+<!ATTLIST ProxyPortConnector        %A.ChildItem;
+          TransmitterPortLink       NMTOKEN #FIXED "&ti.ProxyPortPrototype;"
+          ReceiverPortLink          NMTOKEN #FIXED "&ti.ProxyPortPrototype;"
+>
+
+<!ATTLIST ServicePortConnector         %A.ChildItem;
+          ReceiverPortLink             NMTOKEN #FIXED "&ti.PortPrototype;"
+          TransmitterPortLink          NMTOKEN #FIXED "&ti.PortPrototype;"
+          ReceiveCompPrototypeLink     NMTOKEN #FIXED "&ti.ComponentPrototype;"
+          TransmitCompPrototypeLink    NMTOKEN #FIXED "&ti.ComponentPrototype;"
+          ProxyReceiverPortLink        NMTOKEN #FIXED "&ti.ProxyPortPrototype;"
+          ProxyTransmitterPortLink     NMTOKEN #FIXED "&ti.ProxyPortPrototype;"   
+>
+
+<!ATTLIST Task                  %A.ChildItem;
+          Type                  (APPLICATION|IMPORT|RTE) "APPLICATION"
+          Priority              CDATA "0"
+          Schedule              (NON|FULL) "NON"
+          OsApplicationLink     NMTOKEN #FIXED "&ti.OsApplication;"
+>
+
+<!ATTLIST TaskMap                   %A.ChildItem;
+          TaskLink                  NMTOKEN #FIXED "&ti.Task;"
+          ComponentPrototypeLink    NMTOKEN #FIXED "&ti.ComponentPrototype;"
+          RunnableLink              NMTOKEN #FIXED "&ti.Runnable;"
+          OrderIndex                CDATA "-1"
+>
+
+<!ATTLIST NVMBlock                  %A.ChildItem;
+>
+
+<!ATTLIST MemoryMap                 %A.ChildItem;
+          NVMBlockLink              NMTOKEN #FIXED "&ti.NVMBlock;"
+          PIMLink                   NMTOKEN #FIXED "&ti.PerInstanceMemory;"
+          ComponentPrototypeLink    NMTOKEN #FIXED "&ti.ComponentPrototype;"
+>
+
+<!ATTLIST ExternalTool				%A.ChildItem;
+		  CommandLineParameters     CDATA ""
+		  DisplayString             CDATA ""
+		  Path                      CDATA ""
+>
+
+<!ATTLIST Generator 				%A.ChildItem;
+		  CommandLineParameters     CDATA ""
+		  DisplayString             CDATA ""
+		  Path                      CDATA ""
+		  IsActivated               CDATA "1"
+		  IsDefaultGenerator        CDATA "0"
+		  OrderIndex                CDATA "-1"
+		  UseStandard				CDATA "0"
+>
+
+<!ATTLIST OsApplication             %A.ChildItem;
+		  IsTrusted                 CDATA "0"
+>
+
+<!-- Links -->
+
+<!ELEMENT ECUProjectLink EMPTY>
+<!ATTLIST ECUProjectLink
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.ECUProject;"
+>
+

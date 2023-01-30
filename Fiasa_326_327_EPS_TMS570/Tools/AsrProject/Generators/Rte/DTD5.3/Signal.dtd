@@ -1,0 +1,49 @@
+<!-- Entities -->
+
+<!ENTITY ti.Signal                "Signal">
+<!ENTITY ti.SignalType            "SignalType">
+<!ENTITY ti.DataType              "DataType">
+<!ENTITY ti.Constant              "Constant">
+<!ENTITY ti.ArrayElementConstant  "ArrayElementConstant">
+<!ENTITY ti.RecordElementConstant "RecordElementConstant">
+
+<!-- Elements -->
+
+<!ELEMENT Signal         (%C.DefAttr;,ATTRLink*,GenAttrList?,PrivateSigType?)>
+<!ELEMENT PrivateSigType (SignalDefine*)>
+
+<!ATTLIST Signal  %A.ConfigItem;
+        BaseTypeLink                    NMTOKEN #FIXED "&ti.SignalType;"
+        DataTypeLink                    NMTOKEN #FIXED "&ti.DataType;"
+        InitValueConstLink              NMTOKEN #FIXED "&ti.Constant;"
+        InitValueArrayElementConstLink  NMTOKEN #FIXED "&ti.ArrayElementConstant;"
+        InitValueRecordElementConstLink NMTOKEN #FIXED "&ti.RecordElementConstant;"
+        Length                          CDATA "-1"
+>
+
+<!ATTLIST PrivateSigType    %A.ChildItem;
+        Length          CDATA "1"
+        ValueType       (Signed|Unsigned|IEEEFloat|IEEEDouble|ASCIIString|Bitfield) "Unsigned"
+        Unit            CDATA ""
+        Factor          CDATA "1"
+        Offset          CDATA "0"
+        Minimum         CDATA "0"
+        Maximum         CDATA "1"
+        UseScaling      CDATA "1"
+        NotValidValue   CDATA "0"
+        InitValue       CDATA "0"
+>
+
+<!-- Links -->
+
+<!ELEMENT SignalLink EMPTY>
+
+<!ATTLIST SignalLink 
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.Signal;"
+          %A.LinkName; CDATA ""
+>
+
+

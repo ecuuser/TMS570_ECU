@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+============================================================================
+This file is generated with MICROSAR EAD Toolsuite 1.3.0.57
+Date: Mon, 21 Apr 2008 15:26:10 GMT
+============================================================================
+-->
+<AUTOSAR xmlns="http://autosar.org/3.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ADMIN-DATA>
+		<DOC-REVISIONS>
+			<DOC-REVISION>
+				<REVISION-LABEL>$Revision$</REVISION-LABEL>
+				<ISSUED-BY>svn</ISSUED-BY>
+				<DATE>2008-04-21T15:26:21</DATE>
+				<MODIFICATIONS>
+					<MODIFICATION>
+						<CHANGE>
+							<L-2 L="EN">Configmanagement revision number</L-2>
+						</CHANGE>
+					</MODIFICATION>
+				</MODIFICATIONS>
+			</DOC-REVISION>
+		</DOC-REVISIONS>
+	</ADMIN-DATA>
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:19fe1bdb-444c-4106-8fee-6adea1ec849c">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-CONFIGURATION UUID="DCE:9537342a-081d-4dbb-aecf-0f5355619411">
+					<SHORT-NAME>Dem_Pre</SHORT-NAME>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2008-04-21T15:30:04</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Creation</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Initial Version</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2008-07-29T12:30:04</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Renamed to Dem_Pre</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Common naming</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.02.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visade</ISSUED-BY>
+								<DATE>2011-01-26T15:43:22</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">support of Variant Pre-Compile</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">new feature</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+						<SDGS>
+							<SDG GID="DV:ClassConfiguration">
+								<SD>/MICROSAR/Dem_Pre_Class1/DemConfigSet</SD>
+								<SD>/MICROSAR/Dem_Pre_Class2/DemConfigSet/DemEventParameter/DemEventClass/DemPredebounceAlgorithmClass/DemPreDebounceCounterBased</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Dem</DEFINITION-REF>
+					<IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+					<CONTAINERS>
+						<CONTAINER UUID="DCE:0c8287b7-1c8e-46c8-a171-640478f77e9c">
+							<SHORT-NAME>DemGeneral</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemGeneral</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/Dem/DemGeneral/DemTypeOfDTCSupported</DEFINITION-REF>
+									<VALUE>1</VALUE>
+								</INTEGER-VALUE>
+							</PARAMETER-VALUES>
+							<SUB-CONTAINERS>
+								<!--Operation Cycles-->
+								<CONTAINER UUID="DCE:016df7be-59d7-4fe6-83c7-3816b3947a7d">
+									<SHORT-NAME>DEM_IGNITION</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemGeneral/DemOperationCycleTgt</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ENUMERATION-VALUE>
+											<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/Dem/DemGeneral/DemOperationCycleTgt/DemOperationCycle</DEFINITION-REF>
+											<VALUE>DEM_IGNITION</VALUE>
+										</ENUMERATION-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+								<CONTAINER UUID="DCE:8355ed0b-592e-45f1-a1e0-0fc1c1b3d30d">
+									<SHORT-NAME>DEM_POWER</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemGeneral/DemOperationCycleTgt</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ENUMERATION-VALUE>
+											<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/Dem/DemGeneral/DemOperationCycleTgt/DemOperationCycle</DEFINITION-REF>
+											<VALUE>DEM_POWER</VALUE>
+										</ENUMERATION-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+								<!--Enable Conditions-->
+								<!--Extended Record-->
+								<CONTAINER UUID="8509d55d-8da9-400a-96e4-db7c8ee1f84c">
+									<SHORT-NAME>DEM_OBD_DCY</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemGeneral/DemOperationCycleTgt</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ENUMERATION-VALUE>
+											<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/Dem/DemGeneral/DemOperationCycleTgt/DemOperationCycle</DEFINITION-REF>
+											<VALUE>DEM_OBD_DCY</VALUE>
+										</ENUMERATION-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+								<CONTAINER UUID="10050f3b-899c-45f1-ae62-4dba36edce87">
+									<SHORT-NAME>DEM_WARMUP</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemGeneral/DemOperationCycleTgt</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ENUMERATION-VALUE>
+											<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/Dem/DemGeneral/DemOperationCycleTgt/DemOperationCycle</DEFINITION-REF>
+											<VALUE>DEM_WARMUP</VALUE>
+										</ENUMERATION-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="DCE:5c98b9bd-af3a-4e73-a596-532101b7b316">
+					<SHORT-NAME>Dem_Rec</SHORT-NAME>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2008-04-21T15:30:33</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Creation</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Initial version</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Dem</DEFINITION-REF>
+					<IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+					<CONTAINERS>
+						<CONTAINER UUID="DCE:ddace75d-d9ac-41a3-8cef-a6edf796c3de">
+							<SHORT-NAME>DemGeneral</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemGeneral</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<INTEGER-VALUE>
+									<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/Dem/DemGeneral/DemMaxNumberEventEntryPrm</DEFINITION-REF>
+									<VALUE>8</VALUE>
+								</INTEGER-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="6cefbc5d-defc-4f8a-acda-6154b8dc04ef">
+					<SHORT-NAME>Dem_Pre_Class1</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Dem</DEFINITION-REF>
+					<CONTAINERS>
+						<CONTAINER UUID="DCE:53cd486f-f928-4c6f-8cfb-ac2a31f77e9e">
+							<SHORT-NAME>DemConfigSet</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="DCE:f3c190b6-7068-4e6b-9135-492ff945d6e1">
+									<SHORT-NAME>DEM_DTC_GROUP_POWERTRAIN_DTCS</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemGroupOfDTC</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<INTEGER-VALUE>
+											<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/Dem/DemConfigSet/DemGroupOfDTC/DemGroupDTCs</DEFINITION-REF>
+										</INTEGER-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+								<CONTAINER UUID="DCE:000aeaa4-5f1e-411b-8b39-bc6257c4d599">
+									<SHORT-NAME>DEM_DTC_GROUP_CHASSIS_DTCS</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemGroupOfDTC</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<INTEGER-VALUE>
+											<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/Dem/DemConfigSet/DemGroupOfDTC/DemGroupDTCs</DEFINITION-REF>
+										</INTEGER-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+								<CONTAINER UUID="DCE:73069338-1866-4107-b541-62b074c7e2ab">
+									<SHORT-NAME>DEM_DTC_GROUP_BODY_DTCS</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemGroupOfDTC</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<INTEGER-VALUE>
+											<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/Dem/DemConfigSet/DemGroupOfDTC/DemGroupDTCs</DEFINITION-REF>
+										</INTEGER-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+								<CONTAINER UUID="DCE:e2a683c8-faa9-4362-8086-9bfe5667ba62">
+									<SHORT-NAME>DEM_DTC_GROUP_NETWORK_COM_DTCS</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemGroupOfDTC</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<INTEGER-VALUE>
+											<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/Dem/DemConfigSet/DemGroupOfDTC/DemGroupDTCs</DEFINITION-REF>
+										</INTEGER-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="335b8b11-379c-4a32-9dd5-f57679907b5a">
+					<SHORT-NAME>Dem_VectorTemplates</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Dem</DEFINITION-REF>
+					<IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+					<CONTAINERS>
+						<CONTAINER UUID="45e86774-8f28-4860-a67e-83d3d4851242">
+							<SHORT-NAME>DemConfigSet</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="57ae6196-3abc-4b3c-802e-1c4227f3d822">
+									<SHORT-NAME>VectorEventTemplate</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="3fdac33e-1ee0-4dcf-b8c0-c36100233f21">
+											<SHORT-NAME>DemEventClass</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter/DemEventClass</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<CONTAINER UUID="6f09e196-4caf-4ff5-8053-32c3097dbb57">
+													<SHORT-NAME>DemPredebounceAlgorithmClass</SHORT-NAME>
+													<DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter/DemEventClass/DemPredebounceAlgorithmClass</DEFINITION-REF>
+													<SUB-CONTAINERS>
+														<CONTAINER UUID="30df040d-d467-4f3d-915a-7440008a13fa">
+															<SHORT-NAME>DemPreDebounceCounterBased</SHORT-NAME>
+															<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter/DemEventClass/DemPredebounceAlgorithmClass/DemPreDebounceCounterBased</DEFINITION-REF>
+															<PARAMETER-VALUES>
+																<BOOLEAN-VALUE>
+																	<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter/DemEventClass/DemPredebounceAlgorithmClass/DemPreDebounceCounterBased/DemJumpDown</DEFINITION-REF>
+																	<VALUE>true</VALUE>
+																</BOOLEAN-VALUE>
+																<BOOLEAN-VALUE>
+																	<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter/DemEventClass/DemPredebounceAlgorithmClass/DemPreDebounceCounterBased/DemJumpUp</DEFINITION-REF>
+																	<VALUE>true</VALUE>
+																</BOOLEAN-VALUE>
+															</PARAMETER-VALUES>
+														</CONTAINER>
+													</SUB-CONTAINERS>
+												</CONTAINER>
+											</SUB-CONTAINERS>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="c65a7b09-b022-4175-86c0-f5e025b6df20">
+					<SHORT-NAME>Dem_Pre_Class2</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Dem</DEFINITION-REF>
+					<CONTAINERS>
+						<CONTAINER UUID="43868db2-34f0-490c-b9d1-6d4c820081a5">
+							<SHORT-NAME>DemConfigSet</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="e5d8e63a-77e0-428a-8e35-c8f519175767">
+									<SHORT-NAME>DemEventParameter</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="5a3c56c4-718d-4bc1-a7c0-9a8414d8eb11">
+											<SHORT-NAME>DemEventClass</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter/DemEventClass</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<CONTAINER UUID="bc59aa71-bc76-4774-bd8c-72448d66d445">
+													<SHORT-NAME>DemPredebounceAlgorithmClass</SHORT-NAME>
+													<DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter/DemEventClass/DemPredebounceAlgorithmClass</DEFINITION-REF>
+													<SUB-CONTAINERS>
+														<CONTAINER UUID="9071fcb8-b725-4695-ad3e-3f4596d7d7ad">
+															<SHORT-NAME>DemPreDebounceCounterBased</SHORT-NAME>
+															<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter/DemEventClass/DemPredebounceAlgorithmClass/DemPreDebounceCounterBased</DEFINITION-REF>
+															<PARAMETER-VALUES>
+																<BOOLEAN-VALUE>
+																	<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter/DemEventClass/DemPredebounceAlgorithmClass/DemPreDebounceCounterBased/DemJumpDown</DEFINITION-REF>
+																	<VALUE>true</VALUE>
+																</BOOLEAN-VALUE>
+																<BOOLEAN-VALUE>
+																	<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Dem/DemConfigSet/DemEventParameter/DemEventClass/DemPredebounceAlgorithmClass/DemPreDebounceCounterBased/DemJumpUp</DEFINITION-REF>
+																	<VALUE>true</VALUE>
+																</BOOLEAN-VALUE>
+															</PARAMETER-VALUES>
+														</CONTAINER>
+													</SUB-CONTAINERS>
+												</CONTAINER>
+											</SUB-CONTAINERS>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

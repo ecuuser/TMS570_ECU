@@ -1,0 +1,1408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+============================================================================
+This file is generated with Eparm 2.0.3.5
+Date: Wed, 21 Apr 2010 17:46:16 GMT
+============================================================================
+-->
+<AUTOSAR xmlns="http://autosar.org/3.0.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:5540c8e4-e1e7-49d5-8ea5-4ba95f0318c0">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="DCE:ef35b698-e564-4882-b337-20240d10c5cb">
+					<SHORT-NAME>IoHwAbstraction_Impl</SHORT-NAME>
+					<CODE-GENERATOR>cMICROSAR</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>1</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>3</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>0</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>2</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>0</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>0</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/IoHwAbstraction_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/IoHwAbstraction_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-API-INFIX>254</VENDOR-API-INFIX>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/IoHwAbstraction</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-DEF UUID="DCE:05fafbd9-bd67-43de-8300-58c92e7e0e19">
+					<SHORT-NAME>IoHwAbstraction</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of IO HW Abstraction.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.02.00</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2008-07-10T08:18:29</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">First version of BSWMD</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.02.01</REVISION-LABEL>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2008-07-10T08:19:54</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added Switch for RTE usage, Comments updated, SW version corrected</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.02.02</REVISION-LABEL>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2008-08-21T22:26:53</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added empty Pre- and Recommended configuration</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00028632</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.03.00</REVISION-LABEL>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2008-10-02T16:18:14</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">MODULE-DEF short name reworked</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00030019</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.04.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2008-12-10T08:35:15</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Optional parameters RequirementId and DefaultValue added to discrete signals and user defined operations</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00031178</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.04.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2009-02-24T10:11:18</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Comment of RequirmenentId Fields reworked</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.04.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2009-03-16T16:36:08</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added switches for service ports configuration, development error reporting</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00033387, ESCAN00032763, ESCAN00032355</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.04.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2009-07-09T11:39:47</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Multiplicity of IoHwAbRequirementId and IoHwAbUserDefinedOp changed (minimum count 1)</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00035342, ESCAN00034496</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.04.04</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2009-09-23T09:13:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Update of the implementation version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.04.05</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2010-04-21T17:45:23</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Config variant of the module corrected.</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00038803</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.04.06</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vircer</ISSUED-BY>
+								<DATE>2010-11-26T09:32:53</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">SchM preconfig added, Long names added, Descriptions reworked</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00046686</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/IoHwAbstraction</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Parameter Container Definition: IoHwAbEcuSignalGroup -->
+						<!-- Parameter Container Definition: IoHwAbEcuSignals -->
+						<!-- Parameter Container Definition: IoHwAbGeneral -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:fbe13a57-127d-45ca-a3b1-b2f697dc732f">
+							<SHORT-NAME>IoHwAbCalSignals</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">CAL Signals</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">This container holds CAL Dio signals, i.e. Dio Channels, Dio Channel Groups and Dio Ports can be configured as discrete signals or discrete signal groups. Add a CAL signal by right-click 'Add'.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<SUB-CONTAINERS>
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:e06f3fae-fe2f-4217-bf28-b4b33abc5618">
+									<SHORT-NAME>IoHwAbDiscrete</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">CAL Signal Name</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This is a discrete signal or signal group that contains a certain Dio entity (Channel, Channel Group or Port). Adjust the name of the entitiy to your needs.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<BOOLEAN-PARAM-DEF UUID="DCE:6f70256f-abb8-47f0-b970-e8d07a6868f1">
+											<SHORT-NAME>IoHwAbCreateOpSet</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Create OP_SET for Signal</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This checkbox enables the generation of an OP_SET function for the certain signal. The name of the operation function 
+will be generated according to the following pattern: IoHwAb_Set&lt;SignalName&gt;</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:68e0ddb0-2f22-40f5-a245-59b0b7ecf2bc">
+											<SHORT-NAME>IoHwAbCreateOpGet</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Create OP_GET for Signal</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This checkbox enables the generation of an OP_GET function for the certain signal. The name of the operation function 
+will be generated according to the following pattern: IoHwAb_Get&lt;SignalName&gt;</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:f8e4692f-da9c-4ad4-bd69-a8f3712f4892">
+											<SHORT-NAME>IoHwAbCreateOpDiag</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Create OP_DIAG for Signal</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This checkbox enables the generation of an OP_DIAG function for the certain signal. The OP_DIAG operation is a 
+diagnosis function for the output operation OP_SET and can only be used if this is enabled. The name of the operation 
+function will be generated according to the following pattern: IoHwAb_Diag&lt;SignalName&gt;</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:33107eaa-2e47-4965-a439-3adf597a75f4">
+											<SHORT-NAME>IoHwAbDcmAccess</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Enable DCM Access Functionality</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This checkbox enables the generation of a DCM interface function for the certain signal. The enabling of this option 
+produces one additional function per enabled operation (OP_SET, OP_GET or OP_DIAG), as well as additional state 
+variables. The name of the DCM access function will be generated according to the following pattern: 
+IoHwAb_DCM&lt;Set/Get/Diag&gt;&lt;SignalName&gt;</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="DCE:697309a0-bd61-4e2e-8e88-5c6803e5e303">
+											<SHORT-NAME>IoHwAbCalSourceType</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This field contains the type of Dio source that is selected.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>DioChannel</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:36b4ce93-ac49-4105-8f95-485442e7da28">
+													<SHORT-NAME>DioChannel</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:fab9efa3-2a33-484c-a43b-a81450e7aa5c">
+													<SHORT-NAME>DioPort</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:e4b03a7c-e2f3-4256-aae1-1d33a3b8bacf">
+													<SHORT-NAME>DioChannelGroup</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<STRING-PARAM-DEF UUID="d70e3ed7-3474-4d74-a1bf-5d1d9319e1b9">
+											<SHORT-NAME>IoHwAbRequirementId</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">ReqirementID</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This optional field contains a requirement identifier for project-traceability. This value is just for documentation and does 
+not affect the code.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</STRING-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="d6f3b349-f8f5-4a19-a5da-3787ef0e1009">
+											<SHORT-NAME>IoHwAbDcmDefaultValue</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Default Value</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This control configures the default value for the signal. If the signal's DCM service is called with the parameter 
+'ResetToDefault', the signal is reset to this value.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<CHOICE-REFERENCE-PARAM-DEF UUID="DCE:0a8488e7-ac44-4a30-ab3c-1a741c98dfcc">
+											<SHORT-NAME>IoHwAbDioEntity</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Used DIO Entity</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This is the selection, where a certain Dio entity can be assigned to a IoHwAb Discrete entitiy.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<DESTINATION-REFS>
+												<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dio/DioPort/DioChannel</DESTINATION-REF>
+												<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dio/DioPort/DioChannelGroup</DESTINATION-REF>
+												<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dio/DioPort</DESTINATION-REF>
+											</DESTINATION-REFS>
+										</CHOICE-REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:8b064208-5805-41b6-b2fd-550479d45787">
+							<SHORT-NAME>IoHwAbUserDefSignals</SHORT-NAME>
+							<LONG-NAME>
+								<L-4 L="EN">User Defined Signals</L-4>
+							</LONG-NAME>
+							<DESC>
+								<L-2 L="EN">This container holds user defined ports, that contain operations of any but discrete type. Add a port by right-click 'Add'.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<SUB-CONTAINERS>
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:f2665d29-bc39-4bf3-804a-63d535773661">
+									<SHORT-NAME>IoHwAbUserDefPort</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">User Defined Port</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This is a signal port that can contain several user defined operations. Adjust the name of the entitiy to your needs. Add an operation by right-click 'Add'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<SUB-CONTAINERS>
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:69add56c-e747-42de-ae2b-f9647ea12973">
+											<SHORT-NAME>IoHwAbUserDefinedOp</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">User Defined Operation</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This is a user defined signal. Adjust the name of the entitiy to your needs. The name of the operation function will be generated according to the following pattern: IoHwAb_&lt;Input/Ouput&gt;&lt;OperationName&gt;</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<PARAMETERS>
+												<ENUMERATION-PARAM-DEF UUID="DCE:315a2090-63f6-4785-95e2-e4cb3cd03588">
+													<SHORT-NAME>IoHwAbAccess</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Access</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This field configures the signal-direction of the operation.
+Input: Read a value from the hardware
+Output: Write a value to the hardware</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>Output</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:1f16d121-26a1-40fb-b517-f525eea22670">
+															<SHORT-NAME>Input</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:798b61bf-ddac-4765-80e7-48044ba3b659">
+															<SHORT-NAME>Output</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<ENUMERATION-PARAM-DEF UUID="DCE:a9e8231a-3484-4c34-80ca-8e3ffa2e315a">
+													<SHORT-NAME>IoHwAbDataType</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Data Type</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This field determines the data type of the current signal. This data type will be the data type of the operation function's 
+attribute.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>uint8</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:d7d9f33f-1f50-47f9-942f-a49268183de1">
+															<SHORT-NAME>IoHwAbBoolType</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>IoHwAb_BoolType</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:7138f581-4411-4f2e-872f-e6fa4421a08a">
+															<SHORT-NAME>IoHwAbCurrentType</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>IoHwAb_CurrentType</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:bebad0f3-7d71-45b3-86b1-da46140dd768">
+															<SHORT-NAME>IoHwAbVoltageType</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>IoHwAb_VoltageType</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:3d17802e-8a32-49f1-9640-c2ab9737f19c">
+															<SHORT-NAME>IoHwAbResistanceType</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>IoHwAb_ResistanceType</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:d9a081f5-8f1c-412f-a708-0cce05aace76">
+															<SHORT-NAME>IoHwAbSignalDiagnosisType</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>IoHwAb_SignalDiagnosisType</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:3e270e2e-38bd-427f-accc-6a73e77ced35">
+															<SHORT-NAME>IoHwAbPwxPeriodType</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>IoHwAb_PwxPeriodType</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:b3b5c3bd-0045-42ad-8307-ba3f6dd71cb1">
+															<SHORT-NAME>IoHwAbPwxDutyCycleType</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>IoHwAb_PwxDutyCycleType</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:e3b6f8a0-f8ce-411d-805d-695c15b99427">
+															<SHORT-NAME>sint8</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:22551052-c06e-4ec9-b09a-11aee235c40d">
+															<SHORT-NAME>uint8</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:b6926d85-6a12-49fa-a8a2-c227d04c151b">
+															<SHORT-NAME>sint16</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:a4674d92-9d24-42bd-9924-ee72067cc87d">
+															<SHORT-NAME>uint16</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:4d8b6069-8d84-43bf-ad80-6a64f83c7d12">
+															<SHORT-NAME>sint32</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:d11a1c1e-3329-495c-b837-175c091224a7">
+															<SHORT-NAME>uint32</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:2b315765-362d-4551-b3ae-6620beb68682">
+															<SHORT-NAME>float32</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:8458f6b2-4454-4821-8b7a-61ed014bfe16">
+															<SHORT-NAME>float64</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<ENUMERATION-PARAM-DEF UUID="DCE:48960704-4e34-42ec-a1db-d8ecd31f4d12">
+													<SHORT-NAME>IoHwAbUnit</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Unit</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This field contains the Unit of the signal. (Caution! This option is not used to generate any code. It is only used for 
+documentation)</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>n/a</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:460da20b-6c85-42a5-a8ef-68f45fc45663">
+															<SHORT-NAME>MilliVolts</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>mV</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:c0599d7d-7256-4a7e-a76c-5b71b882a28d">
+															<SHORT-NAME>Volts</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>V</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:56f324a5-c176-4cd2-a410-a4bc0a376b64">
+															<SHORT-NAME>Ohm</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Ohm</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:465e82c3-9ff1-43db-b12d-bec821f0da51">
+															<SHORT-NAME>KiloOhm</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>kOhm</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:14221e87-13e8-401f-a741-b952c7da31da">
+															<SHORT-NAME>Ampere</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>A</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:6484ebe5-29aa-4e93-8d6f-e2a556faa624">
+															<SHORT-NAME>MilliAmpere</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>mA</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:ffdb1dba-2174-4016-bf4e-d1c67b2f4fdb">
+															<SHORT-NAME>MicroAmpere</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>µA</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:37d285a4-b789-4d93-9d12-3ad882851dcf">
+															<SHORT-NAME>DegreesCelsius</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>°C</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:8984e9d6-31c0-448c-a97b-7c91dbd3496f">
+															<SHORT-NAME>Percent</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Percent</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:16835beb-f24f-4207-8829-30f2efa8cf1c">
+															<SHORT-NAME>None</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>n/a</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<INTEGER-PARAM-DEF UUID="DCE:35e923ee-d3ce-40f3-be93-f9e79360cacd">
+													<SHORT-NAME>IoHwAbRangeMin</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Range Min</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This field contains the minimum numerical value of the signal. (Caution! This option is not used to generate any code. It is 
+only used for documentation)</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+												</INTEGER-PARAM-DEF>
+												<INTEGER-PARAM-DEF UUID="DCE:6ae8201b-d319-4d61-ba8c-7b977c4c31ca">
+													<SHORT-NAME>IoHwAbRangeMax</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Range Max</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This field contains the maximum numerical value of the signal. (Caution! This option is not used to generate any code. It is 
+only used for documentation)</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</INTEGER-PARAM-DEF>
+												<FLOAT-PARAM-DEF UUID="DCE:86666c5e-78c4-45a1-8002-24ea584af9db">
+													<SHORT-NAME>IoHwAbResolution</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Resolution</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This field contains the hardware resolution of the signal. (Caution! This option is not used to generate any code. It is only 
+used for documentation)</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</FLOAT-PARAM-DEF>
+												<BOOLEAN-PARAM-DEF UUID="DCE:dbef6446-fd1a-4bbf-99a3-be10ab2b84dd">
+													<SHORT-NAME>IoHwAbDcmAccess</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Enable DCM Access Functionality</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This checkbox enables the generation of a DCM interface function for the certain operation. The enabling of this option 
+produces one additional function as well as additional state variables. The name of the DCM access function will be 
+generated according to the following pattern: IoHwAb_DCM&lt;Input/Ouput&gt;&lt;OperationName&gt;</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<STRING-PARAM-DEF UUID="2abdb2d6-3a9a-4166-8e3f-37a8f2dbfa4c">
+													<SHORT-NAME>IoHwAbRequirementId</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">ReqirementID</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This optional field contains a requirement identifier for project-traceability. This value is just for documentation and does 
+not affect the code.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+												<FLOAT-PARAM-DEF UUID="f648572c-0375-4a4d-9cdd-5e29a9a31537">
+													<SHORT-NAME>IoHwAbDcmDefaultValue</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Default Value</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">This control configures the default value for the signal. If the signal's DCM service is called with the parameter 
+'ResetToDefault', the signal is reset to this value.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+												</FLOAT-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:52d836f6-2b1b-4703-a9af-924216e32707">
+							<SHORT-NAME>IoHwAbHandlers</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container holds the user defined handler functions. Add a handler by right-click 'Add'.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<SUB-CONTAINERS>
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:854399e1-7ee1-4984-aa3a-4349f1e2c0ab">
+									<SHORT-NAME>IoHwAbHandler</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">IoHwAb Signal Handlers</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This is a user defined handler function. Adjust the name of the entitiy to your needs.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<INTEGER-PARAM-DEF UUID="DCE:05345b4c-8dce-4a2d-bad2-cdb252d8c849">
+											<SHORT-NAME>IoHwAbTriggerPeriod</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Trigger Period</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This contains the trigger time of the handler function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>10</DEFAULT-VALUE>
+											<MAX>65535</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="DCE:28e5981e-57eb-44b9-ad74-4f0aa12be90f">
+											<SHORT-NAME>IoHwAbTimebase</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Timebase</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This field contains the timebase of the trigger's time.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>IoHwAbMSec</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:5664ef07-f7cd-40ec-92a6-788d62a1dc76">
+													<SHORT-NAME>IoHwAbSec</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>sec</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:1fcb3210-ff8c-4ff7-bdc8-bd18941b2c32">
+													<SHORT-NAME>IoHwAbMSec</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>msec</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:4102717b-81f9-4ced-90be-2a4c10f8ee2a">
+							<SHORT-NAME>IoHwAbGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container  contains common description for the IO Hardware Abstraction module</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: IoHwAbDevErrorDetect -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:642d7554-3d9b-44a5-ac1e-619b0bace428">
+									<SHORT-NAME>IoHwAbDevErrorDetect</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Development Mode</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter enables/disables development error detection and reporting.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: IoHwAbVersionInfoApi -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:0efbd209-de54-4379-9bfa-06455d439ffa">
+									<SHORT-NAME>IoHwAbVersionInfoApi</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Enable IoHwAb_GetVersionInfo</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Pre-processor switch to enable / disable the API to read out the modules version information.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:ff2cdf31-d35c-488a-9e2f-591d5c26e58f">
+									<SHORT-NAME>IoHwAbUseInitFunction</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Enable IoHwAb_Init</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Pre-processor switch to enable / disable the Initialization-API.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:43777de3-d2ec-4e00-bd8d-73860e2394e3">
+									<SHORT-NAME>IoHwAbUseRte</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Use RTE</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter enables/disables the uasge of the RTE.
+If RTE usage is OFF the file IoHwAb_Types.h will be generated. The function prototypes of the IoHwAb services will be 
+generated into IoHwAb_Cfg.h.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:c188e47b-7975-419f-92ff-6007df79a58f">
+									<SHORT-NAME>IoHwAbServiceComponentName</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Component Name</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Component Name for the import of IoHwAb into higher layer development tools (e.g. Vector DaVinc Developer)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>IoHwAbstraction</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<FUNCTION-NAME-DEF UUID="DCE:b62d7f10-658c-4f59-8a4a-727162e2d3a1">
+									<SHORT-NAME>IoHwAbErrorhook</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Errorhook Function</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter specifies the function that shall be called if a development error has occurred. The function must have the
+signature of the DET. Refer to the DET specification for more details.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det_ReportError</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<STRING-PARAM-DEF UUID="DCE:fcc3de6c-9b3f-4918-960e-91e40d38773a">
+									<SHORT-NAME>IoHwAbCfgIncludeDet</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Include File</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter specifies the file that shall be included if development error reporting shall be used.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:422a0148-00c5-459f-a6e4-e7e26e350b67">
+									<SHORT-NAME>IoHwAbCfgIncludeList</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Include List for used basic software component's headers</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Dio.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="6eb99db4-1ad2-47bd-8257-7d8b22bec42d">
+									<SHORT-NAME>IoHwAbUseServicePorts</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Export As Service Component</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter enables/disables the generation of the I/O Hardware Abstraction as a Service Component.
+By Default the I/O Hardware Abstraction is an Application Component. By enabling this option, the module can be 
+declared as a Service Component.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="e7cedaa5-d024-419d-959f-b2a8fe4c9f5f">
+									<SHORT-NAME>IoHwAbDevErrorReport</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Development Error Reporting</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This switch enables/disables the Development error reporting.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<REFERENCE-PARAM-DEF UUID="68b6e395-249d-4f0b-9074-4cd914a99726">
+									<SHORT-NAME>IoHwAbIrqHandling</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Critical Section Handling</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to determine the IRQ function set which is used to protect critical sections.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+							<SUB-CONTAINERS>
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:487d2fe7-6fd5-427d-a75d-565a0f2689ea">
+									<SHORT-NAME>IoHwAbErrorChecks</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container contains all the error checks</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<BOOLEAN-PARAM-DEF UUID="DCE:e7c7a6e8-b308-46f9-9591-ae39997b3e31">
+											<SHORT-NAME>IoHwAbCfgChkParamPointer</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Check Parameter Pointer</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter enables/disables checking of parameters for not being NULL_PTR.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:ba6adca7-fe8c-4d43-9cfa-4bc8e4e0d4ec">
+									<SHORT-NAME>IoHwAbDataTypeSizes</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<ENUMERATION-PARAM-DEF UUID="DCE:6a43b946-2698-4839-add2-b6630446c879">
+											<SHORT-NAME>IoHwAbDiscreteGroupSize</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Size Of IoHwAb_DiscreteGroupType</L-4>
+											</LONG-NAME>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>IOHWAB_UINT8</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:4c6cca0d-9636-4039-903a-e7562b099e36">
+													<SHORT-NAME>IOHWAB_UINT8</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint8</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:1483f579-6f07-49d3-bbb1-440ac755d975">
+													<SHORT-NAME>IOHWAB_UINT16</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint16</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:26731964-c108-49fa-80e1-a10b78e82a39">
+													<SHORT-NAME>IOHWAB_UINT32</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint32</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="DCE:a169d2a5-6066-489c-8d32-9519e3b5efec">
+											<SHORT-NAME>IoHwAbCurrentType</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Size Of IoHwAb_CurrentType</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This option determines the type of the IoHwAb_CurrentType.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>IOHWAB_UINT16</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:742b4c49-781b-4838-9f45-a2e732da86fa">
+													<SHORT-NAME>IOHWAB_UINT16</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint16</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:5876f38b-7379-4893-a5dc-daeefe54e92f">
+													<SHORT-NAME>IOHWAB_UINT32</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint32</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="DCE:a136c495-d179-4e8d-8ce2-d6dc20f9640a">
+											<SHORT-NAME>IoHwAbVoltageType</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Size Of IoHwAb_VoltageType</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This option determines the type of the IoHwAb_VoltageType.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>IOHWAB_UINT16</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:d54f08f8-4acb-4682-b659-1332739cc442">
+													<SHORT-NAME>IOHWAB_UINT16</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint16</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:11599df7-6e45-4e63-a9a5-bb0780184fff">
+													<SHORT-NAME>IOHWAB_UINT32</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint32</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="DCE:d439c3cf-3d16-406b-a17b-e5df9f7e5fbb">
+											<SHORT-NAME>IoHwAbResistanceType</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Size Of IoHwAb_ResistanceType</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This option determines the type of the IoHwAb_ResistanceType.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>IOHWAB_UINT16</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:821e6bc1-eac1-4b9a-9906-87e6f416b2f3">
+													<SHORT-NAME>IOHWAB_UINT16</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint16</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:18d1c97d-444c-447d-a3f5-d611ce0a60ee">
+													<SHORT-NAME>IOHWAB_UINT32</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint32</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="DCE:945c1df3-ffef-48b2-b5f3-f6488ac58a25">
+											<SHORT-NAME>IoHwAbSignalDiagnosisType</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Size Of IoHwAb_SignalDiagnosisType</L-4>
+											</LONG-NAME>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>IOHWAB_UINT16</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:88f59ca3-d6a0-4921-ac93-644fbb8db8ee">
+													<SHORT-NAME>IOHWAB_UINT16</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint16</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:cc5df7e6-88b6-4df0-b5ef-0894689c34e3">
+													<SHORT-NAME>IOHWAB_UINT32</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint32</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="DCE:77cc4678-4992-47e1-84f7-ef341d4ff81b">
+											<SHORT-NAME>IoHwAbPwxPeriodType</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Size Of IoHwAb_PwxPeriodType</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This option determines the type of the IoHwAb_PwxPeriodType.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>IOHWAB_UINT16</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:0d071426-e694-4df5-98aa-b6c3b1008ad0">
+													<SHORT-NAME>IOHWAB_UINT16</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint16</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:3b0a146d-dcbb-446f-85f9-9abdd646829c">
+													<SHORT-NAME>IOHWAB_UINT32</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint32</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="DCE:fa0e489d-8588-43b4-b686-23f8f2d1f99d">
+											<SHORT-NAME>IoHwAbPwxDutyCycleType</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Size Of IoHwAb_PwxDutyCycleType</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This option determines the type of the IoHwAb_DutyCycleType.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>IOHWAB_UINT16</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:99d3f5a4-e49a-4a79-a460-ac2209c1275d">
+													<SHORT-NAME>IOHWAB_UINT16</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint16</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:b4a19687-be55-4380-8025-3cf42b8d9419">
+													<SHORT-NAME>IOHWAB_UINT32</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>uint32</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="ae7e2236-09ad-454f-96cd-0dbfed3ad002">
+							<SHORT-NAME>VectorCommonData</SHORT-NAME>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="f647ff8c-72d0-4faf-a64d-393a81bcafeb">
+									<SHORT-NAME>BswmdVersion</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1.04.06</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<MODULE-CONFIGURATION UUID="DCE:caf616ce-32e5-4c3e-9907-9f01565fa2f2">
+					<SHORT-NAME>IoHwAbstraction_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/IoHwAbstraction</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="DCE:71a1cc05-7b39-4eb7-939f-5ea5517feaf9">
+					<SHORT-NAME>IoHwAbstraction_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/IoHwAbstraction</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

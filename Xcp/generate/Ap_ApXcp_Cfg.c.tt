@@ -1,0 +1,187 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : Ap_ApXcp_Cfg.c
+* Module Description: Configuration file of Xcp module
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          5 %
+ * %date_modified:    Thu Jul 18 10:58:51 2013 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 01/07/13   1       LWW       Initial template creation
+ * 06/26/13   3       KJS       Added preprocessor statements to control memcpy statements
+ * 07/09/13   4       JJW       Added generation of Rte runnalbes for the configured Rte mapped Xcp Events
+ */
+
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "ApXcp" ) ); #>
+<#
+	List<string> ExtMemRngLst = new List<string>();
+	List<string> IntMemRngLst = new List<string>();
+	List<string> RamCopyLst = new List<string>();
+	List<string> AppLst = new List<string>();
+	List<string> NTandTFuncLst = new List<string>();
+	List<string> IncludeLst = new List<string>();
+	List<string> AppGenStubLst = new List<string>();
+	List<string> RteXcpEvents = new List<string>();
+
+	string xcpEEPAccess = ValueOf( Xp.ValueAtDefRefTo( "XcpGeneral/ExternalEEPROMAccess" ));
+#>
+<# !LOOP( Xp.ContainerAtDefRefTo( "XcpMemoryAccess/InternalMemoryRng" ) ) #>
+<#
+	IntMemRngLst.Add("0x" + ((long)ValueOf(Xp.ValueAtDefRefTo( "IntMemRngLow" ))).ToString("X8") + "UL" + ", " + "0x" + ((long)ValueOf(Xp.ValueAtDefRefTo( "IntMemRngHigh" ))).ToString("X8") + "UL");
+#>
+<# !ENDLOOP #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "XcpMemoryAccess/ExternalMemoryRng" ) ) #>
+<#
+	ExtMemRngLst.Add("0x" + ((long)ValueOf(Xp.ValueAtDefRefTo( "ExtMemRngLow" ))).ToString("X8") + "UL" + ", " + "0x" + ((long)ValueOf(Xp.ValueAtDefRefTo( "ExtMemRngHigh" ))).ToString("X8") + "UL");
+#>
+<# !ENDLOOP #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "RamCopy/CopyRegion" ) ) #>
+<#
+	RamCopyLst.Add("(void *)&" + (ValueOf(Xp.ValueAtDefRefTo( "RAMStartLinkerSymbol" ))) + ", (const void *)&" + (ValueOf(Xp.ValueAtDefRefTo( "FlashStartLinkerSymbol" ))) + ", (uint16)&" + (ValueOf(Xp.ValueAtDefRefTo( "LengthLinkerSymbol" ))));
+#>
+<# !ENDLOOP #>
+<# !LOOP( Xp.ValueAtDefRefTo( "XcpGeneral/XcpIncludes" ) ) #>
+<#
+	IncludeLst.Add("#include \"" + ValueOf( "." ) + "\"");
+#>
+<# !ENDLOOP #>
+<# !LOOP( Xp.ValueAtDefRefTo( "XcpGeneral/XcpRteEvents" ) ) #>
+<#
+	RteXcpEvents.Add(ValueOf( "." ));
+#>
+<# !ENDLOOP #>
+
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "Os" ) ); #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "OsApplication" ) ) #>
+<#  
+	string osApp = ValueOf( "ar:SHORT-NAME" );
+	string GenStubOn;
+	
+	/* Assume the Application short name is the last "word" in the Os Application name delimited with '_' */
+	string[] osAppWords = osApp.Split('_');
+	string osAppSuffix = osAppWords[osAppWords.Length -1];
+	
+	AppLst.Add(osAppSuffix);
+	GenStubOn = ValueOf(Xp.ValueAtDefRefTo("OsAppGenerateStub"));
+#>
+<# !LOOP( Xp.ContainerAtDefRefTo( "OsApplication/OsApplicationTrustedFunction" ) ) #>
+<#	if ("true" == GenStubOn)
+	{
+		NTandTFuncLst.Add("osd_TFCT_" + ValueOf(Xp.ValueAtDefRefTo("OsTrustedFunctionName")));
+	}
+	else
+	{
+		NTandTFuncLst.Add(ValueOf(Xp.ValueAtDefRefTo("OsTrustedFunctionName")));
+	}
+#>
+<# !ENDLOOP #>
+<# !ENDLOOP #>
+<# !LOOP( Xp.DefRefTo( "OsApplication/OsApplicationNonTrusted_Function" ) ) #>
+<#  
+	NTandTFuncLst.Add(ValueOf( "../ar:VALUE" ));
+#>
+<# !ENDLOOP #>
+/*******************************************************************************
+**                      Include Section                                       **
+*******************************************************************************/
+#define APXCP_C /* Enable visibility to Module internal definitions in Ap_ApXcp.h*/
+#include "Ap_ApXcp.h"
+<# foreach (string Include in IncludeLst) {#>
+<#=Include #>
+<# } #>
+
+/*******************************************************************************
+**                      Public Data                                           **
+*******************************************************************************/
+CONST(uint32, AUTOMATIC) T_AllowedMemRegion_Cnt_u32[D_NUMOFVLDMEMRGNS_CNT_U08][2] =
+{ 
+<# foreach (string MemRng in IntMemRngLst) {#>
+	{ <#=MemRng #> },
+<# } #>
+};
+
+<# if (xcpEEPAccess == "STD_ON") {#>
+CONST(uint32, AUTOMATIC) T_AllowedEEMemRegion_Cnt_u32[D_NUMOFVLDEEMEMRGNS_CNT_U08][2] =
+{
+<# foreach (string MemRng in ExtMemRngLst) {#>
+	{ <#=MemRng #> },
+<# } #>
+};
+<# } #>
+
+CONST(uint8, AUTOMATIC) T_AppIndex_Cnt_u08[D_NUMOFOSAPPS_CNT_U8] =
+{ <# foreach (string App in AppLst) {#><#=App#>U, <# } #>};
+
+CONST(uint8, AUTOMATIC) T_FunctionIndex_Cnt_u08[D_NUMOFOSAPPS_CNT_U8] =
+{<# foreach (string App in AppLst) 
+{
+	foreach (string Func in NTandTFuncLst) 
+	{
+		if (Func.Contains("XcpWriteAp" + App ))
+		{
+#>
+ <#=Func #>,<#			
+		}
+	} 
+} #>
+};
+
+<# foreach (string Evt in RteXcpEvents) { 
+
+	string period = "0";
+	/* The standard naming convention suffixes the event rate with "ms_", run a regular expression over the event name to 
+	 * determine the execution rate.  If required in the future an additional configurable attribute can be added to define
+	 * the execution rate seperately from the event name.
+	 */
+	Match match = Regex.Match(Evt, @"_([0-9]+)ms_", RegexOptions.IgnoreCase);
+	if(match.Success){
+		period = match.Groups[1].Value;
+	}
+#>
+/**********************************************************************************************************************
+ *
+ * Runnable Entity Name: DAQ_<#=period#>msTL
+ *
+ *---------------------------------------------------------------------------------------------------------------------
+ *
+ * Executed if at least one of the following trigger conditions occurred:
+ *   - triggered on TimingEvent every <#=period#>
+ *
+ *********************************************************************************************************************/
+FUNC(void, AUTOMATIC) DAQ_<#=period#>msTL(void)
+{
+	XcpEvent(<#=Evt#>);
+}
+
+<# }#>
+
+/**********************************************************************************************************************
+ *
+ * Runnable Entity Name: CopyCalsToRam
+ *
+ *---------------------------------------------------------------------------------------------------------------------
+ *
+ * SWC internal function executed by ApXcp_Init()
+ *
+ *********************************************************************************************************************/
+FUNC(void, AUTOMATIC) CopyCalsToRam(void)
+{
+#if( (D_ENABLEMETRICS_CNT_LGC != STD_ON) && (BC_TUNINGSETINRAM == 1U) )
+<# foreach (string RamCopy in RamCopyLst) {#>
+	memcpy(<#=RamCopy #>);
+<# } #>
+#endif
+}

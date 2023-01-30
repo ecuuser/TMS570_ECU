@@ -1,0 +1,198 @@
+<!-- Entities -->
+
+<!ENTITY ti.LINBus                  "LINBus">
+<!ENTITY ti.ScheduleTable           "ScheduleTable">
+<!ENTITY ti.LINUnconditionalFrame   "LINUnconditionalFrame">
+<!ENTITY ti.LINEventTriggeredFrame  "LINEventTriggeredFrame">
+<!ENTITY ti.LINSporadicFrame        "LINSporadicFrame">
+<!ENTITY ti.NetworkNode             "NetworkNode">
+
+
+<!-- Elements -->
+
+<!ELEMENT LINBus              (%C.DefAttr;,CONTENT*,LINUnconditionalFrame*,LINEventTriggeredFrame*,LINSporadicFrame*,Channel*,GenAttrList?,ScheduleTable*,NetworkSignal*)>
+<!ATTLIST LINBus              %A.ConfigItem;
+          VehicleProjectGUID  CDATA ""
+	      Manufacturer        CDATA ""
+	      NMType              CDATA ""
+	      Protocol            CDATA "2.0"
+	      Bitrate             CDATA ""
+	      LDF                 CDATA ""
+	      ChannelName         CDATA ""
+>
+
+<!ELEMENT LINUnconditionalFrame  (%C.DefAttr;,ATTRLink*,GenAttrList?,MultiplexorGroup*,FrameNodeMap*,FrameConstraint?,MappedSignal*,MappedSignalGroup*,NetworkNodeLink*)>
+<!ATTLIST LINUnconditionalFrame  %A.ChildItem;
+          FrameID                CDATA "0"
+          DLC                    CDATA "0"
+          DynamicID              CDATA "0"
+          MinPeriod              CDATA "0"
+          MaxPeriod              CDATA "0"
+>
+
+<!ELEMENT LINEventTriggeredFrame  (%C.DefAttr;,ATTRLink*,GenAttrList?,MultiplexorGroup*,FrameNodeMap*,FrameConstraint?,MappedSignal*,LINUnconditionalFrameIndex*,MappedSignalGroup*,NetworkNodeLink*)>
+<!ATTLIST LINEventTriggeredFrame  %A.ChildItem;
+          FrameID                 CDATA "0"
+          CollisionResolvingLink  NMTOKEN #FIXED "&ti.ScheduleTable;"
+          DLC                     CDATA "0"
+          MinPeriod               CDATA "0"
+          MaxPeriod               CDATA "0"
+>
+
+<!ELEMENT LINSporadicFrame  (%C.DefAttr;,ATTRLink*,GenAttrList?,MultiplexorGroup*,FrameNodeMap*,FrameConstraint?,MappedSignal*,LINUnconditionalFrameIndex*,MappedSignalGroup*,NetworkNodeLink*)>
+<!ATTLIST LINSporadicFrame  %A.ChildItem;
+>
+
+<!ELEMENT LINUnconditionalFrameIndex  (ATTRLink*)>
+<!ATTLIST LINUnconditionalFrameIndex  %A.ChildItem;
+          OrderIndex                  CDATA "-1"
+          FrameLink                   NMTOKEN #FIXED "&ti.LINUnconditionalFrame;"
+>
+
+<!ELEMENT ScheduleTable  (%C.DefAttr;,UnconditionalFrameSlot*,DiagnosticFrameSlot*,EventTriggeredFrameSlot*,SporadicFrameSlot*,AssignUnassignIDSlot*,AssignNADSlot*,FreeFormatSlot*,ReadByIdentifierSlot*,ConditionalChangeNADSlot*,DataDumpSlot*,SaveConfigurationSlot*,AssignFrameIDRangeSlot*,AssignNADviaSNPDSlot*)>
+<!ATTLIST ScheduleTable  %A.ChildItem;
+          OrderIndex     CDATA "-1"
+>
+
+<!ELEMENT UnconditionalFrameSlot  (ATTRLink*)>
+<!ATTLIST UnconditionalFrameSlot  %A.ChildItem;
+          OrderIndex              CDATA "-1"
+          SlotDelay               CDATA "0.0"
+          FrameLink               NMTOKEN #FIXED "&ti.LINUnconditionalFrame;"
+>
+
+<!ELEMENT DiagnosticFrameSlot  (ATTRLink*)>
+<!ATTLIST DiagnosticFrameSlot  %A.ChildItem;
+          OrderIndex           CDATA "-1"
+          SlotDelay            CDATA "0.0"
+          FrameLink            NMTOKEN #FIXED "&ti.LINUnconditionalFrame;"
+>
+
+<!ELEMENT EventTriggeredFrameSlot  (ATTRLink*)>
+<!ATTLIST EventTriggeredFrameSlot  %A.ChildItem;
+          OrderIndex               CDATA "-1"
+          SlotDelay                CDATA "0.0"
+          FrameLink                NMTOKEN #FIXED "&ti.LINEventTriggeredFrame;"
+>
+
+<!ELEMENT SporadicFrameSlot  (ATTRLink*)>
+<!ATTLIST SporadicFrameSlot  %A.ChildItem;
+          OrderIndex         CDATA "-1"
+          SlotDelay          CDATA "0.0"
+          FrameLink          NMTOKEN #FIXED "&ti.LINSporadicFrame;"
+>
+
+<!ELEMENT AssignUnassignIDSlot  (ATTRLink*)>
+<!ATTLIST AssignUnassignIDSlot  %A.ChildItem;
+          OrderIndex            CDATA "-1"
+          SlotDelay             CDATA "0.0"
+          IsToAssign            CDATA "0"
+          UCFrameLink           NMTOKEN #FIXED "&ti.LINUnconditionalFrame;"
+          EVFrameLink           NMTOKEN #FIXED "&ti.LINEventTriggeredFrame;"
+          SPFrameLink           NMTOKEN #FIXED "&ti.LINSporadicFrame;"
+          NodeLink              NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ELEMENT AssignNADSlot  (ATTRLink*)>
+<!ATTLIST AssignNADSlot  %A.ChildItem;
+          OrderIndex     CDATA "-1"
+          SlotDelay      CDATA "0.0"
+          FunctionID     CDATA "0"
+          NewNAD         CDATA "0"
+          OldNAD         CDATA "0"
+          SupplierID     CDATA "0"
+          NodeLink       NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ELEMENT FreeFormatSlot  EMPTY>
+<!ATTLIST FreeFormatSlot  %A.ChildItem;
+          OrderIndex      CDATA "-1"
+          SlotDelay       CDATA "0.0"
+          Data1           CDATA "0"
+          Data2           CDATA "0"
+          Data3           CDATA "0"
+          Data4           CDATA "0"
+          Data5           CDATA "0"
+          Data6           CDATA "0"
+          Data7           CDATA "0"
+          Data8           CDATA "0"
+>
+
+<!ELEMENT ReadByIdentifierSlot  (ATTRLink*)>
+<!ATTLIST ReadByIdentifierSlot  %A.ChildItem;
+          OrderIndex            CDATA "-1"
+          SlotDelay             CDATA "0.0"
+          NAD                   CDATA "0"
+          Identifier            CDATA "0"
+          SupplierID            CDATA "0"
+          FunctionID            CDATA "0"
+          NodeLink              NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ELEMENT ConditionalChangeNADSlot  EMPTY>
+<!ATTLIST ConditionalChangeNADSlot  %A.ChildItem;
+          OrderIndex                CDATA "-1"
+          SlotDelay                 CDATA "0.0"
+          NAD                       CDATA "0"
+          ID                        CDATA "0"
+          Byte                      CDATA "0"
+          Mask                      CDATA "0"
+          Inv                       CDATA "0"
+          NewNAD                    CDATA "0"
+          NodeLink                  NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ELEMENT DataDumpSlot  (ATTRLink*)>
+<!ATTLIST DataDumpSlot  %A.ChildItem;
+          OrderIndex    CDATA "-1"
+          SlotDelay     CDATA "0.0"
+          NAD           CDATA "0"
+          D1            CDATA "0"
+          D2            CDATA "0"
+          D3            CDATA "0"
+          D4            CDATA "0"
+          D5            CDATA "0"
+          NodeLink      NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ELEMENT SaveConfigurationSlot  (ATTRLink*)>
+<!ATTLIST SaveConfigurationSlot  %A.ChildItem;
+          OrderIndex             CDATA "-1"
+          SlotDelay              CDATA "0.0"
+          NAD                    CDATA "0"
+          NodeLink               NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ELEMENT AssignFrameIDRangeSlot  (ATTRLink*)>
+<!ATTLIST AssignFrameIDRangeSlot  %A.ChildItem;
+          OrderIndex              CDATA "-1"
+          SlotDelay               CDATA "0.0"
+          NAD                     CDATA "0"
+          FrameIndex              CDATA "0"
+          FramePID1               CDATA "0"
+          FramePID2               CDATA "0"
+          FramePID3               CDATA "0"
+          FramePID4               CDATA "0"
+          NodeLink                NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ELEMENT AssignNADviaSNPDSlot  (ATTRLink*)>
+<!ATTLIST AssignNADviaSNPDSlot  %A.ChildItem;
+          OrderIndex            CDATA "-1"
+          SlotDelay             CDATA "0.0"
+          FunctionID            CDATA "0"
+          NewNAD                CDATA "0"
+          OldNAD                CDATA "0"
+          SupplierID            CDATA "0"
+          NodeLink              NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+
+<!-- Links -->
+
+<!ELEMENT LINBusLink EMPTY>
+<!ATTLIST LINBusLink 
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.LINBus;"
+>

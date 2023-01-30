@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/3.2.1 autosar_321.xsd" xmlns="http://autosar.org/3.2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+<#
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "NvMProxy" ) );
+	string blkName;
+	int blkNum = 1; /* blkNum 0 is reserved for the multi-block requests */
+#>
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>ComponentType</SHORT-NAME>
+			<ELEMENTS>
+				<INTERNAL-BEHAVIOR>
+					<SHORT-NAME>NvMProxy_InternalBehavior</SHORT-NAME>
+					<COMPONENT-REF DEST="SERVICE-COMPONENT-TYPE">/ComponentType/NvMProxy</COMPONENT-REF>
+					<EVENTS>
+<# !LOOP( Xp.ContainerAtDefRefTo( "NvMProxyBlock" ) ) #>
+<# blkName = ValueOf( "ar:SHORT-NAME" ); #>
+						<OPERATION-INVOKED-EVENT>
+							<SHORT-NAME>OIT_GetErrorStatus_PS_NvMP_NvmBlock_<#=blkName#>_GetErrorStatus</SHORT-NAME>
+							<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentType/NvMProxy_InternalBehavior/GetErrorStatus</START-ON-EVENT-REF>
+							<OPERATION-IREF>
+								<P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentType/NvMProxy/PS_NvMP_NvmBlock_<#=blkName#></P-PORT-PROTOTYPE-REF>
+								<OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/GetErrorStatus</OPERATION-PROTOTYPE-REF>
+							</OPERATION-IREF>
+						</OPERATION-INVOKED-EVENT>
+						<OPERATION-INVOKED-EVENT>
+							<SHORT-NAME>OIT_WriteBlock_PS_NvMP_NvmBlock_<#=blkName#>_WriteBlock</SHORT-NAME>
+							<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentType/NvMProxy_InternalBehavior/WriteBlock</START-ON-EVENT-REF>
+							<OPERATION-IREF>
+								<P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentType/NvMProxy/PS_NvMP_NvmBlock_<#=blkName#></P-PORT-PROTOTYPE-REF>
+								<OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/WriteBlock</OPERATION-PROTOTYPE-REF>
+							</OPERATION-IREF>
+						</OPERATION-INVOKED-EVENT>
+						<OPERATION-INVOKED-EVENT>
+							<SHORT-NAME>OIT_SetRamBlockStatus_PS_NvMP_NvmBlock_<#=blkName#>_SetRamBlockStatus</SHORT-NAME>
+							<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentType/NvMProxy_InternalBehavior/SetRamBlockStatus</START-ON-EVENT-REF>
+							<OPERATION-IREF>
+								<P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentType/NvMProxy/PS_NvMP_NvmBlock_<#=blkName#></P-PORT-PROTOTYPE-REF>
+								<OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/SetRamBlockStatus</OPERATION-PROTOTYPE-REF>
+							</OPERATION-IREF>
+						</OPERATION-INVOKED-EVENT>
+<# !ENDLOOP #>
+						<TIMING-EVENT>
+							<SHORT-NAME>TMT_NvMProxy_MainFunction</SHORT-NAME>
+							<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentType/NvMProxy_InternalBehavior/NvMProxy_MainFunction</START-ON-EVENT-REF>
+							<PERIOD>0.010000000</PERIOD>
+						</TIMING-EVENT>
+					</EVENTS>
+					<PORT-API-OPTIONS>
+<# blkNum = 1; /* blkNum 0 is reserved for the multi-block requests */ #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "NvMProxyBlock" ) ) #>
+<# blkName = ValueOf( "ar:SHORT-NAME" ); #>
+						<PORT-API-OPTION>
+							<ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+							<INDIRECT-API>false</INDIRECT-API>
+							<PORT-ARG-VALUES>
+								<INTEGER-LITERAL>
+									<SHORT-NAME>NvM_ServiceBlockId_<#=blkNum#></SHORT-NAME>
+									<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+									<VALUE><#=blkNum#></VALUE>
+								</INTEGER-LITERAL>
+							</PORT-ARG-VALUES>
+							<PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentType/NvMProxy/PS_NvMP_NvmBlock_<#=blkName#></PORT-REF>
+						</PORT-API-OPTION>
+<# blkNum++; #>
+<# !ENDLOOP #>
+					</PORT-API-OPTIONS>
+					<RUNNABLES>
+						<RUNNABLE-ENTITY>
+							<SHORT-NAME>GetErrorStatus</SHORT-NAME>
+							<CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+							<MINIMUM-START-INTERVAL>0.000000</MINIMUM-START-INTERVAL>
+							<SYMBOL>NvMProxy_GetErrorStatus</SYMBOL>
+						</RUNNABLE-ENTITY>
+						<RUNNABLE-ENTITY>
+							<SHORT-NAME>NvMProxy_MainFunction</SHORT-NAME>
+							<CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+							<MINIMUM-START-INTERVAL>0.010000000</MINIMUM-START-INTERVAL>
+							<SYMBOL>NvMProxy_MainFunction</SYMBOL>
+						</RUNNABLE-ENTITY>
+						<RUNNABLE-ENTITY>
+							<SHORT-NAME>WriteBlock</SHORT-NAME>
+							<CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+							<MINIMUM-START-INTERVAL>0.000000</MINIMUM-START-INTERVAL>
+							<SYMBOL>NvMProxy_WriteBlock</SYMBOL>
+						</RUNNABLE-ENTITY>
+						<RUNNABLE-ENTITY>
+							<SHORT-NAME>SetRamBlockStatus</SHORT-NAME>
+							<CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+							<MINIMUM-START-INTERVAL>0.000000</MINIMUM-START-INTERVAL>
+							<SYMBOL>NvMProxy_SetRamBlockStatus</SYMBOL>
+						</RUNNABLE-ENTITY>
+					</RUNNABLES>
+					<SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+				</INTERNAL-BEHAVIOR>
+				<SERVICE-COMPONENT-TYPE>
+					<SHORT-NAME>NvMProxy</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">Software Component description for NvM ASILD proxy based on generated file from Ecuc Package: ActiveEcuC</L-2>
+					</DESC>
+					<CATEGORY>ServiceComponent</CATEGORY>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="edve:BSWM">
+								<SD>NvMProxy</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<PORTS>
+<# !LOOP( Xp.ContainerAtDefRefTo( "NvMProxyBlock" ) ) #>
+<# blkName = ValueOf( "ar:SHORT-NAME" ); #>
+						<P-PORT-PROTOTYPE>
+							<SHORT-NAME>PS_NvMP_NvmBlock_<#=blkName#></SHORT-NAME>
+							<DESC>
+								<L-2 L="FOR-ALL">P-Port Prototype of NvM_AC3_SRBS_Srv for NVRAM Block Rte_NvmBlockProxy_<#=blkName#></L-2>
+							</DESC>
+							<PROVIDED-COM-SPECS>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/EraseBlock</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/GetErrorStatus</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/InvalidateNvBlock</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/ReadBlock</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/SetRamBlockStatus</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/WriteBlock</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+							</PROVIDED-COM-SPECS>
+							<PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PortInterface/NvM_AC3_SRBS_Srv</PROVIDED-INTERFACE-TREF>
+						</P-PORT-PROTOTYPE>
+<# !ENDLOOP #>
+					</PORTS>
+				</SERVICE-COMPONENT-TYPE>
+				<SWC-IMPLEMENTATION>
+					<SHORT-NAME>NvMProxy_Implementation</SHORT-NAME>
+					<CODE-DESCRIPTORS>
+						<CODE>
+							<SHORT-NAME>Code</SHORT-NAME>
+							<TYPE>SRC</TYPE>
+						</CODE>
+					</CODE-DESCRIPTORS>
+					<BEHAVIOR-REF DEST="INTERNAL-BEHAVIOR">/ComponentType/NvMProxy_InternalBehavior</BEHAVIOR-REF>
+				</SWC-IMPLEMENTATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>DataType</SHORT-NAME>
+			<ELEMENTS>
+				<ARRAY-TYPE>
+					<SHORT-NAME>NvM_DestPtr</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">DataPtr Type to be used by WriteBlock, ReadBlock and RestoreBlockDefaults operations. 	This type is used for all NVRAM blocks</L-2>
+					</DESC>
+					<ELEMENT>
+						<SHORT-NAME>NvM_DestPtr</SHORT-NAME>
+						<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+						<MAX-NUMBER-OF-ELEMENTS>65535</MAX-NUMBER-OF-ELEMENTS>
+					</ELEMENT>
+				</ARRAY-TYPE>
+				<BOOLEAN-TYPE>
+					<SHORT-NAME>Boolean</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">Boolean has the value space required to support the mathematical concept of 
+binary-valued logic: {true, false}.</L-2>
+					</DESC>
+				</BOOLEAN-TYPE>
+				<INTEGER-TYPE>
+					<SHORT-NAME>NvM_RequestResultType</SHORT-NAME>
+					<SW-DATA-DEF-PROPS>
+						<COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/DataTypeSemantics/NvM_RequestResultType</COMPU-METHOD-REF>
+					</SW-DATA-DEF-PROPS>
+					<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+					<UPPER-LIMIT INTERVAL-TYPE="CLOSED">5</UPPER-LIMIT>
+				</INTEGER-TYPE>
+				<INTEGER-TYPE>
+					<SHORT-NAME>UInt8</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">UInt8 represents integers with a minimum value of 0 and a maximum value of 255.
+The order-relation on UInt8 is: x &lt; y if y - x is positive.
+UInt8 has a lexical representation consisting of a finite-length sequence 
+of decimal digits (#x30-#x39).
+
+For example: 1, 0, 126, +10.</L-2>
+					</DESC>
+					<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+					<UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+				</INTEGER-TYPE>
+			</ELEMENTS>
+			<SUB-PACKAGES>
+				<AR-PACKAGE>
+					<SHORT-NAME>DataTypeSemantics</SHORT-NAME>
+					<ELEMENTS>
+						<COMPU-METHOD>
+							<SHORT-NAME>NvM_RequestResultType</SHORT-NAME>
+							<CATEGORY>TEXTTABLE</CATEGORY>
+							<COMPU-INTERNAL-TO-PHYS>
+								<COMPU-SCALES>
+									<COMPU-SCALE>
+										<LOWER-LIMIT>0</LOWER-LIMIT>
+										<UPPER-LIMIT>0</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>NVM_REQ_OK</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT>1</LOWER-LIMIT>
+										<UPPER-LIMIT>1</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>NVM_REQ_NOT_OK</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT>2</LOWER-LIMIT>
+										<UPPER-LIMIT>2</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>NVM_REQ_PENDING</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT>3</LOWER-LIMIT>
+										<UPPER-LIMIT>3</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>NVM_REQ_INTEGRITY_FAILED</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT>4</LOWER-LIMIT>
+										<UPPER-LIMIT>4</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>NVM_REQ_BLOCK_SKIPPED</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+									<COMPU-SCALE>
+										<LOWER-LIMIT>5</LOWER-LIMIT>
+										<UPPER-LIMIT>5</UPPER-LIMIT>
+										<COMPU-CONST>
+											<VT>NVM_REQ_NV_INVALIDATED</VT>
+										</COMPU-CONST>
+									</COMPU-SCALE>
+								</COMPU-SCALES>
+							</COMPU-INTERNAL-TO-PHYS>
+						</COMPU-METHOD>
+					</ELEMENTS>
+				</AR-PACKAGE>
+			</SUB-PACKAGES>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>DaVinci</SHORT-NAME>
+			<ELEMENTS/>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>PortInterface</SHORT-NAME>
+			<ELEMENTS>
+				<CLIENT-SERVER-INTERFACE>
+					<SHORT-NAME>NvM_AC3_SRBS_Srv</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">Port Interface for NVRAM Blocks 
+					
+							of Management Types "NATIVE" or "REDUNDANT" without default values.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="edve:BSWM">
+								<SD>NvM</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<IS-SERVICE>true</IS-SERVICE>
+					<OPERATIONS>
+						<OPERATION-PROTOTYPE>
+							<SHORT-NAME>EraseBlock</SHORT-NAME>
+							<POSSIBLE-ERROR-REFS>
+								<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/PortInterface/NvM_AC3_SRBS_Srv/E_NOT_OK</POSSIBLE-ERROR-REF>
+							</POSSIBLE-ERROR-REFS>
+						</OPERATION-PROTOTYPE>
+						<OPERATION-PROTOTYPE>
+							<SHORT-NAME>GetErrorStatus</SHORT-NAME>
+							<ARGUMENTS>
+								<ARGUMENT-PROTOTYPE>
+									<SHORT-NAME>ErrorStatus</SHORT-NAME>
+									<SW-DATA-DEF-PROPS>
+										<SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+									</SW-DATA-DEF-PROPS>
+									<TYPE-TREF DEST="INTEGER-TYPE">/DataType/NvM_RequestResultType</TYPE-TREF>
+									<DIRECTION>OUT</DIRECTION>
+								</ARGUMENT-PROTOTYPE>
+							</ARGUMENTS>
+						</OPERATION-PROTOTYPE>
+						<OPERATION-PROTOTYPE>
+							<SHORT-NAME>InvalidateNvBlock</SHORT-NAME>
+							<POSSIBLE-ERROR-REFS>
+								<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/PortInterface/NvM_AC3_SRBS_Srv/E_NOT_OK</POSSIBLE-ERROR-REF>
+							</POSSIBLE-ERROR-REFS>
+						</OPERATION-PROTOTYPE>
+						<OPERATION-PROTOTYPE>
+							<SHORT-NAME>ReadBlock</SHORT-NAME>
+							<ARGUMENTS>
+								<ARGUMENT-PROTOTYPE>
+									<SHORT-NAME>DstPtr</SHORT-NAME>
+									<SW-DATA-DEF-PROPS>
+										<SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+									</SW-DATA-DEF-PROPS>
+									<TYPE-TREF DEST="ARRAY-TYPE">/DataType/NvM_DestPtr</TYPE-TREF>
+									<DIRECTION>OUT</DIRECTION>
+								</ARGUMENT-PROTOTYPE>
+							</ARGUMENTS>
+							<POSSIBLE-ERROR-REFS>
+								<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/PortInterface/NvM_AC3_SRBS_Srv/E_NOT_OK</POSSIBLE-ERROR-REF>
+							</POSSIBLE-ERROR-REFS>
+						</OPERATION-PROTOTYPE>
+						<OPERATION-PROTOTYPE>
+							<SHORT-NAME>SetRamBlockStatus</SHORT-NAME>
+							<ARGUMENTS>
+								<ARGUMENT-PROTOTYPE>
+									<SHORT-NAME>RamBlockStatus</SHORT-NAME>
+									<SW-DATA-DEF-PROPS>
+										<SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+									</SW-DATA-DEF-PROPS>
+									<TYPE-TREF DEST="BOOLEAN-TYPE">/DataType/Boolean</TYPE-TREF>
+									<DIRECTION>IN</DIRECTION>
+								</ARGUMENT-PROTOTYPE>
+							</ARGUMENTS>
+						</OPERATION-PROTOTYPE>
+						<OPERATION-PROTOTYPE>
+							<SHORT-NAME>WriteBlock</SHORT-NAME>
+							<ARGUMENTS>
+								<ARGUMENT-PROTOTYPE>
+									<SHORT-NAME>DstPtr</SHORT-NAME>
+									<SW-DATA-DEF-PROPS>
+										<SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+									</SW-DATA-DEF-PROPS>
+									<TYPE-TREF DEST="ARRAY-TYPE">/DataType/NvM_DestPtr</TYPE-TREF>
+									<DIRECTION>IN</DIRECTION>
+								</ARGUMENT-PROTOTYPE>
+							</ARGUMENTS>
+							<POSSIBLE-ERROR-REFS>
+								<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/PortInterface/NvM_AC3_SRBS_Srv/E_NOT_OK</POSSIBLE-ERROR-REF>
+							</POSSIBLE-ERROR-REFS>
+						</OPERATION-PROTOTYPE>
+					</OPERATIONS>
+					<POSSIBLE-ERRORS>
+						<APPLICATION-ERROR>
+							<SHORT-NAME>E_NOT_OK</SHORT-NAME>
+							<ERROR-CODE>1</ERROR-CODE>
+						</APPLICATION-ERROR>
+					</POSSIBLE-ERRORS>
+				</CLIENT-SERVER-INTERFACE>
+				<CLIENT-SERVER-INTERFACE>
+					<SHORT-NAME>NvM_Administration</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="edve:BSWM">
+								<SD>NvM</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<IS-SERVICE>true</IS-SERVICE>
+					<OPERATIONS>
+						<OPERATION-PROTOTYPE>
+							<SHORT-NAME>SetBlockProtection</SHORT-NAME>
+							<ARGUMENTS>
+								<ARGUMENT-PROTOTYPE>
+									<SHORT-NAME>ProtectionEnabled</SHORT-NAME>
+									<SW-DATA-DEF-PROPS>
+										<SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+									</SW-DATA-DEF-PROPS>
+									<TYPE-TREF DEST="BOOLEAN-TYPE">/DataType/Boolean</TYPE-TREF>
+									<DIRECTION>IN</DIRECTION>
+								</ARGUMENT-PROTOTYPE>
+							</ARGUMENTS>
+						</OPERATION-PROTOTYPE>
+					</OPERATIONS>
+				</CLIENT-SERVER-INTERFACE>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

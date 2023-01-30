@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!-- DaVinci Tool Definition File for predefined typess-->
+<!DOCTYPE PredefinedTypes [
+    <!ELEMENT PredefinedTypes (AttrDefSet*,DataType*,Constant*)>
+    <!ELEMENT AttrDefSet (GUID,Name,Desc?,AttrDefinition*)>
+    <!ELEMENT AttrDefinition (GUID,Name,Desc?)>
+    <!ELEMENT DataType (GUID, Name, Desc?, (BooleanPrimitive | IntegerPrimitive | RealPrimitive | OpaquePrimitive))>
+    <!ELEMENT Constant (GUID, Name, Desc?)>
+    <!ELEMENT BooleanPrimitive EMPTY>
+    <!ELEMENT IntegerPrimitive EMPTY>
+    <!ELEMENT RealPrimitive EMPTY>
+    <!ELEMENT OpaquePrimitive EMPTY>
+    <!ELEMENT GUID (#PCDATA)>
+    <!ELEMENT Name (#PCDATA)>
+    <!ELEMENT Desc (#PCDATA)>    
+    
+    <!ATTLIST PredefinedTypes
+        Version CDATA ""
+    >
+
+    <!ATTLIST AttrDefinition 
+        ObjectType CDATA ''
+        ValueType (INTEGER|FLOAT|STRING|ENUM|HEX) "STRING"
+        Minimum CDATA ''
+        Maximum CDATA ''
+        EnumValues CDATA ''
+        DefaultValue CDATA ''
+    >
+
+    <!ATTLIST DataType
+        Primitive (Boolean|Integer|Real|Opaque) "Integer"
+    >
+
+    <!ATTLIST IntegerPrimitive
+        LowerLimit CDATA ''
+        UpperLimit CDATA ''
+        LowerLimitClosed CDATA '0'
+        UpperLimitClosed CDATA '0'
+        LowerInfinity CDATA '0'
+        UpperInfinity CDATA '0'
+    >
+
+    <!ATTLIST RealPrimitive
+        LowerLimit CDATA ''
+        UpperLimit CDATA ''
+        LowerLimitClosed CDATA '0'
+        UpperLimitClosed CDATA '0'
+        LowerInfinity CDATA '0'
+        UpperInfinity CDATA '0'
+        Encoding (Single | Double) "Single"
+        AllowNaN CDATA "0"
+    >
+
+    <!ATTLIST OpaquePrimitive
+        NumBits CDATA ""
+    >    
+
+    <!ATTLIST Constant
+        Value        CDATA '0'
+        DataTypeLink CDATA '{00000000-0000-0000-0000-000000000000}'
+    >
+]>
+<PredefinedTypes Version="1.1">
+    <AttrDefSet>
+        <GUID>{932D3FD0-2F6C-49bf-80CB-D1C3756D3868}</GUID>
+        <Name>AttrDefinitions</Name>
+        <Desc></Desc>
+    </AttrDefSet>
+</PredefinedTypes>

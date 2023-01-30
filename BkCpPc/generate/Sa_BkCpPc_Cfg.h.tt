@@ -1,0 +1,59 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : Sa_BkCpPc_Cfg.h
+* Module Description: Configuration file of DiagMgr module
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          2 %
+ * %date_modified:    Thu May 30 11:39:10 2013 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 09/20/12   1       ssk       Initial template creation
+ * 05/29/13   2       BDO       Anomaly 5092 - Add D_PWRDISCCONFIGURATION_CNT_U08 - FDD ES-11B v003 	 	
+ */
+
+#ifndef SA_BKCPPC_CFG_H
+#define SA_BKCPPC_CFG_H
+
+
+/*******************************************************************************
+**                      Define Section                                       **
+*******************************************************************************/
+
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "BkCpPc" ) ); 
+	Dictionary<string, bool> CPEnableDic = new Dictionary<string, bool>();
+	/* Initialize the Dictionary with all available Checkpoints set to disabled */
+	CPEnableDic.Add( "BkCpPc_Per1_CP0", false);
+	CPEnableDic.Add( "BkCpPc_Per1_CP1", false);
+  
+	
+#>
+
+#define D_PWRDISCCONFIGURATION_CNT_U08	<#=ValueOf(Xp.ValueAtDefRefTo( "BkCpPcGeneral/BkCpPcPwrDiscConfiguration" ))#>U
+
+<# !LOOP( Xp.ValueAtDefRefTo( "BkCpPcGeneral/BkCpPcCPEnable" ) ) #>
+/* <#=ValueOf( "." )#> Checkpoint is enabled */
+<#CPEnableDic[ValueOf( "." )] = true;#>
+<# !ENDLOOP #>
+
+/* Disable all checkpoints that are not enabled */
+<# foreach ( KeyValuePair<string, bool> cp in CPEnableDic) {
+	 if(false == cp.Value) { #>
+#define Rte_Call_<#=cp.Key#>_CheckpointReached()		(void)0 /* Checkpoint disabled */	 
+<# } 
+} #>
+   
+#endif /* BKCPPC_CFG_H */
+
+/*** End of file **************************************************************/

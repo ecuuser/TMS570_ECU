@@ -1,0 +1,117 @@
+<!-- Entities -->
+
+<!ENTITY ti.VehicleProject          "VehicleProject">
+<!ENTITY ti.VPCommunication         "VPCommunication">
+<!ENTITY ti.FuncDAMap               "FuncDAMap">
+<!ENTITY ti.DataElement             "DataElement">
+<!ENTITY ti.NetworkNode             "NetworkNode">
+<!ENTITY ti.NetworkSignal           "NetworkSignal">
+<!ENTITY ti.SignalRouting           "SignalRouting">
+<!ENTITY ti.MultiplexorGroup        "MultiplexorGroup">
+<!ENTITY ti.SignalRoutingConstraint "SignalRoutingConstraint">
+<!ENTITY ti.RxNodeRelation          "RxNodeRelation">
+<!ENTITY ti.TxNodeRelation          "TxNodeRelation">
+<!ENTITY ti.NodeMappingRelation     "NodeMappingRelation">
+<!ENTITY ti.MappedSignal            "MappedSignal">
+<!ENTITY ti.SignalGroupRoot         "SignalGroupRoot">
+
+<!-- Elements -->
+
+<!ELEMENT VPCommunication           (NAME,ATTRLink*,SignalRouting*)>
+<!ATTLIST VPCommunication           %A.ConfigItem;
+          VehicleProjectLink        NMTOKEN #FIXED "&ti.VehicleProject;"
+>
+
+<!-- Communication Elements -->
+
+<!ELEMENT SignalRouting             (ATTRLink*,FuncDAMapLink*,SignalRoutingConstraint?,DataElementLink*)>
+<!ELEMENT NetworkSignal             (DESC?,ATTRLink*,GenAttrList?,MultiplexorGroupLink*,RxNodeRelation*,TxNodeRelation*,MappedSignalLink*)>
+<!ELEMENT RxNodeRelation            (ATTRLink*,GenAttrList?,NodeMappingRelation*)>
+<!ELEMENT TxNodeRelation            (ATTRLink*,GenAttrList?)>
+<!ELEMENT NodeMappingRelation       (ATTRLink*,GenAttrList?)>
+<!ELEMENT SignalRoutingConstraint   EMPTY>
+
+<!ATTLIST SignalRouting             %A.ChildItem;
+          SignalLink                NMTOKEN #FIXED "&ti.Signal;"
+          TxFunctionLink            NMTOKEN #FIXED "&ti.FuncDAMap;"
+          TxDataElementLink         NMTOKEN #FIXED "&ti.DataElement;"
+          RoutingSignalOfGroupLink  NMTOKEN #FIXED "&ti.SignalGroupRoot;"
+>
+
+<!ATTLIST NetworkSignal             %A.ChildItem;
+          SignalLink                NMTOKEN #FIXED "&ti.Signal;"
+          ByteOrder                 (Motorola|Intel) "Motorola"
+          SendTypeIndex             CDATA "0"
+          CycleTime                 CDATA "100"
+          CycleTimeIfActive         CDATA "100"
+          InactiveValue             CDATA "0"
+          InitValue                 CDATA "0"
+>
+
+<!ATTLIST RxNodeRelation            %A.ChildItem;
+          RxNodeLink                NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ATTLIST TxNodeRelation            %A.ChildItem;
+          TxNodeLink                NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ATTLIST NodeMappingRelation       %A.ChildItem;
+          MappingRefLink            NMTOKEN #FIXED "&ti.MappedSignal;"
+          TimeOut                   CDATA "0"
+>
+
+<!ATTLIST SignalRoutingConstraint   %A.ChildItem;
+          ControlType               (SYSTEM|USER) "SYSTEM"
+>
+
+
+<!-- Links -->
+
+<!ELEMENT VPCommunicationLink EMPTY>
+
+<!ATTLIST VPCommunicationLink 
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType;  "&ti.VPCommunication;"
+>
+
+<!ELEMENT NetworkSignalLink EMPTY>
+<!ATTLIST NetworkSignalLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.NetworkSignal;"
+>
+
+<!ELEMENT MultiplexorGroupLink EMPTY>
+<!ATTLIST MultiplexorGroupLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.MultiplexorGroup;"
+>
+
+<!ELEMENT MappedSignalLink EMPTY>
+<!ATTLIST MappedSignalLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.MappedSignal;"
+>
+
+<!ELEMENT FuncDAMapLink EMPTY>
+<!ATTLIST FuncDAMapLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.FuncDAMap;"
+>
+
+<!ELEMENT DataElementLink EMPTY>
+<!ATTLIST DataElementLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.DataElement;"
+>

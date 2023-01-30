@@ -1,0 +1,98 @@
+;************************************************************************
+;                      NEXTEER AUTOMOTIVE
+;************************************************************************
+
+
+; ***********************************************************************
+;*  Target:		Hercules Champion				*
+;*  References:		32.6 MicroDiagnostic Peripheral proof test	*
+;*  Scope :		N2HET1 / N2HET2					*
+;*  N2HET1 / N2HET2 read pre determined data from Main RAM & Transfer Vs*
+;*  for successful one transfer each direction and unsuccessful transfer*
+;*  each direction 							*
+;************************************************************************
+
+;************************************************************************
+;* Revision History							*
+;* 1.0.0  12-04-2014, Keyur Patel 					*
+;* 	Initial Code, added Free Running Counter		  	*
+;************************************************************************
+
+;************************************************************************
+
+;**********************  NHET SETUP *************************************
+;* VCLK2 = 80MHz							*
+;* HR = 80MHz (VCLK2/X) [hr=1]						*
+;* LR = 16 => 16*12.5ns => 0.2uS	 				*
+;* Number of time slots = 16						*
+;************************************************************************
+
+; ********************* Working Register Useage Chart *******************
+; Reg A - Counter							*
+; Reg B - None								*
+; Reg R - None								*
+; Reg S - None 								*	
+; Reg T - Globle Register						*
+;************************************************************************
+
+;***********
+;* EQUATES *
+;***********
+
+; **********************  Globle Equates - START ****************
+
+;* N2HET1 Channels / Pins *
+SACRIFICIAL_PIN		.equ	26 ; pin we use for 'no pin' ECMP instructions, block other HR uses 
+
+;* Constants *
+DUMMY			.equ 	55    ; DUMMY Use in Instruction only.
+
+MAX_LR			.equ 	0x4  ; max value
+HTUData1		.equ	0x1  ; HTU Transfer1 LR data
+HTUData2		.equ	0x2  ; HTU Transfer2 LR data
+HTUData3		.equ	0x3  ; HTU Transfer3 LR data
+HTUData4		.equ	0x4  ; HTU Transfer4 LR data 	
+
+HTU_REQ1		.equ  	1  ; HET Successful Transfer Request Number
+HTU_REQ2		.equ  	2  ; HET UnsuccessfulTransfer Request Number
+HTU_REQ3		.equ 	3  ; HET Successful Transfer Request Number
+HTU_REQ4		.equ  	4  ; HET Unsuccessful Transfer Request Number
+
+; **********************  Globle Equates - END ******************
+
+
+;*****************************************************************************
+;* * * * * * * * * * * * * * * H E T   L O O P * * * * * * * * * * * * * * * *
+;-----------------------------------------------------------------------------
+
+;----------  Basic Infrastructure- START -------------------------------------
+; Set up Low Resolution Timer Base - Use Register  
+START: 	
+FRCTR:		CNT 	{ data=0, reg=T, max= 0x1FFFFFF }
+; ----------------------------------------------------------------------------
+
+;-----------------------  Proof Test - Start -----------------
+Transst:	MOV32 	{ type= IMTOREG, reg=A, data=0 }
+
+;-----------------Successful Transfer HET RAM to Main Memory -------------
+trans1:   	ECMP 	{ next=trans2, cond_addr=transend, reqnum=HTU_REQ1, request=GENREQ, pin=SACRIFICIAL_PIN, reg=A, data=HTUData1};
+
+;-----------------Successful Transfer Main Memory to HET RAM -------------
+mvstrt2:   	MOV32	{ type= IMTOREG, reg= NONE, data=DUMMY } ; main memory data stored at this location for successful transfer
+trans2:   	ECMP 	{ next=trans3, cond_addr=transend, reqnum=HTU_REQ2, request=GENREQ, pin=SACRIFICIAL_PIN, reg=A, data=HTUData2};
+
+;-----------------Unsuccessful Transfer HET RAM to Main Memory -------------
+trans3:   	ECMP 	{ next=trans4, cond_addr=transend, reqnum=HTU_REQ3, request=GENREQ, pin=SACRIFICIAL_PIN, reg=A, data=HTUData3};
+
+;-----------------Unsccessful Transfer Main Memory to HET RAM -------------
+mvstrt4:   	MOV32	{ type= IMTOREG, reg= NONE, data=DUMMY } ; main memory data stored at this location for unsuccessful transfer
+trans4:   	ECMP 	{ next=END,    cond_addr=transend,  reqnum=HTU_REQ4, request=GENREQ, pin=SACRIFICIAL_PIN, reg=A, data=HTUData4};
+
+; Reset the compare, so only one transfer initiate
+transend:	MOV32 	{ remote=Transst, type= IMTOREG&REM, reg=A, data=0 }
+;-----------------------  Proof Test - End -------------------
+
+;----------  Basic Infrastructure- END  -----------------------------------
+END:		BR	{ next=START, cond_addr=START, event= NOCOND}  ; could be removed when program is frozen
+; -------------------------------------------------------------------------
+

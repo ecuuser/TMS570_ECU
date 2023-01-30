@@ -1,0 +1,1942 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/3.0.2">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="2907c4c6-b63a-4ae8-b90d-b4aeee1e0861">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="74877ed5-a2e5-47e6-ac44-f3d88a2b4bbf">
+					<SHORT-NAME>BswM_Impl</SHORT-NAME>
+					<CODE-GENERATOR>GENy</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>1</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>9</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>0</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>2</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>0</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>0</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/BswM_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/BswM_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/BswM</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-DEF UUID="2a41c2f2-44c5-4c41-bc50-991610c73bff">
+					<SHORT-NAME>BswM</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of the BswM (Basic SW Mode Manager) module.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<ISSUED-BY>vispet</ISSUED-BY>
+								<DATE>2010-10-28T13:52:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">initial version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.2.1</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vispet</ISSUED-BY>
+								<DATE>2011-11-03T17:19:37</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">update SW version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.3.0</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vispet</ISSUED-BY>
+								<DATE>2011-12-09T05:47:44</DATE>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.04.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vispet</ISSUED-BY>
+								<DATE>2012-04-03T10:35:32</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">update SW version, ESCAN00058092, ESCAN00058093</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.05.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vispet</ISSUED-BY>
+								<DATE>2012-06-26T01:32:16</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">update SW version, ESCAN00059684</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.06.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vispet</ISSUED-BY>
+								<DATE>2012-09-27T02:30:47+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">update SW version, ESCAN00061753, ESCAN00061754</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.06.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vispet</ISSUED-BY>
+								<DATE>2012-10-17T10:49:57+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">update SW version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.07.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vispet</ISSUED-BY>
+								<DATE>2012-12-07T01:32:31+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00062792</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.08.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visgle</ISSUED-BY>
+								<DATE>2013-04-04T04:35:05+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00066576 AR3-2494: Implement AMD timemeasurement support</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.09.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visgle</ISSUED-BY>
+								<DATE>2013-09-27T02:32:07+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00070674 AR3-2562: first message after restart or startup must be the Nm message</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.10.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visgle</ISSUED-BY>
+								<DATE>2014-01-29T11:41:15+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">update SW version</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Container Definition: BswMConfig -->
+						<PARAM-CONF-CONTAINER-DEF UUID="5768ac1e-fcbe-40d9-965e-979934099919">
+							<SHORT-NAME>BswMConfig</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container contains the configuration parameters and sub containers of the AUTOSAR BswM module. This container is a MultipleConfigurationContainer, i.e. this container and its sub-containers exist once per configuration set.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+							<REFERENCES>
+								<REFERENCE-PARAM-DEF UUID="e4e54b35-8bc0-4752-a291-b165b54fd398">
+									<SHORT-NAME>BswMEcuMConfigurationRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Internaly reference used by loader</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuM/EcuMConfiguration</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+							<SUB-CONTAINERS>
+								<!-- Container Definition: BswMArbitration -->
+								<PARAM-CONF-CONTAINER-DEF UUID="5da410c1-dc22-46d6-8993-d4a848d81edc">
+									<SHORT-NAME>BswMArbitration</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container includes all configuration sub-containers and parameters related to the mode arbitration functionality of the BswM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Container Definition: BswMLogicalExpression -->
+										<PARAM-CONF-CONTAINER-DEF UUID="c4efe2c3-926b-42c9-bc56-8a187a0d5695">
+											<SHORT-NAME>BswMLogicalExpression</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container describes the logical expressions that can be used for the mode arbitration. The logical expressions are built of a set of arguments and a logical operator.
+
+Each argument can either be a mode condition or a sub-expression to allow definition of more complex logical expressions.
+There may be an unlimited number of arguments in each logical expression.
+Note that the order of evaluation of the expressions is not defined.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: BswMLogicalOperator -->
+												<ENUMERATION-PARAM-DEF UUID="0f93438c-94b5-42a0-8b5e-bc0785c816e0">
+													<SHORT-NAME>BswMLogicalOperator</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter specifies the logical operator to be used in the logical expression. If the expression only consists of a single condition this parameter shall not be used.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="0058854d-27db-4f39-bc28-11b56d6cb97e">
+															<SHORT-NAME>BSWM_AND</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="289dfa12-a58d-4fb0-bae5-08f04c549886">
+															<SHORT-NAME>BSWM_NAND</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="d2fc45e0-96bc-4a31-8d82-72acbf80911c">
+															<SHORT-NAME>BSWM_OR</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="d662c09f-5578-4d88-8dff-6c3147fd493c">
+															<SHORT-NAME>BSWM_XOR</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Choice Reference Definition: BswMArgumentRef -->
+												<CHOICE-REFERENCE-PARAM-DEF UUID="6601bfd3-2eae-4815-8e43-511fb31250df">
+													<SHORT-NAME>BswMArgumentRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This is a choice reference either to a mode condition or a sub-expression.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<DESTINATION-REFS>
+														<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMArbitration/BswMLogicalExpression</DESTINATION-REF>
+														<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMArbitration/BswMModeCondition</DESTINATION-REF>
+													</DESTINATION-REFS>
+												</CHOICE-REFERENCE-PARAM-DEF>
+											</REFERENCES>
+										</PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: BswMModeCondition -->
+										<PARAM-CONF-CONTAINER-DEF UUID="7a2bf8f9-044e-4dbc-81dc-e8d2a199cb55">
+											<SHORT-NAME>BswMModeCondition</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container describes the BswM mode conditions that can be used either by itself to form a rule or as a part of a logical expression.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: BswMConditionType -->
+												<ENUMERATION-PARAM-DEF UUID="cf532c28-cf3d-46a2-b413-800f7d5d44ec">
+													<SHORT-NAME>BswMConditionType</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter specifies what kind of comparison that is made for the evaluation of the mode condition.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="f0031c33-6d18-4972-9e79-c7b43f4ddb2d">
+															<SHORT-NAME>BSWM_EQUALS</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0cc9e1de-f2e0-454a-a216-febf7b450d94">
+															<SHORT-NAME>BSWM_EQUALS_NOT</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: BswMConditionMode -->
+												<REFERENCE-PARAM-DEF UUID="f8043a31-8788-4321-8d94-27d84e5bd019">
+													<SHORT-NAME>BswMConditionMode</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter references the mode request port that is used for the condition.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMArbitration/BswMModeRequestPort</DESTINATION-REF>
+												</REFERENCE-PARAM-DEF>
+											</REFERENCES>
+											<SUB-CONTAINERS>
+												<!-- Container Definition: BswMConditionValue -->
+												<CHOICE-CONTAINER-DEF UUID="240d506e-95fd-4aa2-bc20-01e80e456b18">
+													<SHORT-NAME>BswMConditionValue</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container holds the parameters and references necessary to identify the mode type and the value that the mode request is compared to.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<CHOICES>
+														<!-- Container Definition: BswMBswMode -->
+														<PARAM-CONF-CONTAINER-DEF UUID="1af28e27-528b-4b0b-bd19-639af757c541">
+															<SHORT-NAME>BswMBswMode</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container defines the value and type of a mode in the BSW.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: BswMBswModeSourceType -->
+																<!-- PARAMETER DEFINITION: BswMBswRequestedMode -->
+																<STRING-PARAM-DEF UUID="6aa87bc5-e400-473d-8430-25c5b71a71f0">
+																	<SHORT-NAME>BswMBswRequestedMode</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter contains the symbolic name (as a string) of a certain mode/state that can be requested/indicated by the BSW modules.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																</STRING-PARAM-DEF>
+															</PARAMETERS>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMSwcMode -->
+														<PARAM-CONF-CONTAINER-DEF UUID="86b8da82-62d4-4d95-8f44-f3128fe51838">
+															<SHORT-NAME>BswMUserCondMode</SHORT-NAME>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<STRING-PARAM-DEF UUID="14ba1c1c-0f5c-412a-a01c-1afcc0036a76">
+																	<SHORT-NAME>BswMUserCondition</SHORT-NAME>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																</STRING-PARAM-DEF>
+															</PARAMETERS>
+														</PARAM-CONF-CONTAINER-DEF>
+													</CHOICES>
+												</CHOICE-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: BswMModeRequestPort -->
+										<PARAM-CONF-CONTAINER-DEF UUID="cbc1dfde-d964-4fd5-9ac4-4fec2d31209e">
+											<SHORT-NAME>BswMModeRequestPort</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Each instance of this container defines a mode request interface that is used to requests or indicate modes from/to the BswM. These interfaces are implemented as ports or as ordinary C-functions based upon if the request is made by an SW-C or a BSW module.
+
+There are different types of mode requests:
+1. Mode requests from the SW-C:s
+2. Mode Requests from other BSW modules such as the DCM. 
+3. State/mode indications from the RTE or other BSW modules such as the bus specific State Managers.
+
+Note that the BswM treats all request and indications in the exact same way.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: BswMModeInitValue -->
+												<STRING-PARAM-DEF UUID="41532d00-035b-4812-87da-50e4c036df9e">
+													<SHORT-NAME>BswMModeInitValue</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines the initial mode value that is used by BswM for the corresponding mode request after initialization. This parameter is optional and shall only be used for Mode Requests that does not already have an initial value.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: BswMReqModeUndefAfterInit -->
+												<!-- PARAMETER DEFINITION: BswMRequestProcessing -->
+												<ENUMERATION-PARAM-DEF UUID="155b0ea5-ee3d-406b-98b6-0a323896de3d">
+													<SHORT-NAME>BswMRequestProcessing</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter defines if the processing of the mode arbitration shall be done immediately when a mode request is received or if it shall be deferred to the processing of the main function of BswM.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="19c3fd3b-9cbb-45b9-9eb4-9ea3dda52576">
+															<SHORT-NAME>BSWM_DEFERRED</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5405ec27-9bba-4a39-bf5b-7f78e888b5c5">
+															<SHORT-NAME>BSWM_IMMEDIATE</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<ENUMERATION-PARAM-DEF UUID="b8447ba6-9b6d-47fe-958b-083bac4cbbd2">
+													<SHORT-NAME>BswMModeReqPortType</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This Attribute is an internal model attribute.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="5123ff99-b4b6-42f4-8534-40bb21f26881">
+															<SHORT-NAME>BSWM_BSW_MODE</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="697c68ae-3bf9-4d6b-b6c8-ec0eb6c78d60">
+															<SHORT-NAME>BSWM_BSW_PREV_MODE</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2115870b-e411-41f2-82de-c95712227ad1">
+															<SHORT-NAME>BSWM_GEN_MODE</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b0b367da-64c4-4ca5-9d76-72ce89b8fecf">
+															<SHORT-NAME>BSWM_TIMER_MODE</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+											</PARAMETERS>
+											<SUB-CONTAINERS>
+												<!-- Container Definition: BswMModeRequestSource -->
+												<CHOICE-CONTAINER-DEF UUID="cf08bf46-5d17-49c3-9ca4-86d4a80da5a9">
+													<SHORT-NAME>BswMModeRequestSource</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This choice container specifies the source of the mode request or state/mode indication. The requester of a mode can be both SW-C:s and other BSW Modules, such as the bus specific State Managers.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<CHOICES>
+														<!-- Container Definition: BswMCanSMIndication -->
+														<PARAM-CONF-CONTAINER-DEF UUID="fa1bda14-7f19-4f80-879e-7d27332a4bcd">
+															<SHORT-NAME>BswMCanSMIndication</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is an indication of the current state of the CAN State Manager.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<REFERENCES>
+																<!-- Symbolic Name Reference Definition: BswMCanSMChannelRef -->
+																<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="44fcdfe7-9677-43af-8bb7-0c9fb8c69b68">
+																	<SHORT-NAME>BswMCanSMChannelRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the CAN channel handle that the mode request corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/CanSM/CanStateManagerConfiguration/CanStateManagerNetworks</DESTINATION-REF>
+																</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMComMIndication -->
+														<PARAM-CONF-CONTAINER-DEF UUID="29a27f1f-91bf-4896-8e6b-caf11fcbfa13">
+															<SHORT-NAME>BswMComMIndication</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is an indication of the current communication mode of a channel in the Communication Manager.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<REFERENCES>
+																<!-- Symbolic Name Reference Definition: BswMComMChannelRef -->
+																<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="d6917e8c-a260-43fa-a25d-e3f86e65e440">
+																	<SHORT-NAME>BswMComMChannelRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the Communication Manager channel handle that the indication corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/ComM/ComMChannel</DESTINATION-REF>
+																</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMDcmComModeRequest -->
+														<PARAM-CONF-CONTAINER-DEF UUID="807dfe17-5c72-42fb-adbe-436ca69c707a">
+															<SHORT-NAME>BswMDcmComModeRequest</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">The source of the mode request is the Diagnostic Communication Manager.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="d119563a-732c-494f-b3ae-90ee144c4e9f">
+																	<SHORT-NAME>BswMDcmComMNetworkRef</SHORT-NAME>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/ComM/ComMChannel</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMDcmResetModeRequest -->
+														<PARAM-CONF-CONTAINER-DEF UUID="3a012215-96ec-4d82-b095-1e1851d2e471">
+															<SHORT-NAME>BswMDcmResetModeRequest</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is a reset mode request from the DCM. This container does not contain any parameters since there are no further configuration needed for this type of request.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMDcmSessionModeRequest -->
+														<!-- Container Definition: BswMEcuMIndication -->
+														<!-- Container Definition: BswMEcuMWakeupSource -->
+														<!-- Container Definition: BswMEthSMIndication -->
+														<!-- Container Definition: BswMFrSMIndication -->
+														<PARAM-CONF-CONTAINER-DEF UUID="be263cf7-b218-4dec-b3c7-54d1b77092de">
+															<SHORT-NAME>BswMFrSMIndication</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is an indication of the current state of the FlexRay State Manager.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<REFERENCES>
+																<!-- Symbolic Name Reference Definition: BswMFrSMChannelRef -->
+																<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="6ce9544c-d442-4875-828a-1b33b41e5cdb">
+																	<SHORT-NAME>BswMFrSMChannelRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the  FlexRay Cluster handle that the mode request corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/FrSm/FrSmCluster</DESTINATION-REF>
+																</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMGenericRequest -->
+														<PARAM-CONF-CONTAINER-DEF UUID="ac39d419-1dac-4880-989d-c8be600cd841">
+															<SHORT-NAME>BswMGenericRequest</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This mode request originates from a requester that is not among the list of standardized mode requesters (i.e. the different resource managers).</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: BswMModeRequesterId -->
+																<!-- PARAMETER DEFINITION: BswMRequestedModeMax -->
+																<STRING-PARAM-DEF UUID="c81bfdb4-4b23-411a-9c9d-ce823dbc8c18">
+																	<SHORT-NAME>BswMTriggerFunction</SHORT-NAME>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																</STRING-PARAM-DEF>
+																<BOOLEAN-PARAM-DEF UUID="623b0996-45cf-4b63-8adc-4869e75bd881">
+																	<SHORT-NAME>BswMUseRte</SHORT-NAME>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>false</DEFAULT-VALUE>
+																</BOOLEAN-PARAM-DEF>
+																<ENUMERATION-PARAM-DEF UUID="a4518c7d-789f-4a64-81fb-d33b391be5cb">
+																	<SHORT-NAME>BswMPortInterfaceType</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Defines the port interface type.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>BSWM_CLIENT_SERVER	</DEFAULT-VALUE>
+																	<LITERALS>
+																		<ENUMERATION-LITERAL-DEF UUID="115aa10e-4914-43f4-ba44-6bc9c509a20f">
+																			<SHORT-NAME>BSWM_CLIENT_SERVER</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																		<ENUMERATION-LITERAL-DEF UUID="0db56980-0ed3-4a13-a437-086a6c1980cb">
+																			<SHORT-NAME>BSWM_SENDE_RECEIVER</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																	</LITERALS>
+																</ENUMERATION-PARAM-DEF>
+															</PARAMETERS>
+															<SUB-CONTAINERS>
+																<PARAM-CONF-CONTAINER-DEF UUID="1069dbda-5f46-4940-817a-baca6a534a03">
+																	<SHORT-NAME>BswMGenericMode</SHORT-NAME>
+																	<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+																	<PARAMETERS>
+																		<INTEGER-PARAM-DEF UUID="76807998-c80d-4f3c-a1b0-56f82910a69d">
+																			<SHORT-NAME>BswMGenericModeId</SHORT-NAME>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<IMPLEMENTATION-CONFIG-CLASSES>
+																				<IMPLEMENTATION-CONFIG-CLASS>
+																					<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																					<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																				</IMPLEMENTATION-CONFIG-CLASS>
+																			</IMPLEMENTATION-CONFIG-CLASSES>
+																			<ORIGIN>Vector Informatik</ORIGIN>
+																			<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																			<DEFAULT-VALUE>0</DEFAULT-VALUE>
+																			<MAX>255</MAX>
+																			<MIN>0</MIN>
+																		</INTEGER-PARAM-DEF>
+																	</PARAMETERS>
+																</PARAM-CONF-CONTAINER-DEF>
+															</SUB-CONTAINERS>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMLinSMIndication -->
+														<PARAM-CONF-CONTAINER-DEF UUID="0825a693-4a3b-4256-892d-9b791817cf32">
+															<SHORT-NAME>BswMLinSMIndication</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is an indication of the current state of the LIN State Manager.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<REFERENCES>
+																<!-- Symbolic Name Reference Definition: BswMLinSMChannelRef -->
+																<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="fbe23475-f253-4afe-a983-e858e499d03a">
+																	<SHORT-NAME>BswMLinSMChannelRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the LIN channel handle that the mode request corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/LinSM/LinSMChannel</DESTINATION-REF>
+																</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMLinScheduleIndication -->
+														<!-- Container Definition: BswMLinTpModeRequest -->
+														<PARAM-CONF-CONTAINER-DEF UUID="d328d18b-732f-432f-9b74-75e9910b6acc">
+															<SHORT-NAME>BswMLinTpModeRequest</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is a LinTp mode request from the LinIf. This port corresponds to a call of the BswM_LinTp_RequestMode API.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<REFERENCES>
+																<!-- Symbolic Name Reference Definition: BswMLinTpChannelRef -->
+																<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="7c9f5e06-81e6-4dc8-98d4-12d34e3cc0b4">
+																	<SHORT-NAME>BswMLinTpChannelRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the LIN Interface Channel that the mode
+
+request corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/LinIf/LinIfGlobalConfig/LinIfChannel</DESTINATION-REF>
+																</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMNvMRequest -->
+														<!-- Container Definition: BswMSwcModeNotification -->
+														<!-- Container Definition: BswMSwcModeRequest -->
+														<!-- Container Definition: BswMWdgMRequestPartitionReset -->
+														<PARAM-CONF-CONTAINER-DEF UUID="e26c563a-bb43-41b5-847b-70849abe09c6">
+															<SHORT-NAME>BswMNmModeRequest</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is an indication of the current state of the Nm.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="5856637e-1f24-4d08-a97b-1981f998ec6f">
+																	<SHORT-NAME>BswMNmNetworkRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the Fiat Class B channel container that the mode request corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NmFiatB/NmFiatBGlobalConfig/NmFiatBChannelConfig</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="554dfce0-a734-4905-bd31-38eb5949ba7f">
+															<SHORT-NAME>BswMLinSMCurrentSchedule</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is an indication of the current schedule of the LIN State Manager.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="2194a1f0-4e0c-4fed-ad21-acba94b6e46b">
+																	<SHORT-NAME>BswMLinSMChannelRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the LIN channel handle that the mode request corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/LinSM/LinSMChannel</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="65737543-4468-4268-a2d1-a1abd5b9bea6">
+															<SHORT-NAME>BswMComMPncModeRequest</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is a mode request of the Communication Manager when a PNC state changes.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="0524a5ca-357b-4172-93c3-9a3651728e61">
+																	<SHORT-NAME>BswMComMPncRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the Communication Manager PNC handle that the mode request corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/ComM/ComMPnc</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="ab460d54-dc6b-4f7f-ac8b-34ccbef09501">
+															<SHORT-NAME>BswMTimer</SHORT-NAME>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<INTEGER-PARAM-DEF UUID="72a73f7c-8b6d-446f-bf2a-5b9a1ab211cf">
+																	<SHORT-NAME>BswMTimerValue</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Specify the initial timer value that is used when the timer is started.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>0</DEFAULT-VALUE>
+																	<MAX>65535</MAX>
+																	<MIN>0</MIN>
+																</INTEGER-PARAM-DEF>
+															</PARAMETERS>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="e36ed9bf-6788-4748-894a-87dab65a2f97">
+															<SHORT-NAME>BswMLinSMScheduleEnd</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is an indication of the schedule end of the current schedule table.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="799241fb-c3df-4c92-8310-3b9be4ce016a">
+																	<SHORT-NAME>BswMLinSMChannelRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the LIN channel handle that the mode request corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/LinSM/LinSMChannel</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="f124a4ba-d343-4363-9750-8275c5ddb704">
+															<SHORT-NAME>BswMNmClassCModeRequest</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is an indication of the current state of the Nm Class C.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="81023293-4fac-4da2-a8d2-e388aec610b8">
+																	<SHORT-NAME>BswMNmNetworkRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the Fiat Class C channel container that the mode request corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/NmFiatC/NmFiatCGlobalConfig/NmFiatCChannelConfig</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="17e6112d-bdc3-448e-af40-474f9721ac37">
+															<SHORT-NAME>BswMNmDirOsekModeRequest</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is an indication of the current state of the Nm Osek.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="946c195e-43a4-4309-857c-313c5eb5ba63">
+																	<SHORT-NAME>BswMNmNetworkRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the OSEK Network Management channel container that the mode request corresponds to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Nm_DirOsek/Nm_DirOsekGlobalConfig/Nm_DirOsekChannelConfig</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+													</CHOICES>
+												</CHOICE-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: BswMRule -->
+										<PARAM-CONF-CONTAINER-DEF UUID="e1b52fd5-848a-46c7-933e-11d7f52bb4ea">
+											<SHORT-NAME>BswMRule</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Each instance of this container describes a BswM arbitration rule. The rule either consists of a simple mode condition or a more complex logical expression. This container also references the action lists that shall be invoked when the rule is evaluated to True or False.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: BswMRuleInitState -->
+												<ENUMERATION-PARAM-DEF UUID="70d8c01f-2207-43b3-8cb5-53bf913a25de">
+													<SHORT-NAME>BswMRuleInitState</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter is a part of the reset/initialization behavior of BswM.
+
+Action lists are executed when the result of a rule evaluation have changed since the last evaluation. This parameter defines the "previous evaluation result" of a rule to be used after initialization of the BswM.
+
+If this parameter is set to BSWM_UNDEFINED, the evaluation result is always treated as changed at the first evaluation of the rule after initialization.
+
+If this parameter is set to BSWM_TRUE, the evaluation result is treated as changed if the rule is evaluated to false. 
+
+If this parameter is set to BSWM_FALSE, the evaluation result is treated as changed if the rule is evaluated to true.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="71d0e3ec-bba9-488e-bdc4-f40a4b2975f6">
+															<SHORT-NAME>BSWM_FALSE</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="8a174892-7c5e-4d18-831d-45f2d1543ed6">
+															<SHORT-NAME>BSWM_TRUE</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="054819ef-7ea4-48a7-a708-efad621ee37b">
+															<SHORT-NAME>BSWM_UNDEFINED</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: BswMRuleExpressionRef -->
+												<REFERENCE-PARAM-DEF UUID="fa3fb122-2075-4ce7-9131-26ac764729bf">
+													<SHORT-NAME>BswMRuleExpressionRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This choice reference either references the mode condition or the logical expression that is evaluated for each rule.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMArbitration/BswMLogicalExpression</DESTINATION-REF>
+												</REFERENCE-PARAM-DEF>
+												<!-- Reference Definition: BswMRuleFalseActionList -->
+												<REFERENCE-PARAM-DEF UUID="2ccae5bb-49f4-43df-b4a2-e30ca4b70c83">
+													<SHORT-NAME>BswMRuleFalseActionList</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This is a reference to the action list that shall be executed when the rule is evaluated to False</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMFalseActionList</DESTINATION-REF>
+												</REFERENCE-PARAM-DEF>
+												<!-- Reference Definition: BswMRuleTrueActionList -->
+												<REFERENCE-PARAM-DEF UUID="20a8ccbf-5b47-419f-beec-6579bc0f95f3">
+													<SHORT-NAME>BswMRuleTrueActionList</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This is a reference to the action list that shall be executed when the rule is evaluated to True</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMTrueActionList</DESTINATION-REF>
+												</REFERENCE-PARAM-DEF>
+											</REFERENCES>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Container Definition: BswMModeControl -->
+								<PARAM-CONF-CONTAINER-DEF UUID="8aea3575-1289-4147-a21b-c64753d9dc32">
+									<SHORT-NAME>BswMModeControl</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container includes all configuration sub-containers and parameters related to the mode control functionality of the BswM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Container Definition: BswMAction -->
+										<PARAM-CONF-CONTAINER-DEF UUID="a61d875f-d835-462b-acac-9013c4542453">
+											<SHORT-NAME>BswMAction</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Each container of this type defines an action. These actions can be part of one or several action lists.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<SUB-CONTAINERS>
+												<!-- Container Definition: BswMAvailableActions -->
+												<CHOICE-CONTAINER-DEF UUID="641cb5c7-5b01-48d9-8a88-9659c82c7468">
+													<SHORT-NAME>BswMAvailableActions</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Choice container including the available actions to be used in the action lists.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<CHOICES>
+														<!-- Container Definition: BswMComMAllowCom -->
+														<!-- Container Definition: BswMComMModeLimitation -->
+														<!-- Container Definition: BswMComMModeSwitch -->
+														<!-- Container Definition: BswMDeadlineMonitoringControl -->
+														<PARAM-CONF-CONTAINER-DEF UUID="f90dbc65-1b71-4db3-ad99-6b8ce2e794e3">
+															<SHORT-NAME>BswMDeadlineMonitoringControl</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container includes all parameters related to enabling and disabling of deadline monitoring for one or several PDUs in COM.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<PARAMETERS>
+																<ENUMERATION-PARAM-DEF UUID="31ccf915-7640-4f67-93cb-bd2125112abb">
+																	<SHORT-NAME>BswMDMControl</SHORT-NAME>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<LITERALS>
+																		<ENUMERATION-LITERAL-DEF UUID="3774fae8-e2c2-4dd9-94d3-bfd2fcc1f492">
+																			<SHORT-NAME>BSWM_ENABLE_RX_DM</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																		<ENUMERATION-LITERAL-DEF UUID="d5ecae7f-6fde-4e7d-946b-70124200e53c">
+																			<SHORT-NAME>BSWM_DISABLE_RX_DM</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																	</LITERALS>
+																</ENUMERATION-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<!-- Symbolic Name Reference Definition: BswMDisabledDMPduGroupRef -->
+																<!-- Symbolic Name Reference Definition: BswMEnabledDMPduGroupRef -->
+																<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="a86bec72-1dd0-4fae-96c0-4fa0632619e4">
+																	<SHORT-NAME>BswMDMPduGroupRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to a PDU Group for which the Deadline Monitoring should be enabled.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Com/ComConfig/ComIPduGroup</DESTINATION-REF>
+																</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMLinScheduleSwitch -->
+														<PARAM-CONF-CONTAINER-DEF UUID="35d28c62-bc63-4c3f-9c31-297701c30065">
+															<SHORT-NAME>BswMLinScheduleSwitch</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container includes all parameters related to a switch of LIN schedule table.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<REFERENCES>
+																<!-- Symbolic Name Reference Definition: BswMLinScheduleRef -->
+																<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="f60a45d1-3304-451b-9e6f-5b87b8bb24d2">
+																	<SHORT-NAME>BswMLinScheduleRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the LIN schedule table that the LIN SM shall change to.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/LinIf/LinIfGlobalConfig/LinIfChannel/LinIfScheduleTable</DESTINATION-REF>
+																</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+																<REFERENCE-PARAM-DEF UUID="b2afc460-72ca-40e6-969e-9764c3c2b055">
+																	<SHORT-NAME>BswMLinChannelRef</SHORT-NAME>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/LinIf/LinIfGlobalConfig/LinIfChannel</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMNMControl -->
+														<PARAM-CONF-CONTAINER-DEF UUID="df4d68aa-6985-46e2-8baa-37c741d40225">
+															<SHORT-NAME>BswMNMControl</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container includes all parameters related to enabling and disabling of Network Management communication. Disabling of NM communication can be requested by DCM.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: BswMNMAction -->
+																<ENUMERATION-PARAM-DEF UUID="2d8828c8-23ba-4c03-9923-b7989d148671">
+																	<SHORT-NAME>BswMNMAction</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter specifies if the communication of the corresponding NM channel should be enabled or disabled.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<LITERALS>
+																		<ENUMERATION-LITERAL-DEF UUID="cd1d6fe0-5115-4855-96b8-c709e41a5a56">
+																			<SHORT-NAME>BSWM_NM_DISABLE</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																		<ENUMERATION-LITERAL-DEF UUID="d5d5a9f1-5270-4da1-b3b9-9a64de8d159d">
+																			<SHORT-NAME>BSWM_NM_ENABLE</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																	</LITERALS>
+																</ENUMERATION-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<!-- Symbolic Name Reference Definition: BswMNMChannelRef -->
+																<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="2b4672ba-c4ee-4398-99c8-580a4f6ef466">
+																	<SHORT-NAME>BswMNMChannelRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the NM Channel for which the communication should be enabled or disabled.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Nm/NmGlobalConfig/NmChannelConfig</DESTINATION-REF>
+																</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMPduGroupSwitch -->
+														<PARAM-CONF-CONTAINER-DEF UUID="ababcd43-b26f-4cd0-be12-518ec7cec38d">
+															<SHORT-NAME>BswMPduGroupSwitch</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container includes references to the PDU groups that shall be enabled and disabled.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: BswMPduGroupSwitchReinit -->
+																<BOOLEAN-PARAM-DEF UUID="43ffe551-76db-4946-b38f-5d88a3b0b398">
+																	<SHORT-NAME>BswMPduGroupSwitchReinit</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter defines if the  the values for the parameters like periodical timer, minimum delay timer etc is retainer or reinitialized during a PDU Group Switch.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>false</DEFAULT-VALUE>
+																</BOOLEAN-PARAM-DEF>
+																<ENUMERATION-PARAM-DEF UUID="944d03de-4915-4381-962c-8e27456790a3">
+																	<SHORT-NAME>BswMPduGroupSwitchType</SHORT-NAME>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<LITERALS>
+																		<ENUMERATION-LITERAL-DEF UUID="a460e0bf-a77e-49f8-b93d-9d1ff415e5bd">
+																			<SHORT-NAME>BSWM_PDU_GROUP_START</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																		<ENUMERATION-LITERAL-DEF UUID="0e07fb05-f1e6-468a-8987-dac4c05e1e2e">
+																			<SHORT-NAME>BSWM_PDU_GROUP_STOP</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																	</LITERALS>
+																</ENUMERATION-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<!-- Symbolic Name Reference Definition: BswMDisabledPduGroupRef -->
+																<!-- Symbolic Name Reference Definition: BswMEnabledPduGroupRef -->
+																<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="4d245df6-5203-4316-ae07-36640c25774c">
+																	<SHORT-NAME>BswMPduGroupRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to a PDU Group that should be enabled.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Com/ComConfig/ComIPduGroup</DESTINATION-REF>
+																</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMPduRouterControl -->
+														<PARAM-CONF-CONTAINER-DEF UUID="17a97306-9501-47e0-8014-1cf70c63f4f0">
+															<SHORT-NAME>BswMPduRouterControl</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container includes all parameters related to enabling and disabling of routing of Routing Path Groups in the PDU Router.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: BswMPduRouterAction -->
+																<ENUMERATION-PARAM-DEF UUID="115055d2-e553-4ba4-a921-3eb345506104">
+																	<SHORT-NAME>BswMPduRouterAction</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter specifies if the routing of the corresponding PDU should be enabled or disabled.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<LITERALS>
+																		<ENUMERATION-LITERAL-DEF UUID="2f568a08-dd6f-429c-b870-34565a68cf2e">
+																			<SHORT-NAME>BSWM_PDUR_DISABLE</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																		<ENUMERATION-LITERAL-DEF UUID="0431ea0c-2652-4567-92af-43b743612aca">
+																			<SHORT-NAME>BSWM_PDUR_ENABLE</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																	</LITERALS>
+																</ENUMERATION-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<!-- Symbolic Name Reference Definition: BswMPduRoutingPathGroupRef -->
+																<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="590a31df-ebf7-4afb-9679-bf6aafe689b9">
+																	<SHORT-NAME>BswMPduRoutingPathGroupRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This is a reference to the PDU Routing Path Group for which the routing in the PDU Router should be enabled or disabled.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/PduR/PduRGlobalConfig/PduRRoutingPathGroup</DESTINATION-REF>
+																</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Container Definition: BswMResetSignalInitValues -->
+														<!-- Container Definition: BswMRteSwitch -->
+														<!-- Container Definition: BswMSchMSwitch -->
+														<!-- Container Definition: BswMTriggerIPduSend -->
+														<!-- Container Definition: BswMUserCallout -->
+														<PARAM-CONF-CONTAINER-DEF UUID="9cbb1db7-0baa-4f7a-92d1-d895ede5b523">
+															<SHORT-NAME>BswMUserCallout</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container includes all details needed for a user defined function call.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<PARAMETERS>
+																<!-- PARAMETER DEFINITION: BswMUserCalloutFunction -->
+																<STRING-PARAM-DEF UUID="97b8e65a-0ac1-4109-80ed-11015feec5ec">
+																	<SHORT-NAME>BswMUserCalloutFunction</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This parameter specifies the complete function call including all parameters. The parameters are specified during configuration time, and cannot be changed during run time. Any return values passed by the callout will be ignored.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																</STRING-PARAM-DEF>
+															</PARAMETERS>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="4c96829e-58b8-4865-be52-68d3855c4359">
+															<SHORT-NAME>BswMTimerControl</SHORT-NAME>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<ENUMERATION-PARAM-DEF UUID="f8d8e8dc-3c27-47d9-bb99-41c2195f16cd">
+																	<SHORT-NAME>BswMTimerAction</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Specify the action for the timer. The timer can be started or stopped.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>Vector Informatik</DEFAULT-VALUE>
+																	<LITERALS>
+																		<ENUMERATION-LITERAL-DEF UUID="896c5d7f-ae7a-4639-939f-c881c65bbb84">
+																			<SHORT-NAME>BSWM_TIMER_START</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																		<ENUMERATION-LITERAL-DEF UUID="a7bfbebb-158c-4599-9893-2517c7628e8f">
+																			<SHORT-NAME>BSWM_TIMER_STOP</SHORT-NAME>
+																		</ENUMERATION-LITERAL-DEF>
+																	</LITERALS>
+																</ENUMERATION-PARAM-DEF>
+															</PARAMETERS>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="caf9d869-332f-4294-bb46-fab50f97dac0">
+																	<SHORT-NAME>BswMTimerRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Specify the Timer Name string for which the timer action shall be executed.
+</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/BswM/BswMConfig/BswMArbitration/BswMModeRequestPort</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<PARAM-CONF-CONTAINER-DEF UUID="b415bfe1-a047-4afb-bbc1-47a1a04db5ce">
+															<SHORT-NAME>BswMModeChange</SHORT-NAME>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<REFERENCES>
+																<REFERENCE-PARAM-DEF UUID="470ca60d-edb6-44b2-9ed2-e591fcd9272b">
+																	<SHORT-NAME>BswMSourceModeRef</SHORT-NAME>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMArbitration/BswMModeRequestPort</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+																<REFERENCE-PARAM-DEF UUID="94443e97-d691-4ec7-93f5-71aa1a39a628">
+																	<SHORT-NAME>BswMNotifiedModeRef</SHORT-NAME>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMArbitration/BswMModeRequestPort/BswMModeRequestSource/BswMGenericRequest/BswMGenericMode</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+													</CHOICES>
+												</CHOICE-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</PARAM-CONF-CONTAINER-DEF>
+										<!-- Container Definition: BswMActionList -->
+										<PARAM-CONF-CONTAINER-DEF UUID="a6dd7f31-c9fd-4cd2-b26d-512fde0fe349">
+											<SHORT-NAME>BswMTrueActionList</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Each instance of this container defines an action list that is invoked based on the BswM Rules. An action list contains a list of numbered action items to be processed. An action list can also include other action lists.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: BswMActionListExecution -->
+												<ENUMERATION-PARAM-DEF UUID="44043eb0-b0af-4da5-b74b-cce04a34f16a">
+													<SHORT-NAME>BswMActionListExecution</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter controls if the corresponding action list shall be executed every time the rule is evaluated or only when the result of the evaluation changes.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="0247da8f-ca89-4d5e-a58b-7b3603c5de8c">
+															<SHORT-NAME>BSWM_CONDITION</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="e90b2d14-ab31-47ea-a983-364b44ab1794">
+															<SHORT-NAME>BSWM_TRIGGER</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+											</PARAMETERS>
+											<SUB-CONTAINERS>
+												<!-- Container Definition: BswMActionListItem -->
+												<PARAM-CONF-CONTAINER-DEF UUID="865027b4-a463-4185-8b91-d2d9c1fa9625">
+													<SHORT-NAME>BswMActionListItem</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container defines an item in an action list.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+													<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+													<PARAMETERS>
+														<BOOLEAN-PARAM-DEF UUID="7b24cc60-cd67-4c0d-8092-e061a06974b7">
+															<SHORT-NAME>BswMAbortOnFail</SHORT-NAME>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</BOOLEAN-PARAM-DEF>
+													</PARAMETERS>
+													<REFERENCES>
+														<!-- Choice Reference Definition: BswMActionListItemRef -->
+														<CHOICE-REFERENCE-PARAM-DEF UUID="8f042881-a59e-421b-a415-6cc054a1277f">
+															<SHORT-NAME>BswMActionListItemRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">The action item can either be an atomic action or a reference to another action list or rule.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<DESTINATION-REFS>
+																<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMAction</DESTINATION-REF>
+																<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMActionList</DESTINATION-REF>
+																<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMArbitration/BswMRule</DESTINATION-REF>
+															</DESTINATION-REFS>
+														</CHOICE-REFERENCE-PARAM-DEF>
+													</REFERENCES>
+												</PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</PARAM-CONF-CONTAINER-DEF>
+										<PARAM-CONF-CONTAINER-DEF UUID="f0f7fe3c-f442-4128-b171-4d8dcde9690d">
+											<SHORT-NAME>BswMFalseActionList</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Each instance of this container defines an action list that is invoked based on the BswM Rules. An action list contains a list of numbered action items to be processed. An action list can also include other action lists.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: BswMActionListExecution -->
+												<ENUMERATION-PARAM-DEF UUID="c35ba268-1536-45e9-bbaa-6399f62975b1">
+													<SHORT-NAME>BswMActionListExecution</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter controls if the corresponding action list shall be executed every time the rule is evaluated or only when the result of the evaluation changes.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="68bbf9f4-ef40-43af-8d2f-8989b49a014d">
+															<SHORT-NAME>BSWM_CONDITION</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="3b9b28eb-11e8-41d5-9406-f73a95163058">
+															<SHORT-NAME>BSWM_TRIGGER</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+											</PARAMETERS>
+											<SUB-CONTAINERS>
+												<!-- Container Definition: BswMActionListItem -->
+												<PARAM-CONF-CONTAINER-DEF UUID="5cf4f54b-ba94-4a02-8629-49075d4a9bb9">
+													<SHORT-NAME>BswMActionListItem</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container defines an item in an action list.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+													<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+													<PARAMETERS>
+														<BOOLEAN-PARAM-DEF UUID="339b84a9-821f-40b6-bd6b-12ee2d41e149">
+															<SHORT-NAME>BswMAbortOnFail</SHORT-NAME>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>false</DEFAULT-VALUE>
+														</BOOLEAN-PARAM-DEF>
+													</PARAMETERS>
+													<REFERENCES>
+														<!-- Choice Reference Definition: BswMActionListItemRef -->
+														<CHOICE-REFERENCE-PARAM-DEF UUID="3932e3a8-def5-4993-a496-985824b5f372">
+															<SHORT-NAME>BswMActionListItemRef</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">The action item can either be an atomic action or a reference to another action list or rule.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<DESTINATION-REFS>
+																<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMAction</DESTINATION-REF>
+																<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMModeControl/BswMActionList</DESTINATION-REF>
+																<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/BswM/BswMConfig/BswMArbitration/BswMRule</DESTINATION-REF>
+															</DESTINATION-REFS>
+														</CHOICE-REFERENCE-PARAM-DEF>
+													</REFERENCES>
+												</PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Container Definition: BswMGeneral -->
+						<PARAM-CONF-CONTAINER-DEF UUID="c28c112b-adac-40d3-95ea-cf6db63cb791">
+							<SHORT-NAME>BswMGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">General configuration parameters of the Basic SW Mode Manager.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: BswMDevErrorDetect -->
+								<BOOLEAN-PARAM-DEF UUID="18c8e723-ac19-47a0-b0cb-a36df9890e41">
+									<SHORT-NAME>BswMDevErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If 'Development Error Detection' is enabled, all development errors are reported to the Development Error Tracer (DET). The errors are described in the TechnicalReference_BswM.pdf.
+
+Note: In general, the development error detection is recommended during pre-test phase. It is not recommended to enable the development error detection in production code due to increased runtime and ROM needs.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: BswMMainFunctionPeriod -->
+								<FLOAT-PARAM-DEF UUID="3d69d179-b64e-4476-bbfe-0111efee8671">
+									<SHORT-NAME>BswMMainFunctionPeriod</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The cycle time of the periodic main function of BswM. Defined in seconds .</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.01</DEFAULT-VALUE>
+									<MAX>10</MAX>
+									<MIN>0.001</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: BswMVersionInfoApi -->
+								<BOOLEAN-PARAM-DEF UUID="307c1781-e581-48ae-b4b2-e98c045f920e">
+									<SHORT-NAME>BswMVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">En-/ disables the function BswM_GetVersionInfo() to get the major, minor and patch version information.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="a695b791-5c96-4115-b17a-a2d9fde14066">
+									<SHORT-NAME>BswMDcmComControl</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">En-/ disables the Dcm communication control modes of the BswM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="e5c8a8f0-a0aa-430b-8d6b-3e9c62922881">
+									<SHORT-NAME>BswMDcmResteMode</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Dcm Reset Mode</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">En-/ disables the Dcm reset modes of the BswM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="e75a42b6-77db-42ed-857c-839d54b31f7d">
+									<SHORT-NAME>BswMHeaderFilesPath</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specify the path to a header file which contains the prototypes for the user condition functions and user callout functions, if required.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="cf06861b-fddd-40c4-a1c4-c0e9144be3d5">
+									<SHORT-NAME>BswMSoftwareComponentName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This name is used as component name (ShortName) in the generated software component template. Change this name if you try to import the BswM components of several ECUs and have problems with name clashes.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>BswM</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="646b710c-986d-4c3d-829a-2eef29f16130">
+									<SHORT-NAME>BswMDcmPassiveMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">En-/ disables the Dcm Passive Mode Handling of the BswM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="614a8da9-f976-40d6-9be7-8ff91eff52d1">
+									<SHORT-NAME>BswMDcmApplicationUpdated</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="199db8f1-58df-47cc-ba22-05e746c43f37">
+									<SHORT-NAME>BswMDcmApplUpdateAsModePort</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="f684c66e-4d12-4034-b809-e18dcd994f9d">
+									<SHORT-NAME>BswMDcmResetExecutionRequest</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">True: 
+The BswM triggers the Dcm reset mode request after the Bswm is informed about the reset execution by requesting DCM_RESET_EXECUTION from the Dcm
+
+False:
+The BswM executes the Dcm reset mode request immediatly, means the BswM wait not for the Dcm request DCM_RESET_EXECUTION</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="212b8457-e092-4b39-9153-286fa364b4aa">
+									<SHORT-NAME>BswMAmdRuntimeMeasurement</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter defines if AMD Runtime Measurement (RTM) is enabled for this module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="24428d73-4f41-41d0-955e-dbe56cc8bb2e">
+							<SHORT-NAME>VectorCommonData</SHORT-NAME>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="b532c052-0cab-4dce-a269-be5066a0327c">
+									<SHORT-NAME>BswmdVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Bswmd version</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1.10.00</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<MODULE-CONFIGURATION UUID="8c41ed27-2a85-4934-a166-131bc27ded24">
+					<SHORT-NAME>BswM_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/BswM</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="2299cdb8-8f9b-4f97-8184-0a1437bf56cb">
+					<SHORT-NAME>BswM_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/BswM</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

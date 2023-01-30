@@ -1,0 +1,205 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : FlsTst_Cfg.h
+* Module Description: Configuration file of FlsTst module
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          5 %
+ * %date_modified:    Thu Oct 10 11:38:52 2013 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 07/13/12   1       JJW       Initial template creation
+ * 07/26/12   2       JJW       Generation of config set externs
+ * 09/19/12   3       JJW       correction of blockDefine scope issue
+ *            4                                                                                                6279
+ * 10/10/13   5       KMC       change seclength element of FlsTst_MemBlockType to uint32 -- for fix of       10345
+ *                              anomaly 5491
+ */
+
+#ifndef FLSTST_CFG_H
+#define FLSTST_CFG_H
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "FlsTst" ) ); #>
+
+
+/*******************************************************************************
+**                      Include Section                                       **
+*******************************************************************************/
+
+/*** Public Part (used by FlsTst API) *****************************************/
+#include "Std_Types.h"                   /* Standard type definitions      */
+
+<# string flstst_deminclude = ValueOf( Xp.ValueAtDefRefTo( "FlsTstDemEventParameterRefs/FlsTstDemInclude" ) ); #>
+<# string flstst_failureapi = ValueOf( Xp.ValueAtDefRefTo( "FlsTstDemEventParameterRefs/FailureAPI" ) ); #>
+<# string flstst_failure = ValueOf( Xp.ValueAtDefRefTo( "FlsTstDemEventParameterRefs/FLSTST_E_FLSTST_FAILURE" ) ); #>
+<# string selftest_failure = ValueOf( Xp.ValueAtDefRefTo( "FlsTstDemEventParameterRefs/FLSTST_E_SELFTEST_FAILURE" ) ); #>
+<# string mpu_failure = ValueOf( Xp.ValueAtDefRefTo( "FlsTstDemEventParameterRefs/FLSTST_E_MPU_FAILURE" ) ); #>
+<# string unexpectedirq_failure = ValueOf( Xp.ValueAtDefRefTo( "FlsTstDemEventParameterRefs/FLSTST_E_UNEXPECTEDIRQ_FAILURE" ) ); #>
+
+<# int flstst_info = ValueOf( Xp.ValueAtDefRefTo( "FlsTstDemEventParameterRefs/FLSTST_E_FLSTST_INFO" ) ); #>
+<# int selftest_info = ValueOf( Xp.ValueAtDefRefTo( "FlsTstDemEventParameterRefs/FLSTST_E_SELFTEST_INFO" ) ); #>
+<# int mpu_info = ValueOf( Xp.ValueAtDefRefTo( "FlsTstDemEventParameterRefs/FLSTST_E_MPU_INFO" ) ); #>
+<# int unexpectedirq_info = ValueOf( Xp.ValueAtDefRefTo( "FlsTstDemEventParameterRefs/FLSTST_E_UNEXPECTEDIRQ_INFO" ) ); #>
+/* Include definitions for Diagnostic Event API */
+#include "<#= flstst_deminclude #>"
+
+#define FLSTST_E_FLSTST_FAILURE			<#= flstst_failure #>
+#define FLSTST_E_SELFTEST_FAILURE		<#= selftest_failure #>
+#define FLSTST_E_MPU_FAILURE			<#= mpu_failure #>
+#define FLSTST_E_UNEXPECTEDIRQ_FAILURE	<#= unexpectedirq_failure #>
+
+#define FLSTST_E_FLSTST_INFO			<#= flstst_info #>u
+#define FLSTST_E_SELFTEST_INFO			<#= selftest_info #>u
+#define FLSTST_E_MPU_INFO				<#= mpu_info #>u
+#define FLSTST_E_UNEXPECTEDIRQ_INFO		<#= unexpectedirq_info #>u
+
+#define FLSTST_REPORTERRORSTATUS(event, param, status)		<#= flstst_failureapi #>(event, param, status)
+#define FLSTST_EVENT_PASSED				NTC_STATUS_PASSED
+#define FLSTST_EVENT_FAILED				NTC_STATUS_FAILED
+
+
+/*** Private Part (used by FlsTst.c only) *************************************/
+#ifdef FLSTST_C
+
+<# bool apiEnableGetCurrentState = ValueOf( Xp.ValueAtDefRefTo( "FlsTstConfigurationOfOptApiServices/FlsTstGetCurrentStateApi" ) ); #>
+<# bool apiEnableGetErrorDetails = ValueOf( Xp.ValueAtDefRefTo( "FlsTstConfigurationOfOptApiServices/FlsTstGetErrorDetailsApi" ) ); #>
+<# bool apiEnableTestResultBgnd = ValueOf( Xp.ValueAtDefRefTo( "FlsTstConfigurationOfOptApiServices/FlsTstGetTestResultBgndApi" ) ); #>
+<# bool apiEnableGetTestResultFgnd = ValueOf( Xp.ValueAtDefRefTo( "FlsTstConfigurationOfOptApiServices/FlsTstGetTestResultFgndApi" ) ); #>
+<# bool apiEnableGetTestSignatureBgnd = ValueOf( Xp.ValueAtDefRefTo( "FlsTstConfigurationOfOptApiServices/FlsTstGetTestSignatureBgndApi" ) ); #>
+<# bool apiEnableGetTestSignatureFgnd = ValueOf( Xp.ValueAtDefRefTo( "FlsTstConfigurationOfOptApiServices/FlsTstGetTestSignatureFgndApi" ) ); #>
+<# bool apiEnableStartFgnd = ValueOf( Xp.ValueAtDefRefTo( "FlsTstConfigurationOfOptApiServices/FlsTstStartFgndApi" ) ); #>
+<# bool apiEnableSuspendResume = ValueOf( Xp.ValueAtDefRefTo( "FlsTstConfigurationOfOptApiServices/FlsTstSuspendResumeApi" ) ); #>
+<# bool apiEnableTestEcc = ValueOf( Xp.ValueAtDefRefTo( "FlsTstConfigurationOfOptApiServices/FlsTstTestEccApi" ) ); #>
+<# bool apiEnableVersionInfo = ValueOf( Xp.ValueAtDefRefTo( "FlsTstConfigurationOfOptApiServices/FlsTstVersionInfoApi" ) ); #>
+<# bool apiEnableTestCompleteNotification = ValueOf( Xp.ValueAtDefRefTo( "FlsTstGeneral/FlsTstTestCompletedNotificationSupported" ) ); #>
+
+#endif /* FLSTST_C                                                            */
+
+
+/*******************************************************************************
+**                      Global Macros                                         **
+*******************************************************************************/
+
+/*** Public Part (FlsTst API) *****************************************/
+
+/*
+ * File version information
+ */
+#define FLSTST_CFG_H_MAJOR_VERSION   1u
+#define FLSTST_CFG_H_MINOR_VERSION   0u
+#define FLSTST_CFG_H_PATCH_VERSION   0u
+
+/*
+ * API enable settings
+ */
+<# if ( apiEnableGetCurrentState == true ) { #>
+#define FLSTST_GET_CURRENT_STATE_API					STD_ON
+<# } else { #>
+#define FLSTST_GET_CURRENT_STATE_API					STD_OFF
+<# } #>
+<# if ( apiEnableGetErrorDetails == true ) { #>
+#define FLSTST_GET_ERROR_DETAILS_API					STD_ON
+<# } else { #>
+#define FLSTST_GET_ERROR_DETAILS_API					STD_OFF
+<# } #>
+<# if ( apiEnableTestResultBgnd == true ) { #>
+#define FLSTST_GET_TEST_RESULT_BGND_API					STD_ON
+<# } else { #>
+#define FLSTST_GET_TEST_RESULT_BGND_API					STD_OFF
+<# } #>
+<# if ( apiEnableGetTestResultFgnd == true ) { #>
+#define FLSTST_GET_TEST_RESULT_FGND_API					STD_ON
+<# } else { #>
+#define FLSTST_GET_TEST_RESULT_FGND_API					STD_OFF
+<# } #>
+<# if ( apiEnableGetTestSignatureBgnd == true ) { #>
+#define FLSTST_GET_TEST_SIGNATURE_BGND_API				STD_ON
+<# } else { #>
+#define FLSTST_GET_TEST_SIGNATURE_BGND_API				STD_OFF
+<# } #>
+<# if ( apiEnableGetTestSignatureFgnd == true ) { #>
+#define FLSTST_GET_TEST_SIGNATURE_FGND_API				STD_ON
+<# } else { #>
+#define FLSTST_GET_TEST_SIGNATURE_FGND_API				STD_OFF
+<# } #>
+<# if ( apiEnableStartFgnd == true ) { #>
+#define FLSTST_START_FGND_API							STD_ON
+<# } else { #>
+#define FLSTST_START_FGND_API							STD_OFF
+<# } #>
+<# if ( apiEnableSuspendResume == true ) { #>
+#define FLSTST_SUSPEND_RESUME_API						STD_ON
+<# } else { #>
+#define FLSTST_SUSPEND_RESUME_API						STD_OFF
+<# } #>
+<# if ( apiEnableTestEcc == true ) { #>
+#define FLSTST_TEST_ECC_API    							STD_ON
+<# } else { #>
+#define FLSTST_TEST_ECC_API    							STD_OFF
+<# } #>
+<# if ( apiEnableTestCompleteNotification == true ) { #>
+#define FLSTST_TEST_COMPLETE_NOTIFICATION_SUPPORTED		STD_ON
+<# } else { #>
+#define FLSTST_TEST_COMPLETE_NOTIFICATION_SUPPORTED		STD_OFF
+<# } #>
+
+<# long intervalEndVal = ValueOf( Xp.ValueAtDefRefTo( "FlsTstTestIntervalIdEndValue" ) ); #>
+#define FLSTST_TEST_INTERVAL_ID_END_VALUE	<#= intervalEndVal #>u
+
+/* FlsTst Memory Block Configuration Definitions */
+typedef struct {
+	VAR(uint32, AUTOMATIC)	crcInitL;		/* CRC accumulator init value Low 32 bits */
+	VAR(uint32, AUTOMATIC)	crcInitH;		/* CRC accumulator init value High 32 bits */
+	P2CONST(uint64, AUTOMATIC, AUTOMATIC) crcPtr;
+	P2CONST(uint64, AUTOMATIC, AUTOMATIC) startPtr;
+	VAR(uint16, AUTOMATIC)	  secnum;			/* number of sectors, each having a unique CRC */
+	VAR(uint32, AUTOMATIC)    seclength;		/* sector length in 64 bit words -- Max value is 1048575 (20 bit field in register) */
+	VAR(uint16, AUTOMATIC)    dmaElementCnt;	/* DMA element count */
+	VAR(uint16, AUTOMATIC)    dmaFrameCnt;	/* DMA frame count */
+}FlsTst_MemBlockType;
+
+
+<# int numberOfBgndBlocks = 0; #>
+<# int numberOfFgndBlocks = 0; #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "FlsTstConfigSet" ) ) #>
+<#	   numberOfBgndBlocks += Count( Xp.ContainerAtDefRefTo( "FlsTstBlockBgndConfigSet/FlsTstBlock" ) ); #>
+<#	   numberOfFgndBlocks += Count( Xp.ContainerAtDefRefTo( "FlsTstBlockFgndConfigSet/FlsTstBlock" ) ); #>
+<#    string blockDefine = null; #>
+<#    blockDefine = string.Format( "FLSTST_BLOCK_NUMBER_BGND_{0}", ValueOf( "ar:SHORT-NAME" ) ).ToUpper(); #>
+#define <#= blockDefine #>  <#= numberOfBgndBlocks #>u
+<#    blockDefine = string.Format( "FLSTST_BLOCK_NUMBER_FGND_{0}", ValueOf( "ar:SHORT-NAME" ) ).ToUpper(); #>
+#define <#= blockDefine #>  <#= numberOfFgndBlocks #>u
+<#    blockDefine = string.Format( "FlsTst_Blks{0}", ValueOf( "ar:SHORT-NAME" ) ); #>
+extern CONST(FlsTst_MemBlockType, AUTOMATIC)	<#= blockDefine #>[ <#= (numberOfBgndBlocks + numberOfFgndBlocks) #>u ];
+<# !ENDLOOP #>
+
+
+typedef struct {
+	VAR(uint8, AUTOMATIC)    numBgndBlks;
+	VAR(uint8, AUTOMATIC)    numFgndBlks;
+	/* All background blocks are defined first in the array. Any block defined only as a foreground test block is defined after background blocks */
+	P2CONST(FlsTst_MemBlockType, AUTOMATIC, AUTOMATIC)	MemBlk;
+<# if ( apiEnableTestCompleteNotification == true ) { #>
+	void (*notifFcn)();
+<# } #>
+}FlsTst_ConfigType;
+
+/* Configuration Structures */
+<# !LOOP( Xp.ContainerAtDefRefTo( "FlsTstConfigSet" ) ) #>
+<#     string blockDefine = string.Format( "FlsTst_{0}", ValueOf( "ar:SHORT-NAME" ) ); #>
+extern CONST(FlsTst_ConfigType, AUTOMATIC) <#= blockDefine#>;
+<# !ENDLOOP #>
+   
+#endif /* FLSTST_CFG_H */
+
+/*** End of file **************************************************************/

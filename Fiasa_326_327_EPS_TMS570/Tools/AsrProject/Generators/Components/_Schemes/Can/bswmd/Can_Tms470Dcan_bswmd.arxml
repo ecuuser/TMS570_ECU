@@ -1,0 +1,3071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2012 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           		Can_Tms470Dcan_bswmd.arxml
+Component:      
+Module:         	Can
+Generator:     	
+
+Description:    -
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xmlns="http://autosar.org/3.2.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="a96a25ce-4d65-4055-8d61-c3a10cad74d8">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<SUB-PACKAGES>
+				<AR-PACKAGE UUID="DCE:91795653-8083-4d32-b1af-fb971e617c02">
+					<SHORT-NAME>Can_Tms470Dcan</SHORT-NAME>
+					<ELEMENTS>
+						<BSW-IMPLEMENTATION UUID="DCE:3b3c70ed-4c11-464f-b45b-3075d19de754">
+							<SHORT-NAME>Can_Impl</SHORT-NAME>
+							<CODE-GENERATOR>cMICROSAR,GENy</CODE-GENERATOR>
+							<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+							<SW-MAJOR-VERSION>1</SW-MAJOR-VERSION>
+							<SW-MINOR-VERSION>23</SW-MINOR-VERSION>
+							<SW-PATCH-VERSION>00</SW-PATCH-VERSION>
+							<VENDOR-ID>30</VENDOR-ID>
+							<AR-MAJOR-VERSION>2</AR-MAJOR-VERSION>
+							<AR-MINOR-VERSION>5</AR-MINOR-VERSION>
+							<AR-PATCH-VERSION>0</AR-PATCH-VERSION>
+							<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Can_Tms470Dcan/Can_Pre</PRECONFIGURED-CONFIGURATION-REF>
+							<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Can_Tms470Dcan/Can_Rec</RECOMMENDED-CONFIGURATION-REF>
+							<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/Can_Tms470Dcan/Can</VENDOR-SPECIFIC-MODULE-DEF-REF>
+						</BSW-IMPLEMENTATION>
+						<MODULE-DEF UUID="DCE:27be0e9e-dc7e-4fec-92ac-fb0f877949bd">
+							<SHORT-NAME>Can</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container holds the configuration of a single CAN Driver.</L-2>
+							</DESC>
+							<ADMIN-DATA>
+								<DOC-REVISIONS>
+									<DOC-REVISION>
+										<REVISION-LABEL>1.00.00 </REVISION-LABEL>
+										<ISSUED-BY>visbir</ISSUED-BY>
+										<DATE>2008-02-25T10:37:09</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Create for CAN</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.00.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>vispl</ISSUED-BY>
+										<DATE>2009-07-01T11:23:21</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update to Autosar 3.0</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.01.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>visseg</ISSUED-BY>
+										<DATE>2009-10-06T14:59:04</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update to R7</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.02.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>visseg</ISSUED-BY>
+										<DATE>2009-11-04T16:12:08</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">ESCAN00038927</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.03.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>visseg</ISSUED-BY>
+										<DATE>2010-01-13T16:18:34</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update to R8, ESCAN00040106</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.03.01</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>vispl</ISSUED-BY>
+										<DATE>2010-04-07T15:04:30</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update to SW version 1.10.80 </L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.03.02</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>vispl</ISSUED-BY>
+										<DATE>2010-04-09T11:33:29</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update to SW version 1.10.01</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.04.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>visou</ISSUED-BY>
+										<DATE>2010-07-23T11:05:34</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update to SW version 1.11.00</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.05.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>vispl</ISSUED-BY>
+										<DATE>2011-02-17T15:22:47</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">ESCAN00047322, ESCAN00047044, update to new Template 3.11.08</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.06.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>vispl</ISSUED-BY>
+										<DATE>2011-07-13T11:16:29</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">ESCAN00049170, ESCAN00052107, update to SW version 1.13</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.07.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>vispl</ISSUED-BY>
+										<DATE>2011-08-24T15:53:22</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update to Autosar 3.2</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.07.01</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>vispl</ISSUED-BY>
+										<DATE>2011-08-24</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">SW Version updated to 1.14.00</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.08.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>vispl</ISSUED-BY>
+										<DATE>2012-01-31T04:43:40+01:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update to Autosar R13</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.09.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>vispl</ISSUED-BY>
+										<DATE>2012-07-09T05:43:15+02:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update to Autosar R14</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.10.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>visrse</ISSUED-BY>
+										<DATE>2013-01-09T04:52:45+01:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update SW version to 1.19.00: SilentBsw support</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.11.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>vispl</ISSUED-BY>
+										<DATE>2013-03-28T01:18:17+01:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Support of Autosar 3.1.x compatibility </L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+									<DOC-REVISION>
+										<REVISION-LABEL>2.12.00</REVISION-LABEL>
+										<STATE>released</STATE>
+										<ISSUED-BY>viszam</ISSUED-BY>
+										<DATE>2014-02-07T10:56:32+01:00</DATE>
+										<MODIFICATIONS>
+											<MODIFICATION>
+												<CHANGE>
+													<L-2 L="EN">Update SW version to Core 4.6</L-2>
+												</CHANGE>
+											</MODIFICATION>
+										</MODIFICATIONS>
+									</DOC-REVISION>
+								</DOC-REVISIONS>
+							</ADMIN-DATA>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/Can</REFINED-MODULE-DEF-REF>
+							<SUPPORTED-CONFIG-VARIANTS>
+								<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+								<SUPPORTED-CONFIG-VARIANT>VARIANT-LINK-TIME</SUPPORTED-CONFIG-VARIANT>
+								<SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+							</SUPPORTED-CONFIG-VARIANTS>
+							<CONTAINERS>
+								<!-- Parameter Container Definition: CanConfigSet -->
+								<PARAM-CONF-CONTAINER-DEF UUID="ECUC:e28c636a-f5f1-4503-b0ad-aed7fbed80d7">
+									<SHORT-NAME>CanConfigSet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This is the multiple configuration set container for CAN Driver</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: CanController -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:3720b44c-4ace-462f-9438-211d187262b4">
+											<SHORT-NAME>CanController</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container contains the configuration parameters of the CAN controller(s).</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: CanBusoffProcessing -->
+												<ENUMERATION-PARAM-DEF UUID="ECUC:1ac4345e-22de-49c3-8bb0-053a8e121758">
+													<SHORT-NAME>CanBusoffProcessing</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Enables / disables API Can_MainFunction_BusOff() for handling busoff events in polling mode.
+
+Polling mode for the BusOff status. If this feature is enabled, the function Can_MainFunction_BusOff() has to be called to poll the BusOff status of the CAN Controller.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>INTERRUPT</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="6e3f1bc6-667b-4115-a8e4-0b9b28336f0f">
+															<SHORT-NAME>INTERRUPT</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="697cace5-bdbe-4ebf-bf84-915d8356ce0d">
+															<SHORT-NAME>POLLING</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanControllerActivation -->
+												<BOOLEAN-PARAM-DEF UUID="DCE:26f210f5-0b1e-45a7-a51e-508517edda6c">
+													<SHORT-NAME>CanControllerActivation</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Defines if a CAN controller is used in the configuration. Deactivated controller does not take active part on communication.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>true</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanControllerBaudRate -->
+												<INTEGER-PARAM-DEF UUID="DCE:b2ca8593-9977-45bd-916a-d28f5b127484">
+													<SHORT-NAME>CanControllerBaudRate</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Not Used.
+CanConfigSet/CanController/CanInitStructure used intead to set baudrate and bittiming as concrete baudrate register values.
+
+Specifies the buadrate of the controller in kbps.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>500</DEFAULT-VALUE>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanControllerId -->
+												<INTEGER-PARAM-DEF UUID="DCE:1fcbcc65-6647-4ed7-8a6d-caad9261356e">
+													<SHORT-NAME>CanControllerId</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter provides the controller ID which is unique in a given CAN Driver. The value for this parameter starts with 0 and continue without any gaps.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+													<MAX>255</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanControllerPropSeg -->
+												<INTEGER-PARAM-DEF UUID="DCE:6e9b149e-3db5-411e-a89e-8ed47dd3b953">
+													<SHORT-NAME>CanControllerPropSeg</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Not Used.
+CanConfigSet/CanController/CanInitStructure used intead to set baudrate and bittiming as concrete baudrate register values.
+
+Specifies propagation delay in time quantas. CanControllerBaudRate, CanControllerPropSeg, CanControllerSeg1, CanControllerSeg2. These parameters are derived from the system description and only evaluated when loading an initial EcuC and are then used to calculate hardware register values. In later configuration steps, only the hardware register values are used.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanControllerSeg1 -->
+												<INTEGER-PARAM-DEF UUID="DCE:60d20b44-7472-47b2-9e53-377640bf9748">
+													<SHORT-NAME>CanControllerSeg1</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Not Used.
+CanConfigSet/CanController/CanInitStructure used intead to set baudrate and bittiming as concrete baudrate register values.
+
+Specifies phase segment 1 in time quantas. CanControllerBaudRate, CanControllerPropSeg, CanControllerSeg1, CanControllerSeg2. These parameters are derived from the system description and only evaluated when loading an initial EcuC and are then used to calculate hardware register values. In later configuration steps, only the hardware register values are used.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanControllerSeg2 -->
+												<INTEGER-PARAM-DEF UUID="DCE:68790a6b-48bc-4162-b792-c7b980fd4788">
+													<SHORT-NAME>CanControllerSeg2</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Not Used.
+CanConfigSet/CanController/CanInitStructure used intead to set baudrate and bittiming as concrete baudrate register values.
+
+Specifies phase segment 2 in time quantas. CanControllerBaudRate, CanControllerPropSeg, CanControllerSeg1, CanControllerSeg2. These parameters are derived from the system description and only evaluated when loading an initial EcuC and are then used to calculate hardware register values. In later configuration steps, only the hardware register values are used.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanControllerTimeQuanta -->
+												<FLOAT-PARAM-DEF UUID="DCE:6924c026-e03a-418d-a7cf-efe84192c5e3">
+													<SHORT-NAME>CanControllerTimeQuanta</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Not Used.
+CanConfigSet/CanController/CanInitStructure used intead to set baudrate and bittiming as concrete baudrate register values.
+
+Specifies the time quanta for the controller. The calculation of the resulting prescaler value depending on module clocking and time quanta shall be done offline
+
+Hardware specific.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</FLOAT-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanRxProcessing -->
+												<ENUMERATION-PARAM-DEF UUID="DCE:ef33b30c-f237-4ece-8789-70996de6291c">
+													<SHORT-NAME>CanRxProcessing</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Enables / disables API Can_MainFunction_Read() for handling PDU reception events in polling mode.
+
+Polling mode for Rx mailboxes. This includes the Rx BasicCAN object and Rx FullCAN objects. If this feature is enabled, the Rx events have to be polled by call Can_MainFunction_Read() and no Interrupt will appear.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>INTERRUPT</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="da11e923-d207-4c15-998d-5a6eb1c9f7d1">
+															<SHORT-NAME>INTERRUPT</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="77256c50-0755-407e-933b-3392fd1ac983">
+															<SHORT-NAME>POLLING</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanTxProcessing -->
+												<ENUMERATION-PARAM-DEF UUID="DCE:2ddd670f-90a5-435c-87b6-0109731e1add">
+													<SHORT-NAME>CanTxProcessing</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Enables / disables API Can_MainFunction_Write() for handling PDU transmission events in polling mode.
+
+Polling mode for Tx mailboxes. This includes the Tx BasicCAN object and Tx FullCAN objects. If this feature is enabled, the Tx events have to be polled by call Can_MainFunction_Write() and no Interrupt will appear.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>INTERRUPT</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="9649b4d8-7fc5-477d-87b7-5ff6a543422a">
+															<SHORT-NAME>INTERRUPT</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="8c5d3836-a400-48ac-9f57-e1d89f6082bd">
+															<SHORT-NAME>POLLING</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanWakeupProcessing -->
+												<ENUMERATION-PARAM-DEF UUID="DCE:ad6e08f4-f75f-4bf3-874a-a2a59c98cba5">
+													<SHORT-NAME>CanWakeupProcessing</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Enables / disables API Can_MainFunction_Wakeup() for handling wakeup events in polling mode.
+
+Polling mode for the Wakeup event. If this feature is enabled, the function Can_MainFunction_Wakeup() has to be called to poll the Wa-keup event of the CAN Controller.
+
+RESTRICTIONS: 'CanWakeupProcessing' is only available, if hardware supports this by mean wakeup detection by bus event.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>INTERRUPT</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="73310aae-58e8-4d3e-9ff6-080e849f2cba">
+															<SHORT-NAME>INTERRUPT</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="411efe46-98b9-4d1b-8083-28a2916dd830">
+															<SHORT-NAME>POLLING</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<!--WakeupSourceId-->
+												<INTEGER-PARAM-DEF UUID="0afdd062-afca-4ae6-af71-b1dd608bf955">
+													<SHORT-NAME>CanWakeupSourceId</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Wakeup Source given by ECUM
+
+RESTRICTIONS: 'CanWakeupSourceId' is only when no ECU State Manager Reference is available in the ECUc.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</INTEGER-PARAM-DEF>
+												<INTEGER-PARAM-DEF UUID="84639F22-A001-44b8-A63C-8B0A6EF0546F">
+													<SHORT-NAME>CANBaseAddress</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">The DCAN module may have multiple hardware channels. With this option the user specifies the channel to use.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>4294433792</DEFAULT-VALUE>
+													<MAX>4294967295</MAX>
+													<MIN>1</MIN>
+												</INTEGER-PARAM-DEF>
+												<INTEGER-PARAM-DEF UUID="cc7afc7d-8eaa-4313-a52b-07ba28ec738b">
+													<SHORT-NAME>CanNumberOfBasicCANObjects</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Amount of used BasicCAN Objects. Increase this to optimize BasicCAN filtering.
+
+RESTRICTIONS: 'CanNumberOfBasicCANObjects' is only available, if 'CanMultipleBasicCANObjects' is activated.
+</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>1</DEFAULT-VALUE>
+													<MAX>255</MAX>
+													<MIN>1</MIN>
+												</INTEGER-PARAM-DEF>
+												<INTEGER-PARAM-DEF UUID="28376e30-0113-48dc-9837-67f1d100507e">
+													<SHORT-NAME>CanMailboxPerBasicCANObjects</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Amount of used Mailboxes per BasicCAN Objects. Increase this to buffer more BasicCAN messages before execute reception (avoid overrun in polling).
+
+RESTRICTIONS: 'CanMailboxPerBasicCANObjects' is only available, if 'CanMultipleBasicCANObjects' is activated and hardware supports this.
+</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>2</DEFAULT-VALUE>
+													<MAX>255</MAX>
+													<MIN>1</MIN>
+												</INTEGER-PARAM-DEF>
+												<BOOLEAN-PARAM-DEF UUID="fb21a978-c6c3-4c73-a86d-67b1c78d3f53">
+													<SHORT-NAME>CanCommonCAN</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Activate this when you like to connect two physical CAN channels to one logical CAN Controller.
+This allow you to use more FullCAN for this Controller. Only the Rx FullCAN can be configured on second physical channel.
+
+RESTRICTIONS: 'CanCommonCAN' is a project specific feature and may is not available/supported for every platform.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<BOOLEAN-PARAM-DEF UUID="b298360c-4c14-49a4-9344-be0f51fc264b">
+													<SHORT-NAME>CanPnControllerEnable</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Partial Network Enable</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Activate this when there is a partial network transceiver on this controller active and used.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: CanCpuClockRef -->
+												<REFERENCE-PARAM-DEF UUID="DCE:d54fdf42-a054-4fc7-bbbb-5c45e57bcf01">
+													<SHORT-NAME>CanCpuClockRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Not Used. 
+Reference to the CPU clock configuration, which is set in the MCU driver configuration</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DESTINATION-REF>
+												</REFERENCE-PARAM-DEF>
+												<!-- Symbolic Name Reference Definition: CanWakeupSourceRef -->
+												<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:22f37fac-4654-48f3-b2b1-105b66e80a4e">
+													<SHORT-NAME>CanWakeupSourceRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This parameter contains a reference to the Wakeup Source for this controller as defined in the ECU State Manager.
+
+Implementation Type: reference to EcuM_WakeupSourceType
+
+RESTRICTIONS: 'CanWakeupSourceRef' is only when a ECU State Manager Reference is available in the ECUc.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuM/EcuMConfiguration/EcuMWakeupSource</DESTINATION-REF>
+												</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+												<FOREIGN-REFERENCE-PARAM-DEF UUID="2736e5ff-1e18-49d8-81bb-bb7998415bff">
+													<SHORT-NAME>CanControllerSystemRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">optional reference to a "CanCommunicationController" that defines baud rate limiations</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<DESTINATION-TYPE>CanCommunicationController</DESTINATION-TYPE>
+												</FOREIGN-REFERENCE-PARAM-DEF>
+											</REFERENCES>
+											<SUB-CONTAINERS>
+												<!-- Parameter Container Definition: CanFilterMask -->
+												<PARAM-CONF-CONTAINER-DEF UUID="DCE:bc28ac18-23ee-4896-ac82-09e19dc5a5fb">
+													<SHORT-NAME>CanFilterMask</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Not Used.
+CanConfigSet/CanController/CanInitStructure/CanAcceptanceFilter used intead to set BasicCAN Filter
+
+This container contains the configuration (parameters) of the CAN Filter Mask(s). Unused, see CanInitStructure</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+													<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+													<PARAMETERS>
+														<!-- PARAMETER DEFINITION: CanFilterMaskValue -->
+														<INTEGER-PARAM-DEF UUID="DCE:43199196-8731-4b93-9291-cb523185d5db">
+															<SHORT-NAME>CanFilterMaskValue</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Not Used. 
+CanConfigSet/CanController/CanInitStructure/CanAcceptanceFilter used intead to set BasicCAN Filter
+
+Describes a mask for hardware-based filtering of CAN identifiers
+
+It shall be distinguished between
+  - Standard identifier mask
+  - Extended identifier mask.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>0</DEFAULT-VALUE>
+														</INTEGER-PARAM-DEF>
+													</PARAMETERS>
+												</PARAM-CONF-CONTAINER-DEF>
+												<!--CanInitStructure-->
+												<PARAM-CONF-CONTAINER-DEF UUID="3F7644C5-F257-44c7-A37C-2A2F5CDD9E90">
+													<SHORT-NAME>CanInitStructure</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Define a set of Baudrate and Filter Masks for Basic CAN
+This allow more than one set of Baudrate and multiple Basic CAN Filters for one controller.
+
+First InitStruct contain the same Baudrate as defined under Controller (standard AutoSar use-case)</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>3</UPPER-MULTIPLICITY>
+													<PARAMETERS>
+														<INTEGER-PARAM-DEF UUID="0DE040B2-6BA9-4b1f-B66F-173BE18DEC3C">
+															<SHORT-NAME>Baudrate</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Value of the baudrate determinated form CBT0,CBT1 and CBT2.
+
+This value will not be used for the baudrate setting. It is only set if the
+BSWMD file was exported from a GenTool_Geny configuration. 
+For use with GenTool_GeneratorGeny it is not necessary to set this.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>33333</DEFAULT-VALUE>
+															<MAX>1000000</MAX>
+															<MIN>0</MIN>
+														</INTEGER-PARAM-DEF>
+														<INTEGER-PARAM-DEF UUID="48749faf-3737-409a-a11f-677108832e35">
+															<SHORT-NAME>CBT0</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is the value of the lowest 8 bit (BRP, SJW) of the bit timing register (DCAN BTR). The value can be calculated in the bustiming configuration.
+
+For more information about the bit timing configuration of the DCAN read the data sheets fromTexas Instruments.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>12</DEFAULT-VALUE>
+															<MAX>65536</MAX>
+															<MIN>0</MIN>
+														</INTEGER-PARAM-DEF>
+														<INTEGER-PARAM-DEF UUID="11EAF1D5-2B60-4880-90BD-D37C91334099">
+															<SHORT-NAME>CBT1</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is the value of the 8 bits TSEG1 and TSEG2 of the bit timing register (DCAN BTR). The value can be calculated in the bustiming configuration.
+
+For more information about the bit timing configuration of the DCAN read the data sheets fromTexas Instruments.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>35</DEFAULT-VALUE>
+															<MAX>65536</MAX>
+															<MIN>0</MIN>
+														</INTEGER-PARAM-DEF>
+														<INTEGER-PARAM-DEF UUID="9983C707-A443-4b5a-92A1-AB69423E9920">
+															<SHORT-NAME>CBT2</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This is the value of the bits BRPE of the bit timing register (DCAN BTR). The value can be calculated in the bustiming configuration.
+
+For more information about the bit timing configuration of the DCAN read the data sheets fromTexas Instruments.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>0</DEFAULT-VALUE>
+															<MAX>65536</MAX>
+															<MIN>0</MIN>
+														</INTEGER-PARAM-DEF>
+													</PARAMETERS>
+													<SUB-CONTAINERS>
+														<PARAM-CONF-CONTAINER-DEF UUID="86df07b8-60ec-4630-899a-aa5aad8d7e6a">
+															<SHORT-NAME>CanAcceptanceFilter</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">For each used BasicCAN one Acceptance Filter can be defined.
+
+The Fiter is defined by Code and Mask part:
+pass Filter when:   receiveID &amp; (~Mask) == Code
+
+For Standard ID the Values has to be shifted by 18 to the left.
+32nd bit is used for Extended Id information.
+e.g.  STD ID  0x20 - 0x2F  should be received use Mask:(0xF&lt;&lt;18) and Code:(0x20&lt;&lt;18)
+        EXT ID  0x40, 0x50   should be received use Mask:0x00000010 and Code:0x00000040</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+															<PARAMETERS>
+																<BOOLEAN-PARAM-DEF UUID="288ea002-638d-4555-bbef-23ec96f8336e">
+																	<SHORT-NAME>IsLocked</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Lock the Acceptance Filter (Gen-Tool do no more optimization)</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																	<DEFAULT-VALUE>false</DEFAULT-VALUE>
+																</BOOLEAN-PARAM-DEF>
+																<INTEGER-PARAM-DEF UUID="15342548-48ab-4f49-ac38-df15eabb0b5d">
+																	<SHORT-NAME>Mask</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Value of BasicCAN mask register. The value of the BasicCAN mask register determinate together with the value of the BasicCAN code register
+whether a message will be received or not received by the Basic CAN object. For more information about the acceptance filtering of the DCAN
+read the data sheets fromTexas Instruments.
+
+With a "0" in the BasicCAN mask register the corresponding bit in the BasicCAN code register will not be used for acceptance filtering (don’t care).
+With a "1" in the BasicCAN mask register the corresponding bit in the BasicCAN code register will be used for acceptance filtering.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																</INTEGER-PARAM-DEF>
+																<INTEGER-PARAM-DEF UUID="56ab1eff-2efc-491d-b8d3-c4f69bbf2aa2">
+																	<SHORT-NAME>Code</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Value of BasicCAN code register. The value of the BasicCAN code register determinate together with the value of the  BasicCAN mask register
+whether a message will be received or not received by the Basic CAN object. For more information about the acceptance filtering of the DCAN
+read the data sheets fromTexas Instruments.
+
+If there is a "1" in the BasicCAN mask register the corresponding bit in the BasicCAN code register will be used for acceptance filtering.
+In this case, a message will be received, if the corresponding bit in the BasicCAN code register has the same value ( "0" or "1" ) as the message Id.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>Vector Informatik</ORIGIN>
+																	<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																</INTEGER-PARAM-DEF>
+															</PARAMETERS>
+														</PARAM-CONF-CONTAINER-DEF>
+													</SUB-CONTAINERS>
+												</PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</PARAM-CONF-CONTAINER-DEF>
+										<!-- Parameter Container Definition: CanHardwareObject -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:7a6e6a58-9d16-4331-8b55-e0bcc96b7f53">
+											<SHORT-NAME>CanHardwareObject</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container contains the configuration (parameters) of CAN Hardware Objects.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: CanHandleType -->
+												<ENUMERATION-PARAM-DEF UUID="DCE:ca75bf39-cea6-459b-85fc-e719300b7496">
+													<SHORT-NAME>CanHandleType</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Specifies the type (Full-CAN or Basic-CAN) of a hardware object.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>BASIC</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:2c11fe93-596e-4feb-a086-728d81c6946d">
+															<SHORT-NAME>BASIC</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:a6166680-ab89-434e-b57a-8bcb91780856">
+															<SHORT-NAME>FULL</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanIdType -->
+												<ENUMERATION-PARAM-DEF UUID="DCE:0465ef62-43e9-43c3-828c-07c89b79d74f">
+													<SHORT-NAME>CanIdType</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Specifies whether the IdValue is of type
+
+  - standard identifier
+  - extended identifier
+  - mixed mode
+
+ImplementationType: Can_IdType</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>STANDARD</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:43d5a966-fdf1-42cc-a478-b61404d19ca9">
+															<SHORT-NAME>EXTENDED</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:497bb16a-3bbe-4865-b509-3106aea36b85">
+															<SHORT-NAME>MIXED</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:be70ace8-7456-47a9-ba84-9345f58468d8">
+															<SHORT-NAME>STANDARD</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanIdValue -->
+												<INTEGER-PARAM-DEF UUID="DCE:2d277101-a6e8-4bb5-a1b6-3e69e728eacc">
+													<SHORT-NAME>CanIdValue</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">FullCAN messages:
+Contain the ID value of the message.
+Rx BasicCAN message:
+Specifies (together with the filter mask) the identifiers range that passes the hardware filter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>536870911</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanObjectId -->
+												<INTEGER-PARAM-DEF UUID="DCE:32e01247-eb63-499c-87f3-5c1a5b3b7bed">
+													<SHORT-NAME>CanObjectId</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Holds the handle ID of HRH or HTH. The value of this parameter is unique in a given CAN Driver, and it should start with 0 and continue without any gaps.
+
+The HRH and HTH Ids are defined under two different name-spaces. 
+
+Example: HRH0-0, HRH1-1, HTH0-2, HTH1-3</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>65535</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: CanObjectType -->
+												<ENUMERATION-PARAM-DEF UUID="DCE:65e11bd8-0d9c-4730-ac1b-5de8994c9e63">
+													<SHORT-NAME>CanObjectType</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Specifies if the HardwareObject is used as Transmit or as Receive object</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>RECEIVE</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:9aa30e63-416e-4f62-b45b-d315b73a81eb">
+															<SHORT-NAME>RECEIVE</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="DCE:e6f0c7ed-9a33-445e-9c16-d7c5d8e60dc1">
+															<SHORT-NAME>TRANSMIT</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<!--Individual Polling support-->
+												<BOOLEAN-PARAM-DEF UUID="184E0100-2F68-4147-AD00-D2B004DF9754">
+													<SHORT-NAME>CanHwProcessing</SHORT-NAME>
+													<LONG-NAME>
+														<L-4 L="EN">Enable Polling Processing</L-4>
+													</LONG-NAME>
+													<DESC>
+														<L-2 L="EN">Define this hardware object to be polled or not. Usage depends on CanIndividualProcessing switch.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<ENUMERATION-PARAM-DEF UUID="fee57d67-db8a-4b29-bbe5-0a3a6122edd4">
+													<SHORT-NAME>CanCommonCANNode</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Use this when Feature 'CanCommonCAN' is activated to select the physical channel for this hardware object.
+
+
+RESTRICTIONS: Feature 'CanCommonCAN' has to be activate. Only selectable for Rx Full CAN hardware objects (all other will be used on channel 'A')</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>A</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="881a0d96-5cdf-4c92-b1ad-7f76575dae85">
+															<SHORT-NAME>A</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="368db13f-7969-420a-a405-9fa1baeda40e">
+															<SHORT-NAME>B</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: CanControllerRef -->
+												<REFERENCE-PARAM-DEF UUID="DCE:29e0003a-2b36-43c9-8bac-ec36d9dd9b44">
+													<SHORT-NAME>CanControllerRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Reference to CAN Controller to which the HOH is associated to.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Can/CanConfigSet/CanController</DESTINATION-REF>
+												</REFERENCE-PARAM-DEF>
+												<!-- Reference Definition: CanFilterMaskRef -->
+												<REFERENCE-PARAM-DEF UUID="DCE:bb1ce084-a504-4c37-8d4e-5dd81f2c577f">
+													<SHORT-NAME>CanFilterMaskRef</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Not Used. 
+CanConfigSet/CanController/CanInitStructure/CanAcceptanceFilter used intead to set BasicCAN Filter
+
+Reference to the filter mask that is used for hardware filtering together with the CAN_ID_VALUE
+
+Different CanHardwareObjects with different CanIdTypes (STANDARD, MIXED,  EXTENDED)
+can share the same CanFilterMask (i.e., the CanFilterMaskRef parameters of  these
+CanHardwareObjects reference the very same CanFilterMask container). This  shall be allowed and must be
+supported by the configuration generators.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Can/CanConfigSet/CanController/CanFilterMask</DESTINATION-REF>
+												</REFERENCE-PARAM-DEF>
+											</REFERENCES>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: CanGeneral -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:bc13c9eb-2390-4830-a4e7-e1c7c490f51b">
+									<SHORT-NAME>CanGeneral</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container contains the parameters related each CAN Driver Unit.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: CanDevErrorDetection -->
+										<BOOLEAN-PARAM-DEF UUID="DCE:62753f68-1e17-4c08-94fd-670a49dffa2e">
+											<SHORT-NAME>CanDevErrorDetection</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Switches the Development Error Detection and Notification ON or OFF.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanHardwareCancellation -->
+										<BOOLEAN-PARAM-DEF UUID="DCE:e7d81368-59fb-49a4-b85f-65eb692c736f">
+											<SHORT-NAME>CanHardwareCancellation</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Transmit Cancellation</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies if hardware cancellation shall be supported.ON or OFF
+
+Support Hardware Transmit Cancelation. 
+Enable/disable the usage of transmit cancelation out of hardware mailboxes, so that the canceled message wont be send. (avoid internal priority inversion)
+
+RESTRICTIONS: 'CanHardwareCancellation' is only available, if hardware supports this by mean of cancel mailboxes and CanIf-Tx-buffer activated.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanIndex -->
+										<INTEGER-PARAM-DEF UUID="DCE:a3290f1f-ed2e-46b8-9303-9086fcb79adc">
+											<SHORT-NAME>CanIndex</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not Used. 
+Only one instance is supported now
+
+Specifies the InstanceId of this module instance. If only one instance is present it shall have the Id 0.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanLPduReceiveCalloutFunction -->
+										<FUNCTION-NAME-DEF UUID="a6f8eee9-ea69-48d3-926b-916f88770104">
+											<SHORT-NAME>CanLPduReceiveCalloutFunction</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not Used. (Use instead 'CanGenericPrecopy')
+This parameter defines the existence and the name of a callout function that is called after a successful 
+reception of a received CAN Rx L-PDU. If this parameter is omitted no callout shall take place.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</FUNCTION-NAME-DEF>
+										<!-- PARAMETER DEFINITION: CanMainFunctionBusoffPeriod -->
+										<FLOAT-PARAM-DEF UUID="DCE:97c13451-c408-4e8d-8252-330df79e1096">
+											<SHORT-NAME>CanMainFunctionBusoffPeriod</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not Used.
+This parameter describes the period for cyclic call to Can_MainFunction_Busoff. Unit is seconds.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanMainFunctionReadPeriod -->
+										<FLOAT-PARAM-DEF UUID="DCE:d9489661-5b22-4408-8a8d-7eee8ebc955e">
+											<SHORT-NAME>CanMainFunctionReadPeriod</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not Used.
+This parameter describes the period for cyclic call to Can_MainFunction_Read. Unit is seconds.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanMainFunctionWakeupPeriod -->
+										<FLOAT-PARAM-DEF UUID="DCE:6ca5dea1-c232-4c02-b248-2e8b684b8e9f">
+											<SHORT-NAME>CanMainFunctionWakeupPeriod</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not Used. 
+This parameter describes the period for cyclic call to Can_MainFunction_Wakeup. Unit is seconds.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanMainFunctionWritePeriod -->
+										<FLOAT-PARAM-DEF UUID="DCE:d788f9b2-f435-4001-a611-b80c0e9d3622">
+											<SHORT-NAME>CanMainFunctionWritePeriod</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not Used. 
+This parameter describes the period for cyclic call to Can_MainFunction_Write. Unit is seconds.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanMultiplexedTransmission -->
+										<BOOLEAN-PARAM-DEF UUID="DCE:92fd0527-a506-4b1c-9b65-fbed8a836d16">
+											<SHORT-NAME>CanMultiplexedTransmission</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies if multiplexed transmission shall be supported.ON or OFF
+
+RESTRICTIONS: 'CanMultiplexedTransmission' is only available, if hardware supports this by mean of multiple priorized mailboxes. </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanTimeoutDurationFactor -->
+										<INTEGER-PARAM-DEF UUID="DCE:65d76d51-b9eb-47f5-bc2a-0e3703356f9d">
+											<SHORT-NAME>CanTimeoutDurationFactor</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies the maximum number of loops for blocking function until a timeout is raised in short term wait loops. 
+This value is used for all hardware loop checks.
+
+RESTRICTIONS: 'CanTimeoutDurationFactor' is only available, if 'CanHardwareLoopCheck' is enabled.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>10000</DEFAULT-VALUE>
+											<MAX>4294967295</MAX>
+											<MIN>1</MIN>
+										</INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanVersionInfoApi -->
+										<BOOLEAN-PARAM-DEF UUID="DCE:6d6cff1d-d933-4548-96a5-e427d74b5230">
+											<SHORT-NAME>CanVersionInfoApi</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Switches the Can_GetVersionInfo() API ON or OFF.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanWakeupSupport -->
+										<BOOLEAN-PARAM-DEF UUID="DCE:12187624-c9a4-406f-ba61-949704676725">
+											<SHORT-NAME>CanWakeupSupport</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">CAN driver support for wakeup over CAN Bus.
+
+RESTRICTIONS: 'CanWakeupSupport' is only available when Hardware supports Wakeup over Bus.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:38471071-e8de-42ba-a3c8-747a20822b0a">
+											<SHORT-NAME>CanProdErrorDetection</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Switches the Production Error Detection and Notification ON or OFF.
+Use Dem_ReportError functionality to report production errors
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="DCE:dc2f80c5-e1aa-4bb2-a3e6-e37219300b7b">
+											<SHORT-NAME>CanMaxControllerTableSize</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The amount of all controllers. This is the table size in RAM to handle the controllers. Set it to a maximum value that will not been exceeded, for future use (adding controllers).
+
+RESTRICTIONS: 'CanMaxControllerTableSize' is only used within postbuild variant.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>8</DEFAULT-VALUE>
+											<MAX>255</MAX>
+											<MIN>1</MIN>
+										</INTEGER-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="DCE:a19186eb-9f44-47b0-8210-72435cbed1d0">
+											<SHORT-NAME>CanMaxNrOfTxObjects</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Max Number Of Tx Pdu</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">The amount of all Tx messages/PDU (normal Tx and FullCAN Tx) over all controllers. This is the table size in RAM to handle the mailboxes. Set it to a maximum value that will not been exceeded (you may like to set use more Tx messages at postbuild time than at link time).
+
+
+RESTRICTIONS: 'CanMaxNrOfTxObjects' is only used within postbuild variant.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>20</DEFAULT-VALUE>
+											<MAX>255</MAX>
+											<MIN>1</MIN>
+										</INTEGER-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="DCE:357f35e1-5974-47f7-8ab7-a20921a247a7">
+											<SHORT-NAME>CanModuleStartAdress</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Memory start address for postbuild data.
+
+RESTRICTIONS: 'CanModuleStartAdress' is only used within postbuild variant.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>4294967295</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:85cf1bcd-5b55-46b0-9823-b767d9b5aa3a">
+											<SHORT-NAME>CanGenericPrecopy</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Generic Precopy function activation.
+
+A generic precopy, common for all Rx events will be called</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:d897f1ee-55c0-46e6-902c-831305be7aef">
+											<SHORT-NAME>CanDevTimeoutDetect</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Report CAN_E_TIMEOUT DEM as DET 0x07 notification.
+
+RESTRICTIONS: 'CanDevTimeoutDetect' is only available, if 'CanDevErrorDetection' is enabled. </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="DCE:a6bb512b-1c74-4a81-8b3d-93d5f44115a9">
+											<SHORT-NAME>CanConfigurationId</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This ID provides the unique identifier of the post-build configurable configuration part. (Use this unique ID to verify correct version of configuration data)
+
+RESTRICTIONS: 'CanConfigurationId' is only used within postbuild variant.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>4294967295</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:5cdb74cd-6b2d-4503-95d6-91eeeda22977">
+											<SHORT-NAME>CanHardwareLoopCheck</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Under some conditions, the CAN driver has to wait for hard-ware dependent events. Waiting is done in a so-called 'Hardware Loop'. 
+To secure that this loop will not called infinite, only a given amount of loops will be performed and than the loop is breaked. Activating this feature you have to define the Timeout Du-ration as the loop count where the loop will be breaked and the code just continue and a DEM notification appear.
+
+RESTRICTIONS: 'CanHardwareLoopCheck' is only available, if hardware supports/needs this. </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:1371566a-5be4-43a1-9276-beffc578801a">
+											<SHORT-NAME>CanMemMapping</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not Used. Mem Mapping for generated data</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="9ed0f68d-38cf-4853-9584-507c5d3d728c">
+											<SHORT-NAME>CanSecureTempBuffer</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Using temporary Rx buffer in hw-mailbox object to secure buffer
+
+RESTRICTIONS: 'CanSecureTempBuffer' is only available, if hardware supports a secure memory section for rx data buffering. </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="DCE:8fbf83a1-4755-492a-ab77-02927db3bfc4">
+											<SHORT-NAME>CanBaudrateQuartzFrequency</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Quartz frequency in kHertz used for baudrate calculation</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</INTEGER-PARAM-DEF>
+										<!--CanUserConfigFile-->
+										<STRING-PARAM-DEF UUID="4a020c41-1983-4517-9286-a9b4f6701a8f">
+											<SHORT-NAME>CanUserConfigFile</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Path of User confiuration file to setup specials see Technical Reference of the CAN driver</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</STRING-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:c66d6b40-b11f-4936-8e3e-25185471ccd3">
+											<SHORT-NAME>CanRxFullCANSupport</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Use this feature when your configuration include Rx FullCAN mailboxes.
+Deactivate it to save ROM and runtime consumption.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:870721de-f13a-4853-95d4-3b2e86c9e5f1">
+											<SHORT-NAME>CanTxFullCANSupport</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Use this feature when your configuration include Tx FullCAN mailboxes.
+Deactivate it to save ROM and runtime consumption.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:475d972a-f671-401a-b99c-66e77119c42d">
+											<SHORT-NAME>CanRxBasicCANSupport</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Use this feature when your configuration include Rx BasicCAN mailboxes.
+Deactivate it to save ROM and runtime consumption.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:bc60f102-994d-417d-88e0-dbeb1e569393">
+											<SHORT-NAME>CanUseNestedCANInterrupts</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">CAN ISRs from different controllers can interrupt each other (only with higher priority). deactivate to reduce runtime consumption.
+
+RESTRICTIONS: 'CanUseNestedCANInterrupts' is only available, if hardware supports this by mean higher prior interruts can be configured to interrupt CAN interrupts. </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:96638781-4921-48da-a67f-6f3601a56eb6">
+											<SHORT-NAME>CanHardwareCancelByAppl</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Hardware Loop check cancelation timeout observation done by application if activated. (Handling of Hardware Loop Check done by application - Timeout duration will be ignored)
+ApplCanTimerStart()
+ApplCanTimerLoop()
+ApplCanTimerEnd()
+Callbacks has to be implemented in application. 
+
+RESTRICTIONS: 'CanHardwareCancelByAppl' is only available, if 'CanHardwareLoopCheck' is enabled. 
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<!--Individual Polling support-->
+										<BOOLEAN-PARAM-DEF UUID="EFA2D3AA-FB97-4063-B0E1-F876406AE8EF">
+											<SHORT-NAME>CanIndividualProcessing</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Activate this when you like to configure each Rx and Tx mailbox object separate (deactivate to reduce runtime and memory consumption).
+
+RESTRICTIONS: 'CanIndividualProcessing' influences the settings of 'CanRxProcessing' and 'CanTxProcessing'. It is only available, if hardware supports/needs this and Highend licence is given.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="4ca3e841-2998-4298-be86-a8969eaa1e57">
+											<SHORT-NAME>CanPowerDownModeSelect</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The Sleep Mode can be achieved by either a global power down or a local power down of the DCAN module. The global mechanism is controlled by the PCR module while the local one is controlled within the DCAN registers.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>Local</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="f8338bf6-b650-4cb7-a50e-eab4e763853d">
+													<SHORT-NAME>Local</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="618fd7e1-f518-451e-8e39-bb20317a67c6">
+													<SHORT-NAME>Global</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="24df408a-2dad-4a90-b6f3-cd22975163d4">
+											<SHORT-NAME>CanGenericConfirmation</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Generic Confirmation function activation.
+
+A generic confirmation, common for all Tx events will be called</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="478c6bef-a385-4b69-94a8-69f8f04c10cf">
+											<SHORT-NAME>CanRxQueue</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Rx Queue activation.
+All Rx events will be queued (id, dlc and data) and processed when calling Can_MainFunction_Read()
+
+RESTRICTIONS: 'CanMultipleBasicCANObjects' is only available, if hardware supports/needs this and Highend licence is given.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="f205217a-9c8f-4ed9-9bf4-3b170d295c0b">
+											<SHORT-NAME>CanSupportMixedID</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Force mixed ID handling while compile time to be free af-terwards using standard, extended or mixed IDs.
+No more ID type optimization!
+
+RESTRICTIONS: 'CanSupportMixedID' is only available, if hardware supports mixed ID handling. And it is not modify-able when mixed ID used in database.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="ca19cd04-a07d-45f6-a063-fa275389d7fb">
+											<SHORT-NAME>CanRxQueueSize</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Size of the Rx Queue. how many messages will be buffered. If no Can_Mainfunction_Read() is called there will be overruns after receive this amount of messages.
+
+RESTRICTIONS: 'CanRxQueueSize' is only available, if 'CanRxQueue' is enabled. </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>10</DEFAULT-VALUE>
+											<MAX>255</MAX>
+											<MIN>1</MIN>
+										</INTEGER-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="d6a96653-c1f7-498c-84ad-57cd05704ae9">
+											<SHORT-NAME>CanMultipleBasicCANObjects</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Activate this when you like to optimized Basic CAN reception by use more than one Filter.
+
+RESTRICTIONS: 'CanMultipleBasicCANObjects' is only available, if hardware supports/needs this and Highend licence is given.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="1c07249e-1517-43e3-bb1f-4f937728df1b">
+											<SHORT-NAME>CanHardwareHandleType</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Depend on the Platform, there is the need to use more than 8bit 'hardware mailbox handles' (defined by AutoSar 3.x). So it is possible to use 8bit or 16bit types (defined by AutoSar 4.x).
+RESTRICTIONS: 'CanHardwareHandleType' need to be set to 8bit when CanInterface without this support is used (Vector Interface &gt;= 4.12 support 16bit).
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>UINT8</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="0c1fe86c-fc3f-4314-b594-d4feb060c8db">
+													<SHORT-NAME>UINT8</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="2c603722-cbd2-4d65-a60e-80ba6e96db69">
+													<SHORT-NAME>UINT16</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="708a87d3-e783-48db-b162-943470b364b2">
+											<SHORT-NAME>CanDynamicFullCANTxID</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">FullCAN Tx ID will be used dynamic (inside Can_Write()). If this option is activated FullCAN Tx IDs will be written for each Can_Write() call. Otherwise this ID will be only written in Can_InitController(). This will save runtime.
+'CanDynamicFullCANTxID' does only work when FullCAN Tx are used.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="e435c077-84bc-4734-8cf1-8288d87ddbf5">
+											<SHORT-NAME>CanOptimizeOneController</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Optimize runtime for One Controller system.
+RESTRICTIONS: 'CanOptimizeOneController' does only work when one controller is used, and limited to one controller in case of postbuild (CanMaxControllerTableSize).
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="446d419a-b43e-4337-ac64-d4ef5d1cf85e">
+											<SHORT-NAME>CanErrata22Iterations</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This is the number of iterations for the dummy "while" loop implemented due to DCAN#22 erratum. The user has to calibrate this value according to the CPU and CAN clock.
+In case that DCAN#22 erratum workaround is disabled (C_DISABLE_DCAN_ISSUE22_WORKAROUND is defined) then this value becomes irrelevant for the code.
+
+RESTRICTIONS: According to Texas Intruments the run-time corresponding to this dummy "while" loop must be at least 6 CAN clock input clocks.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>255</DEFAULT-VALUE>
+											<MAX>65535</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="95abeb80-0aa4-4dc5-bc81-44037637ca4c">
+											<SHORT-NAME>CanInterruptCategory</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Specifies the type of Interrupt Function.
+Category 1: Interrupt Function has to be added to the interrupt vector table.
+Category 2: Interrupt Function is defined with ISR() define.
+void Func(void): Interrupt Function is defined as void Func(void) function.
+
+RESTRICTIONS: 'Category 2' is only relevant when AutoSar or OSEK OS is used otherwise the Interrupt will be Category 1.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>CATEGORY2</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="f478f164-d2aa-4ee3-8ba3-a40f5ca69c9d">
+													<SHORT-NAME>CATEGORY2</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="a71b6984-9965-4dbc-8c2b-1f7b0e4ff106">
+													<SHORT-NAME>CATEGORY1</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="2c955ea0-f258-4fe7-b987-3374bba3f87e">
+													<SHORT-NAME>VOIDFUNCVOID</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="405fbc94-7778-476f-953c-07bfd05bbb6f">
+											<SHORT-NAME>CanGetStatus</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Support Can_GetStatus() API that return the hardware states:
+
+CAN_STATUS_STOP, CAN_STATUS_INIT, CAN_STATUS_INCONSISTENT, CAN_STATUS_WARNING, CAN_STATUS_PASSIVE, CAN_STATUS_BUSOFF, CAN_STATUS_SLEEP
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="619f5535-4732-4c43-9182-0202cf2bf129">
+											<SHORT-NAME>CanInterruptLock</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Disable and Restore Can Interrupt by CAN Driver or Application or CAN Driver and Application. Reason may be, that the CAN driver should not access the Interrupt controller for CAN interrupts or there are other restrictions (special security level) or Application has to care about additional Interrupts like Wakeup.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>DRIVER</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="f4c01b3a-15a8-4dfe-88ce-af43465326cf">
+													<SHORT-NAME>DRIVER</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Driver lock Interrupts</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="1fcd9e3c-fcd3-4ce5-94d2-c097a641821b">
+													<SHORT-NAME>APPL</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Application lock Interrupts</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="28e4f1a0-49f9-4dc0-810c-d9e6a0e91fb4">
+													<SHORT-NAME>BOTH</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Driver lock Interrupts and Notification to Appl</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="0a109e08-cc44-438c-9824-019c6d75036d">
+											<SHORT-NAME>CanPnEnable</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Partial Network Enable</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">Activate this when you like to support a parital network that will be woken up by special NM message. This feature have to be enabled if one of the controllers will wakeup by partial network transceiver.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="8acbbbde-7fc4-4da2-82e4-670cb2dfcbe6">
+											<SHORT-NAME>CanRamCheck</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">MICROSAR PARAMETER DEFINITION: 'CanRamCheck'
+
+Activate RAM check for Rx and Tx mailboxes and call Application notification "ApplCanCorruptMailbox" and "ApplCanMemCheckFailed" in case of RAM is corrupted.
+Controller will be deactivated and no communication will be processed.
+
+None:   Feature deactive
+Active:  Feature active and "ApplCanMemCheckFailed" will be called
+Mailbox Notification: Feature active "ApplCanMemCheckFailed" and "ApplCanCorruptMailbox" will be called</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>None</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="f6f6a2a5-79f8-41d1-af03-8cf0cc878dd6">
+													<SHORT-NAME>None</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="22d6161f-8aae-49b1-9c71-687a54e22d52">
+													<SHORT-NAME>Active</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="8ffbcc5d-a4b2-4622-8d34-026ff1d8930d">
+													<SHORT-NAME>MailboxNotification</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="1bd75f0d-d7f0-474b-8702-768a8502e079">
+											<SHORT-NAME>CanOverrunNotification</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Deactivate Rx Overrun Notification by select 'None' or activate it and call 'DET' or 'Application' in case of overrun occur.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>None</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="ebbb89e0-03b6-44d5-afd8-2fd4d803db70">
+													<SHORT-NAME>None</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="2a43ea1e-de0b-44b8-9219-eba27af3c9f7">
+													<SHORT-NAME>DET</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="2bd0425d-1610-46d7-9607-8b7be70b2e34">
+													<SHORT-NAME>Application</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="a7d97844-4d11-4d55-91e6-0bf78e2ba185">
+											<SHORT-NAME>CanReinitStart</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">ReInitialization While Start Transition</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">MICROSAR PARAMETER DEFINITION: 'CanReinitStart'
+
+process a full controller reinitialization at start transition (include hardware Rx and Tx mailboxes and control registers)
+This cause significant runtime.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="60855b80-2ac6-46e1-9f66-5711d508b5c7">
+											<SHORT-NAME>CanGenericPreTransmit</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">MICROSAR PARAMETER DEFINITION: 'CanGenericPreTransmit'
+
+A generic pretransmit, common for all Tx messages will be called when this checkbox is enabled. Use this to change data or abort transmission right before the message will be send.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: CanIdenticalIdCancellation -->
+										<BOOLEAN-PARAM-DEF UUID="656d2182-cf4d-4495-bcd2-b191340f82a2">
+											<SHORT-NAME>CanIdenticalIdCancellation</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Enables/disables cancellation of pending PDUs with identical ID.
+
+'Hardware Transmit Cancelation" also cancel messages with same identifier  (newer data will be send) out of hardware mailboxes.
+otherwise
+only lower prior identifiers will be cancelled. (older data will be send)
+
+RESTRICTIONS: 'CanIdenticalIdCancellation' is only used when CAN Interface parameter 'CanIfTransmitCancellation' is set.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="abeaa552-6957-4ec8-a542-f54cb483227f">
+											<SHORT-NAME>CanAmdRuntimeMeasurement</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Activate Amd Runtime Measurement. By including the AmdRtm.h file in the CAN driver source file</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Reference Definition: CanMainFunctionReadPeriodRef -->
+										<REFERENCE-PARAM-DEF UUID="070c9e25-1dd9-4045-8c0a-e498c33bb499">
+											<SHORT-NAME>CanMainFunctionReadPeriodRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not Used.
+Reference to CAN Hardware Object which shall be polled with the configured CanMainFunctionReadPeriod. This reference shall only be configurable if more than one period is configured via CanMainFunctionReadPeriod.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Can/CanConfigSet/CanHardwareObject</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+										<!-- Reference Definition: CanMainFunctionWritePeriodRef -->
+										<REFERENCE-PARAM-DEF UUID="f24c96bc-46ec-4af4-b3de-06a79fa9e227">
+											<SHORT-NAME>CanMainFunctionWritePeriodRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Not Used.
+Reference to CAN Hardware Object which shall be polled with the configured CanMainFunctionWritePeriod. This reference shall only be configurable if more than one period is configured via CanMainFunctionWritePeriod.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Can/CanConfigSet/CanHardwareObject</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: VectorCommonData-->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:1b9f9d5a-60ca-4805-9cde-19ed4dc24bd7">
+									<SHORT-NAME>VectorCommonData</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<STRING-PARAM-DEF UUID="DCE:b8e4bc67-ff29-4952-84f4-e045795dba21">
+											<SHORT-NAME>BswmdVersion</SHORT-NAME>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<CONFIGURATION-CLASS-AFFECTION>
+												<AFFECTION-KIND>NO-AFFECT</AFFECTION-KIND>
+											</CONFIGURATION-CLASS-AFFECTION>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>2.12.00</DEFAULT-VALUE>
+										</STRING-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</CONTAINERS>
+						</MODULE-DEF>
+						<MODULE-CONFIGURATION UUID="f0aa54e5-467b-4758-acb6-c818427bdee9">
+							<SHORT-NAME>Can_Pre</SHORT-NAME>
+							<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Can_Tms470Dcan/Can</DEFINITION-REF>
+							<CONTAINERS></CONTAINERS>
+						</MODULE-CONFIGURATION>
+						<MODULE-CONFIGURATION UUID="e6019519-9895-4a1e-934f-432da942ec95">
+							<SHORT-NAME>Can_Rec</SHORT-NAME>
+							<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Can_Tms470Dcan/Can</DEFINITION-REF>
+							<CONTAINERS></CONTAINERS>
+						</MODULE-CONFIGURATION>
+					</ELEMENTS>
+				</AR-PACKAGE>
+			</SUB-PACKAGES>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

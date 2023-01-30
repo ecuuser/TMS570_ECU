@@ -1,0 +1,403 @@
+<?xml version="1.0" ?>
+<config ver="1">
+	<specific>
+		<service _id="00F0" address="NvMP_Rte_TrqCanc_CogTrqCal" block="Rte_NvmBlock_TrqCanc_CogTrqCal" length1="0" length2="0" length3="0" name="NvMP_Rte_TrqCanc_CogTrqCal" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="00F1" address="NvMP_Rte_TrqCanc_CogTrqRplComp" block="Rte_NvmBlock_TrqCanc_CogTrqRplComp" length1="0" length2="0" length3="0" name="NvMP_Rte_TrqCanc_CogTrqRplComp" sizeof="Y" type="XCP" writeable="Y"/>
+	</specific>
+	<active>
+		<service _id="0001"/>
+		<service _id="0002"/>
+		<service _id="0007"/>
+		<service _id="0008"/>
+		<service _id="000A"/>
+		<service _id="000B"/>
+		<service _id="0010"/>
+		<service _id="0011"/>
+		<service _id="0012"/>
+		<service _id="0013"/>
+		<service _id="0018"/>
+		<service _id="0019"/>
+		<service _id="001F"/>
+		<service _id="0020"/>
+		<service _id="0021"/>
+		<service _id="0022"/>
+		<service _id="0027"/>
+		<service _id="0028"/>
+		<service _id="0029"/>
+		<service _id="0030"/>
+		<service _id="0039"/>
+		<service _id="003A"/>
+		<service _id="0046"/>
+		<service _id="0047"/>
+		<service _id="0048"/>
+		<service _id="0049"/>
+		<service _id="00FF"/>
+		<service _id="010E"/>
+		<service _id="010F"/>
+		<service _id="1160"/>
+		<service _id="F000"/>
+		<service _id="F001"/>
+		<service _id="F003"/>
+		<service _id="F004"/>
+		<service _id="F005"/>
+		<service _id="F008"/>
+		<service _id="F009"/>
+		<service _id="F0FF"/>
+		<service _id="FD01"/>
+		<service _id="FD02"/>
+		<service _id="FD07"/>
+		<service _id="FD0D"/>
+		<service _id="FD0E"/>
+		<service _id="FD10"/>
+		<service _id="FD11"/>
+		<service _id="FD12"/>
+		<service _id="FD13"/>
+		<service _id="FD14"/>
+		<service _id="FD17"/>
+		<service _id="FD19"/>
+		<service _id="FD1A"/>
+		<service _id="FD1B"/>
+		<service _id="FD1C"/>
+		<service _id="FD1E"/>
+		<service _id="FD20"/>
+		<service _id="FD21"/>
+		<service _id="FD23"/>
+		<service _id="FD25"/>
+		<service _id="FD26"/>
+		<service _id="FD27"/>
+		<service _id="FD29"/>
+		<service _id="FD30"/>
+		<service _id="FD31"/>
+		<service _id="FDA1"/>
+		<service _id="FDA2"/>
+		<service _id="FDA3"/>
+		<service _id="FDAC"/>
+		<service _id="FDAD"/>
+		<service _id="FDAE"/>
+		<service _id="FDAF"/>
+		<service _id="FDB0"/>
+		<service _id="FDB1"/>
+		<service _id="FDB2"/>
+		<service _id="FDB3"/>
+		<service _id="FDB4"/>
+		<service _id="FDB5"/>
+		<service _id="FDB6"/>
+		<service _id="FDB7"/>
+		<service _id="00F0"/>
+		<service _id="00F1"/>
+	</active>
+	<options>
+		<service _id="1160">
+			<option name="CM_StaMd_SCom_EcuReset" value="StaMd_SCom_EcuReset" viewed="True"/>
+		</service>
+		<service _id="F000">
+			<option name="D_F000NMEC_CNT_LGC" value="True" viewed="True"/>
+			<option name="D_F000IGNCNTR_CNT_LGC" value="True" viewed="True"/>
+			<option name="D_F000LTLVEHSPDCNTR_CNT_LGC" value="False" viewed="True"/>
+			<option name="D_F000STOREDLASTPOSINVALD_CNT_LGC" value="True" viewed="True"/>
+			<option name="D_F000TACHGAIN_CNT_LGC" value="False" viewed="True"/>
+			<option name="D_F000SNSRLESSSTOREDLASTPOSINVALID_CNT_LGC" value="False" viewed="True"/>
+			<option name="D_F000LEARNEDEOT_CNT_LGC" value="True" viewed="True"/>
+			<option name="D_F000ACTIVEPULLCOMP_CNT_LGC" value="True" viewed="True"/>
+			<option name="D_F000NXTRDTCTBL_CNT_LGC" value="True" viewed="True"/>
+			<option name="D_F000NXTRDTCBLACKBOX_CNT_LGC" value="True" viewed="True"/>
+			<option name="D_F000CUSTDTCTBL_CNT_LGC" value="True" viewed="True"/>
+			<option name="D_F000FRICTIONDETECTPARAM_CNT_LGC" value="True" viewed="True"/>
+			<option name="D_F000WIRPARAM_CNT_LGC" value="False" viewed="True"/>
+			<option name="D_F000INITLRNDTBLS_CNT_LGC" value="True" viewed="True"/>
+			<option name="D_F000TRANSOVDATA_CNT_LGC" value="True" viewed="True"/>
+			<option name="CM_LTLVehSpdCntr_Scom_ResetToZero" value="" viewed="True"/>
+			<option name="CM_Reset_LrnEOT_Scom_ResetEOT" value="LrnEOT_Scom_ResetEOT" viewed="True"/>
+			<option name="CM_Reset_ActivePull_SCom_SetLTComp" value="ActivePull_SCom_SetLTComp" viewed="True"/>
+			<option name="CM_Reset_ClearNTCs_SComm" value="DiagMgr_SCom_ResetNTCStatus" viewed="True"/>
+			<option name="CM_DiagMgr_SCom_ClearBlackBox" value="DiagMgr_SCom_ClearBlackBox" viewed="True"/>
+			<option name="CM_Reset_ClearCustDTCs_SComm" value="Dem_ClearDTC" viewed="True"/>
+			<option name="CM_AvgFricLrn_SCom_ResetToZero" value="AvgFricLrn_SCom_ResetToZero" viewed="True"/>
+			<option name="CM_AvgFricLrn_SCom_InitLearnedTables" value="AvgFricLrn_SCom_InitLearnedTables" viewed="True"/>
+			<option name="CM_BatteryVoltage_SCom_ClearTransOvData" value="BatteryVoltage_SCom_ClearTransOvData" viewed="True"/>
+		</service>
+		<service _id="F001">
+			<option name="CM_ClearNTCs_SComm" value="DiagMgr_SCom_ResetNTCStatus" viewed="True"/>
+			<option name="CM_DiagMgr_SCom_ClearBlackBox" value="DiagMgr_SCom_ClearBlackBox" viewed="True"/>
+			<option name="CM_ClearCustDTCs_SComm" value="Dem_ClearDTC" viewed="True"/>
+		</service>
+		<service _id="F002">
+			<option name="CM_HwTrq_SCom_ClrHwTrqTrim" value="" viewed="False"/>
+			<option name="CM_HwTrq_SCom_ClrHwTrqScale" value="" viewed="False"/>
+			<option name="CM_HwTrq_SCom_SetHwTrqTrim" value="" viewed="False"/>
+		</service>
+		<service _id="F003">
+			<option name="D_F003CLRTRIMNORET_CNT_LGC" value="True" viewed="True"/>
+			<option name="CM_HwPos_SCom_ClrHwPosTrim" value="NtWrapC_DigColPs_SCom_CustClrTrim" viewed="True"/>
+			<option name="CM_HwPos_SCom_SetHwPosTrim()" value="" viewed="True"/>
+			<option name="D_F003DISABLELRNTRIM_CNT_LGC" value="True" viewed="True"/>
+			<option name="CM_HwPos_SCom_LrnHwPosTrim" value="" viewed="True"/>
+			<option name="D_F003ENABLERELPOSTRIM_CNT_LGC" value="False" viewed="True"/>
+			<option name="CM_AbsHwPos_SCom_SetZeroRev" value="" viewed="True"/>
+		</service>
+		<service _id="F004">
+			<option name="D_SENTBASEDSENSOR_CNT_LGC" value="True" viewed="True"/>
+			<option name="CM_DigHwTrq_SCom_ClrHwTrqTrim" value="NtWrapC_DigHwTrqSENT_SCom_ClrTrqTrim" viewed="True"/>
+			<option name="CM_DigHwTrq_SCom_ClrHwTrqScale" value="" viewed="True"/>
+			<option name="CM_DigHwTrq_SCom_SetHwTrqTrim" value="NtWrapC_DigHwTrqSENT_SCom_SetTrqTrim" viewed="True"/>
+		</service>
+		<service _id="F005">
+			<option name="CM_DiagMgr_SCom_GetNTCInfo" value="DiagMgr_SCom_GetNTCInfo" viewed="True"/>
+		</service>
+		<service _id="F006">
+			<option name="CM_TcFlshPrg_Scom_StartPrg" value="" viewed="False"/>
+			<option name="CM_TcFlshPrg_Scom_FlshPrgStatus" value="" viewed="False"/>
+		</service>
+		<service _id="F007">
+			<option name="CM_AbsHwPos_Scom_ClearCenterPosition" value="" viewed="False"/>
+			<option name="CM_AbsHwPos_Scom_ClearRacktoVehCntrOffset" value="" viewed="False"/>
+			<option name="CM_LrnEOT_Scom_ResetEOT" value="" viewed="False"/>
+			<option name="CM_LrnEOT_Scom_ResetRckCntrPrf" value="" viewed="False"/>
+			<option name="CM_TurnsCounter_SCom_ResetTC" value="" viewed="False"/>
+			<option name="CM_AbsHwPos_Scom_SetCenterPosition" value="" viewed="False"/>
+		</service>
+		<service _id="F008">
+			<option name="CM_CmMtrCurr_SCom_CalGain" value="NtWrapC_CmMtrCurr_SCom_CalGain" viewed="True"/>
+		</service>
+		<service _id="F009">
+			<option name="CM_CmMtrCurr_SCom_MtrCurrOffReadStatus" value="CmMtrCurr_SCom_MtrCurrOffReadStatus" viewed="True"/>
+			<option name="CM_CmMtrCurr_SCom_CalOffset" value="NtWrapC_CmMtrCurr_SCom_CalOffset" viewed="True"/>
+			<option name="MtrCurrOffProcessFlag" value="boolean" viewed="True"/>
+			<option name="D_RIDF009SVCDFTBITSSET_CNT_U16" value="301" viewed="True"/>
+			<option name="D_RIDF009SVCDFTBITSCLR_CNT_U16" value="(~D_RIDF009SVCDFTBITSSET_CNT_U16)" viewed="True"/>
+		</service>
+		<service _id="F00C">
+			<option name="CM_TcEOLCals_Scom_ClearTcEOLCals" value="" viewed="False"/>
+		</service>
+		<service _id="F00D">
+			<option name="CM_MtrCurr_SCom_CalGain" value="" viewed="False"/>
+		</service>
+		<service _id="F00E">
+			<option name="CM_MtrCurr_SCom_CalOffset" value="" viewed="False"/>
+			<option name="D_RIDF00ESVCDFTBITSSET_CNT_U16" value="301.0" viewed="False"/>
+		</service>
+		<service _id="F00F">
+			<option name="CM_k_SComTrqPosPol_Cnt_s08" value="k_SComTrqPosPol_Cnt_s08" viewed="False"/>
+			<option name="CM_Rte_AbsHwPos_SrlComHwPos_HwDeg_f32" value="" viewed="False"/>
+			<option name="CM_HandwheelAuthority_Uls_f32" value="" viewed="False"/>
+			<option name="CM_VehSpdValid_Cnt_lgc" value="" viewed="False"/>
+			<option name="CM_GenPosTraj_SCom_SetInputParam" value="" viewed="False"/>
+		</service>
+		<service _id="F0FF">
+			<option name="CM_EnableTestMode_Cnt_lgc" value="EnableTestMode_Cnt_lgc" viewed="True"/>
+			<option name="CM_ProcessF0FF" value="TWrapC_ProcessF0FF" viewed="True"/>
+			<option name="CM_WdgM_CheckpointReached" value="WdgM_CheckpointReached" viewed="True"/>
+			<option name="CM_DisableSysTickInterrupt" value="DisableSysTickInterrupt" viewed="True"/>
+			<option name="CM_EnableSysTickInterrupt" value="EnableSysTickInterrupt" viewed="True"/>
+			<option name="CM_GetAlarm" value="GetAlarm" viewed="True"/>
+			<option name="CM_CancelAlarm" value="CancelAlarm" viewed="True"/>
+			<option name="CM_SetRelAlarm" value="SetRelAlarm" viewed="True"/>
+		</service>
+		<service _id="FD01">
+			<option name="CM_SwRelNum_Cnt_u08" value="k_SWRelNum_Cnt_u8" viewed="True"/>
+			<option name="CM_CalRelNum_Cnt_u08" value="k_CalRelNum_Cnt_u8" viewed="True"/>
+			<option name="CM_BootRelNum_Cnt_u08" value="Lnk_BootRelNum_Addr" viewed="True"/>
+		</service>
+		<service _id="FD02">
+			<option name="CM_SrlComSvcDft_Cnt_b32" value="CDD_EOLSrlComSvcDft_Cnt_G_b32" viewed="True"/>
+		</service>
+		<service _id="FD03">
+			<option name="CM_HwPosRel_SCom_ReadHwPosCals" value="" viewed="False"/>
+			<option name="CM_HwPosRel_SCom_SetHwPosCals" value="" viewed="False"/>
+		</service>
+		<service _id="FD04">
+			<option name="CM_MtrPosCal_DataType" value="MtrPosCal_DataType" viewed="False"/>
+			<option name="CM_MtrPos_SCom_SetEOLMtrCals" value="" viewed="False"/>
+			<option name="CM_MtrPos_SCom_ReadEOLMtrCals" value="" viewed="False"/>
+			<option name="D_HARTBLSIZE_CNT_U16" value="144.0" viewed="False"/>
+		</service>
+		<service _id="FD05">
+			<option name="CM_HwTrq_SCom_ManualSetHwTrqTrim" value="" viewed="False"/>
+			<option name="CM_HwTrq_SCom_ReadHwTrqTrim" value="" viewed="False"/>
+		</service>
+		<service _id="FD07">
+			<option name="D_FD07_USE8BITPOLARITY_CNT_LGC" value="True" viewed="True"/>
+			<option name="CM_Polarity_SCom_SetPolarity" value="NtWrapC_Polarity_SCom_SetPolarity" viewed="True"/>
+			<option name="CM_Polarity_SCom_ReadPolarity" value="Polarity_SCom_ReadPolarity" viewed="True"/>
+		</service>
+		<service _id="FD08">
+			<option name="CM_HwTrq_SCom_SetHwTrqScale" value="" viewed="False"/>
+			<option name="CM_HwTrq_SCom_ReadHwTrqScale" value="" viewed="False"/>
+		</service>
+		<service _id="FD09">
+			<option name="CM_SCom_KeIntgSVParam_Set" value="" viewed="False"/>
+			<option name="CM_SCom_KeIntgSVParam_Get" value="" viewed="False"/>
+		</service>
+		<service _id="FD0A">
+			<option name="CM_SCom_RIntgSVParam_Set" value="" viewed="False"/>
+			<option name="CM_SCom_RIntgSVParam_Get" value="" viewed="False"/>
+		</service>
+		<service _id="FD0B">
+			<option name="CM_WIRSel_Cnt_u16" value="" viewed="False"/>
+		</service>
+		<service _id="FD0C">
+			<option name="CM_SCom_EOLNomMtrParam_Set" value="" viewed="False"/>
+			<option name="CM_SCom_EOLNomMtrParam_Get" value="" viewed="False"/>
+			<option name="D_PIDFD0CIGNORELPARAM_CNT_LGC" value="True" viewed="False"/>
+		</service>
+		<service _id="FD0D">
+			<option name="CM_MtrTrqLmt_SCom_ManualTrqCmd" value="NtWrapC_AstLmt_Scom_ManualTrqCmd" viewed="True"/>
+		</service>
+		<service _id="FD0E">
+			<option name="CM_MtrTrqCmd_MtrNm_f32" value="Rte_CtrldDisShtdn_CntDisMtrTrqCmdMRF_MtrNm_f32" viewed="True"/>
+			<option name="CM_CumMtrPos_Deg_f32" value="Rte_DigMSB_CumMechMtrPosMRF_Deg_f32" viewed="True"/>
+		</service>
+		<service _id="FD11">
+			<option name="CM_DFTASSTTBL_CNT_LGC" value="CDD_DftAsstTbl_Cnt_G_lgc" viewed="True"/>
+			<option name="CM_DWNLDASSTGAIN_ULS_F32" value="CDD_DwnldAsstGain_Uls_G_f32" viewed="True"/>
+		</service>
+		<service _id="FD12">
+			<option name="CM_PhaseCurrCal_DataType" value="PhaseCurrCal_DataType" viewed="True"/>
+			<option name="CM_CmMtrCurr_SCom_SetMtrCurrCals" value="NtWrapC_CmMtrCurr_SCom_SetMtrCurrCals" viewed="True"/>
+			<option name="CM_CmMtrCurr_SCom_ReadMtrCurrCals" value="CmMtrCurr_SCom_ReadMtrCurrCals" viewed="True"/>
+			<option name="D_PIDFD12IGNOREOFFSETDIFF_CNT_LGC" value="False" viewed="True"/>
+			<option name="D_PIDFD12IGNOREVCALCMD_CNT_LGC" value="False" viewed="True"/>
+			<option name="D_PIDFD1216BITDATASTRG_CNT_LGC" value="False" viewed="True"/>
+		</service>
+		<service _id="FD13">
+			<option name="CM_DiagMgr_SCom_ReadStrgArray" value="DiagMgr_SCom_ReadStrgArray" viewed="True"/>
+			<option name="CM_DTCMaxStorage_Cnt_u16" value="15u" viewed="True"/>
+			<option name="CM_NTCStrgArray_Type" value="NTCStrgArray" viewed="True"/>
+			<option name="CM_DiagMgr_SCom_GetNTCInfo" value="DiagMgr_SCom_GetNTCInfo" viewed="True"/>
+		</service>
+		<service _id="FD14">
+			<option name="CM_AbsHwPos_SCom_VehicleSystemStatus(ptr)" value="*(ptr) = FPM_FloatToFixed_m(Rte_AbsHwPos_HandwheelPosition_HwDeg_f32, s11p4_T)" viewed="True"/>
+		</service>
+		<service _id="FD15">
+			<option name="CM_DigHwTrq_SCom_ManualSetHwTrqTrim" value="" viewed="False"/>
+			<option name="CM_DigHwTrq_SCom_ReadHwTrqTrim" value="" viewed="False"/>
+			<option name="CM_HwTrqTrim_Datatype" value="CM_HwTrqTrim_Datatype" viewed="False"/>
+		</service>
+		<service _id="FD16">
+			<option name="CM_DigHwTrq_SCom_SetHwTrqScale" value="" viewed="False"/>
+			<option name="DigHwTrq_SCom_ReadHwTrqScale" value="" viewed="False"/>
+		</service>
+		<service _id="FD19">
+			<option name="CM_NxtrMEC_Cnt_G_u8" value="Nvm_NMEC_Cnt_u8" viewed="True"/>
+		</service>
+		<service _id="FD1A">
+			<option name="CM_Rte_ModeType_StaMd_Mode" value="Rte_ModeType_StaMd_Mode" viewed="True"/>
+			<option name="CM_SystemState_Cnt_enum" value="Rte_ModeMachine_StaMd_SystemState_Mode" viewed="True"/>
+		</service>
+		<service _id="FD1B">
+			<option name="CM_ManualVehSpd_SCom" value="SrlComInput_SCom_ManualVehSpd" viewed="True"/>
+		</service>
+		<service _id="FD1D">
+			<option name="CM_Return_SCom_SetEOLRtnRange" value="" viewed="False"/>
+			<option name="CM_Return_SCom_GetEOLRtnRange" value="" viewed="False"/>
+		</service>
+		<service _id="FD1E">
+			<option name="CM_MfgDiagInhibit_Cnt_lgc" value="MfgDiagInhibit_Uls_G_lgc" viewed="True"/>
+		</service>
+		<service _id="FD1F">
+			<option name="CM_AbsHwPosScom_Scom_HwPosSrvSetToZero" value="" viewed="False"/>
+			<option name="CM_AbsHwPosScom_Scom_HwPosSrvRead" value="" viewed="False"/>
+		</service>
+		<service _id="FD20">
+			<option name="CM_BatteryVoltage_SCom_ReadTransOvData" value="BatteryVoltage_SCom_ReadTransOvData" viewed="True"/>
+			<option name="CM_BatteryVoltage_SCom_WriteTransOvData" value="BatteryVoltage_SCom_ClearTransOvData" viewed="True"/>
+		</service>
+		<service _id="FD21">
+			<option name="CM_VehicleTune_SCom_SetSelect" value="DiagSvc_SCom_SetTuningSet" viewed="True"/>
+			<option name="CM_VehicleTune_SCom_GetSelect" value="DiagSvc_SCom_GetTuningSet" viewed="True"/>
+			<option name="D_TUNINGSETMAXLIM_CNT_U08" value="D_NUMOFTUNSETS_CNT_U16" viewed="True"/>
+		</service>
+		<service _id="FD22">
+			<option name="CM_TcPartNumType" value="TcPartNumType" viewed="False"/>
+			<option name="CM_TurnsCounter_Scom_PartNumSvc" value="" viewed="False"/>
+			<option name="D_PIDFD22STRLEN_CNT_U08" value="D_TcPNArraySize_Cnt_U16" viewed="False"/>
+		</service>
+		<service _id="FD23">
+			<option name="CM_Vsm_Scom_SetOperatingMode(val)" value="(CDD_EnergyModeState_Cnt_G_u08 = (val))" viewed="True"/>
+			<option name="CM_Vsm_OperatingModeType" value="uint8" viewed="True"/>
+			<option name="CM_Rte_VehCfg_EnergyModeState_Cnt_enum" value="CDD_EnergyModeState_Cnt_G_u08" viewed="True"/>
+		</service>
+		<service _id="FD24">
+			<option name="CM_EOLTurnsCntrCals_Datatype" value="EOLTurnsCntrCals_Datatype" viewed="False"/>
+			<option name="CM_TcEOLCals_Scom_SetTcEOLCals" value="" viewed="False"/>
+			<option name="CM_TcEOLCals_Scom_ReadTcEOLCals" value="" viewed="False"/>
+		</service>
+		<service _id="FD25">
+			<option name="CM_TrqCmdScl_SCom_Set" value="NtWrapC_TrqCmdScl_SCom_Set" viewed="True"/>
+			<option name="CM_TrqCmdScl_SCom_Get" value="TrqCmdScl_SCom_Get" viewed="True"/>
+		</service>
+		<service _id="FD26">
+			<option name="CM_AvgFricLrn_SCom_SetSelect" value="AvgFricLrn_SCom_SetSelect" viewed="True"/>
+			<option name="CM_AvgFricLrn_SCom_GetSelect" value="AvgFricLrn_SCom_GetSelect" viewed="True"/>
+		</service>
+		<service _id="FD27">
+			<option name="CM_AvgFricLrn_SCom_SetOffsetOutputDefeat" value="AvgFricLrn_SCom_SetOffsetOutputDefeat" viewed="True"/>
+			<option name="CM_AvgFricLrn_SCom_GetOffsetOutputDefeat" value="AvgFricLrn_SCom_GetOffsetOutputDefeat" viewed="True"/>
+		</service>
+		<service _id="FD28">
+			<option name="CM_TurnsCounter_Scom_GetFlashTraceabilityID" value="" viewed="False"/>
+			<option name="CM_TcFlashIDType" value="" viewed="False"/>
+		</service>
+		<service _id="FD29">
+			<option name="CM_AvgFricLrn_SCom_SetEOLFric" value="AvgFricLrn_SCom_SetEOLFric" viewed="True"/>
+			<option name="CM_AvgFricLrn_SCom_GetEOLFric" value="AvgFricLrn_SCom_GetEOLFric" viewed="True"/>
+		</service>
+		<service _id="FD30">
+			<option name="CM_DigHwTrqSENT_SCom_ReadTrim" value="DigHwTrqSENT_SCom_TrimData" viewed="True"/>
+			<option name="CM_DigHwTrqSENT_SCom_WriteTrim" value="NtWrapC_DigHwTrqSENT_SCom_WriteData" viewed="True"/>
+		</service>
+		<service _id="FD31">
+			<option name="CM_Rte_Sa_DigHwTrqSENT_HwTorque_HwNm_f32" value="Rte_DigHwTrqSENT_HwTorque_HwNm_f32" viewed="True"/>
+			<option name="CM_Rte_Cd_Nhet1_DigHwTrqT1_HwNm_f32" value="Rte_Nhet1_DigHwTrqT1_HwNm_f32" viewed="True"/>
+			<option name="CM_Rte_Cd_Nhet1_DigHwTrqT2_HwNm_f32" value="Rte_Nhet1_DigHwTrqT2_HwNm_f32" viewed="True"/>
+		</service>
+		<service _id="FD41">
+			<option name="CM_Rte_IoHwAbstractionUsr_T1ADC_Volt_f32" value="" viewed="False"/>
+			<option name="CM_Rte_IoHwAbstractionUsr_T2ADC_Volt_f32" value="" viewed="False"/>
+		</service>
+		<service _id="FDA1">
+			<option name="CM_ECUSerialNumber" value="Nvm_EcuSrlNum_Cnt_u8" viewed="True"/>
+		</service>
+		<service _id="FDA2">
+			<option name="CM_EPSSerialNumber" value="Nvm_EpsSrlNum_Cnt_u8" viewed="True"/>
+		</service>
+		<service _id="FDA3">
+			<option name="CM_ECUHardwarePN" value="Nvm_EcuHwPn_Cnt_u8" viewed="True"/>
+		</service>
+		<service _id="FDA5">
+			<option name="CM_ShCurrCal_DataType" value="ShCurrCal_DataType" viewed="False"/>
+			<option name="CM_MtrCurr_SCom_SetMtrCurrCals" value="" viewed="False"/>
+			<option name="CM_MtrCurr_SCom_ReadMtrCurrCals" value="" viewed="False"/>
+		</service>
+		<service _id="FDA7">
+			<option name="CM_HwPosRelCal_DataType" value="HwPosRelCal_DataType" viewed="False"/>
+			<option name="CM_HwPosRel_SCom_ReadHwPosCals" value="" viewed="False"/>
+			<option name="CM_HwPosRel_SCom_SetHwPosCals" value="" viewed="False"/>
+		</service>
+		<service _id="FDAC">
+			<option name="CM_MfgScratchPad_Cnt_G_u8" value="Nvm_NxtrManfScrpd_Cnt_u8" viewed="True"/>
+		</service>
+		<service _id="FDAD">
+			<option name="CM_ActivePull_SCom_ReadParam" value="ActivePull_SCom_ReadParam" viewed="True"/>
+		</service>
+		<service _id="FDAF">
+			<option name="D_ENABLEGENERICPARAMS_CNT_LGC" value="True" viewed="True"/>
+		</service>
+		<service _id="FDB0">
+			<option name="CM_IPMCoggingCancTrq" value="CoggingCancTrq" viewed="True"/>
+			<option name="CM_IPMTrqCanc_Scom_SetCogTrqCal" value="NtWrapC_TrqCanc_Scom_SetCogTrqCal" viewed="True"/>
+			<option name="CM_IPMTrqCanc_Scom_ReadCogTrqCal" value="TrqCanc_Scom_ReadCogTrqCal" viewed="True"/>
+		</service>
+		<service _id="FDB4">
+			<option name="D_RANDKESUPPORTONLY_CNT_LGC" value="True" viewed="True"/>
+			<option name="CM_SCom_EOLNomMtrParam_Set_FDB4" value="NtWrapC_SCom_EOLNomMtrParam_Set" viewed="True"/>
+			<option name="CM_SCom_EOLNomMtrParam_Get_FDB4" value="SCom_EOLNomMtrParam_Get" viewed="True"/>
+		</service>
+		<service _id="FDB5">
+			<option name="CM_ActivePull_SCom_SetSTComp" value="ActivePull_SCom_SetSTComp" viewed="True"/>
+		</service>
+		<service _id="FDB6">
+			<option name="CM_ActivePull_SCom_SetLTComp" value="ActivePull_SCom_SetLTComp" viewed="True"/>
+		</service>
+	</options>
+</config>

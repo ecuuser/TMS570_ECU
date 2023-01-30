@@ -1,0 +1,166 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : Ap_ApXcp_Cfg.h
+* Module Description: Configuration file of Xcp module
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          4 %
+ * %date_modified:    Mon Oct 28 11:43:26 2013 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 01/07/13   1       LWW       Initial template creation
+ * 10/28/13   4       KJS       Changed configuration to support new TOTF configuration layout for segments
+ *								0, 1, 2, 3, 4, and 16. 
+ */
+
+#ifndef AP_XCP_CFG_H
+#define AP_XCP_CFG_H
+
+#include "Std_Types.h"                   /* Standard type definitions      */
+
+/*** Private Part (used by Ap_ApXcp.c only) *************************************/
+#ifdef APXCP_C
+
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "Os" ) ); #>
+#define D_NUMOFOSAPPS_CNT_U8					<#=Count( Xp.ContainerAtDefRefTo( "OsApplication" ) ) #>U
+<# 
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "ApXcp" ) );
+	List<string> IncludeLst = new List<string>();
+#>
+<# !LOOP( Xp.ValueAtDefRefTo( "TuneOnTheFly/TuneOnTheFlyIncludes" ) ) #>
+	<# IncludeLst.Add("#include \"" + ValueOf( "." ) + "\""); #>
+<# !ENDLOOP #>
+<#	
+	string xcpEEPAccess = ValueOf( Xp.ValueAtDefRefTo( "XcpGeneral/ExternalEEPROMAccess" )); 
+	
+	/* Tune on the fly options */
+	string xcpTOTFSupport = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/TuneOnTheFlySupport" )); 
+	int xcpTOTFRamSize = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/RamBlockSize" ));
+	
+	/* Segment 0 */
+	string xcpTOTFSeg0Enable = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg0_Pers/Seg0Enable" )); 
+	int xcpTOTFMaxPerCopy = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg0_Pers/MaxPerCopy" ));
+	string xcpTOTFCalConstMaxPer = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg0_Pers/CalConstNumOfPerSymbol" ));
+	string xcpTOTFPersLkup = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg0_Pers/TuneOnTheFlyPersLkup" )); 
+	
+	/* Segment 1 */
+	string xcpTOTFSeg1Enable = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg1_Sets/Seg1Enable" )); 
+	int xcpTOTFMaxSetCopy = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg1_Sets/MaxSetCopy" )); 
+	string xcpTOTFCalConstMaxSet = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg1_Sets/CalConstNumOfSetSymbol" ));
+	string xcpTOTFSetLkup = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg1_Sets/TuneOnTheFlySetLkup" )); 
+	
+	/* Segment 2 */
+	string xcpTOTFSeg2Enable = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg2_Common/Seg2Enable" )); 
+	
+	/* Segment 3 */
+	string xcpTOTFSeg3Enable = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg3_SetAndPer/Seg3Enable" )); 
+	
+	/* Segment 4 */
+	string xcpTOTFSeg4Enable = ValueOf( Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg4_SetAndPerAndCommon/Seg4Enable" )); 
+	
+	/* Segment 16 */
+	string xcpTOTFSeg16_FlshStartLnkSym = "";
+	string xcpTOTFSeg16_LnkSymLen = "";
+	if (Exists("//ar:DEFINITION-REF[contains(text(),\"/ApXcp/TuneOnTheFly/Seg16_CustomDefinedMemBlock\")]" ))
+	{
+		xcpTOTFSeg16_FlshStartLnkSym = ValueOf(Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg16_CustomDefinedMemBlock/FlashStartLinkerSymbol" ));
+		xcpTOTFSeg16_LnkSymLen = ValueOf(Xp.ValueAtDefRefTo( "TuneOnTheFly/Seg16_CustomDefinedMemBlock/LengthLinkerSymbol" ));
+	}
+	
+#>
+
+#define D_NUMOFVLDMEMRGNS_CNT_U08				<#=Count(Xp.ContainerAtDefRefTo( "XcpMemoryAccess/InternalMemoryRng" )) #>U
+<#if(xcpEEPAccess == "STD_ON"){#>
+#define D_NUMOFVLDEEMEMRGNS_CNT_U08				<#=Count(Xp.ContainerAtDefRefTo( "XcpMemoryAccess/ExternalMemoryRng" )) #>U
+<#}#>
+
+#define BC_XCP_EXTEEPACCESS	<#=xcpEEPAccess#>
+
+<#if(xcpTOTFSupport == "STD_ON"){#>
+
+/* Tune on the Fly Enabled */
+<# foreach (string Include in IncludeLst) {#>
+<#=Include #>
+<# } #>
+
+#define BC_XCP_TUNEONFLY			<#=xcpTOTFSupport#>
+#define BC_XCP_TOTFRAMSIZE_CNT_U32	<#=xcpTOTFRamSize#>UL
+
+<#if(xcpTOTFSeg0Enable == "STD_ON"){#>
+/* Segment 0: Enabled */
+#define BC_XCP_SEG0ENABLE			<#=xcpTOTFSeg0Enable#>
+#define BC_XCP_MAXPERCOPY_CNT_U8	<#=xcpTOTFMaxPerCopy#>U
+#define BC_XCP_PERSINDEXLOOKUP		<#=xcpTOTFPersLkup#>
+/* Configuration Check */
+#if(BC_XCP_MAXPERCOPY_CNT_U8 > <#=xcpTOTFCalConstMaxPer#>)
+	#error "Incorrect configuration: MAXPERCOPY larger than number of available personalities."
+#endif
+<#}else{#>
+/* Segment 0: Disabled */
+<#}#>
+
+<#if(xcpTOTFSeg1Enable == "STD_ON"){#>
+/* Segment 1: Enabled */
+#define BC_XCP_SEG1ENABLE			<#=xcpTOTFSeg1Enable#>
+#define BC_XCP_MAXSETCOPY_CNT_U8	<#=xcpTOTFMaxSetCopy#>U
+#define BC_XCP_SETINDEXLOOKUP		<#=xcpTOTFSetLkup#>
+/* Configuration Check */
+#if(BC_XCP_MAXSETCOPY_CNT_U8 > <#=xcpTOTFCalConstMaxSet#>)
+	#error "Incorrect configuration: MAXSETCOPY larger than number of available sets."
+#endif
+<#}else{#>
+/* Segment 1: Disabled */
+<#}#>
+
+<#if(xcpTOTFSeg2Enable == "STD_ON"){#>
+/* Segment 2: Enabled */
+#define BC_XCP_SEG2ENABLE			<#=xcpTOTFSeg2Enable#>
+<#}else{#>
+/* Segment 2: Disabled */
+<#}#>
+
+<#if(xcpTOTFSeg3Enable == "STD_ON"){#>
+/* Segment 3: Enabled */
+#define BC_XCP_SEG3ENABLE			<#=xcpTOTFSeg3Enable#>
+<#}else{#>
+/* Segment 3: Disabled */
+<#}#>
+
+<#if(xcpTOTFSeg4Enable == "STD_ON"){#>
+/* Segment 4: Enabled */
+#define BC_XCP_SEG4ENABLE			<#=xcpTOTFSeg4Enable#>
+<#}else{#>
+/* Segment 4: Disabled */
+<#}#>
+
+<#if(xcpTOTFSeg16_FlshStartLnkSym != ""){#>
+/* Segment 16: Enabled */
+#define BC_XCP_SEG16ENABLE				STD_ON
+#define BC_XCP_SEG16LNKSYMB				<#=xcpTOTFSeg16_FlshStartLnkSym#>
+#define BC_XCP_SEG16LNKSYMBLEN_CNT_U8	<#=xcpTOTFSeg16_LnkSymLen#>
+<#}else{#>
+/* Segment 16: Disabled */
+<#}#>
+
+/* End Tune on the Fly Options */
+<#}else{#>
+/* Tune of the Fly Disabled */
+#define BC_XCP_TUNEONFLY			<#=xcpTOTFSupport#>
+<#}#>
+
+#endif
+
+#endif /* AP_APXCP_CFG_H */
+
+/*** End of file **************************************************************/

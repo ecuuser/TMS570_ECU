@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.vector-informatik.de/ExtractExtension" targetNamespace="http://www.vector-informatik.de/ExtractExtension" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+	<xs:simpleType name="IDENTIFIER">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z][a-zA-Z0-9_]{0,127}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="REF">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z][a-zA-Z0-9_]{0,127}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ACCESS-RIGHTS-ENUM">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="READ-ONLY"/>
+			<xs:enumeration value="READ-WRITE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SIGNAL-PROCESSING-ENUM">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DEFERED"/>
+			<xs:enumeration value="IMMEDIATE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FLEXRAY-CHANNEL-ENUM">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="B"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="EXTRACT-EXTENSION">
+		<xs:annotation>
+			<xs:documentation>ECUExtract extension elements for structurally missing data</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FILTERING" minOccurs="0"/>
+				<xs:element ref="NAMING" minOccurs="0"/>
+				<xs:element ref="SYSTEM-SIGNAL-GROUPS" minOccurs="0"/>
+				<xs:element ref="SAFETY-PDUS" minOccurs="0"/>
+				<xs:element ref="BIDIRECTIONAL-PDUS" minOccurs="0"/>
+				<xs:element ref="SIGNAL-UPDATE-DEFINITIONS" minOccurs="0"/>
+				<xs:element ref="I-PDU-TIMINGS" minOccurs="0"/>
+				<xs:element ref="TP-CONNECTIONS" minOccurs="0"/>
+				<xs:element ref="GATEWAY-ROUTING" minOccurs="0"/>
+				<xs:element ref="PNC-CONFIGURATION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FILTERING">
+		<xs:annotation>
+			<xs:documentation>Specifies those CommunicationCluster channels which shall be converted</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CAN-CLUSTER-REF" type="REF" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="FLEXRAY-CLUSTER-REF" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="REF">
+								<xs:attribute name="CHANNEL" type="FLEXRAY-CHANNEL-ENUM"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NAMING">
+		<xs:annotation>
+			<xs:documentation>Specifies new short names for existing objects</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CAN-CLUSTER-NAME" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CAN-CLUSTER-REF" type="REF"/>
+							<xs:element name="SHORT-NAME" type="IDENTIFIER"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LIN-CLUSTER-NAME" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LIN-CLUSTER-REF" type="REF"/>
+							<xs:element name="SHORT-NAME" type="IDENTIFIER"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FLEXRAY-CLUSTER-NAME" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FLEXRAY-CLUSTER-REF" type="REF"/>
+							<xs:element name="SHORT-NAME" type="IDENTIFIER"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ECU-INSTANCE-NAME" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ECU-INSTANCE-REF" type="REF"/>
+							<xs:element name="SHORT-NAME" type="IDENTIFIER"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SYSTEM-SIGNAL-NAME" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SIGNAL-I-PDU-REF" type="REF"/>
+							<xs:element name="SYSTEM-SIGNAL-REF" type="REF"/>
+							<xs:element name="SHORT-NAME" type="IDENTIFIER"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SYSTEM-SIGNAL-GROUPS">
+		<xs:annotation>
+			<xs:documentation>Specifies additional SystemSignalGroups based on existing SystemSignals</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SYSTEM-SIGNAL-GROUP" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SHORT-NAME" type="IDENTIFIER"/>
+							<xs:element name="SYSTEM-SIGNAL-REFS" minOccurs="0">
+								<xs:complexType>
+									<xs:choice minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="SYSTEM-SIGNAL-REF" type="REF"/>
+									</xs:choice>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SAFETY-PDUS">
+		<xs:annotation>
+			<xs:documentation>Specifies SignalIPdus which contain no signal gaps and which combine its SystemSignals to one SystemSignalGroup</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SAFETY-PDU" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SIGNAL-I-PDU-REF" type="REF"/>
+							<xs:element name="CREATE-PDU-GAP-SIGNALS" type="xs:boolean" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BIDIRECTIONAL-PDUS">
+		<xs:annotation>
+			<xs:documentation>Specifies SignalIPdus which may be send and received by the same EcuInstance</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BIDIRECTIONAL-PDU" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SIGNAL-I-PDU-REF" type="REF"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SIGNAL-UPDATE-DEFINITIONS">
+		<xs:annotation>
+			<xs:documentation>Specifies update signals which indicate that one or more signals or signal groups have been updated</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SIGNAL-UPDATE-DEFINITION" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SIGNAL-I-PDU-REF" type="REF"/>
+							<xs:element name="UPDATE-INDICATION-SIGNAL-REF" type="REF"/>
+							<xs:element name="UPDATED-SIGNALS" minOccurs="0">
+								<xs:complexType>
+									<xs:choice minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="SYSTEM-SIGNAL-REF" type="REF"/>
+									</xs:choice>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="UPDATED-SIGNAL-GROUPS" minOccurs="0">
+								<xs:complexType>
+									<xs:choice minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="SYSTEM-SIGNAL-GROUP-REF" type="REF"/>
+									</xs:choice>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="I-PDU-TIMINGS">
+		<xs:annotation>
+			<xs:documentation>Specifies timing information for SignalIPdus</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="I-PDU-TIMING" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:element name="SIGNAL-I-PDU-REF" type="REF"/>
+								<xs:element name="MULTIPLEXED-I-PDU-REF" type="REF"/>
+							</xs:choice>
+							<xs:element name="NUMBER-OF-REPETITIONS" type="xs:integer" minOccurs="0"/>
+							<xs:element name="REPETITION-PERIOD" type="xs:double" minOccurs="0"/>
+							<xs:element name="MINIMUM-DELAY" type="xs:double" minOccurs="0"/>
+							<xs:element name="SIGNAL-TIMINGS" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SIGNAL-TIMING" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="SYSTEM-SIGNAL-REF" type="REF"/>
+													<xs:element name="SIGNAL-SEND-TYPE" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="CYCLIC"/>
+																<xs:enumeration value="ON-WRITE"/>
+																<xs:enumeration value="ON-WRITE-WITH-REPETITION"/>
+																<xs:enumeration value="ON-CHANGE"/>
+																<xs:enumeration value="ON-CHANGE-WITH-REPETITION"/>
+																<xs:enumeration value="IF-ACTIVE"/>
+																<xs:enumeration value="IF-ACTIVE-WITH-REPETITION"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="RX-TIMEOUT" type="xs:double" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ACCESS-RIGHTS" type="ACCESS-RIGHTS-ENUM" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TP-CONNECTIONS">
+		<xs:annotation>
+			<xs:documentation>Specifies TP connections for existing DcmIPdus and NPdus</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="CAN-TP-CONNECTION">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SHORT-NAME" type="IDENTIFIER"/>
+							<xs:element name="CAN-CLUSTER-REF" type="REF"/>
+							<xs:element name="DATA-PDU-REF" type="REF"/>
+							<xs:element name="FLOW-CONTROL-PDU-REF" type="REF" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LIN-TP-CONNECTION">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SHORT-NAME" type="IDENTIFIER"/>
+							<xs:element name="LIN-CLUSTER-REF" type="REF"/>
+							<xs:element name="LIN-SLAVE-REF" type="REF" minOccurs="0"/>
+							<xs:element name="DATA-PDU-REF" type="REF"/>
+							<xs:element name="FLOW-CONTROL-PDU-REF" type="REF" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GATEWAY-ROUTING">
+		<xs:annotation>
+			<xs:documentation>Specifies Gateway IPdu and Signal Mappings for existing CommunicationClusters</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="PDUR-MESSAGE-ROUTING">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ECU-INSTANCE-REF" type="REF"/>
+							<xs:choice>
+								<xs:element name="SOURCE-CAN-CLUSTER-REF" type="REF"/>
+								<xs:element name="SOURCE-LIN-CLUSTER-REF" type="REF"/>
+								<xs:element name="SOURCE-FLEXRAY-CLUSTER-REF">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="REF">
+												<xs:attribute name="CHANNEL" type="FLEXRAY-CHANNEL-ENUM"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+							<xs:choice>
+								<xs:element name="TARGET-CAN-CLUSTER-REF" type="REF"/>
+								<xs:element name="TARGET-LIN-CLUSTER-REF" type="REF"/>
+								<xs:element name="TARGET-FLEXRAY-CLUSTER-REF">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="REF">
+												<xs:attribute name="CHANNEL" type="FLEXRAY-CHANNEL-ENUM"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+							<xs:element name="I-PDU-MAPPINGS">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="I-PDU-MAPPING" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ROUTE-DLC" type="xs:boolean" minOccurs="0"/>
+													<xs:element name="SOURCE-I-PDU-REF" type="REF"/>
+													<xs:element name="SOURCE-SIGNALS" minOccurs="0">
+														<xs:complexType>
+															<xs:choice minOccurs="0" maxOccurs="unbounded">
+																<xs:element name="SYSTEM-SIGNAL-REF" type="REF"/>
+															</xs:choice>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="TARGET-I-PDU-REF" type="REF"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="COM-MESSAGE-ROUTING">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ECU-INSTANCE-REF" type="REF"/>
+							<xs:choice>
+								<xs:element name="SOURCE-CAN-CLUSTER-REF" type="REF"/>
+								<xs:element name="SOURCE-LIN-CLUSTER-REF" type="REF"/>
+								<xs:element name="SOURCE-FLEXRAY-CLUSTER-REF">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="REF">
+												<xs:attribute name="CHANNEL" type="FLEXRAY-CHANNEL-ENUM"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+							<xs:choice>
+								<xs:element name="TARGET-CAN-CLUSTER-REF" type="REF"/>
+								<xs:element name="TARGET-LIN-CLUSTER-REF" type="REF"/>
+								<xs:element name="TARGET-FLEXRAY-CLUSTER-REF">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="REF">
+												<xs:attribute name="CHANNEL" type="FLEXRAY-CHANNEL-ENUM"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+							<xs:element name="I-PDU-MAPPINGS">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="I-PDU-MAPPING" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PROCESSING" type="SIGNAL-PROCESSING-ENUM" minOccurs="0"/>
+													<xs:element name="ROUTE-DLC" type="xs:boolean" minOccurs="0"/>
+													<xs:element name="SOURCE-I-PDU-REF" type="REF"/>
+													<xs:element name="SOURCE-SIGNALS" minOccurs="0">
+														<xs:complexType>
+															<xs:choice minOccurs="0" maxOccurs="unbounded">
+																<xs:element name="SYSTEM-SIGNAL-REF" type="REF"/>
+															</xs:choice>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="SOURCE-EXCLUDE-SIGNALS" minOccurs="0">
+														<xs:complexType>
+															<xs:choice minOccurs="0" maxOccurs="unbounded">
+																<xs:element name="SYSTEM-SIGNAL-REF" type="REF"/>
+															</xs:choice>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="TARGET-I-PDU-REF" type="REF"/>
+													<xs:element name="TARGET-SIGNALS" minOccurs="0">
+														<xs:complexType>
+															<xs:choice minOccurs="0" maxOccurs="unbounded">
+																<xs:element name="SYSTEM-SIGNAL-REF" type="REF"/>
+															</xs:choice>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="TARGET-EXCLUDE-SIGNALS" minOccurs="0">
+														<xs:complexType>
+															<xs:choice minOccurs="0" maxOccurs="unbounded">
+																<xs:element name="SYSTEM-SIGNAL-REF" type="REF"/>
+															</xs:choice>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="COM-SIGNAL-ROUTING">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ECU-INSTANCE-REF" type="REF"/>
+							<xs:choice>
+								<xs:element name="SOURCE-CAN-CLUSTER-REF" type="REF"/>
+								<xs:element name="SOURCE-LIN-CLUSTER-REF" type="REF"/>
+								<xs:element name="SOURCE-FLEXRAY-CLUSTER-REF">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="REF">
+												<xs:attribute name="CHANNEL" type="FLEXRAY-CHANNEL-ENUM"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+							<xs:choice>
+								<xs:element name="TARGET-CAN-CLUSTER-REF" type="REF"/>
+								<xs:element name="TARGET-LIN-CLUSTER-REF" type="REF"/>
+								<xs:element name="TARGET-FLEXRAY-CLUSTER-REF">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="REF">
+												<xs:attribute name="CHANNEL" type="FLEXRAY-CHANNEL-ENUM"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+							<xs:element name="SIGNAL-MAPPINGS">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SIGNAL-MAPPING" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PROCESSING" type="SIGNAL-PROCESSING-ENUM" minOccurs="0"/>
+													<xs:element name="SOURCE-I-PDU-REF" type="REF"/>
+													<xs:element name="SOURCE-SIGNAL-REF" type="REF"/>
+													<xs:element name="TARGET-I-PDU-REF" type="REF"/>
+													<xs:element name="TARGET-SIGNAL-REF" type="REF"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TP-HIGH-LEVEL-ROUTING">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ECU-INSTANCE-REF" type="REF"/>
+							<xs:choice>
+								<xs:element name="SOURCE-CAN-TP-CONNECTION-REF" type="REF"/>
+								<xs:element name="SOURCE-LIN-TP-CONNECTION-REF" type="REF"/>
+								<xs:element name="SOURCE-FLEXRAY-TP-CONNECTION-REF" type="REF"/>
+							</xs:choice>
+							<xs:choice>
+								<xs:element name="TARGET-CAN-TP-CONNECTION-REF" type="REF"/>
+								<xs:element name="TARGET-LIN-TP-CONNECTION-REF" type="REF"/>
+								<xs:element name="TARGET-FLEXRAY-TP-CONNECTION-REF" type="REF"/>
+							</xs:choice>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TP-LOW-LEVEL-ROUTING">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ECU-INSTANCE-REF" type="REF"/>
+							<xs:element name="SOURCE-CAN-CLUSTER-REF" type="REF"/>
+							<xs:element name="TARGET-CAN-CLUSTER-REF" type="REF"/>
+							<xs:element name="N-PDU-MAPPINGS">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="N-PDU-MAPPING" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="SOURCE-N-PDU-REF" type="REF"/>
+													<xs:element name="TARGET-N-PDU-REF" type="REF"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PNC-CONFIGURATION">
+		<xs:annotation>
+			<xs:documentation>Specifies Partial Network Clusters for existing CommunicationClusters and EcuInstances</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PNC-VECTOR-LENGTH" type="xs:integer" minOccurs="0"/>
+				<xs:element name="PNC-VECTOR-OFFSET" type="xs:integer" minOccurs="0"/>
+				<xs:element name="PNC-CLUSTERS">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PNC-CLUSTER" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:choice>
+											<xs:element name="CAN-CLUSTER-REF" type="REF"/>
+											<xs:element name="FLEXRAY-CLUSTER-REF" type="REF"/>
+										</xs:choice>
+										<xs:element name="PNC-ECUS">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PNC-ECU" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ECU-INSTANCE-REF" type="REF"/>
+																<xs:element name="ECU-SOURCE-NODE-IDENTIFIER" type="xs:integer" minOccurs="0"/>
+																<xs:element name="PNC-GATEWAY-TYPE">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="NONE"/>
+																			<xs:enumeration value="ACTIVE"/>
+																			<xs:enumeration value="PASSIVE"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="PNC-WAKEUP-CAN-ID" type="xs:integer" minOccurs="0"/>
+																<xs:element name="PNC-WAKEUP-CAN-ID-EXTENDED" type="xs:boolean" minOccurs="0"/>
+																<xs:element name="PNC-WAKEUP-CAN-ID-MASK" type="xs:integer" minOccurs="0"/>
+																<xs:element name="PNC-WAKEUP-DATA-MASK" type="xs:integer" minOccurs="0"/>
+																<xs:element name="PNC-WAKEUP-DLC" type="xs:integer" minOccurs="0"/>
+																<xs:element name="PNC-GROUPS">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="PNC-GROUP" minOccurs="0" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="PNC-IDENTIFIER" type="xs:integer"/>
+																						<xs:element name="PNC-GROUP-NAME" type="IDENTIFIER" minOccurs="0"/>
+																						<xs:sequence minOccurs="0">
+																							<xs:element name="COMMUNICATION-DIRECTION">
+																								<xs:simpleType>
+																									<xs:restriction base="xs:string">
+																										<xs:enumeration value="IN"/>
+																										<xs:enumeration value="OUT"/>
+																									</xs:restriction>
+																								</xs:simpleType>
+																							</xs:element>
+																							<xs:element name="SIGNAL-I-PDU-REFS" minOccurs="0">
+																								<xs:complexType>
+																									<xs:choice minOccurs="0" maxOccurs="unbounded">
+																										<xs:element name="SIGNAL-I-PDU-REF" type="REF"/>
+																									</xs:choice>
+																								</xs:complexType>
+																							</xs:element>
+																							<xs:element name="MULTIPLEXED-I-PDU-REFS" minOccurs="0">
+																								<xs:complexType>
+																									<xs:choice minOccurs="0" maxOccurs="unbounded">
+																										<xs:element name="MULTIPLEXED-I-PDU-REF" type="REF"/>
+																									</xs:choice>
+																								</xs:complexType>
+																							</xs:element>
+																						</xs:sequence>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

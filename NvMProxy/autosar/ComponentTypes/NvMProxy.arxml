@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/3.1.4 autosar_314_ext.xsd" xmlns="http://autosar.org/3.1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>ComponentType</SHORT-NAME>
+			<ELEMENTS>
+				<INTERNAL-BEHAVIOR>
+					<SHORT-NAME>NvMProxy_InternalBehavior</SHORT-NAME>
+					<COMPONENT-REF DEST="SERVICE-COMPONENT-TYPE">/ComponentType/NvMProxy</COMPONENT-REF>
+					<EVENTS>
+						<TIMING-EVENT>
+							<SHORT-NAME>TMT_NvMProxy_MainFunction</SHORT-NAME>
+							<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentType/NvMProxy_InternalBehavior/NvMProxy_MainFunction</START-ON-EVENT-REF>
+							<PERIOD>0.010000000</PERIOD>
+						</TIMING-EVENT>
+						<OPERATION-INVOKED-EVENT>
+							<SHORT-NAME>OIT_WriteBlock_PS_Rte_NvmBlock_MtrPos_MtrPosSnsr_EOLData_WriteBlock</SHORT-NAME>
+							<START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentType/NvMProxy_InternalBehavior/WriteBlock</START-ON-EVENT-REF>
+							<OPERATION-IREF>
+								<P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentType/NvMProxy/PS_Rte_NvmBlock_MtrPos_MtrPosSnsr_EOLData</P-PORT-PROTOTYPE-REF>
+								<OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/WriteBlock</OPERATION-PROTOTYPE-REF>
+							</OPERATION-IREF>
+						</OPERATION-INVOKED-EVENT>
+					</EVENTS>
+					<PORT-API-OPTIONS>
+						<PORT-API-OPTION>
+							<ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+							<INDIRECT-API>false</INDIRECT-API>
+							<PORT-ARG-VALUES>
+								<INTEGER-LITERAL>
+									<SHORT-NAME>NvM_AdminBlockId_0</SHORT-NAME>
+									<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt16</TYPE-TREF>
+									<VALUE>0</VALUE>
+								</INTEGER-LITERAL>
+							</PORT-ARG-VALUES>
+							<PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentType/NvMProxy/PAdmin_Rte_NvmBlock_MtrPos_MtrPosSnsr_EOLData</PORT-REF>
+						</PORT-API-OPTION>
+						<PORT-API-OPTION>
+							<ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+							<INDIRECT-API>false</INDIRECT-API>
+							<PORT-ARG-VALUES>
+								<INTEGER-LITERAL>
+									<SHORT-NAME>NvM_ServiceBlockId_0</SHORT-NAME>
+									<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt16</TYPE-TREF>
+									<VALUE>0</VALUE>
+								</INTEGER-LITERAL>
+							</PORT-ARG-VALUES>
+							<PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentType/NvMProxy/PS_Rte_NvmBlock_MtrPos_MtrPosSnsr_EOLData</PORT-REF>
+						</PORT-API-OPTION>
+					</PORT-API-OPTIONS>
+					<RUNNABLES>
+						<RUNNABLE-ENTITY>
+							<SHORT-NAME>NvMProxy_MainFunction</SHORT-NAME>
+							<CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+							<MINIMUM-START-INTERVAL>0.010000000</MINIMUM-START-INTERVAL>
+							<SYMBOL>NvMProxy_MainFunction</SYMBOL>
+						</RUNNABLE-ENTITY>
+						<RUNNABLE-ENTITY>
+							<SHORT-NAME>WriteBlock</SHORT-NAME>
+							<CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+							<MINIMUM-START-INTERVAL>0.000000</MINIMUM-START-INTERVAL>
+							<SYMBOL>NvMProxy_WriteBlock</SYMBOL>
+						</RUNNABLE-ENTITY>
+					</RUNNABLES>
+					<SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+				</INTERNAL-BEHAVIOR>
+				<SERVICE-COMPONENT-TYPE>
+					<SHORT-NAME>NvMProxy</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">Software Component description for NvM ASILD proxy based on generated file from Ecuc Package: ActiveEcuC</L-2>
+					</DESC>
+					<CATEGORY>ServiceComponent</CATEGORY>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="edve:BSWM">
+								<SD>NvMProxy</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<PORTS>
+						<P-PORT-PROTOTYPE>
+							<SHORT-NAME>PAdmin_Rte_NvmBlock_MtrPos_MtrPosSnsr_EOLData</SHORT-NAME>
+							<DESC>
+								<L-2 L="FOR-ALL">P-Port Prototype of NvM_Administration for NVRAM Block Rte_NvmBlock_MtrPos_MtrPosSnsr_EOLData</L-2>
+							</DESC>
+							<PROVIDED-COM-SPECS>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_Administration/SetBlockProtection</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+							</PROVIDED-COM-SPECS>
+							<PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PortInterface/NvM_Administration</PROVIDED-INTERFACE-TREF>
+						</P-PORT-PROTOTYPE>
+						<P-PORT-PROTOTYPE>
+							<SHORT-NAME>PS_Rte_NvmBlock_MtrPos_MtrPosSnsr_EOLData</SHORT-NAME>
+							<DESC>
+								<L-2 L="FOR-ALL">P-Port Prototype of NvM_AC3_SRBS_Srv for NVRAM Block Rte_NvmBlock_MtrPos_MtrPosSnsr_EOLData</L-2>
+							</DESC>
+							<PROVIDED-COM-SPECS>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/EraseBlock</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/GetErrorStatus</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/InvalidateNvBlock</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/ReadBlock</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/SetRamBlockStatus</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+								<SERVER-COM-SPEC>
+									<OPERATION-REF DEST="OPERATION-PROTOTYPE">/PortInterface/NvM_AC3_SRBS_Srv/WriteBlock</OPERATION-REF>
+									<QUEUE-LENGTH>1</QUEUE-LENGTH>
+								</SERVER-COM-SPEC>
+							</PROVIDED-COM-SPECS>
+							<PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PortInterface/NvM_AC3_SRBS_Srv</PROVIDED-INTERFACE-TREF>
+						</P-PORT-PROTOTYPE>
+					</PORTS>
+				</SERVICE-COMPONENT-TYPE>
+				<SWC-IMPLEMENTATION>
+					<SHORT-NAME>NvMProxy_Implementation</SHORT-NAME>
+					<CODE-DESCRIPTORS>
+						<CODE>
+							<SHORT-NAME>Code</SHORT-NAME>
+							<TYPE>SRC</TYPE>
+						</CODE>
+					</CODE-DESCRIPTORS>
+					<BEHAVIOR-REF DEST="INTERNAL-BEHAVIOR">/ComponentType/NvMProxy_InternalBehavior</BEHAVIOR-REF>
+				</SWC-IMPLEMENTATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>DaVinci</SHORT-NAME>
+			<ELEMENTS/>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

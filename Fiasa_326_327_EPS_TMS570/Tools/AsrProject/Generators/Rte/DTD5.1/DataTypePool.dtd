@@ -1,0 +1,11 @@
+<!-- Entities -->
+
+<!ENTITY ti.DataTypePool  "DataTypePool">
+
+<!-- Elements -->
+
+<!ELEMENT DataTypePool (DataType*)>
+
+<!ATTLIST DataTypePool  %A.ConfigItem;
+>
+

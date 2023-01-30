@@ -1,0 +1,21 @@
+-inlineHeader=..\..\..\GliwaT1\include\T1_AppInterface.h	; name and path for inlining T1_AppInterface.h into T1 project file
+-configHeader=..\..\..\GliwaT1\include\T1_config.h			; name and path of T1_config.h being generated
+-bidHeader=..\..\..\GliwaT1\include\T1_bid.h				; name and path of generated header file containing T1 Build ID (which is then excluded from T1_config.h)
+-runnableHeader=..\..\..\GliwaT1\include\T1_runnables.h		; name and path of generated header file containing runnable IDs (and wrappers if supported by OS-script)
+-projectFile=.\Fiasa_327_TimingResults.t1p			; name and path of T1 project file being generated
+-symbolFile=..\..\SwProject\Debug\EPS_*_dbg.out				; name and path of symbol-file
+-projectName=Fiasa327										; any project name
+-storeTimingInformation=true								; store timing information in T1 project file (e.g. for being used in T1.diff) [true/false]
+
+-targetExcludeFromTraceByName=Task_Bkgnd					; exclude task from tracing ( using macro T1_TRACE_TASK) [optional]
+
+#system 0:
+-systemName=EPS												; any system name being displayed in T1.base menu in T1-HOST-SW
+-systemComment=Nexteer Automotive Electric Power Steering	; any system comment
+-osBackgroundTaskName=Task_Bkgnd							; task to be excluded from T1.cont CPU-load calculation [OS-name] [optional]
+-osBasicSchedFrameName=Task_SchM_100ms_9						; basicSchedulingFrameEvent: OS-name of periodic task with slowest period
+-traceBufferEntries=4000									; Trace buffer entries
+-cpuLoadThreshold=90										; CPU-load thereshold for T1.cont CPU-load callback
+-numberOfConstraints=3										; number of T1.cont constraints
+-analysisCapacity=5000										; T1.cont analysis capacity (number of events being analysed during one call to T1.cont BG handler)
+-flexAnalysisCapacity=1000									; Maximum number of T1 Flex events between calls to T1_Handler. Number picked arbitrarily. 

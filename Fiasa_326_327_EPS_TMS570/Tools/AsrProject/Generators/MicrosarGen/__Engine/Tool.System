@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+============================================================================
+   Copyright (c) 2010 by Vector Informatik GmbH.    All rights reserved.
+
+   This software is copyright protected and proprietary to Vector Informatik GmbH.
+   Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+   All other rights remain with Vector Informatik GmbH.
+
+============================================================================
+
+    This file is needed for internal use by DaVinci Configurator.
+    Please do not modify this file, otherwise the software may behave in unexpected way.
+
+============================================================================
+-->
+<ToolSystem>
+	<ManualDefinition>
+		<!--> list of possible $(Comp_ConfiguratorDocu_TrgDir) values -->
+		<Source>..\..\Doc</Source>
+		<Source>..\..\Manuals</Source>
+	</ManualDefinition>
+	<SampleDefinition>
+		<!--> list of possible $(SampleDefinitionDir) values -->
+		<Source>..\..\Demo\SystemDemo\Config</Source>
+		<Source>..\..\Samples</Source>
+		<Source>..\..\Demo\Os</Source>
+		<Source>..\Appl</Source>
+	</SampleDefinition>
+	<TargetDefinition Source="GenData"/>
+	<Defines>
+		<AutosarEcucRevision Default="3.1.4"/>
+		<GenyComponents>
+			<BswM    Dll="SysService_AsrBswM.dll"/>
+			<Can     Dll="DrvCan__baseAsr.dll"/>
+			<CanIf   Dll="If_AsrIfCan.dll"/>
+			<CanNm   Dll="Nm_AsrNmCan.dll"/>
+			<CanSM   Dll="Ccl_AsrSmCan.dll"/>
+			<CanTp   Dll="Tp_AsrTpCan.dll"/>
+			<CanTrcv Dll="DrvTrans__baseCanxAsr.dll"/>
+			<CanXcp  Dll="Cp_XcpOnCanAsr.dll"/>
+			<Cdd     Dll="Cdd_AsrCdd.dll"/>
+			<Com     Dll="Il_AsrCom.dll"/>
+			<ComM    Dll="Ccl_AsrComM.dll"/>
+			<Dcm     Dll="Diag_AsrDcm.dll,Diag_AsrDcmEbAudiSub.dll"/>
+			<Dem     Dll="Diag_AsrDem.dll"/>
+			<Det     Dll="SysService_AsrDet.dll"/>
+			<EcuC    Dll="GenTool_GenyAsrBase.dll"/>
+			<EcuM    Dll="SysService_AsrEcuM.dll"/>
+			<Eth     Dll="DrvEth__baseAsr.dll"/>
+			<EthIf   Dll="If_AsrIfEth.dll"/>
+			<EthSm   Dll="Ccl_AsrSmEth.dll"/>
+			<EthTrcv Dll="DrvTrans__baseEthAsr.dll"/>
+			<Fim     Dll="SysService_AsrFiM.dll"/>
+			<FiM     Dll="SysService_AsrFiM.dll"/>
+			<Fr      Dll="DrvFr__baseAsr.dll"/>
+			<FrIf    Dll="If_AsrIfFr.dll"/>
+			<FrNm    Dll="Nm_AsrNmFr.dll"/>
+			<FrSm    Dll="Ccl_AsrSmFr.dll"/>
+			<FrTp    Dll="Tp_AsrTpFr.dll,Tp_Iso10681.dll"/>
+			<FrTrcv  Dll="DrvTrans_Tja1080FrAsr.dll,DrvTrans_Tja1085FrspiAsr.dll,DrvTrans_Generic1FrAsr.dll"/>
+			<FrXcp   Dll="Cp_XcpOnFrAsr.dll"/>
+			<IPduM   Dll="Il_AsrIpduM.dll"/>
+			<IPduMplex Dll="Il_AsrIpduM.dll"/>
+			<IpV4    Dll="Tp_IpV4.dll"/>
+			<Lin     Dll="DrvLin__baseAsr.dll"/>
+			<LinIf   Dll="If_AsrIfLin.dll"/>
+			<LinSM   Dll="Ccl_AsrSmLin.dll"/>
+			<LinTp   Dll="Tp_AsrTpLin.dll"/>
+			<LinTrcv Dll="DrvTrans__baseLinxAsr.dll"/>
+			<Nm      Dll="Nm_AsrNmIf.dll"/>
+			<Nm_DirOsek Dll="Nm_DirOsek.dll"/>
+			<PduR    Dll="Gw_AsrPduR.dll"/>
+			<SchM    Dll="SysService_AsrSchM.dll"/>
+			<SoAd    Dll="If_AsrIfSoAd.dll"/>
+			<TcpIp   Dll="Tp_TcpIp.dll"/>
+			<Vmm     Dll="SysService_AsrVmm.dll"/>
+			<Xcp     Dll="Cp_Xcp.dll"/>
+			<zBrs_EmbeddedRunTimeSystem_Def Dll="zBrs_EmbeddedRunTimeSystem.dll"/>
+		</GenyComponents>
+		<ExcludeComponents>
+			<!-- Can Transceivers -->
+			<!--CanTrcv DefRef="/MICROSAR/CanTrcv_Generic1CanDio/CanTrcv"/-->
+			<!--CanTrcv DefRef="/MICROSAR/CanTrcv_Generic2CanDio/CanTrcv"/-->
+			<!--CanTrcv DefRef="/MICROSAR/CanTrcv_Generic3CanDio/CanTrcv"/-->
+			<!-- Lin Transceivers -->
+			<!--LinTrcv DefRef="/MICROSAR/LinTrcv_30_Generic1/LinTrcv"/-->
+			<!--LinTrcv DefRef="/MICROSAR/LinTrcv_30_Generic2/LinTrcv"/-->
+			<!--LinTrcv DefRef="/MICROSAR/LinTrcv_30_Generic3/LinTrcv"/-->
+			<!-- Fr Transceiver -->
+			<!--FrTrcv  DefRef="/MICROSAR/FrTrcv_30_Generic1/FrTrcv"/-->
+		</ExcludeComponents>
+		<SwcComponents>
+			<EcuM   File="EcuM_swc.arxml"            Switch="ECUM_INCLUDE_RTE"/>
+			<NvM    File="NvM_swc.arxml"             Switch="NVM_USE_SERVICE_PORTS,NVM_CONFIGBLOCK_USE_SERVICE_PORTS"/>
+			<IoHwAb File="IoHwAbstraction_swc.arxml" Switch="IOHWAB_USE_RTE"/>
+			<WdgM   File="WdgM_swc.arxml"            Switch="WDGM_USE_RTE"/>
+		</SwcComponents>
+	</Defines>
+	<ComponentDefinition>
+		<Page Name="Clusters">
+			<Header Name="Application"/>
+			<Header Name="RTE"/>
+			<Header Name="System"/>
+			<Header Name="Memory"/>
+			<Header Name="Communication"/>
+			<Header Name="I/O Hardware"/>
+			<Header Name="Complex Drivers"/>
+		</Page>
+		<Page Name="Layers">
+			<Header Name="Application"/>
+			<Header Name="RTE"/>
+			<Header Name="Services"/>
+			<Header Name="Interfaces"/>
+			<Header Name="Drivers"/>
+			<Header Name="Complex Drivers"/>
+		</Page>
+		<Page Name="AUTOSAR">
+			<Header Name="Application"/>
+			<Header Name="RTE"/>
+			<Header Name="System">
+				<Label Name="Services"/>
+				<Label Name="Interfaces"/>
+				<Label Name="Drivers"/>
+			</Header>
+			<Header Name="Memory">
+				<Label Name="Services"/>
+				<Label Name="Interfaces"/>
+				<Label Name="Drivers"/>
+			</Header>
+			<Header Name="Communication">
+				<Label Name="Services"/>
+				<Label Name="Interfaces"/>
+				<Label Name="Drivers"/>
+			</Header>
+			<Header Name="I/O Hardware">
+				<Label Name="Interfaces"/>
+				<Label Name="Drivers"/>
+			</Header>
+			<Header Name="Complex Drivers"/>
+		</Page>
+		<Components>
+			<ClassId Id="1">
+				<Component Name="Clusters" Header="System"/>
+				<Component Name="Layers" Header="Services"/>
+				<Component Name="AUTOSAR" Header="System" Label="Services"/>
+			</ClassId>
+			<ClassId Id="2">
+				<Component Name="Clusters" Header="Memory"/>
+				<Component Name="Layers" Header="Services"/>
+				<Component Name="AUTOSAR" Header="Memory" Label="Services"/>
+			</ClassId>
+			<ClassId Id="3">
+				<Component Name="Clusters" Header="Communication"/>
+				<Component Name="Layers" Header="Services"/>
+				<Component Name="AUTOSAR" Header="Communication" Label="Services"/>
+			</ClassId>
+			<ClassId Id="4">
+				<Component Name="Clusters" Header="System"/>
+				<Component Name="Layers" Header="Interfaces"/>
+				<Component Name="AUTOSAR" Header="System" Label="Interfaces"/>
+			</ClassId>
+			<ClassId Id="5">
+				<Component Name="Clusters" Header="Memory"/>
+				<Component Name="Layers" Header="Interfaces"/>
+				<Component Name="AUTOSAR" Header="Memory" Label="Interfaces"/>
+			</ClassId>
+			<ClassId Id="6">
+				<Component Name="Clusters" Header="Communication"/>
+				<Component Name="Layers" Header="Interfaces"/>
+				<Component Name="AUTOSAR" Header="Communication" Label="Interfaces"/>
+			</ClassId>
+			<ClassId Id="7">
+				<Component Name="Clusters" Header="System"/>
+				<Component Name="Layers" Header="Drivers"/>
+				<Component Name="AUTOSAR" Header="System" Label="Drivers"/>
+			</ClassId>
+			<ClassId Id="8">
+				<Component Name="Clusters" Header="Memory"/>
+				<Component Name="Layers" Header="Drivers"/>
+				<Component Name="AUTOSAR" Header="Memory" Label="Drivers"/>
+			</ClassId>
+			<ClassId Id="9">
+				<Component Name="Clusters" Header="Communication"/>
+				<Component Name="Layers" Header="Drivers"/>
+				<Component Name="AUTOSAR" Header="Communication" Label="Drivers"/>
+			</ClassId>
+			<ClassId Id="10">
+				<Component Name="Clusters" Header="I/O Hardware"/>
+				<Component Name="Layers" Header="Drivers"/>
+				<Component Name="AUTOSAR" Header="I/O Hardware" Label="Drivers"/>
+			</ClassId>
+			<ClassId Id="11">
+				<Component Name="Clusters" Header="Complex Drivers"/>
+				<Component Name="Layers" Header="Complex Drivers"/>
+				<Component Name="AUTOSAR" Header="Complex Drivers"/>
+			</ClassId>
+			<ClassId Id="12">
+				<Component Name="Clusters" Header="I/O Hardware"/>
+				<Component Name="Layers" Header="Interfaces"/>
+				<Component Name="AUTOSAR" Header="I/O Hardware" Label="Interfaces"/>
+			</ClassId>
+			<ClassId Id="13">
+				<Component Name="Clusters" Header="RTE"/>
+				<Component Name="Layers" Header="RTE"/>
+				<Component Name="AUTOSAR" Header="RTE"/>
+			</ClassId>
+			<ClassId Id="14">
+				<Component Name="Clusters" Header="Application"/>
+				<Component Name="Layers" Header="Application"/>
+				<Component Name="AUTOSAR" Header="Application"/>
+			</ClassId>
+		</Components>
+	</ComponentDefinition>
+	<GroupDefaults>
+		<_Board/>
+		<!-- ########## AUTOSAR ########## -->
+		<Adc ClassId="10">
+			<Dependencies>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="Analog Digital Conversion" Target="."/>
+		</Adc>
+		<BswM ClassId="1">
+			<Controller Name="*" Description="Basic SW Mode Manager" Target="."/>
+		</BswM>
+		<Cal ClassId="1">
+			<Controller Name="*" Description="Crypto Abstraction Library" Target="."/>
+		</Cal>
+		<Can ClassId="9">
+			<Controller Name="*" Description="Can Driver" Target="."/>
+		</Can>
+		<CanIf ClassId="6">
+			<Controller Name="*" Description="CAN Interface" Target="."/>
+		</CanIf>
+		<CanNm ClassId="3">
+			<Controller Name="*" Description="CAN Network Management" Target="."/>
+		</CanNm>
+		<CanSM ClassId="3">
+			<Controller Name="*" Description="CAN State Manager" Target="."/>
+		</CanSM>
+		<CanTp ClassId="3">
+			<Controller Name="*" Description="CAN Transport Protocol" Target="."/>
+		</CanTp>
+		<CanTrcv ClassId="6">
+			<Controller Name="*" Description="CAN Transceiver Driver" Target="."/>
+		</CanTrcv>
+		<Cdd ClassId="11">
+			<Controller Name="*" Description="Complex Device Driver" Target="."/>
+		</Cdd>
+		<Com ClassId="3">
+			<Controller Name="*" Description="Communication Handler" Target="."/>
+		</Com>
+		<ComM ClassId="3">
+			<Controller Name="*" Description="Communication Manager" Target="."/>
+		</ComM>
+		<CorTst ClassId="7">
+			<Controller Name="*" Description="Core Test Module" Target="."/>
+		</CorTst>
+		<Crc ClassId="1">
+			<Controller Name="*" Description="Cyclic Redundancy Check" Target="."/>
+		</Crc>
+		<Csm ClassId="1">
+			<Controller Name="*" Description="Crypto Service Manager" Target="."/>
+		</Csm>
+		<Dbg ClassId="1">
+			<Controller Name="*" Description="Dbg Module" Target="."/>
+		</Dbg>
+		<Dcm ClassId="3">
+			<Controller Name="*" Description="Diagnostic Communications Manager" Target="."/>
+		</Dcm>
+		<Dem ClassId="1">
+			<Controller Name="*" Description="Diagnostic Event Manager" Target="."/>
+		</Dem>
+		<Det ClassId="1">
+			<Controller Name="*" Description="Development Error Tracer" Target="."/>
+		</Det>
+		<Dio ClassId="10">
+			<Dependencies>
+				<Requires Name="Port"/>
+			</Dependencies>
+			<Controller Name="*" Description="Digital IO Module" Target="."/>
+		</Dio>
+		<Dlt ClassId="3">
+			<Controller Name="*" Description="Diagnostic Log and Trace Module" Target="."/>
+		</Dlt>
+		<Ea ClassId="5" Family="MemHwA">
+			<Dependencies>
+				<Requires Name="Eep"/>
+				<Requires Name="EepAT25128"/>
+				<Requires Name="EepExt"/>
+			</Dependencies>
+			<Controller Name="*" Description="EEPROM Abstraction" Target="."/>
+		</Ea>
+		<EcuC ClassId="1">
+			<Controller Name="*" Description="Global ECU Configuration" Target="."/>
+		</EcuC>
+		<EcuM ClassId="1">
+			<Dependencies>
+				<Requires Name="NvM"/>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="ECU State Manager" Target="."/>
+		</EcuM>
+		<Eep ClassId="8">
+			<Dependencies>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="EEPROM Driver" Target="."/>
+		</Eep>
+		<Eth ClassId="9">
+			<Controller Name="*" Description="Ethernet Driver" Target="."/>
+		</Eth>
+		<EthIf ClassId="6">
+			<Controller Name="*" Description="Ethernet Interface" Target="."/>
+		</EthIf>
+		<EthSm ClassId="3">
+			<Controller Name="*" Description="Ethernet State Manager" Target="."/>
+		</EthSm>
+		<EthTrcv ClassId="6">
+			<Controller Name="*" Description="Ethernet Transceiver Driver" Target="."/>
+		</EthTrcv>
+		<Fee ClassId="5" Family="MemHwA" Export="No">
+			<Dependencies>
+				<Requires Name="Fls"/>
+				<Requires Name="Fls30ADBus01"/>
+				<Requires Name="Fls30Spi01"/>
+				<Requires Name="FlsExt"/>
+			</Dependencies>
+			<Controller Name="*" Description="Flash EEPROM Emulation" Target="."/>
+		</Fee>
+		<FiM ClassId="1">
+			<Controller Name="*" Description="Function Inhibition Manager" Target="."/>
+		</FiM>
+		<Fls ClassId="8">
+			<Dependencies>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="Flash Driver" Target="."/>
+		</Fls>
+		<FlsTst ClassId="8">
+			<Controller Name="*" Description="FlsTst Module" Target="."/>
+		</FlsTst>
+		<Fr ClassId="9">
+			<Controller Name="*" Description="Flexray Driver" Target="."/>
+		</Fr>
+		<FrIf ClassId="6">
+			<Controller Name="*" Description="FlexRay Interface" Target="."/>
+		</FrIf>
+		<FrIsoTp ClassId="3">
+			<Controller Name="*" Description="FlexRay ISO Transport Protocol" Target="."/>
+		</FrIsoTp>
+		<FrNm ClassId="3">
+			<Controller Name="*" Description="FlexRay Network Management" Target="."/>
+		</FrNm>
+		<FrSm ClassId="3">
+			<Controller Name="*" Description="FlexRay State Manager" Target="."/>
+		</FrSm>
+		<FrTp ClassId="3">
+			<Controller Name="*" Description="FlexRay Transport Protocol" Target="."/>
+		</FrTp>
+		<FrTrcv ClassId="6">
+			<Controller Name="*" Description="FlexRay Transceiver Driver" Target="."/>
+		</FrTrcv>
+		<Gpt ClassId="7">
+			<Dependencies>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="General Purpose Timer" Target="."/>
+		</Gpt>
+		<IPduM ClassId="3">
+			<Controller Name="*" Description="IPdu Multiplexer" Target="."/>
+		</IPduM>
+		<IPduMplex ClassId="3">
+			<Controller Name="*" Description="IPdu Multiplexer" Target="."/>
+		</IPduMplex>
+		<Icu ClassId="10">
+			<Controller Name="*" Description="Input Capture Unit" Target="."/>
+		</Icu>
+		<IoHwAbstraction ClassId="12">
+			<Controller Name="*" Description="IO HW Abstraction" Target="."/>
+		</IoHwAbstraction>
+		<IoHwAb ClassId="12">
+			<Controller Name="*" Description="IO HW Abstraction" Target="."/>
+		</IoHwAb>
+		<J1939Tp ClassId="3">
+			<Controller Name="*" Description="J1939 Transport Protocol" Target="."/>
+		</J1939Tp>
+		<Lin ClassId="9">
+			<Controller Name="*" Description="Lin Driver" Target="."/>
+		</Lin>
+		<LinIf ClassId="6">
+			<Controller Name="*" Description="LIN Interface" Target="."/>
+		</LinIf>
+		<LinNm ClassId="3">
+			<Controller Name="*" Description="LIN Network Management" Target="."/>
+		</LinNm>
+		<LinSM ClassId="3">
+			<Controller Name="*" Description="LIN State Manager" Target="."/>
+		</LinSM>
+		<LinTp ClassId="3">
+			<Controller Name="*" Description="LIN Transport Protocol" Target="."/>
+		</LinTp>
+		<LinTrcv ClassId="6">
+			<Controller Name="*" Description="LIN Transceiver Driver" Target="."/>
+		</LinTrcv>
+		<Mcu ClassId="7">
+			<Controller Name="*" Description="Microcontroller Unit" Target="."/>
+		</Mcu>
+		<MemIf ClassId="5">
+			<Controller Name="*" Description="Memory Abstraction Interface" Target="."/>
+		</MemIf>
+		<MemMap ClassId="1">
+			<Controller Name="*" Description="MemMap Module" Target="."/>
+		</MemMap>
+		<Nm ClassId="3">
+			<Controller Name="*" Description="Generic Network Management" Target="."/>
+		</Nm>
+		<NvM ClassId="2" Export="No">
+			<Controller Name="*" Description="NvRam Manager" Target="."/>
+		</NvM>
+		<Os ClassId="1">
+			<Controller Name="*" Description="Operating System" Target="."/>
+		</Os>
+		<PduR ClassId="3">
+			<Controller Name="*" Description="PDU Router" Target="."/>
+		</PduR>
+		<Port ClassId="10">
+			<Controller Name="*" Description="Port Driver" Target="."/>
+		</Port>
+		<Pwm ClassId="10">
+			<Dependencies>
+				<Requires Name="Port"/>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="Pulse Width Modulation" Target="."/>
+		</Pwm>
+		<RamTst ClassId="1">
+			<Controller Name="*" Description="Ram Test Module" Target="."/>
+		</RamTst>
+		<Rte ClassId="13">
+			<Controller Name="*" Description="Runtime Environment" Target="."/>
+		</Rte>
+		<SchM ClassId="1">
+			<Controller Name="*" Description="BSW Scheduler" Target="."/>
+		</SchM>
+		<SoAd ClassId="3">
+			<Controller Name="*" Description="Socket Adapter" Target="."/>
+		</SoAd>
+		<Spi ClassId="9">
+			<Dependencies>
+				<Requires Name="Dio"/>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="Standard Peripheral Interface" Target="."/>
+		</Spi>
+		<StbM ClassId="1">
+			<Controller Name="*" Description="Synchronized Time-Based Manager" Target="."/>
+		</StbM>
+		<UdpNm ClassId="3">
+			<Controller Name="*" Description="UDP Network Management" Target="."/>
+		</UdpNm>
+		<Wdg ClassId="7" Family="Wdg">
+			<Dependencies>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="Watchdog Driver" Target="."/>
+		</Wdg>
+		<WdgIf ClassId="4">
+			<Dependencies>
+				<Requires Name="Wdg"/>
+				<Requires Name="WdgTLE4278G"/>
+				<Requires Name="WdgExt"/>
+			</Dependencies>
+			<Controller Name="*" Description="Watchdog Interface" Target="."/>
+		</WdgIf>
+		<WdgM ClassId="1">
+			<Dependencies>
+				<Requires Name="WdgIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Watchdog Manager" Target="."/>
+		</WdgM>
+		<Xcp ClassId="3">
+			<Controller Name="*" Description="XCP Module" Target="."/>
+		</Xcp>
+		<!-- ########## Vector ########## -->
+		<Ea30Inst2 ClassId="5" Family="MemHwA">
+			<Controller Name="*" Description="EEPROM Abstraction" Target="."/>
+		</Ea30Inst2>
+		<EaBasic ClassId="5" Family="MemHwA">
+			<Controller Name="*" Description="EEPROM Abstraction Basic" Target="."/>
+		</EaBasic>
+		<EepAt25128 ClassId="5" Family="EepExt">
+			<Controller Name="*" Description="External Eeprom Driver At25128" Active="False" Target="."/>
+		</EepAt25128>
+		<Eep30At25128Inst2 ClassId="5" Family="EepExt">
+			<Controller Name="*" Description="External Eeprom Driver At25128 Inst2" Active="False" Target="."/>
+		</Eep30At25128Inst2>
+		<Fee30Inst2 ClassId="5" Family="MemHwA" Export="No">
+			<Dependencies>
+				<Requires Name="Fls"/>
+				<Requires Name="Fls30ADBus01"/>
+				<Requires Name="Fls30Spi01"/>
+				<Requires Name="FlsExt"/>
+			</Dependencies>
+			<Controller Name="*" Description="Flash EEPROM Emulation" Target="."/>
+		</Fee30Inst2>
+		<Fls30ADBus01 ClassId="8" Family="FlsExt">
+			<Dependencies>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="External Flash Driver" Active="False" Target="."/>
+		</Fls30ADBus01>
+		<Fls30Spi01 ClassId="8" Family="FlsExt">
+			<Dependencies>
+				<Requires Name="Mcu"/>
+				<Requires Name="Spi"/>
+			</Dependencies>
+			<Controller Name="*" Description="External Flash Driver" Active="False" Target="."/>
+		</Fls30Spi01>
+		<WdgTLE4278G ClassId="4" Family="WdgExt">
+			<Dependencies>
+				<Requires Name="Dio"/>
+			</Dependencies>
+			<Controller Name="*" Description="Watchdog TLE4278G Driver" Target="."/>
+		</WdgTLE4278G>
+		<!-- ########## Vector Stubs ########## -->
+		<EaExt ClassId="5" Instances="No" Family="MemHwA">
+			<Dependencies>
+				<Requires Name="MemIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Generic Eeprom Abstraction" Active="False"/>
+		</EaExt>
+		<Ea30Stub1 ClassId="5" Family="MemHwA" Export="No">
+			<Dependencies>
+				<Requires Name="MemIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="EEPROM Abstraction External 1" Target="." Active="False"/>
+		</Ea30Stub1>
+		<Ea30Stub2 ClassId="5" Family="MemHwA" Export="No">
+			<Dependencies>
+				<Requires Name="MemIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="EEPROM Abstraction External 2" Target="." Active="False"/>
+		</Ea30Stub2>
+		<EepExt ClassId="8" Instances="Yes" Family="EepExt">
+			<Controller Name="*" Description="Generic Eeprom Driver" Active="False"/>
+		</EepExt>
+		<Eep30Stub1 ClassId="8" Family="EepExt" Export="No">
+			<Controller Name="*" Description="EEPROM Abstraction External 1" Target="." Active="False"/>
+		</Eep30Stub1>
+		<Eep30Stub2 ClassId="8" Family="EepExt" Export="No">
+			<Controller Name="*" Description="EEPROM Abstraction External 2" Target="." Active="False"/>
+		</Eep30Stub2>
+		<FeeExt ClassId="5" Instances="No" Family="MemHwA">
+			<Dependencies>
+				<Requires Name="MemIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Generic Flash Eeprom Emulation" Active="False"/>
+		</FeeExt>
+		<Fee30Stub1 ClassId="5" Family="MemHwA" Export="No">
+			<Dependencies>
+				<Requires Name="MemIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Flash EEPROM Abstraction External 1" Target="." Active="False"/>
+		</Fee30Stub1>
+		<Fee30Stub2 ClassId="5" Family="MemHwA" Export="No">
+			<Dependencies>
+				<Requires Name="MemIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Flash EEPROM Abstraction External 2" Target="." Active="False"/>
+		</Fee30Stub2>
+		<FlsExt ClassId="8" Instances="Yes" Family="FlsExt">
+			<Dependencies>
+				<Requires Name="MemIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Generic Flash Driver" Active="False"/>
+		</FlsExt>
+		<Fls30Stub1 ClassId="8" Family="FlsExt" Export="No">
+			<Dependencies>
+				<Requires Name="MemIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Flash EEPROM Abstraction External 1" Target="." Active="False"/>
+		</Fls30Stub1>
+		<Fls30Stub2 ClassId="8" Family="FlsExt" Export="No">
+			<Dependencies>
+				<Requires Name="MemIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Flash EEPROM Abstraction External 2" Target="." Active="False"/>
+		</Fls30Stub2>
+		<WdgExt ClassId="7" Instances="Yes" Family="WdgExt">
+			<Dependencies>
+				<Requires Name="WdgIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Generic Watchdog Driver" Active="False"/>
+		</WdgExt>
+		<Wdg30Stub1 ClassId="7" Family="WdgExt" Export="No">
+			<Dependencies>
+				<Requires Name="WdgIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Generic Watchdog Stub 1" Target="." Active="False"/>
+		</Wdg30Stub1>
+		<Wdg30Stub2 ClassId="7" Family="WdgExt" Export="No">
+			<Dependencies>
+				<Requires Name="WdgIf"/>
+			</Dependencies>
+			<Controller Name="*" Description="Generic Watchdog Stub 2" Target="." Active="False"/>
+		</Wdg30Stub2>
+		<!-- ########## NEC ########## -->
+		<WdgA ClassId="7" Family="Wdg">
+			<Dependencies>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="Watchdog Driver A" Target="."/>
+		</WdgA>
+		<WdgB ClassId="7" Family="Wdg">
+			<Dependencies>
+				<Requires Name="Mcu"/>
+			</Dependencies>
+			<Controller Name="*" Description="Watchdog Driver B" Target="."/>
+		</WdgB>
+		<!-- ########## TI ########## -->
+		<Het ClassId="10">
+			<Controller Name="*" Description="High End Timer" Target="."/>
+		</Het>
+		<!-- ########## Fujitsu, Freescale ########## -->
+		<Resource ClassId="11">
+			<Controller Name="*" Description="Resource" Target="."/>
+		</Resource>
+		<!-- ########## Freescale ########## -->
+		<Base ClassId="11">
+			<Controller Name="*" Description="Base" Target="."/>
+		</Base>
+		<!-- ########## Infineon ########## -->
+		<Irq ClassId="11">
+			<Controller Name="*" Description="Irq" Target="."/>
+		</Irq>
+		<!-- ########## BAC Components ########## -->
+		<Cdc ClassId="11">
+			<Controller Name="*" Description="Cdc" Target="."/>
+		</Cdc>
+		<Coding ClassId="11">
+			<Dependencies>
+				<Requires Name="Dem"/>
+				<Requires Name="NvM"/>
+				<Requires Name="Com"/>
+			</Dependencies>
+			<Controller Name="*" Description="Coding Module" Target="."/>
+		</Coding>
+		<Darh ClassId="11">
+			<Dependencies>
+				<Requires Name="Dcm"/>
+				<Requires Name="Dem"/>
+				<Requires Name="NvM"/>
+			</Dependencies>
+			<Controller Name="*" Description="Diagnostic Active Response Handler" Target="."/>
+		</Darh>
+		<CSM ClassId="11">
+			<Dependencies>
+				<Requires Name="Dem"/>
+				<Requires Name="NvM"/>
+			</Dependencies>
+			<Controller Name="*" Description="Client Security Module" Target="."/>
+		</CSM>
+		<Pia ClassId="11">
+			<Dependencies>
+				<Requires Name="Dem"/>
+				<Requires Name="Com"/>
+				<Requires Name="NvM"/>
+			</Dependencies>
+			<Controller Name="*" Description="Personalization Individualization Adaptation" Target="."/>
+		</Pia>
+		<SysTimeClient ClassId="11">
+			<Dependencies>
+				<Requires Name="Com"/>
+				<Requires Name="Dem"/>
+			</Dependencies>
+			<Controller Name="*" Description="SysTime Client" Target="."/>
+		</SysTimeClient>
+		<Vsm ClassId="11">
+			<Controller Name="*" Description="Vsm" Target="."/>
+		</Vsm>
+	</GroupDefaults>
+	<ReportDefinition>
+		<Menu Name="Reports">
+			<MenuItem Display="CANoe Environment Variables">
+				<MenuItem Display="Dio" Report="Dio CANoe Dbc Export"/>
+				<MenuItem Display="Icu" Report="Icu CANoe Dbc Export"/>
+				<MenuItem Display="Adc" Report="Adc CANoe Dbc Export"/>
+				<MenuItem Display="Pwm" Report="Pwm CANoe Dbc Export"/>
+			</MenuItem>
+		</Menu>
+		<Reports>
+			<Report Name="Dio CANoe Dbc Export" Type="dbc" OutputFile="%PROJECTFILE%_Microsar_Dio" UseSaveAsDialog="Yes">
+				<Task Type="transformation" Group="Dio" Source="%ECUCFILE%" XSL="_Trans\DBC_Dio.xsl"/>
+			</Report>
+			<Report Name="Icu CANoe Dbc Export" Type="dbc" OutputFile="%PROJECTFILE%_Microsar_Icu" UseSaveAsDialog="Yes">
+				<Task Type="transformation" Group="Icu" Source="%ECUCFILE%" XSL="_Trans\DBC_Icu.xsl"/>
+			</Report>
+			<Report Name="Adc CANoe Dbc Export" Type="dbc" OutputFile="%PROJECTFILE%_Microsar_Adc" UseSaveAsDialog="Yes">
+				<Task Type="transformation" Group="Adc" Source="%ECUCFILE%" XSL="_Trans\DBC_Adc.xsl"/>
+			</Report>
+			<Report Name="Pwm CANoe Dbc Export" Type="dbc" OutputFile="%PROJECTFILE%_Microsar_Pwm" UseSaveAsDialog="Yes">
+				<Task Type="transformation" Group="Pwm" Source="%ECUCFILE%" XSL="_Trans\DBC_Pwm.xsl"/>
+			</Report>
+		</Reports>
+	</ReportDefinition>
+</ToolSystem>

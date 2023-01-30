@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project Engine="4.2.2.6" TimeStamp="2016-10-20 09:13 am" CS="43358353442">
+	<General>
+		<ProjectName Value="EPS.ecuc"/>
+		<ProjectFolder Value="C:\Fiasa_327\Fiasa_326_327_05.01.00\Fiasa_326_327_EPS_TMS570\Tools\AsrProject\Config\ECUC\"/>
+		<RootTargetFolder Value=""/>
+		<PackageLicense Value=""/>
+		<Author Value=""/>
+		<Company Value=""/>
+		<Description/>
+		<CreationDate Value="2015-05-21 08:39 am"/>
+		<Revision Value=""/>
+		<LogGeneral Value="False"/>
+		<LogChanges Value="False"/>
+		<LogGeneration Value="False"/>
+		<LogValidation Value="False"/>
+		<LogImport Value="False"/>
+		<Controller Value="Tmsx70_Tms570ls2125"/>
+		<Phase Value="PreCompile"/>
+	</General>
+	<Group Value="_Board" Version="x.x.x" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="AbsHwPos" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="ActivePull" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="ApXcp" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Assist" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="AssistFirewall" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="AstLmt" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="AvgFricLrn" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="BatteryVoltage" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="BkCpPc" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="BswM" Version="3.0.2" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="BVDiag" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Can_Tms470Dcan" Version="3.2.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="CanIf" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="CanNm" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="CanSM" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="CanTp" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="CanTrcv_Generic1CanDio" Version="" Active="False" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)">
+		<Container Name="CanTrcv_Generic1CanDio_Group" Type="ctGroup" Active="True" Id="0" Class="">
+			<Identifier Name="CANTRCV_GENERIC1CANDIO_GROUP_CLASSNAME">
+				<Entry Value="CanTrcv_Generic1CanDio_Group" Display="CanTrcv_Generic1CanDio_Group"/>
+			</Identifier>
+		</Container>
+	</Group>
+	<Group Value="CanTrcv_Generic2CanDio" Version="" Active="False" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)">
+		<Container Name="CanTrcv_Generic2CanDio_Group" Type="ctGroup" Active="True" Id="0" Class="">
+			<Identifier Name="CANTRCV_GENERIC2CANDIO_GROUP_CLASSNAME">
+				<Entry Value="CanTrcv_Generic2CanDio_Group" Display="CanTrcv_Generic2CanDio_Group"/>
+			</Identifier>
+		</Container>
+	</Group>
+	<Group Value="CanTrcv_Generic3CanDio" Version="" Active="False" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)">
+		<Container Name="CanTrcv_Generic3CanDio_Group" Type="ctGroup" Active="True" Id="0" Class="">
+			<Identifier Name="CANTRCV_GENERIC3CANDIO_GROUP_CLASSNAME">
+				<Entry Value="CanTrcv_Generic3CanDio_Group" Display="CanTrcv_Generic3CanDio_Group"/>
+			</Identifier>
+		</Container>
+	</Group>
+	<Group Value="CanXcp" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="CddFiat" Version="" Active="False" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)">
+		<Container Name="CddFiat_Group" Type="ctGroup" Active="True" Id="0" Class="">
+			<Identifier Name="CDDFIAT_GROUP_CLASSNAME">
+				<Entry Value="CddFiat_Group" Display="CddFiat_Group"/>
+			</Identifier>
+		</Container>
+	</Group>
+	<Group Value="CmMtrCurr" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Com" Version="3.2.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="ComM" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="ComplErr" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Crc" Version="4.1.1" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="CtrldDisShtdn" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="CtrlTemp" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="CurrCmd" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="CurrParamComp" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Damping" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="DampingFirewall" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Dcm" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Dem" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Det" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="DiagMgr" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="DigColPs" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="DigHwTrqSENT" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="DigMSB" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="DigPhsReasDiag" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Dio" Version="2.1.0" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="EcuM" Version="7.6.0" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="ElePwr" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="EOTActuatorMng" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="EtDmpFw" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Fee" Version="2.4.0" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Fim" Version="" Active="False" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)">
+		<Container Name="Fim_Group" Type="ctGroup" Active="True" Id="0" Class="">
+			<Identifier Name="FIM_GROUP_CLASSNAME">
+				<Entry Value="Fim_Group" Display="Fim_Group"/>
+			</Identifier>
+		</Container>
+	</Group>
+	<Group Value="FlsTst" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="FrqDepDmpnInrtCmp" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Gpt" Version="1.0.4" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Gsod" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="HighFreqAssist" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="HiLoadStall" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="HwPwUp" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="HystComp" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="IoHwAb" Version="1.6.3" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="LmtCod" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="LrnEOT" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Mcu" Version="2.3.x" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="MemIf" Version="2.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="MtrDrvDiag" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="MtrTempEst" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="MtrVel" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="MtrVel2" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Nm" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="NvM" Version="3.7.1" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="NvMMgr" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="NvMProxy" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Os" Version="4.1.0" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)..\GenDataOS\" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="OvrVoltMon" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="PduR" Version="3.2.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="PeakCurrEst" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="PICurrCntrl" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Polarity" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Port" Version="1.2.0" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="PwrLmtFuncCr" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="QuadDet" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Return" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="ReturnFirewall" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Rte" Version="3.2.1" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="ShtdnMech" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="SignlCondn" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="SpiNxt" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="StabilityComp" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="StabilityComp2" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="StaMd" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="StOpCtrl" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Sweep" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Sweep2" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="ThrmlDutyCycle" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="TmprlMon" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="TmprlMon2" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="TqRsDg" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="TrqCanc" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="TrqCmdScl" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="TuningSelAuth" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="uDiag" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="VehDyn" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="VehPwrMd" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="VehSpdLmt" Version="3.1.2" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Wdg" Version="1.0.0" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="WdgIf" Version="1.0.0" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="WdgM" Version="1.0.0" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="Xcp" Version="3.0.1" Active="True" PurgeSave="False" Unlocked="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+	<Group Value="EcuC" Version="3.1.4" Stub="True" Active="True" PurgeSave="False" TargetDirectory="$(GenDataFolder)" TargetSwc="$(ServiceSwcFolder)" TargetUser="$(TemplateFolder)"/>
+</Project>

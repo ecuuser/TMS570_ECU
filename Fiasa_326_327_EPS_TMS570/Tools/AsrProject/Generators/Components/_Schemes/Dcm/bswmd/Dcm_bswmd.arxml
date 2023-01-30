@@ -1,0 +1,2435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2010 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           	Dcm_Bswmd.arxml
+Component:        Diag_AsrDcm
+Module:         	Dcm
+Generator:     	 
+
+Description:    -
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xmlns="http://autosar.org/3.0.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:63c55a5e-7313-4e92-a014-973724d3e900">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="DCE:34e7b64a-448c-4b50-be39-a54f4e26d802">
+					<SHORT-NAME>Dcm_Impl</SHORT-NAME>
+					<CODE-GENERATOR>GENy</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>4</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>12</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>0</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>3</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>0</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>0</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Dcm_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Dcm_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/Dcm</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-DEF UUID="DCE:379f2a29-a26e-48b7-a630-7ac748eca0eb">
+					<SHORT-NAME>Dcm</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of the Dcm (Diagnostic Communications Manager) module.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2008-04-16T12:41:53</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Created</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Initial Version ASR3.0</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2008-11-07T11:43:45</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">New SW version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of Implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.09.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2008-11-18T08:00:16</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added version information, Svc19 runtime limiter</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of Implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.10.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2009-02-24T14:54:54</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added DcmEcuResetDelayTime</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of Implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.11.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2009-03-09T17:39:42</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added DcmUserConfigFile</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Added Missing Parameter</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.12.00</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2009-05-07T13:07:46</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added DcmConfigSet container</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">MultiIdentity Support</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.12.01</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2009-06-24T09:30:02</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.13.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2009-07-30T09:35:03</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added OBD support</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">OBD support</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.14.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2009-09-16T09:48:06</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.14.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2009-10-23T13:12:08</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.15.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2009-11-10T11:24:46</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Reworked parameter descriptions, added restrictions. Added new parameter DcmSoftwareComponentName.</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Consistency</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.00</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2010-02-11T07:25:27</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2010-04-30T11:17:27</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.02.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2010-07-28T08:02:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2010-08-06T14:49:14</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added parameter DcmUnknownServiceSupport, changed softare implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">New features</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.03.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visktw</ISSUED-BY>
+								<DATE>2010-09-23T13:06:52</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version, bugfix</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.03.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2010-10-07T14:52:18</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.04.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2010-10-28T16:20:17</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added Periodic / Roe Type</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Support Peroidic Type 1 for Fiat</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.05.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2010-11-17T16:23:15</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added SplitMainFunction, changed origin of some items</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Support SchM configuration</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.06.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2011-04-28T08:06:27+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.07.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2011-05-16T06:07:30+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.08.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2011-06-17T02:35:02+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.08.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2011-08-19T06:07:10+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.09.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2011-12-02T06:35:09+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.10.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visktw</ISSUED-BY>
+								<DATE>2012-07-05T05:58:30+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.10.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2012-12-03T02:53:25+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.11.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2013-03-26T02:53:25+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version, added additional parameters DcmSupplierNotificationSupport, DcmOemNotificationSupport, DcmOBDCalibrationSupport, DcmAmdRuntimeMeasurement</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.12.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissa</ISSUED-BY>
+								<DATE>2013-09-02T08:20:53+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed software implementation version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Update of implementation</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/Dcm</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-LINK-TIME</SUPPORTED-CONFIG-VARIANT>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Parameter Container Definition: DcmDsd -->
+						<PARAM-CONF-CONTAINER-DEF UUID="05bdb388-cfdc-4f42-b27e-2dbc77ebd663">
+							<SHORT-NAME>DcmDsd</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">These parameters apply to Diagnostic Service Dispatcher. All parameters for all service dispatchers are included in this one configuration container.
+
+upperMultiplicity:
+Service dispatcher is multiple times configurable
+in this one configuration container.
+
+lowerMultiplicity:
+There must always be one service dispatcher in a DCM.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<SUB-CONTAINERS>
+								<!-- Parameter Container Definition: DcmDsdServiceTable -->
+								<PARAM-CONF-CONTAINER-DEF UUID="5b873223-a27f-4489-b02c-dff89d19d5fb">
+									<SHORT-NAME>DcmDsdServiceTable</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container contains the configuration (DSD parameters) for Service Identifier Table.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>31</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: DcmDiagnosticDatabase -->
+										<STRING-PARAM-DEF UUID="c92db481-ead2-4afd-a61e-3c1d94b26131">
+											<SHORT-NAME>DcmDiagnosticDatabase</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter is a file reference to the diagnostic service description database. Based on the contents the Dcm services will be configured.
+
+RESTRICTIONS: The Vector GENy tool supports CANdela document (.cdd) files to be imported.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</STRING-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DcmDiagnosticVariant -->
+										<STRING-PARAM-DEF UUID="368772cb-0633-4144-ae2b-041c338af309">
+											<SHORT-NAME>DcmDiagnosticVariant</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter is an instance reference into the diagnostic service description database.
+Based on the contents the Dcm services will be configured.
+
+This parameter is optional.
+
+RESTRICTIONS: In the Vector GENy tool you have to select the proper diagnostic description variant (if more than one is available) in order to generate the correct diagnostic component.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>LINK</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</STRING-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: DcmDsl -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:2c6ccae4-25af-4ff6-bb0c-4c16bcbdda93">
+							<SHORT-NAME>DcmDsl</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">These parameters apply to a Diagnostic Session Layer. There may be a parameter set (DSL Configuration) per protocol.
+
+upperMultiplicity:
+Each DCM configuration must have exactly one DSL configuration.
+
+lowerMultiplicity:
+Each DCM configuration must have exactly one DSL configuration.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<SUB-CONTAINERS>
+								<!-- Parameter Container Definition: DcmDslBuffer -->
+								<!-- Parameter Container Definition: DcmDslDiagResp -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:01fc686e-6056-41e1-abf0-b6111663f74a">
+									<SHORT-NAME>DcmDslDiagResp</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container contains the configuration (parameters) for the ResponsePending handling</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: DcmDslDiagRespForceRespPendEn -->
+										<BOOLEAN-PARAM-DEF UUID="DCE:4f077092-951f-4a23-85c6-facf46a949a9">
+											<SHORT-NAME>DcmDslDiagRespForceRespPendEn</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">NOT USED by Vector Dcm.
+
+Allow to enable (TRUE) or disable (FALSE) the mechanism of directly triggering of  ResponsePending by application.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: DcmDslDiagRespMaxNumRespPend -->
+										<INTEGER-PARAM-DEF UUID="DCE:298f9484-5a24-4952-b5d0-d796c07f964f">
+											<SHORT-NAME>DcmDslDiagRespMaxNumRespPend</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">NOT USED  by Vector Dcm.
+
+Maximum number of negative responses with response code 0x78 (requestCorrectlyReceived-ResponsePending) allowed per request.
+Dcm will send a negative response with response code 0x10 (generalReject), in case the limit value gets reached.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<MAX>255</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: DcmDslProtocol -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:8557090a-e84c-4116-83e6-500e51fdee8c">
+									<SHORT-NAME>DcmDslProtocol</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container contains the configuration (parameters) for the protocol configuration (for each protocol) The following parameters needs to be configured per protocol.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: DcmDslProtocolRow -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:478e7c56-c6d7-47ed-9a02-f5c1ad42c52d">
+											<SHORT-NAME>DcmDslProtocolRow</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Definition of a single Row of configuration for the protocol configuration (for each protocol)</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: DcmDslProtocolID -->
+												<INTEGER-PARAM-DEF UUID="DCE:096464f6-f1d4-4b0d-937d-913b32679072">
+													<SHORT-NAME>DcmDslProtocolID</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+
+The SWS for DCM defines this as enum type of maxsize uint8 with values {OBD, UDS, ...}. It is effectively the name of the diagnostic protocol type for the Dcm Dsl Protocol that is being configured.
+0x00 : DCM_OBD_ON_CAN OBD on CAN (ISO15765-4; ISO15031-5)
+0x01 : DCM_UDS_ON_CAN UDS on CAN (ISO15765-3; ISO14229-1)
+0x02 : DCM_UDS_ON_FLEXRAY UDS on FlexRay (Manufacturer specific; ISO14229-1)
+0x03 : DCM_ROE_ON_CAN
+0x04 : DCM_ROE_ON_FLEXRAY
+0x05 : DCM_PERIODIC_ON_CAN
+0x06 : DCM_PERIODIC_ON_FLEXRAY
+
+Implementation Type: Dcm_ProtocolType
+
+0x07..0xEF : Reserved for further AUTOSAR implementation
+0xF0..0xFF : Reserved for SW supplier specific</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+													<MAX>255</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DcmDslProtocolIsParallelExecutab -->
+												<BOOLEAN-PARAM-DEF UUID="DCE:be07df0a-bd12-426c-baa0-876ec82ef1bd">
+													<SHORT-NAME>DcmDslProtocolIsParallelExecutab</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+
+Enables the parallel processing of ROE or Periodic Transmission protocol. Only these both protocols are allowed to run in parallel to normal protocol (UDS, OBD).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DcmDslProtocolPreemptTimeout -->
+												<FLOAT-PARAM-DEF UUID="DCE:dfacc75a-cc47-43ea-a70a-9a824dd8d76b">
+													<SHORT-NAME>DcmDslProtocolPreemptTimeout</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+
+This is the value for the timeout (in milliseconds) of preempting protocol until protocol needs to be started.
+This is defined in the AUTOSAR SWS for Dcm as a uint16.
+
+The AUTOSAR configuration standard is to use SI units, so this parameter is defined as a float value in seconds. DCM configuration tools must convert this float value to the appropriate value format for the use in the software implementation of DCM.
+
+min:
+A negative value is not allowed.
+
+upperMultiplicity:
+Exactly one DcmDslProtocolPreemptTimeout value per DSL protocol timing structure.
+
+lowerMultiplicity:
+Exactly one DcmDslProtocolPreemptTimeout value per DSL timing structure.
+
+origin:
+Standard AUTOSAR configuration parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MIN>0</MIN>
+												</FLOAT-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DcmDslProtocolPriority -->
+												<INTEGER-PARAM-DEF UUID="DCE:aea9bbe6-4b72-4505-b831-1c5b448cac8e">
+													<SHORT-NAME>DcmDslProtocolPriority</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+
+The SWS for DCM defines this item as uint8. This is the protocol priority that is used during protocol preemption handling.
+0 = Highest priority (protocol may not be preempted by other protocols)
+1, 2, 3... = Reducing priority. Protocol may be preempted by other protocols with lower priority value.
+
+upperMultiplicity:
+Exactly one priority must be provided per Tx Protocol.
+
+lowerMultiplicity:
+Exactly one priority must be provided per Tx Protocol.
+
+origin:
+Standard AUTOSAR configuration parameter.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>255</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DcmDslProtocolTransType -->
+												<INTEGER-PARAM-DEF UUID="DCE:dd643c1e-e0d4-4e03-a7e1-8f6c315a8695">
+													<SHORT-NAME>DcmDslProtocolBufferSize</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Specifies the size of the diagnostic buffer (in bytes).
+
+For a linear buffer: size of the buffer shall be as large as the longest message (request or response).
+For a paged buffer (only Tx possible): size has impacts on the application performance.
+
+The diagnostic buffer is the main storage to receive requests and the place to store the response when sending it.
+
+The size required for this buffer depends on the diagnostic specification, or more specifically the size of the larges request or response that will have to be received or transmitted, respectively.
+Typically, services with rather large responses like the fault memory read outs, large dynamically defined DIDs or just combined DID requests (request several DIDs in a single ReadDataByIdentifier) can result in huge buffer consumption. Refer to the paged buffer options if you have space issues.
+Also note that large requests (WriteDataByIdentifier/Address) can not use such mechanisms, you need to provide enough buffer to receive the whole data.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MAX>4095</MAX>
+													<MIN>8</MIN>
+												</INTEGER-PARAM-DEF>
+												<STRING-PARAM-DEF UUID="DCE:5fe5dc71-de6e-46de-8861-6c73383759ee">
+													<SHORT-NAME>DcmDiagnosticDatabase</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm. 
+For Vector Dcm, the parameter Dcm/DcmDsd/DcmDsdServiceTable/DcmDiagnosticDatabase is used instead.
+
+This parameter is a file reference to the diagnostic service description database. Based on the contents the Dcm services will be configured.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+												<STRING-PARAM-DEF UUID="DCE:3233a7c3-9aa8-4b40-834f-65b0a7e4268b">
+													<SHORT-NAME>DcmDiagnosticVariant</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+For Vector Dcm, the parameter Dcm/DcmDsd/DcmDsdServiceTable/DcmDiagnosticVariant is used instead.
+
+This parameter is an instance reference into the diagnostic service description database.
+Based on the contents the Dcm services will be configured.
+
+This parameter is optional.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+												<ENUMERATION-PARAM-DEF UUID="28600e77-96c5-4c9b-bfb3-bccc7e799f9f">
+													<SHORT-NAME>DcmDslProtocolTransType</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+
+Selects the transmission type for protocol.
+
+Unused since transmission type has to be selected separately for RoE and periodic Tx.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>Type1</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="6548b408-10f1-4227-b78b-488492544be7">
+															<SHORT-NAME>Type1</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="961bd473-eaac-4712-8938-07f13be5b0c2">
+															<SHORT-NAME>Type2</SHORT-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+											</PARAMETERS>
+											<REFERENCES>
+												<!-- Reference Definition: DcmDslProtocolRxBufferID -->
+												<!-- Reference Definition: DcmDslProtocolSIDTable -->
+												<!-- Reference Definition: DcmDslProtocolTimeLimit -->
+												<!-- Reference Definition: DcmDslProtocolTxBufferID -->
+												<REFERENCE-PARAM-DEF UUID="DCE:6e6f723e-b295-4dda-a09f-f49d9ca774a4">
+													<SHORT-NAME>DcmDslProtocolTimeLimit</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+
+Link to the extended / limit timing structure. Note: limits are checked when using AccessTimingParameter service.
+
+upperMultiplicity:
+Exactly one extended timing structure must be provided.
+
+lowerMultiplicity:
+Exactly one extended timing structure must be provided.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Dcm/DcmDsl/DcmDslProtocolTiming/DcmDslProtocolTimingRow</DESTINATION-REF>
+												</REFERENCE-PARAM-DEF>
+											</REFERENCES>
+											<SUB-CONTAINERS>
+												<!-- Parameter Container Definition: DcmDslConnection -->
+												<PARAM-CONF-CONTAINER-DEF UUID="DCE:c6ad5fd5-d8cc-4c4f-bbaf-5d79acd55299">
+													<SHORT-NAME>DcmDslConnection</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This container contains links between Diagnostic Protocol (=DcmDslProtocolRow) and the according Rx or Tx channel.
+Because of the usecase to allow more then one diagnostic tester (using different CAN channels) it is necessary to allow configuration of multiple DcmDslConnections.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+													<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+													<PARAMETERS>
+														<ENUMERATION-PARAM-DEF UUID="d43ce773-3fa9-4d57-bd2d-dbdabfe578c4">
+															<SHORT-NAME>DcmConnectionProtocolType</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">Select how to pre-filter a request acceptance on a certain connection in OBD relevant ECUs.
+
+Enumeration values:
+UDS: Only diagnostic services with identifier greater or equal to 0x10 will be accepted. Any OBD request will be ignored.
+OBD: Only OBD requests (within the range 0x00 - 0x0F) will be accepted. Any other request message will be ignored. Can be  used as service firewalling upon scan-tools.
+UDSOBD: Any request will be accepted, independently of its service identifier
+
+RESTRICTIONS: This setting is only relevant for OBD relevant ECUs.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<IMPLEMENTATION-CONFIG-CLASSES>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+																<IMPLEMENTATION-CONFIG-CLASS>
+																	<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																	<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																</IMPLEMENTATION-CONFIG-CLASS>
+															</IMPLEMENTATION-CONFIG-CLASSES>
+															<ORIGIN>Vector Informatik</ORIGIN>
+															<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+															<DEFAULT-VALUE>UDS</DEFAULT-VALUE>
+															<LITERALS>
+																<ENUMERATION-LITERAL-DEF UUID="26fa0e07-0f73-4e9a-bcae-95f884efe166">
+																	<SHORT-NAME>UDS</SHORT-NAME>
+																</ENUMERATION-LITERAL-DEF>
+																<ENUMERATION-LITERAL-DEF UUID="9596955c-3e8b-41bd-adda-14248c2ac8ef">
+																	<SHORT-NAME>OBD</SHORT-NAME>
+																</ENUMERATION-LITERAL-DEF>
+																<ENUMERATION-LITERAL-DEF UUID="ef9d08cf-ca40-4274-83c7-768e8d5238c6">
+																	<SHORT-NAME>UDSOBD</SHORT-NAME>
+																</ENUMERATION-LITERAL-DEF>
+															</LITERALS>
+														</ENUMERATION-PARAM-DEF>
+													</PARAMETERS>
+													<SUB-CONTAINERS>
+														<!-- Parameter Container Definition: DcmDslMainConnection -->
+														<PARAM-CONF-CONTAINER-DEF UUID="DCE:d9b00d86-e890-43ff-8f79-e729428cc4bb">
+															<SHORT-NAME>DcmDslMainConnection</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container contains configuration for Diagnostic Main Connection (DcmDslProtocolTx, DcmDslProtocolRx).
+In addition it contains links to the ROE connection (DcmDslROEConnectionRef) and the Periodic Transmission Connection (DcmDslPeriodicTranmissionConRef) relevant for protocols with DcmDslProtocolTransType = TYPE2.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<SUB-CONTAINERS>
+																<!-- Parameter Container Definition: DcmDslProtocolRx -->
+																<PARAM-CONF-CONTAINER-DEF UUID="DCE:55fb9c6c-df18-4eb6-91a3-c81eda4fa943">
+																	<SHORT-NAME>DcmDslProtocolRx</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This container contains the configuration (parameters) for the protocol configuration of RX channel (for each protocol)
+The following parameters needs to be configured per protocol. Please keep in mind, that the parameter DcmDslProtocolRxPduId
+can be given several times per protocol and that the combination from DcmDslProtocolRxPduId and DcmDslProtocolRxAddrType is unique.
+Only one physical protocol is allowed per connection.
+
+upperMultiplicity:
+More than one receive PDU ID may be configured for reception (e.g. one for func requests, one for phys requests).
+
+lowerMultiplicity:
+At least one receive PDU ID configuration must be provided per protocol.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+																	<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+																	<PARAMETERS>
+																		<!-- PARAMETER DEFINITION: DcmDslProtocolRxAddrType -->
+																		<ENUMERATION-PARAM-DEF UUID="DCE:7c01efd7-dbaa-4ec1-b022-a848eeb73dae">
+																			<SHORT-NAME>DcmDslProtocolRxAddrType</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">Determines the addressing type of the Rx PduId referenced by DcmDslProtocolRxPduRef.
+
+Enumeration values:
+PHYSICAL_TYPE: Used for 1 to 1 communication.
+FUNCTIONAL_TYPE: Used for 1 to n communication.</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<IMPLEMENTATION-CONFIG-CLASSES>
+																				<IMPLEMENTATION-CONFIG-CLASS>
+																					<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																					<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																				</IMPLEMENTATION-CONFIG-CLASS>
+																				<IMPLEMENTATION-CONFIG-CLASS>
+																					<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																					<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																				</IMPLEMENTATION-CONFIG-CLASS>
+																				<IMPLEMENTATION-CONFIG-CLASS>
+																					<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																					<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																				</IMPLEMENTATION-CONFIG-CLASS>
+																			</IMPLEMENTATION-CONFIG-CLASSES>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+																			<LITERALS>
+																				<ENUMERATION-LITERAL-DEF UUID="DCE:1d67224e-648f-403c-82c4-bc808a0fd953">
+																					<SHORT-NAME>FUNCTIONAL_TYPE</SHORT-NAME>
+																				</ENUMERATION-LITERAL-DEF>
+																				<ENUMERATION-LITERAL-DEF UUID="DCE:34dd8d76-5cec-45ce-9294-20e1ddf7a48f">
+																					<SHORT-NAME>PHYSICAL_TYPE</SHORT-NAME>
+																				</ENUMERATION-LITERAL-DEF>
+																			</LITERALS>
+																		</ENUMERATION-PARAM-DEF>
+																	</PARAMETERS>
+																	<REFERENCES>
+																		<!-- Reference Definition: DcmDslProtocolRxPduRef -->
+																		<REFERENCE-PARAM-DEF UUID="DCE:b3d949d3-1198-4f27-a350-8dedbed127cd">
+																			<SHORT-NAME>DcmDslProtocolRxPduRef</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">Reference to Dcm Rx PduId used for reception of requests.
+Multiple links shall be allowed. (e.g. one Dcm Rx PduId to receive func requests, one Dcm Rx PduId to receive phys requests).</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<IMPLEMENTATION-CONFIG-CLASSES>
+																				<IMPLEMENTATION-CONFIG-CLASS>
+																					<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																					<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																				</IMPLEMENTATION-CONFIG-CLASS>
+																				<IMPLEMENTATION-CONFIG-CLASS>
+																					<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																					<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																				</IMPLEMENTATION-CONFIG-CLASS>
+																				<IMPLEMENTATION-CONFIG-CLASS>
+																					<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																					<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																				</IMPLEMENTATION-CONFIG-CLASS>
+																			</IMPLEMENTATION-CONFIG-CLASSES>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+																		</REFERENCE-PARAM-DEF>
+																	</REFERENCES>
+																</PARAM-CONF-CONTAINER-DEF>
+																<!-- Parameter Container Definition: DcmDslProtocolTx -->
+																<PARAM-CONF-CONTAINER-DEF UUID="DCE:0e5a60b0-be89-4db9-89ba-9ea8b9a36c03">
+																	<SHORT-NAME>DcmDslProtocolTx</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">This container contains the configuration (parameters) for the protocol configuration of TX channel (for each protocol)
+The included parameters needs to be configured per protocol.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+																	<REFERENCES>
+																		<!-- Reference Definition: DcmDslProtocolTxPduRef -->
+																		<REFERENCE-PARAM-DEF UUID="DCE:12fb6938-1ef2-460d-adbb-ecc9e8190462">
+																			<SHORT-NAME>DcmDslProtocolTxPduRef</SHORT-NAME>
+																			<DESC>
+																				<L-2 L="EN">Reference to a Dcm Tx PduId used for transmission of the main diagnostic responses.
+</L-2>
+																			</DESC>
+																			<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+																			<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																			<IMPLEMENTATION-CONFIG-CLASSES>
+																				<IMPLEMENTATION-CONFIG-CLASS>
+																					<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																					<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																				</IMPLEMENTATION-CONFIG-CLASS>
+																				<IMPLEMENTATION-CONFIG-CLASS>
+																					<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																					<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																				</IMPLEMENTATION-CONFIG-CLASS>
+																				<IMPLEMENTATION-CONFIG-CLASS>
+																					<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																					<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																				</IMPLEMENTATION-CONFIG-CLASS>
+																			</IMPLEMENTATION-CONFIG-CLASSES>
+																			<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																			<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+																		</REFERENCE-PARAM-DEF>
+																	</REFERENCES>
+																</PARAM-CONF-CONTAINER-DEF>
+															</SUB-CONTAINERS>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Parameter Container Definition: DcmDslPeriodicTransmission -->
+														<PARAM-CONF-CONTAINER-DEF UUID="DCE:2c3cae11-97a0-41f2-9fc5-c62341a8f49d">
+															<SHORT-NAME>DcmDslPeriodicTransmission</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container contains the configuration (parameters) for Periodic Transmission service.
+
+Hint:
+Periodic Transmission request comes via DcmDslMainConnection and PeriodicTransmission Event response is given via DcmDslPeriodicTransmission.</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<REFERENCES>
+																<!-- Reference Definition: DcmDslPeriodicTxPduRef -->
+																<REFERENCE-PARAM-DEF UUID="DCE:88d05c22-5873-4597-9b64-c88e0b17df0c">
+																	<SHORT-NAME>DcmDslPeriodicTxPduRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Reference to a Dcm Tx PduId to be used for periodic responses. 
+
+RESTRICTIONS: Only needed for Type2 periodic transmission configurations.</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+														<!-- Parameter Container Definition: DcmDslResponseOnEvent -->
+														<PARAM-CONF-CONTAINER-DEF UUID="DCE:06734c86-18bb-4fd3-87f3-68387d090d43">
+															<SHORT-NAME>DcmDslResponseOnEvent</SHORT-NAME>
+															<DESC>
+																<L-2 L="EN">This container contains the configuration (parameters) for ResponseOnEvent service.
+
+Hint:
+ROE service request is recept via DcmDslMainConnection and that Event response is given via DcmDslResposeOnEvent</L-2>
+															</DESC>
+															<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+															<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+															<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+															<REFERENCES>
+																<!-- Reference Definition: DcmDslRoeTxPduRef -->
+																<REFERENCE-PARAM-DEF UUID="DCE:0d62133b-9f76-4835-b806-d9a8ece0c723">
+																	<SHORT-NAME>DcmDslRoeTxPduRef</SHORT-NAME>
+																	<DESC>
+																		<L-2 L="EN">Reference to the PduId for transmission of ROE response (only needed for ROE Transmission Type is Type2)</L-2>
+																	</DESC>
+																	<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+																	<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+																	<IMPLEMENTATION-CONFIG-CLASSES>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																		<IMPLEMENTATION-CONFIG-CLASS>
+																			<CONFIG-CLASS>LINK</CONFIG-CLASS>
+																			<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+																		</IMPLEMENTATION-CONFIG-CLASS>
+																	</IMPLEMENTATION-CONFIG-CLASSES>
+																	<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+																	<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+																</REFERENCE-PARAM-DEF>
+															</REFERENCES>
+														</PARAM-CONF-CONTAINER-DEF>
+													</SUB-CONTAINERS>
+												</PARAM-CONF-CONTAINER-DEF>
+											</SUB-CONTAINERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: DcmDslProtocolTiming -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:a3a65f7c-2e34-4534-be7e-d75c04241105">
+									<SHORT-NAME>DcmDslProtocolTiming</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container contains the configuration (parameters) for Protocol timing. This container contains rows of DcmDslProtocolTimingRow containers.
+
+Hint:
+DcmDslProtocolTiming is only relevant in case of using the UDS service AccessTimingParameter.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: DcmDslProtocolTimingRow -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:59126961-c160-4898-aa7b-d6df38bf0566">
+											<SHORT-NAME>DcmDslProtocolTimingRow</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Definition of a single row of configuration for protocol timing</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: DcmTimStrP2ServerMax -->
+												<FLOAT-PARAM-DEF UUID="DCE:befcf601-32e2-48a8-82f9-56438d32634b">
+													<SHORT-NAME>DcmTimStrP2ServerMax</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+For Vector Dcm, this value is imported from the diagnostic database referenced by /MICROSAR/Dcm/DcmDsd/DcmDsdServiceTable/DcmDiagnosticDatabase.
+
+
+This is the value for P2ServerMax in milliseconds.
+This is defined in the AUTOSAR SWS for DCM as a uint16.
+
+The AUTOSAR configuration standard is to use SI units, so this parameter is defined as a float value in seconds. DCM configuration tools must convert this float value to the appropriate value format for the use in the software implementation of DCM.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MIN>0</MIN>
+												</FLOAT-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DcmTimStrP2ServerMin -->
+												<FLOAT-PARAM-DEF UUID="DCE:26b5682f-13e9-4dbb-af91-63640261c802">
+													<SHORT-NAME>DcmTimStrP2ServerMin</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+For Vector Dcm, this value is imported from the diagnostic database referenced by /MICROSAR/Dcm/DcmDsd/DcmDsdServiceTable/DcmDiagnosticDatabase.
+
+
+This is the value for P2ServerMin in milliseconds.
+This is defined in the AUTOSAR SWS for DCM as a uint16.
+
+The AUTOSAR configuration standard is to use SI units, so this parameter is defined as a float value in seconds. DCM configuration tools must convert this float value to the appropriate value format for the use in the software implementation of DCM.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MIN>0</MIN>
+												</FLOAT-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DcmTimStrP2StarServerMax -->
+												<FLOAT-PARAM-DEF UUID="DCE:4615747c-ccbd-41db-adf2-a49bc5f73dc0">
+													<SHORT-NAME>DcmTimStrP2StarServerMax</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+For Vector Dcm, this value is imported from the diagnostic database referenced by /MICROSAR/Dcm/DcmDsd/DcmDsdServiceTable/DcmDiagnosticDatabase.
+
+
+This is the value for P2*ServerMax in milliseconds.
+This is defined in the AUTOSAR SWS for DCM as a uint16.
+
+The AUTOSAR configuration standard is to use SI units, so this parameter is defined as a float value in seconds. DCM configuration tools must convert this float value to the appropriate value format for the use in the software implementation of DCM.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MIN>0</MIN>
+												</FLOAT-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DcmTimStrP2StarServerMin -->
+												<FLOAT-PARAM-DEF UUID="DCE:4916c140-539a-4542-bea8-d1666f3dfebd">
+													<SHORT-NAME>DcmTimStrP2StarServerMin</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+For Vector Dcm, this value is imported from the diagnostic database referenced by /MICROSAR/Dcm/DcmDsd/DcmDsdServiceTable/DcmDiagnosticDatabase.
+
+
+This is the value for P2*ServerMin in milliseconds.
+This is defined in the AUTOSAR SWS for DCM as a uint16.
+
+The AUTOSAR configuration standard is to use SI units, so this parameter is defined as a float value in seconds. DCM configuration tools must convert this float value to the appropriate value format for the use in the software implementation of DCM.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MIN>0</MIN>
+												</FLOAT-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: DcmTimStrS3Server -->
+												<FLOAT-PARAM-DEF UUID="DCE:348efc66-e449-42f9-b398-c9da2ef86aa7">
+													<SHORT-NAME>DcmTimStrS3Server</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">NOT USED by Vector Dcm.
+For Vector Dcm, this value is imported from the diagnostic database referenced by /MICROSAR/Dcm/DcmDsd/DcmDsdServiceTable/DcmDiagnosticDatabase.
+
+This is the value for S3Server (the time after which the tester is considered to be disconnected) in milliseconds.
+
+This is defined in the AUTOSAR SWS for Dcm as a uint16.
+
+The AUTOSAR configuration standard is to use SI units, so this parameter is defined as a float value in seconds. Dcm configuration tools must convert this float value to the appropriate value format for the use in the software implementation of Dcm.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>LINK</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<MIN>0</MIN>
+												</FLOAT-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: DcmDsp -->
+						<!-- Parameter Container Definition: DcmGeneral -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:193bf59a-5680-4895-ac7b-4dcb366356ce">
+							<SHORT-NAME>DcmGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container contains the configuration (parameters) for Component wide parameters</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: DcmRespondAllRequest -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:b726f057-a066-41ae-bd91-7c613b540ebe">
+									<SHORT-NAME>DcmRespondAllRequest</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If set to FALSE the Dcm will not respond to diagnostic request that contains a service ID which is in the range from 0x40 to 0x7F or in the range from 0xC0 to 0xFF (Response IDs).</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: DcmDevErrorDetect -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:b726f057-a066-41ae-bd91-7c613b540ebe">
+									<SHORT-NAME>DcmDevErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable or disable the Development Error Detection (DET) mechanism.
+
+By enabling this option, you will turn on the Dcm internal monitoring of all APIs towards and from the application. Once an invalid parameter or return value has been detected, Dcm notifies the DET (Development Error Tracer) component about the fault.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: DcmRequestIndicationEnabled -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:dcadb979-d39f-442d-bc2d-8f8a75598404">
+									<SHORT-NAME>DcmRequestIndicationEnabled</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">NOT USED  by Vector Dcm.
+
+Allows to enable or disable the requested indication mechanism.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: DcmTaskTime -->
+								<FLOAT-PARAM-DEF UUID="DCE:d055ae47-b6ed-47de-a6a8-d8f4c750c825">
+									<SHORT-NAME>DcmTaskTime</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Allow to configure the time for the periodic cyclic task Dcm_MainFunction() (resp. Dcm_TimerTask()). 
+
+Please note: This configuration value shall be equal to the value in the ScheduleManager module. All Dcm internal time calculations are based on this value so it is very important that the correct value is configured here.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.010</DEFAULT-VALUE>
+									<MAX>0.255</MAX>
+									<MIN>0.001</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: DcmVersionInfoApi -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:1c434a8a-7175-4092-954e-e0e5dc2beb02">
+									<SHORT-NAME>DcmVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable or disable the output version info functionality.
+
+If the version information is not needed, disable this option to save resources (ROM).</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:d6b1e4b8-5362-4d19-9087-849a737b4edf">
+									<SHORT-NAME>DcmUseRte</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Decides if the Dcm uses port interfaces or callback functions
+
+Enable this option if the ECU uses an RTE.
+If this option is enabled, a port interface description (Software Component Template) is generated which can be used for the RTE configuration.
+
+Disable this option if the ECU does not use an RTE.
+If this option is disabled, a code template is generated which supports you with the implementation of the interface of the Dcm towards the application.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="DCE:f275b530-a360-495e-95bf-b2ac86a5256a">
+									<SHORT-NAME>DcmParallelRequestHandling</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Choosing any value other than EXCLUSIVE_SILENTwill enable responses with NRC 0x21 to parallel requests from different testers.
+
+Enumeration values:
+Exclusive Silent: Requests received while the Dcm is still processing another request are ignored without response
+
+Exclusive Request: Requests received while the Dcm is still processing another request are rejected with NRC 0x21
+
+Exclusive Session: Same as "Exclusive Request" but additionally, if a tester activates a non-default session,
+                   requests from other testers will be rejected with NRC 0x21 until the ECU switches back to the default session.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>EXCLUSIVE_SILENT</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:0f56694a-5d18-40c0-9488-1edf1797482f">
+											<SHORT-NAME>EXCLUSIVE_SILENT</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:da7031d4-e87f-4fae-8ec2-1ba5422787a8">
+											<SHORT-NAME>EXCLUSIVE_REQUEST</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:a86e0480-d949-422e-8e81-a20862856802">
+											<SHORT-NAME>EXCLUSIVE_SESSION</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:cc063288-013f-4aef-883b-524022f29f16">
+									<SHORT-NAME>DcmMaxNumberParallelRequest</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Set the maximum number of parallel requests that can be rejected with negative response code 0x21.
+The optimal value for this setting is the total number of testers that are expected to communicate with the ECU at the same time. 
+
+RESTRICTIONS: Only relevant if "DcmParallelRequestHandling" is not set to 'EXCLUSIVE_SILENT'</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>3</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:31f51b2b-a482-45a6-ba28-21b2dc3642c4">
+									<SHORT-NAME>DcmRuntimeLimiter</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Limit runtime of lengthy services, e.g. the faultmemory accesses to this number of elements per Dcm task cycle (see parameter DcmTaskTime).
+
+Longer service responses for e.g. the faultmemory services can take long enough to trigger task supervising errors or watchdog timeouts, especially on slow controllers.
+The runtime of such long service responses can be distributed over several Dcm task cycles to combat that.
+
+To find out the best value for your ECU, you have to take into account the DcmDslProtocolBufferSize, the DcmTaskTime and communication settings like CanTpTp Bs and STMin (time between consecutive frames)
+
+For faster bus transmission, more data is required per time unit. In that case, increase the limiter. This also reduces consecutive frame jitter.
+For slower hardware or tighter task runtime allowance reduce the limiter. This can cause jittering consecutive frames.
+You can also decrease the DcmTaskTime, and reduce the limiter to have the same amount of data per time unit, but shorter runtime of each task cycle.
+
+Also, a small paged diagnostic buffer will fill up quickly to the point where the buffer size limits the runtime more than this value.
+	
+Note: You need at least a limiter of 3 to fill a CanTp consecutive frame per Dcm task cycle.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>10</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="365618b5-9fab-46ce-bdae-e1eaa5fd28f6">
+									<SHORT-NAME>DcmEcuResetDelayTime</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This option specifies the delay time in milliseconds to be applied from accepting a valid ECU reset request until its real execution.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1000</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="6eb43bfd-69d2-4585-8a17-7cde9802daa0">
+									<SHORT-NAME>DcmUserConfigFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This option specifies a path to a custom user config file for the Dcm.
+
+If you want to overwrite some of the settings in the generated configuration file (Dcm_Cfg.h), you can specify a path to a user defined configuration file. The user defined configuration file will be included at the end of the generated preprocessor switches. Definitions in the user defined configuration file can overwrite definitions in the generated configuration file. 
+
+NOTE: Not all of the features can be overwritten simply by triggering the preprocessor switch. Some of the options are complex and the code generator generates less or more code depending on the setting.
+
+USE SUCH A FILE ONLY AFTER DISCUSSION WITH VECTOR.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="380c4ef9-aa5a-4e28-9905-7981c436ee28">
+									<SHORT-NAME>DcmVariantModeSelection</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Select the multi configuration variant mode.
+
+Enumeration values:
+SIMPLE_ECU: The diagnostics support one configuration only. (AUTOSAR standard)
+MULTI_IDENTITY_MODE: The diagnostics support different diagnostic variants. One variant is active a time.
+VSG_MODE: Diagnostic Entities (SubServices, DTCs...) are grouped into VSGs. Several VSGs can be activated at a time.
+
+Note: This setting is independent from communication identities!</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>SIMPLE_ECU</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="2eb83b02-4ca9-4bea-adaa-93beb36ecb97">
+											<SHORT-NAME>SIMPLE_ECU</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="4d4b6c94-67bc-4ff2-b59c-1b82a0cbc3a0">
+											<SHORT-NAME>MULTI_IDENTITY_MODE</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="c766642e-56c4-4231-9ff1-9d211eb09b56">
+											<SHORT-NAME>VSG_MODE</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="25e28aff-48bc-4cca-8acb-2fb1c611ecd9">
+									<SHORT-NAME>DcmMaxMemoryGapSize</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specifies the maximum gap size between two consecutive memory blocks that can be combined into a single memory block (i.e. the gap will be treated as accessible area too ). This process can be only applied if the properties of those memory blocks are equal: have the same access operations (read/write) and same access conditions (session, security access, etc.).
+
+Valid values:
+0: no gap - combine only memory blocks that are attached.
+1 - UINT_MAX:  combine memory blocks only if the start address of the subsequent block is not farther than the end address of the first block + this value + 1.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="e8dd02a4-6cfa-4804-b09f-75a6415703f1">
+									<SHORT-NAME>DcmAsr4StyleMemoryAccess</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If this option is enabled and one of the service 0x23 or 0x3D is available in the ECU diagnostic configuration , Dcm will require additional callouts to be implemented (see the Dcm TechnicalReference for details about them). 
+If it is disabled, Dcm will provide a direct memory access to the requested address block without any application interaction.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>PC-AFFECTS-LT-AND-PB</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!--DcmSupportMultiChannelFBL-->
+								<BOOLEAN-PARAM-DEF UUID="cd8ddfb0-2de6-11e0-91fa-0800200c9a66">
+									<SHORT-NAME>DcmSupportMultiChannelFBL</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If this option is enabled, the Dcm will provide additional information to the DcmFbl interface about the logical channel the request originated on. This allows the proper handling of ECUs that can jump to the boot loader from different channels. Also, the Dcm expects the DcmFbl to provide the same information after startup.
+
+Note: If the channel layout differs between Application and Bootloader, the channel mapping must be implemented in DcmFbl during integration (also see the DcmFbl TechnicalReference)
+
+This setting must match the DcmFbl interface and the boot loader used.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>PC-AFFECTS-LT-AND-PB</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="7a711ce1-ede3-4784-9ba3-246a6b381004">
+									<SHORT-NAME>DcmSoftwareComponentName</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This name is used as component name (ShortName) in the generated software component template. Change this name if you try to import the Dcm components of several ECUs and have problems with name clashes.
+
+RESTRICTIONS: This setting is only relevant if "DcmUseRte" is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Dcm</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="8278bd1c-eb85-4bbd-a160-97e7fe760daf">
+									<SHORT-NAME>DcmUnspecifiedServiceSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to enable or disable the support of unspecified services in the diagnostic configuration.
+
+If this option is enabled, Dcm will not reject every unknown service, but will ask your application if the SID is an application specific one and if so will delegate the service processing to the application.
+Please refer to the Dcm technical reference for detailed description on this feature.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="9a2aac3b-889e-4015-bdcb-0ae5e38dcf1c">
+									<SHORT-NAME>DcmPeriodicTxType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Select which type of periodic response is supported by Dcm. The per-protocol selection defined by AUTOSAR is not necessarily consistent, so this parameter is used as authoritative reference.
+
+- Type_I: Same Tx Pdu as for main response
+- Type_II: Dedicated (unsegmented) Tx Pdu</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Type_II</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="c3d2f50b-0899-4b2b-a434-442687f74ab2">
+											<SHORT-NAME>Type_I</SHORT-NAME>
+											<LONG-NAME>
+												<L-4>Same Tx Pdu as for main response</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="001b05eb-1802-452a-8c40-8a510c5ca98e">
+											<SHORT-NAME>Type_II</SHORT-NAME>
+											<LONG-NAME>
+												<L-4>Dedicated (unsegmented) Tx Pdu</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="06a7a3ec-4d5f-471b-a0bf-d3b796bd6c09">
+									<SHORT-NAME>DcmRoeTxType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Select which type of periodic response is supported by Dcm. The per-protocol selection defined by AUTOSAR is not necessarily consistent, so this parameter is used as authoritative reference.
+
+- Type_I: Same Tx Pdu as for main response
+- Type_II: Dedicated (segmented) Tx Pdu</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Type_II</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="ed902d71-605e-4214-bebd-4e9a38e3a040">
+											<SHORT-NAME>Type_I</SHORT-NAME>
+											<LONG-NAME>
+												<L-4>Same Tx Pdu as for main response</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="899d4a20-de9b-4918-9784-644bc0d94aa3">
+											<SHORT-NAME>Type_II</SHORT-NAME>
+											<LONG-NAME>
+												<L-4>Dedicated (segmented) Tx Pdu</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="8a0d34a1-27f7-480a-aa98-3c1bf7efaea0">
+									<SHORT-NAME>DcmSplitMainFunctionEnabled</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable this option if you want to call Dcm_TimerTask and Dcm_StateTask separately.
+Disable this option if you want to call Dcm_MainFunction.
+
+Please note: This selection does not affect the Dcm embedded code. It merely sets up the SchM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="83d87f7b-386c-48d6-8ce8-3101e2be1e9e">
+									<SHORT-NAME>DcmSupplierNotificationSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Supplier specific request indication support. If enabled, This pre-handler is called prior to any more specific service handler, for each service</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="ef8e8f9e-0576-4c2d-a04c-a9c57103fb75">
+									<SHORT-NAME>DcmOemNotificationSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Manufacturer specific request indication support. If enabled, This pre-handler is called prior to any more specific service handler, for each service</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="44011a32-f45c-4bb5-b467-6fc9e1c1610d">
+									<SHORT-NAME>DcmOBDCalibrationSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If enabled, DCM will provide means to suppress OBD related parameter identifiers (PIDs) and corresponding UDS identifiers by means of offline-calibration.
+Please note, PIDs etc can only be disabled and re-enabled. You need to statically set up a superset of all PIDs you might need to support.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="4bf6ed31-6660-42aa-a6d8-909068a90370">
+									<SHORT-NAME>DcmAmdRuntimeMeasurement</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter defines if AMD Runtime Measurement (RTM) is enabled for this module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: DcmPageBufferCfg -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:2ba88d2f-8940-46d5-bea4-b3bac5231413">
+							<SHORT-NAME>DcmPageBufferCfg</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container contains the configuration (parameters) for paged buffer handling</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: DcmPagedBufferEnabled -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:6943cac8-cd4a-4371-bade-039410061bb4">
+									<SHORT-NAME>DcmPagedBufferEnabled</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Allow to enable or disable the paged buffer mechanism.
+
+In order to save some RAM, you can enable this feature which will allow much longer responses to be sent with a small static buffer configuration. 
+
+This feature just enables a Dcm implementation part allowing the usage of paged buffer transfer, but your application must decide for which service this response mechanism shall be used. Otherwise you will have much ROM and little runtime overhead in Dcm without any need.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: DcmPagedBufferTimeout -->
+								<FLOAT-PARAM-DEF UUID="DCE:22669e67-5845-4dc1-b102-360d7d00bb44">
+									<SHORT-NAME>DcmPagedBufferTimeout</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">NOT USED by Vector Dcm.
+
+Allow to configure the Timeout (in ms) towards the application for filling the next page.
+This parameter is only relevant if the paged buffer handling is enabled. (DcmPagedBufferEnabled = TRUE)
+
+RESTRICTIONS: This parameter has no effect for the Vector Dcm implementation.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:b56fbcbc-2cc2-444f-aff9-4ef91a83b486">
+							<SHORT-NAME>VectorCommonData</SHORT-NAME>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="DCE:e05476ea-2cb7-4b20-b70b-760a45d3912c">
+									<SHORT-NAME>BswmdVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">NOT USED - META INFORMATION
+
+Marker used by the configuration tool</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>NO-AFFECT</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>4.12.00</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="7e036426-fcac-4e7d-a117-f820206477ba">
+							<SHORT-NAME>DcmConfigSet</SHORT-NAME>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+							<REFERENCES>
+								<REFERENCE-PARAM-DEF UUID="c3f5c9b5-6d5c-42df-b7cc-676eff4757e5">
+									<SHORT-NAME>DcmActiveDslProtocolRowRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">References active connections in this identity.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Dcm/DcmDsl/DcmDslProtocol/DcmDslProtocolRow</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+								<REFERENCE-PARAM-DEF UUID="701e59b0-ee39-4dd4-8708-2b474327c530">
+									<SHORT-NAME>DcmActiveDsdServiceTableRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Reference to the service table active in a variant in multi configuration ECUs.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Dcm/DcmDsd/DcmDsdServiceTable</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<MODULE-CONFIGURATION UUID="DCE:773395e5-b68b-42ef-ab15-367bde70a8bd">
+					<SHORT-NAME>Dcm_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Dcm</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="DCE:f393bd64-ad7c-4c5f-859f-6e7e70107daa">
+					<SHORT-NAME>Dcm_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Dcm</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

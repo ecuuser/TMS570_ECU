@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+============================================================================
+   Copyright (c) 2012 by Vector Informatik GmbH.    All rights reserved.
+
+   This software is copyright protected and proprietary to Vector Informatik GmbH.
+   Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+   All other rights remain with Vector Informatik GmbH.
+
+============================================================================
+
+    This file is needed for internal use by DaVinci Configurator.
+    Please do not modify this file, otherwise the software may behave in unexpected way.
+
+============================================================================
+-->
+<AUTOSAR xmlns="http://autosar.org/3.0.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="DCE:c1c6da2a-a63e-4dce-861c-9c2c1f1e1e89">
+					<SHORT-NAME>Board_Impl</SHORT-NAME>
+					<CODE-GENERATOR>MICROSAR</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>1</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>0</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>2</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>3</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>0</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>1</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Board_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Board_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/Board</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-DEF UUID="DCE:c38ae3e6-21af-466a-831b-4ee2cf3d096e">
+					<SHORT-NAME>Board</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Contains all controller-specific parameters for the generator</L-2>
+					</DESC>
+					<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:80617347-dbbe-47b7-8a2d-7ae122e4c6a2">
+							<SHORT-NAME>BoardGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">The general configuration of the controller.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<FLOAT-PARAM-DEF UUID="DCE:6f73650c-a74d-415f-9289-a3fed402b7d8">
+									<SHORT-NAME>BoardOscillator</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Oscillator frequency (in MHz).</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+<!--
+-->
+								</FLOAT-PARAM-DEF>
+<!--
+-->
+								<!--Optimization-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:fc1394f1-3c09-4cb4-8349-ba3db0347019">
+									<SHORT-NAME>BoardAtomicBitAccessInBitfield</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables optimization for single bit read and write accesses in bit-fields if the compiler creates an atomic access in all cases.
+This is compiler and platform dependent and has to be checked and configured very carefully!
+
+Caution
+Enabling this configuration option requires atomic bit access in bit-fields. This option must only be enabled if the before mentioned access type is supported by the hardware, the compiler and the used compiler options. Enabling this option without verifying those conditions may lead to data consistency issues.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="DCE:d1b2a0b4-ba24-4f3d-aed8-a2be0bd7bf42">
+									<SHORT-NAME>BoardAtomicVariableAccess</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Selection of Bit size for atomic read and write accesses of global variables.
+This configuration switch is compiler and platform dependent and has to be checked and configured very carefully!
+
+Caution
+Setting this configuration option to "Atomic16BitAccess" requires atomic access all global 8 Bit and 16 Bit variables.
+Setting this configuration option to "Atomic32BitAccess" requires atomic access all global 8 Bit, 16 Bit and 32 Bit variables.
+The optimization must only be enabled if the before mentioned access types are supported by the hardware, the compiler and the used compiler options. Enabling the optimization without verifying those conditions may lead to data consistency issues.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:214b9274-ac66-44e8-aacc-1fbd450691f7">
+											<SHORT-NAME>Atomic8BitAccess</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Atomic   8 Bit Access</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:35fee24f-0d25-4f87-94eb-15345cd67db4">
+											<SHORT-NAME>Atomic16BitAccess</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Atomic 16 Bit Access</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:e23c6974-f247-40b2-bb57-5ccd2ecb7a20">
+											<SHORT-NAME>Atomic32BitAccess</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Atomic 32 Bit Access</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!--Postbuild Parameter-->
+								<INTEGER-PARAM-DEF UUID="9af5eef1-a29e-4c43-9a7d-dc850d830ac9">
+									<SHORT-NAME>BoardWidthOfPointer</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Width of Pointer in Byte. Depends on the memory model of the controller.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MAX>32</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="2394031b-1687-4777-b983-b5e5b0bc2d42">
+									<SHORT-NAME>BoardStructAlignment</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Alignment inside an struct element. Insert padding bytes so that each element of the struct starts at a valid position</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="e8f52032-813c-4cd9-90a0-50a6ae94ff65">
+											<SHORT-NAME>Auto</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Auto</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="ff99fd79-a9cf-421b-ae9e-ee8cd854aa14">
+											<SHORT-NAME>Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="b202b646-eca3-4a14-9cec-7d89d0c05ad3">
+											<SHORT-NAME>Word</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Word</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="e7cdc8a4-082c-4e3a-af74-62897e3f47a8">
+											<SHORT-NAME>DWord</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">DWord</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="93e49678-78ce-4f1a-b5c1-1b686cfa4095">
+									<SHORT-NAME>BoardArrayAlignment</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Alignment of Arrays. Insert padding bytes so that this array starts at a valid position</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="a03b7e4a-46b7-43bc-b447-54fc8bb9121e">
+											<SHORT-NAME>Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="dc20f755-d668-4297-8457-abdcd22ba916">
+											<SHORT-NAME>Word</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Word</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="24eedee3-3b7d-4701-ba83-f793c4768a2d">
+											<SHORT-NAME>DWord</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">DWord</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="1ca87ed8-6cae-4a14-8e87-dcd11c011ded">
+									<SHORT-NAME>BoardStructInArrayAlignment</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Alignment of Structs in an Array. Insert padding bytes so that the struct starts at a valid position. Depends on compiler settings.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="3ddb3be1-8360-4295-b1fd-ed6108f6aa91">
+											<SHORT-NAME>Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="bdfb31ff-a506-484e-a1a2-6f3d62c1e2b4">
+											<SHORT-NAME>Word</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Word</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="0b16ecab-62de-4b87-aecf-061bb9d22262">
+											<SHORT-NAME>DWord</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">DWord</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="73a77f5f-9dd3-43f8-8c8c-e5295b7f150f">
+									<SHORT-NAME>BoardAlignmentFillPattern</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Alignment Fill Pattern. Byte pattern which is used for the inserted padding bytes.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="385c34d0-27d8-4c03-8ca6-63f60f4d0d72">
+									<SHORT-NAME>BoardSizeOfPduIdType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The PduIdType type is declared in ComStackTypes.h (uint8 or uint16)
+sizeof(PduIdType) [byte]</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="368aba94-c56d-45b9-8f7d-cf6abac3e468">
+											<SHORT-NAME>One_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">1 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="24a71cc8-1db2-49f9-9c9f-e9b8cc302cb8">
+											<SHORT-NAME>Two_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">2 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="2eeb880a-dbf1-4648-ad4e-286f5d0cbb43">
+									<SHORT-NAME>BoardSizeOfPduLengthType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The PduIdType type is declared in ComStackTypes.h (uint8, uint16 or uint32)
+sizeof(PduLengthType) [byte]</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="649bae2e-5aa8-4d76-9ec4-86fc5c8f110e">
+											<SHORT-NAME>One_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">1 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="4c5f4312-0fa7-4ee7-b9fd-fbe1625ba2b2">
+											<SHORT-NAME>Two_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">2 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="613fc00a-f9f9-46ba-818c-cc9eb7f7e839">
+											<SHORT-NAME>Four_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">4 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="762519fa-5f5f-407d-a154-cf4d8877153f">
+									<SHORT-NAME>BoardSizeOfEnum</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Size of elements in an enum. Depends on the compiler settings.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="0713871b-781e-42a4-a5f9-81b453ad47fa">
+											<SHORT-NAME>One_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">1 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="5046c0c0-5a92-48ab-95c8-785da5b9938a">
+											<SHORT-NAME>Two_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">2 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="675829b8-5ce1-4abd-ae79-f7d6a3c633b5">
+									<SHORT-NAME>BoardSizeOfIdType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The byte size used for CAN Identifiers.
+The IdType type is declared in ComStackTypes.h (uint16 or uint32)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="3a6fff1e-b31a-4208-ba9a-3f0cada64688">
+											<SHORT-NAME>Two_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">2 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="df60a4da-bf93-4c4e-aca8-b546269f771b">
+											<SHORT-NAME>Four_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">4 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="6929631e-9413-4aca-a76f-84aa2a38aef0">
+									<SHORT-NAME>BoardSizeOfBoolean</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Size of boolean elements. Depends on the compiler settings.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="35d6f07b-0575-4007-9be3-70b68db69f54">
+											<SHORT-NAME>One_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">1 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="db489027-790e-47f7-86d4-645da90dee79">
+											<SHORT-NAME>Two_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">2 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="a169c44a-223d-4627-a35a-35bc1f4c30c9">
+											<SHORT-NAME>Four_Byte</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">4 Byte</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="a4b53704-d593-4435-ab16-e8f595358dbf">
+									<SHORT-NAME>BoardMinObjectSize</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Min Object Size. </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MAX>255</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="70e3a462-d2bf-4b6b-bb3b-0f001418435f">
+									<SHORT-NAME>BoardGlobalGPageBehaviour</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Global GPage Behaviour</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="9c648d9f-2c57-4868-868d-944685e75ea7">
+									<SHORT-NAME>BoardUseExtendedAsrVersionCheck</SHORT-NAME>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="0900de93-a150-4fca-8358-d072d03cd438">
+									<SHORT-NAME>BoardPCAndLTCRCCheck</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Precompile And Linktime CRC Check</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!--SystemSettings-->
+								<STRING-PARAM-DEF UUID="DCE:848034cb-c4d2-476e-9f91-d62ae4ab4b51">
+									<SHORT-NAME>systemVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">systemVersion as found in SystemExtract</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:848034cb-c4d2-476e-9f91-d62ae4abb541">
+									<SHORT-NAME>ecuExtractVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">ecuExtractVersion as found in SystemExtract</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="DCE:ffd94737-fabd-41b5-968c-c6e924dac96e">
+									<SHORT-NAME>BoardOsType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Select Os type</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>None</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:d171f28b-76dc-476b-92f2-c29a45d636d4">
+											<SHORT-NAME>None</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:e90edacb-2008-4802-a2f5-266a7b9e94dd">
+											<SHORT-NAME>OSEK</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:f3e0cec9-244f-467b-b742-b35755331857">
+											<SHORT-NAME>Autosar</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:fc1394f1-3c09-4cb4-8349-ba3db0347019">
+									<SHORT-NAME>SilentCheck</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable Silent Bsw</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:e7a435e4-db9c-484e-94bb-b73e5d6961b1">
+									<SHORT-NAME>BoardDummyFunction</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Dummy functions used to avoid NULL pointer entrance in call tables</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:cbf32c08-8de3-4397-9ef3-55426210aa47">
+									<SHORT-NAME>BoardDummyStatement</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Dummy statements used to avoid compiler warnings about e.g. unused parameters</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="3ec172f6-01af-405a-b26a-ea74921c49af">
+									<SHORT-NAME>BoardConditionalGenerating</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If the conditional generation is enabled, only the files are written to the output directory which are changed in their content.
+The MagicNumber check is disabled when the conditional generation is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="3ec172f6-01af-405a-b26a-ea74451e94fa">
+									<SHORT-NAME>BoardEnableSnvPrefixes</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This switch controls the generation of symbolic name values addresses in [ecuc_sws_2108].
+If the switch is set to 'true' the containernames are decorated with the related module's msn-prefixes.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="33160ed9-ffcc-4e1f-b5b5-5c2e03009d76">
+									<SHORT-NAME>BoardCPUType</SHORT-NAME>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>CPU16Bit</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="a871bdff-a914-423a-95df-af09c47811e3">
+											<SHORT-NAME>CPU8Bit</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">CPU   8 Bit</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="b07080f7-e5ff-40db-9abd-866b6187d18c">
+											<SHORT-NAME>CPU16Bit</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">CPU 16 Bit</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="c4acebd4-effe-44bd-a3af-5aab91d456ea">
+											<SHORT-NAME>CPU32Bit</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">CPU 32 Bit</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="12391c7e-5f9b-455c-ac62-3d396f3d64f6">
+											<SHORT-NAME>CPU64Bit</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">CPU 64 Bit</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="48847e62-e0a3-4ba1-90fb-936a79a39fd0">
+									<SHORT-NAME>BoardByteOrder</SHORT-NAME>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Undefined</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="7e804f4f-f1a7-4cd9-b998-d3cb286a7cc8">
+											<SHORT-NAME>Undefined</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Undefined</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="e3821cce-128e-48ac-9f1a-83276eb025f5">
+											<SHORT-NAME>Big_Endian</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Big Endian</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="4cde92ad-7495-4e6a-91f2-0a923ffff45f">
+											<SHORT-NAME>Little_Endian</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Little Endian</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="ddfff721-89f3-4932-9f61-b03e330776d1">
+									<SHORT-NAME>BoardBitOrder</SHORT-NAME>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Undefined</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="d1d433e4-fcd7-46c2-bbe8-e5d9f4d9b8c6">
+											<SHORT-NAME>Undefined</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Undefined</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="e2b05831-b1b0-46a6-a987-da2c46bd05f6">
+											<SHORT-NAME>LSB_to_MSB</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">LSB to MSB</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="117a13b0-0aab-459a-b05b-6046e0c79c21">
+											<SHORT-NAME>MSB_to_LSB</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">MSB to LSB</L-4>
+											</LONG-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+<!--
+-->
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:e8bcc8d1-abfb-445d-aaab-60041b7719af">
+							<SHORT-NAME>InterruptFunctionality</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Global interrupt settings used for the ECUC.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="DCE:1c2b2052-3331-4f4e-891c-3687d4886c4b">
+									<SHORT-NAME>BoardIncludeIsrList</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Include File for ISR-Macro</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Os.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:d778a8ec-654b-4a04-9b14-ed852bcf5f24">
+									<SHORT-NAME>BoardUseSchm</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Use BSW Schedule Manager</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:325d25d6-6ddd-427d-8af0-8ce07ecaac48">
+									<SHORT-NAME>BoardGlobalReEnableCat1</SHORT-NAME>
+<!--
+-->
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+<!--
+-->
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+<!--
+-->
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:35794f12-772e-43d7-abe2-8fdc5c587cb4">
+									<SHORT-NAME>BoardGlobalReEnableCat2</SHORT-NAME>
+<!--
+-->
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+<!--
+-->
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+<!--
+-->
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+							<SUB-CONTAINERS>
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:85c4f82e-616b-4ccf-b597-ee6668936406">
+									<SHORT-NAME>InterruptFunctionSet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">A function set consisting of Interrupt Suspend Function, Interrupt Restore Function and Include File for those functions.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<STRING-PARAM-DEF UUID="DCE:5324a95f-4c4a-44f6-a51b-c7d298487860">
+											<SHORT-NAME>BoardGlobalSuspend</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Suspend Function</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</STRING-PARAM-DEF>
+										<STRING-PARAM-DEF UUID="DCE:ac7abedb-69f5-45ec-aa7d-4d3d3368ed85">
+											<SHORT-NAME>BoardGlobalRestore</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Restore Function</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</STRING-PARAM-DEF>
+										<STRING-PARAM-DEF UUID="DCE:697f62cf-d201-4012-bebc-d27c9d228569">
+											<SHORT-NAME>BoardIncludeFile</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Include file for the function set.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</STRING-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<MODULE-CONFIGURATION UUID="DCE:cf748d2a-1b63-45ce-b560-df2a8625c1cf">
+					<SHORT-NAME>Board_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Board</DEFINITION-REF>
+					<CONTAINERS>
+						<CONTAINER UUID="DCE:cf7ce70e-d3cf-4c75-aa02-df7d06bb1404">
+							<SHORT-NAME>InterruptFunctionality</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="DCE:0a93ef22-b28d-440b-8e37-fc89cb06a89b">
+									<SHORT-NAME>SuspendAllInterrupts</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardGlobalSuspend</DEFINITION-REF>
+											<VALUE>SuspendAllInterrupts()</VALUE>
+										</STRING-VALUE>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardGlobalRestore</DEFINITION-REF>
+											<VALUE>ResumeAllInterrupts()</VALUE>
+										</STRING-VALUE>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardIncludeFile</DEFINITION-REF>
+											<VALUE>Os.h</VALUE>
+										</STRING-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+								<CONTAINER UUID="DCE:72905305-db98-4493-843e-f280c61ad15c">
+									<SHORT-NAME>SuspendOSInterrupts</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardGlobalSuspend</DEFINITION-REF>
+											<VALUE>SuspendOSInterrupts()</VALUE>
+										</STRING-VALUE>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardGlobalRestore</DEFINITION-REF>
+											<VALUE>ResumeOSInterrupts()</VALUE>
+										</STRING-VALUE>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardIncludeFile</DEFINITION-REF>
+											<VALUE>Os.h</VALUE>
+										</STRING-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+								<CONTAINER UUID="DCE:f78cc6ad-697c-44d0-bcc1-c97eb30f6751">
+									<SHORT-NAME>DisableAllInterrupts</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardGlobalSuspend</DEFINITION-REF>
+											<VALUE>DisableAllInterrupts()</VALUE>
+										</STRING-VALUE>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardGlobalRestore</DEFINITION-REF>
+											<VALUE>EnableAllInterrupts()</VALUE>
+										</STRING-VALUE>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardIncludeFile</DEFINITION-REF>
+											<VALUE>Os.h</VALUE>
+										</STRING-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+								<CONTAINER UUID="DCE:1553edd6-8eb8-49e5-9b7f-31975dc9c609">
+									<SHORT-NAME>NoCriticalSectionHandling</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardGlobalSuspend</DEFINITION-REF>
+										</STRING-VALUE>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardGlobalRestore</DEFINITION-REF>
+										</STRING-VALUE>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet/BoardIncludeFile</DEFINITION-REF>
+										</STRING-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="DCE:c7ca00d6-98ce-473c-b1b3-df8a71ff2db6">
+					<SHORT-NAME>Board_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Board</DEFINITION-REF>
+					<CONTAINERS/>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

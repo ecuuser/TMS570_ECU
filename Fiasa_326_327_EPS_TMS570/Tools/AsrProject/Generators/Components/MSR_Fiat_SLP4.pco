@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ****************************************************************************************************
+  COPYRIGHT
+  =======================================================================================================
+  Copyright (c) 2007-20013 by Vector Informatik GmbH.                                  All rights reserved.
+
+  This software is copyright protected and proprietary to Vector Informatik GmbH.
+  Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+  All other rights remain with Vector Informatik GmbH.
+  =======================================================================================================
+  FILE DESCRIPTION
+  =======================================================================================================
+  File:           MSR_Fiat_SLP4.pco
+  Component:      -
+
+  Description:    GENy Preconfiguration file
+***************************************************************************************************** -->
+<!-- ****************************************************************************************************
+  AUTHOR IDENTITY
+  =======================================================================================================
+  Name                   Initials     Company
+  =======================================================================================================
+  Sven Hesselmann        vissvh       Vector Informatik
+  =======================================================================================================
+
+  REVISION HISTORY
+  =======================================================================================================
+  Version     Date          Author    Description
+  =======================================================================================================
+  01.01.00   2013-02-11     vissvh                  No changes, First version within this file given
+  01.02.00   2013-03-19     vissvh    ESCAN00066121 AsrCanTp_OptimizeSingleChannelPrecompile setting changed to rdwr for GW use case
+                                                    AsrCanTp_OptimizeSingleChannel setting added to rdwr for GW use case
+  01.03.00   2013-09-30     vissvh                  ESCAN00070644: AR3-2562: first message after restart or startup must be the Nm message
+                                                    Adding OsekNM preconfiguration
+													Removing OSEK NM specific preconfiguration
+  01.04.00   2013-11-08     vissvh                  ESCAN00071300 The GENy GUI allows to select the RoE Tx Type (DcmRoeTxType)
+                                                    Correction DCM preconfig
+  01.05.00   2013-11-13     vissvh                  ESCAN00072118 Inconsistent pre-configuration of PduR and CanTp
+                                                    PduRCanTp2ProvideRxBufferCalls set to rdwr
+                                                    AsrCanTp_FFProvide2RxBufferCalls set to rdwr
+  01.06.00   2014-03-10     vissvh                  ECUM_E_RAM_CHECKED_FAILED -> ECUM_E_RAM_CHECK_FAILED
+                                                    ESCAN00070171 Allow CanIfUserDlcErrorNotification to be configured by the user
+***************************************************************************************************** -->
+<config name="MSR_Fiat_SLP4" default="true" guid="123456FF-789a-bcde-f012-3456789abcde" xmlns="http://www.vector-informatik.de/CANGen/ModulePreconfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vector-informatik.de/CANGen/ModulePreconfig
+\\vistrpesfs1\Project2\GENTOOL\NextCANGen\VersionCurrent_Develop\PreconfigFiles\preconfig.xsd">
+	<module name="Ccl_AsrComM" version="1.0.0">
+		<attribute name="ComMPncSupport" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="BaseEnv" version="1.0.0">
+		<attribute name="UseExtendedAsrVersionCheck" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="OSType" class="OTModuleInstance">
+			<default value="Autosar"/>
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="SizeOfPduIdType" class="OTModuleInstance">
+			<default value="2"/>
+			<access value="rdonly"/>
+		</attribute>
+		<attribute name="ProjectType" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="NumberOfSubProjects" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="DriverCANMsgClassMgr13" version="1.0">
+		<attribute name="MsgClass" class="OTMessage">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="DriverCANNames13" version="1.0">
+		<attribute name="MsgConfirmationPostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="MsgConfirmationPrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="MsgIndicationPostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="MsgIndicationPrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="RxByteaccessPostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="RxByteaccessPrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="RxHandlePostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="RxHandlePrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="RxSignalGetPostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="RxSignalPrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SignalBitPostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SignalBitPrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SignalBytePostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SignalBytePrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SignalPostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="TxByteaccessPostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="TxByteaccessPrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="TxHandlePostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="TxHandlePrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="TxSignalPrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="TxSignalSetPrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="DrvCan__coreAsr" version="2.0.0">
+		<attribute name="DrvCan__coreAsr_MemoryMapping" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="CanDevTimeoutDetect" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="HardwareCancelByAppl" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EnableHwTransmitCancellation" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="DrvLin__baseAsr" version="1.0">
+		<attribute name="StartAddress" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="MaxNrOfChannels" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ProductionErrorDetectionLinInit" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ProductionErrorDetectionLinInitChannel" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="GenTool_GenyPluginAsrIfEcuConfigFile" version="2.0">
+		<attribute name="Filename" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Load" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Save" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuConfigReference" class="OTModuleInstance">
+			<access value="disabled"/>
+		</attribute>
+		<attribute name="bExportBeforeGeneration" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="SupportPhasePreCompile" class="OTModuleFactory">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SupportPhasePostBuild" class="OTModuleFactory">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SupportPhaseLink" class="OTModuleFactory">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="Gw_AsrPduR_Attributes" version="2.2.0">
+		<attribute name="PCIsLibrarySolution" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="PduRBalanceRoutingTime" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="PdurAR40StyleTpRouting" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="PCEnableRoutingPathGroups" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="PduRCanTp2ProvideRxBufferCalls" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="PduRFrTp2ProvideRxBufferCalls" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="Gw_AsrPduRGw_Attr" version="1.0.2">
+		<attribute name="Gw_AsrPduRGw_PCFiFoTxBufferSupport" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Gw_AsrPduRGw_PCCalloutSupport" class="OTModuleInstance">
+			<default value="off"/>
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="If_AsrIfCan" version="1.0.0">
+		<attribute name="If_AsrIfCan_CastFunctionNullPtr" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="CanIf_SymbolicPduIds" class="OTModuleInstance">
+			<default value="Compatibility"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="If_AsrIfCan_IsLibrarySolution" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="If_AsrIfCan_WakeUpValidationOnAllMessages" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="CanIf_SupportUserDlcErrorNotification" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="CanIf_SupportConfigurableUpperLayerPduIDCalculation" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="DlcCheck" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="If_AsrIfCan_SupportTxPduMapping" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="If_AsrIfCan_EcucImportRxPduIDsFromPdur" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="CanIf_DemToDet_E_STOPPED" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="CanIf_DemToDet_E_FULL_TX_BUFFER" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="DisableAutoCalculateRxPduIds" class="OTModuleInstance">
+			<access value="disabled"/>
+		</attribute>
+		<attribute name="CanIf_Autosar21_ComM_Compliance" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="BusOffRecovery" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ExtendedStateMachine" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="TransceiverMapping" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="TransmitBuffer2" class="OTModuleInstance">
+			<access value="disabled"/>
+		</attribute>
+		<attribute name="CanIf_DemReportDlcFailed" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="CanIf_OptimizeForOneController" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="UpperLayerPduId" class="OTRxMessage">
+			<access value="disabled"/>
+		</attribute>
+		<attribute name="TransmitCancellationAPI" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="DrvTrans_Tja1041CanxAsr" version="1.0.0">
+		<attribute name="CanTrcvDevErrorDetect" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="rdwr"/>
+		</attribute>
+	</module>
+	<module name="If_AsrIfLin" version="1.0">
+		<attribute name="ILhandling" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="LinIf_Autosar21_ComM_Compliance" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="TpSupport" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="TransceiverHandling" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="Support_E_Pending" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EnableTxPduIdRemapping" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="StartAddress" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EnableRxPduIdRemapping" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EnablePduRConfirmation" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SupportSporadicFrameHandling" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SupportEvtFrameHandling" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="LinTpVersionInfo" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="LinIfEnableBAC21" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="Il_AsrCom[4A0BFC6A-432A-4842-9F39-1BF238A3C02A]" version="1.0">
+		<attribute name="ComTxIPduTimeoutContext" class="ComTxIPdu">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComIssmSignal" class="ComISignal">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="Il_AsrCom[4A0BFC6A-432A-4842-9F39-1BF238A3C02A]" version="1.0">
+		<!-- This is required to gain the standard behavior of COM -->
+		<attribute name="ComFilterAlgorithm" class="ComTxISignal">
+			<access value="rdonly"/>
+		</attribute>
+		<attribute name="ComFilterAlgorithm" class="ComTxIGroupSignal">
+			<access value="rdonly"/>
+		</attribute>
+	</module>
+	<module name="Il_AsrCom_Attributes" version="1.1.0">
+		<attribute name="ComEnableTxTimeoutFlags" class="OTModuleInstance">
+			<default value="False"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="ComEnableConfirmationFlags" class="OTModuleInstance">
+			<default value="False"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="ComMainFunctionRxApi" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComDynamicDlcSupport" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComMainFunctionTxApi" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComShowError0005AsWarning" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComGetConfigurationStringPtrApi" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComIpduGroupTransmit" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComEnableLoTxConfirmation" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComEnableIndicationFlags" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComEnableTimeoutFlags" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComEnableSignalConversionInterface" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComTransportProtocolSupport" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComLargeSignalSupport" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComLargeComIPdus" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComOptimizeIdTypes" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComTriggerTransmissionByCom" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComTmsSupport" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComTsiTestCode" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComRxSignalWriteAccess" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComEnableSignalInterface" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComEnableSignalGroupInterface" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComEnableUpdateBitSupport" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComVStdLibMemApi" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComIsLibrary" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComGw03ConsistencyCheck" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComEnableMissingSourceValueHandling" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComGwStopTxOnRxTimeout" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComGwCanMost" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComGwInvalidateTxOnRxTimeout" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComGwTriggerTxOnInvalidation" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComMultipleIPduGroupRefSupport" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComSignalInvalidationApi" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComConfigurationTimeBase" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComReceptionDMApi" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComGetStatusApi" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComGetConfigurationIdApi" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComConfigurationId" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComEnableStateOnFlags" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComSignalAccessMacroApi" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComQueueFailedTransmissionRequests" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComTxTimeoutForTxModeNoneSupport" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComEnableReceptionFiltering" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="Il_AsrComNames" version="1.0">
+		<attribute name="SignalGroupNamePostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SignalGroupNamePrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SignalNamePostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="COM_NOTIFICATION_SIGNAL_RX" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="COM_NOTIFICATION_SIGNAL_TX" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComTimeoutNotificationRx" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComInvalidNotificationRx" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ComErrorNotificationTx" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="COM_NOTIFICATION_IPDU_CALLOUT" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SignalNamePrefix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="Il_AsrIpduM" version="1.0.0">
+		<attribute name="IPduMStaticPartExists" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="NameDecorator" version="1.0">
+		<attribute name="AddChannelIndex" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AlwaysAppendChannelName" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AppendChannelName" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AppendChannelNameInternal" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="DecorateIdenticalNamesRxTx" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="DoNotDecorateRxSignals" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Recalculate" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SignalRedefineActive" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SupportChannelNamePostfix" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ChannelNamePostfix" class="OTChannel">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="OriginalName" class="OTMessage">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="OriginalName" class="OTMsgSignal">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Suffix" class="OTMsgSignal">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="UniqueName" class="OTMessage">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="UniqueName" class="OTMsgSignal">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="UserDefinedUniqueName" class="OTMessage">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="UserDefinedUniqueName" class="OTMsgSignal">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Index" class="OTChannel">
+			<access value="disabled"/>
+		</attribute>
+	</module>
+	<module name="Nm_AsrNmCan" version="2.3.1">
+		<attribute name="Nm_AsrNmCan_ChannelActive" class="OTChannel">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_CarWakeUpRx" class="OTChannel">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_CarWakeUpBytePosition" class="OTChannel">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_CarWakeUpBitPosition" class="OTChannel">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_ActiveWakeUpBitFeature" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_ImmediateNmTxFeatureEnabled" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_CarWakeUpFilter" class="OTChannel">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_CarWakeUpFilterNodeId" class="OTChannel">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_PnEnabled" class="OTChannel">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_AllNmMsgKeepAwake" class="OTChannel">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_DiagnosticEventManager" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_PduRxIndication" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_UserDataSupport" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_CarWakeUpRxFeature" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_CarWakeUpFilterFeature" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_PartialNetworkingFeature" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_ImmediateTxConfirmation" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_RepeatMessageIndication" class="OTModuleInstance">
+			<!--ToDo-->
+			<access value="disabled"/>
+		</attribute>
+		<attribute name="Nm_AsrNmCan_ApiOptimization" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="Nm_AsrNmIf" version="1.0">
+		<attribute name="Nm_AsrNmIf_StateChangeIndOsekNm" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="Nm_AsrNmIf_DiagnosticEventManager" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="Nm_AsrNmIf_UserDataSupport" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="disabled"/>
+		</attribute>
+		<attribute name="Nm_AsrNmIf_LimpHomeIndication" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmIf_SupportBac21" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmIf_CoordinatorSynchronizationSupport" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="Nm_AsrNmIf_ApiOptimization" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="OHCan" version="1.0.0">
+		<attribute name="ManufacturerType" class="OTChannel">
+			<default value="6"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ObjectGeneratable" class="OTTxMessage">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ObjectGeneratable" class="OTRxMessage">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="BussystemType" class="OTChannel">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="OHLin" version="1.0.0">
+		<attribute name="EnableLinSignalGroups" class="OTLinDatabase">
+			<default value="true"/>
+			<access value="none"/>
+		</attribute>
+	</module>
+	<module name="SysService_AsrDet" version="1.0.0">
+		<attribute name="Enable Development Error Tracer" class="OTModuleInstance">
+			<default value="on"/>
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="SysService_AsrDet_VersionInfoApi" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="rdwr"/>
+		</attribute>
+	</module>
+	<module name="SysService_AsrEcuM" version="0.1.0">
+		<attribute name="EcuMIncludeRte" class="OTModuleInstance">
+			<default value="on"/>
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="XslTransformationFilePath" class="OTModuleInstance">
+			<default value="_Schemes\EcuM\_Trans\SWC_EcuM.xsl"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="GeneratorFilePath" class="OTModuleInstance">
+			<default value="..\MicrosarGen\MicrosarGen.exe"/>
+			<userlevel value="normal"/>
+			<access value="none"/>
+			<settingkind value="application"/>
+			<configurable value="no"/>
+			<description/>
+		</attribute>
+		<attribute name="GeneratorSipPath" class="OTModuleInstance">
+			<default value="."/>
+			<userlevel value="normal"/>
+			<access value="none"/>
+			<settingkind value="application"/>
+			<configurable value="no"/>
+			<description/>
+		</attribute>
+		<attribute name="EcuMIncludeDem" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="EcuMIncludeDet" class="OTModuleInstance">
+			<default value="true"/>
+		</attribute>
+		<attribute name="EcuMIncludeNvramMgr" class="OTModuleInstance">
+			<default value="true"/>
+		</attribute>
+		<attribute name="EcuMIncludeWdgM" class="OTModuleInstance">
+			<default value="true"/>
+		</attribute>
+		<attribute name="EcuMIncludeComM" class="OTModuleInstance">
+			<default value="true"/>
+		</attribute>
+		<attribute name="EcuMDemIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMDetIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMNvmIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMNvmTypesFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMWdgMIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMComMIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMComMCallbackFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMComStackTypesIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMRteIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMDevErrorDetectIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMProdErrorDetectIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMSchMIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMMcuIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMOsIncludeFile" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMGeneratorCompatibilityError" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMIncludeSchM" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMDemSetError" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMDetErrorhookFunction" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMCheckConfigType" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="EcuMIrqHandling" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="SysService_EcuM[47F46C65-EB73-4B40-A72E-F93ACDACF123]" version="0.1.0">
+		<attribute name="BoardUseSchm" class="InterruptFunctionality">
+			<default value="true"/>
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="Tp_AsrTpCan" version="1.0.0">
+		<attribute name="CanTpGwErrorsReportDem" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+    	<attribute name="CanTp_Postbuild_StartAddress" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_MaxRxNSDU" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_MaxTxNSDU" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_EnableWrapTransmit" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_EnableWrapCancelTransmit" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_PaddingActive" class="OTModuleInstance">
+			<default value="true"/>
+			<!-- FGA068: Padding is required for AUTOSAR projects but not for carry back projects -->
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="AsrCanTp_TC" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="disabled"/>
+		</attribute>
+		<attribute name="AsrCanTp_TcNotifyAlways" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="disabled"/>
+		</attribute>
+		<attribute name="AsrCanTp_RC" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="disabled"/>
+		</attribute>
+		<attribute name="AsrCanTp_RcNotifyAlways" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="disabled"/>
+		</attribute>
+		<attribute name="AsrCanTp_EnableRxNSduIdRemapping" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_EnableTxNSduIdRemapping" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_EnableExtendedApiBs" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_EnableExtendedApiStMin" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="CanTpChangeParameterReqApi" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_SupportExtendedAddressing" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_SupportMixed11Addressing" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="AsrCanTp_OptimizeSingleChannelPrecompile" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="AsrCanTp_OptimizeSingleChannel" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="AsrCanTp_VersionInfo" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="AsrCanTp_DevErrorDetect" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="AsrCanTp_ProdErrorDetect" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="AsrCanTp_SupportStandardAddressing" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="AsrCanTp_SupportDynamicChannelAssignment" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="AsrCanTp_HasTxConfirmation" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="AsrCanTp_HasRxIndication" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="AsrCanTp_FFProvide2RxBufferCalls" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+	</module>
+	<module name="Diag_AsrDcm" version="1.0">
+		<description/>
+		<attribute name="DcmRoeTxType" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="DcmSupportMultiChannelFBL" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="DcmForceResponsePending" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="DcmUnspecifiedServiceSupport" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+	</module>
+	<module name="Diag_AsrDem" version="1.0.0">
+		<attribute name="DemBSWEvents" class="OTModuleInstance">
+			<default value="
+ECUM_E_ALL_RUN_REQUESTS_KILLED
+ECUM_E_RAM_CHECK_FAILED
+FLS_E_READ_FAILED
+FLS_E_WRITE_FAILED
+FLS_E_ERASE_FAILED
+MCU_E_CLOCK_FAILURE
+NVM_E_REQ_FAILED
+NVM_E_INTEGRITY_FAILED
+SPI_E_SEQ_FAILED
+WDGM_E_SET_MODE
+WDGM_E_ALIVE_SUPERVISION"/>
+		</attribute>
+		<attribute name="DemSpecification" class="OTModuleInstance">
+			<default value="DEM_FGA"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="DemEnableDebug" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="DemPersistentOperationCycles" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemEnableVersionInfoApi" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="DemNumberOfEvents" class="OTModuleInstance">
+			<default value="65535"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemSizeOfChronoEntryType" class="OTModuleInstance">
+			<default value="1"/>
+		</attribute>
+		<attribute name="DemFimUsesEventNotification" class="OTModuleInstance">
+			<default value="on"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemSupportOriginPrimary" class="OTModuleInstance">
+			<default value="on"/>
+			<access value="rdonly"/>
+		</attribute>
+		<attribute name="DemSupportOriginSecondary" class="OTModuleInstance">
+			<default value="off"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemSupportOriginMirror" class="OTModuleInstance">
+			<default value="off"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemMaxNumberOfEventsMirror" class="OTModuleInstance">
+			<default value="1"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemSupportedStatusBits" class="OTModuleInstance">
+			<default value="0xFF"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemStatusAvailabilityMask" class="OTModuleInstance">
+			<default value="255"/>
+			<access value="rdonly"/>
+		</attribute>
+		<attribute name="DemSupportTimeBasedDebouncing" class="OTModuleInstance">
+			<default value="on"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemSupportEventSpecificExtendedRecords" class="OTModuleInstance">
+			<default value="off"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemSupportEventSpecificSnapshotRecords" class="OTModuleInstance">
+			<default value="on"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemForceUniqueEventPriorities" class="OTModuleInstance">
+			<default value="off"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemSpecification" class="OTModuleInstance">
+			<default value="DEM_FGA"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemMaximumFreezeFrameSize" class="OTModuleInstance">
+			<default value="2000000000"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemMaximumExtendedDataRecordSize" class="OTModuleInstance">
+			<default value="2000000000"/>
+			<access value="none"/>
+		</attribute>
+		<attribute name="DemSnapshotsPerDtc" class="OTModuleInstance">
+			<default value="2"/>
+			<access value="rdonly"/>
+			</attribute>
+			<attribute name="DemFirstWritableSnapshot" class="OTModuleInstance">
+				<default value="1"/>
+				<access value="rdonly"/>
+			</attribute>
+			<attribute name="DemEnableViews" class="OTModuleInstance">
+				<default value="off"/>
+				<access value="none"/>
+			</attribute>
+		<attribute name="DemMaxNumberEnableConditions" class="OTModuleInstance">
+			<default value="0"/>
+			<access value="none"/>
+		</attribute>
+	</module>
+	<module name="SysService_AsrFim" version="1.0.0">
+		<attribute name="FimCyclicEventEvaluation" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="FimDataFixed" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+	</module>
+	<module name="NM-OSEK(direct)" version="1.0">
+		<attribute name="Framework_ProhibitDeactivation" class="OTModuleFactory">
+			<default value="true"/>
+		</attribute>
+		<attribute name="BusDiagnostics" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="CanErrorBit" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="EnableErrorPinSend" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="NmBusOffNotification" class="OTModuleInstance">
+				<access value="rdwr"/>
+		</attribute>
+		<attribute name="ImmediateAlive" class="OTModuleInstance">
+			<default value="true"/>
+			<access value="rdwr"/>
+			<configurable value="yes"/>
+		</attribute>
+		<attribute name="OnmExtApi" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="NmSleepAckCallback" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="NmExternalCanonlineHandling" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="OsekNmType" class="OTModuleInstance">
+				<access value="hide"/>
+		</attribute>
+		<attribute name="NmAutosarUsage" class="OTModuleInstance">
+				<default value="true"/>
+				<!-- must remain true for handlers within GENy -->
+				<access value="rdonly"/>
+		</attribute>
+		<attribute name="RingdataAccess" class="OTModuleInstance">
+			<default value="false"/>
+			<access value="hide"/>
+		</attribute>
+		<attribute name="CopyRingData" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="CopyRingdataToTempBuffer" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="NmReadUserData" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="SignalApi" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="UserDataAccess" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SendAliveBroadcast" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ReceiveAliveBroadcast" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SendRingBroadcast" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="ReceiveRingBroadcast" class="OTModuleInstance">
+			<access value="hide"/>
+		</attribute>
+		<attribute name="SendRingData" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="ReceiveRingData" class="OTModuleInstance">
+			<access value="none"/>
+		</attribute>
+		<attribute name="NmRemoteSleepIndication" class="OTModuleInstance">
+			<access value="rdwr"/>
+		</attribute>
+		<attribute name="FastRetryTime" class="OTChannel">
+				<access value="rdwr"/>
+		</attribute>
+		<attribute name="NumberOfRetries" class="OTChannel">
+				<access value="rdwr"/>
+		</attribute>
+	</module>
+</config>

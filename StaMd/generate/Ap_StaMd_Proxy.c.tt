@@ -1,0 +1,184 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : StaMd_Proxy.c
+* Module Description: StaMd Proxy Interface
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          5 %
+ * %date_modified:    Wed Jun  5 11:22:29 2013 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 10/11/12   1       LWW       Initial template creation
+ * 10/24/12   2       LWW       Added exclude configuration for applications to skip generation
+ * 10/24/12   3       LWW       Fixed header generation logic
+ * 05/30/13   4       KJS       Added support for StaMd and DiagMgr interfacing.
+ * 06/05/13   5       KJS       Added support for P/N step to set SysC faults for StaMd
+ */
+
+<#
+
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) );
+	string diagMgrDemIfApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "DiagMgrGeneral/DiagMgrDemIfOsAppRef" ));
+	
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "StaMd" ) );
+	string staMdCoreApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "StaMdGeneral/StaMdCoreOsAppRef" ));
+	string staMdSComApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "StaMdGeneral/StaMdSComOsAppRef" ));
+	string staMdSysCovApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "StaMdGeneral/StaMdSysCovOsAppRef" ));
+	List<string> excludeAppList = new List<string>();
+	int i = 0;
+	bool excludedApp;
+#>
+<# !LOOP( Xp.ValueRefAtDefRefTo( "StaMdGeneral/GenerateExcludeOsAppRef" ) ) #>
+<#excludeAppList.Add(LastValueSegmentOf( "." ));#>
+<# !ENDLOOP #>
+/*******************************************************************************
+**                      Include Section                                       **
+*******************************************************************************/
+#define STAMD_C /* Enable visibility to Module internal definitions in StaMd.h*/
+#include "Ap_StaMd_Cfg.h"
+<#  
+	int osAppCnt = 0;
+	string osApp;
+	string[] osAppWords;
+	string osAppSuffix;
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "Os" ) ); 
+#> 
+<# !LOOP( Xp.ContainerAtDefRefTo( "OsApplication" ) ) #>
+<#  osApp = ValueOf( "ar:SHORT-NAME" );
+	/* Assume the Application short name is the last "word" in the Os Application name delimited with '_' */
+	osAppWords = osApp.Split('_');
+	osAppSuffix = osAppWords[osAppWords.Length -1];
+#>
+<# 	i = 0; 
+	excludedApp = false;
+	while(i < excludeAppList.Count)
+	{
+		if (osApp == excludeAppList[i])
+		{
+		excludedApp = true;
+		}
+		i++;
+	}
+#>	
+<#if((staMdCoreApp != osApp) & (excludedApp == false)){#>	
+#include "Rte_Ap_StaMd<#=osAppSuffix#>.h"
+#undef RTE_APPLICATION_HEADER_FILE
+<#}#>
+<# !ENDLOOP #>
+
+#define SetBits_m(var, mask)    ((var) = (var) | (mask))
+#define ClrBits_m(var, mask)    ((var) = (var) & (mask))
+/*******************************************************************************
+**                      Proxy Functions                                       **
+*******************************************************************************/
+<# !LOOP( Xp.ContainerAtDefRefTo( "OsApplication" ) ) #>
+<#  osApp = ValueOf( "ar:SHORT-NAME" );
+	/* Assume the Application short name is the last "word" in the Os Application name delimited with '_' */
+	osAppWords = osApp.Split('_');
+	osAppSuffix = osAppWords[osAppWords.Length -1];
+	osAppCnt++;
+#>
+<# 	i = 0; 
+	excludedApp = false;
+	while(i < excludeAppList.Count)
+	{
+		if (osApp == excludeAppList[i])
+		{
+		excludedApp = true;
+		}
+		i++;
+	}
+#>	
+<#if((staMdCoreApp != osApp) & (excludedApp == false)){#>	
+/* <#=osApp#> periodic function */
+FUNC(void, RTE_AP_STAMD_APPL_CODE) StaMd<#=osAppSuffix#>_Per1( void )
+{
+<#if(staMdSysCovApp == osApp){#>	
+	VAR(boolean, AUTOMATIC) FTermActive_Cnt_T_lgc;
+	VAR(boolean, AUTOMATIC) CTermActive_Cnt_T_lgc;
+	VAR(boolean, AUTOMATIC) ATermActive_Cnt_T_lgc;
+	VAR(boolean, AUTOMATIC) RampStatusCmp_Cnt_T_lgc;
+	VAR(boolean, AUTOMATIC) CtrldDmpStsCmp_Cnt_T_lgc;
+	VAR(boolean, AUTOMATIC) TMFTestComplete_Cnt_T_lgc;
+	VAR(NxtrDiagMgrStatus, AUTOMATIC) FaultStatus_Cnt_T_enum;
+<#}#>
+
+	/* Configurable Start of Runnable Checkpoint */
+	Rte_Call_StaMd<#=osAppSuffix#>_Per1_CP0_CheckpointReached();
+<#if(staMdSysCovApp == osApp){#>	
+	FTermActive_Cnt_T_lgc = Rte_IRead_StaMd<#=osAppSuffix#>_Per1_FTerm_Cnt_lgc();
+	CTermActive_Cnt_T_lgc = Rte_IRead_StaMd<#=osAppSuffix#>_Per1_CTerm_Cnt_lgc();
+	ATermActive_Cnt_T_lgc = Rte_IRead_StaMd<#=osAppSuffix#>_Per1_ATerm_Cnt_lgc();
+	RampStatusCmp_Cnt_T_lgc = Rte_IRead_StaMd<#=osAppSuffix#>_Per1_RampStatusComplete_Cnt_lgc();
+	CtrldDmpStsCmp_Cnt_T_lgc = Rte_IRead_StaMd<#=osAppSuffix#>_Per1_ControlledDampStatusComplete_Cnt_lgc();
+	TMFTestComplete_Cnt_T_lgc = Rte_IRead_StaMd<#=osAppSuffix#>_Per1_TMFTestComplete_Cnt_lgc();
+	
+	FaultStatus_Cnt_T_enum = SystemStateCheck(	FTermActive_Cnt_T_lgc,
+												CTermActive_Cnt_T_lgc,
+												ATermActive_Cnt_T_lgc,
+												RampStatusCmp_Cnt_T_lgc,
+												CtrldDmpStsCmp_Cnt_T_lgc,
+												TMFTestComplete_Cnt_T_lgc,
+												&StaMdsSysCFltCntr_Cnt_M_u16);
+						
+	Rte_Call_NxtrDiagMgr_SetNTCStatus(NTC_Num_StaMdsSysC, 1U, FaultStatus_Cnt_T_enum);
+<#}#>	
+	SystemState<#=osAppSuffix#>_Cnt_M_enum = Rte_Mode_SystemState<#=osAppSuffix#>_Mode();
+	
+	if ((SystemState_Cnt_M_enum != SystemState<#=osAppSuffix#>_Cnt_M_enum) && (SystemState<#=osAppSuffix#>_Cnt_M_enum != RTE_TRANSITION_StaMd_Mode))
+	{
+		Rte_Switch_Ap_StaMd<#=osAppSuffix#>_SystemState<#=osAppSuffix#>_Mode(SystemState_Cnt_M_enum);
+	}
+	
+	/* Configurable End of Runnable Checkpoint */
+	Rte_Call_StaMd<#=osAppSuffix#>_Per1_CP1_CheckpointReached();
+}
+
+FUNC(void, RTE_AP_STAMD_APPL_CODE) MilestoneRqst<#=osAppSuffix#>_WarmInitMilestoneComplete(StaMd_Users user)
+{
+	VAR(uint32, AUTOMATIC) MilestoneRqst_Cnt_T_u32;
+
+	Rte_Enter_StaMds<#=osAppSuffix#>_MilestoneRqst_WARMINIT_ExclArea();
+	
+	MilestoneRqst_Cnt_T_u32 = WarmInitMilestoneRqst<#=osAppSuffix#>_Cnt_M_u32;
+	ClrBits_m(MilestoneRqst_Cnt_T_u32, (~(1U << user)));
+	WarmInitMilestoneRqst<#=osAppSuffix#>_Cnt_M_u32 = MilestoneRqst_Cnt_T_u32;
+	
+	Rte_Exit_StaMds<#=osAppSuffix#>_MilestoneRqst_WARMINIT_ExclArea();
+}
+
+FUNC(void, RTE_AP_STAMD_APPL_CODE) MilestoneRqst<#=osAppSuffix#>_WarmInitMilestoneNotComplete(StaMd_Users user)
+{
+	VAR(uint32, AUTOMATIC) MilestoneRqst_Cnt_T_u32;
+
+	Rte_Enter_StaMds<#=osAppSuffix#>_MilestoneRqst_WARMINIT_ExclArea();
+	
+	MilestoneRqst_Cnt_T_u32 = WarmInitMilestoneRqst<#=osAppSuffix#>_Cnt_M_u32;
+	SetBits_m(MilestoneRqst_Cnt_T_u32, (1U << user));
+	WarmInitMilestoneRqst<#=osAppSuffix#>_Cnt_M_u32 = MilestoneRqst_Cnt_T_u32;
+	
+	Rte_Exit_StaMds<#=osAppSuffix#>_MilestoneRqst_WARMINIT_ExclArea();
+}
+
+<#if(diagMgrDemIfApp == osApp){#>
+FUNC(void, RTE_AP_STAMD_APPL_CODE) StaMd<#=osAppSuffix#>_Trns_DemShutdown(void)
+{
+	Rte_Call_DiagMgr_StaCtrl_Shutdown();
+}
+
+<#}#>
+
+<#}#>
+<# !ENDLOOP #>
+

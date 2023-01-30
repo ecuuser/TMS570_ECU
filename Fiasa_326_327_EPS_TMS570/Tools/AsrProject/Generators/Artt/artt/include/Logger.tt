@@ -1,0 +1,1142 @@
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#+
+
+/*******************************************************************************
+**                      Member Data                                           **
+*******************************************************************************/
+
+string                                       outputMessage       = "";
+Dictionary<string,uint>                      messageCounter      = new Dictionary<string,uint>();
+Dictionary<string,List<string>>              uniqueContainerList = new Dictionary<string,List<string>>();
+Dictionary<string,Dictionary<string,string>> uniqueValueList     = new Dictionary<string,Dictionary<string,string>>();
+
+
+
+/*******************************************************************************
+**                      Member Functions                                      **
+*******************************************************************************/
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : WriteReport                                                **
+**                                                                            **
+** DESCRIPTION   : This function writes the reported errors and warnings      **
+**                 to standard error and into the generated file.             **
+**                                                                            **
+** PARAMETER     : ---                                                        **
+**                                                                            **
+** RETURN        : ---                                                        **
+**                                                                            **
+*******************************************************************************/
+int WriteReport()
+{
+   int RetVal = 0;
+
+   if ( messageCounter.ContainsKey( "Error" ) ||
+        messageCounter.ContainsKey( "Warning" ) )
+   {
+      /*
+      if ( !messageCounter.ContainsKey( "Error" ) )
+      {
+         messageCounter.Add( "Error", 0 );
+      }
+
+      if ( !messageCounter.ContainsKey( "Warning" ) )
+      {
+         messageCounter.Add( "Warning", 0 );
+      }
+
+      outputMessage += string.Format( "Info: {0} Error(s) {1} Warning(s)",
+                                      messageCounter[ "Error" ],
+                                      messageCounter[ "Warning" ] );
+      */
+      Console.Error.WriteLine( outputMessage );
+
+      WriteLine( outputMessage );
+
+      if ( messageCounter.ContainsKey( "Error" ) )
+      {
+         RetVal = 1;
+      }
+   }
+
+   return RetVal;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : Report                                                     **
+**                                                                            **
+** DESCRIPTION   : This function adds a message to the report                 **
+**                                                                            **
+** PARAMETER     : messageType: Type of message (e.g. "Error" or "Warning")   **
+**                 messageId  : Unique message id                             **
+**                 elementDef : Name of element from schema definition        **
+**                 messageText: Message to report as error                    **
+**                                                                            **
+** RETURN        : ---                                                        **
+**                                                                            **
+*******************************************************************************/
+void Report( string messageType, string messageId, string elementDef, string messageText )
+{
+   outputMessage += string.Format( "{0}: {1}: {2}", messageType, messageId, messageText );
+
+   if ( elementDef != null )
+   {
+      if ( Exists( Xp.DefRefTo( elementDef ) ) )
+      {
+         string defRef = ValueOf( Xp.DefRefTo( elementDef ) );
+         defRef = defRef.Substring( defRef.IndexOf( '/', 1 ) + 1 );
+         outputMessage += string.Format( " (XPath={0})", defRef );
+      }
+   }
+
+   outputMessage += System.Environment.NewLine;
+
+   if ( !messageCounter.ContainsKey( messageType ) )
+   {
+      messageCounter.Add( messageType, 1 );
+   }
+   else
+   {
+      messageCounter[ messageType ]++;
+   }
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : Report                                                     **
+**                                                                            **
+** DESCRIPTION   : This function adds a message to the report                 **
+**                                                                            **
+** PARAMETER     : messageType: Type of message (e.g. "Error" or "Warning")   **
+**                 messageId  : Unique message id                             **
+**                 messageText: Message to report as error                    **
+**                                                                            **
+** RETURN        : ---                                                        **
+**                                                                            **
+*******************************************************************************/
+void Report( string messageType, string messageId, string messageText )
+{
+   Report( messageType, messageId, null, messageText );
+}
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfBooleanValueNotValid                               **
+**                                                                            **
+** DESCRIPTION   : This function checks if the value of the given boolean     **
+**                 element is valid. According to AUTOSAR valid boolean       **
+**                 values are (0, 1, false, true) but we are less strict      **
+**                 and allo also (TRUE, FALSE).                               **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 valueLabel    : Name of value to display in message        **
+**                                                                            **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfBooleanValueNotValid( string messageType, string messageId, string valueDef, string valueLabel)
+{
+   bool messageReported = false;
+   string valueString = ValueOf( Xp.ValueAtDefRefTo( valueDef ) );
+   valueLabel = valueLabel != null ? valueLabel : valueDef;
+
+   if ( valueString == "" )
+   {
+      Report( messageType, messageId, valueDef, string.Format(
+              "Value of {0} may not be empty.",
+              valueLabel ) );
+      messageReported = true;
+   }
+   else
+   {
+      bool value;
+      try
+      {
+         value = ValueOf( Xp.ValueAtDefRefTo( valueDef ) );
+      }
+      catch ( ArgumentException )
+      {
+         Report( messageType, messageId, valueDef, string.Format(
+                 "Value {1} of {0} is not a boolean.",
+                 valueLabel,
+                 valueString ) );
+         messageReported = true;
+      }
+	}
+
+	return messageReported;
+}
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueOutOfRange                                    **
+**                                                                            **
+** DESCRIPTION   : This function checks if the value of the given element     **
+**                 is in the given range.                                     **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 valueLabel    : Name of value to display in message        **
+**                 valueMin      : Minimum value                              **
+**                 valueMax      : Maximum value                              **
+**                 valueFormat   : Format of value to display in message      **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueOutOfRange( string messageType, string messageId, string valueDef, string valueLabel, double valueMin, double valueMax, string valueFormat )
+{
+   bool messageReported = false;
+   string valueString = ValueOf( Xp.ValueAtDefRefTo( valueDef ) );
+   valueLabel = valueLabel != null ? valueLabel : valueDef;
+
+   if ( valueString == "" )
+   {
+      Report( messageType, messageId, valueDef, string.Format(
+              "Value of {0} may not be empty.",
+              valueLabel ) );
+      messageReported = true;
+   }
+   else
+   {
+      double value = 0;
+      try
+      {
+         value = ValueOf( Xp.ValueAtDefRefTo( valueDef ) );
+      }
+      catch ( FormatException )
+      {
+         Report( messageType, messageId, valueDef, string.Format(
+                 "Value {1} of {0} is not a number.",
+                 valueLabel,
+                 valueString ) );
+         messageReported = true;
+      }
+
+      if ( !messageReported )
+      {
+         if ( ( value < valueMin ) || ( value > valueMax ) )
+         {
+            string valueMinString;
+            string valueMaxString;
+
+            valueFormat = valueFormat != null ? valueFormat : "";
+
+            if ( valueFormat.Contains( "X" ) )
+            {
+               valueString    = "0x" + ((uint)value).ToString( valueFormat );
+               valueMinString = "0x" + ((uint)valueMin).ToString( valueFormat );
+               valueMaxString = "0x" + ((uint)valueMax).ToString( valueFormat );
+            }
+            else
+            {
+               valueString    = value.ToString( valueFormat );
+               valueMinString = valueMin.ToString( valueFormat );
+               valueMaxString = valueMax.ToString( valueFormat );
+            }
+
+            string messageString = string.Format( "{0} is set to {1} ", valueLabel, valueString );
+
+            if ( valueMin == valueMax )
+            {
+               messageString += "but the only allowed value is " + valueMinString;
+            }
+            else if ( value < valueMin )
+            {
+               messageString += "which is smaller than the minimum allowed value of " + valueMinString;
+            }
+            else if ( value > valueMax )
+            {
+               messageString += "which is bigger than the maximum allowed value of " + valueMaxString;
+            }
+
+            Report( messageType, messageId, valueDef, messageString + "." );
+
+            messageReported = true;
+         }
+      }
+   }
+
+   return messageReported;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueOutOfRange                                    **
+**                                                                            **
+** DESCRIPTION   : This function checks if the value of the given element     **
+**                 is in the given range.                                     **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 valueMin      : Minimum value                              **
+**                 valueMax      : Maximum value                              **
+**                 valueFormat   : Format of value to display in message      **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueOutOfRange( string messageType, string messageId, string valueDef, double valueMin, double valueMax, string valueFormat )
+{
+   return ReportIfValueOutOfRange( messageType, messageId, valueDef, null, valueMin, valueMax, valueFormat );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueOutOfRange                                    **
+**                                                                            **
+** DESCRIPTION   : This function checks if the value of the given element     **
+**                 is in the given range.                                     **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 valueLabel    : Name of value to display in message        **
+**                 valueMin      : Minimum value                              **
+**                 valueMax      : Maximum value                              **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueOutOfRange( string messageType, string messageId, string valueDef, string valueLabel, double valueMin, double valueMax )
+{
+   return ReportIfValueOutOfRange( messageType, messageId, valueDef, valueLabel, valueMin, valueMax, null );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueOutOfRange                                    **
+**                                                                            **
+** DESCRIPTION   : This function checks if the value of the given element     **
+**                 is in the given range.                                     **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 valueMin      : Minimum value                              **
+**                 valueMax      : Maximum value                              **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueOutOfRange( string messageType, string messageId, string valueDef, double valueMin, double valueMax )
+{
+   return ReportIfValueOutOfRange( messageType, messageId, valueDef, null, valueMin, valueMax, null );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueNotUnique                                     **
+**                                                                            **
+** DESCRIPTION   : This function adds the value of the given element to the   **
+**                 unique value list with the given name. Then it checks      **
+**                 if the same value has not been added before.               **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 uniqueListName: Name of unique list                        **
+**                 valueLabel    : Name of value to display in message        **
+**                 containerLabel: Name of container to display in message    **
+**                 containerName : Name of current container entry            **
+**                 valueFormat   : Format of value to display in message      **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+** REMARKS       : This function has to be called with the same element for   **
+**                 each container entry.                                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueNotUnique( string messageType, string messageId, string valueDef, string uniqueListName, string valueLabel, string containerLabel, string containerName, string valueFormat )
+{
+   bool messageReported = false;
+
+   if ( !AddValueToUniqueList( uniqueListName, valueDef, containerName ) )
+   {
+      string valueString;
+
+      try
+      {
+         valueString = ValueOf( Xp.ValueAtDefRefTo( valueDef ) );
+      }
+      catch ( DirectiveProcessorException )
+      {
+         try
+         {
+            valueString = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( valueDef ) );
+         }
+         catch ( DirectiveProcessorException )
+         {
+            valueString = ValueOf( Xp.ContainerAtDefRefTo( valueDef ) + "/ar:SHORT-NAME" );
+         }
+      }
+
+      string containerName2 = uniqueValueList[ uniqueListName ][ valueString.ToUpper() ];
+
+      if ( valueFormat != null )
+      {
+         uint value = Convert.ToUInt32( valueString );
+
+         if ( valueFormat.Contains( "X" ) )
+         {
+            valueString = "0x" + ((uint)value).ToString( valueFormat );
+         }
+         else
+         {
+            valueString = value.ToString( valueFormat );
+         }
+      }
+
+      Report( messageType, messageId, valueDef, string.Format(
+              "{0} of {1}{3} is set to {2} which is already used by {1}{4}.",
+              valueLabel != null ? valueLabel : valueDef,
+              containerLabel != null ? containerLabel + " " : "",
+              valueString,
+              containerName,
+              containerName2 ) );
+
+      messageReported = true;
+   }
+
+   return messageReported;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueNotUnique                                     **
+**                                                                            **
+** DESCRIPTION   : This function adds the value of the given element to the   **
+**                 unique value list with the given name. Then it checks      **
+**                 if the same value has not been added before.               **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 uniqueListName: Name of unique list                        **
+**                 valueLabel    : Name of value to display in message        **
+**                 containerLabel: Name of container to display in message    **
+**                 containerName : Name of current container entry            **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+** REMARKS       : This function has to be called with the same element for   **
+**                 each container entry.                                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueNotUnique( string messageType, string messageId, string valueDef, string uniqueListName, string valueLabel, string containerLabel, string containerName )
+{
+   return ReportIfValueNotUnique( messageType, messageId, valueDef, uniqueListName, valueLabel, containerLabel, containerName, null );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueNotUnique                                     **
+**                                                                            **
+** DESCRIPTION   : This function adds the value of the given element to the   **
+**                 unique value list with the given name. Then it checks      **
+**                 if the same value has not been added before.               **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 uniqueListName: Name of unique list                        **
+**                 containerName : Name of current container entry            **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+** REMARKS       : This function has to be called with the same element for   **
+**                 each container entry.                                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueNotUnique( string messageType, string messageId, string valueDef, string uniqueListName, string containerName )
+{
+   return ReportIfValueNotUnique( messageType, messageId, valueDef, uniqueListName, null, null, containerName, null );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : AddValueToUniqueList                                       **
+**                                                                            **
+** DESCRIPTION   : This function adds the value of the given element to the   **
+**                 unique value list with the given name.                     **
+**                 No default message is reported in any case.                **
+**                                                                            **
+** PARAMETER     : uniqueListName: Name of unique list                        **
+**                 valueDef      : Name of value from schema definition       **
+**                 containerName : Name of current container entry            **
+**                                                                            **
+** RETURN        : true if the value was added                                **
+**                 false the value already exists                             **
+**                                                                            **
+** REMARKS       : This function has to be called with the same element for   **
+**                 each container entry.                                      **
+**                                                                            **
+*******************************************************************************/
+bool AddValueToUniqueList( string uniqueListName, string valueDef, string containerName )
+{
+   bool valueAdded = false;
+   string valueString;
+
+   try
+   {
+      valueString = ValueOf( Xp.ValueAtDefRefTo( valueDef ) );
+   }
+   catch ( DirectiveProcessorException )
+   {
+      try
+      {
+         valueString = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( valueDef ) );
+      }
+      catch ( DirectiveProcessorException )
+      {
+         valueString = ValueOf( Xp.ContainerAtDefRefTo( valueDef ) + "/ar:SHORT-NAME" );
+      }
+   }
+
+   if ( !uniqueValueList.ContainsKey( uniqueListName ) )
+   {
+      uniqueValueList.Add( uniqueListName, new Dictionary<string,string>() );
+   }
+
+   if ( !uniqueValueList[ uniqueListName ].ContainsKey( valueString.ToUpper() ) )
+   {
+      uniqueValueList[ uniqueListName ].Add( valueString.ToUpper(), containerName );
+
+      valueAdded = true;
+   }
+
+   return valueAdded;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : GetUniqueValueList                                         **
+**                                                                            **
+** DESCRIPTION   : This function returns the unique value list with the       **
+**                 given name.                                                **
+**                                                                            **
+** PARAMETER     : uniqueListName: Name of unique list                        **
+**                                                                            **
+** RETURN        : unique value list                                          **
+**                                                                            **
+*******************************************************************************/
+Dictionary<string,string> GetUniqueValueList( string uniqueListName )
+{
+   if ( !uniqueValueList.ContainsKey( uniqueListName ) )
+   {
+      uniqueValueList.Add( uniqueListName, new Dictionary<string,string>() );
+   }
+
+   return uniqueValueList[ uniqueListName ];
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ResetUniqueValueList                                       **
+**                                                                            **
+** DESCRIPTION   : This function empties the unique value list with the       **
+**                 given name.                                                **
+**                                                                            **
+** PARAMETER     : uniqueListName: Name of unique list                        **
+**                                                                            **
+** RETURN        : ---                                                        **
+**                                                                            **
+*******************************************************************************/
+void ResetUniqueValueList( string uniqueListName )
+{
+   if ( uniqueValueList.ContainsKey( uniqueListName ) )
+   {
+      uniqueValueList.Remove( uniqueListName );
+   }
+
+   uniqueValueList.Add( uniqueListName, new Dictionary<string,string>() );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueNotConsecutive                                **
+**                                                                            **
+** DESCRIPTION   : This function checks if the values of the unique value     **
+**                 list of the given container are zero based and consecutive.**
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 uniqueListName: Name of unique list                        **
+**                 valueLabel    : Name of value to display in message        **
+**                 containerLabel: Name of container to display in message    **
+**                 valueLabelPlural: Name of values to display in message     **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+** REMARKS       : This function works only if the element values have been   **
+**                 added to the unique value list by AddValueToUniqueList()   **
+**                 or by ReportIfValueNotUnique() before.                     **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueNotConsecutive( string messageType, string messageId, string valueDef, string uniqueListName, string valueLabel, string containerLabel, string valueLabelPlural )
+{
+   bool messageReported = false;
+
+   if ( uniqueValueList.ContainsKey( uniqueListName ) )
+   {
+      uint expectedValue = 0;
+      SortedDictionary<string,string> uniqueValueListSorted = new SortedDictionary<string,string>( uniqueValueList[ uniqueListName ] );
+
+      foreach ( string valueString in uniqueValueListSorted.Keys )
+      {
+         string containerName = uniqueValueList[ uniqueListName ][ valueString ];
+         uint value = Convert.ToUInt32( valueString );
+
+         if ( value != expectedValue )
+         {
+            Report( messageType, messageId, valueDef, string.Format(
+                    "{0} must be zero-based and consecutive. There is a gap before {1} {3} of {2}{4}.",
+                    valueLabelPlural != null ? valueLabelPlural : valueDef,
+                    valueLabel != null ? valueLabel : valueDef,
+                    containerLabel != null ? containerLabel + " " : "",
+                    valueString,
+                    containerName ) );
+
+            messageReported = true;
+         }
+
+         expectedValue = value + 1;
+      }
+   }
+
+   return messageReported;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueNotConsecutive                                **
+**                                                                            **
+** DESCRIPTION   : This function checks if the values of the unique value     **
+**                 list of the given container are zero based and consecutive.**
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 containerDef  : Name of container from schema definition   **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+** REMARKS       : This function works only if the element values have been   **
+**                 added to the unique value list by AddValueToUniqueList()   **
+**                 or by ReportIfValueNotUnique() before.                     **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueNotConsecutive( string messageType, string messageId, string valueDef, string containerDef, string valueLabel, string containerLabel )
+{
+   return ReportIfValueNotConsecutive( messageType, messageId, valueDef, containerDef, null, null, null );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueIsEmpty                                       **
+**                                                                            **
+** DESCRIPTION   : This function checks if the value of the given node exists **
+**                 and is not empty.                                          **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                 valueLabel    : Name of value to display in message        **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueIsEmpty( string messageType, string messageId, string valueDef, string valueLabel )
+{
+   bool messageReported = false;
+
+   if ( !Exists( Xp.ValueAtDefRefTo( valueDef ) ) )
+   {
+      messageReported = true;
+   }
+   else if ( ValueOf( Xp.ValueAtDefRefTo( valueDef ) ) == "" )
+   {
+      messageReported = true;
+   }
+
+   if ( messageReported )
+   {
+      Report( messageType, messageId, valueDef, string.Format(
+              "{0} may not be empty.",
+              valueLabel != null ? valueLabel : valueDef ) );
+   }
+
+   return messageReported;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfValueIsEmpty                                       **
+**                                                                            **
+** DESCRIPTION   : This function checks if the value of the given node exists **
+**                 and is not empty.                                          **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 valueDef      : Name of value from schema definition       **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfValueIsEmpty( string messageType, string messageId, string valueDef )
+{
+   return ReportIfValueIsEmpty( messageType, messageId, valueDef, null );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfRefNotExists                                       **
+**                                                                            **
+** DESCRIPTION   : This function checks if the reference value of the node    **
+**                 of the given XPath definition reference references to an   **
+**                 existing node.                                             **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 refDef        : Name of reference from schema definition   **
+**                 refLabelTarget: Name of target to display in message       **
+**                 refLabelSource: Name of source to display in message       **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfRefNotExists( string messageType, string messageId, string refDef, string refLabelTarget, string refLabelSource )
+{
+   bool messageReported = false;
+   string xp = Xp.ValueRefAtDefRefTo( refDef );
+
+   if ( !RefExists( xp ) )
+   {
+      if( Exists( xp ) )
+      {
+         string refValue = LastValueSegmentOf( xp );
+
+         if ( refLabelSource == null )
+         {
+            Report( messageType, messageId, refDef, string.Format(
+                    "Referenced {0} {1} does not exist.",
+                    refLabelTarget,
+                    refValue ) );
+         }
+         else
+         {
+            Report( messageType, messageId, refDef, string.Format(
+                    "Referenced {0} {2} referenced from {1} does not exist.",
+                    refLabelTarget,
+                    refLabelSource,
+                    refValue ) );
+         }
+      }
+      else
+      {
+         if ( refLabelSource == null )
+         {
+            Report( messageType, messageId, refDef, string.Format(
+                    "Reference to {0} may not be empty.",
+                    refLabelTarget ) );
+         }
+         else
+         {
+            Report( messageType, messageId, refDef, string.Format(
+                    "Reference to {0} from {1} may not be empty.",
+                    refLabelTarget,
+                    refLabelSource ) );
+         }
+      }
+
+      messageReported = true;
+   }
+
+   return messageReported;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfRefNotExists                                       **
+**                                                                            **
+** DESCRIPTION   : This function checks if the reference value of the node    **
+**                 of the given XPath definition reference references to an   **
+**                 existing node.                                             **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 refDef        : Name of reference from schema definition   **
+**                 refLabelTarget: Name of target to display in message       **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfRefNotExists( string messageType, string messageId, string refDef, string refLabelTarget )
+{
+   return ReportIfRefNotExists( messageType, messageId, refDef, refLabelTarget, null );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfContainerOutOfRange                                **
+**                                                                            **
+** DESCRIPTION   : This function checks if the number of entries of a         **
+**                 container is in the given range.                           **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 containerDef  : Name of container from schema definition   **
+**                 containerLabel: Name of container to display in message    **
+**                 containerMin  : Minimum number of entries in container     **
+**                 containerMax  : Maximum number of entries in container     **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfContainerOutOfRange( string messageType, string messageId, string containerDef, string containerLabel, uint containerMin, uint containerMax )
+{
+   bool messageReported = false;
+   int containerCount;
+   containerLabel = containerLabel != null ? containerLabel : containerDef;
+
+   try
+   {
+      ValueOf( Xp.ContainerAtDefRefTo( containerDef ) );
+      containerCount = Count( Xp.ContainerAtDefRefTo( containerDef ) );
+   }
+   catch ( DirectiveProcessorException )
+   {
+      try
+      {
+         ValueOf( Xp.ValueAtDefRefTo( containerDef ) );
+         containerCount = Count( Xp.ValueAtDefRefTo( containerDef ) );
+      }
+      catch ( DirectiveProcessorException )
+      {
+         try
+         {
+            ValueOf( Xp.ValueRefAtDefRefTo( containerDef ) );
+            containerCount = Count( Xp.ValueRefAtDefRefTo( containerDef ) );
+         }
+         catch ( DirectiveProcessorException )
+         {
+            containerCount = 0;
+         }
+      }
+   }
+
+   if ( containerCount < containerMin )
+   {
+      Report( messageType, messageId, containerDef, string.Format(
+              "Total number of {0} is {1} but {3}{2} {4} expected.",
+              containerLabel, containerCount, containerMin,
+              containerMin == containerMax ? "" : "at least ",
+              containerMin == 1 ? "is" : "are" ) );
+
+      messageReported = true;
+   }
+   else if ( containerCount > containerMax )
+   {
+      Report( messageType, messageId, containerDef, string.Format(
+              "Total number of {0} is {1} but only {2} {3} allowed.",
+              containerLabel, containerCount, containerMax,
+              containerMax == 1 ? "is" : "are" ) );
+
+      messageReported = true;
+   }
+
+   return messageReported;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfContainerOutOfRange                                **
+**                                                                            **
+** DESCRIPTION   : This function checks if the number of entries of a         **
+**                 container is in the given range.                           **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 containerDef  : Name of container from schema definition   **
+**                 containerMin  : Minimum number of entries in container     **
+**                 containerMax  : Maximum number of entries in container     **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfContainerOutOfRange( string messageType, string messageId, string containerDef, uint containerMin, uint containerMax )
+{
+   return ReportIfContainerOutOfRange( messageType, messageId, containerDef, null, containerMin, containerMax );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfContainerNotUnique                                 **
+**                                                                            **
+** DESCRIPTION   : This function checks if the short name of the given        **
+**                 container entry is not used by another container entry.    **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 containerDef  : Name of container from schema definition   **
+**                 containerLabel: Name of container to display in message    **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+** REMARKS       : This function has to be called for each container entry.   **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfContainerNotUnique( string messageType, string messageId, string containerDef, string containerLabel )
+{
+   bool messageReported = false;
+
+   if ( !AddContainerToUniqueList( containerDef )  )
+   {
+      string containerName = ValueOf( Xp.ContainerAtDefRefTo( containerDef ) + "/ar:SHORT-NAME" );
+
+      Report( messageType, messageId, containerDef, string.Format(
+              "There exists more than one {0} with name {1}.",
+              containerLabel != null ? containerLabel : containerDef,
+              containerName ) );
+
+      messageReported = true;
+   }
+
+   return messageReported;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfContainerNotUnique                                 **
+**                                                                            **
+** DESCRIPTION   : This function adds the short name of the given container   **
+**                 to it's unique container list. Then it checks if the same  **
+**                 short name has not been added before.                      **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 containerDef  : Name of container from schema definition   **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+** REMARKS       : This function has to be called for each container entry.   **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfContainerNotUnique( string messageType, string messageId, string containerDef )
+{
+   return ReportIfContainerNotUnique( messageType, messageId, containerDef, null );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : AddContainerToUniqueList                                   **
+**                                                                            **
+** DESCRIPTION   : This function adds the value of the given element to the   **
+**                 unique value list of the given container.                  **
+**                 No default message is reported if in any case.             **
+**                                                                            **
+** PARAMETER     : containerDef  : Name of container from schema definition   **
+**                                                                            **
+** RETURN        : true if the value was added                                **
+**                 false the value already exists                             **
+**                                                                            **
+** REMARKS       : This function has to be called with the same element for   **
+**                 each container entry.                                      **
+**                                                                            **
+*******************************************************************************/
+bool AddContainerToUniqueList( string containerDef )
+{
+   bool containerAdded = false;
+   string uniqueListName = containerDef.ToUpper();
+   string containerName = ValueOf( Xp.ContainerAtDefRefTo( containerDef ) + "/ar:SHORT-NAME" );
+
+   if ( !uniqueContainerList.ContainsKey( uniqueListName ) )
+   {
+      uniqueContainerList.Add( uniqueListName, new List<string>() );
+   }
+
+   if ( !uniqueContainerList[ uniqueListName ].Contains( containerName.ToUpper() ) )
+   {
+
+      uniqueContainerList[ uniqueListName ].Add( containerName.ToUpper() );
+
+      containerAdded = true;
+   }
+
+   return containerAdded;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : GetUniqueContainerList                                     **
+**                                                                            **
+** DESCRIPTION   : This function returns the unique container list of the     **
+**                 given container.                                           **
+**                                                                            **
+** PARAMETER     : containerDef  : Name of container from schema definition   **
+**                                                                            **
+** RETURN        : unique container list of the given container               **
+**                                                                            **
+*******************************************************************************/
+List<string> GetUniqueContainerList( string containerDef )
+{
+   string uniqueListName = containerDef.ToUpper();
+
+   if ( !uniqueContainerList.ContainsKey( uniqueListName ) )
+   {
+      uniqueContainerList.Add( uniqueListName, new List<string>() );
+   }
+
+   return uniqueContainerList[ uniqueListName ];
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ResetUniqueContainerList                                   **
+**                                                                            **
+** DESCRIPTION   : This function empties the unique container list with the   **
+**                 given name.                                                **
+**                                                                            **
+** PARAMETER     : containerDef  : Name of container from schema definition   **
+**                                                                            **
+** RETURN        : ---                                                        **
+**                                                                            **
+*******************************************************************************/
+void ResetUniqueContainerList( string containerDef )
+{
+   string uniqueListName = containerDef.ToUpper();
+
+   if ( uniqueContainerList.ContainsKey( uniqueListName ) )
+   {
+      uniqueContainerList.Remove( uniqueListName );
+   }
+
+   uniqueContainerList.Add( uniqueListName, new List<string>() );
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfModuleNotExists                                    **
+**                                                                            **
+** DESCRIPTION   : This function checks if the given module configuration     **
+**                 exists.                                                    **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 moduleDef     : Name of module from schema definition      **
+**                 moduleLabel   : Name of module to display in message       **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfModuleNotExists( string messageType, string messageId, string moduleDef, string moduleLabel )
+{
+   bool messageReported = false;
+
+   if ( !Exists( Xp.ModuleConfAtDefRefTo( moduleDef ) ) )
+   {
+      Report( messageType, messageId, string.Format(
+              "No {0} configuration found. Can't check consistency of {0} configuration.",
+              moduleLabel != null ? moduleLabel : moduleDef ) );
+
+      messageReported = true;
+   }
+
+   return messageReported;
+}
+
+
+/*******************************************************************************
+**                                                                            **
+** FUNC-NAME     : ReportIfModuleNotExists                                    **
+**                                                                            **
+** DESCRIPTION   : This function checks if the given module configuration     **
+**                 exists.                                                    **
+**                 Otherwise a default message is reported.                   **
+**                                                                            **
+** PARAMETER     : messageType   : Type of message ("Error" or "Warning")     **
+**                 messageId     : Unique message id to display in message    **
+**                 moduleDef     : Name of module from schema definition      **
+**                                                                            **
+** RETURN        : true if a message has been reported                        **
+**                 false if no message has been reported                      **
+**                                                                            **
+*******************************************************************************/
+bool ReportIfModuleNotExists( string messageType, string messageId, string moduleDef )
+{
+   return ReportIfModuleNotExists( messageType, messageId, moduleDef, null );
+}
+
+/*** End of file **************************************************************/#>

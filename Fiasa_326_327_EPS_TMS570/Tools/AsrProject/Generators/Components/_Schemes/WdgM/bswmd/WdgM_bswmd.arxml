@@ -1,0 +1,1656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/3.1.4"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://autosar.org/3.1.4 AUTOSAR.xsd">
+  <!--
+       Note for XML Schema validation purposes:
+       You may have to set the `xsi:schemaLocation` attribute above so that
+       it points to the actual location of `AUTOSAR.xsd`
+  -->
+  <TOP-LEVEL-PACKAGES>
+    <AR-PACKAGE UUID="b0a085db-a29b-4167-9a08-02b606079e63">
+      <SHORT-NAME>TTTECH</SHORT-NAME>
+      <ELEMENTS>
+        <BSW-IMPLEMENTATION UUID="fd26c7c1-00dc-4cd6-b4f6-f6e9f892aecc">
+          <SHORT-NAME>WdgM_Impl</SHORT-NAME>
+          <CODE-GENERATOR>TTTech</CODE-GENERATOR>
+          <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+          <SW-MAJOR-VERSION>2</SW-MAJOR-VERSION>
+          <SW-MINOR-VERSION>0</SW-MINOR-VERSION>
+          <SW-PATCH-VERSION>3</SW-PATCH-VERSION>
+          <VENDOR-ID>46</VENDOR-ID>
+          <AR-MAJOR-VERSION>4</AR-MAJOR-VERSION>
+          <AR-MINOR-VERSION>0</AR-MINOR-VERSION>
+          <AR-PATCH-VERSION>1</AR-PATCH-VERSION>
+          <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/TTTECH/WdgM</VENDOR-SPECIFIC-MODULE-DEF-REF>
+        </BSW-IMPLEMENTATION>
+        <MODULE-DEF UUID="3d9e436f-54f3-45c6-882f-8c810c00ad7c">
+          <SHORT-NAME>WdgM</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Configuration of the WdgM (Watchdog Manager) module.</L-2>
+          </DESC>
+          <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+          <REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/WdgM</REFINED-MODULE-DEF-REF>
+          <SUPPORTED-CONFIG-VARIANTS>
+            <SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+            <SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+          </SUPPORTED-CONFIG-VARIANTS>
+          <CONTAINERS>
+            <!-- Parameter Container Definition: WdgMConfigSet -->
+            <PARAM-CONF-CONTAINER-DEF UUID="2dbc28d5-018a-4415-8be7-da339d2a5b46">
+              <SHORT-NAME>WdgMConfigSet</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">This container describes one of multiple configuration sets of WdgM.
+
+This is a MultipleConfigurationContainer, i.e. this container and its sub-containers exist once per configuration set.</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+              <MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+              <REFERENCES>
+                <!-- Symbolic Name Reference Definition: WdgMInitialMode -->
+                <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="418f2b84-5b5d-45ae-8319-ff5afb67a64d">
+                  <SHORT-NAME>WdgMInitialMode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The mode that the Watchdog Manager is in after it has been initialized.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMConfigSet/WdgMMode</DESTINATION-REF>
+                </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+              </REFERENCES>
+              <SUB-CONTAINERS>
+                <!-- Parameter Container Definition: WdgMMode -->
+                <PARAM-CONF-CONTAINER-DEF UUID="e57d7de3-99ef-444c-bf4b-05ab61fcada5">
+                  <SHORT-NAME>WdgMMode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The container describes one of several modes of the Watchdog Manager.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+                  <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                  <PARAMETERS>
+                    <!-- PARAMETER DEFINITION: WdgMExpiredSupervisionCycleTol -->
+                    <INTEGER-PARAM-DEF UUID="df12cf51-bd95-4777-80cf-afdcfa7baf3d">
+                      <SHORT-NAME>WdgMExpiredSupervisionCycleTol</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This parameter shall be used to define a value that fixes the amount of expired supervision cycles for how long the blocking of watchdog triggering shall be postponed.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                      <MAX>255</MAX>
+                      <MIN>0</MIN>
+                    </INTEGER-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: WdgMModeId -->
+                    <INTEGER-PARAM-DEF UUID="fb4a8d25-3b98-467d-a9ae-5d82bbb5ab2a">
+                      <SHORT-NAME>WdgMModeId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This parameter represents the S-WdgM mode. </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                      <MAX>255</MAX>
+                      <MIN>0</MIN>
+                    </INTEGER-PARAM-DEF>
+                    <FLOAT-PARAM-DEF UUID="252413af-7142-46cc-af73-68c33687d6fe">
+                      <SHORT-NAME>WdgMTicksPerSecond</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This parameter defines the number of Watchdog Manager ticks per second.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                      <MIN>1</MIN>
+                    </FLOAT-PARAM-DEF>
+                    <FLOAT-PARAM-DEF UUID="7afa4880-cddf-4a75-9f0e-4b8931d186b6">
+                      <SHORT-NAME>WdgMSupervisionCycle</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This parameter defines the period with which the main function (WdgM_MainFunction) is called. Unit: [s]</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                    </FLOAT-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: WdgMInitialTriggerModeId -->
+                    <INTEGER-PARAM-DEF>
+                      <SHORT-NAME>WdgMInitialTriggerModeId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Denotes the ID of the Trigger Mode which shall be used at system start. </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                      <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                      <MAX>255</MAX>
+                      <MIN>0</MIN>
+                    </INTEGER-PARAM-DEF>
+                  </PARAMETERS>
+                  <SUB-CONTAINERS>
+                    <!-- Parameter Container Definition: WdgMAliveSupervision -->
+                    <PARAM-CONF-CONTAINER-DEF UUID="17d83b33-4272-443a-aec7-7b73f961aed4">
+                      <SHORT-NAME>WdgMAliveSupervision</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This container collects all configuration parameters of Alive-Supervision.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                      <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                      <PARAMETERS>
+                        <!-- PARAMETER DEFINITION: WdgMExpectedAliveIndications -->
+                        <INTEGER-PARAM-DEF UUID="b565551d-d0c1-403e-85ca-6cd59f20d460">
+                          <SHORT-NAME>WdgMExpectedAliveIndications</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the amount of expected alive indications within the referenced amount of defined supervision cycles according to corresponding SE.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                        <!-- PARAMETER DEFINITION: WdgMMaxMargin -->
+                        <INTEGER-PARAM-DEF UUID="2bebf10e-04c2-4964-b4ba-31537ed41f5b">
+                          <SHORT-NAME>WdgMMaxMargin</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the amount of alive indications that are acceptable to be additional on the expected alive indications within the corresponding supervision reference cycle.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                        <!-- PARAMETER DEFINITION: WdgMMinMargin -->
+                        <INTEGER-PARAM-DEF UUID="b9ac601c-755d-4258-941d-fe67dc6a5131">
+                          <SHORT-NAME>WdgMMinMargin</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the amount of alive indications that are acceptable to be missed from the expected alive indications within the corresponding supervision reference cycle.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                        <!-- PARAMETER DEFINITION: WdgMSupervisionReferenceCycle -->
+                        <INTEGER-PARAM-DEF UUID="ef3e223c-a08c-4dab-89c7-0cb9e93c0594">
+                          <SHORT-NAME>WdgMSupervisionReferenceCycle</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the amount of supervision cycles to be used as reference by the alive-supervision mechanism to perform the checkup with counted alive indications according to corresponding SE.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                      </PARAMETERS>
+                      <REFERENCES>
+                        <!-- Symbolic Name Reference Definition: WdgMAliveSupervisionCheckpointRef -->
+                        <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="9c14cf8a-482d-4c4f-bbd3-7d8146c7703e">
+                          <SHORT-NAME>WdgMAliveSupervisionCheckpointRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Reference to the Checkpoint for which this alive counter is configured.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                        </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                      </REFERENCES>
+                    </PARAM-CONF-CONTAINER-DEF>
+                    <!-- Parameter Container Definition: WdgMDeadlineSupervision -->
+                    <PARAM-CONF-CONTAINER-DEF UUID="31e680b5-fc6f-4feb-8c70-ddce7d29784a">
+                      <SHORT-NAME>WdgMDeadlineSupervision</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This container collects all configuration parameters for Deadline Monitoring for a Supervised Entity.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                      <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                      <PARAMETERS>
+                        <!-- PARAMETER DEFINITION: WdgMDeadlineMax -->
+                        <FLOAT-PARAM-DEF UUID="79cf6acd-1479-4a4b-9c25-5ac54b58afff">
+                          <SHORT-NAME>WdgMDeadlineMax</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the longest time span after which the deadline is considered to be met. Unit: [s]</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MIN>0.0</MIN>
+                        </FLOAT-PARAM-DEF>
+                        <!-- PARAMETER DEFINITION: WdgMDeadlineMin -->
+                        <FLOAT-PARAM-DEF UUID="6bd050aa-5a0b-4266-a5dd-aac1c9b024c3">
+                          <SHORT-NAME>WdgMDeadlineMin</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the shortest time span after which the deadline is considered to be met. Unit: [s]</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MIN>0.0</MIN>
+                        </FLOAT-PARAM-DEF>
+                      </PARAMETERS>
+                      <REFERENCES>
+                        <!-- Symbolic Name Reference Definition: WdgMDeadlineStartRef -->
+                        <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="447ca545-4f72-4dfc-b437-c7589ddcdb33">
+                          <SHORT-NAME>WdgMDeadlineStartRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This is the reference to the start Checkpoint for Deadline Monitoring.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                        </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                        <!-- Symbolic Name Reference Definition: WdgMDeadlineStopRef -->
+                        <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="ebe91d65-d95b-46ec-bf8f-a96848d151a2">
+                          <SHORT-NAME>WdgMDeadlineStopRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This is the reference to the stop Checkpoint for Deadline Monitoring. Note that the deadline's start and stop references must match an existing local or a global transition.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                        </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                      </REFERENCES>
+                    </PARAM-CONF-CONTAINER-DEF>
+                    <!-- Parameter Container Definition: WdgMProgramFlowSupervision -->
+                    <PARAM-CONF-CONTAINER-DEF UUID="a7389008-8797-4ff3-8c29-3001838dfb32">
+                      <SHORT-NAME>WdgMProgramFlowSupervision</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This container collects all configuration parameters for Logical Program Flow monitoring for a set of connected Supervised Entities.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                      <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                      <REFERENCES>
+                        <!-- Symbolic Name Reference Definition: WdgMGlobalCheckpointFinalRef -->
+                        <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="54303b7c-9f68-4443-8e78-1cf288f293bd">
+                          <SHORT-NAME>WdgMGlobalCheckpointFinalRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">A reference to the final global Checkpoint. Note that there might be several final global checkpoints.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                        </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                        <!-- Symbolic Name Reference Definition: WdgMGlobalCheckpointInitialRef -->
+                        <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="52370a40-da98-40cc-8349-b36730e48f59">
+                          <SHORT-NAME>WdgMGlobalCheckpointInitialRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">A reference to the global initial Checkpoint.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                        </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                      </REFERENCES>
+                      <SUB-CONTAINERS>
+                        <PARAM-CONF-CONTAINER-DEF UUID="9a8e9a25-92e4-435a-810f-5fd323edd887">
+                          <SHORT-NAME>WdgMGlobalTransition</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This container collects the Checkpoints for a Global Transition across Supervised Entities.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                          <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                          <REFERENCES>
+                            <!-- Symbolic Name Reference Definition: WdgMGlobalCheckpointFinalRef -->
+                            <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="738ec705-b880-4260-815c-fe7e06deb8c6">
+                              <SHORT-NAME>WdgMGlobalTransitionDestRef</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">This is the reference to the source Checkpoint of a Global Transition.</L-2>
+                              </DESC>
+                              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                              <IMPLEMENTATION-CONFIG-CLASSES>
+                                <IMPLEMENTATION-CONFIG-CLASS>
+                                  <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                                  <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                                </IMPLEMENTATION-CONFIG-CLASS>
+                                <IMPLEMENTATION-CONFIG-CLASS>
+                                  <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                                  <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                                </IMPLEMENTATION-CONFIG-CLASS>
+                              </IMPLEMENTATION-CONFIG-CLASSES>
+                              <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                              <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                            </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                            <!-- Symbolic Name Reference Definition: WdgMGlobalCheckpointInitialRef -->
+                            <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="cef4db25-a448-4795-866b-fec00a586aa4">
+                              <SHORT-NAME>WdgMGlobalTransitionSourceRef</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="EN">This is the reference to the source Checkpoint of a Global Transition.</L-2>
+                              </DESC>
+                              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                              <IMPLEMENTATION-CONFIG-CLASSES>
+                                <IMPLEMENTATION-CONFIG-CLASS>
+                                  <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                                  <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                                </IMPLEMENTATION-CONFIG-CLASS>
+                                <IMPLEMENTATION-CONFIG-CLASS>
+                                  <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                                  <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                                </IMPLEMENTATION-CONFIG-CLASS>
+                              </IMPLEMENTATION-CONFIG-CLASSES>
+                              <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                              <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                            </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                          </REFERENCES>
+                        </PARAM-CONF-CONTAINER-DEF>
+                      </SUB-CONTAINERS>
+                    </PARAM-CONF-CONTAINER-DEF>
+                    <!-- Parameter Container Definition: WdgMTrigger -->
+                    <PARAM-CONF-CONTAINER-DEF UUID="e5f8eed7-2309-4f4a-a169-be93791bfa92">
+                      <SHORT-NAME>WdgMTrigger</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This container collects all configuration parameters for the triggering of hardware watchdogs.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+                      <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                      <PARAMETERS>
+                        <!-- PARAMETER DEFINITION: WdgMWatchdogMode -->
+                        <ENUMERATION-PARAM-DEF UUID="74c429ed-60d9-4ff6-a274-d3a5f0d8641d">
+                          <SHORT-NAME>WdgMWatchdogMode</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the watchdog mode that shall be used for the referenced watchdog in this Watchdog Manager mode.
+
+Implementation Type: WdgIf_ModeType</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <LITERALS>
+                            <ENUMERATION-LITERAL-DEF UUID="74117981-e900-4f49-974e-08bf2a3a6933">
+                              <SHORT-NAME>WDGIF_FAST_MODE</SHORT-NAME>
+                            </ENUMERATION-LITERAL-DEF>
+                            <ENUMERATION-LITERAL-DEF UUID="08d8886f-9a72-4e8d-b7e0-505e683cdd63">
+                              <SHORT-NAME>WDGIF_OFF_MODE</SHORT-NAME>
+                            </ENUMERATION-LITERAL-DEF>
+                            <ENUMERATION-LITERAL-DEF UUID="c573cb9d-0084-4d90-8499-1126813b63af">
+                              <SHORT-NAME>WDGIF_SLOW_MODE</SHORT-NAME>
+                            </ENUMERATION-LITERAL-DEF>
+                          </LITERALS>
+                        </ENUMERATION-PARAM-DEF>
+                        <!-- PARAMETER DEFINITION: WdgMTriggerConditionValue -->
+                        <INTEGER-PARAM-DEF UUID="292ee535-f62c-45eb-b0d2-df847155bf47">
+                          <SHORT-NAME>WdgMTriggerConditionValue</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter defines the maximum possible window time where the watchdog trigger is accepted (window end). The consumer of this parameter is the WdgIf_UpdateTriggerCondition for this watchdog. Unit: [ms]</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>1</MIN>
+                        </INTEGER-PARAM-DEF>
+                        <!-- PARAMETER DEFINITION: WdgMTriggerWindowStart -->
+                        <INTEGER-PARAM-DEF UUID="5261090e-b367-44ff-8969-f0f72a726ec0">
+                          <SHORT-NAME>WdgMTriggerWindowStart</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter defines the minimum window time after which a watchdog triggering is allowed (window start). The consumer of this parameter is the WdgIf_UpdateTriggerCondition for this watchdog. Unit: [ms]</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                        <!-- PARAMETER DEFINITION: WdgMTriggerModeId -->
+                        <INTEGER-PARAM-DEF>
+                          <SHORT-NAME>WdgMTriggerModeId</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter indicates the mode of the WdgMTrigger itself.
+                                        NOTE: Currently not used.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>TTTECH</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                          <MAX>254</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                      </PARAMETERS>
+                      <REFERENCES>
+                        <!-- Symbolic Name Reference Definition: WdgMTriggerWatchdogRef -->
+                        <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="82b5c6db-c67b-4cb1-a1d4-6997e8c52b8c">
+                          <SHORT-NAME>WdgMTriggerWatchdogRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter is a reference to the configured watchdog.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMWatchdog</DESTINATION-REF>
+                        </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                      </REFERENCES>
+                    </PARAM-CONF-CONTAINER-DEF>
+                    <!-- Parameter Container Definition: WdgMLocalStatusParams -->
+                    <PARAM-CONF-CONTAINER-DEF UUID="c5f89145-ad15-4030-a200-d8f0a856d560">
+                      <SHORT-NAME>WdgMLocalStatusParams</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This container collects all configuration parameters for the Local Status of a Supervised Entity.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                      <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                      <PARAMETERS>
+                        <!-- PARAMETER DEFINITION: WdgMFailedSupervisionRefCycleTol -->
+                        <INTEGER-PARAM-DEF UUID="d4b7363f-b318-455b-9aaf-15b410e26324">
+                          <SHORT-NAME>WdgMFailedSupervisionRefCycleTol</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the acceptable amount of failed alive supervisions for this Supervised Entity</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                        <ENUMERATION-PARAM-DEF UUID="185cccc7-8eeb-4932-a6d2-f52784aaa8e4">
+                          <SHORT-NAME>WdgMSupervisedEntityInitialMode</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Initial local monitoring status of the supervised entity.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <!-- TODO - clarify: AUTOSAR_ECUC or something like `TTTech`? -->
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <DEFAULT-VALUE>WDGM_LOCAL_STATUS_OK</DEFAULT-VALUE>
+                          <LITERALS>
+                            <ENUMERATION-LITERAL-DEF>
+                              <SHORT-NAME>WDGM_LOCAL_STATUS_DEACTIVATED</SHORT-NAME>
+                            </ENUMERATION-LITERAL-DEF>
+                            <ENUMERATION-LITERAL-DEF>
+                              <SHORT-NAME>WDGM_LOCAL_STATUS_OK</SHORT-NAME>
+                            </ENUMERATION-LITERAL-DEF>
+                            <ENUMERATION-LITERAL-DEF>
+                              <SHORT-NAME>WDGM_LOCAL_STATUS_STATUS_FAILED</SHORT-NAME>
+                            </ENUMERATION-LITERAL-DEF>
+                          </LITERALS>
+                        </ENUMERATION-PARAM-DEF>
+                        <INTEGER-PARAM-DEF UUID="dbaaf237-fcfe-4d0e-a567-8fdd590b64f0">
+                          <SHORT-NAME>WdgMFailedDeadlineRefCycleTol</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the acceptable amount of violated deadlines for this Supervised Entity.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                        <INTEGER-PARAM-DEF UUID="29479764-7332-433e-9ae3-302a69463d7c">
+                          <SHORT-NAME>WdgMDeadlineReferenceCycle</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the amount of supervision cycles to be used as reference by the deadline supervisions of this SE.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                        <INTEGER-PARAM-DEF UUID="aacd8d0f-b112-4136-b5aa-71b245ec77be">
+                          <SHORT-NAME>WdgMFailedProgramFlowRefCycleTol</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the acceptable amount of program flow violations for this Supervised Entity.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                        <INTEGER-PARAM-DEF UUID="8e0e4ba9-4606-45d1-a855-a7ca85cef560">
+                          <SHORT-NAME>WdgMProgramFlowReferenceCycle</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter contains the amount of supervision cycles to be used as reference by the program flow supervisions of this SE.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                      </PARAMETERS>
+                      <REFERENCES>
+                        <!-- Symbolic Name Reference Definition: WdgMLocalStatusSupervisedEntityRef -->
+                        <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="f347f1b1-b1c9-454e-8d3f-045f2daf60e5">
+                          <SHORT-NAME>WdgMLocalStatusSupervisedEntityRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Reference to the Supervised Entity for which the parameters of this container are set.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity</DESTINATION-REF>
+                        </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                      </REFERENCES>
+                    </PARAM-CONF-CONTAINER-DEF>
+                  </SUB-CONTAINERS>
+                </PARAM-CONF-CONTAINER-DEF>
+              </SUB-CONTAINERS>
+            </PARAM-CONF-CONTAINER-DEF>
+            <!-- Parameter Container Definition: WdgMGeneral -->
+            <PARAM-CONF-CONTAINER-DEF UUID="e7a76712-0412-499a-b9ab-8dcbcd038a04">
+              <SHORT-NAME>WdgMGeneral</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Container structures all general configuration parameters of the Watchdog Manager.</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+              <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+              <PARAMETERS>
+                <!-- PARAMETER DEFINITION: WdgMDevErrorDetect -->
+                <BOOLEAN-PARAM-DEF UUID="1d802c58-233d-4981-89c1-d825e51c03ab">
+                  <SHORT-NAME>WdgMDevErrorDetect</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Preprocessor switch to enable/disable development error detection and reporting.
+Shall be used to remove unneeded code segments regarding DET features
+
+True: Development error detection is enabled
+False: Development error detection is disabled</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: WdgMDemReport -->
+                <BOOLEAN-PARAM-DEF UUID="50e42660-bc0c-4757-9cf7-f0b3d98a936b">
+                  <SHORT-NAME>WdgMDemReport</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Preprocessor switch to enable / disable calls to DEM in case of production error detection.
+
+True: DEM calls enabled in case of production errors
+False: DEM calls disabled in case of production errors</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <!-- TODO TTTech? -->
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: WdgMImmediateReset -->
+                <BOOLEAN-PARAM-DEF UUID="d425bde4-b8cf-437c-9958-049448b4b187">
+                  <SHORT-NAME>WdgMImmediateReset</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This preprocessor switch enables/disablse the immediate reset feature in case of alive, deadline or program flow failure.
+
+True: Immediate reset is enabled
+False: Immediate reset is disabled</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: WdgMOffModeEnabled -->
+                <BOOLEAN-PARAM-DEF UUID="119efb42-de08-420e-86b6-b7437348ee83">
+                  <SHORT-NAME>WdgMOffModeEnabled</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This preprocessor switch enables/disables the selection of the "OffMode" of the watchdog driver.
+
+True: "OffMode" selection is allowed
+False: "OffMode" selection is disallowed</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: WdgMVersionInfoApi -->
+                <BOOLEAN-PARAM-DEF UUID="85618112-5378-44c2-9636-d64c45e453fb">
+                  <SHORT-NAME>WdgMVersionInfoApi</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Preprocessor switch to enable/disable the existence of the API WdgM_GetVersionInfo. Shall be used to remove unneeded code segments.
+
+True: API is enabled
+False: API is disabled</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: WdgMDefensiveBehavior -->
+                <BOOLEAN-PARAM-DEF UUID="39bf3444-8c8c-4a56-aa61-3a20ee0559f1">
+                  <SHORT-NAME>WdgMDefensiveBehavior</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Preprocessor switch to enable/disable the defensive behavior of the Watchdog Manager module.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <!-- TODO TTTech? -->
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <BOOLEAN-PARAM-DEF UUID="DCE:f45351c2-0460-419e-8479-b17297e90c92">
+                  <SHORT-NAME>WdgMUseRte</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This preprocessor switch instructs the Watchdog Manager to use the by Rte generated defines and typedefs.
+
+true: the S-WdgM uses the by Rte generated defines and typedefs
+false: the S-WdgM uses own defines and typedefs</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>TTTech</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF><BOOLEAN-PARAM-DEF UUID="">
+                  <SHORT-NAME>WdgMDemSupervisionReport</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Preprocessor switch to enable / disable call to DEM in case the Safe Watchdog Manager has the WDGM_GLOBAL_STATE_STOPPED reached.
+
+True: The DEM call is enabled
+False: The DEM call is disabled</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>TTTech</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <BOOLEAN-PARAM-DEF>
+                  <SHORT-NAME>WdgMFirstCycleAliveCounterReset</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">When this preprocessor switch is enabled, then the Alive counters in the first Supervision cycle are not evaluated
+                    </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>TTTech</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </BOOLEAN-PARAM-DEF>
+
+                <!-- PARAMETER DEFINITION: WdgMUseOsSuspendInterrupt -->
+                <BOOLEAN-PARAM-DEF UUID="ab1e808c-42d5-4448-82ef-0e5f1d32eef7">
+                  <SHORT-NAME>WdgMUseOsSuspendInterrupt</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This preprocessor switch enables/disables the usage of OS suspend and resume interrupt services within WdgM.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <!-- TODO TTTech? -->
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: WdgMTimebaseSource -->
+                <ENUMERATION-PARAM-DEF>
+                  <SHORT-NAME>WdgMTimebaseSource</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This parameter selects the Tick counter source for Deadline monitoring.
+
+WDGM_INTERNAL_SOFTWARE_TICK: The counter is incremented each time `WdgM_MainFunction` is called.
+WDGM_INTERNAL_HARDWARE_TICK: The counter is based on the microcontroller's hardware counter.
+WDGM_EXTERNAL_TICK: The counter is incremented each time `WdgM_UpdateTickCount` is called.
+                    </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>TTTECH</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>WDGM_INTERNAL_SOFTWARE_TICK</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ENUMERATION-LITERAL-DEF >
+                      <SHORT-NAME>WDGM_INTERNAL_SOFTWARE_TICK</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>WDGM_INTERNAL_HARDWARE_TICK</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>WDGM_EXTERNAL_TICK</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ENUMERATION-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: WdgMSecondResetPath -->
+                <BOOLEAN-PARAM-DEF UUID="f24ee5b0-f655-4e9d-be82-fe94774d4631">
+                  <SHORT-NAME>WdgMSecondResetPath</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This preprocessor switch generally enables the access to the external Mcu_ImmediateReset() function. This function  is used as second reset path a specially when the primary reset path signals failure.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <!-- TODO TTTech? -->
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: WdgMTickOverrunCorrection -->
+                <BOOLEAN-PARAM-DEF UUID="e84b56de-5558-4890-b2c3-57ec1dc6403c">
+                  <SHORT-NAME>WdgMTickOverrunCorrection</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This preprocessor switch enables/disables 32 bit timebase counter overflow detection and correction.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <!-- TODO TTTech? -->
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: WdgMEntityDeactivationEnabled -->
+                <BOOLEAN-PARAM-DEF UUID="42423127-45e3-407f-ba7d-a4f66b07c929">
+                  <SHORT-NAME>WdgMEntityDeactivationEnabled</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This preprocessor switch enables generally entity deactivation. Please see additional important safety information regarding this functionality in the S-WdgM Safety Manual</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <!-- TODO TTTech? -->
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: WdgMGlobalStateChangeCbk -->
+                <FUNCTION-NAME-DEF UUID="f9df1e12-27fe-47e1-a544-a96c49652719">
+                  <SHORT-NAME>WdgMGlobalStateChangeCbk</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Callback function for notifying Watchdog Manager global state change.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </FUNCTION-NAME-DEF>
+                <!-- PARAMETER DEFINITION: WdgMStateChangeNotification -->
+                <BOOLEAN-PARAM-DEF UUID="459f4024-e32c-430a-b964-19ef5d400635">
+                  <SHORT-NAME>WdgMStateChangeNotification</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This preprocessor switch enables local and global state callback notifications for the Watchdog Manager.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <!-- TODO TTTech? -->
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </BOOLEAN-PARAM-DEF>
+              </PARAMETERS>
+              <REFERENCES>
+                <!-- Symbolic Name Reference Definition: WdgMGlobalMemoryAppTaskRef -->
+                    <CHOICE-REFERENCE-PARAM-DEF>
+                      <SHORT-NAME>WdgMGlobalMemoryAppTaskRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Reference to an OS Application or Task where the S-WdgM is running. In case of OS SC3 (with memory protection) the global variables of the Watchdog Manager module should be placed in the same memory segment as the application / task in the context of which the Watchdog Manager is running.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN> <!-- TODO TTTech? -->
+                      <DESTINATION-REFS>
+                        <!-- issue45280: only Applications must be selected <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Os/OsTask</DESTINATION-REF> -->
+                        <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Os/OsApplication</DESTINATION-REF>
+                      </DESTINATION-REFS>
+                    </CHOICE-REFERENCE-PARAM-DEF>
+              </REFERENCES>
+              <SUB-CONTAINERS>
+                <!-- Parameter Container Definition: WdgMSupervisedEntity -->
+                <PARAM-CONF-CONTAINER-DEF UUID="1f1b7f90-09ce-418d-9914-9fa978eaa8b9">
+                  <SHORT-NAME>WdgMSupervisedEntity</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This container collects all common (mode-independent) parameters of a Supervised Entity to be supervised by the Watchdog Manager.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                  <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                  <PARAMETERS>
+                    <!-- PARAMETER DEFINITION: WdgMSupervisedEntityId -->
+                    <INTEGER-PARAM-DEF UUID="5d11b234-1da9-499e-9813-61d8b6ea146d">
+                      <SHORT-NAME>WdgMSupervisedEntityId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This parameter contains the identifier of the supervised entity for which the parameters of this container are set.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                      <MAX>65535</MAX>
+                      <MIN>0</MIN>
+                    </INTEGER-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: OSApplication -->
+                    <INTEGER-PARAM-DEF UUID="08c401eb-8585-46c4-8170-ca771a013890">
+                      <SHORT-NAME>OSApplication</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">The ID of the OS Application that this SE is part of. If defined then the OS Application will receive a partition reset signal each time this SE changes its status from OK to FAILED.
+Enter 255 (== 0xFF) if this supervised entity is not a part of an OS Application.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                      <MAX>255</MAX>
+                      <MIN>0</MIN>
+                    </INTEGER-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: WdgMEnableEntityDeactivation -->
+                    <BOOLEAN-PARAM-DEF UUID="8b5262a5-986b-4625-ac67-502059a51c25">
+                      <SHORT-NAME>WdgMEnableEntityDeactivation</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Enables deactivation of this supervised enitiy.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <!-- TODO TTTech? -->
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                    </BOOLEAN-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: WdgMSupportedAutosarAPI -->
+                    <ENUMERATION-PARAM-DEF>
+                      <SHORT-NAME>WdgMSupportedAutosarAPI</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Defines which version of the AUTOSAR API shall be used.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>TTTECH</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                      <DEFAULT-VALUE>API_4_0</DEFAULT-VALUE>
+                      <LITERALS>
+                        <ENUMERATION-LITERAL-DEF >
+                          <SHORT-NAME>API_4_0</SHORT-NAME>
+                        </ENUMERATION-LITERAL-DEF>
+                        <ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>API_3_1</SHORT-NAME>
+                        </ENUMERATION-LITERAL-DEF>
+                      </LITERALS>
+                    </ENUMERATION-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: WdgMLocalStateChangeCbk -->
+                    <FUNCTION-NAME-DEF UUID="90266c73-7e46-465a-97f7-afd37e16fd1d">
+                      <SHORT-NAME>WdgMLocalStateChangeCbk</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Callback function for notifying this Supervised Entity's state change.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                    </FUNCTION-NAME-DEF>
+                  </PARAMETERS>
+                  <REFERENCES>
+                    <!-- Symbolic Name Reference Definition: WdgMLocalCheckpointFinalRef -->
+                    <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="d17ccb90-6fd6-486f-9928-ef51b47de4a5">
+                      <SHORT-NAME>WdgMLocalCheckpointFinalRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">A reference to the final local Checkpoint of this supervised entity. Note that there might be several final local checkpoints.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                    </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                    <!-- Symbolic Name Reference Definition: WdgMLocalCheckpointInitialRef -->
+                    <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="e9e3a78f-46a7-4642-8c33-6d47199acb38">
+                      <SHORT-NAME>WdgMLocalCheckpointInitialRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">A reference to the initial local Checkpoint of this supervised entity.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                    </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                    <!-- Symbolic Name Reference Definition: WdgMAppTaskRef -->
+                    <CHOICE-REFERENCE-PARAM-DEF UUID="d0537c3a-7739-487f-b445-0b49b715ea47">
+                      <SHORT-NAME>WdgMAppTaskRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Reference to an OS Application or Task. In case of OS SC3 the local data of the supervised entity should be
+placed in the same memory segment as the application / task this supervised entity is part of.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <!-- TODO TTTech? -->
+                      <DESTINATION-REFS>
+                        <!-- issue45280: only Applications must be selected<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Os/OsTask</DESTINATION-REF> -->
+                        <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Os/OsApplication</DESTINATION-REF>
+                      </DESTINATION-REFS>
+                    </CHOICE-REFERENCE-PARAM-DEF>
+                  </REFERENCES>
+                  <SUB-CONTAINERS>
+                    <!-- Parameter Container Definition: WdgMCheckpoint -->
+                    <PARAM-CONF-CONTAINER-DEF UUID="4162e1c3-29b2-4714-a81a-f529b92aa19a">
+                      <SHORT-NAME>WdgMCheckpoint</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This container collects all Checkpoints of this Supervised Entity.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                      <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                      <PARAMETERS>
+                        <!-- PARAMETER DEFINITION: WdgMCheckpointId -->
+                        <INTEGER-PARAM-DEF UUID="822fbd5d-93cf-46bb-9592-aec82b80e415">
+                          <SHORT-NAME>WdgMCheckpointId</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This parameter shall contain the unique identifier of Checkpoint.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                          <MAX>65535</MAX>
+                          <MIN>0</MIN>
+                        </INTEGER-PARAM-DEF>
+                      </PARAMETERS>
+                    </PARAM-CONF-CONTAINER-DEF>
+                    <!-- Parameter Container Definition: WdgMLocalTransition -->
+                    <PARAM-CONF-CONTAINER-DEF UUID="9c3078e8-0991-495d-912a-b176954bf595">
+                      <SHORT-NAME>WdgMLocalTransition</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This container collects the Checkpoints for a Local Transition within this Supervised Entity.  </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>65535</UPPER-MULTIPLICITY>
+                      <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                      <REFERENCES>
+                        <!-- Symbolic Name Reference Definition: WdgMLocalTransitionDestRef -->
+                        <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="6295dfa9-ae85-4892-b425-dc5345974767">
+                          <SHORT-NAME>WdgMLocalTransitionDestRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This is the reference to the destination Checkpoint of a Local Transition within this Supervised Entity.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                        </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                        <!-- Symbolic Name Reference Definition: WdgMLocalTransitionSourceRef -->
+                        <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="587857ad-a04b-4270-afe9-62afbb02c92f">
+                          <SHORT-NAME>WdgMLocalTransitionSourceRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">This is the reference to the source Checkpoint of a Local Transition within this Supervised Entity.</L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                          <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity/WdgMCheckpoint</DESTINATION-REF>
+                        </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                      </REFERENCES>
+                    </PARAM-CONF-CONTAINER-DEF>
+                  </SUB-CONTAINERS>
+                </PARAM-CONF-CONTAINER-DEF>
+                <!-- Parameter Container Definition: WdgMWatchdog -->
+                <PARAM-CONF-CONTAINER-DEF UUID="97ffb261-94c1-4c06-b9ee-db4b2438f249">
+                  <SHORT-NAME>WdgMWatchdog</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This container collects all common (mode-independent) parameters of a Watchdog to be triggered by the Watchdog Manager.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+                  <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                  <PARAMETERS>
+                    <!-- PARAMETER DEFINITION: WdgMWatchdogName -->
+                    <STRING-PARAM-DEF UUID="34b7583c-0063-41bd-8163-d37122ebec3c">
+                      <SHORT-NAME>WdgMWatchdogName</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This parameter is a symbolic name of the Watchdog. Is used as comment only.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                    </STRING-PARAM-DEF>
+                  </PARAMETERS>
+                  <REFERENCES>
+                    <!-- Symbolic Name Reference Definition: WdgIfDeviceRef -->
+                    <SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="0f029714-7822-4e62-af59-f55c19a7e5f6">
+                      <SHORT-NAME>WdgIfDeviceRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Reference to one device container of Watchdog Interface. In the referenced container WdgIfDevice, the parameter WdgIfDeviceIndex contains the Index parameter that WdgM has to use for WdgIf_Trigger calls for that watchdog instance.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgIf/WdgIfDevice</DESTINATION-REF>
+                    </SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+                  </REFERENCES>
+                </PARAM-CONF-CONTAINER-DEF>
+                <PARAM-CONF-CONTAINER-DEF>
+                  <SHORT-NAME>WdgMCallerIds</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                     Contains the definition of valid CallerIds for the callers who have permission to call the function WdgM_SetMode
+                    </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                  <PARAMETERS>
+                    <!-- PARAMETER-DEFINITION: WdgMCallerId -->
+                    <INTEGER-PARAM-DEF>
+                      <SHORT-NAME>WdgMCallerId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                        This parameter defines one valid CallerId for the callers who have permission to
+                        call the function WdgM_SetMode.
+                        </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                      <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                      <MAX>65535</MAX>
+                      <MIN>0</MIN>
+                    </INTEGER-PARAM-DEF>
+                  </PARAMETERS>
+                </PARAM-CONF-CONTAINER-DEF>
+              </SUB-CONTAINERS>
+            </PARAM-CONF-CONTAINER-DEF>
+          </CONTAINERS>
+        </MODULE-DEF>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </TOP-LEVEL-PACKAGES>
+</AUTOSAR>

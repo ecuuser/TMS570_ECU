@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AUTOSAR xmlns="http://autosar.org/3.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.1.2 autosar.xsd">
+  <TOP-LEVEL-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>NEXTEER_DEF</SHORT-NAME>
+      <ELEMENTS>
+        <ECU-PARAMETER-DEFINITION UUID="ECUC:4c30de73-30fc-43b3-a1b3-e74211eedff3">
+          <SHORT-NAME>AUTOSARParameterDefinition</SHORT-NAME>
+          <MODULE-REFS>
+            <MODULE-REF DEST="MODULE-DEF">/AUTOSAR/uDiag</MODULE-REF>
+          </MODULE-REFS>
+        </ECU-PARAMETER-DEFINITION>
+        <MODULE-DEF UUID="39ed4481-7790-4437-8277-bf8fc3114d35">
+          <SHORT-NAME>uDiag</SHORT-NAME>
+          <DESC>
+            <L-2>Configuration of the Microprocessor diagnostics module</L-2>
+          </DESC>
+          <ADMIN-DATA>
+            <LANGUAGE>EN</LANGUAGE>
+            <DOC-REVISIONS>
+              <DOC-REVISION>
+                <REVISION-LABEL>1.0</REVISION-LABEL>
+                <ISSUED-BY>Unknown</ISSUED-BY>
+                <DATE>2012-07-13T16:32:09</DATE>
+              </DOC-REVISION>
+            </DOC-REVISIONS>
+          </ADMIN-DATA>
+          <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+          <SUPPORTED-CONFIG-VARIANTS>
+            <SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+          </SUPPORTED-CONFIG-VARIANTS>
+          <CONTAINERS>
+            <PARAM-CONF-CONTAINER-DEF UUID="04054695-9890-47d0-b3e5-2d757d5438b5">
+              <SHORT-NAME>uDiagRegChkConfigSet</SHORT-NAME>
+              <DESC>
+                <L-2>&lt;html&gt;This container defines the register checks performed.&lt;/html&gt;</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+              <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+              <SUB-CONTAINERS>
+                <PARAM-CONF-CONTAINER-DEF UUID="04054695-9890-47d0-b3e5-2d757d5438b5">
+                  <SHORT-NAME>uDiagRegCheck</SHORT-NAME>
+                  <DESC>
+                    <L-2>&lt;html&gt;This container specifies configuration parameters for an individual register test.&lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>32767</UPPER-MULTIPLICITY>
+                  <MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+                  <PARAMETERS>
+                    <INTEGER-PARAM-DEF UUID="7e28bf70-524b-416d-aa5f-0cb3673601cd">
+                      <SHORT-NAME>uDiagRegAddress</SHORT-NAME>
+                      <DESC>
+                        <L-2>&lt;html&gt;Address of the Register check.&lt;/html&gt;</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>Nexteer</ORIGIN>
+                      <MAX>4294967295</MAX>
+                      <MIN>0</MIN>
+                    </INTEGER-PARAM-DEF>
+                    <INTEGER-PARAM-DEF UUID="7e28bf70-524b-416d-aa5f-0cb3673601cd">
+                      <SHORT-NAME>uDiagRegValue</SHORT-NAME>
+                      <DESC>
+                        <L-2>&lt;html&gt;The expected static value of the register after initialization.&lt;/html&gt;</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>Nexteer</ORIGIN>
+                      <MAX>4294967295</MAX>
+                      <MIN>0</MIN>
+                    </INTEGER-PARAM-DEF>
+                  </PARAMETERS>
+                </PARAM-CONF-CONTAINER-DEF>
+                <PARAM-CONF-CONTAINER-DEF UUID="04054695-9890-47d0-b3e5-2d757d5438b5">
+                  <SHORT-NAME>uDiagRegCheckLnk</SHORT-NAME>
+                  <DESC>
+                    <L-2>&lt;html&gt;This container specifies configuration parameters for an individual register test using symbolic value references resolved at link time.&lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>32767</UPPER-MULTIPLICITY>
+                  <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                  <PARAMETERS>
+                    <INTEGER-PARAM-DEF UUID="7e28bf70-524b-416d-aa5f-0cb3673601cd">
+                      <SHORT-NAME>uDiagRegAddress</SHORT-NAME>
+                      <DESC>
+                        <L-2>&lt;html&gt;Address of the Register check.&lt;/html&gt;</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>Nexteer</ORIGIN>
+                      <MAX>4294967295</MAX>
+                      <MIN>0</MIN>
+                    </INTEGER-PARAM-DEF>
+                    <STRING-PARAM-DEF UUID="7e28bf70-524b-416d-aa5f-0cb3673601cd">
+                      <SHORT-NAME>uDiagRegValueLnk</SHORT-NAME>
+                      <DESC>
+                        <L-2>&lt;html&gt;This symbolic name defines an address that is used in conjunction with offset parameter to define the expected static value of the register after initialization.&lt;/html&gt;</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>Nexteer</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                    </STRING-PARAM-DEF>
+                    <BOOLEAN-PARAM-DEF UUID="ECUC:21da3508-a0a5-4ecb-994e-b8378d8bcc8a">
+                      <SHORT-NAME>uDiagRegUseSizeofInOffset</SHORT-NAME>
+                      <DESC>
+                          <L-2 L="EN">Use sizeof(symbolic name used in uDiagRegValueLnk) in offset
+
+                                    true: add sizeof(symbolic name used in uDiagRegValueLnk) to offset value given in uDiagRegValueLnkOffset
+                                    false: do not use sizeof -- use only offset value given in uDiagRegValueLnkOffset</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>Nexteer</ORIGIN>
+					  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                      <DEFAULT-VALUE>false</DEFAULT-VALUE>
+					</BOOLEAN-PARAM-DEF>
+                    <INTEGER-PARAM-DEF UUID="7e28bf70-524b-416d-aa5f-0cb3673601cd">
+                      <SHORT-NAME>uDiagRegValueLnkOffset</SHORT-NAME>
+                      <DESC>
+                        <L-2>&lt;html&gt;Integer offset added to symbolic address to compute static register value .&lt;/html&gt;</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>Nexteer</ORIGIN>
+                      <MAX>4294967295</MAX>
+                      <MIN>-8</MIN>
+                      <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                    </INTEGER-PARAM-DEF>
+                  </PARAMETERS>
+                </PARAM-CONF-CONTAINER-DEF>
+              </SUB-CONTAINERS>
+            </PARAM-CONF-CONTAINER-DEF>
+            <PARAM-CONF-CONTAINER-DEF UUID="ECUC:a00be3e0-8783-9123-2d52-1eb616737ca6">
+              <SHORT-NAME>CommonPublishedInformation</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">
+                    &lt;html&gt;
+                      Common container, aggregated by all modules. It contains published information about vendor and versions.
+                  &lt;/html&gt;</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+              <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+              <PARAMETERS>
+                <INTEGER-PARAM-DEF UUID="ECUC:948f3f2e-f129-4bc5-b4e1-7a7bdb8599e1">
+                  <SHORT-NAME>ArMajorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                      &lt;html&gt;
+                        Major version number of AUTOSAR specification on which the appropriate implementation is based on.
+                    &lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>Nexteer</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>1</DEFAULT-VALUE>
+                </INTEGER-PARAM-DEF>
+                <INTEGER-PARAM-DEF UUID="ECUC:2893b920-59d5-4ac2-b2c1-e23742e66d70">
+                  <SHORT-NAME>ArMinorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                      &lt;html&gt;
+                        Minor version number of AUTOSAR specification on which the appropriate implementation is based on.
+                    &lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>Nexteer</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>2</DEFAULT-VALUE>
+                </INTEGER-PARAM-DEF>
+                <INTEGER-PARAM-DEF UUID="ECUC:6428eb9b-8790-488a-b9a3-0fba52d0f59e">
+                  <SHORT-NAME>ArPatchVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                      &lt;html&gt;
+                        Patch level version number of AUTOSAR specification on which the appropriate implementation is based on.
+                    &lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>Nexteer</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                </INTEGER-PARAM-DEF>
+                <INTEGER-PARAM-DEF UUID="ECUC:605b18ae-3f9a-41d4-9225-67c9c5f6fc34">
+                  <SHORT-NAME>SwMajorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                      &lt;html&gt;
+                        Major version number of the vendor specific implementation of the module.
+                    &lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>Nexteer</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>1</DEFAULT-VALUE>
+                </INTEGER-PARAM-DEF>
+                <INTEGER-PARAM-DEF UUID="a7fe44dc-ea25-4b8d-8fad-9fbcae86d56f">
+                  <SHORT-NAME>SwMinorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                      &lt;html&gt;
+                        Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                    &lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>Nexteer</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                </INTEGER-PARAM-DEF>
+                <INTEGER-PARAM-DEF UUID="a318d2d9-0e75-49da-ac43-e7e4e682e2f9">
+                  <SHORT-NAME>SwPatchVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                      &lt;html&gt;
+                        Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                    &lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>Nexteer</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                </INTEGER-PARAM-DEF>
+                <INTEGER-PARAM-DEF UUID="ECUC:78bc8362-080f-4253-b3da-804ab69a7154">
+                  <SHORT-NAME>ModuleId</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                      &lt;html&gt;
+                        Module ID of this module from Module List
+                    &lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>Nexteer</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>104</DEFAULT-VALUE>
+                </INTEGER-PARAM-DEF>
+                <INTEGER-PARAM-DEF UUID="ECUC:01b0f467-6943-4558-b4f2-3fa1fad28449">
+                  <SHORT-NAME>VendorId</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                      &lt;html&gt;
+                        Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list
+                    &lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>Nexteer</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                </INTEGER-PARAM-DEF>
+                <STRING-PARAM-DEF UUID="ECUC:1c68a547-f24e-4a4e-9540-69fbd466ec89">
+                  <SHORT-NAME>VendorApiInfix</SHORT-NAME>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>Nexteer</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </STRING-PARAM-DEF>
+              </PARAMETERS>
+            </PARAM-CONF-CONTAINER-DEF>
+            <!-- Parameter Container Definition: uDiagGeneral -->
+            <PARAM-CONF-CONTAINER-DEF UUID="ECUC:6ca017f1-d32b-49c2-9624-9c1a628401c2">
+              <SHORT-NAME>uDiagGeneral</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">This container contains the configuration (parameters) of Nexteer uDiag</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+              <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+              <PARAMETERS>
+                <INTEGER-PARAM-DEF UUID="7e28bf70-524b-416d-aa5f-0cb3673601cd">
+                  <SHORT-NAME>uDiagVCLK_kHz</SHORT-NAME>
+                  <DESC>
+                    <L-2>The frequency of the VCLK in KHz.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                    <IMPLEMENTATION-CONFIG-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </IMPLEMENTATION-CONFIG-CLASS>
+                  </IMPLEMENTATION-CONFIG-CLASSES>
+                  <ORIGIN>Nexteer</ORIGIN>
+                  <MAX>4294967295</MAX>
+                  <MIN>0</MIN>
+                </INTEGER-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: uDiagEnableFPUDiag-->
+                <ENUMERATION-PARAM-DEF UUID="ECUC:44e8a61c-a95b-487d-908b-0ca87be434d4">
+                  <SHORT-NAME>uDiagEnableFPUDiag</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">   Enables the floating point exception diagnostic</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES />
+                  <ORIGIN>NEXTEER</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <LITERALS>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:ef61fc42-79d3-8cfd-3747-f7e994eea520">
+                      <SHORT-NAME>STD_ON</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:1a38d2f8-aa83-843f-5295-de7cb009fee9">
+                      <SHORT-NAME>STD_OFF</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ENUMERATION-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: uDiagGladiatorCompatible-->
+                <ENUMERATION-PARAM-DEF UUID="ECUC:44e8a61c-a95b-487d-908b-0ca87be434d4">
+                  <SHORT-NAME>uDiagGladiatorCompatible</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">   Select STD_ON if code compatibility is required between Gladiator and Champion parts; Select STD_OFF for Champion-only </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES />
+                  <ORIGIN>NEXTEER</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <LITERALS>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:ef61fc42-79d3-8cfd-3747-f7e994eea520">
+                      <SHORT-NAME>STD_ON</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:1a38d2f8-aa83-843f-5295-de7cb009fee9">
+                      <SHORT-NAME>STD_OFF</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ENUMERATION-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: uDiagVIMPerTrusted-->
+                <ENUMERATION-PARAM-DEF UUID="ECUC:44e8a61c-a95b-487d-908b-0ca87be434d4">
+                  <SHORT-NAME>uDiagVIMPerTrusted</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">   uDiagVIM_Per is called from a trusted task (STD_ON) or not (STD_OFF) </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES />
+                  <ORIGIN>NEXTEER</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <LITERALS>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:ef61fc42-79d3-8cfd-3747-f7e994eea520">
+                      <SHORT-NAME>STD_ON</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:1a38d2f8-aa83-843f-5295-de7cb009fee9">
+                      <SHORT-NAME>STD_OFF</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ENUMERATION-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: uDiagECCPerTrusted-->
+                <ENUMERATION-PARAM-DEF UUID="ECUC:44e8a61c-a95b-487d-908b-0ca87be434d4">
+                  <SHORT-NAME>uDiagECCPerTrusted</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">   uDiagECC_Per is called from a trusted task (STD_ON) or not (STD_OFF) </L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES />
+                  <ORIGIN>NEXTEER</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <LITERALS>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:ef61fc42-79d3-8cfd-3747-f7e994eea520">
+                      <SHORT-NAME>STD_ON</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:1a38d2f8-aa83-843f-5295-de7cb009fee9">
+                      <SHORT-NAME>STD_OFF</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ENUMERATION-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: uDiagVimTableName-->
+                <STRING-PARAM-DEF UUID="ECUC:44e8a61c-a95b-487d-908b-0ca87be434d4">
+                  <SHORT-NAME>uDiagVimTableName</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This parameter specifes the name of the VIM value constant table to be used for the diagnostic check.  The table is generally defined in the Os configuration, but has no standardized name.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES />
+                  <ORIGIN>NEXTEER</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                </STRING-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: uDiagCPEnable-->
+                <ENUMERATION-PARAM-DEF UUID="ECUC:44e8a61c-a95b-487d-908b-0ca87be434d4">
+                  <SHORT-NAME>uDiagCPEnable</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This container contains the configuaration (parameters) for the uDiag watchdog checkpoints.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>255</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES />
+                  <ORIGIN>NEXTEER</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <LITERALS>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:ef61fc42-79d3-8cfd-3747-f7e994eea520">
+                      <SHORT-NAME>uDiagLossOfExec_Per2_CP0</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:1a38d2f8-aa83-843f-5295-de7cb009fee9">
+                      <SHORT-NAME>uDiagLossOfExec_Per2_CP1</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:ef61fc42-79d3-8cfd-3747-f7e994eea520">
+                      <SHORT-NAME>uDiagLossOfExec_Per3_CP0</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:1a38d2f8-aa83-843f-5295-de7cb009fee9">
+                      <SHORT-NAME>uDiagLossOfExec_Per3_CP1</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:ef61fc42-79d3-8cfd-3747-f7e994eea520">
+                      <SHORT-NAME>uDiagStaticRegs_Per_CP0</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:1a38d2f8-aa83-843f-5295-de7cb009fee9">
+                      <SHORT-NAME>uDiagStaticRegs_Per_CP1</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:ef61fc42-79d3-8cfd-3747-f7e994eea520">
+                      <SHORT-NAME>uDiagVIM_Per_CP0</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:1a38d2f8-aa83-843f-5295-de7cb009fee9">
+                      <SHORT-NAME>uDiagVIM_Per_CP1</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:ef61fc42-79d3-8cfd-3747-f7e994eea520">
+                      <SHORT-NAME>uDiagECC_Per_CP0</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:1a38d2f8-aa83-843f-5295-de7cb009fee9">
+                      <SHORT-NAME>uDiagECC_Per_CP1</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ENUMERATION-PARAM-DEF>
+				<!-- PARAMETER DEFINITION: WdgMVersion-->
+                <ENUMERATION-PARAM-DEF UUID="ECUC:44e8a61c-a95b-487d-908b-0ca87be434d4">
+                  <SHORT-NAME>WdgMVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This contains the version of WdgM used for determining watchdog reset source</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES />
+                  <ORIGIN>NEXTEER</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <LITERALS>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:ef61fc42-79d3-8cfd-3747-f7e994eea520">
+                      <SHORT-NAME>TTTech_v2.0.3</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                    <ENUMERATION-LITERAL-DEF UUID="ECUC:1a38d2f8-aa83-843f-5295-de7cb009fee9">
+                      <SHORT-NAME>None</SHORT-NAME>
+                    </ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ENUMERATION-PARAM-DEF>
+                <!-- PARAMETER DEFINITION: uDiagIncludes-->
+                <STRING-PARAM-DEF UUID="ECUC:44e8a61c-a95b-487d-908b-0ca87be434d4">
+                  <SHORT-NAME>uDiagIncludes</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This parameter specifes the include files that contain the defintions of any symbols referenced in the RegCheckConfigSet containers.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>100</UPPER-MULTIPLICITY>
+                  <IMPLEMENTATION-CONFIG-CLASSES />
+                  <ORIGIN>NEXTEER</ORIGIN>
+                  <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                </STRING-PARAM-DEF>
+              </PARAMETERS>
+            </PARAM-CONF-CONTAINER-DEF>
+          </CONTAINERS>
+        </MODULE-DEF>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </TOP-LEVEL-PACKAGES>
+</AUTOSAR>

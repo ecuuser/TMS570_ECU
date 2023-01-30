@@ -1,0 +1,64 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : Cd_NvMMgr_Cfg.h
+* Module Description: Configuration file of NvMMgr module
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          1 %
+ * %date_modified:    Fri Jul 12 16:48:43 2013 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 07/11/13   1       LWW       Initial template creation
+ */
+
+#ifndef CD_NVMMGR_CFG_H
+#define CD_NVMMGR_CFG_H
+
+<#
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "NvMMgr" ) );
+	string EcuStartupApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "NvMMgrGeneral/EcuStartupApp" ));
+	string NvMAndMemIfApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "NvMMgrGeneral/NvMandMemIfApp" ));
+	string EcuStartupAppTrusted = "False";
+	string NvMAndMemIfAppTrusted = "False";
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "Os" ) );
+#>
+<# !LOOP( Xp.ContainerAtDefRefTo( "OsApplication" ) )#>
+<#
+	string osApp = ValueOf( "ar:SHORT-NAME" );
+	
+	if(osApp == EcuStartupApp)
+	{
+		EcuStartupAppTrusted = ValueOf( Xp.ValueAtDefRefTo( "OsTrusted" ));
+	}
+	if(osApp == NvMAndMemIfApp)
+	{
+		NvMAndMemIfAppTrusted = ValueOf( Xp.ValueAtDefRefTo( "OsTrusted" ));
+	}
+#>
+<# !ENDLOOP #>
+
+<#if(EcuStartupAppTrusted == "true"){#>
+	#define BC_FEEIF_ECUSTARTUPTRUSTED					STD_ON
+<#}else{#>
+	#define BC_FEEIF_ECUSTARTUPTRUSTED					STD_OFF
+<#}#>
+<#if(NvMAndMemIfAppTrusted == "true"){#>
+	#define BC_FEEIF_NVMTRUSTED							STD_ON
+<#}else{#>
+	#define BC_FEEIF_NVMTRUSTED							STD_OFF
+<#}#>
+
+#endif /* CD_NVMMGR_CFG_H */
+
+/*** End of file **************************************************************/

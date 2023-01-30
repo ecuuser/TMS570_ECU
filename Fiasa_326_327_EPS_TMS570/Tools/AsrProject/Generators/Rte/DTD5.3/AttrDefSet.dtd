@@ -1,0 +1,33 @@
+<!-- Entities -->
+
+<!ENTITY ti.AttrDefSet         "AttrDefSet">
+<!ENTITY ti.AttrDefinition     "AttrDefinition">
+
+<!-- Elements -->
+
+<!ELEMENT AttrDefSet (%C.DefAttr;,AttrDefinition*)>
+<!ELEMENT AttrDefinition    (%C.DefAttr;)>
+
+<!ATTLIST AttrDefSet  %A.ConfigItem;
+>
+
+<!ATTLIST AttrDefinition  %A.ChildItem;
+        ObjectType      CDATA ""
+        DefaultValue    CDATA ""
+        ValueType       (INTEGER|FLOAT|STRING|ENUM|HEX) "STRING"
+        EnumValues      CDATA ""
+        Minimum         CDATA ""
+        Maximum         CDATA ""
+        IsStereotype    CDATA "0"
+>
+
+<!-- Links -->
+
+<!ELEMENT AttrDefSetLink EMPTY>
+
+<!ATTLIST AttrDefSetLink 
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.AttrDefSet;"
+>
+

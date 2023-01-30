@@ -1,0 +1,39 @@
+<!-- Entities -->
+
+<!ENTITY ti.Device     "Device">
+<!ENTITY ti.DevicePin  "DevicePin">
+
+
+
+<!-- Elements -->
+
+<!ELEMENT Device                    (%C.DefAttr;,DevicePin*,GenAttrList?)>
+<!ELEMENT DevicePin                 (%C.DefAttr;,GenAttrList?)>
+
+
+<!ATTLIST Device                    %A.ConfigItem;
+          Type                      (SENSOR|ACTUATOR) "SENSOR"
+>
+        
+<!ATTLIST DevicePin                 %A.ChildItem;
+          IsInput                   CDATA "0"
+          ElecMin                   CDATA "0"
+          ElecMax                   CDATA "0"
+          ElecUnit                  (mA|A|mV|V) "V"
+          PhysMin                   CDATA "0"
+          PhysMax                   CDATA "0"
+          PhysUnit                  CDATA ""
+>
+
+
+
+<!-- Links -->
+
+<!ELEMENT DeviceLink EMPTY>
+<!ATTLIST DeviceLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.Device;"
+>
+

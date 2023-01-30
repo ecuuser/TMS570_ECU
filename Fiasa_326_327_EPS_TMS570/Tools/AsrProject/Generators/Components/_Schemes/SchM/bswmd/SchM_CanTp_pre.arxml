@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<AUTOSAR xmlns="http://autosar.org/3.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.0.1 AUTOSAR.xsd">
+  <TOP-LEVEL-PACKAGES>
+    <AR-PACKAGE UUID="DCE:91795653-8083-4d32-b1af-fb971e617c02">
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <ELEMENTS>
+        <MODULE-CONFIGURATION UUID="0ed47de4-cf9a-40a6-8f3c-44e2970e2a5d">
+          <SHORT-NAME>SchM_Rec</SHORT-NAME>
+          <DESC>
+            <L-2 L="FOR-ALL">Configuration of the SchM (BSW Scheduler) module.</L-2>
+          </DESC>
+          <DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/SchM</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <CONTAINERS>
+            <CONTAINER UUID="3a9ef5b5-c684-492e-9b5f-e993f6d6983b">
+              <SHORT-NAME>CanTp</SHORT-NAME>
+              <DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <STRING-VALUE>
+                  <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleLiteral</DEFINITION-REF>
+                  <VALUE>CanTp</VALUE>
+                </STRING-VALUE>
+                <STRING-VALUE>
+                  <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleInclude</DEFINITION-REF>
+                  <VALUE>CanTp.h</VALUE>
+                </STRING-VALUE>
+                <STRING-VALUE>
+                  <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleConfigVersion</DEFINITION-REF>
+                  <VALUE>1.0.0</VALUE>
+                </STRING-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleImplementationRef</DEFINITION-REF>
+                  <VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/CanTp_Impl</VALUE-REF>
+                </REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+              <SUB-CONTAINERS>
+                <CONTAINER UUID="c81a2786-c1fc-47bd-b7aa-5929f916dbd6">
+                  <SHORT-NAME>SCHM_CANTP_INSTANCE_0</SHORT-NAME>
+                  <DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <STRING-VALUE>
+                      <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/SchMInstanceLiteral</DEFINITION-REF>
+                      <VALUE>SCHM_CANTP_INSTANCE_0</VALUE>
+                    </STRING-VALUE>
+                  </PARAMETER-VALUES>
+                  <SUB-CONTAINERS>
+                    <CONTAINER UUID="aba009e8-8723-461a-8328-e3efd835ee52">
+                      <SHORT-NAME>CANTP_EXCLUSIVE_AREA_0</SHORT-NAME>
+                      <DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <STRING-VALUE>
+                          <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+                          <VALUE>CANTP_EXCLUSIVE_AREA_0</VALUE>
+                        </STRING-VALUE>
+                        <STRING-VALUE>
+                          <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+                        </STRING-VALUE>
+                      </PARAMETER-VALUES>
+                    </CONTAINER>
+                    <CONTAINER UUID="5e6d6aa6-148c-449d-b635-13e6de79c8c4">
+                      <SHORT-NAME>CANTP_EXCLUSIVE_AREA_1</SHORT-NAME>
+                      <DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <STRING-VALUE>
+                          <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+                          <VALUE>CANTP_EXCLUSIVE_AREA_1</VALUE>
+                        </STRING-VALUE>
+                        <STRING-VALUE>
+                          <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+                        </STRING-VALUE>
+                      </PARAMETER-VALUES>
+                    </CONTAINER>
+                  </SUB-CONTAINERS>
+                </CONTAINER>
+              </SUB-CONTAINERS>
+            </CONTAINER>
+            <CONTAINER UUID="662f2370-7cb7-4ac9-97ac-cc4b18267e93">
+              <SHORT-NAME>CanTp_MainFunction</SHORT-NAME>
+              <DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <STRING-VALUE>
+                  <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMMainFunctionSymbol</DEFINITION-REF>
+                  <VALUE>CanTp_MainFunction</VALUE>
+                </STRING-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMModuleRef</DEFINITION-REF>
+                  <VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/SchM_Rec/CanTp</VALUE-REF>
+                </REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+              <SUB-CONTAINERS>
+                <CONTAINER UUID="de61efea-2d1a-4b8a-bf40-bb634d51d04e">
+                  <SHORT-NAME>SchMBswEvent</SHORT-NAME>
+                  <DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <CONTAINER UUID="bd18f0b8-9cd3-4f56-89d4-ea573e016755">
+                      <SHORT-NAME>SchMBswDerivedTimingEvent</SHORT-NAME>
+                      <DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <FLOAT-VALUE>
+                          <DEFINITION-REF DEST="FLOAT-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent/SchMMainFunctionPeriodParamScale</DEFINITION-REF>
+                          <VALUE>1.0</VALUE>
+                        </FLOAT-VALUE>
+                        <STRING-VALUE>
+                          <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent/SchMMainFunctionPeriodParamRef</DEFINITION-REF>
+                          <VALUE>/MICROSAR/CanTp/CanTpGeneral/CanTpMainFunctionPeriod</VALUE>
+                        </STRING-VALUE>
+                      </PARAMETER-VALUES>
+                    </CONTAINER>
+                  </SUB-CONTAINERS>
+                </CONTAINER>
+              </SUB-CONTAINERS>
+            </CONTAINER>
+            <CONTAINER UUID="9274373d-097d-4d91-a35a-69dd22fb5214">
+              <SHORT-NAME>CanTp_MainFunctionRx</SHORT-NAME>
+              <DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <STRING-VALUE>
+                  <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMMainFunctionSymbol</DEFINITION-REF>
+                  <VALUE>CanTp_MainFunctionRx</VALUE>
+                </STRING-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMModuleRef</DEFINITION-REF>
+                  <VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/SchM_Rec/CanTp</VALUE-REF>
+                </REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+              <SUB-CONTAINERS>
+                <CONTAINER UUID="495b5f8f-4a2b-4cb1-958a-353278796cfc">
+                  <SHORT-NAME>SchMBswEvent</SHORT-NAME>
+                  <DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <CONTAINER UUID="30bf079e-1180-4592-bed9-82cfb23e49c6">
+                      <SHORT-NAME>SchMBswDerivedTimingEvent</SHORT-NAME>
+                      <DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <FLOAT-VALUE>
+                          <DEFINITION-REF DEST="FLOAT-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent/SchMMainFunctionPeriodParamScale</DEFINITION-REF>
+                          <VALUE>1.0</VALUE>
+                        </FLOAT-VALUE>
+                        <STRING-VALUE>
+                          <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent/SchMMainFunctionPeriodParamRef</DEFINITION-REF>
+                          <VALUE>/MICROSAR/CanTp/CanTpGeneral/CanTpMainFunctionPeriod</VALUE>
+                        </STRING-VALUE>
+                      </PARAMETER-VALUES>
+                    </CONTAINER>
+                  </SUB-CONTAINERS>
+                </CONTAINER>
+              </SUB-CONTAINERS>
+            </CONTAINER>
+            <CONTAINER UUID="027afbd9-28b1-4f78-b5ad-ad031bf6c9d1">
+              <SHORT-NAME>CanTp_MainFunctionTx</SHORT-NAME>
+              <DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <STRING-VALUE>
+                  <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMMainFunctionSymbol</DEFINITION-REF>
+                  <VALUE>CanTp_MainFunctionTx</VALUE>
+                </STRING-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMModuleRef</DEFINITION-REF>
+                  <VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/SchM_Rec/CanTp</VALUE-REF>
+                </REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+              <SUB-CONTAINERS>
+                <CONTAINER UUID="b0d4cd7e-1d33-4369-bd09-e672c277e12d">
+                  <SHORT-NAME>SchMBswEvent</SHORT-NAME>
+                  <DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <CONTAINER UUID="c165c777-94d7-432c-ad05-e0b52d3ef85f">
+                      <SHORT-NAME>SchMBswDerivedTimingEvent</SHORT-NAME>
+                      <DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <FLOAT-VALUE>
+                          <DEFINITION-REF DEST="FLOAT-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent/SchMMainFunctionPeriodParamScale</DEFINITION-REF>
+                          <VALUE>1.0</VALUE>
+                        </FLOAT-VALUE>
+                        <STRING-VALUE>
+                          <DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent/SchMMainFunctionPeriodParamRef</DEFINITION-REF>
+                          <VALUE>/MICROSAR/CanTp/CanTpGeneral/CanTpMainFunctionPeriod</VALUE>
+                        </STRING-VALUE>
+                      </PARAMETER-VALUES>
+                    </CONTAINER>
+                  </SUB-CONTAINERS>
+                </CONTAINER>
+              </SUB-CONTAINERS>
+            </CONTAINER>
+          </CONTAINERS>
+        </MODULE-CONFIGURATION>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </TOP-LEVEL-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/3.1.4"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://autosar.org/3.1.4 AUTOSAR.xsd">
+  <!--
+       Note for XML Schema validation purposes:
+       You may have to set the `xsi:schemaLocation` attribute above so that
+       it points to the actual location of `AUTOSAR.xsd`
+  -->
+  <TOP-LEVEL-PACKAGES>
+    <AR-PACKAGE UUID="6c79096c-0257-4f98-9020-11aef8fb7f3c">
+      <SHORT-NAME>TTTECH</SHORT-NAME>
+      <SUB-PACKAGES>
+        <AR-PACKAGE UUID="e93318dc-0ca4-428d-b20b-4934b1422d6c">
+          <SHORT-NAME>TMS570LS3x</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-IMPLEMENTATION UUID="8d95b512-87fc-4b46-b0e7-3dcd11393b55">
+              <SHORT-NAME>Wdg_Impl</SHORT-NAME>
+              <CODE-GENERATOR>TTTech</CODE-GENERATOR>
+              <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+              <SW-MAJOR-VERSION>2</SW-MAJOR-VERSION>
+              <SW-MINOR-VERSION>0</SW-MINOR-VERSION>
+              <SW-PATCH-VERSION>3</SW-PATCH-VERSION>
+              <VENDOR-ID>46</VENDOR-ID>
+              <AR-MAJOR-VERSION>4</AR-MAJOR-VERSION>
+              <AR-MINOR-VERSION>0</AR-MINOR-VERSION>
+              <AR-PATCH-VERSION>1</AR-PATCH-VERSION>
+              <PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/TTTECH/TMS570LS3x/Wdg_Pre</PRECONFIGURED-CONFIGURATION-REF>
+              <VENDOR-API-INFIX>TMS570LS3x</VENDOR-API-INFIX>
+              <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/TTTECH/TMS570LS3x/Wdg</VENDOR-SPECIFIC-MODULE-DEF-REF>
+            </BSW-IMPLEMENTATION>
+            <MODULE-DEF UUID="53527697-561f-4b0f-9b52-4f8432b34c65">
+              <SHORT-NAME>Wdg</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Configuration of the Wdg (Watchdog driver) module. This is the TMS570LS3x internal watchdog driver.</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+              <REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/Wdg</REFINED-MODULE-DEF-REF>
+              <SUPPORTED-CONFIG-VARIANTS>
+                <SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+                <SUPPORTED-CONFIG-VARIANT>VARIANT-LINK-TIME</SUPPORTED-CONFIG-VARIANT>
+                <SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+              </SUPPORTED-CONFIG-VARIANTS>
+              <CONTAINERS>
+                <!-- Parameter Container Definition: WdgGeneral -->
+                <PARAM-CONF-CONTAINER-DEF UUID="a2ace3c3-832f-4efc-ab33-c227dbd246cc">
+                  <SHORT-NAME>WdgGeneral</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">All general parameters of the watchdog driver are collected here.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                  <PARAMETERS>
+                    <!-- PARAMETER DEFINITION: WdgDevErrorDetect -->
+                    <BOOLEAN-PARAM-DEF UUID="e90038a4-ee65-4d49-895c-5983a95fd5d3">
+                      <SHORT-NAME>WdgDevErrorDetect</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Compile switch to enable / disable development error detection for this module.
+
+True: Development error detection enabled
+False: Development error detection disabled</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                    </BOOLEAN-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: WdgDemReport -->
+                    <BOOLEAN-PARAM-DEF UUID="94d6a0cd-4448-4e78-b74e-5f2fcefe7c78">
+                      <SHORT-NAME>WdgDemReport</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Compile switch to enable / disable calls to DEM in case of production error detection.
+
+True: DEM calls enabled in case of production errors
+False: DEM calls disabled in case of production errors</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <!-- TODO TTTech? -->
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                    </BOOLEAN-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: WdgDisableAllowed -->
+                    <BOOLEAN-PARAM-DEF UUID="7961658d-99d6-4f95-8e84-305fc8c01aa2">
+                      <SHORT-NAME>WdgDisableAllowed</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Compile switch to allow / forbid disabling the watchdog driver during runtime.
+
+True: Disabling the watchdog driver at runtime is allowed.
+False: Disabling the watchdog driver at runtime is not allowed.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                    </BOOLEAN-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: WdgVersionInfoApi -->
+                    <BOOLEAN-PARAM-DEF UUID="7896374e-3580-43ec-bfe6-4481532612a5">
+                      <SHORT-NAME>WdgVersionInfoApi</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Compile switch to enable / disable the version information API
+
+True: API enabled
+False: API disables</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                    </BOOLEAN-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: WdgInternalTickCounter -->
+                    <BOOLEAN-PARAM-DEF>
+                      <SHORT-NAME>WdgInternalTickCounter</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Compile switch to enable / disable the usage of an internal tick counter. Free running counter 1 (RTIFRC1) from RTI module will be used.
+
+True: Internal counter enabled
+False: Internal counter disabled</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                    </BOOLEAN-PARAM-DEF>
+                    <!-- PARAMETER DEFINITION: WdgUseOsSuspendInterrupt -->
+                    <BOOLEAN-PARAM-DEF>
+                      <SHORT-NAME>WdgUseOsSuspendInterrupt</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">This preprocessor switch enables/disables the usage of OS suspend and resume interrupt services within the driver.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                    </BOOLEAN-PARAM-DEF>
+                    <FLOAT-PARAM-DEF UUID="11fa4ec2-f023-48ca-b928-e1185772c8eb">
+                      <SHORT-NAME>WdgInitialTimeout</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">The initial timeout (sec) for the trigger condition to be initialized during Init function. It shall be not larger than WdgMaxTimeout.
+                        Please, note that this parameter must match the corresponding settings in the S-WdgM module (parameter WdgMTriggerConditionValue), since the timeout of the TMS570LS3x's internal watchdog cannot be reconfigured.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                    </FLOAT-PARAM-DEF>
+                    <!-- Symbolic Name Reference Definition: WdgGlobalMemoryAppTaskRef -->
+                  </PARAMETERS>
+                  <REFERENCES>
+                    <CHOICE-REFERENCE-PARAM-DEF>
+                      <SHORT-NAME>WdgGlobalMemoryAppTaskRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Reference to an OS Application or Task. In case of OS SC3 the global variables of this Watchdog driver module should be placed in the same memory segment as the application / task that the overlying Watchdog Manager module is part of.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                      <IMPLEMENTATION-CONFIG-CLASS>
+                        <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                        <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN> <!-- TODO TTTech? -->
+                      <DESTINATION-REFS>
+                        <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Os/OsTask</DESTINATION-REF>
+                        <DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Os/OsApplication</DESTINATION-REF>
+                      </DESTINATION-REFS>
+                    </CHOICE-REFERENCE-PARAM-DEF>
+                  </REFERENCES>
+                </PARAM-CONF-CONTAINER-DEF>
+                <!-- Parameter Container Definition: WdgSettingsConfig -->
+                <PARAM-CONF-CONTAINER-DEF UUID="33e50ce9-c240-4b42-b11f-0f4c89e0b194">
+                  <SHORT-NAME>WdgSettingsConfig</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Configuration items for the different watchdog settings, including those for external watchdog hardware. Note: All postbuild parameters are handled via this container.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+                  <PARAMETERS>
+                    <!-- PARAMETER DEFINITION: WdgDefaultMode -->
+                    <ENUMERATION-PARAM-DEF UUID="c0dadab0-ec27-41a0-b6a0-23872871f29f">
+                      <SHORT-NAME>WdgDefaultMode</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Default mode for watchdog driver initialization.
+
+ImplementationType: WdgIf_ModeType</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <IMPLEMENTATION-CONFIG-CLASSES>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                        <IMPLEMENTATION-CONFIG-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </IMPLEMENTATION-CONFIG-CLASS>
+                      </IMPLEMENTATION-CONFIG-CLASSES>
+                      <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                      <LITERALS>
+                        <ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>WDGIF_FAST_MODE</SHORT-NAME>
+                        </ENUMERATION-LITERAL-DEF>
+                        <ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>WDGIF_SLOW_MODE</SHORT-NAME>
+                        </ENUMERATION-LITERAL-DEF>
+                      </LITERALS>
+                    </ENUMERATION-PARAM-DEF>
+                  </PARAMETERS>
+                  <SUB-CONTAINERS>
+                    <!-- Parameter Container Definition: WdgWindowStart -->
+                    <PARAM-CONF-CONTAINER-DEF UUID="68bc6b69-6462-4a18-be6b-3ab116328e3e">
+                      <SHORT-NAME>WdgWindowStart</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                      Duration from a watchdog trigger to the earliest point in time when the next watchdog trigger is allowed.
+                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                      <PARAMETERS>
+                        <FLOAT-PARAM-DEF UUID="cebb1a11-8e17-4f3d-b145-9e99f48c6aa4">
+                          <SHORT-NAME>Value</SHORT-NAME>
+                          <DESC>
+                            <L-2>
+                          Value of the initial window start in seconds.
+                        </L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>TTTECH</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                        </FLOAT-PARAM-DEF>
+                      </PARAMETERS>
+                    </PARAM-CONF-CONTAINER-DEF>
+                    <!-- PLATFORM SPECIFIC PARAMETERS -->
+                    <!-- Parameter Container Definition: WdgRtiKhz -->
+                    <PARAM-CONF-CONTAINER-DEF UUID="30544921-c6e9-4564-9907-b947a96854dd">
+                      <SHORT-NAME>WdgRtiKhz</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                      RTI frequency in kHz (for the TMS570LS3x internal watchdog).
+                    </L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                      <MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+                      <PARAMETERS>
+                        <FLOAT-PARAM-DEF UUID="12481f60-519e-4a46-817a-ea9b0ca765bb">
+                          <SHORT-NAME>Value</SHORT-NAME>
+                          <DESC>
+                            <L-2>
+                          Value of the RTI frequency in kHz.
+                        </L-2>
+                          </DESC>
+                          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                          <IMPLEMENTATION-CONFIG-CLASSES>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-LINK-TIME</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                            <IMPLEMENTATION-CONFIG-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </IMPLEMENTATION-CONFIG-CLASS>
+                          </IMPLEMENTATION-CONFIG-CLASSES>
+                          <ORIGIN>TTTECH</ORIGIN>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                        </FLOAT-PARAM-DEF>
+                      </PARAMETERS>
+                    </PARAM-CONF-CONTAINER-DEF>
+                    <!-- / PLATFORM SPECIFIC PARAMETERS -->
+                  </SUB-CONTAINERS>
+                </PARAM-CONF-CONTAINER-DEF>
+                <!-- Parameter Container Definition: WdgModeConfig -->
+                <PARAM-CONF-CONTAINER-DEF UUID="dbf82414-bf01-4d15-9263-7b5aa1eff635">
+                  <SHORT-NAME>WdgModeConfig</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Configuration items for the different watchdog modes</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+                </PARAM-CONF-CONTAINER-DEF>
+              </CONTAINERS>
+            </MODULE-DEF>
+            <MODULE-CONFIGURATION UUID="685a0e2d-6223-4653-8be9-e4c2c6679a25">
+              <SHORT-NAME>Wdg_Pre</SHORT-NAME>
+              <DEFINITION-REF DEST="MODULE-DEF">/TTTECH/TMS570LS3x/Wdg</DEFINITION-REF>
+              <CONTAINERS />
+            </MODULE-CONFIGURATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </SUB-PACKAGES>
+    </AR-PACKAGE>
+  </TOP-LEVEL-PACKAGES>
+</AUTOSAR>

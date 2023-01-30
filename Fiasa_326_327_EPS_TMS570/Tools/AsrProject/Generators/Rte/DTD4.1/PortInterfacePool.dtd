@@ -1,0 +1,11 @@
+<!-- Entities -->
+
+<!ENTITY ti.PortInterfacePool  "PortInterfacePool">
+
+<!-- Elements -->
+
+<!ELEMENT PortInterfacePool (PortInterface*)>
+
+<!ATTLIST PortInterfacePool  %A.ConfigItem;
+>
+

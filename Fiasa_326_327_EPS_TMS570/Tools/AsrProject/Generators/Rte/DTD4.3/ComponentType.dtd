@@ -1,0 +1,228 @@
+<!-- Entities -->
+
+<!ENTITY ti.ComponentType           "ComponentType">
+<!ENTITY ti.PortInterface           "PortInterface">
+<!ENTITY ti.PortPrototype           "PortPrototype">
+<!ENTITY ti.DataElementPrototype    "DataElementPrototype">
+<!ENTITY ti.OperationPrototype      "OperationPrototype">
+<!ENTITY ti.Constant                "Constant">
+<!ENTITY ti.Composition             "Composition">
+<!ENTITY ti.ComponentPrototype      "ComponentPrototype">
+<!ENTITY ti.Function                "Function">
+<!ENTITY ti.DeviceAccessor          "DeviceAccessor">
+<!ENTITY ti.FunctionPort            "FunctionPort">
+<!ENTITY ti.FunctionTrigger         "FunctionTrigger">
+<!ENTITY ti.RunnableDataAccess      "RunnableDataAccess">
+<!ENTITY ti.OperationAccess         "OperationAccess">
+<!ENTITY ti.ProxyPortPrototype      "ProxyPortPrototype">
+<!ENTITY ti.ExclusiveArea           "ExclusiveArea">
+<!ENTITY ti.ExclusiveAreaAccess     "ExclusiveAreaAccess">
+<!ENTITY ti.InterRunnableVariable   "InterRunnableVariable">
+<!ENTITY ti.InterRunnableVariableAccess  "InterRunnableVariableAccess">
+<!ENTITY ti.DataType                "DataType">
+
+<!-- Elements -->
+
+<!ELEMENT ComponentType (%C.DefAttr;, ATTRLink*, CONTENT*, Runnable*, (Application | SensorActuator | Service | Composition), PortPrototype*, FileEntry*, GenAttrList?, ExclusiveArea*, InterRunnableVariable*, CalibrationParameter*)>
+<!ELEMENT PortPrototype (%C.DefAttr;, ATTRLink*, GenAttrList?, SenderReceiverComSpec*, ClientServerComSpec*, PortAPIOption? )>
+
+<!ELEMENT Runnable                   (%C.DefAttr;, ATTRLink*, Trigger, RunnableDataAccess*, GenAttrList?, OperationAccess*, ExclusiveAreaAccess*, InterRunnableVariableAccess*)>
+<!ELEMENT Trigger                    (TimerDefinition?, TriggerInput*, DataSendCompletionTrigger*, OperationInvocationTrigger*, OperationCallReturnTrigger*)>
+<!ELEMENT TimerDefinition            EMPTY>
+<!ELEMENT TriggerInput               (ATTRLink*)>
+<!ELEMENT DataSendCompletionTrigger  (ATTRLink*)>
+<!ELEMENT OperationInvocationTrigger (ATTRLink*)>
+<!ELEMENT OperationCallReturnTrigger (ATTRLink*)>
+<!ELEMENT RunnableDataAccess         (ATTRLink*)>
+<!ELEMENT OperationAccess            (ATTRLink*)>
+<!ELEMENT ProxyPortPrototype         (ATTRLink*,GenAttrList?)>
+<!ELEMENT ExclusiveArea              (%C.DefAttr;)>
+<!ELEMENT ExclusiveAreaAccess        (ATTRLink*)>
+<!ELEMENT InterRunnableVariable      (%C.DefAttr;, ATTRLink*)>
+<!ELEMENT InterRunnableVariableAccess (ATTRLink*)>
+<!ELEMENT CalibrationParameter       (%C.DefAttr;, ATTRLink*, GenAttrList?)>
+
+<!ELEMENT SenderReceiverComSpec (ATTRLink*)>
+<!ELEMENT ClientServerComSpec (ATTRLink*)>
+<!ELEMENT PortAPIOption       (PortDAVal*)>
+<!ELEMENT PortDAVal  (%C.DefAttr;, ATTRLink*)>
+
+<!ELEMENT Application    EMPTY>
+<!ELEMENT SensorActuator EMPTY>
+<!ELEMENT Service        EMPTY>
+<!ELEMENT Composition    (CONTENT*, ComponentPrototype*, PortConnector*)>
+
+<!ELEMENT ComponentPrototype              (%C.DefAttr;, ATTRLink*, GenAttrList?)>
+<!ELEMENT PortConnector                   (DESC?, ATTRLink*, GenAttrList?, SenderReceiverConnectorComSpec*, ClientServerConnectorComSpec* )>
+<!ELEMENT SenderReceiverConnectorComSpec  (ATTRLink*)>
+<!ELEMENT ClientServerConnectorComSpec    EMPTY>
+
+
+<!ATTLIST ComponentType %A.ConfigItem;
+          DeviceAccessorLink  NMTOKEN #FIXED "&ti.DeviceAccessor;"
+          FunctionLink        NMTOKEN #FIXED "&ti.Function;"
+          FNDerived           CDATA "0"
+          Refined             CDATA "0"
+>
+
+<!ATTLIST PortPrototype %A.ChildItem;
+          IsInput               CDATA "0"
+          PortInterfaceLink     NMTOKEN #FIXED "&ti.PortInterface;"
+          FunctionPortLink      NMTOKEN #FIXED "&ti.FunctionPort;"
+          DeviceAccessorLink    NMTOKEN #FIXED "&ti.DeviceAccessor;"
+          FunctionTriggerLink   NMTOKEN #FIXED "&ti.FunctionTrigger;"
+          FNDerived             CDATA "0"
+>
+
+<!-- Note: These values have to match the initial values in the tool dialogs -->
+
+<!ATTLIST SenderReceiverComSpec %A.ChildItem;
+   AliveTimeout             CDATA "0"
+   ResynchroTime            CDATA "0"
+   SupportInvalidate        CDATA "0"
+   QueueLength              CDATA "1"
+   InitValueConstLink       NMTOKEN #FIXED "&ti.Constant;"
+   DataElementPrototypeLink NMTOKEN #FIXED "&ti.DataElementPrototype;" 
+   UsesTxAcknowledge        CDATA "0"
+   TxAckTimeOut             CDATA "0"
+   TxAckTimeOutUnit         (USEC | MSEC | SEC) "MSEC"
+>
+<!ATTLIST ClientServerComSpec %A.ChildItem;
+   QueueLength              CDATA "1"
+   OperationPrototypeLink   NMTOKEN #FIXED "&ti.OperationPrototype;" 
+>
+		
+<!ATTLIST Runnable      %A.ChildItem;
+	FunctionTriggerLink         NMTOKEN #FIXED "&ti.FunctionTrigger;"
+	FNDerived                   CDATA "0"
+	CanBeInvokedConcurrently    CDATA "0"
+	Symbol                      CDATA ""
+>
+
+<!ATTLIST Trigger       %A.ChildItem;>
+	
+<!ATTLIST TimerDefinition %A.ChildItem; 
+          CycleTime CDATA       "10"
+	      CycleTimeUnit         (USEC | MSEC | SEC) "MSEC"
+>
+	
+<!ATTLIST TriggerInput  %A.ChildItem; 
+	DataElementPrototypeLink NMTOKEN #FIXED "&ti.DataElementPrototype;"
+	PortPrototypeLink        NMTOKEN #FIXED "&ti.PortPrototype;"
+>
+
+<!ATTLIST DataSendCompletionTrigger  %A.ChildItem; 
+	DataElementPrototypeLink NMTOKEN #FIXED "&ti.DataElementPrototype;"
+	PortPrototypeLink        NMTOKEN #FIXED "&ti.PortPrototype;"
+>
+
+<!ATTLIST OperationInvocationTrigger  %A.ChildItem; 
+	OperationPrototypeLink   NMTOKEN #FIXED "&ti.OperationPrototype;"
+	PortPrototypeLink        NMTOKEN #FIXED "&ti.PortPrototype;"
+	AccessMode               ( NONE | TRIGGERED ) "TRIGGERED"
+>
+
+<!ATTLIST OperationCallReturnTrigger  %A.ChildItem; 
+	OperationPrototypeLink   NMTOKEN #FIXED "&ti.OperationPrototype;"
+	PortPrototypeLink        NMTOKEN #FIXED "&ti.PortPrototype;"
+	AccessMode               ( NONE | TRIGGERED ) "TRIGGERED"
+>
+
+<!ATTLIST RunnableDataAccess  %A.ChildItem; 
+	DataElementPrototypeLink NMTOKEN #FIXED                            "&ti.DataElementPrototype;"
+	PortPrototypeLink        NMTOKEN #FIXED                            "&ti.PortPrototype;"
+	AccessMode               ( NONE | DIRECT | BUFFERED | POLLING | WAITING ) "NONE"
+	TimeOut                  CDATA                                     "0"
+	TimeOutUnit              (USEC | MSEC | SEC)                       "MSEC"
+	TxAcknowledgeMode        ( POLLING | WAITING )                     "POLLING"
+>
+		
+<!ATTLIST OperationAccess  %A.ChildItem; 
+	OperationPrototypeLink   NMTOKEN #FIXED                            "&ti.OperationPrototype;"
+	PortPrototypeLink        NMTOKEN #FIXED                            "&ti.PortPrototype;"
+	AccessMode               ( NONE | DIRECT | ASYNCHRON )             "NONE"
+	CallReturnsMode          ( NONE | POLLING | WAITING )              "NONE"
+	TimeOut                  CDATA                                     "0"
+	TimeOutUnit              (USEC | MSEC | SEC)                       "MSEC"
+>
+		
+<!ATTLIST Application    %A.ChildItem;>
+<!ATTLIST SensorActuator %A.ChildItem;>
+<!ATTLIST Composition    %A.ChildItem;>
+
+<!ATTLIST ComponentPrototype %A.ChildItem;
+   ComponentTypeLink      NMTOKEN #FIXED "&ti.ComponentType;"
+>
+
+<!ATTLIST ProxyPortPrototype        %A.ChildItem;
+          IsInput                   CDATA "0"
+          PortPrototypeLink         NMTOKEN #FIXED "&ti.PortPrototype;"          
+          ROSComponentPrototypeLink NMTOKEN #FIXED "&ti.ComponentPrototype;"
+>
+
+<!ATTLIST PortConnector %A.ChildItem;
+   ReceiverPortLink             NMTOKEN #FIXED "&ti.PortPrototype;"
+   TransmitterPortLink          NMTOKEN #FIXED "&ti.PortPrototype;"
+   ReceiveCompPrototypeLink     NMTOKEN #FIXED "&ti.ComponentPrototype;"
+   ReceiveCompTypeLink          NMTOKEN #FIXED "&ti.ComponentType;"
+   TransmitCompPrototypeLink    NMTOKEN #FIXED "&ti.ComponentPrototype;"
+   TransmitCompTypeLink         NMTOKEN #FIXED "&ti.ComponentType;"
+   ProxyReceiverPortLink        NMTOKEN #FIXED "&ti.ProxyPortPrototype;"
+   ProxyTransmitterPortLink     NMTOKEN #FIXED "&ti.ProxyPortPrototype;"   
+>
+
+<!ATTLIST SenderReceiverConnectorComSpec %A.ChildItem;
+   MaxResponseTime           CDATA "0"
+   MinResponseTime           CDATA "0"
+   MaxResponseTimeUnit			(USEC|MSEC|SEC)       "MSEC"
+   MinResponseTimeUnit	    (USEC|MSEC|SEC)       "MSEC"
+   MaxJitter                 CDATA "0"
+   JitterTimeUnit			(USEC|MSEC|SEC)       "MSEC"
+   DataElementPrototypeLink  NMTOKEN #FIXED "&ti.DataElementPrototype;"
+>
+
+<!ATTLIST ExclusiveArea      %A.ChildItem; >
+
+<!ATTLIST ExclusiveAreaAccess  %A.ChildItem; 
+	ExclusiveAreaLink       NMTOKEN #FIXED "&ti.ExclusiveArea;"
+	AccessMode              ( RUNS_IN | CAN_ENTER ) "CAN_ENTER"
+>
+
+<!ATTLIST InterRunnableVariable %A.ChildItem; 
+	DataTypeLink              NMTOKEN #FIXED "&ti.DataType;"
+    InitValueConstLink        NMTOKEN #FIXED "&ti.Constant;"
+	ComApproachType         ( DIRECT | BUFFERED ) "DIRECT"
+>
+
+<!ATTLIST InterRunnableVariableAccess  %A.ChildItem; 
+	InterRunnableVariableLink NMTOKEN #FIXED "&ti.InterRunnableVariable;"
+	AccessMode              ( READ | WRITE | READWRITE ) "READ"
+>
+
+<!ATTLIST CalibrationParameter %A.ChildItem; 
+	DataTypeLink              NMTOKEN #FIXED "&ti.DataType;"
+    InitValueConstLink        NMTOKEN #FIXED "&ti.Constant;"
+	Scope                     ( SHARED | PER_INSTANCE ) "SHARED"
+>
+
+<!ATTLIST PortAPIOption  %A.ChildItem;
+    UseIndirectAPI            CDATA "0"
+>
+
+<!ATTLIST PortDAVal %A.ChildItem; 
+	DataTypeLink              NMTOKEN #FIXED "&ti.DataType;"
+    Value                     CDATA ''
+    OrderIndex                CDATA "-1"
+>
+
+<!-- Links -->
+
+<!ELEMENT ComponentTypeLink EMPTY>
+
+<!ATTLIST ComponentTypeLink 
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.ComponentType;"
+>
+          

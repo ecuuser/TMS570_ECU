@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE DCF [
+	<!ELEMENT DCF ((NAME,ATTRDEF?,PROFILESETTINGS?,FILEREF*)?)>
+	<!ATTLIST DCF
+	ARSCHEMA (21XSDREV0017|30XSDREV0003|31XSDREV0004|314DAI4|32XSDREV0001) "21XSDREV0017">
+	<!ELEMENT NAME (#PCDATA)>
+	<!ELEMENT ATTRDEF (#PCDATA)>
+	<!ELEMENT FILEREF (ARXML, DCB?, ECUC?, GENATTR?)>
+	<!ELEMENT ARXML (#PCDATA)>
+	<!ATTLIST ARXML TYPE CDATA "" 
+    ROOTITEM (CONSTANT|DATATYPE|PORTINTERFACE|SIGNAL|COMPONENTTYPE|ECUPROJECT|VEHICLEPROJECT) #REQUIRED >
+	<!ELEMENT DCB (#PCDATA)>
+	<!ELEMENT ECUC (#PCDATA)>
+  <!ELEMENT GENATTR (#PCDATA)>
+  <!ELEMENT PROFILESETTINGS (#PCDATA)>
+]>
+<DCF ARSCHEMA="31XSDREV0004">
+	<NAME>MotorControl_IM</NAME>
+	<ATTRDEF>MotorControl_IM_attr_def.xml</ATTRDEF>
+	<PROFILESETTINGS>ProfileSettings.xml</PROFILESETTINGS>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_CurrCmd.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_CurrCmd.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_CurrCmd_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_CurrParamComp.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_CurrParamComp.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_CurrParamComp_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_PeakCurrEst.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_PeakCurrEst.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_PeakCurrEst_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_PICurrCntrl.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_PICurrCntrl.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_PICurrCntrl_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_QuadDet.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_QuadDet.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_QuadDet_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_TrqCanc.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_TrqCanc.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_TrqCanc_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_TrqCmdScl.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_TrqCmdScl.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_TrqCmdScl_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="CONSTANT" TYPE="">Constants.arxml</ARXML>
+		<GENATTR>Constants_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="DATATYPE" TYPE="">DataTypes.arxml</ARXML>
+		<GENATTR>DataTypes_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="PORTINTERFACE" TYPE="">PortInterfaces.arxml</ARXML>
+		<GENATTR>PortInterfaces_gen_attr.xml</GENATTR>
+	</FILEREF>
+</DCF>

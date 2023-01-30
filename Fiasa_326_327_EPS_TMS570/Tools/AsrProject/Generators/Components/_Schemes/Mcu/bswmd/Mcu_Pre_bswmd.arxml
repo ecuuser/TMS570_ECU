@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+============================================================================
+This file is generated with Eparm 2.0.3.5
+Date: Fri, 25 Jun 2010 13:30:52 GMT
+============================================================================
+-->
+<AUTOSAR xmlns="http://autosar.org/3.1.4">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="9ba33ba7-d5cc-47eb-86d1-e948daeb6c94">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-CONFIGURATION UUID="cf427d45-28c2-414f-9ef8-e21535b01e2c">
+					<SHORT-NAME>Mcu_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Mcu</DEFINITION-REF>
+					<CONTAINERS>
+						<CONTAINER UUID="d57ce9d7-b812-4988-894c-ced84f65eee6">
+							<SHORT-NAME>McuGeneralConfiguration</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Mcu/McuGeneralConfiguration</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<BOOLEAN-VALUE>
+									<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuGeneralConfiguration/McuCopyTrimFromOtp</DEFINITION-REF>
+									<VALUE>true</VALUE>
+								</BOOLEAN-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/Mcu/McuGeneralConfiguration/McuBank2Pwr</DEFINITION-REF>
+									<VALUE>SleepMode</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/Mcu/McuGeneralConfiguration/McuBank3Pwr</DEFINITION-REF>
+									<VALUE>SleepMode</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/Mcu/McuGeneralConfiguration/McuBank4Pwr</DEFINITION-REF>
+									<VALUE>SleepMode</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/Mcu/McuGeneralConfiguration/McuBank5Pwr</DEFINITION-REF>
+									<VALUE>SleepMode</VALUE>
+								</ENUMERATION-VALUE>
+								<ENUMERATION-VALUE>
+									<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF">/MICROSAR/Mcu/McuGeneralConfiguration/McuBank6Pwr</DEFINITION-REF>
+									<VALUE>SleepMode</VALUE>
+								</ENUMERATION-VALUE>
+							</PARAMETER-VALUES>
+						</CONTAINER>
+						<CONTAINER UUID="335c7f5c-60b5-4218-9853-e817a94642f5">
+							<SHORT-NAME>McuModuleConfiguration</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Mcu/McuModuleConfiguration</DEFINITION-REF>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="e7daaad6-0f0c-453d-89cb-91e8b94026ff">
+									<SHORT-NAME>McuClockSettingConfig</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="96c0531b-bfbe-4e77-ad4c-f72cbe79ea0b">
+											<SHORT-NAME>McuClocks</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<CONTAINER UUID="2f99a36f-0f1d-4fb1-b5d0-ff7e319bce2c">
+													<SHORT-NAME>McuClockSrc</SHORT-NAME>
+													<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseOsciClk</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUse32KhzOsciClk</DEFINITION-REF>
+															<VALUE>false</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseLpoLow</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseLpoHigh</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseGclk</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseHclk</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseVclkp</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseVclk2</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseVclk3</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseVclka1</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseVclka2</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseVclka4</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+														<BOOLEAN-VALUE>
+															<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF">/MICROSAR/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClocks/McuClockSrc/McuUseRtiClk1</DEFINITION-REF>
+															<VALUE>true</VALUE>
+														</BOOLEAN-VALUE>
+													</PARAMETER-VALUES>
+												</CONTAINER>
+											</SUB-CONTAINERS>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

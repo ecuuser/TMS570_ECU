@@ -1,0 +1,3602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2010 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           		Port_bswmd.arxml
+Component:      
+Module:         	Port
+Generator:     	
+
+Description:    -
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xmlns="http://autosar.org/3.1.4">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="59a71a2c-781c-493d-8fd5-8ed41478b729">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-DEF UUID="e94591c2-231a-40a6-8eec-92dfb7e493b8">
+					<SHORT-NAME>Port</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of the Port module.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2008-09-08T16:34:59</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Initial Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">-</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2009-03-26T08:50:57</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">DMM Port added</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">-</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.00.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2010-03-05T11:22:16</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Software Version updated </L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00041388</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2010-04-29T13:09:56</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adaption for Tms570psfd62 support, BGA 337 pin package support added</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">-</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2010-06-15T18:55:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">HET26 pin disabled for 144 pin package</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00043421</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2010-06-21T10:13:30</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Porting TMS570PSFC66 to D62 derivative</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00043154</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.01.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2010-12-02T10:04:29</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">SchM recommended configuration file added</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00046702</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.02.00</REVISION-LABEL>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2011-01-20T15:29:08</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support for Tms570ls30x added</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2011-08-01T11:03:20+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Class configuration integrated in Pre- /Rec- Container</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00048799</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2011-08-01T11:32:55+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Redundant containers and elements removed</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00052055</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2011-09-20T07:17:15+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Port pin IDs in port IIC corrected</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00053721</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2011-09-20T07:19:12+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changes of Multiplex container in the Pre config</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00052617</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virmfr</ISSUED-BY>
+								<DATE>2011-11-07T10:14:30+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Parameter for safety SFR access added</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">-</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/Port</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Parameter Container Definition: PortConfigSet -->
+						<PARAM-CONF-CONTAINER-DEF UUID="41be0612-8215-4935-a1de-28887c361d5d">
+							<SHORT-NAME>PortConfigSet</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container is the base of a multiple configuration set</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+							<SUB-CONTAINERS>
+								<!-- Parameter Container Definition: PortContainer -->
+								<PARAM-CONF-CONTAINER-DEF UUID="574ceab1-ac3e-48c0-b50f-7e854960579b">
+									<SHORT-NAME>PortContainer</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container collecting the PortPins.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: PortNumberOfPortPins -->
+										<INTEGER-PARAM-DEF UUID="d2de3d3a-f0e1-430c-9fdc-8fce477f7e2c">
+											<SHORT-NAME>PortNumberOfPortPins</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The number of specified PortPins in this PortContainer.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>1</DEFAULT-VALUE>
+											<MAX>32</MAX>
+											<MIN>1</MIN>
+										</INTEGER-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="2d389e79-9eae-4d97-86c1-a3124bb8eeff">
+											<SHORT-NAME>PortUse</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Controls if the register of specific Port are configured by module Port.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<STRING-PARAM-DEF UUID="228dffd7-c933-42fe-abfd-633e35dd26db">
+											<SHORT-NAME>PortName</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The name of the port. (Should be set by Pre-Configuration)</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>PORT</DEFAULT-VALUE>
+										</STRING-PARAM-DEF>
+										<STRING-PARAM-DEF UUID="8196f92c-3f95-4814-b298-6664cd1cdca4">
+											<SHORT-NAME>PortRegPostfix</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">String used as identifier for the port registers.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>PORT</DEFAULT-VALUE>
+										</STRING-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="d8d103b9-0136-4ca8-8328-6c19ebb70310">
+											<SHORT-NAME>PortAvailablePackage1</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Availability of Port in a speciffic chip pin package </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="2a8d5f01-e97a-43a2-bb5a-6c459fa67d15">
+											<SHORT-NAME>PortAvailablePackage2</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Availability of Port in a speciffic chip pin package </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="9f708591-f400-446d-a09d-3370c7c99a74">
+											<SHORT-NAME>PortAvailablePackage3</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Availability of Port in a speciffic chip pin package </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="a6f038e4-e825-4f20-ad1b-ea8fcb178080">
+											<SHORT-NAME>PortAvailablePackage4</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Availability of Port in a speciffic chip pin package </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="c90685d4-6065-44c3-ad50-f07aa4053482">
+											<SHORT-NAME>PortRegBaseAddr</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The registers base addres of a specific port. </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>4294967295</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="e93bb8a2-6fd0-4bff-906b-500fdfbbd714">
+											<SHORT-NAME>PortRegStructure</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Description how port settings are maped into register.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>PORT_REG_STRUCT_REGULAR_NO_FUNC</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="a673618d-e3d3-46b4-9df7-a032e2a85a0e">
+													<SHORT-NAME>PORT_REG_STRUCT_REGULAR</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>PortRegStructRegular</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="ef4a205d-3ece-4afd-af46-0b9feb839640">
+													<SHORT-NAME>PORT_REG_STRUCT_SHORT</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>PortRegStructShort</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="9a01d50b-ecc9-4fa6-9cda-b2d145e12903">
+													<SHORT-NAME>PORT_REG_STRUCT_REGULAR_SLEW_1</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>PortRegStructRegularSlew1</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="770a058e-888c-4bb7-9528-667803f9960d">
+													<SHORT-NAME>PORT_REG_STRUCT_REGULAR_SLEW_2</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>PortRegStructRegularSlew2</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="febac68e-536e-4db9-859c-99fb841028b6">
+													<SHORT-NAME>PORT_REG_STRUCT_REGULAR_NO_SLEW</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>PortRegStructRegularNoSlew</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="79cb2776-fd3c-44c9-98ce-cda1dc51f3d3">
+													<SHORT-NAME>PORT_REG_STRUCT_REGULAR_NO_FUNC</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>PortRegStructRegularNoFunc</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="8ecd4530-3233-4913-a00b-6256f0bef9f5">
+													<SHORT-NAME>PORT_REG_STRUCT_REGULAR_PERMUTED</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>PortRegStructRegularPermuted</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="0369d223-193c-49a4-81e9-084724e6a5e2">
+													<SHORT-NAME>PORT_REG_STRUCT_MUX</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>PortRegStructMux</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="e0233772-64a1-4b07-8908-4acf622860b8">
+											<SHORT-NAME>PortAvailablePackage0</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Availability of Port in a speciffic chip pin package </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="fed2c357-768f-4c3f-9422-34a789ebf3c7">
+											<SHORT-NAME>PortContainsPrivReg</SHORT-NAME>
+											<LONG-NAME>
+												<L-4 L="EN">Port Contains Privileged Mode Register</L-4>
+											</LONG-NAME>
+											<DESC>
+												<L-2 L="EN">This register have to be set if at least one bit of the registers which are accessed by the Port contains is only writeable when controler is in controllers priveleged mode.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Infromatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: PortPin -->
+										<PARAM-CONF-CONTAINER-DEF UUID="b29f379c-710f-4b7b-a9ac-28f25f4ac918">
+											<SHORT-NAME>PortPin</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configuration of the individual port pins.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: PortPinDirection -->
+												<ENUMERATION-PARAM-DEF UUID="a2a53ddf-befd-4800-bd80-247cb9a59c91">
+													<SHORT-NAME>PortPinDirection</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">The initial direction of the pin (IN or OUT). If the direction is not changeable, the value configured here is fixed.
+
+The direction must match the pin mode. E.g. a pin used for an ADC must be configured to be an in port.
+
+Implementation Type: Port_PinDirectionType</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>PORT_PIN_IN</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="dca03b40-56a8-43ea-9e31-253e0468d2a0">
+															<SHORT-NAME>PORT_PIN_IN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>In</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c7853e32-9d43-4071-9ab5-abc50ef9a9c1">
+															<SHORT-NAME>PORT_PIN_OUT</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Out</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: PortPinDirectionChangeable -->
+												<BOOLEAN-PARAM-DEF UUID="8f162218-0d4c-4d8f-804a-5f039dd44060">
+													<SHORT-NAME>PortPinDirectionChangeable</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Parameter to indicate if the direction is changeable on a port pin during runtime.
+true: Port Pin direction changeable enabled.
+false: Port Pin direction changeable disabled.
+(Not used)</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: PortPinId -->
+												<INTEGER-PARAM-DEF UUID="e2447e49-8305-470e-adfc-6047c3735783">
+													<SHORT-NAME>PortPinId</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Pin Id of the port pin. This value will be assigned to the symbolic name derived from the port pin container short name.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>31</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: PortPinInitialMode -->
+												<ENUMERATION-PARAM-DEF UUID="3ee4079d-2815-4961-b4a7-223d0a471427">
+													<SHORT-NAME>PortPinInitialMode</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Port pin mode/functionality from mode list for use with Port_Init() function.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>PORT_PIN_MODE_DIO</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="1171f8e3-5c9a-494d-afbf-533a36039be1">
+															<SHORT-NAME>PORT_PIN_MODE_DIO</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DIO</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="47bc8b4a-8aad-4746-a923-8c79c965e431">
+															<SHORT-NAME>PORT_PIN_MODE_PWM</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>PWM</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b0c593cd-26bf-4feb-a155-a3863643245f">
+															<SHORT-NAME>PORT_PIN_MODE_ICU</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ICU</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="d503dcbe-62f4-46c4-9845-c0f57b3cca95">
+															<SHORT-NAME>PORT_PIN_MODE_FLEXRAY</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>FR</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b8bdfdd0-276a-477f-89e6-9cd83ff036d3">
+															<SHORT-NAME>PORT_PIN_MODE_CAN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>CAN</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="69ddc8fa-f397-4727-b1bf-cb185296b81d">
+															<SHORT-NAME>PORT_PIN_MODE_LIN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>LIN</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="831b42bb-b99c-48cf-af85-28589cbfe372">
+															<SHORT-NAME>PORT_PIN_MODE_SPI</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SPI</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="6953bdcb-9ca3-410e-895b-0ba1faa87380">
+															<SHORT-NAME>PORT_PIN_MODE_ADC</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ADC</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="70ffa659-90f8-433c-8be3-eddef5e7947e">
+															<SHORT-NAME>PORT_PIN_MODE_ECLK</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ECLK</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="d1bc626b-ff13-4b67-9182-641d470c5a44">
+															<SHORT-NAME>PORT_PIN_MODE_RTP</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="39aa568c-6da0-43e6-8315-6b1abacdf02b">
+															<SHORT-NAME>PORT_PIN_MODE_NOT_CONFIGURABLE</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>n.a.</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="84fefeb5-4e64-44a9-a83d-a453d590a46f">
+															<SHORT-NAME>PORT_PIN_MODE_SCI</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SCI</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="56c90179-7db1-4239-9266-5c0236a474c6">
+															<SHORT-NAME>PORT_PIN_MODE_DMM</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ed106a65-a2f4-4d23-80a3-51319a9d25f6">
+															<SHORT-NAME>PORT_PIN_MODE_USER</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>User Def</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2d1d8c6b-d098-4eb1-b2ee-69346f34f884">
+															<SHORT-NAME>PORT_PIN_MODE_IIC</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>IIC</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: PortPinLevelValue -->
+												<ENUMERATION-PARAM-DEF UUID="dabe2dfc-b2af-4769-ac93-3303872c84db">
+													<SHORT-NAME>PortPinLevelValue</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Port Pin Level value from Port pin list.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>PORT_PIN_LEVEL_LOW</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="fb55d89d-8fc6-48ca-ae26-7b58144f301d">
+															<SHORT-NAME>PORT_PIN_LEVEL_HIGH</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>1</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="180579bc-e494-4c7c-9d55-fbdf85798da0">
+															<SHORT-NAME>PORT_PIN_LEVEL_LOW</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>0</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: PortPinMode -->
+												<ENUMERATION-PARAM-DEF UUID="1a775034-ef44-44d8-a951-9215839d5ca2">
+													<SHORT-NAME>PortPinMode</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Port pin mode from mode list.
+Note that more than one mode is allowed by default. That way it is e.g. possible to combine DIO with another mode such as ICU.
+More HW specific literals may be added by module implementor.
+E.g. SPI may be further broken down into SpiCsHw, SpiCsSw, etc. if necessary. 
+(Not used)</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>PORT_PIN_MODE_DIO</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="33a3d6eb-7649-4a38-8fde-f75fed367f36">
+															<SHORT-NAME>PORT_PIN_MODE_ADC</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ADC</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="03930012-0f68-420c-a3d4-7e33d1a33648">
+															<SHORT-NAME>PORT_PIN_MODE_CAN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>CAN</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="dd96af62-9daf-4fa2-a96d-ac5e76f19fb2">
+															<SHORT-NAME>PORT_PIN_MODE_DIO</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DIO</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5110b708-3bb1-419f-9366-2bce371a5cce">
+															<SHORT-NAME>PORT_PIN_MODE_DIO_GPT</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>GPT</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="bb91ae15-8616-4c19-bbbe-17118157b771">
+															<SHORT-NAME>PORT_PIN_MODE_DIO_WDG</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>WDG</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="1d9d3225-35c4-4439-b27f-c17bcb26d0f7">
+															<SHORT-NAME>PORT_PIN_MODE_FLEXRAY</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>FR</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ff3b2c3d-860f-49a4-a168-efb0f8188b90">
+															<SHORT-NAME>PORT_PIN_MODE_ICU</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ICU</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="7312392f-69b1-4534-8b54-542a7668920a">
+															<SHORT-NAME>PORT_PIN_MODE_LIN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>LIN</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="a7f3f60a-6bd4-43d5-8b0c-96b791dda2a0">
+															<SHORT-NAME>PORT_PIN_MODE_MEM</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MEM</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ce9f3e8b-f0bd-40f3-8126-00141176f155">
+															<SHORT-NAME>PORT_PIN_MODE_PWM</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>PWM</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="d94db61d-1436-4e25-9eb0-0a82bc580bec">
+															<SHORT-NAME>PORT_PIN_MODE_SPI</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SPI</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b8277532-0e44-4180-8f63-fbae3f3768e2">
+															<SHORT-NAME>PORT_PIN_MODE_ECLK</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ECLK</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="4bc61fbb-0caf-4cab-877f-7868076e3cc6">
+															<SHORT-NAME>PORT_PIN_MODE_RTP</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="f89351e1-c76b-4abd-9c32-faf6a4c71a16">
+															<SHORT-NAME>PORT_PIN_MODE_DMM</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="dbff5a82-44ef-4322-a9f8-593061a6c54f">
+															<SHORT-NAME>PORT_PIN_MODE_SCI</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SCI</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2a6682f2-4a1a-4544-95ee-1c364b03e975">
+															<SHORT-NAME>PORT_PIN_MODE_IIC</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>IIC</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<ENUMERATION-PARAM-DEF UUID="2a16f251-245c-4c8d-8daa-fc8015e7e821">
+													<SHORT-NAME>PortPinOpenDrain</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Selection of port output schematic</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>PORT_PUSH_PULL</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="781cb932-5338-4c20-819d-e6a220bdf8a7">
+															<SHORT-NAME>PORT_PUSH_PULL</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Push-Pull</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="3255c918-de34-4765-bf01-2f51c05fc34c">
+															<SHORT-NAME>PORT_OPEN_DRAIN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Open Drain</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<ENUMERATION-PARAM-DEF UUID="c2d36304-42f0-43f6-ace3-a437f9b19cf6">
+													<SHORT-NAME>PortPinPullSelect</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Selection of the polarity of the pull resistor</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>PORT_PULL_UP</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="c469600d-8fbf-4e94-a08b-258914ae9680">
+															<SHORT-NAME>PORT_PULL_DISABLED</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Disabled</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c08c4fbe-4422-470b-9f1f-e31524fa39a8">
+															<SHORT-NAME>PORT_PULL_UP</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Pull-Up</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="128b85e5-7195-44cf-a734-e8080c17a33f">
+															<SHORT-NAME>PORT_PULL_DOWN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Pull-Down</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<BOOLEAN-PARAM-DEF UUID="45eb84cc-e4b3-4251-8c3d-a7f0fad210e0">
+													<SHORT-NAME>PortPinRefresh</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Controls if pin-direction is updated when Port_RefreshPortDirection() is called.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>false</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<STRING-PARAM-DEF UUID="7876db74-483b-49b1-9efb-68e529e9b7f1">
+													<SHORT-NAME>PortPinChannelName</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">The symbolic name of the Port pin. This name is used by Port_SetPinDirection(). 
+If name is not left empty pin is marked as direction-changable.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+												<BOOLEAN-PARAM-DEF UUID="f1f31de6-76b0-4c38-a262-a57fe86f1890">
+													<SHORT-NAME>PortPinAvailablePackage1</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Availability of Port Pin in a speciffic chip pin package </L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>true</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<BOOLEAN-PARAM-DEF UUID="407f5cff-a80d-4d05-9e7f-749c3b4b9652">
+													<SHORT-NAME>PortPinAvailablePackage2</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Availability of Port Pin in a speciffic chip pin package </L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>true</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<BOOLEAN-PARAM-DEF UUID="f78cb984-9d0d-46ec-af34-bd36056df678">
+													<SHORT-NAME>PortPinAvailablePackage3</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Availability of Port Pin in a speciffic chip pin package </L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>true</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<BOOLEAN-PARAM-DEF UUID="d6b141b0-ab22-4a06-a31e-22b07cdfac77">
+													<SHORT-NAME>PortPinAvailablePackage4</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Availability of Port Pin in a speciffic chip pin package </L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>true</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+												<ENUMERATION-PARAM-DEF UUID="f8a3c1bf-b1da-414e-a62e-d682063da6b1">
+													<SHORT-NAME>PortPinSlewRate</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Steepness of the edge in case of a level change</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>PORT_PIN_SLEW_RATE_NA</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="896d48d1-fbd0-4c35-b474-59eba4769d83">
+															<SHORT-NAME>PORT_PIN_SLEW_RATE_NORMAL</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Normal</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="989f8614-379f-4b43-af87-29248c4c23c6">
+															<SHORT-NAME>PORT_PIN_SLEW_RATE_SLOW</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Slow</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="74a32009-e4c5-4a26-ac23-eff73562723e">
+															<SHORT-NAME>PORT_PIN_SLEW_RATE_NA</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>n.a.</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<STRING-PARAM-DEF UUID="e1c16c14-320a-4e22-a10a-fdf218ef09ba">
+													<SHORT-NAME>PortPinName</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Identifiert of the Port Pin on the chip</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>PIN</DEFAULT-VALUE>
+												</STRING-PARAM-DEF>
+												<BOOLEAN-PARAM-DEF UUID="9efc6638-d256-4ba0-bd57-063e80ebb8d4">
+													<SHORT-NAME>PortPinAvailablePackage0</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Availability of Port Pin in a speciffic chip pin package </L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>true</DEFAULT-VALUE>
+												</BOOLEAN-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<PARAM-CONF-CONTAINER-DEF UUID="16cf0ea3-6209-41d2-981e-ad51358a8ee6">
+									<SHORT-NAME>PortDefaultSettings</SHORT-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<BOOLEAN-PARAM-DEF UUID="2fd2817c-55ba-428a-a5b3-8bcc171e4817">
+											<SHORT-NAME>PortUseDefaultSettings</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Activate or deactivate configuration of port pins with default settings for ports that are not configured explicitly.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="b1241932-eea0-4e17-885e-91c3e465eb79">
+											<SHORT-NAME>PortDefaultDirection</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The default direction of the pin (IN or OUT) if not configured otherwise. </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>PORT_PIN_IN</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="804f2b93-edd7-4804-a01e-ed4c7839af78">
+													<SHORT-NAME>PORT_PIN_IN</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>In</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="13b96f4a-2466-4349-b863-7419ca3994b5">
+													<SHORT-NAME>PORT_PIN_OUT</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Out</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="9e8e24cc-f942-4744-afca-a2dcaff8a243">
+											<SHORT-NAME>PortDefaultLevelValue</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Port Pin Default Level value from Port pin list.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>PORT_PIN_LEVEL_LOW</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="7f4e751d-a8ec-4e9e-aa41-a5c9870d093b">
+													<SHORT-NAME>PORT_PIN_LEVEL_HIGH</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>1</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="b2b79357-9941-4265-918d-bfca580fcbd5">
+													<SHORT-NAME>PORT_PIN_LEVEL_LOW</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>0</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="f64cbf73-d4ae-49db-8748-745c12210912">
+											<SHORT-NAME>PortDefaultOpenDrain</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Selection of port output schematic</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>PORT_PUSH_PULL</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="1da191fc-ab34-4258-8962-de7973d2ac1a">
+													<SHORT-NAME>PORT_PUSH_PULL</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Push-Pull</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="d5389948-8a77-49b3-928e-0040c838b42d">
+													<SHORT-NAME>PORT_OPEN_DRAIN</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Open Drain</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="8267c648-1f40-4e7f-82c7-b76cada18c81">
+											<SHORT-NAME>PortDefaultPullSelect</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Selection of the polarity of the pull resistor</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>PORT_PULL_UP</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="76832c7e-9ff7-43e0-ae95-c1bf567da29e">
+													<SHORT-NAME>PORT_PULL_DISABLED</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Disabled</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="274df2ba-1aca-4b94-9098-aed32886d3bd">
+													<SHORT-NAME>PORT_PULL_UP</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Pull-Up</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="846a07fc-b13c-4c50-8a44-50d571e7af16">
+													<SHORT-NAME>PORT_PULL_DOWN</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Pull-Down</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="f3526ac0-c718-4b25-99dd-3c7dab069277">
+											<SHORT-NAME>PortDefaultSlewRate</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Steepness of the edge in case of a level change</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>PORT_PIN_SLEW_RATE_NORMAL</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="9048a4bf-3598-437f-9d27-9c391aeb8053">
+													<SHORT-NAME>PORT_PIN_SLEW_RATE_NORMAL</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Normal</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="4bf3c913-95b0-4bdd-b654-a67ee6ca890a">
+													<SHORT-NAME>PORT_PIN_SLEW_RATE_SLOW</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Slow</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<PARAM-CONF-CONTAINER-DEF UUID="1f45b8b3-635f-40f8-95d2-24f6888581da">
+									<SHORT-NAME>PortMux</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container collecting the Multiplexed Pins.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<STRING-PARAM-DEF UUID="5c611935-fe8b-48d1-99c5-d070b56b00d8">
+											<SHORT-NAME>PortMuxName</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Name of the multiplexer unit.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>Port Multiplexing</DEFAULT-VALUE>
+										</STRING-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="43cfd395-1f8c-4481-a97d-caa32a7c1ca3">
+											<SHORT-NAME>PortMuxNumberOfPins</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Number of multiplexed pins.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>30</DEFAULT-VALUE>
+											<MAX>30</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<STRING-PARAM-DEF UUID="d1a4ff0a-a757-4b02-962e-ee4bc48dcc07">
+											<SHORT-NAME>PortMuxRegPostfix</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Postfix of the register identifer</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>MUX</DEFAULT-VALUE>
+										</STRING-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="1ca38f53-62c0-427a-8134-837b6b820330">
+											<SHORT-NAME>PortMuxRegBaseAddr</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The base address of the multiplexing register </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>4294967295</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<INTEGER-PARAM-DEF UUID="f0c92d5c-c4b2-4a00-b9c4-b743bba49774">
+											<SHORT-NAME>PortMuxNumberOfRegs</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Number of available MUX control registers</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>31</DEFAULT-VALUE>
+											<MAX>31</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="3906a919-54cb-4e43-ae66-0e04fb57b0b0">
+											<SHORT-NAME>PortUseMux</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">By activating a selection of Port Pins can be multipelxed. If deactivated the default settings are used by the controller. In this case multiplex control unit registers are not written </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="b3a11471-0e85-4ce4-9e3d-2de6bcaf08cf">
+											<SHORT-NAME>PortMuxEmifClkOutput</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter has to be enabled in order 
+for the EMIF_CLK signal to be output from the device</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Infromatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="88730f75-7a14-45f3-8aaf-4668dace385b">
+											<SHORT-NAME>PortMuxDisableNhet2OutputByGiob2</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The input function of GIOB[2] is multiplexed with MibSPI3NCS[0] / AD2EVT. This
+signal can be driven in from external monitor circuit to indicate a fault condition, 
+and is internally used to disable the selected PWM outputs from the NHET2 
+module. 
+This setting also allows this signal to be connected to the GIOB[2] port
+pin, which allows the application to generate an interrupt when this fault condition 
+is signaled by the external circuit.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="3cbbc796-6616-48ae-88af-a3d3b4b88338">
+											<SHORT-NAME>PortMuxSelMiiOrRmii</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The Ethernet module supports both the Reudced  Media Independent 
+Interface (RMII) and the  Media Independent Interface (MII)</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>PORT_MUX_SEL_RMII</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="4161e628-f8d1-4b40-a6c6-e4cf726403bc">
+													<SHORT-NAME>PORT_MUX_SEL_RMII</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>RMII</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="e75267b7-bace-47ff-8527-73c997008300">
+													<SHORT-NAME>PORT_MUX_SEL_MII</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>MII</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="5ead0c4c-b877-4761-b97f-e2ea8282529e">
+											<SHORT-NAME>PortMuxSelAdcTriggerTable</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The ADC1 and ADC2 modules support two sets of trigger tables, with 8 trigger 
+options defined in each table. This parameter allows to choose between these trigger tables.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>PORT_MUX_SEL_ADC_TRIG_TABLE_1</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="603a7488-2a13-4df8-9259-82b4e6b94956">
+													<SHORT-NAME>PORT_MUX_SEL_ADC_TRIG_TABLE_1</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Adc Trigger Table 1</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="7e4fcece-581f-487d-be28-4eb06c35448e">
+													<SHORT-NAME>PORT_MUX_SEL_ADC_TRIG_TABLE_2</SHORT-NAME>
+													<LONG-NAME>
+														<L-4>Adc Trigger Table 2</L-4>
+													</LONG-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+									</PARAMETERS>
+									<SUB-CONTAINERS>
+										<PARAM-CONF-CONTAINER-DEF UUID="24e633b2-f953-48dc-986a-051c17578d16">
+											<SHORT-NAME>PortMuxPin</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Configuration of the individual multiplexed pins.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>200</UPPER-MULTIPLICITY>
+											<PARAMETERS>
+												<STRING-PARAM-DEF UUID="92ca8881-e3b1-4d2a-ba40-8671ecdb9373">
+													<SHORT-NAME>PortMuxPinName</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Identifiert of the Port Pin on the chip.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>MUXPIN</DEFAULT-VALUE>
+												</STRING-PARAM-DEF>
+												<ENUMERATION-PARAM-DEF UUID="d7108e7a-6bb3-40a9-9911-8a5e81d50644">
+													<SHORT-NAME>PortMuxPinFunc</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Available pin routing alternativs.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>PORT_PIN_MUX_AD1EVT</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="1e35869e-bd73-4bde-b253-2a8592b6ba37">
+															<SHORT-NAME>PORT_PIN_MUX_AD1EVT</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>AD1EVT</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="6dc1fc28-8940-4fb0-a4e5-cce304ab895c">
+															<SHORT-NAME>PORT_PIN_MUX_MII_RX_ER</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_RX_ER</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5d670d7a-cb60-4cb9-9003-feab95e9e5a2">
+															<SHORT-NAME>PORT_PIN_MUX_RMII_RX_ER</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RMII_RX_ER</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="9ffca5a7-145a-4ecc-8448-8d0783e89696">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="e9b0d1d8-8005-4c20-9dbc-8e9f750d2052">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2572b9ff-b347-43dc-9472-af29a3a40b9d">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="96ab026e-51c9-415c-9fdc-f5e8db2568cd">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="9fa5abb3-3135-428f-84ad-63f0d8b560c4">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_10</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[10]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0ccde0a6-ba7a-4532-8097-aadd54b59007">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_09</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[09]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="27e77de1-6ee6-46ab-9253-1a33de93ca64">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_11</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[11]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="884c0be0-fe73-4f98-8243-a084b69a2051">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_08</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[08]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0b3cfd05-a6ba-4493-b2f8-b05caa0de5eb">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_12</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[12]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5e0f59c9-cf03-4f17-8e4f-a543e969c5fd">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_06</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[06]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="bc299ade-84b7-40a1-a0b7-59c9d22720f2">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_13</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[13]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="4616a213-cff2-4b82-b26a-44083d7f1a57">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_05</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[05]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="abc64c1a-3fce-4a14-9511-f6de68ae0e93">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_14</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[14]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="07bd58db-0730-4669-88aa-e7fb2ee8c965">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_04</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[04]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="8d82103f-6d25-4e5f-95a6-c3863beb6d56">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_15</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[15]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c79d659d-3cae-49d8-8687-42c44ad46497">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_03</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[03]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="3eb500f9-ecbd-4812-9bd4-e5e2fa2f97de">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_16</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[16]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="bb5fa842-0f27-481b-bb07-bcab3ed63c15">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_02</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[02]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="19ff7e38-e3bc-42be-b3a4-d7cd203e4392">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_17</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[17]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="4e430cd6-caa9-4bc9-a224-99c65362cd1e">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_01</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[01]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="e53ae269-460a-482c-b659-01322b934d20">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_18</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[18]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="45837938-afd8-4757-84a2-71d2a9aec121">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="a0a5f410-6fc0-4f7c-b207-411b924e6644">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_19</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[19]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="eff8d367-e8e0-4306-9305-4b56b7f1f0ba">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_nENA</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_nENA</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="6b598ae7-78c2-443a-8b68-73b2ee5e97ab">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_20</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[20]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="f8f99946-76ff-4a4f-971a-68252b1f90c4">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_nSYNC</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_nSYNC</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="36a6ef50-4a32-4ed8-9d24-ee471354885d">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_21</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[21]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="6c500fda-82d3-4b64-82ac-dbfb26d685cf">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_CLK</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_CLK</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="bd1dce0d-eb3f-47ca-90e6-b8bfbae3fd80">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_6</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[6]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="900b29ce-0432-46c3-a454-2e4ab190bacb">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_13</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[13]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0f99274d-db41-41d1-8520-fddf9c150c3e">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_11</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[11]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="f16355fb-9c45-41a4-8e2b-792d79dc8984">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_7</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[7]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="7cbfe516-5e3c-4249-889b-4b3d672dd627">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_12</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[12]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="401c796b-b5ab-454e-9277-3b3c86997e70">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_13</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[13]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2e3c21df-cf0d-4e59-9edf-79a91b2c8851">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_8</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[8]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2f8c2b04-e61d-4596-a2f6-bed88e2cb372">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_11</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[11]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="58b30a65-3ef6-4010-92f1-da22f43abb37">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_15</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[15]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="dffc19f1-e62c-44cf-9a1b-df6cd678516e">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_9</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[9]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="f8f71aca-de4e-4ea1-aad7-3100b706a568">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_10</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[10]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="f51324cb-81ae-45d0-9e76-aa1c2a541d2f">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_BA_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_BA[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ab5184c9-959c-43aa-aa2e-a5a9f302d336">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_5</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[5]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="bdca4939-322d-42c8-877f-6fd595c93bf8">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_nCS_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_nCS[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="22770d10-7a51-4c54-979c-0a8d665d4a8e">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_15</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[15]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="9682c02a-e1d5-4628-a195-3866c1565af0">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_7</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[7]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="150816c4-43a4-4394-981a-7c10bd646a51">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_nCS_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_nCS[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ea75f597-6b41-499c-8102-3129560e6115">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_14</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[14]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="a40be464-ecad-4c95-8dc1-d32ad8cbff6c">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_9</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[9]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="d08475e7-9853-4de8-a429-c18cb387ab7f">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_nCS_4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_nCS[4]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ab9c6f85-0dee-4b88-baf2-339769153284">
+															<SHORT-NAME>PORT_PIN_MUX_RTP_DATA_07</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RTP_DATA[07]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="8945081d-52c0-471d-a3a0-a02ed98d7a87">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_nWE</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_nWE</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c7b6010e-45dc-4992-a3fc-1123427699b6">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_RNW</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_RNW</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="d54726ac-f83e-43ad-86df-0bed4207b25b">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_08</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[08]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5ccb0fd2-4871-41bc-980a-8b0744e06b65">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_5</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[5]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="29d46229-8c19-40b2-8beb-fb90f4e5742a">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_09</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[09]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c7363852-cdeb-4fa2-976c-407a5f60967b">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[4]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5dff94cd-986a-4633-a545-97ab9ec22b70">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_10</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[10]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="1275300a-6b71-4fbd-9083-96ec21607af6">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b8f45b92-45da-481e-aa11-94dbb5a26520">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_11</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[11]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ed93537e-51a8-465b-92f2-f79469bc7651">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_ADDR_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_ADDR[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="70663bcb-401a-4100-bb6b-854d9f0decf0">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_12</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[12]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="1fe5d3f3-fd51-4ce7-a1f4-362fefcecb8d">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_BA_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_BA[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="17b96526-4470-4270-af84-dd688851cef6">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_13</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[13]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ceee4345-71e0-48db-8330-9ce79435e61c">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_nOE</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_nOE</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="a7954cff-6165-4646-835c-cde8ce0be57f">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_14</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[14]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="52bda4a7-03b6-4ef3-a654-9e150b7b7f31">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_nDQM_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_nDQM[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="db0f00bd-adaf-42a2-adfd-bb1cf11a2b79">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_15</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[15]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2665a01d-5b2c-4c3c-b18f-f01fffce13a1">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_nDQM_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_nDQM[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ff981cc8-9100-44ed-bd76-11315d3b8868">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_16</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[16]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="43419f03-5ff5-4477-a566-4279cae57818">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c1e19474-0171-4d27-9820-5cd91c932816">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_17</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[17]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c6335943-476f-4cb3-8bcd-c2b289848b61">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="16713a35-8074-4b68-8b90-3621e964dfe1">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_18</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[18]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="8cea3a9c-e77c-4897-b6dd-3c48e649fef7">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="a157bbc2-2a1f-4d18-b016-d048655e77b1">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_19</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[19]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b8d50fbc-44b8-405a-bb92-6cc004dd4b04">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5fa9c3e7-9f15-4f57-8d74-d68ffef9d0ca">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_20</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[20]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5961730f-9149-4969-8353-18022dcc331d">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[4]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="df1bee53-e94d-4e44-a3d5-5a3c7c9ec6f7">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_21</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[21]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="cce102b2-e842-4b9b-81c4-957a3b27918c">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_5</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[5]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ef982df2-8dbc-450a-a5c5-ecafda539be3">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_22</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[22]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="33fef482-837c-4c8e-8d7d-73fc3eb16469">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_6</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[6]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="588a4596-41d5-4233-bc7a-7757f701f2ce">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_23</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[23]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="67cdf11f-91a8-4157-9fad-c4a8cc986d95">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_7</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[7]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c56655bb-8c94-46bd-87c9-7ce0a1604a96">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_24</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[24]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b8d470a7-15f1-4ac4-9181-86945e3aee8b">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_8</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[8]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="20cd0441-fe49-4b96-be23-137cdd0b175d">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_25</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[25]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c6c2bd34-4226-45e2-9879-8c74352c0098">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_9</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[9]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2bbbd0ae-f695-49d1-abb1-b43473917be6">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_26</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[26]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="148070e1-7d71-477f-8889-f4c9d4b7a43b">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_10</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[10]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="67633608-d97f-45c1-a4b5-a4a1566293e0">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_27</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[27]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="919787a6-8262-489f-8cb1-d18dbd97be48">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_11</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[11]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="3a1aa48f-ae09-451c-905f-b1ba175ed963">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_28</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[28]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="4f73a82e-4e42-4188-9416-330174127198">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_12</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[12]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="035067f8-36bc-4d32-9384-75ab49796181">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_29</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[29]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="35b53a7d-896a-44ed-8a28-115230ec5303">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_13</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[13]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2adff473-420d-47c1-afc2-617baeb1547a">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_30</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[30]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="e2dfe838-10f0-46c1-a5f5-7d140216e246">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_14</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[14]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="325db9c4-4fc6-4926-b2b1-177ba0f3e9c8">
+															<SHORT-NAME>PORT_PIN_MUX_ETMDATA_31</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMDATA[31]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5c69e7f8-c2af-4a9b-89e0-9be53a399870">
+															<SHORT-NAME>PORT_PIN_MUX_EMIF_DATA_15</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EMIF_DATA[15]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0d9de4f8-343e-42fc-924d-8f25b5194913">
+															<SHORT-NAME>PORT_PIN_MUX_ETMTRACECLKIN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>ETMTRACECLKIN</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="960d4dd0-359a-460b-ac63-5f8afec5acb4">
+															<SHORT-NAME>PORT_PIN_MUX_EXTCLKIN2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EXTCLKIN2</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="1dafaed1-81a3-4945-837a-308d0de342b0">
+															<SHORT-NAME>PORT_PIN_MUX_GIOA_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>GIOA[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="9595c5df-7693-43a5-8502-3d6e49c5697f">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="cfa3b291-e5b4-4b0f-9e5b-4ce5a9536028">
+															<SHORT-NAME>PORT_PIN_MUX_GIOA_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>GIOA[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="00b5fc25-676c-4461-868e-845d2eef0233">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="34bdd1a3-d58f-4b97-957d-d61ed340bc39">
+															<SHORT-NAME>PORT_PIN_MUX_GIOA_5</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>GIOA[5]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="beecaaf6-2d76-4b6f-a109-65d74f7fc0a2">
+															<SHORT-NAME>PORT_PIN_MUX_EXTCLKIN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>EXTCLKIN</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="7ef880bb-dd01-4439-a0e5-203c73a104e7">
+															<SHORT-NAME>PORT_PIN_MUX_GIOA_6</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>GIOA[6]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="deb702cf-2e53-43e7-a088-6552a6d7908c">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[4]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="946abe55-a1d0-4546-96da-3e0be90cd162">
+															<SHORT-NAME>PORT_PIN_MUX_GIOA_7</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>GIOA[7]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0567b656-6495-405a-83a2-6268a60d1ba3">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_6</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[6]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="4f1551bc-c732-4bc2-bec5-99fa9745b6de">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI1NCS_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI1NCS[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="dffb2290-06af-485d-a23a-423218f27c3d">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI1SOMI_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI1SOMI[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="554e553f-1719-45ce-9d1f-aeaab91ad2a4">
+															<SHORT-NAME>PORT_PIN_MUX_MII_TXD_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_TXD[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="7e9d06fa-7c3c-48ed-87e3-e70e349c5490">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI1NCS_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI1NCS[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="772c6649-77c3-43b0-bfb3-1751d1170f2f">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_17</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[17]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="aecc065f-452d-40f5-9e6e-4c0ba6f0aebf">
+															<SHORT-NAME>PORT_PIN_MUX_MII_COL</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_COL</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="e00b117a-ae68-46ab-a203-7d1226b66c80">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI1NCS_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI1NCS[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="9bbc4063-aa3a-4995-a30d-5c61775fed0e">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_19</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[19]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b61911a1-184b-4787-82a2-965bf009e93c">
+															<SHORT-NAME>PORT_PIN_MUX_MDIO</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MDIO</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="52c520ff-c023-4163-9e81-75de98677d31">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI1NCS_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI1NCS[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="18b45800-854a-472d-9a6f-e17b40647bc7">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_21</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[21]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="baddae76-3577-4c1e-a43f-5fb528b2f52f">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI1NENA</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI1NENA</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="062a6d46-58d4-4b62-8bdb-30d71294da5f">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_23</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[23]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="09971ace-6175-4ded-9e76-95fafa1fb0c0">
+															<SHORT-NAME>PORT_PIN_MUX_MII_RXD_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_RXD[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="64381487-108b-4de9-b316-8f53445d55f3">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI3NCS_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI3NCS[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="583c4176-4cde-42e0-ad81-7d7405616d0f">
+															<SHORT-NAME>PORT_PIN_MUX_AD2EVT</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>AD2EVT</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="a235887d-9403-4063-9e1a-1443a91a6b20">
+															<SHORT-NAME>PORT_PIN_MUX_GIOB_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>GIOB[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="41064c13-582d-4ccc-89e2-6c3549f4c0c3">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI3NCS_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI3NCS[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="bf282783-bcf8-49a2-ae11-d31bdb6c0b4c">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_25</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[25]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="8f901fb7-a0b7-40e8-835c-c409b498b921">
+															<SHORT-NAME>PORT_PIN_MUX_MDCLK</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MDCLK</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="7b270e35-80a9-48ee-b01b-3ea3b446c81b">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI3NCS_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI3NCS[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="76f02af6-6287-42f5-b3aa-c445ecd754c4">
+															<SHORT-NAME>PORT_PIN_MUX_I2C_SDA</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>I2C_SDA</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="1bacc435-96db-4c02-8187-f149c517cc89">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_27</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[27]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0b5535fe-9735-456c-a191-571e94422a81">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI3NCS_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI3NCS[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="573bde91-bd4f-4f87-a08d-4302c9619106">
+															<SHORT-NAME>PORT_PIN_MUX_I2C_SCL</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>I2C_SCL</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="07d4c2b8-26f4-4700-864e-f9f51de39e22">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_29</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[29]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="fcb4891b-73ea-4552-88b4-1fa0070b2321">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI3NENA</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI3NENA</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="065e4de7-78ac-4e0a-9844-b4b615a31e18">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI3NCS_5</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI3NCS[5]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c8f89ea7-0f4e-4218-8801-dc2879886d98">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_31</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[31]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c0b9e518-aeb7-47b2-9316-ec9f343d53ac">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5CLK</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5CLK</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="f12c1afe-e371-455b-ae91-64b02ee17508">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[4]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="8a7c4d8e-03be-4415-93a0-c03be4beee92">
+															<SHORT-NAME>PORT_PIN_MUX_MII_TXEN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_TXEN</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ed790d96-92d5-4ad1-a7f8-39a58de7ec60">
+															<SHORT-NAME>PORT_PIN_MUX_RMII_TXEN</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RMII_TXEN</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="d4546bbd-966a-4ba2-b81a-0eb8da5234c8">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5NCS_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5NCS[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2f29c909-e359-4af3-8dce-f7522761ebbe">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_5</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[5]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="f65b2d44-8221-4064-bf74-c8cb08732c91">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5NCS_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5NCS[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="adc0bf3c-4c90-4f55-86f1-2f139aa91b99">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_6</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[6]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="22de80ee-50a0-4fb6-b29b-ed9a4060e23b">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5NCS_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5NCS[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="22acbbc0-133c-4fae-b793-359446968cb7">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="3ec818fc-ebf9-4813-93b9-2809e8eda200">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5NCS_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5NCS[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c705dec2-141b-4c95-b359-630f39213bed">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="57d3f909-a44b-4b64-9c54-04e6e4979d19">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5NENA</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5NENA</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="42b1ce76-be9b-41eb-a3ca-716e8827d54f">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_7</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[7]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="12b5567d-a9b9-42b4-bd59-0f1add1ba60a">
+															<SHORT-NAME>PORT_PIN_MUX_MII_RXD_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_RXD[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="96d0d976-41ce-476b-95f0-a2646713d34e">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5SIMO_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5SIMO[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="9b535c74-8197-408e-a040-b3cecfde0029">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_8</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[8]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="16c84d78-a31a-4bc0-9ef1-940a6bb8cf51">
+															<SHORT-NAME>PORT_PIN_MUX_MII_TXD_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_TXD[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="f639f847-fa12-4434-91d9-eb505b23c6b6">
+															<SHORT-NAME>PORT_PIN_MUX_RMII_TXD_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RMII_TXD[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2ac85235-af25-48ee-90fa-bb2c1a33ee82">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5SIMO_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5SIMO[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ba51225c-ff87-453f-82c9-bbc05dbd98ad">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_9</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[9]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="a42a787e-c9fb-4e7a-a404-0db89ab10a94">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5SIMO_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5SIMO[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="33a6681d-d5c9-4fd6-8399-11cd14632f30">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_10</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[10]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="7e388790-c247-4799-93b4-d039648d86ae">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5SIMO_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5SIMO[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b2c80f8b-0b5a-4d1d-b740-02f38c93c24f">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_11</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[11]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="518cd976-7b76-4846-acb8-a998f63dea64">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5SOMI_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5SOMI[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="49854a15-44d3-4dd5-9d1e-7899e3b00612">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_12</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[12]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="209c73ab-be48-4697-bd5c-627e27a78876">
+															<SHORT-NAME>PORT_PIN_MUX_MII_TXD_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_TXD[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="bfcf4f85-2eb5-40e0-9663-c6c64ed9fc95">
+															<SHORT-NAME>PORT_PIN_MUX_RMII_TXD_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RMII_TXD[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="506b182c-8184-495f-9d78-73f4a0d57614">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5SOMI_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5SOMI[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="375d218d-d40c-4031-853a-209397d20153">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_13</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[13]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="23189176-213d-4450-964b-c659f0979290">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5SOMI_2</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5SOMI[2]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b6aa07d0-af2c-4b1a-a457-648d3d3cd36d">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_14</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[14]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0e190e11-be12-441b-aaf2-55f6e680b80e">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI5SOMI_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI5SOMI[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="f8dc0b60-4ecb-4a3e-a6f0-7e7962e59a5e">
+															<SHORT-NAME>PORT_PIN_MUX_DMM_DATA_15</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>DMM_DATA[15]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ee30fb00-8a1c-42e6-84cc-093e11f3219b">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="73f0d780-3269-4c1d-a516-22e16e0417cb">
+															<SHORT-NAME>PORT_PIN_MUX_SPI4CLK</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SPI4CLK</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5414cfa7-0459-4fa0-9356-b64630def380">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_01</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[01]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5283e8b0-1e50-474e-984a-a6e3acf81477">
+															<SHORT-NAME>PORT_PIN_MUX_SPI4NENA</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SPI4NENA</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="fce1783b-e87c-4372-8fa5-00d56f73097f">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_8</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[8]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="95a28cc1-ef7a-4b1b-a923-485588db18e0">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_02</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[02]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="939e3598-9a9d-46a7-a01a-18155928cbda">
+															<SHORT-NAME>PORT_PIN_MUX_SPI4SIMO</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SPI4SIMO</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0d21cc50-a88a-42f1-9a99-24d1e5557915">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_03</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[03]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="6cfa66a0-0f53-42a8-a0b7-e5b81db8194f">
+															<SHORT-NAME>PORT_PIN_MUX_SPI4NCS_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SPI4NCS[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="76557484-ade3-41b4-a4fa-ada291c56d1e">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_10</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[10]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c932e4f8-7a69-4132-9882-9f59ec179107">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_05</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[05]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="3651e59f-c12a-449b-8637-52e32e545bbb">
+															<SHORT-NAME>PORT_PIN_MUX_SPI4SOMI</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SPI4SOMI</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="9372c750-63b3-4bac-92c5-06b24d5ac313">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_12</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[12]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="eb7b057a-6f57-42b9-a879-871a5fa32733">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_06</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[06]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="ef2d874f-227f-4798-9aa3-1b2872a8ad6e">
+															<SHORT-NAME>PORT_PIN_MUX_SCIRX</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SCIRX</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="e8d4c79f-a29c-4f56-9b8a-02977565ab31">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_07</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[07]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="7b0826a4-508c-4273-a45a-2f2398739954">
+															<SHORT-NAME>PORT_PIN_MUX_Reserved</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Reserved</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0513fcf5-001d-478d-b484-17d696508d3a">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_14</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[14]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="e030c082-2735-44fa-81d1-88e427267f33">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_08</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[08]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="31e7bc25-6e84-4fbb-8cbb-078a050b9155">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI1SIMO_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI1SIMO[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="644f86a9-8fbb-4387-9fc5-7c9f52f00fd4">
+															<SHORT-NAME>PORT_PIN_MUX_MII_TXD_3</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_TXD[3]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="cf6ce2ca-17eb-4d9a-b743-aded5610dc0a">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_09</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[09]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="11bd84c3-9b03-4582-bafe-c434f897f878">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_16</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[16]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c09eae4a-41cd-4f6f-a80b-59aafedb1db6">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_10</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[10]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="73afe181-d9a8-47a5-91f4-394f47ef5e00">
+															<SHORT-NAME>PORT_PIN_MUX_MII_TX_CLK</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_TX_CLK</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5fd9e27c-6755-4737-b171-37e2c0f3d1bd">
+															<SHORT-NAME>PORT_PIN_MUX_MII_TX_AVCLK4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_TX_AVCLK4</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="55f3a85e-a4e5-4b2a-b585-678424ebe164">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_11</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[11]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="4376692d-8d50-4d75-a9c7-1a35f9b39f2c">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI3NCS_4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI3NCS[4]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="94302bd7-615e-478e-a3f2-b52eb4a56ac0">
+															<SHORT-NAME>PORT_PIN_MUX_NHET2_18</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET2[18]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="b374aa46-1b79-4ec0-a4d4-fb428e6a17fe">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_12</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[12]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="0e30c615-3b3e-4e72-9275-4dfb22858396">
+															<SHORT-NAME>PORT_PIN_MUX_MII_CRS</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_CRS</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="e37bf22c-0e46-4e11-9f33-745bbb1e18c1">
+															<SHORT-NAME>PORT_PIN_MUX_RMII_CRS_DV</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RMII_CRS_DV</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="175aa152-3b7f-4d9d-8d5c-1799cbbc3f96">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_13</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[13]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="9dda865e-e7b7-4c07-9d79-11da3733ae1b">
+															<SHORT-NAME>PORT_PIN_MUX_SCITX</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SCITX</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="32a3ff7e-0c01-4143-8710-951fa8bd1f12">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_15</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[15]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="2d7974c1-dc34-4106-9926-5cbf8c75e898">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI1NCS_4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI1NCS[4]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="294b3ccf-1606-422e-a8e7-5e09033e7102">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_24</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[24]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="c67d545b-ca63-4fc6-83dc-4e2adfcab4b3">
+															<SHORT-NAME>PORT_PIN_MUX_MIBSPI1NCS_5</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MIBSPI1NCS[5]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="1002feb8-abfe-471b-897f-fc2091f4ebe9">
+															<SHORT-NAME>PORT_PIN_MUX_MII_RXD_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_RXD[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="289b10c2-e8a0-45b3-9f7e-023568d86654">
+															<SHORT-NAME>PORT_PIN_MUX_RMII_RXD_0</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RMII_RXD[0]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="a4aac19e-5c2f-4551-96fc-b4e7fb7bafc3">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_26</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[26]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="07d1d956-8fb2-4a68-bde6-85f37884b0b4">
+															<SHORT-NAME>PORT_PIN_MUX_MII_RXD_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_RXD[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="6bb8fa4e-ce17-4f1e-91ca-683afc047b55">
+															<SHORT-NAME>PORT_PIN_MUX_RMII_RXD_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RMII_RXD[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="62f21b5b-a30e-4e0f-bf67-7fb0cadc7616">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_28</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[28]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="9ad91385-0375-4667-85b8-a46647952a78">
+															<SHORT-NAME>PORT_PIN_MUX_MII_RXCLK</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_RXCLK</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="9c1ee524-1003-4e8a-93f8-3f07f06a5eea">
+															<SHORT-NAME>PORT_PIN_MUX_RMII_REFCLK</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>RMII_REFCLK</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="141a55b4-abff-4f83-b584-25e77e453c0f">
+															<SHORT-NAME>PORT_PIN_MUX_MII_RX_AVCLK4</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_RX_AVCLK4</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="89806726-fb8a-45d4-bd81-7ed68b9e9c46">
+															<SHORT-NAME>PORT_PIN_MUX_NHET1_30</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>NHET1[30]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="5197d435-3e17-4dcd-b293-553fda87bdc4">
+															<SHORT-NAME>PORT_PIN_MUX_MII_RX_DV</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>MII_RX_DV</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="7a80d74d-bc17-4d3b-911f-ab3b09c57925">
+															<SHORT-NAME>PORT_PIN_MUX_SPI2NENA</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SPI2NENA</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="1d3d9825-58d3-44a0-8eaf-66761d9f5dbc">
+															<SHORT-NAME>PORT_PIN_MUX_SPI2NCS_1</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>SPI2NCS[1]</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<INTEGER-PARAM-DEF UUID="6d78c920-e111-4f75-8808-4cf8ba8f2e0c">
+													<SHORT-NAME>PortMuxPinId</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Register offset of the Mux pin</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>31</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+												<INTEGER-PARAM-DEF UUID="a4a589eb-77bf-428e-833d-b067348f8662">
+													<SHORT-NAME>PortMuxPinRegId</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This value represents the location of the MUX Pin within the Mux registers.
+1st to digests are the number of the MUX register (0 - 30).
+Last digit os the associated byte within the register (0 - 3).</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>30</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+												<DERIVED-STRING-PARAM-DEF UUID="440e8af4-afb5-4e71-94ba-acca53963d80">
+													<SHORT-NAME>PortMuxPinNumberPackage0</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Identifer of the physical pin for package 0</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>-</DEFAULT-VALUE>
+												</DERIVED-STRING-PARAM-DEF>
+												<DERIVED-STRING-PARAM-DEF UUID="116ed711-6d31-46ec-b3ea-d576c086d832">
+													<SHORT-NAME>PortMuxPinNumberPackage1</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Identifer of the physical pin for package 1</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>-</DEFAULT-VALUE>
+												</DERIVED-STRING-PARAM-DEF>
+												<DERIVED-STRING-PARAM-DEF UUID="73f22df4-96b3-4c7d-abdc-da738ffe635b">
+													<SHORT-NAME>PortMuxPinNumberPackage2</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Identifer of the physical pin for package 2</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>-</DEFAULT-VALUE>
+												</DERIVED-STRING-PARAM-DEF>
+												<DERIVED-STRING-PARAM-DEF UUID="ead6de2c-70a3-4a67-9771-266b8817fdd9">
+													<SHORT-NAME>PortMuxPinNumberPackage3</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Identifer of the physical pin for package 3</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>-</DEFAULT-VALUE>
+												</DERIVED-STRING-PARAM-DEF>
+												<DERIVED-STRING-PARAM-DEF UUID="b343164a-b80a-43fd-8dbb-a65487d4d973">
+													<SHORT-NAME>PortMuxPinNumberPackage4</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Identifer of the physical pin for package 4</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>-</DEFAULT-VALUE>
+												</DERIVED-STRING-PARAM-DEF>
+												<ENUMERATION-PARAM-DEF UUID="937ce55f-eed6-42d1-a341-595c939b6f62">
+													<SHORT-NAME>PortMuxPinDirection</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">The direction of the MUXed signal line (Input, Output)</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>PORT_MUX_PIN_DIR_OUTPUT</DEFAULT-VALUE>
+													<LITERALS>
+														<ENUMERATION-LITERAL-DEF UUID="7ed3c6f1-bdab-427e-b809-fa3006b6f4ec">
+															<SHORT-NAME>PORT_MUX_PIN_DIR_OUTPUT</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Output</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+														<ENUMERATION-LITERAL-DEF UUID="56d67b30-ab6a-4c5f-b9af-d9d9c78423b3">
+															<SHORT-NAME>PORT_MUX_PIN_DIR_INPUT</SHORT-NAME>
+															<LONG-NAME>
+																<L-4>Input</L-4>
+															</LONG-NAME>
+														</ENUMERATION-LITERAL-DEF>
+													</LITERALS>
+												</ENUMERATION-PARAM-DEF>
+												<INTEGER-PARAM-DEF UUID="a75c4a79-2937-4147-9623-47434aa69687">
+													<SHORT-NAME>PortMuxPinRegPos</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Start bit of the pin within the corresponding MUX control register</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>0</DEFAULT-VALUE>
+													<MAX>24</MAX>
+													<MIN>0</MIN>
+												</INTEGER-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: PortGeneral -->
+						<PARAM-CONF-CONTAINER-DEF UUID="13120e1c-56a5-47c7-a667-05154ded8e26">
+							<SHORT-NAME>PortGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Module wide configuration parameters of the PORT driver.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: PortDevErrorDetect -->
+								<BOOLEAN-PARAM-DEF UUID="eda6a601-9285-42f1-b40e-a1f9f1481505">
+									<SHORT-NAME>PortDevErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the Development Error Detection and Notification on or off.
+true: Enabled.
+false: Disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PortSetPinDirectionApi -->
+								<BOOLEAN-PARAM-DEF UUID="99bda3cc-8a4d-43a3-aca2-70e0129b81aa">
+									<SHORT-NAME>PortSetPinDirectionApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Pre-processor switch to enable / disable the use of the function Port_SetPinDirection().
+TRUE: Enabled - Function Port_SetPinDirection() is available.
+FALSE: Disabled - Function Port_SetPinDirection() is not available.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PortSetPinModeApi -->
+								<BOOLEAN-PARAM-DEF UUID="52a94fea-c6ce-4e5b-a1a5-932634a53b91">
+									<SHORT-NAME>PortSetPinModeApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Pre-processor switch to enable / disable the use of the function Port_SetPinMode().
+true: Enabled - Function Port_SetPinMode() is available.
+false: Disabled - Function Port_SetPinMode() is not available.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: PortVersionInfoApi -->
+								<BOOLEAN-PARAM-DEF UUID="4af3eb66-c9d0-46e5-b8e7-e51476b106d0">
+									<SHORT-NAME>PortVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Pre-processor switch to enable / disable the API to read out the modules version information.
+true: Version info API enabled.
+false: Version info API disabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="01044217-9061-4f82-aa4e-2d6f1f9a2e2f">
+									<SHORT-NAME>PortRefreshPortDirectionApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Pre-processor switch to enable / disable the API to refresh the port direction.
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="54a7a94c-f656-4b9d-90b3-ff7fb1a07049">
+									<SHORT-NAME>PortCfgDoParamChk</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch if parameter checking is activated in development mode.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="fbe02dbe-7a0b-412a-9b73-81c4660fc004">
+									<SHORT-NAME>PortCfgChkUninit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Activate/deactivate check if module Port is uninitialized when calling a service.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="21ed0975-c850-4804-ad17-94c6f93c3290">
+									<SHORT-NAME>PortCfgChkParamPin</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch which enables/disables the checking of the pin parameter of Port_SetPinDirection in development mode.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="fcae8106-8e21-44ff-862c-2011322f4eb4">
+									<SHORT-NAME>PortCfgChkParamVinfo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch which enables/disables the checking of the parameter of Port_GetVersionInfo in development mode.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="bab29a51-b296-43aa-bf73-e2f567bff993">
+									<SHORT-NAME>PortCfgChkParamConfig</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch if checking  of config parameter of Port_Init is activated in development mode.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<FUNCTION-NAME-DEF UUID="546524fb-16b9-4b00-bf6f-e5ae3082109e">
+									<SHORT-NAME>PortErrorhook</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Function which is called in case of Development Error</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det_ReportError</DEFAULT-VALUE>
+								</FUNCTION-NAME-DEF>
+								<STRING-PARAM-DEF UUID="afb27d12-1331-4159-a463-2a5bc482c84d">
+									<SHORT-NAME>PortDetIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The include file of the Development Error Tracer. Shall be used to specify a special Det module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="1768d37f-26e5-40d1-b45b-16754f44071e">
+									<SHORT-NAME>PortCfgDebugReporting</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Activate or deactivate if recognized development errors are reported to Det</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="42e753cd-13eb-485f-99d4-10064105ae6c">
+									<SHORT-NAME>PortPackageMapping0</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mapping from Pin Package Name to abstract Pinpackage Identifer </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Pin_337</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="42e753cd-13eb-485f-99d4-19364105ae6c">
+									<SHORT-NAME>PortPackageMapping1</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mapping from Pin Package Name to abstract Pinpackage Identifer </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Pin_324</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="08432dd7-b9e6-42c3-b4c4-06b24b6190de">
+									<SHORT-NAME>PortPackageMapping2</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mapping from Pin Package Name to abstract Pinpackage Identifer </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Pin_256</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="0305202b-6d4a-4c06-8667-a598569d81dd">
+									<SHORT-NAME>PortPackageMapping3</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mapping from Pin Package Name to abstract Pinpackage Identifer </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Pin_176</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="1aa10b8e-dfbe-43ab-8e43-188e5ddf6f32">
+									<SHORT-NAME>PortPackageMapping4</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Mapping from Pin Package Name to abstract Pinpackage Identifer </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Pin_144</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="2c25d0ce-b494-4b29-acb8-d7db16aa6ad9">
+									<SHORT-NAME>PortSpecialRegisterAccessEnabled</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Register Access Via OS Functions</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">Enables/disables all access to the periphery register via a special function. The special function allows the access to the registers even if they are protected by MPU or supervisor mode. The function shall be provided by the Os.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="c95d7349-1107-4d73-94af-b2eadaa626e8">
+									<SHORT-NAME>PortSpecialRegisterAccessOnlyForWrite</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Special Register Access Only For Write</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter disables the usage of the special function to access the periphery registers for the read access.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="93575a54-889a-4560-9b03-17ceb9f8a7a7">
+									<SHORT-NAME>PortSpecialRegisterAccessOnlyForPrivilegedModeRegisters</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Special Register Access Only For Privileged Mode Registers</L-4>
+									</LONG-NAME>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="6f34e539-2bbb-4a0d-b8ee-0f8a66c9e662">
+									<SHORT-NAME>PortSpecialRegisterAccessNotInInit</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Special Register Access Not During Initialization</L-4>
+									</LONG-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter disables the usage of the special function to access the periphery registers during the initialization</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<REFERENCE-PARAM-DEF UUID="8c0536da-1d5d-462e-9b93-c5f6eaa3a6a8">
+									<SHORT-NAME>PortIrqHandling</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Determines the IRQ function set which is used to protect critical sections.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="74ecf1df-a7ab-45e0-9072-c17f2c191281">
+							<SHORT-NAME>VectorCommonData</SHORT-NAME>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="5046f9fc-7c8c-40b1-9e31-0a534b3e890a">
+									<SHORT-NAME>BswmdVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter specifies the version of this bswmd file.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1.03.00</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<BSW-IMPLEMENTATION UUID="a351b62d-1a0a-4c3f-87ce-ca10385db535">
+					<SHORT-NAME>Port_Impl</SHORT-NAME>
+					<CODE-GENERATOR>cMICROSAR</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>1</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>1</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>0</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>3</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>0</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>1</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Port_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/Port_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/Port</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

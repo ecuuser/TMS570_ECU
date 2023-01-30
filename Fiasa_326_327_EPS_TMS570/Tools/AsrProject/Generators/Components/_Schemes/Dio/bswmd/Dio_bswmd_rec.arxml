@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+============================================================================
+This file is generated with Eparm 2.0.3.5
+Date: Mon, 14 Jun 2010 09:57:40 GMT
+============================================================================
+-->
+<AUTOSAR xmlns="http://autosar.org/3.1.4">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="75147078-7020-4186-84bf-880081c069bd">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-CONFIGURATION UUID="9d1740e4-20b2-4029-89f2-cdd4de4383a8">
+					<SHORT-NAME>Dio_Rec</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Default values for hardware specific parameters</L-2>
+					</DESC>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/Dio</DEFINITION-REF>
+					<CONTAINERS>
+						<CONTAINER UUID="659b2f64-6980-43cd-acaf-132767df4842">
+							<SHORT-NAME>MyDioPortGioA</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dio/DioPort</DEFINITION-REF>
+							<REFERENCE-VALUES>
+								<REFERENCE-VALUE>
+									<DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/Dio/DioPort/DioPortDefRef</DEFINITION-REF>
+									<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Dio/DioPortGioA</VALUE-REF>
+								</REFERENCE-VALUE>
+							</REFERENCE-VALUES>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="e7f102d4-ec1c-4cd8-be97-8a61f0bf5fa2">
+									<SHORT-NAME>DioChannel</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dio/DioPort/DioChannel</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<INTEGER-VALUE>
+											<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/Dio/DioPort/DioChannel/DioChannelId</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</INTEGER-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+								<CONTAINER UUID="30a7424b-dd77-4e1a-ab3e-703d3ce57b98">
+									<SHORT-NAME>DioChannelGroup</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dio/DioPort/DioChannelGroup</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/Dio/DioPort/DioChannelGroup/DioChannelGroupIdentification</DEFINITION-REF>
+											<VALUE>&amp;DioChannelGroup</VALUE>
+										</STRING-VALUE>
+										<INTEGER-VALUE>
+											<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/Dio/DioPort/DioChannelGroup/DioPortMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</INTEGER-VALUE>
+										<INTEGER-VALUE>
+											<DEFINITION-REF DEST="INTEGER-PARAM-DEF">/MICROSAR/Dio/DioPort/DioChannelGroup/DioPortOffset</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</INTEGER-VALUE>
+									</PARAMETER-VALUES>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<AUTOSAR xmlns="http://autosar.org/3.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.0.1 AUTOSAR.xsd">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:91795653-8083-4d32-b1af-fb971e617c02">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-CONFIGURATION UUID="0ed47de4-cf9a-40a6-8f3c-44e2970e2a5d">
+					<SHORT-NAME>SchM_Rec</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">Configuration of the SchM (BSW Scheduler) module.</L-2>
+					</DESC>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/SchM</DEFINITION-REF>
+					<IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+					<CONTAINERS>
+						<CONTAINER UUID="c1f1cfb3-314e-4b2f-b616-b095da54cdfa">
+							<SHORT-NAME>Can</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleLiteral</DEFINITION-REF>
+									<VALUE>Can</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleInclude</DEFINITION-REF>
+									<VALUE>Can.h</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleConfigVersion</DEFINITION-REF>
+									<VALUE>1.0.0</VALUE>
+								</STRING-VALUE>
+							</PARAMETER-VALUES>
+							<REFERENCE-VALUES>
+								<REFERENCE-VALUE>
+									<DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleImplementationRef</DEFINITION-REF>
+									<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_Tms470Dcan/Can_Impl</VALUE-REF>
+								</REFERENCE-VALUE>
+							</REFERENCE-VALUES>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="2c892cf3-392c-40c2-a53d-f9301f37da47">
+									<SHORT-NAME>SCHM_CAN_INSTANCE_0</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/SchMInstanceLiteral</DEFINITION-REF>
+											<VALUE>SCHM_CAN_INSTANCE_0</VALUE>
+										</STRING-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="502f2e82-2ddf-45f1-99ea-a0162361b67f">
+											<SHORT-NAME>CAN_EXCLUSIVE_AREA_0</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CAN_EXCLUSIVE_AREA_0</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+													<VALUE>Using to secure atomic Hardware access. this Area should be protected with global interrupt locks.</VALUE>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="0d79319d-0fdc-4f19-80b6-288051200bbd">
+											<SHORT-NAME>CAN_EXCLUSIVE_AREA_1</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CAN_EXCLUSIVE_AREA_1</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+													<VALUE>Using inside Can_DisableControllerInterrupts() and Can_EnableControllerInterrupts() to secure Interrupt counters for nested calls. - Duration is short (less than 30 instructions) - No API calls inside - Disable global interrupts</VALUE>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="0d79319d-0fdc-4f19-80b6-288051200bbd">
+											<SHORT-NAME>CAN_EXCLUSIVE_AREA_2</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CAN_EXCLUSIVE_AREA_2</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+													<VALUE>Using inside Can_Write() to secure software states of transmit objects. (Only when no Vector CAN Interface is used - Duration is medium (less than 100 instructions) - No calls inside - Disable global interrupts - or - Disable CAN interrupts and does not call function reentrant.</VALUE>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="0d79319d-0fdc-4f19-80b6-288051200bbd">
+											<SHORT-NAME>CAN_EXCLUSIVE_AREA_3</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CAN_EXCLUSIVE_AREA_3</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+													<VALUE>Using inside Tx confirmation to secure state of transmit object in case of cancelation. - Duration is medium (less 100 instructions) - Call to CanIf_CancelTxConfirmation() inside - Disable global interrupts - or - Disable CAN interrupts and do not call function Can_Write() within.</VALUE>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="0d79319d-0fdc-4f19-80b6-288051200bbd">
+											<SHORT-NAME>CAN_EXCLUSIVE_AREA_4</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CAN_EXCLUSIVE_AREA_4</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+													<VALUE>Using inside received data handling (Rx Queue treatment) to secure Rx Queue counter and data. -Duration is short (less than 20 instructions) - No calls inside - Disable Global Interrupts - or - Disable all CAN interrupts.</VALUE>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="083ed51c-21f3-4d01-acaf-d5026cf45b92">
+											<SHORT-NAME>CAN_EXCLUSIVE_AREA_5</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CAN_EXCLUSIVE_AREA_5</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+													<VALUE>Using inside wakeup handling to secure state transition. -Duration is short (less 20 instructions) -Call to DET inside - Disable global interrupts (do no use here CAN interrupt locks)</VALUE>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+										<CONTAINER UUID="2898a81c-3577-4a39-ae3c-f65e4cd14d9f">
+											<SHORT-NAME>CAN_EXCLUSIVE_AREA_6</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>CAN_EXCLUSIVE_AREA_6</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+													<VALUE>Using inside Can_SetControllerMode() and BusOff to secure state transition. -Duration is medium (less than 100 instructions); No calls inside - Disable global interrupts (do not use CAN interrupt locks here, except the API for one controller is not called in a context higher than the CAN interrupt)</VALUE>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+						<CONTAINER UUID="1db4c006-a5d9-4ce6-b694-1f5ed3235171">
+							<SHORT-NAME>Can_MainFunction_Write</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMMainFunctionSymbol</DEFINITION-REF>
+									<VALUE>Can_MainFunction_Write</VALUE>
+								</STRING-VALUE>
+							</PARAMETER-VALUES>
+							<REFERENCE-VALUES>
+								<REFERENCE-VALUE>
+									<DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMModuleRef</DEFINITION-REF>
+									<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/SchM_Rec/Can</VALUE-REF>
+								</REFERENCE-VALUE>
+							</REFERENCE-VALUES>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="5c3244a1-19ba-4679-a1ff-b2f9c15d691f">
+									<SHORT-NAME>SchMBswEvent</SHORT-NAME>
+									<DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="ad956ca5-45e1-4f42-9892-aceb78f85de3">
+											<SHORT-NAME>SchMBswTimingEvent</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswTimingEvent</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<FLOAT-VALUE>
+													<DEFINITION-REF DEST="FLOAT-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswTimingEvent/SchMMainFunctionPeriod</DEFINITION-REF>
+													<VALUE>0.01</VALUE>
+												</FLOAT-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+						<CONTAINER UUID="1beb7cd9-f62c-4231-9d56-f7f515ef737d">
+							<SHORT-NAME>Can_MainFunction_Read</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMMainFunctionSymbol</DEFINITION-REF>
+									<VALUE>Can_MainFunction_Read</VALUE>
+								</STRING-VALUE>
+							</PARAMETER-VALUES>
+							<REFERENCE-VALUES>
+								<REFERENCE-VALUE>
+									<DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMModuleRef</DEFINITION-REF>
+									<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/SchM_Rec/Can</VALUE-REF>
+								</REFERENCE-VALUE>
+							</REFERENCE-VALUES>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="f1e88ee3-40ee-4e14-9038-f9f31542e40e">
+									<SHORT-NAME>SchMBswEvent</SHORT-NAME>
+									<DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="442ad707-0ac5-4178-a35e-76182fa0c764">
+											<SHORT-NAME>SchMBswTimingEvent</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswTimingEvent</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<FLOAT-VALUE>
+													<DEFINITION-REF DEST="FLOAT-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswTimingEvent/SchMMainFunctionPeriod</DEFINITION-REF>
+													<VALUE>0.01</VALUE>
+												</FLOAT-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+						<CONTAINER UUID="22d90d1a-cc45-4866-8a03-463abaa9e572">
+							<SHORT-NAME>Can_MainFunction_BusOff</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMMainFunctionSymbol</DEFINITION-REF>
+									<VALUE>Can_MainFunction_BusOff</VALUE>
+								</STRING-VALUE>
+							</PARAMETER-VALUES>
+							<REFERENCE-VALUES>
+								<REFERENCE-VALUE>
+									<DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMModuleRef</DEFINITION-REF>
+									<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/SchM_Rec/Can</VALUE-REF>
+								</REFERENCE-VALUE>
+							</REFERENCE-VALUES>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="c51f364f-9c01-44d7-b6ab-e640ff410f98">
+									<SHORT-NAME>SchMBswEvent</SHORT-NAME>
+									<DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="c694519f-1142-48e7-a5ec-4c196353bfcf">
+											<SHORT-NAME>SchMBswTimingEvent</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswTimingEvent</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<FLOAT-VALUE>
+													<DEFINITION-REF DEST="FLOAT-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswTimingEvent/SchMMainFunctionPeriod</DEFINITION-REF>
+													<VALUE>0.01</VALUE>
+												</FLOAT-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+						<CONTAINER UUID="7008659e-5fb2-495a-aed1-9557a2918b20">
+							<SHORT-NAME>Can_MainFunction_Wakeup</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMMainFunctionSymbol</DEFINITION-REF>
+									<VALUE>Can_MainFunction_Wakeup</VALUE>
+								</STRING-VALUE>
+							</PARAMETER-VALUES>
+							<REFERENCE-VALUES>
+								<REFERENCE-VALUE>
+									<DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMModuleRef</DEFINITION-REF>
+									<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/SchM_Rec/Can</VALUE-REF>
+								</REFERENCE-VALUE>
+							</REFERENCE-VALUES>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="60f5e631-92fa-4b44-b536-1bf377355416">
+									<SHORT-NAME>SchMBswEvent</SHORT-NAME>
+									<DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="7bdc883e-e411-4679-9705-79bce070752a">
+											<SHORT-NAME>SchMBswTimingEvent</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswTimingEvent</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<FLOAT-VALUE>
+													<DEFINITION-REF DEST="FLOAT-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswTimingEvent/SchMMainFunctionPeriod</DEFINITION-REF>
+													<VALUE>0.01</VALUE>
+												</FLOAT-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

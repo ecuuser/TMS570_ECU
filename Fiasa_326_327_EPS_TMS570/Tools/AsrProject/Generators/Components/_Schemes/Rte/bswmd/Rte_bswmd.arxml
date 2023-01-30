@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/3.2.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:d6183488-d7cc-473a-801f-c8026bf0547a">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="DCE:2b2a53fe-fe06-4386-b886-46bc29ddda52">
+					<SHORT-NAME>Rte_Impl</SHORT-NAME>
+					<CODE-GENERATOR>DVRteGen</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>2</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>19</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>1</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>2</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>4</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>0</AR-PATCH-VERSION>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/Rte</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-DEF UUID="DCE:3322203c-890a-443f-9b91-8c2ee51272db">
+					<SHORT-NAME>Rte</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of the Rte (Runtime Environment) module.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.0.1</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissi</ISSUED-BY>
+								<DATE>2008-03-10T15:33:27</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Initial Creation for AUTOSAR 3.0 </L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>3.2.1</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vissi</ISSUED-BY>
+								<DATE>2011-04-26T14:22:22</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Support for AUTOSAR 3.2.1</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/Rte</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Parameter Container Definition: ComponentTypeCalibration -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:fbcb8ae6-0a12-4218-8628-69ebb88816bf">
+							<SHORT-NAME>ComponentTypeCalibration</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Specifies for each CalprmComponentType or AtomicSoftwareComponentType whether calibration is enabled.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: CalibrationSupportEnabled -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:9887f0e3-76a0-45d1-be61-17425df24fe8">
+									<SHORT-NAME>CalibrationSupportEnabled</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables calibration support for the specified CalprmComponentType or AtomicSoftwareComponentType.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<!-- Foreign Reference Definition: ComponentTypeRef -->
+								<FOREIGN-REFERENCE-PARAM-DEF UUID="DCE:87dd0922-d9c4-4c11-96c5-18364b4c8492">
+									<SHORT-NAME>ComponentTypeRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Reference to the CalprmComponentType or AtomicSoftwareComponentType.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-TYPE>ComponentType</DESTINATION-TYPE>
+								</FOREIGN-REFERENCE-PARAM-DEF>
+							</REFERENCES>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: RteGeneration -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:ef50bb86-2186-410a-aa67-2444e8b5bb4e">
+							<SHORT-NAME>RteGeneration</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container holds the parameters for the configuration of the RTE Generation.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: RteCalibrationSupport -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:a2941b29-d13c-451d-8484-57e45433ecf9">
+									<SHORT-NAME>RteCalibrationSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The RTE generator shall have the option to switch off support for calibration for generated RTE code. This option shall influence complete RTE code at once.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:fb607164-a501-4041-b28c-d0334c456b89">
+											<SHORT-NAME>DOUBLE_POINTERED</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:7dcfd96b-588e-43fd-8c1e-5ece6d599a3e">
+											<SHORT-NAME>INITIALIZED_RAM</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:8d4927e0-356a-41ea-9ec0-43b6e9edade2">
+											<SHORT-NAME>NONE</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:cb07a41c-0bae-475f-92dc-c3c2ba4c1c83">
+											<SHORT-NAME>SINGLE_POINTERED</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: RteGenerationMode -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:8285cfbf-71ac-4725-8ff0-96a591210af6">
+									<SHORT-NAME>RteGenerationMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch between the two available generation modes of the RTE generator.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:6a42141a-3155-4717-9ddf-ee374a97f59d">
+											<SHORT-NAME>COMPATIBILITY_MODE</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:af11da3e-1972-4f7b-b7b6-b8e9ceb687d3">
+											<SHORT-NAME>VENDOR_MODE</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: RteMeasurementSupport -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:a1eee348-270e-4f7b-906b-4c25b026ea1b">
+									<SHORT-NAME>RteMeasurementSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The RTE generator shall have the option to switch off support for measurement for generated RTE code. This option shall influence complete RTE code at once.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: RteOptimizationMode -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:18cb3229-a286-4cba-a4ef-22ccdc8052ea">
+									<SHORT-NAME>RteOptimizationMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch between the two available optimization modes of the RTE generator.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:262ffce7-106c-4f5b-b38e-b286f89a5477">
+											<SHORT-NAME>MEMORY</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:fc574a13-c4f7-4236-9f2b-fee829f1d27c">
+											<SHORT-NAME>RUNTIME</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: RteVfbTrace -->
+								<INTEGER-PARAM-DEF UUID="DCE:6f967c5c-508e-4857-881a-5b2513deb5ba">
+									<SHORT-NAME>RteVfbTrace</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The RTE generator shall globally enable VFB tracing when RTE_VFB_TRACE is defined in the RTE configuration header file as a non-zero integer.
+The RTE generator shall globally disable VFB tracing when RTE_VFB_TRACE is defined in the RTE configuration header file as 0.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: RteVfbTraceFunction -->
+								<FUNCTION-NAME-DEF UUID="DCE:24c40ba4-07b8-4110-83fc-0b252932832e">
+									<SHORT-NAME>RteVfbTraceFunction</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The RTE generator shall enable VFB tracing for a given hook function when there is a #define in the RTE configuration header file for the hook function name and tracing is globally enabled.
+Example: #define Rte_WriteHook_i1_p1_a_Start</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</FUNCTION-NAME-DEF>
+								<BOOLEAN-PARAM-DEF UUID="3f933b54-f066-4816-bdf0-dcc32be278ed">
+									<SHORT-NAME>RteXcpEventSupport</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If set to true, the RTE generator uses the Xcp driver to send Xcp Events when the runnables of a task were processed. These events can be used to trigger the measurement of variables in a measurement and calibration tool.
+This also allows the measurement of sender / receiver ports when implicit inter-ECU communication is used.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>NO-AFFECT</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<ENUMERATION-PARAM-DEF UUID="10b7a896-7bf2-475e-80f9-8f9ed74a4da7">
+									<SHORT-NAME>RteA2LVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">When measurement is enabled, the RTE generator generates an a2l file that contains the measurement and characteristic objects of the generated RTE.
+This parameter specifies the ASAM MCD-2MC standard to which the a2l file is compliant.
+Version 1.6.0 supports additional features like linker map references for the measurement objects.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>NO-AFFECT</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>V151</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="d9999553-a428-4d51-973a-4a1388f1fb65">
+											<SHORT-NAME>V151</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="2404ff59-7228-4745-92c3-979876ce8b4f">
+											<SHORT-NAME>V160</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: SwComponentInstance -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:0c89bcd1-d380-4364-b610-e9d6ff0a06ab">
+							<SHORT-NAME>SwComponentInstance</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">Representation of one SW-Component instance located on the to be configured ECU. All subcontainer configuration aspects are in relation to this SW-Component instance.
+
+The SwComponentInstance can be either an ApplicationSoftwareComponenInstance or a ServiceComponentInstance.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<REFERENCES>
+								<!-- Foreign Reference Definition: ImplementationRef -->
+								<FOREIGN-REFERENCE-PARAM-DEF UUID="DCE:29a5927c-3d8a-4d2e-958a-1114feea6c26">
+									<SHORT-NAME>ImplementationRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The Implementation which is assiged to the ComponentPrototype.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-TYPE>SwcImplementation</DESTINATION-TYPE>
+								</FOREIGN-REFERENCE-PARAM-DEF>
+								<!-- Foreign Reference Definition: ServiceComponentPrototypeRef -->
+								<FOREIGN-REFERENCE-PARAM-DEF UUID="DCE:8fd272d0-e642-4531-af97-510582218ca5">
+									<SHORT-NAME>ServiceComponentPrototypeRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Reference to the ServiceComponentPrototype representing an particular service on this ECU.
+
+If ServiceComponentPrototypeRef is specified there shall not be the SoftwareComponentInstanceRef specified.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-TYPE>ServiceComponentPrototype</DESTINATION-TYPE>
+								</FOREIGN-REFERENCE-PARAM-DEF>
+								<!-- Instance Reference Definition: SoftwareComponentInstanceRef -->
+								<INSTANCE-REFERENCE-PARAM-DEF UUID="DCE:3090d6e3-2dbd-4745-8840-f3a4e2d90fd3">
+									<SHORT-NAME>SoftwareComponentInstanceRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Reference to a SW-Component ComponentPrototype.
+
+
+If SoftwareComponentInstanceRef is specified there shall not be the ServiceComponentPrototypeRef specified.
+
+Semantic Constraint:
+Only ComponentPrototypes which have an AtomicSoftwareComponentType as &lt;&lt;isOfType&gt;&gt; shall be referenced here.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-CONTEXT>ComponentPrototype*</DESTINATION-CONTEXT>
+									<DESTINATION-TYPE>ComponentPrototype</DESTINATION-TYPE>
+								</INSTANCE-REFERENCE-PARAM-DEF>
+							</REFERENCES>
+							<SUB-CONTAINERS>
+								<!-- Parameter Container Definition: ExclusiveAreaImplementation -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:c7309db2-9709-4cfc-9403-32096426cb0e">
+									<SHORT-NAME>ExclusiveAreaImplementation</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specifies the implementation to be used for the data consistency of this ExclusiveArea.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: ExclusiveAreaImplMechanism -->
+										<ENUMERATION-PARAM-DEF UUID="DCE:ba96bb97-1667-4a43-be5a-5e41c44b51ef">
+											<SHORT-NAME>ExclusiveAreaImplMechanism</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">To be used implementation mechanism for the specified ExclusiveArea.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:b9bd4259-ec32-411b-9635-b858758ab898">
+													<SHORT-NAME>COOPERATIVE_RUNNABLE_PLACEMENT</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:bd604966-df10-4a8d-ac09-89faa04bf7c6">
+													<SHORT-NAME>INTERRUPT_BLOCKING</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:4fec73ff-4d63-4d1e-84c0-4bd610b0090a">
+													<SHORT-NAME>NON_PREEMPTIVE_TASK</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:592ba0ac-5e19-4d45-9649-f2132ad6d4d4">
+													<SHORT-NAME>OS_RESOURCE</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Foreign Reference Definition: ExclusiveAreaRef -->
+										<FOREIGN-REFERENCE-PARAM-DEF UUID="DCE:fccde02f-9dcb-4f61-aae4-28e9832b7048">
+											<SHORT-NAME>ExclusiveAreaRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the ExclusiveArea.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-TYPE>ExclusiveArea</DESTINATION-TYPE>
+										</FOREIGN-REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: NVRamAllocation -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:7338cfe8-198f-4393-86da-350f12b350dd">
+									<SHORT-NAME>NVRamAllocation</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specifies the relationship between the SW-Components NVRAMMapping / NVRAM needs and the NvM module configuration.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: RamBlockLocationSymbol -->
+										<LINKER-SYMBOL-DEF UUID="DCE:7a684cfe-dd15-4264-8e4f-407a78ad17e6">
+											<SHORT-NAME>RamBlockLocationSymbol</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This is the name of the linker object name where the NVRam Block will be mirrored by the Nvm.
+This symbol will be resolved into the parameter "NvmRamBlockDataAddress" from the "NvmBlockDescriptor".</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</LINKER-SYMBOL-DEF>
+										<!-- PARAMETER DEFINITION: RomBlockLocationSymbol -->
+										<LINKER-SYMBOL-DEF UUID="DCE:43994720-b2a7-46da-8e99-d2a249dfb280">
+											<SHORT-NAME>RomBlockLocationSymbol</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This is the name of the linker object name where the NVRom Block will be accessed by the Nvm.
+This symbol will be resolved into the parameter "NvmRomBlockDataAddress" from the "NvmBlockDescriptor".</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</LINKER-SYMBOL-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Instance Reference Definition: SwNvRamMappingReference -->
+										<INSTANCE-REFERENCE-PARAM-DEF UUID="DCE:8d170e4c-a4ec-46c8-8f54-e618413e63b1">
+											<SHORT-NAME>SwNvRamMappingReference</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the NVRAMMapping instance to be configured.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-CONTEXT>ComponentPrototype*</DESTINATION-CONTEXT>
+											<DESTINATION-TYPE>NVRAMMapping</DESTINATION-TYPE>
+										</INSTANCE-REFERENCE-PARAM-DEF>
+										<!-- Symbolic Name Reference Definition: NvmBlockRef -->
+										<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:ce8f02ee-7d0e-4c16-afad-bb6636f6e6ac">
+											<SHORT-NAME>NvmBlockRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the used NvM block for storage of the NVRAMMapping information.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/NvM/NvmBlockDescriptor</DESTINATION-REF>
+										</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: RunnableEntityMapping -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:db9bc20f-ab2f-4b74-abfc-0e44347dbfaa">
+									<SHORT-NAME>RunnableEntityMapping</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Maps a RunnableEntity onto one OS Task based on the activating RTEEvent.
+Even if a RunnableEntity is executed in the caller's context this RunnableEntityMapping shall be specified, but no MappedToTask and PositionInTask elements given.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: ActivationOffset -->
+										<FLOAT-PARAM-DEF UUID="DCE:fc522138-8b5e-4568-9476-0148941197cb">
+											<SHORT-NAME>ActivationOffset</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Activation offset in seconds.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: PositionInTask -->
+										<INTEGER-PARAM-DEF UUID="DCE:c4e1b5d6-c8e3-4fbd-823b-66d3234d188c">
+											<SHORT-NAME>PositionInTask</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Each RunnableEntities mapped to an OsTask has a specific position within the task execution.
+For periodic activation this is the order of execution.
+For event driver activation this is the order of evaluation which actual RunnableEntity has to be executed.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</INTEGER-PARAM-DEF>
+										<ENUMERATION-PARAM-DEF UUID="DCE:729ae4be-e3c9-499e-87fc-8891af09915d">
+											<SHORT-NAME>RteCyclicTriggerImplementation</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If set to 'Auto' the RTE generator automatically creates the necessary OS alarm to realize the cyclic trigger with the configured activation offset. 
+If set to 'None' the trigger is not implemented by the RTE generator. It has to be implemented by the user either by configuring an appropriate OS alarm or an OS schedule table. 
+The OS task and optional the OS event for that trigger can be found in the generated RTE report.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<CONFIGURATION-CLASS-AFFECTION>
+												<AFFECTION-KIND>NO-AFFECT</AFFECTION-KIND>
+											</CONFIGURATION-CLASS-AFFECTION>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>Auto</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:583162de-5c3b-4c07-8c8c-7c0a244b04bc">
+													<SHORT-NAME>Auto</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:65ed0374-8dcc-4fbb-921f-095e171f291e">
+													<SHORT-NAME>None</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Foreign Reference Definition: RTEEventRef -->
+										<FOREIGN-REFERENCE-PARAM-DEF UUID="DCE:8395d920-dabb-42bb-afcc-9730c452f32f">
+											<SHORT-NAME>RTEEventRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the description of the RTEEvent which is pointing to the RunnableEntity being mapped. This allows a fine grained mapping of RunnableEntites based on the activating RTEEvent.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-TYPE>RTEEvent</DESTINATION-TYPE>
+										</FOREIGN-REFERENCE-PARAM-DEF>
+										<!-- Reference Definition: MappedToTaskRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:10532e59-b85f-46d9-9f81-c2ed3d832876">
+											<SHORT-NAME>MappedToTaskRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the OsTask the RunnableEntity is mapped to.
+If no reference to the OsTask is specified the RunnableEntity is executed in the context of the caller.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Os/OsTask</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+										<!-- Reference Definition: UsedOsEventRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:c4114a2e-4819-48ac-9437-a81c443b2997">
+											<SHORT-NAME>UsedOsEventRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If an OsEvent is used to activate the RunnableEntity it shall be referenced here.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Os/OsEvent</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

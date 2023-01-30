@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Vector Mitarbeiter (Vector Informatik GmbH) -->
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="FLOAT">
+		<xs:annotation>
+			<xs:documentation>Float attribute value</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Minimum" type="xs:string" use="required"/>
+			<xs:attribute name="Maximum" type="xs:string" use="required"/>
+			<xs:attribute name="Default" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="STRING">
+		<xs:annotation>
+			<xs:documentation>String attribute value</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Default" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HEX">
+		<xs:annotation>
+			<xs:documentation>Hexadecimal attribute value</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Minimum" type="xs:string" use="required"/>
+			<xs:attribute name="Maximum" type="xs:string" use="required"/>
+			<xs:attribute name="Default" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ENUM">
+		<xs:annotation>
+			<xs:documentation>Enumeration attribute value</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EnumValue" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Single enumeration value.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="Value" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Default" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="INTEGER">
+		<xs:annotation>
+			<xs:documentation>Integer attribute value</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Minimum" type="xs:string" use="required"/>
+			<xs:attribute name="Maximum" type="xs:string" use="required"/>
+			<xs:attribute name="Default" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="GUID">
+		<xs:annotation>
+			<xs:documentation>Global unique object identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:element name="AttributeDefinition">
+		<xs:annotation>
+			<xs:documentation>Attribute definition root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AttributeDefinitionTable" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Global table for user-defined attribue definitions.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Attribute" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Single user-defined attribute definition. Each user-defined attribute is identified by it's name within the attribute definition table.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:choice>
+										<xs:element ref="INTEGER" minOccurs="0"/>
+										<xs:element ref="ENUM" minOccurs="0"/>
+										<xs:element ref="HEX" minOccurs="0"/>
+										<xs:element ref="STRING" minOccurs="0"/>
+										<xs:element ref="FLOAT" minOccurs="0"/>
+									</xs:choice>
+									<xs:attribute name="Name" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>Name of user-defined attribute</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ObjectType" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>DaVinci object type</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Version" type="xs:decimal" use="optional">
+							<xs:annotation>
+								<xs:documentation>Version of user-defined attribute table</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ID" type="GUID" use="optional">
+							<xs:annotation>
+								<xs:documentation>GUID of user-defined attribute table</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ObjectAttributeReference" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>User-defined attribute reference of exported design element</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:element name="DVObjectReference" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>Reference to DaVinci design element</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:attribute name="Version" type="xs:decimal" use="required">
+											<xs:annotation>
+												<xs:documentation>Version of item</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="ID" type="GUID" use="required">
+											<xs:annotation>
+												<xs:documentation>GUID of item</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="ARObjectReference" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>Reference to AR design element</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:attribute name="Type" type="xs:string" use="required">
+											<xs:annotation>
+												<xs:documentation>AR-XML tag type</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="Reference" type="xs:string" use="required">
+											<xs:annotation>
+												<xs:documentation>AR-reference to related AR-element</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="Path" type="xs:string" use="optional">
+											<xs:annotation>
+												<xs:documentation>XPath expression for elements without own SHORT_NAME identification</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+							<xs:element name="AttributeDefinitionTableRef">
+								<xs:annotation>
+									<xs:documentation>Reference to global attribute definition table</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Version" type="xs:decimal" use="required">
+										<xs:annotation>
+											<xs:documentation>Version of attribute table</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ID" type="GUID" use="required">
+										<xs:annotation>
+											<xs:documentation>GUID of attribute table</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="AttributeValue" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="Name" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>Local user-defined attribute value</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Value" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>Local value of user-defined attribute</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="ObjectType" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation>DaVinci object type</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="dvSchemaVersion" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

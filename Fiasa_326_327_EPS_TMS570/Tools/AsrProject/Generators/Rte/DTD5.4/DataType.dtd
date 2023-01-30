@@ -1,0 +1,136 @@
+<!-- Entities -->
+
+<!ENTITY ti.DataType       "DataType">
+<!ENTITY ti.Constant       "Constant">
+
+<!-- Elements -->
+
+<!ELEMENT DataType  (%C.DefAttr;, ATTRLink*, (PrimitiveType | ComplexType), GenAttrList?)>
+<!ELEMENT PrimitiveType (BooleanPrimitive | IntegerPrimitive | RealPrimitive | OpaquePrimitive | EnumerationPrimitive | StringPrimitive)>
+<!ELEMENT ComplexType (ArrayPrimitive | RecordPrimitive)>
+
+<!ELEMENT BooleanPrimitive EMPTY>
+<!ELEMENT IntegerPrimitive EMPTY>
+<!ELEMENT RealPrimitive    EMPTY>
+<!ELEMENT OpaquePrimitive  EMPTY>
+<!ELEMENT StringPrimitive  EMPTY>
+<!ELEMENT EnumerationPrimitive (ATTRLink*, EnumerationElement+)>
+<!ELEMENT EnumerationElement (%C.DefAttr;)>
+
+<!ELEMENT ArrayPrimitive (ATTRLink*)>
+<!ELEMENT RecordPrimitive (RecordElement+)>
+<!ELEMENT RecordElement (%C.DefAttr;, ATTRLink*)>
+
+
+<!ATTLIST DataType %A.ConfigItem; 
+          Primitive                 (Boolean|Integer|Real|Opaque|Enumeration|Array|Record|String) "Integer" 
+          BSWModule                 CDATA ''
+>
+
+<!ATTLIST PrimitiveType %A.ChildItem;>
+<!ATTLIST ComplexType   %A.ChildItem;>
+	
+<!ATTLIST BooleanPrimitive %A.ChildItem;
+	UseInvalidValue        CDATA '0'
+	InvalidValue           CDATA '0'
+>
+
+<!ATTLIST IntegerPrimitive  %A.ChildItem;
+    LowerLimit              CDATA '0'
+    UpperLimit              CDATA '255'
+    LowerLimitClosed        CDATA '0'
+    UpperLimitClosed        CDATA '0'
+    UseScaling              CDATA '0'
+    Factor                  CDATA '1'
+    Offset                  CDATA '0'
+    Unit                    CDATA ''
+    UseInvalidValue         CDATA '0'
+    InvalidValue            CDATA '0'
+    UseScalingLimit         CDATA '0'
+    ScalingLowerLimit       CDATA '0'
+    ScalingUpperLimit       CDATA '0'
+    ScalingLowerLimitClosed CDATA '0'
+    ScalingUpperLimitClosed CDATA '0'
+>
+
+<!ATTLIST RealPrimitive     %A.ChildItem; 
+    LowerLimit              CDATA '-INF'
+    UpperLimit              CDATA '+INF'
+    LowerLimitClosed        CDATA '0'
+    UpperLimitClosed        CDATA '0' 
+    Encoding                (Single|Double) "Single" 
+    AllowNaN                CDATA "0"
+    UseScaling              CDATA '0'
+    Factor                  CDATA '1'
+    Offset                  CDATA '0'
+    Unit                    CDATA ''
+    UseInvalidValue         CDATA '0'
+    InvalidValue            CDATA '0'
+    UseScalingLimit         CDATA '0'
+    ScalingLowerLimit       CDATA '0'
+    ScalingUpperLimit       CDATA '0'
+    ScalingLowerLimitClosed CDATA '0'
+    ScalingUpperLimitClosed CDATA '0'
+>
+
+<!ATTLIST OpaquePrimitive  %A.ChildItem; 
+	NumBits   CDATA "8"
+	UseInvalidValue        CDATA '0'
+	InvalidValue           CDATA '0'
+>
+
+<!ATTLIST StringPrimitive  %A.ChildItem; 
+	Encoding         CDATA "ISO-8859-1"
+	MaxCharLength    CDATA '256'
+	UseInvalidValue  CDATA '0'
+	InvalidValue     CDATA ''
+>
+
+<!ATTLIST EnumerationPrimitive %A.ChildItem;
+    Old_DataTypeLink NMTOKEN #FIXED "&ti.DataType;"
+    LowerLimit              CDATA '0'
+    UpperLimit              CDATA '255'
+    LowerLimitClosed        CDATA '0'
+    UpperLimitClosed        CDATA '0'
+    UseInvalidValue         CDATA '0'
+    InvalidValue            CDATA '0'
+    UseScaling              CDATA '0'
+    Factor                  CDATA '1'
+    Offset                  CDATA '0'
+    Unit                    CDATA ''
+    UseScalingLimit         CDATA '0'
+    ScalingLowerLimit       CDATA '0'
+    ScalingUpperLimit       CDATA '0'
+    ScalingLowerLimitClosed CDATA '0'
+    ScalingUpperLimitClosed CDATA '0'
+>
+
+<!ATTLIST EnumerationElement %A.ChildItem;
+    Value      CDATA '0'
+    OrderIndex CDATA '0'
+    UpperLimit CDATA ''
+>
+
+<!ATTLIST ArrayPrimitive  %A.ChildItem;
+    NumElements   CDATA "1"
+    DataTypeLink NMTOKEN #FIXED "&ti.DataType;"
+>
+
+<!ATTLIST RecordPrimitive %A.ChildItem;>
+
+<!ATTLIST RecordElement %A.ChildItem;
+	DataTypeLink NMTOKEN #FIXED "&ti.DataType;"
+	OrderIndex CDATA '0'
+>
+
+
+<!-- Links -->
+
+<!ELEMENT DataTypeLink EMPTY>
+
+<!ATTLIST DataTypeLink 
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.DataType;"
+>

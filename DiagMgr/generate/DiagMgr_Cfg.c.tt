@@ -1,0 +1,190 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : DiagMgr_Cfg.c
+* Module Description: Configuration file of DiagMgr module
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          2 %
+ * %date_modified:    Tue Sep 18 15:37:25 2012 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 07/13/12   1       JJW       Initial template creation
+ */
+
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) ); #>
+
+
+/*******************************************************************************
+**                      Include Section                                       **
+*******************************************************************************/
+#define DIAGMGR_C /* Enable visibility to Module internal definitions in DiagMgr.h*/
+#include "Ap_DiagMgr.h"
+
+
+/*******************************************************************************
+**                      Module Private Data                                   **
+*******************************************************************************/
+
+/*
+ * Ntc Info Arrays
+ */
+<#
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "Os" ) );
+    int osAppCnt = 0; 
+	string diagStatusPtrTblInit = "";
+	string rampRatePtrTblInit = "";
+	List<string> AppsList = new List<string>();
+ 	const int NtcMapSize = 512;
+	Dictionary<int, string> NtcAppInfoDic = new Dictionary<int, string>();
+#>
+<# !LOOP( Xp.ContainerAtDefRefTo( "OsApplication" ) ) #>
+<#  
+	string osApp = ValueOf( "ar:SHORT-NAME" );
+	string AppEvtToNtcInitializer = "d";
+    int eventId = 0;
+    int BswEventCnt = 0; 
+	
+	/* Assume the Application short name is the last "word" in the Os Application name delimited with '_' */
+	string[] osAppWords = osApp.Split('_');
+	string osAppSuffix = osAppWords[osAppWords.Length -1];
+#>
+/* <#= osApp#> Info Array */
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) ); 
+string diagMgrDemIfApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "DiagMgrGeneral/DiagMgrDemIfOsAppRef" ));
+#>
+<# !LOOP( Xp.ContainerAtDefRefTo( "DiagMgrConfigSet/DiagMgrEventParameter" ) ) #>
+<#
+	string eventDefine = null;
+	string eventApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "OsApplicationRef" ));
+	if ( eventApp == osApp ) {
+		eventDefine = ValueOf( "ar:SHORT-NAME" ) ;
+		int eventNtc = ValueOf( Xp.ValueAtDefRefTo( "DiagMgrNTC" ));
+		NtcAppInfoDic.Add(eventNtc, ("0x" + osAppCnt.ToString("X2") + "u, 0x" + eventId.ToString("X2") + "u"));
+		if(0 != eventId){
+			/* Append NTC to mapping initilizer */
+			AppEvtToNtcInitializer += ", 0x" + eventNtc.ToString("X2") + "u";
+		} else {
+			/* First Initializer */
+			AppEvtToNtcInitializer = "0x" + eventNtc.ToString("X2") + "u";
+		}
+		eventId++;
+	
+		string eventKind = ValueOf( Xp.ValueAtDefRefTo( "DiagMgrEventKind" ));
+		if(0 == String.Compare(eventKind, "DIAGMGR_EVENT_KIND_BSW", false)){
+			BswEventCnt++;
+		}
+	} 
+#>
+<# !ENDLOOP #>
+<# if ( 0 != eventId ) {
+	string apNtcInfo = string.Format( "DiagMgr_NTCInfo{0}_Cnt_M_str", osAppSuffix); 
+	AppsList.Add( "&" + apNtcInfo + "[0], " + eventId + "u" + " /* " + osApp + " */");
+	string apEventDefine = string.Format( "DIAGMGR_EVENTNUM_{0}", osAppSuffix ).ToUpper(); #>
+#define DIAGMGR<#=osAppSuffix#>_START_SEC_VAR_CLEARED_8
+#include "MemMap.h"
+<#		if ( 0 != BswEventCnt ) {#>
+VAR(uint8, AP_DIAGMGR_VAR) NTCQueueIndex<#=osAppSuffix#>_Cnt_M_u08;
+<#		}#>
+VAR(uint8, AP_DIAGMGR_VAR) ActDiagSts<#=osAppSuffix#>_Cnt_M_u08;
+VAR(uint8, AP_DIAGMGR_VAR) ResetNTCFlag<#=osAppSuffix#>_Cnt_M_u08;
+<#		if ( diagMgrDemIfApp == osApp ) {#>
+VAR(uint8, AP_DIAGMGR_VAR) ResetNTCFlag_Cnt_M_u08;
+<#		}#>
+#define DIAGMGR<#=osAppSuffix#>_STOP_SEC_VAR_CLEARED_8
+#include "MemMap.h"
+
+#define DIAGMGR<#=osAppSuffix#>_START_SEC_VAR_CLEARED_16
+#include "MemMap.h"
+VAR(uint16, AP_DIAGMGR_VAR) DiagSts<#=osAppSuffix#>_Cnt_M_b16[2u];
+#define DIAGMGR<#=osAppSuffix#>_STOP_SEC_VAR_CLEARED_16
+#include "MemMap.h"
+
+#define DIAGMGR<#=osAppSuffix#>_START_SEC_VAR_CLEARED_32
+#include "MemMap.h"
+VAR(float32, AP_DIAGMGR_VAR) ActiveRmpRate<#=osAppSuffix#>_UlspmS_M_f32[2u];
+#define DIAGMGR<#=osAppSuffix#>_STOP_SEC_VAR_CLEARED_32
+#include "MemMap.h"
+
+#define DIAGMGR<#=osAppSuffix#>_START_SEC_VAR_CLEARED_UNSPECIFIED
+#include "MemMap.h"
+VAR(boolean, AP_DIAGMGR_VAR) DiagMgrInitComp<#=osAppSuffix#>_Cnt_M_lgc;
+VAR(NTCInfo_Str, AP_DIAGMGR_VAR)	<#= apNtcInfo#>[<#= apEventDefine#>];
+<#		if ( 0 != BswEventCnt ) {#>
+VAR(NTCInfoQueue_Str, AP_DIAGMGR_VAR)	NTCInfoQueue<#=osAppSuffix#>_Cnt_M_str[<#= BswEventCnt#>];
+<#		}#>
+#define DIAGMGR<#=osAppSuffix#>_STOP_SEC_VAR_CLEARED_UNSPECIFIED
+#include "MemMap.h"
+
+/* 
+ * Description: Event Id to NTC Map 
+ * Usage:       Index into the table with the Event Id to find the associated NTC
+ */
+CONST(NTCNumber, AP_DIAGMGR_CONST) T_NTCMapTbl<#=osAppSuffix#>_Cnt_enum[<#=eventId #>] = { <#=AppEvtToNtcInitializer #> };
+
+<#	if(0 != osAppCnt){
+		/* Append NTC to initilizer */
+		diagStatusPtrTblInit += ", " + "DiagSts" + osAppSuffix + "_Cnt_M_b16";
+		rampRatePtrTblInit += ", " + "ActiveRmpRate" + osAppSuffix + "_UlspmS_M_f32";
+	} else {
+		/* First Initializer */
+		diagStatusPtrTblInit = "DiagSts" + osAppSuffix + "_Cnt_M_b16";
+		rampRatePtrTblInit = "ActiveRmpRate" + osAppSuffix + "_UlspmS_M_f32";
+	}
+	osAppCnt++;
+} else { #>
+	/* Note: No Events Configured for <#= osApp#> application */
+<# } #>
+<# !ENDLOOP #>
+
+/* 
+ * Description: Application Id to DiagSts Lookup 
+ * Usage:       Index into the table with the Application Id to find the associated DiagSts buffer
+ */
+CONSTP2VAR(uint16, AUTOMATIC, AP_DIAGMGR_CONST) T_DiagMgrDiagSts_Ptr_b16[<#=osAppCnt#>u] = {<#=diagStatusPtrTblInit#>};
+
+/* 
+ * Description: Application Id to DiagSts Lookup 
+ * Usage:       Index into the table with the Application Id to find the associated DiagSts buffer
+ */
+CONSTP2VAR(float32, AUTOMATIC, AP_DIAGMGR_CONST) T_DiagMgrRmpRate_Ptr_f32[<#=osAppCnt#>u] = {<#=rampRatePtrTblInit#>};
+
+/* 
+ * Description: Application to Info Array Map 
+ * Usage:       Index into the table with the application index found in T_DiagMgrNtcAppInfoMap_Cnt_Str
+ */
+#define DIAGMGR_START_SEC_CONST_UNSPECIFIED
+#include "MemMap.h"
+CONST(DiagMgrNtcInfoMap_Str, AP_DIAGMGR_CONST) T_DiagMgrNtcInfoPtr_Cnt_Str[<#=osAppCnt#>u]= {
+/*		NtcInfo		Size	*/
+<# foreach (string appMapInitializer in AppsList) {#>
+	{ <#=appMapInitializer #> },
+<# } #>
+};
+
+
+<# int NtcItterator; #>
+/* 
+ * Description: NTC to Application and EventId Map 
+ * Usage:       Index into the table with the desired NTC (0 to <#=NtcMapSize-1#>)
+ *              An application value 0xFF indicates no mapping exists for the NTC
+ */
+CONST(DiagMgrNtcAppMap_Str, AP_DIAGMGR_CONST) T_DiagMgrNtcAppInfoMap_Cnt_Str[<#=NtcMapSize#>u]= {
+/*Idx	App  Info	*/
+<# for (NtcItterator=0; NtcItterator < NtcMapSize; NtcItterator++) {#>
+	{ <# if(NtcAppInfoDic.ContainsKey(NtcItterator)) { #>
+<#=NtcAppInfoDic[NtcItterator]#><# } else {#>0xFFu, 0xFFu<#}#> },	/* NTC 0x<#=NtcItterator.ToString("X2")#> */
+<# } #>
+};
+#define DIAGMGR_STOP_SEC_CONST_UNSPECIFIED
+#include "MemMap.h"

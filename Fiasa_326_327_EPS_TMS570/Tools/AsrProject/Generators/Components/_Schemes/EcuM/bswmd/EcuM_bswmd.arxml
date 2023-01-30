@@ -1,0 +1,3812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/3.0.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:5ee1b05b-987d-40dc-990e-e947cc542f2b">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="DCE:22e7d16d-4087-4932-bceb-cbbd35bec5ea">
+					<SHORT-NAME>EcuM_Impl</SHORT-NAME>
+					<CODE-GENERATOR>cMICROSAR,GENy</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>7</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>6</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>1</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>1</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>2</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>0</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/EcuM_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/EcuM_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/EcuM</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-DEF UUID="DCE:f29d888a-0e51-4c40-a56a-6d7692dbbd3f">
+					<SHORT-NAME>EcuM</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of the EcuM (ECU State Manager) module.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.00</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-04-09T15:30:23</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ASR 3.0 support</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.01</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-04-30T08:43:26</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added Vendor specific parameters for enabling/disabling global interrupts before and after sleep mode</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.02</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-05-15T13:46:34</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapted version of software implementation.</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.03</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-06-05T14:53:56</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed default values of container EcuMServicePortConfig to false</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.04</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-06-06T13:25:49</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapted version of software implementation.</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00027458</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.05</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-06-19T14:00:57</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Removed not relevant parameter of EcuM_Pre configuration section</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00027697</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.06</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-06-24T09:29:16</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">inserted previous link to EcuM implementation</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.00.07</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-07-01T15:34:47</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapted version of software implementation</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00027917 ESCAN00027637</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.01.00</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-07-15T16:28:19</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added configuration compatibility to ComM according to ASR 2.1</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00028406 ESCAN00028406 ESCAN00028573</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.01.01</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-07-31T12:07:39</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Solved relevant Issues</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00028901 ESCAN00028892  ESCAN00028827</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.01.02</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-09-25T07:02:40</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed BSW-IMPLEMENTATION name</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00030190</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.02.00</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-10-08T10:26:46</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added implementation variant precompile</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00030517</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2008-11-28T16:18:02</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added BswmdVersion container</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00029648,ESCAN00031635, ESCAN00031864</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.03.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2009-02-27T08:33:50</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Change default values of common configuration parameters to vector standard, </L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00033454, ESCAN00033468</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.03.02</REVISION-LABEL>
+								<STATE>beta</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2009-05-14T11:17:39</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Versions, Remove Preconfigured WakeupSources from BSMWD file</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00035148, ESCAN00036175</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.03.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2009-07-17T12:20:42</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Versions</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.04.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2009-10-14T16:19:08</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Corrected configuration class of parameter EcuMAvailableMcuModes; Described parameter dependencies in BSWMD file;Updated SW-Version;Add vendor specific multiple configuration containers of Dcm and CanTp to EcuMModuleConfigurationRef</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00038453;ESCAN00037985;ESCAN00039536</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.04.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2009-12-11T09:03:03</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Limit the number of wakeup sources to 32;Corrected maximum value of EcuMWakeupSourceId</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00037613;ESCAN00039727</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.04.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2010-04-14T20:19:56</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Resolved issues</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00041814;ESCAN00040430</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.04.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virchm</ISSUED-BY>
+								<DATE>2010-06-11T11:13:53</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Resolved issues</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00043362</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.04.04</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virbmz</ISSUED-BY>
+								<DATE>2010-07-29T16:58:27</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Versions</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.04.05</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virbmz</ISSUED-BY>
+								<DATE>2010-09-21T11:01:32</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version, adjusted the help text for EcuMIrqHandling</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00045531</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.05.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virbmz</ISSUED-BY>
+								<DATE>2010-10-19T10:13:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Versions, restriction text modified for 'EcuMWakeupIsrHandling', the multiplicity changed for Init-Lists and EchUmWdgM container</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00046256, ESCAN00046399</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.07.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virbmz</ISSUED-BY>
+								<DATE>2010-11-12T09:01:11</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Versions, new parameter added to enable the RTE ACK mechanism, new parameter (timeout) added for NvM_CancelWriteAll waiting mechanism, McuMode Ref Handling changed for V80 Mcu Drv</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00046158, ESCAN00047434, ESCAN00047183</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.07.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virbmz</ISSUED-BY>
+								<DATE>2011-02-15T12:26:17</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00048574</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.07.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virbmz</ISSUED-BY>
+								<DATE>2011-03-14T16:21:03</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">changed multiplicity of EcuMDriverInitListZero</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00049077</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>4.08.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virbmz</ISSUED-BY>
+								<DATE>2011-04-06T11:28:52</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">changed verion because of new DEM usage faeture and a new destination ref inserted</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00048423, ESCAN00049111</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>5.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virbmz</ISSUED-BY>
+								<DATE>2011-04-26T17:11:06</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version, Redesign AppModeType Handling added new container in EcuMGeneral, SWC-D shall be generated according to AUTOSAR Schema 3.2.1 (Mj-Nr Update), corrections of min value and hint of EcuMNvmCancelWriteAllTimeout param</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00049994, ESCAN00039058, ESCAN00052248, ESCAN00052539, ESCAN00052538</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.00.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>virbmz</ISSUED-BY>
+								<DATE>2011-09-20T05:14:27+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version, removed EcuMNvmTypesFile, modified  lowerMultiplicity of ContainerDefinition EcuMWdgM, marked NOT USED parameter, added parameter for EcuM_ErrorHook, CanTrcv added to EcuMModleConfigurationRef, set values for EcuMNvramWriteAllTimeout, added new parameter EcuMIdentityManagerConfig </L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00052991, ESCAN00053860, ESCAN00045198, ESCAN00052193, ESCAN00054560, ESCAN00052498, ESCAN00054279</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.00.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visrpp</ISSUED-BY>
+								<DATE>2012-02-22T10:04:16+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00056464, ESCAN00056481</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.01.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visrpp</ISSUED-BY>
+								<DATE>2012-03-07T09:48:36+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Multiplicity adaption for Cfg5 (EcuMSupervisedEntityRef,EcuMDefaultSleepModeRef,EcuMTTIISleepModeRef,EcuMNormalMcuModeRef,EcuMIrqHandling,EcuMTTIIWakeupSourceRef,EcuMSleepModeRef), Removed Compatibility to ASR2.1, Order of DriverIntiList Two and Three changed</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00057621, ESCAN00057625</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.02.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visrpp</ISSUED-BY>
+								<DATE>2012-04-03T11:42:45+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">EcuMReportAllRunRequestsKilled and EcuMReportRamCheckFailed added to support seperate production error handling, EcuMIdentityManagerConfig removed - now determined by generator, Rec setcion added</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00058259, ESCAN00058260, ESCAN00050893</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.03.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visrpp</ISSUED-BY>
+								<DATE>2012-06-01T07:21:56+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">EcuMOnStateChangeCallout added </L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00059471</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.04.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visvjn</ISSUED-BY>
+								<DATE>2012-08-31T10:48:27+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Changed parameter EcuMCheckWakeupTimeout to an Autosar origin parameter and modified the value range.</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00060104</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.04.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visvjn</ISSUED-BY>
+								<DATE>2012-10-17T05:57:49+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00062161</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.04.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visvjn</ISSUED-BY>
+								<DATE>2012-12-05T09:30:43+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added parameter for support of redirect the call of ShutdownOS</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00063518</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.04.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visvjn</ISSUED-BY>
+								<DATE>2013-01-24T08:56:18+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00063377</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.05.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visvjn</ISSUED-BY>
+								<DATE>2013-04-05T02:34:49+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added parameter EcuMAmdRuntimeMeasurement</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00066574</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.05.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visvjn</ISSUED-BY>
+								<DATE>2013-07-15T02:03:50+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version, Removed EcuM_Rec_Class1</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00068962, ESCAN00067950, ESCAN00069074</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.05.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visvjn</ISSUED-BY>
+								<DATE>2013-07-31T11:15:36+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00069420</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.05.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visvjn</ISSUED-BY>
+								<DATE>2013-10-02T10:02:05+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00069451</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.06.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visvjn</ISSUED-BY>
+								<DATE>2013-10-11T04:07:39+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00070295</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>6.06.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visvjn</ISSUED-BY>
+								<DATE>2014-01-30T10:57:37+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Set SW Version</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00073054, ESCAN00073055</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/EcuM</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Parameter Container Definition: EcuMConfiguration -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:c6058221-701b-4d6b-b345-e1a8e79feb27">
+							<SHORT-NAME>EcuMConfiguration</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container contains the configuration (parameters) of the ECU State Manager</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: EcuMConfigConsistencyHash -->
+								<INTEGER-PARAM-DEF UUID="DCE:9d5de863-8d24-409b-a827-c0d949bff2d7">
+									<SHORT-NAME>EcuMConfigConsistencyHash</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">NOT USED
+
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>0</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMNvramReadallTimeout -->
+								<FLOAT-PARAM-DEF UUID="DCE:edf3eb10-db3a-403b-abc7-b2141d02035a">
+									<SHORT-NAME>EcuMNvramReadallTimeout</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Period given in seconds for which the ECU State Manager will wait until it considers a ReadAll job of the NVRAM Manager as failed.
+
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>0.0</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMNvramWriteallTimeout -->
+								<FLOAT-PARAM-DEF UUID="DCE:e8267d10-42a1-4acf-a62b-e6f1a2babb3d">
+									<SHORT-NAME>EcuMNvramWriteallTimeout</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Period given in seconds for which the ECU State Manager will wait until it considers a WriteAll job of the NVRAM Manager as failed.
+
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>60</DEFAULT-VALUE>
+									<MAX>240</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMRunMinimumDuration -->
+								<FLOAT-PARAM-DEF UUID="DCE:208243d1-ece7-44b1-b077-1b94c3f5296c">
+									<SHORT-NAME>EcuMRunMinimumDuration</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Duration given in seconds for which the ECU State Manager will
+stay in RUN state even when no one requests RUN. This duration should be long at least as long as a SW-Cs needs to request RUN. The time is specified in seconds.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.100</DEFAULT-VALUE>
+									<MAX>100000.0</MAX>
+									<MIN>0.0</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMSleepActivityPeriod -->
+								<FLOAT-PARAM-DEF UUID="DCE:cae5f0d9-a46b-4a40-9e6d-2d50b489773b">
+									<SHORT-NAME>EcuMSleepActivityPeriod</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Period of the EcuM_SleepActivity callout. The period is given in seconds.
+
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>0.0</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:6da32f63-03fb-4424-b392-35705570b7f7">
+									<SHORT-NAME>EcuMComStackTypesIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Include  which defines types used by the communication stack.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>ComStack_Types.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<!-- Choice Reference Definition: EcuMModuleConfigurationRef -->
+								<CHOICE-REFERENCE-PARAM-DEF UUID="DCE:6622ceb7-a56d-4e83-9201-9d26e46c9d21">
+									<SHORT-NAME>EcuMModuleConfigurationRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter contains a reference to the init structure of the corresponding BSW module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-REFS>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Gpt/GptChannelConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Adc/AdcConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Spi/SpiDriver</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Fls/FlsConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Can/CanConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/FrTp/FrTpMultipleConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Wdg/WdgModeConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Pwm/PwmChannelConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/CanSM/CanStateManagerConfiguration</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Icu/IcuConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/LinSM/LinSMChannel</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/FrSm/FrSmCluster</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/FrNm/FrNmChannelConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Port/PortConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Mcu/McuModuleConfiguration</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Dem/DemConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Eep/EepInitConfiguration</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/CanNm/CanNmGlobalConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Dcm/DcmConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/CanTp/CanTpConfigSet</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/CanIf/CanIfInitConfiguration</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/PduR/PduRGlobalConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Com/ComConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/IPduMplex/IPduMConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/LinIf/LinIfGlobalConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/LinTp/LinTpGlobalConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Lin/LinGlobalConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/FrIf/FrIfConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Fr/FrMultipleConfiguration</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/ComM/ComMConfig</DESTINATION-REF>
+										<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/CanTrcv/CanTrcvConfigSet</DESTINATION-REF>
+									</DESTINATION-REFS>
+								</CHOICE-REFERENCE-PARAM-DEF>
+								<!-- Symbolic Name Reference Definition: EcuMDefaultAppMode -->
+								<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:c06393a0-c9b8-4e1f-81d2-cf180b14dbdd">
+									<SHORT-NAME>EcuMDefaultAppMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The default application mode loaded when the ECU comes out of reset.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Os/OsAppMode</DESTINATION-REF>
+								</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+								<!-- Symbolic Name Reference Definition: EcuMNormalMcuModeRef -->
+								<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:6060e90f-6c6f-4a22-aa36-874a8eb7212a">
+									<SHORT-NAME>EcuMNormalMcuModeRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">NOT USED
+
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Mcu/McuModuleConfiguration/McuModeSettingConf</DESTINATION-REF>
+								</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+							</REFERENCES>
+							<SUB-CONTAINERS>
+								<!-- Parameter Container Definition: EcuMDefaultShutdownTarget -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:7a8b1952-b2e2-43c1-9125-894b16904b20">
+									<SHORT-NAME>EcuMDefaultShutdownTarget</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container describes the default shutdown target to be selected by EcuM. The actual shutdown target may be overridden by the EcuM_SelectShutdownTarget service.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: EcuMDefaultState -->
+										<ENUMERATION-PARAM-DEF UUID="DCE:82cf7917-9d2b-40d1-83d1-b44fb1ec41b2">
+											<SHORT-NAME>EcuMDefaultState</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter describes the state part of the default shutdown target selected when the ECU comes out of reset. If EcuMStateSleep is selected, the parameter EcuMDefaultSleepModeRef selects the specific sleep mode.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>EcuMStateReset</DEFAULT-VALUE>
+											<LITERALS>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:f3619b94-3ef8-40ad-ba8e-d71cb7401391">
+													<SHORT-NAME>EcuMStateOff</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:d33c1cd5-a2f8-440c-a8b8-c00955beb7d0">
+													<SHORT-NAME>EcuMStateReset</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+												<ENUMERATION-LITERAL-DEF UUID="DCE:28e80a8d-7d1c-446b-9e9e-17a6b6f91c1d">
+													<SHORT-NAME>EcuMStateSleep</SHORT-NAME>
+												</ENUMERATION-LITERAL-DEF>
+											</LITERALS>
+										</ENUMERATION-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Symbolic Name Reference Definition: EcuMDefaultSleepModeRef -->
+										<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:1213f60e-683c-4016-9bf4-39136a1baad1">
+											<SHORT-NAME>EcuMDefaultSleepModeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If EcuMDefaultShutdownTarget is EcuMStateSleep, this parameter selects the default sleep mode. Otherwise this parameter may be ignored.
+RESTRICTIONS: 'EcuMDefaultSleepModeRef' is only available, if 'EcuMDefaultState' is set to  'EcuMStateSleep'.
+
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuM/EcuMConfiguration/EcuMSleepMode</DESTINATION-REF>
+										</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: EcuMDriverInitListOne -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:3fd50dd8-0135-41f2-adcf-e1257a0f2e50">
+									<SHORT-NAME>EcuMDriverInitListOne</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for Init Block I.
+
+This container holds a list of module IDs that will be initialised. Each module in the list will be called for initialisation in the list order.
+
+All modules in this list are initilialised before the OS is started and so these modules require no OS support.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: EcuMDriverInitItem -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:585ab22b-f38e-43e1-993a-cf68f8ea2642">
+											<SHORT-NAME>EcuMDriverInitItem</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container describes one entry in a driver init list.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: EcuMModuleID -->
+												<STRING-PARAM-DEF UUID="DCE:9974338f-6f6c-4af9-9095-770336b70516">
+													<SHORT-NAME>EcuMModuleID</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Short name of the module to be initialized, e.g. Mcu, Gpt etc. Enter the Keyword 'Code' here to enable the Code field below.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>Code</DEFAULT-VALUE>
+												</STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: EcuMModuleService -->
+												<STRING-PARAM-DEF UUID="DCE:2ea0619b-9a99-4e95-a4ea-66c88006d8f2">
+													<SHORT-NAME>EcuMModuleService</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">The service to be called to initialize that module, e.g. Init, PreInit, Start etc.
+
+If the service is Init and the parameter EcuMModuleConfigurationRef has been set for that module, the corresponding pointer to the init structure (&lt;Module&gt;_ConfigType) shall be passed as an argument.
+
+RESTRICTIONS: 'EcuMModuleService' is only available, if 'EcuMModuleID' is set to an value not equal 'Code'. This parameter can only be used if the function signature of the Init-function matches the Autosar spezification. Precompile changes of the API are not regarded. Use 'Code' in parameter 'EcuMModuleId' to configure such a function.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+												<STRING-PARAM-DEF UUID="DCE:5d448e6d-8e6b-4eb1-a2af-f0259a2a30be">
+													<SHORT-NAME>EcuMAdditionalInitCode</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This Parameter allows adding additional code in the callout function, e.g. Mcu_InitClock().
+
+RESTRICTIONS: 'EcuMAdditionalInitCode' is only available, if 'EcuMModuleID' is set to 'Code'.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: EcuMDriverInitListTwo -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:67abd9f2-a24e-4f5d-9f67-5b6cc808a79f">
+									<SHORT-NAME>EcuMDriverInitListTwo</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for Init Block II.
+
+This container holds a list of module IDs that will be initialised. Each module in the list will be called for initialisation in the list order.
+
+All modules in this list are initilialised after the OS is started and so these modules may use OS support. These modules may not rely on the Nvram ReadAll job to have provided all data.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: EcuMDriverInitItem -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:28813dbd-4b08-410a-93e9-4fa28efd62e8">
+											<SHORT-NAME>EcuMDriverInitItem</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container describes one entry in a driver init list.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: EcuMModuleID -->
+												<STRING-PARAM-DEF UUID="DCE:78e4f295-d9ca-4a24-a26c-8199c170bb5c">
+													<SHORT-NAME>EcuMModuleID</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Short name of the module to be initialized, e.g. Mcu, Gpt etc. Enter the Keyword 'Code' here to enable the Code field below.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>Code</DEFAULT-VALUE>
+												</STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: EcuMModuleService -->
+												<STRING-PARAM-DEF UUID="DCE:90298ebe-c0ac-4573-b25c-db0ddd98ca23">
+													<SHORT-NAME>EcuMModuleService</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">The service to be called to initialize that module, e.g. Init, PreInit, Start etc.
+
+If the service is Init and the parameter EcuMModuleConfigurationRef has been set for that module, the corresponding pointer to the init structure (&lt;Module&gt;_ConfigType) shall be passed as an argument.
+
+RESTRICTIONS: 'EcuMModuleService' is only available, if 'EcuMModuleID' is set to an value not equal 'Code'. This parameter can only be used if the function signature of the Init-function matches the Autosar spezification. Precompile changes of the API are not regarded. Use 'Code' in parameter 'EcuMModuleId' to configure such a function.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+												<STRING-PARAM-DEF UUID="DCE:676c1c0c-f11e-42b9-8d4f-b86b359d3422">
+													<SHORT-NAME>EcuMAdditionalInitCode</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This Parameter allows adding additional code in the callout function, e.g. Mcu_InitClock().
+
+RESTRICTIONS: 'EcuMAdditionalInitCode' is only available, if 'EcuMModuleID' is set to 'Code'.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: EcuMDriverInitListThree -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:c1b0fb3e-80e3-4054-a2b9-4e7224dac56e">
+									<SHORT-NAME>EcuMDriverInitListThree</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for Init Block III.
+
+This container holds a list of module IDs that will be initialised. Each module in the list will be called for initialisation in the list order.
+
+All modules in this list are initilialised after the OS is started and so these modules may use OS support. These modules may also rely on the Nvram ReadAll job to have provided all data.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: EcuMDriverInitItem -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:c7b161ec-9d99-49b3-a584-27112c778181">
+											<SHORT-NAME>EcuMDriverInitItem</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container describes one entry in a driver init list.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: EcuMModuleID -->
+												<STRING-PARAM-DEF UUID="DCE:8002c36d-36fd-4212-8f7e-ecc2cb6446d4">
+													<SHORT-NAME>EcuMModuleID</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Short name of the module to be initialized, e.g. Mcu, Gpt etc. Enter the Keyword 'Code' here to enable the Code field below.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>Code</DEFAULT-VALUE>
+												</STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: EcuMModuleService -->
+												<STRING-PARAM-DEF UUID="DCE:730cfeb7-4dd3-440c-85d5-567b8ee473b4">
+													<SHORT-NAME>EcuMModuleService</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">The service to be called to initialize that module, e.g. Init, PreInit, Start etc.
+
+If the service is Init and the parameter EcuMModuleConfigurationRef has been set for that module, the corresponding pointer to the init structure (&lt;Module&gt;_ConfigType) shall be passed as an argument.
+
+RESTRICTIONS: 'EcuMModuleService' is only available, if 'EcuMModuleID' is set to an value not equal 'Code'. This parameter can only be used if the function signature of the Init-function matches the Autosar spezification. Precompile changes of the API are not regarded. Use 'Code' in parameter 'EcuMModuleId' to configure such a function.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+												<STRING-PARAM-DEF UUID="DCE:718f51ad-7f0f-49cd-9220-06c563013e47">
+													<SHORT-NAME>EcuMAdditionalInitCode</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This Parameter allows adding additional code in the callout function, e.g. Mcu_InitClock().
+
+RESTRICTIONS: 'EcuMAdditionalInitCode' is only available, if 'EcuMModuleID' is set to 'Code'.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: EcuMDriverInitListZero -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:e2a1325a-29d7-4877-99bf-61256708f5bb">
+									<SHORT-NAME>EcuMDriverInitListZero</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">NOT USED</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: EcuMDriverInitItem -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:4f100f5b-12cc-47cb-b851-2c7ad622a581">
+											<SHORT-NAME>EcuMDriverInitItem</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">not used!!
+
+This container describes one entry in a driver init list.
+
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: EcuMModuleID -->
+												<STRING-PARAM-DEF UUID="DCE:54e0a912-9cc9-493f-8c33-2c5f910fb0fd">
+													<SHORT-NAME>EcuMModuleID</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">not used!!
+
+Short name of the module to be initialized, e.g. Mcu, Gpt etc.
+
+</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>Code</DEFAULT-VALUE>
+												</STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: EcuMModuleService -->
+												<STRING-PARAM-DEF UUID="DCE:aecb6863-6fb0-43f5-b67e-3ea8d0a10594">
+													<SHORT-NAME>EcuMModuleService</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">not used!!
+
+The service to be called to initialize that module, e.g. Init, PreInit, Start etc.
+
+If the service is Init and the parameter EcuMModuleConfigurationRef has been set for that module, the corresponding pointer to the init structure (&lt;Module&gt;_ConfigType) shall be passed as an argument.
+
+</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: EcuMDriverRestartList -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:fdad5a57-8264-4cf7-b475-4ae376515eda">
+									<SHORT-NAME>EcuMDriverRestartList</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">List of module IDs.
+EcuM2719: A configuration tool shall fill the callout EcuM_AL_DriverRestart with initialization calls to the listed drivers in the order in which they occur in the list.
+EcuM2720: Entries in this list must appear in the same order as in the combined list of EcuM_DriverInitListOne and EcuM_DriverInitListTwo. This list may be a real subset though. In all other cases, the generation tool shall report an error.
+The included container has the same structure as EcuM_DriverInitItem</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<SUB-CONTAINERS>
+										<!-- Parameter Container Definition: EcuMDriverInitItem -->
+										<PARAM-CONF-CONTAINER-DEF UUID="DCE:22ff4c72-c074-4322-9fb2-e40a11cc6514">
+											<SHORT-NAME>EcuMDriverInitItem</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This container describes one entry in a driver init list.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+											<PARAMETERS>
+												<!-- PARAMETER DEFINITION: EcuMModuleID -->
+												<STRING-PARAM-DEF UUID="DCE:ed9eeb95-226b-435d-9f74-fe07ff1c9949">
+													<SHORT-NAME>EcuMModuleID</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">Short name of the module to be initialized, e.g. Mcu, Gpt etc. Enter the Keyword 'Code' here to enable the Code field below.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+													<DEFAULT-VALUE>Code</DEFAULT-VALUE>
+												</STRING-PARAM-DEF>
+												<!-- PARAMETER DEFINITION: EcuMModuleService -->
+												<STRING-PARAM-DEF UUID="DCE:f8a16421-2a40-4a27-9155-96e9f25d330d">
+													<SHORT-NAME>EcuMModuleService</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">The service to be called to initialize that module, e.g. Init, PreInit, Start etc.
+
+If the service is Init and the parameter EcuMModuleConfigurationRef has been set for that module, the corresponding pointer to the init structure (&lt;Module&gt;_ConfigType) shall be passed as an argument.
+
+RESTRICTIONS: 'EcuMModuleService' is only available, if 'EcuMModuleID' is set to an value not equal 'Code'. This parameter can only be used if the function signature of the Init-function matches the Autosar spezification. Precompile changes of the API are not regarded. Use 'Code' in parameter 'EcuMModuleId' to configure such a function.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+												<STRING-PARAM-DEF UUID="DCE:59aa5548-8b41-4e63-b861-592d062a2a16">
+													<SHORT-NAME>EcuMAdditionalInitCode</SHORT-NAME>
+													<DESC>
+														<L-2 L="EN">This Parameter allows adding additional code in the callout function, e.g. Mcu_InitClock().
+
+RESTRICTIONS: 'EcuMAdditionalInitCode' is only available, if 'EcuMModuleID' is set to 'Code'.</L-2>
+													</DESC>
+													<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+													<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+													<IMPLEMENTATION-CONFIG-CLASSES>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+														<IMPLEMENTATION-CONFIG-CLASS>
+															<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+															<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+														</IMPLEMENTATION-CONFIG-CLASS>
+													</IMPLEMENTATION-CONFIG-CLASSES>
+													<ORIGIN>Vector Informatik</ORIGIN>
+													<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+												</STRING-PARAM-DEF>
+											</PARAMETERS>
+										</PARAM-CONF-CONTAINER-DEF>
+									</SUB-CONTAINERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: EcuMSleepMode -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:f9da797c-5248-4734-a7fb-bff30133de5f">
+									<SHORT-NAME>EcuMSleepMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container describes one configured sleep mode.
+
+RESTRICTIONS: Mcu module must be available within the EcuC configuration.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: EcuMSleepModeId -->
+										<INTEGER-PARAM-DEF UUID="DCE:8e00b01f-bf8c-4361-9e53-8c84f556bdba">
+											<SHORT-NAME>EcuMSleepModeId</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies the ID of the sleep mode. It can be used for services like EcuM_SelectShutdownTarget().</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>255</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: EcuMSleepModeName -->
+										<STRING-PARAM-DEF UUID="DCE:1e04564d-1660-4d4c-b53c-6620f36d8cac">
+											<SHORT-NAME>EcuMSleepModeName</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies the name of the current sleep mode configuration.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>EcuMSleepMode</DEFAULT-VALUE>
+										</STRING-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: EcuMSleepModeSuspend -->
+										<BOOLEAN-PARAM-DEF UUID="DCE:39369207-c2d7-4a03-ace6-234268ad6416">
+											<SHORT-NAME>EcuMSleepModeSuspend</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">NOT USED
+
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<STRING-PARAM-DEF UUID="44f92c14-261e-4094-aaaf-844f75ba800a">
+											<SHORT-NAME>EcuMMcuMode</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">The following parameter stores the MCU sleep modes. Normally the valuelist shall be empty because the used parameters are only available in the MCU driver and shall be added automatically after the start of new projects in this paramater "EcuMMcuMode".
+Please note that this is a workaround. It is required for the V85x fx3 derivatives from Renesas -formerly NEC-
+RESTRICTIONS: 'EcuMMcuMode' must only be configured if the Mcu module does not specify the mode id in the expected AUTOSAR 3.0 format AND 'EcuMAvailableMcuModes' is used</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</STRING-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Symbolic Name Reference Definition: EcuMSleepModeMcuModeRef -->
+										<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:645ed925-d20f-4086-95e2-fcff77719475">
+											<SHORT-NAME>EcuMSleepModeMcuModeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies the MCU mode which should the ECUM select when the sleep mode is entered.
+
+RESTRICTIONS: Mcu module must be available within the EcuC configuration.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Mcu/McuModuleConfiguration/McuModeSettingConf</DESTINATION-REF>
+										</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+										<!-- Symbolic Name Reference Definition: EcuMSleepModeWdgMModeRef -->
+										<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:2437686b-ef0d-4e7b-bab8-a157305b39d7">
+											<SHORT-NAME>EcuMSleepModeWdgMModeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter defines the Watchdog Manager mode that shall be active in this sleep mode.
+
+RESTRICTIONS: 'EcuMSleepModeWdgMModeRef' is only available, if 'EcuMIncludeWdgM' is set to 'true'.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMConfigSet/WdgMMode</DESTINATION-REF>
+										</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+										<!-- Symbolic Name Reference Definition: EcuMWakeupSourceMask -->
+										<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:6d19d8f1-10e1-4c65-948f-423a0d4e297f">
+											<SHORT-NAME>EcuMWakeupSourceMask</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter is a reference to the wakeup source that shall be enabled for this sleep mode.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuM/EcuMConfiguration/EcuMWakeupSource</DESTINATION-REF>
+										</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: EcuMTTII -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:3945daf4-b1a4-443d-92b6-976136f057c8">
+									<SHORT-NAME>EcuMTTII</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container specifies the data structure for TTII use. The items will be generated in the same order as in the list defined. It is proposed that this list is ordered from more power consumtion to less power consumtion.
+
+ATTENTION: The integrator has the responsibility to order this list from more power consuming to less power consuming.
+
+RESTRICTIONS: 'EcuMTTII' is only available, if 'EcuMTTIIEnabled' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: EcuMDivisor -->
+										<INTEGER-PARAM-DEF UUID="DCE:d41f47cc-4a7f-4624-a079-860307925fcd">
+											<SHORT-NAME>EcuMDivisor</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies the divisor preload value.
+
+RESTRICTIONS: 'EcuMDivisor' is only available, if 'EcuMTTIIEnabled' is set to 'true'.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>1</DEFAULT-VALUE>
+											<MAX>65535</MAX>
+											<MIN>1</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Symbolic Name Reference Definition: EcuMSleepModeRef -->
+										<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:bbefec06-5f91-4612-875e-1965f7036bf8">
+											<SHORT-NAME>EcuMSleepModeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">NOT USED
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuM/EcuMConfiguration/EcuMSleepMode</DESTINATION-REF>
+										</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+										<!-- Symbolic Name Reference Definition: EcuMSuccessorRef -->
+										<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:4c0c096e-562a-453e-a4da-2b04cd06ed8f">
+											<SHORT-NAME>EcuMSuccessorRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter is a reference to the next sleep mode in the TTII protocol.
+
+RESTRICTIONS: 'EcuMSuccessorRef' is only available, if 'EcuMTTIIEnabled' is set to 'true'.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuM/EcuMConfiguration/EcuMSleepMode</DESTINATION-REF>
+										</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: EcuMUserConfig -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:e94a8bac-86b5-485a-80cd-780151d2f272">
+									<SHORT-NAME>EcuMUserConfig</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">A list of identifiers that are needed to refer to a software component or another appropriate entity in the system which is designated to request the RUN state. Application requestors refer to entities above RTE, system requestors to entities below RTE (e.g. Communication Manager).</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: EcuMUser -->
+										<INTEGER-PARAM-DEF UUID="DCE:efa9ce33-15ea-473b-852b-485ae8b7b16f">
+											<SHORT-NAME>EcuMUser</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies the ID of the configured user.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>1</DEFAULT-VALUE>
+											<MAX>255</MAX>
+											<MIN>1</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: EcuMWakeupSource -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:5f64afa8-1d3a-433b-9168-17c96a7d97a1">
+									<SHORT-NAME>EcuMWakeupSource</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container describes one configured wakeup source.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>32</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: EcuMResetReason -->
+										<INTEGER-PARAM-DEF UUID="DCE:0c57a419-bb82-43a9-a6e8-013368b9e367">
+											<SHORT-NAME>EcuMResetReason</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter describes the mapping of reset reasons detected by the MCU driver into wakeup sources. Please enter the value returned by Mcu_GetResetReason() which should mapped to the according wakeup source. Let this field free or enter "-1" if the value is unknown. If no value is configured or "-1" is inserted the reset reason will be mapped to ECUM_WKSOURCE_RESET.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>-1</DEFAULT-VALUE>
+											<MAX>9223372036854775807</MAX>
+											<MIN>-1</MIN>
+										</INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: EcuMValidationTimeout -->
+										<FLOAT-PARAM-DEF UUID="DCE:86571681-ecd6-4dbc-ae3e-569958a43e54">
+											<SHORT-NAME>EcuMValidationTimeout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies the maximum validation timeout for a wakeup source. If the timeout expires the ECU is going into sleep state. Wakeup sources which don't need validation must have a value of 0.The timeout is specified in seconds.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0.000</DEFAULT-VALUE>
+											<MAX>100000.0</MAX>
+											<MIN>0.0</MIN>
+										</FLOAT-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: EcuMWakeupSourceId -->
+										<INTEGER-PARAM-DEF UUID="DCE:3f3cbef6-d466-4925-bc30-7613d4149aaa">
+											<SHORT-NAME>EcuMWakeupSourceId</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter defines the identifier of this wakeup source.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>1</DEFAULT-VALUE>
+											<MAX>2147483648</MAX>
+											<MIN>1</MIN>
+										</INTEGER-PARAM-DEF>
+										<!-- PARAMETER DEFINITION: EcuMWakeupSourcePolling -->
+										<BOOLEAN-PARAM-DEF UUID="DCE:7632be69-851e-4cad-9074-0712d2578f69">
+											<SHORT-NAME>EcuMWakeupSourcePolling</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">NOT USED
+
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<FLOAT-PARAM-DEF UUID="bb18ac1c-9ea1-4e89-81f3-3b1be64195cb">
+											<SHORT-NAME>EcuMCheckWakeupTimeout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies the maximum time between the call of EcuM_CheckWakeup and an anychron call of EcuM_SetWakeupEvent of the same wakeup source. If the timeout expires the ECU is allowed to go into sleep state. For wakeup sources where it is ensured that the EcuM_SetWakeupEvent is called  before EcuM_CheckWakeup function ends the timout value shall be 0.The timeout is specified in seconds.
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>10</MAX>
+											<MIN>0</MIN>
+										</FLOAT-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Symbolic Name Reference Definition: EcuMComMChannelRef -->
+										<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:fa156483-1ea9-4f20-a2b9-cfeb88f9cc71">
+											<SHORT-NAME>EcuMComMChannelRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter is a reference to a Network (channel) defined in the Communication Manager. No reference indicates that the wakeup source is not a communication channel.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/ComM/ComMChannel</DESTINATION-REF>
+										</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: EcuMWdgM -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:ca72313c-e4ea-4b94-b85d-3607ef60dd49">
+									<SHORT-NAME>EcuMWdgM</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container holds the configuration parameters for the interaction between the Watchdog Manager (WdgM) and EcuM. The WdgM mode to be selected in a specific Sleep Mode of EcuM is configured in the EcuMSleepMode container.
+
+RESTRICTIONS: 'EcuMWdgM' is only available, if 'EcuMIncludeWdgM' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<REFERENCES>
+										<!-- Reference Definition: EcuMWdgMPostRunModeRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:ecf37100-9558-4725-8107-b0475c9c1e27">
+											<SHORT-NAME>EcuMWdgMPostRunModeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter references the WdgM mode to be set when entering the POST RUN state of EcuM.
+
+RESTRICTIONS: 'EcuMWdgMPostRunModeRef' is only available, if 'EcuMIncludeWdgM' is set to 'true'.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMConfigSet/WdgMMode</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+										<!-- Reference Definition: EcuMWdgMRunModeRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:ce2507ed-2258-4bd0-9dca-67f549182a3f">
+											<SHORT-NAME>EcuMWdgMRunModeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter references the WdgM mode to be set when entering the RUN state of EcuM.
+
+RESTRICTIONS: 'EcuMWdgMRunModeRef' is only available, if 'EcuMIncludeWdgM' is set to 'true'.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMConfigSet/WdgMMode</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+										<!-- Reference Definition: EcuMWdgMShutdownModeRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:7429f85f-0276-47ca-9d16-dbd34ab08a0b">
+											<SHORT-NAME>EcuMWdgMShutdownModeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter references the WdgM mode to be set when leaving the GO OFF I state of EcuM.
+
+RESTRICTIONS: 'EcuMWdgMShutdownModeRef' is only available, if 'EcuMIncludeWdgM' is set to 'true'.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMConfigSet/WdgMMode</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+										<!-- Reference Definition: EcuMWdgMStartupModeRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:d6d9563d-ee75-475c-92c2-da1dbbbf503c">
+											<SHORT-NAME>EcuMWdgMStartupModeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">not used!
+
+This parameter references the WdgM mode to be set when entering the STARTUP II state of EcuM.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMConfigSet/WdgMMode</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+										<!-- Reference Definition: EcuMWdgMWakeupModeRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:aa4c24f6-4ff6-4866-9acf-e0d0b07ba4ed">
+											<SHORT-NAME>EcuMWdgMWakeupModeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter references the WdgM mode to be set when entering the WAKEUP I state of EcuM.
+
+RESTRICTIONS: 'EcuMWdgMWakeupModeRef' is only available, if 'EcuMIncludeWdgM' is set to 'true'.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMConfigSet/WdgMMode</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+										<!-- Symbolic Name Reference Definition: EcuMSupervisedEntityRef -->
+										<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:4653264b-1817-4856-b35d-65ae7db5f7cc">
+											<SHORT-NAME>EcuMSupervisedEntityRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">not used!
+
+This parameter references the Supervised Entity ID that way configured for EcuM in the Watchdog Manager.
+
+</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/WdgM/WdgMGeneral/WdgMSupervisedEntity</DESTINATION-REF>
+										</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: EcuMGeneral -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:47da5d50-ca90-4e37-91b3-683a762cd075">
+							<SHORT-NAME>EcuMGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container holds the general, pre-compile configuration parameters</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: EcuMDevErrorDetect -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:304f573a-f682-4ef0-bbf3-ea8eda508c22">
+									<SHORT-NAME>EcuMDevErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">It is the main switch over following buttons:
+-  Check Parameter
+-  Check Uninit
+-  Det Errorhook include file
+ - Det Errorhook Function
+
+The checks simplify the search for errors. In production mode, this switch should be disabled to save RAM and to speed up the module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMIncludeDem -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:b6100008-b8dd-4371-8566-758daf2028d2">
+									<SHORT-NAME>EcuMIncludeDem</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/disables the use of the DEM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMIncludeDet -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:ab01de0e-31fd-45d5-bbd2-66532c125e97">
+									<SHORT-NAME>EcuMIncludeDet</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/disables the use of the DET.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMIncludeNvramMgr -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:7718c647-b052-43d2-bc35-bc056e4925ef">
+									<SHORT-NAME>EcuMIncludeNvramMgr</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/disables the use of the NVRAM Manager.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMIncludeWdgM -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:0d160ea1-00a5-4429-b4c1-cd208e095601">
+									<SHORT-NAME>EcuMIncludeWdgM</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/disables the use of the Watchdog Manager.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMMainFunctionPeriod -->
+								<FLOAT-PARAM-DEF UUID="DCE:155e2837-ddfe-46e4-9e3d-1d38dfcb0ded">
+									<SHORT-NAME>EcuMMainFunctionPeriod</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter defines the schedule period of EcuM_MainFunction.
+
+Unit: [s]</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.01</DEFAULT-VALUE>
+									<MAX>100000</MAX>
+									<MIN>0.001</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMTTIIEnabled -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:f4baa4ed-426d-45d6-8839-e9abca2ad9a6">
+									<SHORT-NAME>EcuMTTIIEnabled</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter enables / disables the  use of the TTII protocol.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: EcuMVersionInfoApi -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:f7036fc1-2000-4012-9b14-8caa3c397d95">
+									<SHORT-NAME>EcuMVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This switch enables or disables the EcuM_GetVersionInfo() API function.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:a84a936c-186e-4b7d-a061-72be4e930762">
+									<SHORT-NAME>EcuMIncludeComM</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/disables the use of the ComM.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:de3cf3d9-e12d-40aa-8f0f-d0d71cd7a768">
+									<SHORT-NAME>EcuMIncludeRte</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enable/disables the use of the Rte.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:211d9bfa-7ef2-426b-8814-95e313fdff58">
+									<SHORT-NAME>EcuMCheckParameter</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter enables/disables the following parameter check:
+CheckPointerParameter
+CheckStateParameter
+CheckWkSourceParameter
+CheckBootTargetParameter
+CheckSleepModeParameter
+CheckUserParameter
+
+RESTRICTIONS: 'EcuMCheckParameter' is only available, if 'EcuMDevErrorDetect' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:19f60247-d96d-4e41-9b96-ec2a4f38978a">
+									<SHORT-NAME>EcuMCheckPointerParameter</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Disables/enables the null pointer parameter check.
+
+RESTRICTIONS: 'EcuMCheckPointerParameter' is only available, if 'EcuMCheckParameter' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:d4158cc9-6373-4ba7-b6ab-a0097edb1cc1">
+									<SHORT-NAME>EcuMCheckStateParameter</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Disables/enables the state parameter check.
+
+RESTRICTIONS: 'EcuMCheckStateParameter' is only available, if 'EcuMCheckParameter' is set to 'true'. </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:d313e45e-1f0a-45f8-8a7a-5333e2bc31a6">
+									<SHORT-NAME>EcuMCheckWkSourceParameter</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Disables/enables the wakeup source parameter check.
+
+RESTRICTIONS: 'EcuMCheckWkSourceParameter' is only available, if 'EcuMCheckParameter' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:da7ef1ce-f1b7-4c8c-8623-1e18ffa3aec4">
+									<SHORT-NAME>EcuMCheckBootTargetParameter</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Disables/enables the boottarget parameter check.
+
+RESTRICTIONS: 'EcuMCheckBootTargetParameter' is only available, if 'EcuMCheckParameter' is set to 'true'. </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:c91dfc27-b21e-4f59-a782-91bcd27f2949">
+									<SHORT-NAME>EcuMCheckSleepModeParameter</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Disables/enables the sleep mode parameter check.
+
+RESTRICTIONS: 'EcuMCheckSleepModeParameter' is only available, if 'EcuMCheckParameter' is set to 'true'. </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:44094a31-ad81-4443-8238-2a5202a70912">
+									<SHORT-NAME>EcuMCheckUserParameter</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Disables/enables the sleep mode parameter check.
+
+RESTRICTIONS: 'EcuMCheckUserParameter' is only available, if 'EcuMCheckParameter' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:f8c43c26-5c43-44e1-b96c-14e54dc71c09">
+									<SHORT-NAME>EcuMEnableProdErrorReporting</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables the reporting of production errors.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="797bbad8-27e6-4c51-937d-6c521785c0ff">
+									<SHORT-NAME>EcuMReportAllRunRequestsKilled</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables the reporting of production error ECUM_ALL_RUN_REQUESTS_KILLED.
+
+RESTRICTIONS: 'EcuMReportAllRunRequestsKilled' is only available, if 'EcuMEnableProdErrorReporting' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="c2c7c31a-13da-4108-ba58-539b71fa91d0">
+									<SHORT-NAME>EcuMReportRamCheckFailed</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables the reporting of production error ECUM_RAM_CHECK_FAILED.
+
+RESTRICTIONS: 'EcuMReportAllRunRequestsKilled' is only available, if 'EcuMEnableProdErrorReporting' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:8411f20e-2c09-44a4-b2a8-1fcc17b0e8ca">
+									<SHORT-NAME>EcuMDetErrorhookFunction</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Name of the error reporting function of development errors.
+
+RESTRICTIONS: 'EcuMDetErrorhookFunction' is only available, if 'EcuMDevErrorDetect' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det_ReportError</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:f7f0b7a3-e164-4d0a-8c9f-6f7903fe16c1">
+									<SHORT-NAME>EcuMDemSetError</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Name of the reporting function of production errors.
+
+RESTRICTIONS: 'EcuMDemSetError' is only available, if 'EcuMEnableProdErrorReporting' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Dem_ReportErrorStatus</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:2bbeb36b-b41a-4901-a823-9a121b4b53c4">
+									<SHORT-NAME>EcuMCheckUnInit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter enables/disables the check if the module is enabled.
+
+RESTRICTIONS: 'EcuMCheckUnInit' is only available, if 'EcuMDevErrorDetect' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:49507891-1c28-47c7-886e-4e7e766a2c6b">
+									<SHORT-NAME>EcuMCheckConfigType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables/Disables the check of the config structure not being a NULL_PTR.
+
+RESTRICTIONS: 'EcuMCheckConfigType' is only available, if 'EcuMCheckParameter' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:14d55ed2-a673-4765-bc1b-ddf8b07ad1df">
+									<SHORT-NAME>EcuMAvailableMcuModes</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">List of all available mcu modes
+
+RESTRICTIONS: 'EcuMAvailableMcuModes' must only be configured if the Mcu module does not specify the mode id in the expected AUTOSAR 3.0 format.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:27dfa5f5-5a30-4faa-8b6b-ba99027deacd">
+									<SHORT-NAME>EcuMIncludeSchM</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables/Disables the use of the Schedule Manager.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:28f2a57d-fb80-4bdc-84ac-8c2ff792385f">
+									<SHORT-NAME>EcuMMcuIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Header file of Mcu Module
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Mcu.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:0e6d4a61-5d08-4422-a29b-a0e37c0ad6a4">
+									<SHORT-NAME>EcuMWdgMIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Header file of WdgM Module.
+
+RESTRICTIONS: 'EcuMWdgMIncludeFile' is only available, if 'EcuMIncludeWdgM' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>WdgM.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:0e116f1d-0cf0-475e-ba51-9ba7cae96ce7">
+									<SHORT-NAME>EcuMComMIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Header file of ComM Module.
+
+RESTRICTIONS: 'EcuMComMIncludeFile' is only available, if 'EcuMIncludeComM' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>ComM.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:d5707a80-12da-42ed-88f7-7dd09e9d1708">
+									<SHORT-NAME>EcuMComMCallbackFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Callback Header file of ComM Module.
+
+RESTRICTIONS: 'EcuMComMCallbackFile' is only available, if 'EcuMIncludeComM' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>ComM_EcuM.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:4f2a814c-8b13-433c-b26c-3e28e1f86e35">
+									<SHORT-NAME>EcuMRteIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Header file of Rte.
+
+RESTRICTIONS: 'EcuMRteIncludeFile' is only available, if 'EcuMIncludeRte' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Rte_Main.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:85fe3234-b73e-4789-af82-7b75ab25df55">
+									<SHORT-NAME>EcuMNvmIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Header file of Nvm Module.
+
+RESTRICTIONS: 'EcuMNvmIncludeFile' is only available, if 'EcuMIncludeNvramMgr' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Nvm.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:25a2eaa6-1589-495b-8d6b-bbaa24ae35c2">
+									<SHORT-NAME>EcuMDetIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Header file of  Det Module.
+
+RESTRICTIONS: 'EcuMDetIncludeFile' is only available, if 'EcuMIncludeDet' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:ff4aba3a-1152-46b8-862d-be946e7a1ca4">
+									<SHORT-NAME>EcuMDemIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Header file of  Dem Module.
+
+RESTRICTIONS: 'EcuMDemIncludeFile' is only available, if 'EcuMIncludeDem' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Dem.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:85fb6fbb-fe06-4bf2-a1cb-eb96cbd3267c">
+									<SHORT-NAME>EcuMOsIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Header file of  Os Module</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Os.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:fc037e15-a845-499f-9e69-73432a436717">
+									<SHORT-NAME>EcuMSchMIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Include file of Schedule Manager.
+
+RESTRICTIONS: 'EcuMSchMIncludeFile' is only available, if 'EcuMIncludeSchM' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>SchM.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:31370276-db11-460c-908d-626d49f218d3">
+									<SHORT-NAME>EcuMDevErrorDetectIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Include file where the prototype of the used Errorreporting function (same prototype as Det_ReportError ) is defined.
+
+RESTRICTIONS: 'EcuMDevErrorDetectIncludeFile' is only available, if 'EcuMDevErrorDetect' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Det.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:07e1d2fd-42b9-45a3-8135-c4682c17d550">
+									<SHORT-NAME>EcuMProdErrorDetectIncludeFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Include file where the prototype of the used Errorreporting function (same prototype as Dem_ReportErrorStatus ) is defined.
+
+RESTRICTIONS: 'EcuMProdErrorDetectIncludeFile' is only available, if 'EcuMEnableProdErrorReporting' is set to 'true'. </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Dem.h</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="DCE:7d7daeda-aea5-4075-b8c1-8c9298c2a4df">
+									<SHORT-NAME>EcuMAdditionalIncludes</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">List of header files needed for driver init lists.
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<FLOAT-PARAM-DEF UUID="71281250-2afb-4ca1-b75e-b485ad0ae364">
+									<SHORT-NAME>EcuMNvmCancelWriteAllTimeout</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter specifies the time in seconds which shall be waited for NvM_WriteAll in case NvM_CancelWriteAll was called due to a wakeup event.
+The following coding is used:
+  [0] - immediately abort the waiting mechanism. EcuM will switch immediately into RUN state or calls the optional NvM_KillWriteAll API before switching to RUN state.
+[60] - the maximum waiting time before the EcuM will continue with the wakeup sequence</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>60</DEFAULT-VALUE>
+									<MAX>60</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="6fa2bae2-5a00-4484-b8cc-4aa780fcf32b">
+									<SHORT-NAME>EcuMAmdRuntimeMeasurement</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is used to support the Amd Runtimemeasurement.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="9573ba64-4246-4a8a-a0a9-eb70e0b7c714">
+									<SHORT-NAME>EcuMShutdownOSFunction</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Name of the function which shall be called for Shutdown the OS.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>ShutdownOS(E_OK)</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<!-- Symbolic Name Reference Definition: EcuMTTIISleepModeRef -->
+								<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="DCE:27a7ecf9-7499-41a6-9bc0-1dc361841d41">
+									<SHORT-NAME>EcuMTTIISleepModeRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">not used!
+
+This configuration parameter references the initial sleep mode to be used by TTII when TTII is activated after a RUN mode.
+EcuM2785: Whenever RUN mode is reached, the TTII protocol shall be reset to use the wakeup source referenced by this parameter.
+This configuration parameter is a human readable name for a TTII wakeup source which is only needed by the configuration tool. For imlementation on the ECU, this parameter may be dropped and replaced by a generated list index of EcuM_TTII.
+
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuM/EcuMConfiguration/EcuMSleepMode</DESTINATION-REF>
+								</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+								<REFERENCE-PARAM-DEF UUID="DCE:46033451-a1b9-4d8c-99a4-7eb325ab200f">
+									<SHORT-NAME>EcuMIrqHandling</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Preprocessor switch to determine the IRQ function set which is used to protect critical sections.
+
+RESTRICTIONS: 'EcuMIrqHandling' is only available, if 'BoardUseSchm' is set to 'false'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+								<REFERENCE-PARAM-DEF UUID="DCE:100d1c1a-525f-4ea5-bb82-16bc140ce12f">
+									<SHORT-NAME>EcuMTTIIWakeupSourceRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is a replacement of the parameter EcuMTTIISleepModeRef. This parameter references exactly one wakeup source which should be act as TTII wakeup source.
+
+RESTRICTIONS: 'EcuMTTIIWakeupSourceRef' is only available, if 'EcuMTTIIEnabled' is set to 'true'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/EcuM/EcuMConfiguration/EcuMWakeupSource</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+								<REFERENCE-PARAM-DEF UUID="DCE:7b8cefd2-e82a-411f-8578-580f3bf223eb">
+									<SHORT-NAME>EcuMWkupIsrHandling</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter is a reference to an interrupt function set which should disable/enable the global interrupts.
+!! DO NOT USE AN OS FUNCTION FOR THIS PARAMETER !!
+NOTE: 
+- This parameter is ECU specific and depends strongly on the used platform
+- No transformation of the value of this parameter will be performed, i.e. the user is responsible to enter the correct syntax of this parameter.
+
+RESTRICTIONS: 'EcuMWkupIsrHandling' is independent from 'BoardUseSchm'. 
+                             In case SchM functionality will be used, it must be inserted into the coresponding 'interrupt function set'.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/Board/InterruptFunctionality/InterruptFunctionSet</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+							<SUB-CONTAINERS>
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:c1bf8f70-47b8-413d-8626-626da487bec7">
+									<SHORT-NAME>EcuMApiSwitches</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for which contains parameter for enabling/disabling the availability of APIs.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<BOOLEAN-PARAM-DEF UUID="DCE:870a8713-2e00-46df-83ca-c0d2391119d2">
+											<SHORT-NAME>EcuMKillAllRUNRequestApi</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_KillAllRUNRequests() API function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:c1afa6f5-bca9-4b73-93b9-f7be2bd0f963">
+											<SHORT-NAME>EcuMGetValidatedWakeupEventsApi</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_GetValidatedWekeupEvents() API function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:aa8e1bc2-0bb6-4c0b-ac58-64b4d1e3e82d">
+											<SHORT-NAME>EcuMGetExpiredWakeupEventsApi</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_GetExpiredWakeupEvents() API function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:18847e8b-5c17-496e-b266-25b1dbd3257c">
+											<SHORT-NAME>EcuMGetStatusOfWakeupSourceApi</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_GetStatusOfWakeupSource() API function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:12f1797f-2285-4bb3-9dfe-fe1191d1a57f">
+									<SHORT-NAME>EcuMCalloutSwitches</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for which contains parameter for enabling/disabling the availability of callouts.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<BOOLEAN-PARAM-DEF UUID="DCE:4222fed8-c2b0-445c-a1f8-57d19e0aab60">
+											<SHORT-NAME>EcuMOnRTEStartupCallout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_OnRTEStartup() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:0d279d9a-b2f2-4852-b345-76835c22f922">
+											<SHORT-NAME>EcuMOnEnterRunCallout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_OnEnterRun() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:79f7a647-30e3-4d4f-9461-a68ee360f7ae">
+											<SHORT-NAME>EcuMOnExitRunCallout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_OnExitRun() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:1ba9da5b-5458-4f48-a9b1-438031ce85a9">
+											<SHORT-NAME>EcuMOnExitPostRunCallout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_OnExitPostRun() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:e31dbeb2-8f60-43bd-9f3f-d32961b72c86">
+											<SHORT-NAME>EcuMOnPrepShutdownCallout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_OnPrepShutdown() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:dc91ecfc-1383-48a6-ae5e-a0cbb20dd7e4">
+											<SHORT-NAME>EcuMOnGoSleepCallout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_OnGoSleep() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:1f29bbab-a5f5-4761-9f85-7aa614faa63d">
+											<SHORT-NAME>EcuMOnGoOffOneCallout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_OnGoOffOne() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:51085a83-d363-4fcb-b693-cdaef56a2993">
+											<SHORT-NAME>EcuMOnGoOffTwoCallout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_OnGoOffTwo() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:de08b930-aed1-493b-ad84-d17f2ff31168">
+											<SHORT-NAME>EcuMOnWakeupReactionCallout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_OnWakeupReaction() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="e89b4205-f70e-46bf-8949-9e6608631abd">
+											<SHORT-NAME>EcuMGeneratorCompatibilityError</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter enables the callout EcuM_GeneratorCompatibilityError(). This switch must be enabled if components implements the CRC check.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="80aac2ee-77c7-4080-bcba-386ac3ed8801">
+											<SHORT-NAME>EcuMOnErrorHook</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_ErrorHook() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="ac2005d4-4e05-43c5-9e1c-4b96f58931d4">
+											<SHORT-NAME>EcuMOnStateChangeCallout</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This switch enables or disables the EcuM_OnStateChange() callout function.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:72b547ce-b52c-4698-b998-38ae62860b20">
+									<SHORT-NAME>EcuMServicePortConfig</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Container for the configuration of Service Ports.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<PARAMETERS>
+										<BOOLEAN-PARAM-DEF UUID="DCE:90a0d4f6-3ad3-490f-8405-50bba80e9f43">
+											<SHORT-NAME>EcuMGenStateRequestPort</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter enables the generation of State Request Ports.
+
+RESTRICTIONS: 'EcuMGenStateRequestPort' is only available, if 'EcuMIncludeRte' is set to 'true.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:d0c354b0-aefd-4238-84af-c1affb5b3d5d">
+											<SHORT-NAME>EcuMGenBootTargetPort</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter enables the generation of BootTarget Ports.
+
+RESTRICTIONS: 'EcuMGenBootTargetPort' is only available, if 'EcuMIncludeRte' is set to 'true.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:17a74350-8c35-49b0-8c5f-88bb5b35ec37">
+											<SHORT-NAME>EcuMGenApplicationModePort</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter enables the generation of ApplicationMode Ports.
+
+RESTRICTIONS: 'EcuMGenApplicationModePort' is only available, if 'EcuMIncludeRte' is set to 'true.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="DCE:883350cb-fdec-4c29-9114-a99004c3d374">
+											<SHORT-NAME>EcuMGenShutdownTargetPort</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter enables the generation of ShutdownTarget Ports.
+
+RESTRICTIONS: 'EcuMGenShutdownTargetPort' is only available, if 'EcuMIncludeRte' is set to 'true.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<STRING-PARAM-DEF UUID="DCE:cfc76d3d-41b8-481b-a934-dcd025f64bd3">
+											<SHORT-NAME>EcuMServiceComponentName</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Name of the Service Component for import into Rte generation tool.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>EcuM</DEFAULT-VALUE>
+										</STRING-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="19e570e3-fe24-4eaa-bd4a-4186960a6df4">
+											<SHORT-NAME>EcuMGenModeSwitchPort</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter enables the generation of the EcuM_CurrentMode sender-receiver interface within the SW-C description and the usage of a callback function for mode switch notification. The used notification function depends on the ECUM parameter EcuMIncludeRte: If this parameter is set to ON the ECUM will use the provided RTE function Rte_Switch_currentMode_currentMode(). If the parameter EcuMIncludeRte is set to OFF the callback function specified in EcuMModeSwitchCbkName will be used to notify mode switch event.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>false</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+										<STRING-PARAM-DEF UUID="b991e5b2-9248-49af-815b-8246829ea9df">
+											<SHORT-NAME>EcuMModeSwitchCbkName</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies the callback function name which should be used by ECUM for mode switch event notification if the parameter EcuMIncludeRte is set ot OFF and the parameter EcuMGenModeSwitchPort is set to ON.
+
+RESTRICTIONS: 'EcuMModeSwitchCbkName' is only available, if 'EcuMGenModeSwitchPort' is set to 'true'.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>Appl_EcuM_currentMode_currentMode</DEFAULT-VALUE>
+										</STRING-PARAM-DEF>
+										<BOOLEAN-PARAM-DEF UUID="d3e188e0-670a-4ea7-8845-3e6945c77ae5">
+											<SHORT-NAME>EcuMModeSwitchRteAck</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter enables the synchronisation mechanism with RTE. In case thi parameter is enabled, the EcuM waits on defined synchronistion points until the Rte switches into coresponding ECU mode. After receiving the ACK, EcuM will continue. </L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>true</DEFAULT-VALUE>
+										</BOOLEAN-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<PARAM-CONF-CONTAINER-DEF UUID="ffcacbb5-677b-43d7-9da6-0d14c13a339f">
+									<SHORT-NAME>EcuMAppMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This container holds the configuration parameters for the interaction between the Operating System and EcuM. This container represents a mapping to the OS Application Modes. These AppModes are used by EcuM_SelectApplicationMode and EcuM_GetApplicationMode APIs. </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<REFERENCES>
+										<SYMBOLIC-NAME-REFERENCE-PARAM-DEF UUID="1b719854-f668-46f3-bcb7-19f3bdde7e09">
+											<SHORT-NAME>EcuMUsedAppModeRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">This parameter specifies the corresponding Os Application Mode.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>Vector Informatik</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/Os/OsAppMode</DESTINATION-REF>
+										</SYMBOLIC-NAME-REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="5fecdd8f-66fd-4f9a-a716-57af1c58fbd4">
+							<SHORT-NAME>VectorCommonData</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This configuration container contains Vector specific vendor data, which are relevant for configuration management purposes.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="7d9385ac-d945-44c7-8a47-b06950a5b7a0">
+									<SHORT-NAME>BswmdVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter specifies the version of this bswmd file. </L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>6.06.01</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<MODULE-CONFIGURATION UUID="24d51903-4e67-47e8-9623-b9d2437c1449">
+					<SHORT-NAME>EcuM_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/EcuM</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="DCE:cdfa27cb-2b2b-4939-ac77-7b0df15c6c31">
+					<SHORT-NAME>EcuM_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/EcuM</DEFINITION-REF>
+					<CONTAINERS></CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

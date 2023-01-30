@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/3.2.1 autosar_321.xsd" xmlns="http://autosar.org/3.2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>ComponentType</SHORT-NAME>
+			<ELEMENTS>
+				<SENSOR-ACTUATOR-SOFTWARE-COMPONENT-TYPE>
+					<SHORT-NAME>Sa_DigMSB</SHORT-NAME>
+					<PORTS>
+					</PORTS>
+				</SENSOR-ACTUATOR-SOFTWARE-COMPONENT-TYPE>
+				<INTERNAL-BEHAVIOR>
+					<SHORT-NAME>Sa_DigMSB_InternalBehavior</SHORT-NAME>
+					<COMPONENT-REF DEST="SENSOR-ACTUATOR-SOFTWARE-COMPONENT-TYPE">/ComponentType/Sa_DigMSB</COMPONENT-REF>
+					<EVENTS>
+					</EVENTS>
+					<PORT-API-OPTIONS>
+					</PORT-API-OPTIONS>
+					<RUNNABLES>
+				
+					</RUNNABLES>
+					<SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+				</INTERNAL-BEHAVIOR>
+				<SWC-IMPLEMENTATION>
+					<SHORT-NAME>Sa_DigMSB_Implementation</SHORT-NAME>
+					<CODE-DESCRIPTORS>
+						<CODE>
+							<SHORT-NAME>Code</SHORT-NAME>
+							<TYPE>SRC</TYPE>
+						</CODE>
+					</CODE-DESCRIPTORS>
+					<BEHAVIOR-REF DEST="INTERNAL-BEHAVIOR">/ComponentType/Sa_DigMSB_InternalBehavior</BEHAVIOR-REF>
+				</SWC-IMPLEMENTATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>PortInterface</SHORT-NAME>
+			<ELEMENTS>
+				<CLIENT-SERVER-INTERFACE>
+					<SHORT-NAME>WdgM_CheckpointReached</SHORT-NAME>
+					<IS-SERVICE>true</IS-SERVICE>
+					<OPERATIONS>
+						<OPERATION-PROTOTYPE>
+							<SHORT-NAME>CheckpointReached</SHORT-NAME>
+							<DESC>
+								<L-2 L="FOR-ALL">Indicates to the Watchdog Manager that a Checkpoint within a Supervised Entity has been reached.</L-2>
+							</DESC>
+							<POSSIBLE-ERROR-REFS>
+								<POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/PortInterface/WdgM_CheckpointReached/E_NOT_OK</POSSIBLE-ERROR-REF>
+							</POSSIBLE-ERROR-REFS>
+						</OPERATION-PROTOTYPE>
+					</OPERATIONS>
+					<POSSIBLE-ERRORS>
+						<APPLICATION-ERROR>
+							<SHORT-NAME>E_NOT_OK</SHORT-NAME>
+							<ERROR-CODE>1</ERROR-CODE>
+						</APPLICATION-ERROR>
+					</POSSIBLE-ERRORS>
+				</CLIENT-SERVER-INTERFACE>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

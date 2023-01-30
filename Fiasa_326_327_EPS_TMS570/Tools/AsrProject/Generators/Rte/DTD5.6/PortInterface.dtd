@@ -1,0 +1,84 @@
+<!-- Entities -->
+
+<!ENTITY ti.PortInterface         "PortInterface">
+<!ENTITY ti.OperationPrototype    "OperationPrototype">
+<!ENTITY ti.ArgumentPrototype     "ArgumentPrototype">
+<!ENTITY ti.ApplicationError      "ApplicationError">
+
+<!ENTITY ti.DataType         "DataType">
+
+<!-- Elements -->
+
+<!ELEMENT PortInterface  (%C.DefAttr;, ATTRLink*, (SenderReceiver|ClientServer|CalInterface), GenAttrList?)>
+<!ELEMENT SenderReceiver (DataElementPrototype*, ModeDclrGroupPrototype*)>
+<!ELEMENT ClientServer   (OperationPrototype*, ApplicationError*)>
+<!ELEMENT CalInterface   (CalElementPrototype*)>
+ 
+<!ELEMENT DataElementPrototype  (%C.DefAttr;, ATTRLink*, GenAttrList?)>
+<!ELEMENT OperationPrototype    (%C.DefAttr;, ATTRLink*, GenAttrList?, ArgumentPrototype*, ApplicationErrorLink*)>
+<!ELEMENT ArgumentPrototype     (%C.DefAttr;, ATTRLink*              )>
+<!ELEMENT ApplicationError      (%C.DefAttr;                         )>
+<!ELEMENT CalElementPrototype   (%C.DefAttr;, ATTRLink*, GenAttrList?)>
+
+<!ATTLIST PortInterface        %A.ConfigItem;
+           IsServicePort       CDATA "0"
+           BSWModule           CDATA ''
+>
+
+<!ATTLIST SenderReceiver %A.ChildItem;>
+
+<!ATTLIST ClientServer   %A.ChildItem;>
+<!ATTLIST CalInterface   %A.ChildItem;>
+
+<!ATTLIST DataElementPrototype %A.ChildItem;
+           DataTypeLink     NMTOKEN #FIXED "&ti.DataType;"
+           IsQueued         CDATA "0"
+           LimitType        (NONE | INTERNAL | PHYSICAL)    "NONE"
+           UpperLimitClosed CDATA "0"
+           LowerLimitClosed CDATA "0"
+           UpperLimit       CDATA "0"
+           LowerLimit       CDATA "0"
+           CalAccess       (RO | NA | RW) "NA"
+>
+
+<!ATTLIST OperationPrototype %A.ChildItem;
+>
+
+<!ATTLIST ArgumentPrototype %A.ChildItem;
+           OrderIndex       CDATA "0"
+           Direction        (IN | INOUT | OUT)      "IN"
+           DataTypeLink     NMTOKEN #FIXED "&ti.DataType;"
+           CalAccess        (RO | NA | RW) "NA"
+>
+
+<!ATTLIST ApplicationError %A.ChildItem;
+           ErrorCode        CDATA "2"
+>
+
+<!ATTLIST CalElementPrototype %A.ChildItem;
+           DataTypeLink       NMTOKEN #FIXED "&ti.DataType;"
+           InitValueConstLink NMTOKEN #FIXED "&ti.Constant;"
+           LimitType        (NONE | INTERNAL | PHYSICAL)    "NONE"
+           UpperLimitClosed CDATA "0"
+           LowerLimitClosed CDATA "0"
+           UpperLimit       CDATA "0"
+           LowerLimit       CDATA "0"
+           CalAccess       (RO | NA | RW) "RW"
+>
+
+
+<!-- Links -->
+
+<!ELEMENT PortInterfaceLink EMPTY>
+<!ATTLIST PortInterfaceLink 
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.PortInterface;">
+
+<!ELEMENT ApplicationErrorLink EMPTY>
+<!ATTLIST ApplicationErrorLink 
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.ApplicationError;">

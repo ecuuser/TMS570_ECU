@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/3.1.4 autosar_314_ext.xsd" xmlns="http://autosar.org/3.1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>ComponentType</SHORT-NAME>
+			<ELEMENTS>
+				<APPLICATION-SOFTWARE-COMPONENT-TYPE>
+					<SHORT-NAME>Ap_StabilityComp1</SHORT-NAME>
+				</APPLICATION-SOFTWARE-COMPONENT-TYPE>
+				<INTERNAL-BEHAVIOR>
+					<SHORT-NAME>Ap_StabilityComp1_InternalBehavior</SHORT-NAME>
+					<COMPONENT-REF DEST="APPLICATION-SOFTWARE-COMPONENT-TYPE">/ComponentType/Ap_StabilityComp1</COMPONENT-REF>
+					<SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+				</INTERNAL-BEHAVIOR>
+				<SWC-IMPLEMENTATION>
+					<SHORT-NAME>Ap_StabilityComp1_Implementation</SHORT-NAME>
+					<CODE-DESCRIPTORS>
+						<CODE>
+							<SHORT-NAME>Code</SHORT-NAME>
+							<TYPE>SRC</TYPE>
+						</CODE>
+					</CODE-DESCRIPTORS>
+					<BEHAVIOR-REF DEST="INTERNAL-BEHAVIOR">/ComponentType/Ap_StabilityComp1_InternalBehavior</BEHAVIOR-REF>
+				</SWC-IMPLEMENTATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>DaVinci</SHORT-NAME>
+			<ELEMENTS/>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,141 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : FlsTst_Cfg.c
+* Module Description: Configuration file of FlsTst module
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          3 %
+ * %date_modified:    Mon Nov 26 14:46:05 2012 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 07/13/12   1       JJW       Initial template creation
+ * 09/17/12   2       JJW       Remove extra comma in generation of FlsTst_ConfigType definition
+ * 11/26/12   3       JJW       Notification funciton generation support added
+ */
+
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "FlsTst" ) ); #>
+<# bool apiEnableTestCompleteNotification = ValueOf( Xp.ValueAtDefRefTo( "FlsTstGeneral/FlsTstTestCompletedNotificationSupported" ) ); #>
+#include "FlsTst.h" /*[FlsTst003]*/
+
+/* Externally defined symbols */
+<# string crcPtr = null; #>
+<# string startPtr = null; #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "FlsTstConfigSet" ) ) #>
+<#     !LOOP( Xp.ContainerAtDefRefTo( "FlsTstBlockBgndConfigSet" ) ) #>
+<#         !LOOP( Xp.ContainerAtDefRefTo( "FlsTstBlock" ) ) #>
+<#         crcPtr = ValueOf( Xp.ValueAtDefRefTo( "FlsTstSignatureSymbol" ) ); #>
+<#         startPtr = ValueOf( Xp.ValueAtDefRefTo( "FlsTstBlockBaseSymbol" ) ); #>
+extern CONST(uint64, AUTOMATIC) <#= crcPtr #>;
+extern CONST(uint64, AUTOMATIC) <#= startPtr #>;
+
+<#         !ENDLOOP #>
+<#     !ENDLOOP #>
+<#     !LOOP( Xp.ContainerAtDefRefTo( "FlsTstBlockFgndConfigSet" ) ) #>
+<#         !LOOP( Xp.ContainerAtDefRefTo( "FlsTstBlock" ) ) #>
+<#         crcPtr = ValueOf( Xp.ValueAtDefRefTo( "FlsTstSignatureSymbol" ) ); #>
+<#         startPtr = ValueOf( Xp.ValueAtDefRefTo( "FlsTstBlockBaseSymbol" ) ); #>
+extern CONST(uint64, AUTOMATIC) <#= crcPtr #>;
+extern CONST(uint64, AUTOMATIC) <#= startPtr #>;
+
+<#         !ENDLOOP #>
+<#     !ENDLOOP #>
+<# !ENDLOOP #>
+#define FLSTST_START_SEC_CONST_UNSPECIFIED
+#include "MemMap.h" /* PRQA S 5087 */
+
+/* FlsTst Notification Function Extern Definitions */
+<# !LOOP( Xp.ContainerAtDefRefTo( "FlsTstConfigSet" ) ) #>
+<#	string fcnName = ValueOf( Xp.ValueAtDefRefTo( "FlsTstTestCompletedNotification" )); #>
+<#if( 0 != string.Compare(fcnName, "NULL_PTR")) { #>
+extern FUNC(void, AUTOMATIC) <#= fcnName#>(void);
+<# } #>
+<# !ENDLOOP #>
+
+/* FlsTst Configuration Definitions */
+<# int numberOfBlocks = 0; #>
+<# int numberOfBgndBlocks = 0; #>
+<# int numberOfFgndBlocks = 0; #>
+<# int blockLen64bitWords = 0; #>
+<# int dmaElemCnt = 4095; #>
+<# string blockDefine = null; #>
+<# string blockCfgArray = null; #>
+<# !LOOP( Xp.ContainerAtDefRefTo( "FlsTstConfigSet" ) ) #>
+<#     blockCfgArray = string.Format( "FlsTst_MemBlk_{0}", ValueOf( "ar:SHORT-NAME" ) ); #>
+<#     numberOfBlocks = Count( Xp.ContainerAtDefRefTo( "FlsTstBlock" ) ); #>
+CONST(FlsTst_MemBlockType, AUTOMATIC) <#= blockCfgArray#>[ <#= numberOfBlocks#>u ] = {
+<#     !LOOP( Xp.ContainerAtDefRefTo( "FlsTstBlockBgndConfigSet" ) ) #>
+<#         !LOOP( Xp.ContainerAtDefRefTo( "FlsTstBlock" ) ) #>
+<#         dmaElemCnt = 4095; #>
+<#         blockDefine = string.Format( "/* {0} block config */", ValueOf( "ar:SHORT-NAME" ) ); #>
+<#         crcPtr = ValueOf( Xp.ValueAtDefRefTo( "FlsTstSignatureSymbol" ) ); #>
+<#         startPtr = ValueOf( Xp.ValueAtDefRefTo( "FlsTstBlockBaseSymbol" ) ); #>
+<#         blockLen64bitWords = ValueOf( Xp.ValueAtDefRefTo( "FlsTstBlockSize" ) )/8; #>
+<#         while(blockLen64bitWords%dmaElemCnt != 0 ){dmaElemCnt--;}#>
+	{  <#= blockDefine#>
+		0UL,	/* CRC L32 Init Value */
+		0UL,	/* CRC H32 Init Value */
+		(P2CONST(uint64, AUTOMATIC, AUTOMATIC))&<#= crcPtr #>, /*crcPtr*/
+		(P2CONST(uint64, AUTOMATIC, AUTOMATIC))&<#= startPtr #>, /*startPtr*/
+		1U, /* secnum */
+		<#= blockLen64bitWords #>u, /* seclength */
+		<#= dmaElemCnt #>u, /* dmaElementCnt */
+		<#= blockLen64bitWords/dmaElemCnt #>u /* dmaFrameCnt */
+<# if ( blockLen64bitWords/dmaElemCnt > 4095 ) { #> #error FlsTst_Cfg.c invalid DMA frame configuration. Please check the Flash Test block size specifeid." <# } #>
+	}<# if ( --numberOfBlocks > 0 ) { #>,
+<# } #>
+<#         !ENDLOOP #>
+<#     !ENDLOOP #>
+<#     !LOOP( Xp.ContainerAtDefRefTo( "FlsTstBlockFgndConfigSet" ) ) #>
+<#         !LOOP( Xp.ContainerAtDefRefTo( "FlsTstBlock" ) ) #>
+<#         dmaElemCnt = 4095; #>
+<#         blockDefine = string.Format( "/* {0} block config */", ValueOf( "ar:SHORT-NAME" ) ); #>
+<#         crcPtr = ValueOf( Xp.ValueAtDefRefTo( "FlsTstSignatureSymbol" ) ); #>
+<#         startPtr = ValueOf( Xp.ValueAtDefRefTo( "FlsTstBlockBaseSymbol" ) ); #>
+<#         blockLen64bitWords = ValueOf( Xp.ValueAtDefRefTo( "FlsTstBlockSize" ) )/8; #>
+<#         while(blockLen64bitWords%dmaElemCnt != 0 ){dmaElemCnt--;}#>
+	{  <#= blockDefine#>
+		0UL,	/* CRC L32 Init Value */
+		0UL,	/* CRC H32 Init Value */
+		(P2CONST(uint64, AUTOMATIC, AUTOMATIC))&<#= crcPtr #>, /*crcPtr*/
+		(P2CONST(uint64, AUTOMATIC, AUTOMATIC))&<#= startPtr #>, /*startPtr*/
+		1U, /* secnum */
+		<#= blockLen64bitWords #>u, /* seclength */
+		<#= dmaElemCnt #>u, /* dmaElementCnt */
+		<#= blockLen64bitWords/dmaElemCnt #>u /* dmaFrameCnt */
+<# if ( blockLen64bitWords/dmaElemCnt > 4095 ) { #> #error FlsTst_Cfg.c invalid DMA frame configuration. Please check the Flash Test block size specifeid." <# } #>
+	}<# if ( --numberOfBlocks > 0 ) { #>,
+<# } #>
+<#         !ENDLOOP #>
+<#     !ENDLOOP #>
+
+};
+
+
+<#     blockDefine = string.Format( "FlsTst_{0}", ValueOf( "ar:SHORT-NAME" ) ); #>
+CONST(FlsTst_ConfigType, AUTOMATIC) <#= blockDefine#> = {
+<#	   numberOfBgndBlocks += Count( Xp.ContainerAtDefRefTo( "FlsTstBlockBgndConfigSet/FlsTstBlock" ) ); #>
+<#	   numberOfFgndBlocks += Count( Xp.ContainerAtDefRefTo( "FlsTstBlockFgndConfigSet/FlsTstBlock" ) ); #>
+	<#= numberOfBgndBlocks#>, /* numBgndBlks */
+	<#= numberOfFgndBlocks#>, /* numBgndBlks */
+	<#= blockCfgArray#>, /* MemBlk */
+<# if ( apiEnableTestCompleteNotification == true ) { 
+	string fcnName = ValueOf( Xp.ValueAtDefRefTo( "FlsTstTestCompletedNotification" )); #>
+	<#= fcnName#>	/*notifFcn*/
+<# } #>
+};
+<# !ENDLOOP #>
+
+
+#define FLSTST_STOP_SEC_CONST_UNSPECIFIED
+#include "MemMap.h" /* PRQA S 5087 */

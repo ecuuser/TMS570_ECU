@@ -1,0 +1,420 @@
+<!-- Entities -->
+
+<!ENTITY ti.VehicleProject          "VehicleProject">
+<!ENTITY ti.LINUnconditionalFrame   "LINUnconditionalFrame">
+<!ENTITY ti.ComponentPrototype      "ComponentPrototype">
+<!ENTITY ti.ComponentType           "ComponentType">
+<!ENTITY ti.Signal                  "Signal">
+<!ENTITY ti.SignalGroup             "SignalGroup">
+<!ENTITY ti.RecordElement           "RecordElement">
+<!ENTITY ti.FlexRayCluster          "FlexRayCluster">
+<!ENTITY ti.Channel                 "Channel">
+<!ENTITY ti.NetworkNode             "NetworkNode">
+<!ENTITY ti.ECU                     "ECU">
+<!ENTITY ti.MappedSignal            "MappedSignal">
+<!ENTITY ti.MappedPDUSignal         "MappedPDUSignal">
+<!ENTITY ti.FlexRayAbsTiming        "FlexRayAbsTiming">
+<!ENTITY ti.NetworkSignal           "NetworkSignal">
+<!ENTITY ti.ArrayPrimitive          "ArrayPrimitive">
+<!ENTITY ti.RxNodeRelation          "RxNodeRelation">
+<!ENTITY ti.TxNodeRelation          "TxNodeRelation">
+<!ENTITY ti.NodeMappingRelation     "NodeMappingRelation">
+<!ENTITY ti.MultiplexorGroup        "MultiplexorGroup">
+<!ENTITY ti.GatewaySignalMapping    "GatewaySignalMapping">
+<!ENTITY ti.PDUGroup                "PDUGroup">
+<!ENTITY ti.PDU                     "PDU">
+
+<!-- Elements -->
+
+<!ELEMENT VehicleProject            (%C.DefAttr;,CONTENT*,ATTRLink*,ECU*,CANBusLink*,LINBusLink*,FlexRayClusterLink*,GenAttrList?,FileEntry*, FrTp*)>
+<!ATTLIST VehicleProject            %A.ConfigItem;
+>
+
+<!-- Common Communication Elements -->
+
+<!ELEMENT NetworkSignal             (DESC?,ATTRLink*,GenAttrList?,MultiplexorGroupLink*,RxNodeRelation*,TxNodeRelation*,MappedSignalLink*)>
+<!ELEMENT RxNodeRelation            (ATTRLink*,GenAttrList?,NodeMappingRelation*)>
+<!ELEMENT TxNodeRelation            (ATTRLink*,GenAttrList?)>
+<!ELEMENT NodeMappingRelation       (ATTRLink*,GenAttrList?)>
+<!ELEMENT TxPDURelation             (ATTRLink*,PDUTiming?)>
+
+<!ATTLIST NetworkSignal             %A.ChildItem;
+          SignalLink                NMTOKEN #FIXED "&ti.Signal;"
+          ByteOrder                 (Motorola|Intel) "Motorola"
+          SendTypeIndex             CDATA "0"
+          CycleTime                 CDATA "100"
+          CycleTimeIfActive         CDATA "100"
+          InactiveValue             CDATA "0"
+          InitValue                 CDATA "0"
+>
+
+<!ATTLIST RxNodeRelation            %A.ChildItem;
+          RxNodeLink                NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ATTLIST TxNodeRelation            %A.ChildItem;
+          TxNodeLink                NMTOKEN #FIXED "&ti.NetworkNode;"
+>
+
+<!ATTLIST NodeMappingRelation       %A.ChildItem;
+          MappingRefLink            NMTOKEN #FIXED "&ti.MappedSignal;"
+          TimeOut                   CDATA "0"
+>
+
+<!ATTLIST TxPDURelation             %A.ChildItem;
+          TxPDULink                 NMTOKEN #FIXED "&ti.PDU;"
+>
+
+<!-- Topology Elements -->
+
+<!ELEMENT ECU                   (%C.DefAttr;,ATTRLink*,FlexRayController*,NetworkNode*,FileEntry*,GenAttrList?,NetworkNodeLink*,GatewaySignalMapping*,PDUGroup*)>
+<!ELEMENT Channel               (%C.DefAttr;,NetworkNode*,GenAttrList?)>
+<!ELEMENT FlexRayController     (%C.DefAttr;,ATTRLink*,GenAttrList?)>
+<!ELEMENT NetworkNode           (%C.DefAttr;,GenAttrList?,LINSlaveNodeAttributes?,LINMasterNodeAttributes?,LINRxFrameNodeMap*,PDULink*,TxPDURelation*)>
+<!ELEMENT GatewaySignalMapping  (ATTRLink*)>
+<!ELEMENT PDUGroup              (%C.DefAttr;,PDUGroupLink*,PDULink*)>
+
+<!ATTLIST ECU                   %A.ChildItem;
+          UsesCCPChannelLink    NMTOKEN #FIXED "&ti.NetworkNode;"
+          UsesDiagChannelLink   NMTOKEN #FIXED "&ti.NetworkNode;"
+          ComProcessingPeriod   CDATA "0.005"
+          DiagnosticAddress     CDATA "0"
+          SleepModeSupported    CDATA "0"
+          BusWakeUpSupported    CDATA "0"
+>
+
+<!ATTLIST Channel                   %A.ChildItem; 
+          Identifier                (A|B) "A"
+>
+
+<!ATTLIST FlexRayController         %A.ChildItem; 
+          ClusterLink               NMTOKEN #FIXED "&ti.FlexRayCluster;"
+          KeySlotUsage              (NONE|STARTUPSYNC|SYNC) "NONE"
+          KeySlotId                 CDATA "1"
+          ClusterDriftDamping       CDATA "1"
+          ListenTimeout             CDATA "1444"
+          LatestTx                  CDATA "1"
+          MaxDrift                  CDATA "2"
+          ExternOffsetCorrection    CDATA "0"
+          ExternRateCorrection      CDATA "0"
+          MicroPerCycle             CDATA "720"
+          SamplesPerMicrotick       (1|2|4) "1"
+          OffsetCorrectionOut       CDATA "1"
+          RateCorrectionOut         CDATA "2"
+          DelayCompensationA        CDATA "0"
+          DelayCompensationB        CDATA "0"
+          WakeUpPattern             CDATA "2"
+          AllowHaltDueToClock       CDATA "0"
+          AllowPassiveToActive      CDATA "0"
+          AcceptedStartupRange      CDATA "0"
+          MicroInitialOffsetA       CDATA "0"
+          MicroInitialOffsetB       CDATA "0"
+          MacroInitialOffsetA       CDATA "0"
+          MacroInitialOffsetB       CDATA "0"
+          SingleSlotEnabled         CDATA "0"
+          MaxDynamicPayloadLength   CDATA "12"
+          Microtick                 CDATA "0.0"
+          MicroPerMacroNom          CDATA "0.0"
+          WakeUpChannel             (NONE|A|B) "NONE"
+          DecodingCorrection        CDATA "0"
+          WakeUpSupported           CDATA "0"
+>
+
+<!ATTLIST NetworkNode               %A.ChildItem;
+          ECUGUID                   CDATA ""
+          LINType                   (None|Master|Slave) "None"
+>
+
+<!ATTLIST GatewaySignalMapping  %A.ChildItem;
+          SourceSignalLink      NMTOKEN #FIXED "&ti.MappedSignal;"
+          DestinationSignalLink NMTOKEN #FIXED "&ti.MappedSignal;"
+>
+
+<!ATTLIST PDUGroup                  %A.ChildItem;
+          IsRx                      CDATA "0"
+          Mode                      CDATA ""
+>
+
+<!ELEMENT LINSlaveNodeAttributes    (ATTRLink*,BitrateType,Scalar*,NADValue*,NetworkSignalLink*)>
+<!ELEMENT LINMasterNodeAttributes   EMPTY>
+
+<!ELEMENT LINRxFrameNodeMap         (ATTRLink*)>
+
+
+<!ELEMENT FrameNodeMap              (ATTRLink*,GenAttrList?,FlexRayStaticSegment?,FlexRayDynamicSegment?,FlexRayAbsTiming*,CyclicTiming*,EvtTiming*,ReqTiming*)>
+
+<!ELEMENT FlexRayStaticSegment      (FlexRayAbsTimingLink*,CyclicTiming*)>
+<!ELEMENT FlexRayDynamicSegment     (ATTRLink*,EvtTiming*,CyclicTiming*,ReqTiming*)>
+<!ELEMENT FlexRayAbsTiming          EMPTY>
+<!ELEMENT ResponseRangeTolerance    EMPTY>
+<!ELEMENT DebounceRangeTolerance    EMPTY>
+<!ELEMENT StartingRangeTolerance    EMPTY>
+<!ELEMENT RepeatingRangeTolerance   EMPTY>
+<!ELEMENT CyclicTiming              (TimingCondition*,StartingRangeTolerance,RepeatingRangeTolerance)>
+<!ELEMENT EvtTiming                 (TimingCondition*,DebounceRangeTolerance)>
+<!ELEMENT ReqTiming                 (TimingCondition*,ResponseRangeTolerance)>
+
+<!ELEMENT TimingCondition           (SystemTrigger*,SignalTrigger*)>
+<!ELEMENT SystemTrigger             (SystemState*)>
+<!ELEMENT SignalTrigger             (ATTRLink*,SignalState*,DataFilter*)>
+
+<!ELEMENT SystemState               EMPTY>
+<!ELEMENT SignalState               EMPTY>
+<!ELEMENT DataFilter                EMPTY>
+<!ELEMENT PDUTiming                 (CyclicTiming*,EvtTiming*,ReqTiming*,SignalTrigger*)>
+
+<!ELEMENT MappedSignal              (ATTRLink*,GenAttrList?)>
+<!ELEMENT MappedSignalGroup         (ATTRLink*,GenAttrList?)>
+<!ELEMENT MappedPDU                 (ATTRLink*,GenAttrList?)>
+<!ELEMENT BitrateType               (BitrateAutomatic|BitrateSelect|BitrateScalar)>
+<!ELEMENT BitrateAutomatic          EMPTY>
+<!ELEMENT BitrateSelect             (Scalar*)>
+<!ELEMENT BitrateScalar             EMPTY>
+<!ELEMENT FrameConstraint           EMPTY>
+<!ELEMENT Scalar                    EMPTY>
+<!ELEMENT NADValue                  EMPTY>
+
+<!ATTLIST BitrateType       %A.ChildItem;
+>
+
+<!ATTLIST BitrateAutomatic  %A.ChildItem;
+          Min               CDATA "0"
+          Max               CDATA "0"
+>
+
+<!ATTLIST BitrateSelect     %A.ChildItem; 
+>
+
+<!ATTLIST BitrateScalar     %A.ChildItem; 
+          Value             CDATA "0"
+>
+
+<!ATTLIST Scalar            %A.ChildItem;
+          Value             CDATA "0"
+>
+
+<!ATTLIST NADValue          %A.ChildItem;
+          Value             CDATA "0"
+>
+
+<!ELEMENT MultiplexorGroup          (%C.DefAttr;,NetworkSignalLink*)>
+<!ATTLIST MultiplexorGroup          %A.ChildItem;
+          MultiplexorValue          CDATA "0"
+          DataPartLength            CDATA "0"
+>
+
+<!ATTLIST LINMasterNodeAttributes   %A.ChildItem;
+          TimeBase                  CDATA "1.0"
+          Jitter                    CDATA "0.0"
+          MaxHeaderLength           CDATA "47.6"
+          ResponseTolerance         CDATA "40.0"
+>
+
+<!ATTLIST LINSlaveNodeAttributes    %A.ChildItem;
+          Conformance               CDATA ""
+          Protocol                  CDATA ""
+          NCF                       CDATA ""
+          Nad_Initial               CDATA "0"
+          Nad_Configured            CDATA "0"
+          Nad_Min                   CDATA "0"
+          Nad_Max                   CDATA "0"
+          SupplierID                CDATA "0"
+          FunctionID                CDATA "0"
+          VariantID                 CDATA "0"
+          P2_Min                    CDATA "0.0"
+          ST_Min                    CDATA "0.0"      
+          MessageLengthMax          CDATA "0"
+          DiagnosticAddress         CDATA "0"
+          Voltage_Min               CDATA "0.0"
+          Voltage_Max               CDATA "0.0"
+          Temp_Min                  CDATA "0.0"
+          Temp_Max                  CDATA "0.0"
+          Bitrate                   (Automatic|Select|Scalar) "Scalar"
+          StatusSignalName          CDATA ""
+          ResponseTolerance         CDATA "40.0"
+          WakeupTime                CDATA "0.0"
+          PoweronTime               CDATA "0.0"
+          NADAddCapability          (NADAddCapNone|NADAddCapValueRange|NADAddCapValueList) "NADAddCapNone"
+          N_AS_Timeout              CDATA "0.0"
+          N_Cr_Timeout              CDATA "0.0"
+          StatusSignalLink          NMTOKEN #FIXED "&ti.NetworkSignal;"
+          SendsWakeupSignal         CDATA "0"
+          DiagnosticClass           CDATA "0"
+>
+
+<!ATTLIST LINRxFrameNodeMap         %A.ChildItem;
+          RxFrameLink               NMTOKEN #FIXED "&ti.LINUnconditionalFrame;"
+          MessageID                 CDATA "0"
+          FrameIndex                CDATA "0"
+>
+
+<!ATTLIST FrameNodeMap              %A.ChildItem;
+          TxNodeLink                NMTOKEN #FIXED "&ti.NetworkNode;"
+          SendTypeIndex             CDATA "0"
+          CycleTime                 CDATA "100"
+          CycleTimeFast             CDATA "100"
+          NrOfRepetitions           CDATA "0"
+          DelayTime                 CDATA "20"
+          StartDelayTime            CDATA "0"
+          MessageID                 CDATA "0"
+          FrameIndex                CDATA "0"
+          FRPayloadPI               CDATA "0"
+>
+
+<!ATTLIST MappedSignal              %A.ChildItem;
+          NetworkSignalLink         NMTOKEN #FIXED "&ti.NetworkSignal;"
+          StartBit                  CDATA "0"
+          ComSignalName             CDATA ""
+          UpdateBitPosition         CDATA "-1"
+          MappingId                 CDATA ""
+>
+
+<!ATTLIST MappedSignalGroup         %A.ChildItem;
+          SignalGroupLink           NMTOKEN #FIXED "&ti.SignalGroup;"
+          ComSignalName             CDATA ""
+          UpdateBitPosition         CDATA "-1"
+          MappingId                 CDATA ""
+>
+
+<!ATTLIST MappedPDU                 %A.ChildItem;
+          PDULink                   NMTOKEN #FIXED "&ti.PDU;"
+          StartBit                  CDATA "0"
+          UpdateBitPosition         CDATA "-1"
+>
+
+<!ATTLIST FrameConstraint           %A.ChildItem;
+          ControlType               (SYSTEM|USER) "SYSTEM"
+>
+
+<!ATTLIST FlexRayStaticSegment      %A.ChildItem;
+>
+
+<!ATTLIST FlexRayDynamicSegment     %A.ChildItem;
+          AbsTimingLink             NMTOKEN #FIXED "&ti.FlexRayAbsTiming;"
+>
+
+<!ATTLIST FlexRayAbsTiming          %A.ChildItem;
+          SlotID                    CDATA "0"
+          BaseCycle                 CDATA "0"
+          CycleRepetition           (1|2|4|8|16|32|64) "1"
+>
+
+<!ATTLIST CyclicTiming              %A.ChildItem;
+          FinalRepetitions          CDATA "0"
+>
+
+<!ATTLIST EvtTiming                 %A.ChildItem;
+          FinalRepetitions          CDATA "0"
+          CycleTimeFast             CDATA "0"
+>
+
+<!ATTLIST ReqTiming                 %A.ChildItem;
+          FinalRepetitions          CDATA "0"
+>
+
+<!ATTLIST ResponseRangeTolerance             %A.ChildItem;
+          TimeRange                 CDATA "0"
+          Tolerance                 CDATA "0"
+          ToleranceType             (ABSOLUTE|RELATIVE) "ABSOLUTE"
+>
+
+<!ATTLIST DebounceRangeTolerance             %A.ChildItem;
+          TimeRange                 CDATA "0"
+          Tolerance                 CDATA "0"
+          ToleranceType             (ABSOLUTE|RELATIVE) "ABSOLUTE"
+>
+
+<!ATTLIST StartingRangeTolerance             %A.ChildItem;
+          TimeRange                 CDATA "0"
+          Tolerance                 CDATA "0"
+          ToleranceType             (ABSOLUTE|RELATIVE) "ABSOLUTE"
+>
+
+<!ATTLIST RepeatingRangeTolerance             %A.ChildItem;
+          TimeRange                 CDATA "0"
+          Tolerance                 CDATA "0"
+          ToleranceType             (ABSOLUTE|RELATIVE) "ABSOLUTE"
+>
+
+<!ATTLIST TimingCondition           %A.ChildItem;
+          ConditionType             (ACTIVE|START|STOP|SEND) "ACTIVE"
+>
+
+<!ATTLIST SystemTrigger             %A.ChildItem;
+>
+
+<!ATTLIST SignalTrigger             %A.ChildItem;
+          SendTypeIndex             CDATA "0"
+          MappedSignalLink          NMTOKEN #FIXED "&ti.MappedSignal;"
+          MappedPDUSignalLink       NMTOKEN #FIXED "&ti.MappedPDUSignal;"
+>
+
+<!ATTLIST SystemState               %A.ChildItem;
+          State                     (CHANNEL_ACTIVE|CLAMP_15|CLAMP_30|CLAMP_87|CLAMP_RADIO|CHANNEL_ACTIVE_ON|CHANNEL_ACTIVE_OFF|CLAMP_15_ON|CLAMP_15_OFF|CLAMP_30_ON|CLAMP_30_OFF|CLAMP_87_ON|CLAMP_87_OFF|CLAMP_RADIO_ON|CLAMP_RADIO_OFF|KEY_PRESSED|KEY_RELEASED|NO_OTHER_TRIGGERING_RUNNING|OTHER_TRIGGERING_RUNNING|NONE|OTHER) "OTHER"
+>
+
+<!ATTLIST SignalState               %A.ChildItem;
+          State                     (VALUE_CHANGED|VALUE_NOT_CHANGED|VALUE_DEFAULT|VALUE_NOT_DEFAULT|OTHER) "OTHER"
+>
+
+<!ATTLIST DataFilter                %A.ChildItem;
+          Filter                    (ALWAYS|NEVER|MASKEDNEWEQUALSX|MASKEDNEWDIFFERSX|NEWISEQUAL|NEWISDIFFERENT|MASKEDNEWEQUALSMASKEDOLD|MASKEDNEWDIFFERSMASKEDOLD|NEWISWITHIN|NEWISOUTSIDE|NEWISGREATER|NEWISLESSOREQUAL|NEWISLESS|NEWISGREATEROREQUAL|ONEEVERYN) "ALWAYS"
+          Mask                      CDATA "0"
+          X                         CDATA "0"
+          Min                       CDATA "0"
+          Max                       CDATA "0"
+          Offset                    CDATA "0"
+          Period                    CDATA "0"
+>
+
+<!ATTLIST PDUTiming                 %A.ChildItem;
+>
+
+<!-- Links -->
+
+<!ELEMENT VehicleProjectLink EMPTY>
+<!ATTLIST VehicleProjectLink 
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.VehicleProject;"
+>
+
+<!ELEMENT NetworkNodeLink EMPTY>
+<!ATTLIST NetworkNodeLink 
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.NetworkNode;"
+>
+
+<!ELEMENT NetworkSignalLink EMPTY>
+<!ATTLIST NetworkSignalLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.NetworkSignal;"
+>
+
+<!ELEMENT MultiplexorGroupLink EMPTY>
+<!ATTLIST MultiplexorGroupLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.MultiplexorGroup;"
+>
+
+<!ELEMENT MappedSignalLink EMPTY>
+<!ATTLIST MappedSignalLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.MappedSignal;"
+>
+
+<!ELEMENT PDUGroupLink EMPTY>
+<!ATTLIST PDUGroupLink
+          %A.LinkGUID;
+          %A.LinkChildGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.PDUGroup;"
+>

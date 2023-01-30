@@ -1,0 +1,101 @@
+; \LS20216_03_nhet\
+; NHET 2 Software
+;
+; Mark Colosky
+; Project: NHET2_EPWM
+; Revision: 4.2
+; 30-Jan-2013
+
+
+;** NHET Channels / Pins *********************************************
+
+; removed in ver 4.2--	T1PWM		.equ		8  	; Torque Channel 1 PWM Input Signal
+; removed in ver 4.2--	T1PWMS  	.equ    	9  	; Torque Channel 1 Shared
+; removed in ver 4.2--	T2PWM		.equ		12  	; Torque Channel 2 PWM Input Signal
+; removed in ver 4.2--	T2PWMS  	.equ    	13  	; Torque Channel 2 Shared
+
+P1INP		.equ		10	; Phase A Input Signal
+P1INPS  	.equ    	11	; Phase A Input Signal Shared
+P2INP		.equ 		18	; Phase B Input Signal
+P2INPS  	.equ    	19	; Phase B Input Signal Shared
+P3INP		.equ		8	; Phase C Input Signal
+P3INPS  	.equ    	9	; Phase C Input Signal Shared
+
+; ** Configuration Setup **
+; removed in ver 4.2--	; Channels  8,  9 Shared Input
+; removed in ver 4.2--	; Channels 12, 13 Shared Input
+; Channels 10, 11 Shared Input
+; Channels 18, 19 Shared Input
+; Channels  8,  9 Shared Input
+;
+; VCLK2 = 80MHz
+; HR Prescaler = 1   
+; LR Prescaler = 16
+;   HETPFR = 0x0000 0400
+;
+; ** Suppression Filter **
+;   Suppression Filter Enable
+;      HETSFENA = 0x0000FF30  -- All Used Channels Enabled
+;   Suppression Filter Preload Register (set at 37.5% of LR Loop time)
+;      HETSFPRLD = 0x0006 -- Clock = VCLK2 ; time = 0.075us = 6 counts 
+;
+
+;***** Constants ******
+; removed in ver 4.2--	dPWMInitCount	.equ	33314432	; set to 60 rollover 60 seconds after start (2^25 - (4000*60))
+
+
+; *** Register Useage Chart ***
+; Reg A - Not Used
+; Reg B - Not Used
+; Reg R - Not Used
+; Reg S - Not Used
+; Reg T - Not Used
+
+
+;----------Set up Low Resolution Timer Base - Use Register T ---
+START: 	
+FRCTR:	CNT 	{ data=0, reg=T, max= 0x1FFFFFF }
+
+;----------Phase A, B, C Low Res Input Capture Measurements -------------------
+P1ACC:	ECNT	{ pin=P1INP, event=ACCUHIGH, reg=NONE, data=0 }
+P2ACC:	ECNT	{ pin=P2INP, event=ACCUHIGH, reg=NONE, data=0 }
+P3ACC:	ECNT	{ pin=P3INP, event=ACCUHIGH, reg=NONE, data=0 }
+
+; removed in ver 4.2--	;----------Torque Sensor 1 PWM Input Capture -------------------
+; removed in ver 4.2--	; Capture LOW Pulse Width at RISING Edge on specified input pin
+; removed in ver 4.2--	T1LOW:	PCNT	{ hr_lr=high, type=FALL2RISE, pin=T1PWM, period=0, data=0, hr_data=0} 
+
+; removed in ver 4.2--	; Capture Period at Rising Edge on specified input pin
+; removed in ver 4.2--	T1PRD:	PCNT	{ hr_lr=high, type=RISE2RISE, pin=T1PWMS, period=0, data=0, hr_data=0}
+
+; removed in ver 4.2--	; Count Periods Measured based on Rising Edge of specified input pin
+; removed in ver 4.2--	T1CNT:	ECNT	{ event=RISE, pin=T1PWMS, reg=NONE, data=dPWMInitCount}
+
+; removed in ver 4.2--	;----------Torque Sensor 2 PWM Input Capture -------------------
+; removed in ver 4.2--	; Capture LOW Pulse Width at RISING Edge on specified input pin
+; removed in ver 4.2--	T2LOW:	PCNT	{ hr_lr=high, type=FALL2RISE, pin=T2PWM, period=0, data=0, hr_data=0} 
+
+; removed in ver 4.2--	; Capture Period at Rising Edge on specified input pin
+; removed in ver 4.2--	T2PRD:	PCNT	{ hr_lr=high, type=RISE2RISE, pin=T2PWMS, period=0, data=0, hr_data=0}
+
+; removed in ver 4.2--	; Count Periods Measured based on Rising Edge of specified input pin
+; removed in ver 4.2--	T2CNT:	ECNT	{ event=RISE, pin=T2PWMS, reg=NONE, data=dPWMInitCount}
+
+END		BR	{ next=START, cond_addr=START, pin= CC31, event= NOCOND}  ; could be removed when program is frozen
+ 
+; Revision Log
+; 16NO11 - Rev 1.0: Initial Release
+; 31JA12 - Rev 2.0: Added Low Res Accumulator for Phase A, B, C
+; 04FE12 - Rev 2.1: Added logic to only accept phase measurement pulses when both rising and falling edges are captured
+; 05FE12 - Rev 2.2: Added logic to handle short low pulse (missing rising edge capture condition)
+; 08FE12 - Rev 2.3: Restructured Phase Feedback to read both WCAP instructions in the same LR Loop
+; 11FE12 - Rev 2.4: Added logic to reject narrow low pulses (that occur during the same LR loop) by ignoring and clearing the rising edge event buffer
+; 17FE12 - Rev 2.5: Changed counter max value (rollover value) for Torque Pulse counter inputs to correspond to R4 rollover value
+; 09MR12 - Rev 2.6: Moved the Torque Read PWM Counter Increment to inside the Buffer Active area for both T1 and T2
+; 10AP12 - Rev 3.0: Changed T1&T2 from WCAP to PCNT based algorithm (used to address the WCAP errata)
+; 13AP12 - Rev 4.0: Major Rewrite to avoid all use of WCAP instruction.  Change Phase Feedback to LW counts
+; 25AP12 - Rev 4.1: Changed initial value for Torque pulse counter to 33,314,432; this will place rollover at ~60 seconds after start
+; 30JA13 - Rev 4.2: New project based on NHET2_HPWM Rev 4.1
+;                   Changed Phase B input from Channel 14/15 to 18/19
+;                   Changed Phase C input from Channel 4/5 to 8/9
+;                   Removed Torque Input Channels

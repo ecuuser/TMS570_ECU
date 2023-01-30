@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DotSystemScheme Engine="4.2.2.6" TimeStamp="2015-06-16 06:15 pm" CS="48599571652">
+	<GroupDefaults>
+		<Os>
+			<Controller Name="*" Home="_Schemes\Os" Target=".\GenDataOs\" ConfigVariant="&lt;default&gt;" Validate="True" GSupplyRev="3.1.4" GUseMicrosarXml="False" GUseExternal="True" GCommand="$(WorkingFolder)..\Os\Os_gen.bat" GParameter="&quot;$(EcucFolder)$(EcucFile)&quot; &quot;$(GenDataFolder)&quot;" GSupplyAs="True" Generate="True"/>
+		</Os>
+		<Can_Tms470Dcan>
+			<Controller Name="*" ConfigVariant="PreCompile"/>
+		</Can_Tms470Dcan>
+		<FlsTst ClassId="8">
+			<Controller Name="*" Target="." ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\FlsTst\FlsTst_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot;"/>
+		</FlsTst>
+		<StaMd ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\StaMd\Ap_StaMd_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</StaMd>
+		<TmprlMon ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\TmprlMon\Sa_TmprlMon_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</TmprlMon>
+		<Assist ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\Assist\Ap_Assist_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</Assist>
+		<Damping ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\Damping\Ap_Damping_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</Damping>
+		<Return ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\Return\Ap_Return_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</Return>
+		<HwPwUp ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\HwPwUp\Ap_HwPwUp_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</HwPwUp>
+		<MtrDrvDiag ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\MtrDrvDiag\Sa_MtrDrvDiag_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</MtrDrvDiag>
+		<DampingFirewall ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\DampingFirewall\Ap_DampingFirewall_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</DampingFirewall>
+		<AssistFirewall ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\AssistFirewall\Ap_AssistFirewall_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</AssistFirewall>
+		<ReturnFirewall ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\ReturnFirewall\Ap_ReturnFirewall_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</ReturnFirewall>
+		<LmtCod ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\LmtCod\Ap_LmtCod_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</LmtCod>
+		<CtrldDisShtdn ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\CtrldDisShtdn\Ap_CtrldDisShtdn_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</CtrldDisShtdn>
+		<DiagMgr ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\DiagMgr\DiagMgr_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</DiagMgr>
+		<uDiag ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\uDiag\uDiag_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</uDiag>
+		<TqRsDg ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\TqRsDg\Ap_TqRsDg_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</TqRsDg>
+		<StabilityComp ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\StabilityComp\Ap_StabilityComp_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</StabilityComp>
+		<EOTActuatorMng ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\EOTActuatorMng\Ap_EOTActuatorMng_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</EOTActuatorMng>
+		<HystComp ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\HystComp\Ap_HystComp_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</HystComp>
+		<LrnEOT ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\LrnEOT\Ap_LrnEOT_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</LrnEOT>
+		<Polarity ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\Polarity\Ap_Polarity_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</Polarity>
+		<BatteryVoltage ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\BatteryVoltage\Ap_BatteryVoltage_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</BatteryVoltage>
+		<AstLmt ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\AstLmt\Ap_AstLmt_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</AstLmt>
+		<ThrmlDutyCycle ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\ThrmDutyCycle\Ap_ThrmlDutyCycle_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</ThrmlDutyCycle>
+		<MtrTempEst ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\MtrTempEst\Ap_MtrTempEst_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</MtrTempEst>
+		<AvgFricLrn ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\AvgFricLrn\Ap_AvgFricLrn_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</AvgFricLrn>
+		<MtrVel ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\MtrVel\Sa_MtrVel_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</MtrVel>
+		<MtrVel2 ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\MtrVel2\Sa_MtrVel2_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</MtrVel2>
+		<CmMtrCurr ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\CmMtrCurr\Sa_CmMtrCurr_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</CmMtrCurr>
+		<CurrParamComp ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\CurrParamComp\Ap_CurrParamComp_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</CurrParamComp>
+		<CurrCmd ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\CurrCmd\Ap_CurrCmd_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</CurrCmd>
+		<TrqCmdScl ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\TrqCmdScl\Ap_TrqCmdScl_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</TrqCmdScl>
+		<QuadDet ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\QuadDet\Ap_QuadDet_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</QuadDet>
+		<PeakCurrEst ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\PeakCurrEst\Ap_PeakCurrEst_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</PeakCurrEst>
+		<TuningSelAuth ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\TuningSelAuth\Ap_TuningSelAuth_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</TuningSelAuth>
+		<VehPwrMd ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\VehPwrMd\Ap_VehPwrMd_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</VehPwrMd>
+		<PwrLmtFuncCr ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\PwrLmtFuncCr\Ap_PwrLmtFuncCr_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</PwrLmtFuncCr>
+		<BVDiag ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\BVDiag\Ap_BVDiag_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</BVDiag>
+		<WdgM>
+			<Controller Name="*" GCommand="$(WorkingFolder)..\..\Generators\Artt\WdgM\WdgM_Generate.bat" Target=""/>
+		</WdgM>
+		<WdgIf>
+			<Controller Name="*" GCommand="$(WorkingFolder)..\..\Generators\SafeWdg\Wdg_If_Cfg_Gen.exe"/>
+		</WdgIf>
+		<Wdg>
+			<Controller Name="*" GCommand="$(WorkingFolder)..\..\Generators\SafeWdg\Wdg_Drv_Cfg_Gen_TMS570LS3X.exe"/>
+		</Wdg>
+		<CtrlTemp ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\CtrlTemp\Sa_CtrlTemp_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</CtrlTemp>
+		<VehSpdLmt ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\VehSpdLmt\Ap_VehSpdLmt_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</VehSpdLmt>
+		<ActivePull ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\ActivePull\Ap_ActivePull_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</ActivePull>
+		<StOpCtrl ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\StOpCtrl\Ap_StOpCtrl_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</StOpCtrl>
+		<OvrVoltMon ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\OvrVoltMon\Sa_OvrVoltMon_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</OvrVoltMon>
+		<ShtdnMech ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\ShtdnMech\Sa_ShtdnMech_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</ShtdnMech>
+		<HiLoadStall ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\HiLoadStall\Ap_HiLoadStall_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</HiLoadStall>
+		<FrqDepDmpnInrtCmp ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\FrqDepDmpnInrtCmp\Ap_FrqDepDmpnInrtCmp_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</FrqDepDmpnInrtCmp>
+		<Gsod ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\Gsod\Ap_Gsod_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</Gsod>
+		<TrqCanc ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\TrqCanc\Ap_TrqCanc_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</TrqCanc>
+		<PICurrCntrl ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\PICurrCntrl\Ap_PICurrCntrl_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</PICurrCntrl>
+		<ElePwr ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\ElePwr\Ap_ElePwr_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</ElePwr>
+		<StabilityComp2 ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\StabilityComp2\Ap_StabilityComp2_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</StabilityComp2>
+		<TmprlMon2 ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\TmprlMon2\Sa_TmprlMon2_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</TmprlMon2>
+		<DigPhsReasDiag ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\DigPhsReasDiag\Ap_DigPhsReasDiag_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</DigPhsReasDiag>
+		<HighFreqAssist ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\HighFreqAssist\Ap_HighFreqAssist_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</HighFreqAssist>
+		<SignlCondn ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\SignlCondn\Ap_SignlCondn_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</SignlCondn>
+		<_Board>
+			<Controller Name="Tmsx70_Tms570ls30306uzwt">
+				<Generation Name="Tmsx70_Tms570ls30306uzwt" SkipGenerationErrs="True"/>
+			</Controller>
+		</_Board>
+		<EtDmpFw ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\EtDmpFw\Ap_EtDmpFw_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</EtDmpFw>
+		<EcuM>
+			<Controller Name="*" Target="" ConfigVariant="PreCompile"/>
+		</EcuM>
+		<CanXcp ClassId="3"/>
+		<BkCpPc ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\BkCpPc\Sa_BkCpPc_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</BkCpPc>
+		<Xcp ClassId="3"/>
+		<NvMMgr ClassId="2">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\NvMMgr\Cd_NvMMgr_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</NvMMgr>
+		<DigMSB ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\DigMSB\Sa_DigMSB_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</DigMSB>
+		<DigHwTrqSENT ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\DigHwTrqSENT\Sa_DigHwTrqSENT_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</DigHwTrqSENT>
+		<AbsHwPos ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\AbsHwPos\Ap_AbsHwPos_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;" GSupplyAs="False" GSupplyRev="3.1.4"/>
+		</AbsHwPos>
+		<Sweep2 ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\Sweep2\Ap_Sweep2_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</Sweep2>
+		<Sweep ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\Sweep\Ap_Sweep_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</Sweep>
+		<SpiNxt ClassId="9">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\SpiNxt\SpiNxt_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</SpiNxt>
+		<VehDyn ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\VehDyn\Ap_VehDyn_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</VehDyn>
+		<ComplErr ClassId="14">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\ComplErr\Ap_ComplErr_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</ComplErr>
+		<ApXcp ClassId="14">
+			<Controller Name="*" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\ApXcp\Ap_ApXcp_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;" ConfigVariant="&lt;default&gt;"/>
+		</ApXcp>
+		<NvMProxy ClassId="2">
+			<Controller Name="*" ConfigVariant="PreCompile" Generate="True" GUseExternal="True" GCommand="..\..\Generators\Artt\NvMProxy\Cd_NvMProxy_Generate.bat" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;"/>
+		</NvMProxy>
+		<DigColPs ClassId="14">
+			<Controller Name="*" Generate="True" GUseExternal="True" GParameter="&quot;%ECUCFILE%&quot; &quot;%TARGETDIR%&quot; &quot;$(ServiceSwcFolder)&quot;" GCommand="..\..\Generators\Artt\DigColPs\Sa_DigColPs_Generate.bat"/>
+		</DigColPs>
+		<BswM>
+			<Controller Name="*" Target=""/>
+		</BswM>
+		<Crc>
+			<Controller Name="*" Target=""/>
+		</Crc>
+		<Dem>
+			<Controller Name="*" Target=""/>
+		</Dem>
+		<Det>
+			<Controller Name="*" Target=""/>
+		</Det>
+	</GroupDefaults>
+	<TargetDefinition Source="../../../SwProject/Source/GenData"/>
+</DotSystemScheme>

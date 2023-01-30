@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<AUTOSAR xmlns="http://autosar.org/3.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.0.1 AUTOSAR.xsd">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:91795653-8083-4d32-b1af-fb971e617c02">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<MODULE-CONFIGURATION UUID="0ed47de4-cf9a-40a6-8f3c-44e2970e2a5d">
+					<SHORT-NAME>SchM_Rec</SHORT-NAME>
+					<DESC>
+						<L-2 L="FOR-ALL">Configuration of the SchM (BSW Scheduler) module.</L-2>
+					</DESC>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/SchM</DEFINITION-REF>
+					<IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+					<CONTAINERS>
+						<CONTAINER UUID="bfb7853d-d51b-46fb-885a-7631c022fc34">
+							<SHORT-NAME>BswM</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleLiteral</DEFINITION-REF>
+									<VALUE>BswM</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleInclude</DEFINITION-REF>
+									<VALUE>BswM.h</VALUE>
+								</STRING-VALUE>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleConfigVersion</DEFINITION-REF>
+									<VALUE>1.0.0</VALUE>
+								</STRING-VALUE>
+							</PARAMETER-VALUES>
+							<REFERENCE-VALUES>
+								<REFERENCE-VALUE>
+									<DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/SchMModuleImplementationRef</DEFINITION-REF>
+									<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/BswM_Impl</VALUE-REF>
+								</REFERENCE-VALUE>
+							</REFERENCE-VALUES>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="0b5d5b34-1976-47a0-b2ec-3924d0508aed">
+									<SHORT-NAME>SCHM_BSWM_INSTANCE_0</SHORT-NAME>
+									<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<STRING-VALUE>
+											<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/SchMInstanceLiteral</DEFINITION-REF>
+											<VALUE>SCHM_BSWM_INSTANCE_0</VALUE>
+										</STRING-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="4eb2ffc1-b7b8-41d8-a130-8cec6841dfc3">
+											<SHORT-NAME>BSWM_EXCLUSIVE_AREA_0</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaLiteral</DEFINITION-REF>
+													<VALUE>BSWM_EXCLUSIVE_AREA_0</VALUE>
+												</STRING-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMModuleConfiguration/InstanceConfiguration/ExclusiveAreaConf/SchMExclusiveAreaDescription</DEFINITION-REF>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+						<CONTAINER UUID="ee643022-dcd4-4dc8-98f7-580e98e729e3">
+							<SHORT-NAME>BswM_MainFunction</SHORT-NAME>
+							<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping</DEFINITION-REF>
+							<PARAMETER-VALUES>
+								<STRING-VALUE>
+									<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMMainFunctionSymbol</DEFINITION-REF>
+									<VALUE>BswM_MainFunction</VALUE>
+								</STRING-VALUE>
+							</PARAMETER-VALUES>
+							<REFERENCE-VALUES>
+								<REFERENCE-VALUE>
+									<DEFINITION-REF DEST="REFERENCE-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMModuleRef</DEFINITION-REF>
+									<VALUE-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/SchM_Rec/BswM</VALUE-REF>
+								</REFERENCE-VALUE>
+							</REFERENCE-VALUES>
+							<SUB-CONTAINERS>
+								<CONTAINER UUID="ba1a00d4-fef0-4ebe-9dd6-49b871e58614">
+									<SHORT-NAME>SchMBswEvent</SHORT-NAME>
+									<DEFINITION-REF DEST="CHOICE-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent</DEFINITION-REF>
+									<SUB-CONTAINERS>
+										<CONTAINER UUID="253c44ad-e0e7-4517-802d-e0f525776317">
+											<SHORT-NAME>SchMBswDerivedTimingEvent</SHORT-NAME>
+											<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent</DEFINITION-REF>
+											<PARAMETER-VALUES>
+												<FLOAT-VALUE>
+													<DEFINITION-REF DEST="FLOAT-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent/SchMMainFunctionPeriodParamScale</DEFINITION-REF>
+													<VALUE>1.0</VALUE>
+												</FLOAT-VALUE>
+												<STRING-VALUE>
+													<DEFINITION-REF DEST="STRING-PARAM-DEF">/MICROSAR/SchM/SchMMainFunctionMapping/SchMBswEvent/SchMBswDerivedTimingEvent/SchMMainFunctionPeriodParamRef</DEFINITION-REF>
+													<VALUE>/MICROSAR/BswM/BswMGeneral/BswMMainFunctionPeriod</VALUE>
+												</STRING-VALUE>
+											</PARAMETER-VALUES>
+										</CONTAINER>
+									</SUB-CONTAINERS>
+								</CONTAINER>
+							</SUB-CONTAINERS>
+						</CONTAINER>
+					</CONTAINERS>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

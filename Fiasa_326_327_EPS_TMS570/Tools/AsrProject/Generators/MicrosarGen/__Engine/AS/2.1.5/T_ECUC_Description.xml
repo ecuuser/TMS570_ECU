@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+============================================================================
+   Copyright (c) 2008 by Vector Informatik GmbH.    All rights reserved.
+
+   This software is copyright protected and proprietary to Vector Informatik GmbH.
+   Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+   All other rights remain with Vector Informatik GmbH.
+
+============================================================================
+
+    This file is needed for internal use by MICROSAR Configurator.
+    Please do not modify this file, otherwise the software may behave in unexpected way.
+
+============================================================================
+-->
+<AUTOSAR-ECUC-TEMPLATE xmlns="http://autosar.org/2.1.5">
+	<!-- ############################# -->
+	<FILE-TEMPLATE>
+		<AUTOSAR>
+			<TOP-LEVEL-PACKAGES>
+			</TOP-LEVEL-PACKAGES>
+		</AUTOSAR>
+	</FILE-TEMPLATE>
+	<!-- ############################# -->
+	<AR-PACKAGE-TEMPLATE>
+		<AR-PACKAGE>
+			<SHORT-NAME/>
+			<DESC>
+				<L-2 L="FOR-ALL"/>
+			</DESC>
+			<ELEMENTS>
+				<ECU-CONFIGURATION>
+					<SHORT-NAME/>
+					<DESC>
+						<L-2 L="FOR-ALL"/>
+					</DESC>
+					<MODULE-REFS>
+					</MODULE-REFS>
+				</ECU-CONFIGURATION>
+			</ELEMENTS>
+			<SUB-PACKAGES>
+			</SUB-PACKAGES>
+		</AR-PACKAGE>
+	</AR-PACKAGE-TEMPLATE>
+	<!-- ############################# -->
+	<MODULE-REF-TEMPLATE>
+		<MODULE-REF DEST="MODULE-CONFIGURATION"/>
+	</MODULE-REF-TEMPLATE>
+	<!-- ############################# -->
+	<MODULE-TEMPLATE>
+		<MODULE-CONFIGURATION>
+			<SHORT-NAME/>
+			<DESC>
+				<L-2 L="FOR-ALL"/>
+			</DESC>
+			<DEFINITION-REF DEST="MODULE-DEF"/>
+			<CONTAINERS>
+			</CONTAINERS>
+		</MODULE-CONFIGURATION>
+	</MODULE-TEMPLATE>
+	<!-- ############################# -->
+	<CONTAINER-TEMPLATE>
+		<CONTAINER>
+			<SHORT-NAME/>
+			<DEFINITION-REF DEST="PARAM-CONF-CONTAINER-DEF"/>
+			<PARAMETER-VALUES>
+			</PARAMETER-VALUES>
+			<REFERENCE-VALUES>
+			</REFERENCE-VALUES>
+			<SUB-CONTAINERS>
+			</SUB-CONTAINERS>
+		</CONTAINER>
+	</CONTAINER-TEMPLATE>
+	<!-- ############################# -->
+	<INTEGER-VALUE-TEMPLATE>
+		<INTEGER-VALUE>
+			<DEFINITION-REF DEST="INTEGER-PARAM-DEF"/>
+			<VALUE/>
+		</INTEGER-VALUE>
+	</INTEGER-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<BOOLEAN-VALUE-TEMPLATE>
+		<BOOLEAN-VALUE>
+			<DEFINITION-REF DEST="BOOLEAN-PARAM-DEF"/>
+			<VALUE/>
+		</BOOLEAN-VALUE>
+	</BOOLEAN-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<FLOAT-VALUE-TEMPLATE>
+		<FLOAT-VALUE>
+			<DEFINITION-REF DEST="FLOAT-PARAM-DEF"/>
+			<VALUE/>
+		</FLOAT-VALUE>
+	</FLOAT-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<STRING-VALUE-TEMPLATE>
+		<STRING-VALUE>
+			<DEFINITION-REF DEST="STRING-PARAM-DEF"/>
+			<VALUE/>
+		</STRING-VALUE>
+	</STRING-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<ENUMERATION-VALUE-TEMPLATE>
+		<ENUMERATION-VALUE>
+			<DEFINITION-REF DEST="ENUMERATION-PARAM-DEF"/>
+			<VALUE/>
+		</ENUMERATION-VALUE>
+	</ENUMERATION-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<DERIVED-INTEGER-VALUE-TEMPLATE>
+		<INTEGER-VALUE>
+			<DEFINITION-REF DEST="DERIVED-INTEGER-PARAM-DEF"/>
+			<VALUE/>
+		</INTEGER-VALUE>
+	</DERIVED-INTEGER-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<DERIVED-BOOLEAN-VALUE-TEMPLATE>
+		<BOOLEAN-VALUE>
+			<DEFINITION-REF DEST="DERIVED-BOOLEAN-PARAM-DEF"/>
+			<VALUE/>
+		</BOOLEAN-VALUE>
+	</DERIVED-BOOLEAN-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<DERIVED-FLOAT-VALUE-TEMPLATE>
+		<FLOAT-VALUE>
+			<DEFINITION-REF DEST="DERIVED-FLOAT-PARAM-DEF"/>
+			<VALUE/>
+		</FLOAT-VALUE>
+	</DERIVED-FLOAT-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<DERIVED-STRING-VALUE-TEMPLATE>
+		<STRING-VALUE>
+			<DEFINITION-REF DEST="DERIVED-STRING-PARAM-DEF"/>
+			<VALUE/>
+		</STRING-VALUE>
+	</DERIVED-STRING-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<DERIVED-ENUMERATION-VALUE-TEMPLATE>
+		<ENUMERATION-VALUE>
+			<DEFINITION-REF DEST="DERIVED-ENUMERATION-PARAM-DEF"/>
+			<VALUE/>
+		</ENUMERATION-VALUE>
+	</DERIVED-ENUMERATION-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<LINKER-SYMBOL-VALUE-TEMPLATE>
+		<LINKER-SYMBOL-VALUE>
+			<DEFINITION-REF DEST="LINKER-SYMBOL-DEF"/>
+			<VALUE/>
+		</LINKER-SYMBOL-VALUE>
+	</LINKER-SYMBOL-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<FUNCTION-NAME-VALUE-TEMPLATE>
+		<FUNCTION-NAME-VALUE>
+			<DEFINITION-REF DEST="FUNCTION-NAME-DEF"/>
+			<VALUE/>
+		</FUNCTION-NAME-VALUE>
+	</FUNCTION-NAME-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<REFERENCE-VALUE-TEMPLATE>
+		<REFERENCE-VALUE>
+			<DEFINITION-REF DEST="REFERENCE-DEF"/>
+			<VALUE-REF DEST="CONTAINER"/>
+		</REFERENCE-VALUE>
+	</REFERENCE-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<SYMBOLIC-NAME-REFERENCE-VALUE-TEMPLATE>
+		<REFERENCE-VALUE>
+			<DEFINITION-REF DEST="SYMBOLIC-NAME-REFERENCE-DEF"/>
+			<VALUE-REF DEST="CONTAINER"/>
+		</REFERENCE-VALUE>
+	</SYMBOLIC-NAME-REFERENCE-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<CHOICE-REFERENCE-VALUE-TEMPLATE>
+		<REFERENCE-VALUE>
+			<DEFINITION-REF DEST="CHOICE-REFERENCE-DEF"/>
+			<VALUE-REF DEST="CONTAINER"/>
+		</REFERENCE-VALUE>
+	</CHOICE-REFERENCE-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<FOREIGN-REFERENCE-VALUE-TEMPLATE>
+		<REFERENCE-VALUE>
+			<DEFINITION-REF DEST="FOREIGN-REFERENCE-DEF"/>
+			<VALUE-REF DEST="CONTAINER"/>
+		</REFERENCE-VALUE>
+	</FOREIGN-REFERENCE-VALUE-TEMPLATE>
+	<!-- ############################# -->
+	<INSTANCE-REFERENCE-VALUE-TEMPLATE>
+		<INSTANCE-REFERENCE-VALUE>
+			<DEFINITION-REF DEST="INSTANCE-REFERENCE-PARAM-DEF"/>
+			<VALUE-IREF>
+			</VALUE-IREF>	
+		</INSTANCE-REFERENCE-VALUE>
+	</INSTANCE-REFERENCE-VALUE-TEMPLATE>	
+	<CONTEXT-REF-TEMPLATE>
+		<CONTEXT-REF DEST="DESTINATION"/>
+	</CONTEXT-REF-TEMPLATE>
+	<VALUE-REF-TEMPLATE>
+		<VALUE-REF DEST="DESTINATION"/>
+	</VALUE-REF-TEMPLATE>
+	<!-- ############################# -->
+</AUTOSAR-ECUC-TEMPLATE>

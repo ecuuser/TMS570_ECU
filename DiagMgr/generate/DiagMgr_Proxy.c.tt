@@ -1,0 +1,191 @@
+<#@ AutosarXml processor="ArDirectiveProcessor" requires="arPrefix='ar';arNamespace='http://autosar.org/2.1.2'" #>
+<#@ template inherits="AutosarDirectiveProcessor.ArGtcBase" debug="false" #>
+<#@ output extension="" #>
+<#@ include file="Helper.tt" #>
+/*****************************************************************************
+* Copyright 2010 Nexteer Automotive, All Rights Reserved.
+* Nexteer Confidential
+*
+* Module File Name  : DiagMgr_Proxy.c
+* Module Description: DiagMgr Proxy Interface
+* Product           : Gen II Plus - EA3.0
+* Generator         : <#= GeneratorName #> <#= GeneratorVersion #>
+* Generation Time   : <#= DateTime.Now.ToString( "dd.MM.yyyy HH:mm:ss" ) #>
+*****************************************************************************/
+/* Version Control:
+ * Date Created:      Fri Jul 13 18:34:17 2012
+ * %version:          3 %
+ * %date_modified:    Mon Oct 22 12:25:18 2012 %
+ *---------------------------------------------------------------------------------------------------------------------
+ * Date      Rev      Author         Change Description                                                        SCR #
+ * -------   -------  --------  ---------------------------------------------------------------------------  ----------
+ * 07/13/12   1       JJW       Initial template creation
+ */
+
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) ); #>
+
+
+/*******************************************************************************
+**                      Include Section                                       **
+*******************************************************************************/
+#define DIAGMGR_C /* Enable visibility to Module internal definitions in DiagMgr.h*/
+#define DIAGMGR_DEMIF_RTEHEADER
+#include "Ap_DiagMgr.h"
+#include "Os.h"
+
+/*******************************************************************************
+**                      Proxy Server Functions                                **
+*******************************************************************************/
+
+<#
+	ChangeContext( Xp.ModuleConfAtDefRefTo( "Os" ) ); 
+#> 
+<# !LOOP( Xp.ContainerAtDefRefTo( "OsApplication" ) ) #>
+<#  string osApp = ValueOf( "ar:SHORT-NAME" );
+    int eventId = 0;
+    int BswEventCnt = 0; 
+
+	/* Assume the Application short name is the last "word" in the Os Application name delimited with '_' */
+	string[] osAppWords = osApp.Split('_');
+	string osAppSuffix = osAppWords[osAppWords.Length -1];
+#>
+<# ChangeContext( Xp.ModuleConfAtDefRefTo( "DiagMgr" ) ); 
+	string diagMgrDemIfApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "DiagMgrGeneral/DiagMgrDemIfOsAppRef" ));
+#>
+<# !LOOP( Xp.ContainerAtDefRefTo( "DiagMgrConfigSet/DiagMgrEventParameter" ) ) #>
+<#
+	string eventApp = LastValueSegmentOf( Xp.ValueRefAtDefRefTo( "OsApplicationRef" ));
+	if ( eventApp == osApp ) { 
+		eventId++;
+	
+		string eventKind = ValueOf( Xp.ValueAtDefRefTo( "DiagMgrEventKind" ));
+		if(0 == String.Compare(eventKind, "DIAGMGR_EVENT_KIND_BSW", false)){
+			BswEventCnt++;
+		}
+	} 
+#>
+<# !ENDLOOP #>
+<# if ( 0 != eventId ) {
+    string apIdDefine = string.Format( "DIAGMGR_APID_{0}", osAppSuffix ).ToUpper();
+	string apEventDefine = string.Format( "DIAGMGR_EVENTNUM_{0}", osAppSuffix ).ToUpper();
+#>
+/* <#=osApp#> stateless init core function */
+FUNC(void, RTE_AP_DIAGMGR_APPL_CODE) DiagMgr<#=osAppSuffix#>_Init( void )
+{
+	/* Invoke stateless Init Function with reference to appropriate application */
+	DiagMgr_Init_Core( 	DiagMgr_NTCInfo<#=osAppSuffix#>_Cnt_M_str, 
+						<#=apEventDefine#>,
+						<#=apIdDefine#>, 
+						&DiagMgrInitComp<#=osAppSuffix#>_Cnt_M_lgc,
+<#if(0 == BswEventCnt){#>
+						NULL_PTR,	/* No BSW Events configured for application, passing NULL_PTR as indication */
+						NULL_PTR,	/* No BSW Events configured for application, passing NULL_PTR as indication */
+<#}else{#>
+						NTCInfoQueue<#=osAppSuffix#>_Cnt_M_str,
+						&NTCQueueIndex<#=osAppSuffix#>_Cnt_M_u08,
+<#}#>
+						DiagSts<#=osAppSuffix#>_Cnt_M_b16,
+						ActiveRmpRate<#=osAppSuffix#>_UlspmS_M_f32,
+						&ActDiagSts<#=osAppSuffix#>_Cnt_M_u08);
+<#if(osApp == diagMgrDemIfApp){#>					
+	Rte_Call_DemIf_SetOperationCycleState(NxtrDefaultOpCycle, NXTR_CYCLE_STATE_START);
+<#}#>
+}
+
+/* <#=osApp#> stateless periodic core function */
+FUNC(void, RTE_AP_DIAGMGR_APPL_CODE) DiagMgr<#=osAppSuffix#>_Per( void )
+{
+	/* Configurable Start of Runnable Checkpoint */
+	Rte_Call_DiagMgr<#=osAppSuffix#>_Per_CP0_CheckpointReached();
+	
+	/* Invoke stateless Periodic Function with reference to appropriate application */
+	DiagMgr_Per_Core( 	DiagMgr_NTCInfo<#=osAppSuffix#>_Cnt_M_str, 
+						<#=apEventDefine#>,
+						DiagSts<#=osAppSuffix#>_Cnt_M_b16,
+						ActiveRmpRate<#=osAppSuffix#>_UlspmS_M_f32,
+						&ActDiagSts<#=osAppSuffix#>_Cnt_M_u08,
+						T_NTCMapTbl<#=osAppSuffix#>_Cnt_enum,
+						&ResetNTCFlag<#=osAppSuffix#>_Cnt_M_u08);
+	
+	/* Configurable End of Runnable Checkpoint */
+	Rte_Call_DiagMgr<#=osAppSuffix#>_Per_CP1_CheckpointReached();
+}
+
+/* <#=osApp#> stateless transition core function */
+FUNC(void, RTE_AP_DIAGMGR_APPL_CODE) DiagMgr<#=osAppSuffix#>_Trns( void )
+{
+	/* Invoke stateless Transition Function with reference to appropriate application */
+	DiagMgr_Trns_Core( 	DiagMgr_NTCInfo<#=osAppSuffix#>_Cnt_M_str, 
+						<#=apEventDefine#>,
+						T_NTCMapTbl<#=osAppSuffix#>_Cnt_enum);
+}
+
+/* <#=osApp#> forwarding stateless proxy functions to stateless core function */
+FUNC(Std_ReturnType, RTE_AP_DIAGMGR_APPL_CODE) NxtrDiagMgr<#=osAppSuffix#>_GetNTCFailed( VAR(NTCNumber, AUTOMATIC) NTC_Cnt_T_enum, P2VAR(boolean, AUTOMATIC, AUTOMATIC) NTCFailed_Ptr_T_lgc )
+{
+	/* Forward request to stateless handler with reference to appropriate application data structures */
+	return(NxtrDiagMgr_GetNTCFailed_Core( NTC_Cnt_T_enum, NTCFailed_Ptr_T_lgc));
+}
+
+/* <#=osApp#> forwarding stateless proxy functions to stateless core function */
+FUNC(Std_ReturnType, RTE_AP_DIAGMGR_APPL_CODE) NxtrDiagMgr<#=osAppSuffix#>_GetNTCActive( VAR(NTCNumber, AUTOMATIC) NTC_Cnt_T_enum, P2VAR(boolean, AUTOMATIC, AUTOMATIC) NTCActive_Ptr_T_lgc )
+{
+	/* Forward request to stateless handler with reference to appropriate application data structures */
+	return(NxtrDiagMgr_GetNTCActive_Core( NTC_Cnt_T_enum, NTCActive_Ptr_T_lgc));
+}
+
+/* <#=osApp#> forwarding stateless proxy functions to stateless core function */
+FUNC(Std_ReturnType, RTE_AP_DIAGMGR_APPL_CODE) NxtrDiagMgr<#=osAppSuffix#>_GetNTCStatus( VAR(NTCNumber, AUTOMATIC) NTC_Cnt_T_enum, P2VAR(uint8, AUTOMATIC, AUTOMATIC) Status_Ptr_T_u08 )
+{
+	/* Forward request to stateless handler with reference to appropriate application data structures */
+	return(NxtrDiagMgr_GetNTCStatus_Core( NTC_Cnt_T_enum, Status_Ptr_T_u08));
+}
+
+
+FUNC(Std_ReturnType, RTE_AP_DIAGMGR_APPL_CODE) NxtrDiagMgr<#=osAppSuffix#>_SetNTCStatus( VAR(NTCNumber, AUTOMATIC) NTC_Cnt_T_enum, UInt8 Param_Cnt_T_u08, NxtrDiagMgrStatus Status_Cnt_T_enum )
+{
+	/* Forward request to stateless handler with reference to appropriate application data structures */
+	return(NxtrDiagMgr_SetNTCStatus_Core( 	NTC_Cnt_T_enum,
+											Param_Cnt_T_u08,
+											Status_Cnt_T_enum,
+											DiagMgr_NTCInfo<#=osAppSuffix#>_Cnt_M_str,
+											DiagSts<#=osAppSuffix#>_Cnt_M_b16,
+											ActiveRmpRate<#=osAppSuffix#>_UlspmS_M_f32,
+											&ActDiagSts<#=osAppSuffix#>_Cnt_M_u08));
+}
+<#}
+	if ( 0 != BswEventCnt ) { #>
+	
+FUNC(Std_ReturnType, RTE_AP_DIAGMGR_APPL_CODE) NxtrDiagMgr<#=osAppSuffix#>_ReportNTCStatus( VAR(NTCNumber, AUTOMATIC) NTC_Cnt_T_enum, UInt8 Param_Cnt_T_u08, NxtrDiagMgrStatus Status_Cnt_T_enum )
+{
+	VAR(Std_ReturnType, AUTOMATIC) RetVal;
+	
+	/* Forward request to stateless handler with reference to appropriate application data structures */
+	SuspendAllInterrupts();
+	if (FALSE == DiagMgrInitComp<#=osAppSuffix#>_Cnt_M_lgc)
+	{
+		RetVal = NxtrDiagMgr_ReportNTCStatus_Core(	NTC_Cnt_T_enum,
+													Param_Cnt_T_u08,
+													Status_Cnt_T_enum,
+													NTCInfoQueue<#=osAppSuffix#>_Cnt_M_str,
+													&NTCQueueIndex<#=osAppSuffix#>_Cnt_M_u08);
+		ResumeAllInterrupts();
+	}
+	else
+	{
+		ResumeAllInterrupts();
+		RetVal = NxtrDiagMgr_SetNTCStatus_Core( NTC_Cnt_T_enum,
+												Param_Cnt_T_u08,
+												Status_Cnt_T_enum,
+												DiagMgr_NTCInfo<#=osAppSuffix#>_Cnt_M_str,
+												DiagSts<#=osAppSuffix#>_Cnt_M_b16,
+												ActiveRmpRate<#=osAppSuffix#>_UlspmS_M_f32,
+												&ActDiagSts<#=osAppSuffix#>_Cnt_M_u08);
+	}
+	
+	return(RetVal);
+}
+<#}#>
+
+<# !ENDLOOP #>
+

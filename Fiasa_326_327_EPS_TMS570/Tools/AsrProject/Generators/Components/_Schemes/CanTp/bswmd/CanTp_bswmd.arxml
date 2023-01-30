@@ -1,0 +1,3382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Vector Employee (Vector Informatik GmbH) -->
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2012-2013 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           		CanTp_bswmd.arxml
+Component:      
+Module:         	CanTp
+Generator:     	
+
+Description:    -
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xmlns="http://autosar.org/3.0.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:b2dc1edf-2427-462c-af9d-576f0f03133d">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="DCE:87e2aac0-c501-4836-8fcb-1f2a52ea9394">
+					<SHORT-NAME>CanTp_Impl</SHORT-NAME>
+					<CODE-GENERATOR>GENy</CODE-GENERATOR>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<SW-MAJOR-VERSION>1</SW-MAJOR-VERSION>
+					<SW-MINOR-VERSION>25</SW-MINOR-VERSION>
+					<SW-PATCH-VERSION>0</SW-PATCH-VERSION>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>2</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>4</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>0</AR-PATCH-VERSION>
+					<PRECONFIGURED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/CanTp_Pre</PRECONFIGURED-CONFIGURATION-REF>
+					<RECOMMENDED-CONFIGURATION-REF DEST="MODULE-CONFIGURATION">/MICROSAR/CanTp_Rec</RECOMMENDED-CONFIGURATION-REF>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/CanTp</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-DEF UUID="DCE:b8354201-0be7-41d2-8fef-9ddd244dd4cb">
+					<SHORT-NAME>CanTp</SHORT-NAME>
+					<DESC>
+						<L-2 L="EN">Configuration of the CanTp (CAN Transport Protocol) module.</L-2>
+					</DESC>
+					<ADMIN-DATA>
+						<DOC-REVISIONS>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.02.00</REVISION-LABEL>
+								<STATE>release</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2008-04-16T14:20:17</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Renaming</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Cluster descision</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.03.00</REVISION-LABEL>
+								<STATE>release</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2008-07-03T11:12:39</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Dynamic channel dsitribution added</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">New feature</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.04.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2008-10-10T15:28:01</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added optimization switches</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">New feature</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.05.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2008-10-28T10:14:39</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added VectorCommonData container</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">New feature</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.06.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2009-02-06T13:56:08</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added UseSplitMainFunction</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">New feature</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.07.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2009-03-19T00:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Renamed UseSplitMainFunction to EnableSplitMainFunction, Added new optimization switches, UpperLayerNSduIds and UserConfigFile</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">New feature</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.11.83</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2009-07-03T17:47:23</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Corrected version number and default values</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Bugfix</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.12.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2009-07-06T09:16:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapted version number for 1.12.00 (OEM specific version)</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">version consistency</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.13.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2009-08-04T11:22:59</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added support for Mixed11 addressing, changed handling of SupportFullBufferApi</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">New feature</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.14.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2009-08-14T14:02:25</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapted version number for 1.14.00</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">version consistency</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.14.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2009-08-21T19:18:25</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapted version number for 1.14.01</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">version consistency</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.14.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2009-08-27T13:47:25</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapted version number for 1.14.02</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">version consistency</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.14.04</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2009-11-04T13:30:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Corrected destination target to AUTOSAR, added new parameters, reworked parameter descriptions</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">New features and consistency</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.14.05</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2010-01-18T10:37:34</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Removed default value for CanTpHasInitCfgPtr</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">Bugfix</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.14.06</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2010-01-20T14:18:34</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Only version info</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">New CanTp version available</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.14.07</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2010-02-05T14:18:34</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Modified description of Tx/RxPaddingActivation</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00040635</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.15.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2010-05-26T12:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapted version info, strict RX call sequence, tp parameter change api, Post buildable SDUs</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">due to component changes</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.15.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2010-06-17T13:06:58</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">version consistency</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00043466</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.15.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2010-06-28T13:06:58</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">version consistency</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00043629</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.16.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2010-08-04T13:48:39</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Added parameters CanTpRc, CanTpRcNotifyAlways, CanTpTcNotifyAlways</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ne features</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.16.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2010-09-23T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00045555, ESCAN00045557</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">bugfixing</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.16.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2010-09-30T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00045609, 
+ESCAN00045702, 
+ESCAN00045739</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">bugfixing</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.16.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2010-10-20T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00045856</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">bugfixing</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.16.04</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2010-11-26T11:00:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00047079</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">bugfixing</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.17.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2010-11-30T10:11:05</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">added CanTpOperNotSupportedReportDem, CanTpECommReportDem</L-2>
+										</CHANGE>
+										<REASON>
+											<L-2 L="EN">ESCAN00045765</L-2>
+										</REASON>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.18.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2011-03-11T05:12:23+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">added </L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.18.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2011-04-06T05:12:23+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00049698,
+ESCAN00049839</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.18.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2011-04-07T05:12:23+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00049947</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.18.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2011-04-13T05:12:23+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00050027, ESCAN500043</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.18.04</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2011-05-05T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00050534</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.18.05</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2011-05-10T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00050773</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.19.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visher</ISSUED-BY>
+								<DATE>2011-07-20T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00048513: Transmission confirmation cannot be resolved
+ESCAN00049432: Check maximum transmit length
+ESCAN00049945: Support Half Duplex communication
+ESCAN00050534: Cancellation of wrong NPduId in the CanIf
+ESCAN00050563: Wrong STmin value used in FC frames
+ESCAN00050773: 2'nd functional diagnostic request does not respond
+ESCAN00052244: CanTp channel resource allocation fails</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.20.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visdth</ISSUED-BY>
+								<DATE>2011-12-09T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00054836: Wrong number of parameters for vCanTp_DetAssert
+ESCAN00053503: critical section handling only via SchM
+ESCAN00054364: buffer provision with CANTP_ASYNC_TRANSMIT corrected
+ESCAN00054656: busy buffers not supported with TX_FULL_BUFFER_PROVISION = OFF
+ESCAN00054700: correction of Tx buffer handling with status BUFREQ_E_OVFL
+ESCAN00054685: correction of Rx buffer handling with too small buffers</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.20.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visdth</ISSUED-BY>
+								<DATE>2012-01-05T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00055814: timeout of unexpected FF reception due to blocked TxSemaphore resolved
+ESCAN00055822: blocked CanTp after missing Tx Confirmation resolved</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.20.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visdth</ISSUED-BY>
+								<DATE>2012-01-05T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00056210: Compile error: 'CANTP_NBR' : is not a member of 'sRxNsduCfg'</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.20.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visdth</ISSUED-BY>
+								<DATE>2012-01-05T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00056988: Compile error: CANTP_VAR_INIT is undefined
+ESCAN00056192: AR3.2 API function remapping</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.21.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visdth</ISSUED-BY>
+								<DATE>2012-01-05T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00056792: Support for Cfg5</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.21.01</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visdth</ISSUED-BY>
+								<DATE>2012-01-05T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00057263: Correct Description of "Strict Rx Call Sequence"</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.21.02</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visdth</ISSUED-BY>
+								<DATE>2012-01-05T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00059163, ESCAN00059137, ESCAN00056982, ESCAN00058822</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.21.03</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visdth</ISSUED-BY>
+								<DATE>2012-01-05T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00060308,
+ESCAN00060406,
+ESCAN00060079</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.22.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>vismhe</ISSUED-BY>
+								<DATE>2012-10-10T00:00:00+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00061035</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.23.00</REVISION-LABEL>
+								<STATE>released</STATE>
+								<ISSUED-BY>visjbh</ISSUED-BY>
+								<DATE>2013-01-30T10:30:27+01:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00063605, ESCAN00064084</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.24.00</REVISION-LABEL>
+								<ISSUED-BY>visdth</ISSUED-BY>
+								<DATE>2013-04-08T02:10:48+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">Adapted version number for 1.24.00</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+							<DOC-REVISION>
+								<REVISION-LABEL>1.25.00</REVISION-LABEL>
+								<ISSUED-BY>visdth</ISSUED-BY>
+								<DATE>2013-07-11T09:20:14+02:00</DATE>
+								<MODIFICATIONS>
+									<MODIFICATION>
+										<CHANGE>
+											<L-2 L="EN">ESCAN00067685: Reporting of gateway errors to DEM</L-2>
+										</CHANGE>
+									</MODIFICATION>
+								</MODIFICATIONS>
+							</DOC-REVISION>
+						</DOC-REVISIONS>
+					</ADMIN-DATA>
+					<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<REFINED-MODULE-DEF-REF DEST="MODULE-DEF">/AUTOSAR/CanTp</REFINED-MODULE-DEF-REF>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<!-- Parameter Container Definition: CanTpGeneral -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:b421e3b2-68f9-4155-bf0e-8b16d50b576b">
+							<SHORT-NAME>CanTpGeneral</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container contains the general configuration parameters of the CanTp module.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: CanTpDevErrorDetect -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:5ba606a4-deda-4c3c-b081-a73800b751f8">
+									<SHORT-NAME>CanTpDevErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the Development Error Detection and Notification ON or OFF.
+
+If 'Development Error Detection' is enabled, development errors are reported to the Development Error Tracer (DET).
+
+The following development errors may occur within the CanTp:
+ - service call without intialization
+ - invalid channel handle
+ - rejection of service call
+
+All development errors are reported to the Development Error Tracer.
+
+Note: In general, the development error detection is recommended during pre-test phase. It is not recommended to enable the development error detection in production code due to increased runtime and ROM needs.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpMainFunctionPeriod -->
+								<FLOAT-PARAM-DEF UUID="DCE:a9c4f9a1-2516-4242-967c-989f05f655a2">
+									<SHORT-NAME>CanTpMainFunctionPeriod</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Allow to configure the time period for the scheduling of the CanTp_MainFunction().
+
+This configuration value must be equal to the value in the ScheduleManger module.
+All internal timed events (e.g. timeouts) of the CanTp are based on this value.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.01</DEFAULT-VALUE>
+									<MAX>0.255</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpTc -->
+								<BOOLEAN-PARAM-DEF UUID="DCE:17d3db68-23ed-406e-a166-76e49b11aaf8">
+									<SHORT-NAME>CanTpTc</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches Transmit Cancellation globally ON or OFF.
+
+By enabling this switch, each Tx Sdu can be configured separately with or without transmit cancellation.
+If this switch is disabled, the API 'CanTp_CancelTransmitRequest' is not available, reducing resource consumption.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>PC-AFFECTS-PB</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:bcc6687c-c197-436c-a5fe-640efdd77c79">
+									<SHORT-NAME>CanTpPaddingActive</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches padding globally ON or OFF.
+
+By enabling this  switch, each Rx/Tx-Sdu can be configured separately with or without padding.
+If this switch is disabled, then no padding can be used for any Rx/Tx-Sdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:0490bb4a-b891-475e-8ab0-d06aebd0a5fc">
+									<SHORT-NAME>CanTpHavePaddingByte</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches usage of the "CanTpPaddingPattern" ON or OFF.
+
+By enabling this  switch, each Tx-Sdu, if configured with padding, uses the "CanTpPaddingPattern" to fill up unused frame bytes.
+If this switch is disabled, then no padding pattern is applied to fill up the unused frame bytes. The frame  length is extended to 8 bytes but the unused bytes are not stuffed with the padding pattern and so  the content is random.
+
+RESTRICTIONS: This switch is only available if "CanTpPaddingActive" is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:b08ce167-fe85-4d22-911c-7d544fc65a84">
+									<SHORT-NAME>CanTpPaddingPattern</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the pattern to be used for padding of Sdus if they are configured accordingly.
+
+RESTRICTIONS: This setting is only available if "CanTpPaddingActive" and "CanTpHavePaddingByte" are both enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>170</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<DERIVED-BOOLEAN-PARAM-DEF UUID="DCE:b41c9ce3-8908-43b7-83bb-21d80a1649b1">
+									<SHORT-NAME>CanTpVersionInfoApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the the Version Information Api ON or OFF.
+
+If enabled, the function CanTp_GetVersionInfo() can be used to get major, minor and patch version of the CanTp.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</DERIVED-BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:b6937774-28b3-4af4-be80-f6e1899a7009">
+									<SHORT-NAME>CanTpMaxNumRxSdus</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the maximum number of different N-Sdu-Ids that will be received simultaneously via the CanTp by this ECU.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:dd47ba0a-2cd4-4677-b20b-aa2f3dce7794">
+									<SHORT-NAME>CanTpMaxNumTxSdus</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the maximum number of different N-Sdu-Ids that will be transmitted simultaneously via the CanTp by this ECU.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:db14676c-f330-4aa3-81a9-c8c0519b5932">
+									<SHORT-NAME>CanTpPostbuildStartAddress</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the start address of the post build data. 
+
+This setting is mandatory when generating a configuration that will be written to the memory of your ECU at post-build time (i.e. when generating a hex-file). This setting is not relevant when generating the initial ECU configuration at link- or pre-compile time (i.e. when generating a C file that will be linked with your project).
+
+The module start address must specify the start address of the memory area which  the generated hex-file will be mapped to. If the ECU supports selectable post-build configuration, the module start address can be any location that is accessible for the CanTp module. If selectable post-build configuration is not supported by your ECU, the module start address must be the same address to which the initial configuration was mapped. Please see to your linker map file to get this address.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>4294967295</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpAmdRuntimeMeasurement-->
+								<BOOLEAN-PARAM-DEF UUID="DCE:5DA7AC00-1531-4789-B043-D2962758ECC5">
+									<SHORT-NAME>CanTpAmdRuntimeMeasurement</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter defines if AMD Runtime Measurement (RTM) is enabled for this module.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:5c73ff70-869d-406b-9529-958539303d9c">
+									<SHORT-NAME>CanTpDynamicChannelAssignment</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the restriction of the maximum number of simultaneously active Rx and Tx channels ON or OFF.
+
+The maximum number  of simultaneously active Rx and Tx channels will be restricted when this switch is active. Else, all CanTp Sdus can be active at the same time.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:0780270b-6254-41f0-9b0f-7d56effccd7d">
+									<SHORT-NAME>CanTpMaxNumRxChannels</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the maximum number of Rx channels that can be active simultaneously.
+
+RESTRICTIONS: This setting only has an effect if "CanTpDynamicChannelAssignment" is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:0780270b-6254-41f0-9b0f-7d56effccd7e">
+									<SHORT-NAME>CanTpMaxNumRxChannels_PbLimit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the maximum for parameter 'CanTpMaxNumRxChannels' that can be set during post build configuration.
+
+RESTRICTIONS: This setting only has an effect if "CanTpDynamicChannelAssignment" is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:288dc48c-0723-4d72-bff2-0d00e670ecf1">
+									<SHORT-NAME>CanTpMaxNumTxChannels</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the maximum number of Tx channels that can be active simultaneously.
+
+RESTRICTIONS: This setting only has an effect if "CanTpDynamicChannelAssignment" is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="DCE:288dc48c-0723-4d72-bff2-0d00e670ecf2">
+									<SHORT-NAME>CanTpMaxNumTxChannels_PbLimit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the maximum for parameter 'CanTpMaxNumTxChannels' that can be set during post build configuration.
+
+RESTRICTIONS: This setting only has an effect if "CanTpDynamicChannelAssignment" is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:d5d909de-b1bb-4d12-bf74-af90288e1f12">
+									<SHORT-NAME>CanTpProdErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the Production Error Detection and Notification ON or OFF
+   
+If 'Production Error Detection' is enabled, production relevant errors are reported to the Diagnostics Event Manager (Dem).
+Disable this option if no Dem is present in your system.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:10d18f8a-fbae-4e3d-965a-33b317f1c575">
+									<SHORT-NAME>CanTpOptimizeSingleConnection</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the single connection optimization ON or OFF.
+
+This option optimizes the CanTp implementation for code size.
+If enabled, the CanTp supports only one physical Rx connection, one functional Rx connection and one physical Tx connection.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:f00420f6-137d-49f1-a70b-1cc689c6c6e5">
+									<SHORT-NAME>CanTpOptimizeSingleConnPrec</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the single connection precompile optimization ON or OFF.
+
+If enabled, the CanTp implementation is optimized for code size and only supports one physical Rx  connection, one functional Rx connection and one physical Tx connection.
+Additionally the connections are configured at precompile time and can not changed at a later time.
+
+RESTRICTIONS: This setting is only available if "CanTpOptimizeSingleConnection" is enabled and a precompile configuration is used.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="8ad8bd32-3e41-4f6d-b5bf-11d56f3e06d6">
+									<SHORT-NAME>CanTpEnableSplitMainFunction</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the usage of two separate tasks CanTp_MainFunctionTx() and CaTp_MainFunctionRx() instead of one single task ON or OFF.
+
+If enabled, the CanTp_Mainfunction() is split into two seperate tasks called CanTp_MainFunctionTx() and CanTp_MainFunctionRx().
+Instead of calling one main function it can be more efficient to call the Rx and Tx side of the CanTp separately to accomplish an optimal task call sequence.
+The CanTp_MainFunction() can still be used. It calls both separate tasks successively.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>NO-AFFECT</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="f008f319-2a4a-44c7-b8ba-0ceba5ef3f8d">
+									<SHORT-NAME>CanTpEnableExtendedApiSTMin</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the support for runtime configuration of "STmin" for Flow Control frames ON or OFF.
+
+If enabled, the additional CanTp_SetSTmin() API function is supported which allows to set the 'STmin' (minimum separation time) byte within Flow Control frames dynamically at runtime.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="3f9543eb-ebc2-45ad-b524-e49eafab5487">
+									<SHORT-NAME>CanTpEnableExtendedApiBs</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches the support for runtime configuration of "Bs" for Flow Control frames ON or OFF.
+
+If enabled the additional CanTp_SetBS() API function is supported which allows to set the "Bs" (BlockSize) byte within Flow Control frames dynamically at runtime.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="54170429-6c1e-4a70-85de-35e7e904c229">
+									<SHORT-NAME>CanTpUserConfigFile</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Path to an external user config file used by the GENy generation tool.
+
+If you want to overwrite some of the settings in the generated configuration file (CanTp_Cfg.h), you can specify a path to a user defined configuration file. The user defined configuration file will be included at the end of the generated preprocessor switches. Definitions in the user defined configuration file can overwrite definitions in the generated configuration file. 
+
+RESTRICTIONS: Not all of the settings can be overwritten simply by triggering the preprocessor switch. Some of the options are complex and the code generator generates less or more code depending on the setting.
+
+USE SUCH A FILE ONLY AFTER DISCUSSION WITH VECTOR.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="a2f1fffc-a48f-4207-a54e-9e388b863709">
+									<SHORT-NAME>CanTpEnableRxNSduIdRemapping</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the support for Rx N-Sdu Id remapping ON or OFF.
+
+If enabled, the Rx N-Sdu Identifier for each N-Sdu, which is used for the upper layer communication, is determined by the PduR configuration.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="79e3ddec-783e-42eb-8ab3-aebc3f57d31a">
+									<SHORT-NAME>CanTpEnableTxNSduIdRemapping</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the support for Tx N-Sdu Id remapping ON or OFF.
+
+If enabled, the Tx N-Sdu Identifier for each N-Sdu, which is used for the upper layer communication, is configurable by the user.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="a2d7519d-3d47-4133-a6ba-be0295311817">
+									<SHORT-NAME>CanTpSupportFullBufferHandlingRx</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the support for paged buffer handling ON or OFF.
+
+The CanTp API requires the application to provide buffers during transmission and reception.
+
+If this option is enabled, these buffers may be smaller than the CanTp message received or transmitted.
+If this option is disabled, this buffer must be large enough to receive the complete CanTp message.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="46605773-8c37-4974-a6de-06c63b329f9d">
+									<SHORT-NAME>CanTpSupportFullBufferHandlingTx</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the support for paged buffer handling ON or OFF.
+
+The CanTp API requires the application to provide buffers during transmission and reception.
+
+If this option is enabled, these buffers may be smaller than the CanTp message received or transmitted.
+If this option is disabled, this buffer must be large enough to transmit the complete CanTp message.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="b732b426-dc50-4fc7-9d15-15fb56f80fe4">
+									<SHORT-NAME>CanTpSupportStandardAddressing</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the support for Standard Addressing ON or OFF.
+
+This switch enables/disables the support for  the addressing format "Standard Addressing" defined by the AUTOSAR standard.
+For optimization purposes, the support can be disabled.
+ 
+For full AUTOSAR compatibility, this switch must be enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="0ca870ea-bec7-481e-9fc1-51ccdb22c8dd">
+									<SHORT-NAME>CanTpSupportExtendedAddressing</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the support for Extended Addressing ON or OFF.
+
+This switch enables/disables the support for  the addressing format "Extended Addressing" defined by the AUTOSAR standard.
+For optimization purposes, the support can be disabled.
+ 
+For full AUTOSAR compatibility, this switch must be enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="6ab5c08c-51f1-4b79-9865-8db127a7aa43">
+									<SHORT-NAME>CanTpSupportMixed11Addressing</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the support for Mixed11 Addressing ON or OFF.
+
+This switch enables/disables the support for  the addressing format "Mixed11 Addressing".
+
+This addressing format is not part of the AUTOSAR standard.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="5eee44d0-adda-4833-a4d2-17c59197a023">
+									<SHORT-NAME>CanTpEnableAr40CompliantPduRApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the usage of an AUTOSAR 4.0 compatible PduR Api ON or OFF
+
+If enabled, the CanTp will use an AUTOSAR 4.0 compliant PduR Api.
+
+As soon as there is a Vector PduR in your GENy configuration, the CanTp will automatically adapt to the API settings given by the PduR configuration.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="0d0d637d-1675-4859-8a2d-2f79b872096d">
+									<SHORT-NAME>CanTpFFProvide2RxBufferCalls</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch support for accelerated transmission of routed messages ON or OFF.
+
+If this switch is enabled, the FF is transmitted immediately by the PduR without internal buffering.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="002c88e7-b105-416c-a281-9cababec7c49">
+									<SHORT-NAME>CanTpSuppressPrePassIndication</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the support for "PrePass" notification of the Dem in case of successful reception or transmission ON or OFF.
+
+If this switch is enabled, the Dem will not be notified any longer upon succesful reception or transmission of CanTp messages. 
+The "PreFail" Dem notification upon unsuccessful reception or transmission of CanTp messages is  not affected.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="8a92f4ae-17f9-4ddf-a675-e9f977019db6">
+									<SHORT-NAME>CanTpExtErrorDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the detection of additional internal development errors ON or OFF.
+
+If this switch is enabled, a user callback "void vCanTp_ReportError( uint16 ModuleId, uint8 InstanceId, uint8 ApiId, uint16 ErrorId, uint32 ErrorParam );" has to be provided by the application which is called in case of internal errors.
+This enhanced error detection is provided  by Vector Informatik beyond the AUTOSAR specification.
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="03bd6469-0fad-4cf3-9446-d64efd5e3f8e">
+									<SHORT-NAME>CanTpHasRxIndication</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the Rx Indication function ON or OFF.
+
+If enabled, the CanTp has an Rx Indication function.
+If disabled, the CanTp will not be able to receive Pdus from the CanIf, and hence will not be able to receive FlowControl Pdus in Tx Sdus or support Rx Sdus.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="ac745a88-2749-47a0-951d-5c146d7fdf87">
+									<SHORT-NAME>CanTpHasTxConfirmation</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the Tx Confirmation function ON or OFF.
+
+If enabled, the CanTp has a Tx Confirmation function.
+If disabled, the CanTp will not be able to transmit Pdus,  and hence will not be able to send FlowControl Pdus in Rx Sdus or support Tx Sdus.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="7cf8e6a6-3927-4d79-8c73-150fdd4f98fb">
+									<SHORT-NAME>CanTpHasInitCfgPtr</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switch the support for configuration pointers for the CanTp_Init() function ON or OFF.
+
+If enabled, then a pointer to a configuration structure is passed to the CanTp_Init() function.  
+If disabled, then the only one available configuration, defined at link time, is used by default. The CanTp_Init() function is called with a void parameter.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="401d9ed0-ee1d-4151-b0f7-dbb9f0116395">
+									<SHORT-NAME>CanTpChangeParameterReqApi</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">When switched on, the functions "CanTp_ChangeParameterRequest" and "CanTp_ReadParameterRequest" are provided which can be used to change/read the values of the reception parameters CanTpBs and CanTpSTmin.
+If switched on, the PduR module must provide the function "PduR_CanTpChangeParameterConfirmation" that can be switched on in the PduR module using the "PduRCanTpChangeParameterReqApi" switch.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="ba3d6a8b-b8d5-491b-b172-c18a13fdfce8">
+									<SHORT-NAME>CanTpStrictRxCallSeq</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">When switched off, the reception sequence will always be kept independent of the buffer provision return value, i.e. the PduR_CanTpRxIndication will always be called during a reception, even if the application has already returned that no buffer is available (BUFREQ_E_NOT_OK).
+When switched on, the Indication function will only be called if the corresponding Buffer-Provision had returned a value different from BUFREQ_E_NOT_OK.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="fe2c59d1-710f-4ee5-9e4e-975fda01ccd8">
+									<SHORT-NAME>CanTpRc</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches Receive Cancellation ON or OFF.
+
+If this switch is disabled, the API 'CanTp_CancelReceiveRequest' is not available, reducing resource consumption.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="1a755caf-24a4-47b4-adbb-4bbd2e77f1b5">
+									<SHORT-NAME>CanTpRcNotifyAlways</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches upper layer notification of receive cancellation ON or OFF.
+
+This is an addititional non AUTOSAR switch which is needed for compatibility reasons.
+In case there are upper layer modules (e.g. Dcm) which require a final indication or confirmation, this switch may be used to hand a final negative notification (NTFRSLT_E_CANCELATION_NOT_OK) to the upper layer which has requested the cancellation instead of just stopping
+ without further notification.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="f57aebee-0b39-482e-b0fe-ee37434be783">
+									<SHORT-NAME>CanTpTcNotifyAlways</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Switches upper layer notification of transmit cancellation ON or OFF.
+
+This is an addititional non AUTOSAR switch which is needed for compatibility reasons.
+In case there are upper layer modules (e.g. Dcm) which require a final indication or confirmation, this switch may be used to hand a final negative notification (NTFRSLT_E_CANCELATION_NOT_OK) to the upper layer which has requested the cancellation instead of just stopping
+ without further notification.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="beeb6bf1-6668-4fbb-9f23-62d08c3e6080">
+									<SHORT-NAME>CanTpOperNotSupportedReportDem</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specifies if reporting the production error 
+CANTP_E_OPER_NOT_SUPPORTED to module Dem shall be supported.
+
+If disabled, Det error code 0xA0 will be reported instead (only if development error detection is enabled)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>PC-AFFECTS-LT-AND-PB</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="98cfc223-e972-4268-8680-3ad3c3736058">
+									<SHORT-NAME>CanTpECommReportDem</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Specifies if reporting the production error CANTP_E_COMM to module 
+Dem shall be supported. ON or OFF.
+
+If disabled, Det error code 0xB0 will be reported instead (only if development error detection is enabled)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>PC-AFFECTS-LT-AND-PB</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="9b0122bd-e357-4bf0-923c-5e65ce9d2880">
+									<SHORT-NAME>CanTpIgnoreFcWithReservedStMin</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">According to ISO, flow control - ClearToSend frames with invalid StMin values (0x80-0xF0 and 0xFA-0xFF) are interpreted as STMin 0x7F (127).
+If this option is enabled, FC.CTS with invalid STMin values will be considered invalid, and silently ignored.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="5a96938b-84dc-4c9c-9bad-dacf08f2b8f9">
+									<SHORT-NAME>CanTpIgnoreFcOvflAndInvalidFS</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">According to ISO, flow control overflow (FS 0x2) and flow control frames with invalid FS values (0x3-0xF) will abort the current transmission.
+
+If this option is enabled, flow control frames with FS 0x2-0xF will be silently ignored. A transmission still aborts due to timeout.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="d5cfe78a-c466-49d0-9cc3-6ff3b61e0c62">
+									<SHORT-NAME>CanTpIgnoreCfWithWrongSN</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">According to ISO, consecutive frames with unexpected sequence numbers will abort the reception.
+If this option is enabled, unexpected consecutive frames will be silently ignored.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="62c34144-4b75-4e38-b093-d75d06563320">
+									<SHORT-NAME>CanTpEnableDcmRequestDetect</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If this option is enabled, the Tp will call a function 'Dcm_OnRequestDetection' each time a mixed addressed  first- or single frame is received, even if no valid RxSDU is addressed.
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="139c2a9a-c27b-4b55-bbb7-7a1c557b18b9">
+									<SHORT-NAME>CanTpEnableSynchronousTransmit</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If this option is enabled, the Tp will request transmission buffer during the call to CanTp_Transmit.
+Otherwise, the transmission buffer will be requested during the next CanTp_MainFunction call. Note: This will reduce CanTp throughput.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="07a00b40-c484-4a45-99de-c6bfcaae3904">
+									<SHORT-NAME>CanTpEnableConstantBS</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">According to ISO (and Asr 4.x), the BS transmitted in the first flow control frame (sent after a first frame has been received) shall be used for each following flow control frame.
+
+The Autosar CanTp (ASR 3.x) calculates the BS for each flow control frame based on the available buffer.
+If this switch is enabled, the ISO / Asr4.x conformant constant BS is used, otherwise the Asr3.x behavior is used.
+
+Please note: If the communication partner sends different BS values during a transmission, they will be evalued and used. (See also 'CanTpUseOnlyFirstFC')</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="55593b09-d8d5-4d98-b9c0-c13496f01747">
+									<SHORT-NAME>CanTpUseOnlyFirstFc</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">During a transmission Blocksize and STMin will only be evaluated from the first flow control (CTS) frame received in response to a first frame.
+Any further (valid) flow control frames (received after 'BlockSize' number of ConsecutiveFrames) will only trigger the transmission of the next block of data, its BlockSize and STMin value have no effect.
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="7dc18dde-ed7c-433a-8bd4-388f3f398b7a">
+									<SHORT-NAME>CanTpSuppressCancelErrorWhenIdle</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If a connection, which is currently not active, is cancelled by the CancelTransmit or CancelReceive API, by default the error “operation not supported” is reported to DEM or DET.
+
+When activating this switch, the error reporting in this case will be suppressed.
+
+Note: this switch has only an effect if the CancelReceive or CancelTransmit API is available.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="9d5a0ecf-8146-4ea8-9da0-0bbf4027cb0b">
+									<SHORT-NAME>CanTpSuppressInvalidBufferFcOvfl</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">According to AUTOSAR 3, an FC.OVFL is sent if the status of the buffer provided by the PduR is either BUFREQ_E_OVFL or BUFREQ_E_NOT_OK.
+
+If this switch is activated, FC.OVFL is only sent if BUFREQ_E_OVFL is returned. The status BUFREQ_E_NOT_OK can then be used by the application to terminate the reception immediately, so that no further frame is sent.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="5c025700-6ad9-4cdc-bafc-db263df5b3bb">
+									<SHORT-NAME>CanTpSupportLowLevelRouting</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables a set of callouts:
+
+&lt;LLR-prefix&gt;LLR_CanTp_CanIf_Transmit
+&lt;LLR-prefix&gt;LLR_CanIf_CanTp_RxIndication
+&lt;LLR-prefix&gt;LLR_CanIf_CanTp_TxConfirmation
+
+&lt;LLR-prefix&gt; is defined by parameter CanTpLowLevelRoutingPrefix.
+
+</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>PC-AFFECTS-PB</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<STRING-PARAM-DEF UUID="58efce7d-c255-4741-b089-c5e37e0821e4">
+									<SHORT-NAME>CanTpLowLevelRoutingPrefix</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Define the prefix of low level routing callout functions.
+Only required if CanTpSupportLowLevelRouting is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>PC-AFFECTS-PB</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>Cdd</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="d1d7f80c-49bd-457c-aaea-ea6882e77267">
+									<SHORT-NAME>CanTpGwErrorsReportDem</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If this switch is enabled, two additional errors are reported to DEM for error analysis when the CanTp is used in gateway applications:
+- routing failure due to insufficient buffer size
+- no routing due to missing ECU / no flow control
+
+Note: this option is only intended for gateway applications and should only be activated for those. However, the CanTp itself is not able to detect if such a use-case is given and will report these errors also for non-gateway application when this switch is active.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>PC-AFFECTS-PB</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: CanTpRxNSdu -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:c751dc2d-ca98-4445-9ddc-d54c1f0f64f6">
+							<SHORT-NAME>CanTpRxNSdu</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">The following parameters needs to be configured for each CAN N-Sdu that the CanTp module shall receive.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: CanTpAddressingFormat -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:a0a10e1e-9760-44c1-a7c8-16aa080f52b6">
+									<SHORT-NAME>CanTpAddressingFormat</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines which communication addressing mode is used for this Rx N-Sdu.
+
+Enumeration values:
+CANTP_STANDARD to use normal addressing format.
+CANTP_EXTENDED to use extended addressing format.
+CANTP_MIXED11 to use mixed11 addressing format.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>CANTP_STANDARD</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="8332fd59-df48-4665-974c-31b98383be54">
+											<SHORT-NAME>CANTP_EXTENDED</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="9a8ae741-dd29-47ab-8cbc-0a26f67ffcef">
+											<SHORT-NAME>CANTP_STANDARD</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="2d4264c2-544e-4967-ac63-6369f660c059">
+											<SHORT-NAME>CANTP_MIXED11</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpBs -->
+								<INTEGER-PARAM-DEF UUID="DCE:365e184a-dc18-4f54-b9bb-24ba6af382f9">
+									<SHORT-NAME>CanTpBs</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the maximum number of N-Pdus the CanTp receiver allows the sender to send before waiting for an authorization to continue transmission of the following N-Pdus.
+
+For further details on this parameter value see ISO 15765-2 specification.
+
+Note: For reasons of buffer length, the CanTp can adapt the Bs value within the limit of this maximum Bs.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>8</DEFAULT-VALUE>
+									<MAX>255</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpNar -->
+								<FLOAT-PARAM-DEF UUID="DCE:287ba098-6fed-4949-8a4d-cb1993d9d0bc">
+									<SHORT-NAME>CanTpNar</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Value of the Nar timeout. 
+
+Nar is the time for transmission of a CAN frame (any N-Pdu) on the receiver side.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.1</DEFAULT-VALUE>
+									<MAX>9999</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpNbr -->
+								<FLOAT-PARAM-DEF UUID="DCE:6447d350-0b32-454d-a581-3031f4e94076">
+									<SHORT-NAME>CanTpNbr</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Value of the performance requirement for (Nbr + Nar).
+
+Nbr is the elapsed time between the receiving indication of a FF or CF or the transmit confirmation of a FC, until the transmit request of the next FC.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.15</DEFAULT-VALUE>
+									<MAX>9999</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpNcr -->
+								<FLOAT-PARAM-DEF UUID="DCE:610942b4-b1a7-4b62-9734-8cfeb3fde09c">
+									<SHORT-NAME>CanTpNcr</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Value of the Ncr timeout. Ncr is the time until reception of the next Consecutive Frame N-Pdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.15</DEFAULT-VALUE>
+									<MAX>9999</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpRxChannel -->
+								<INTEGER-PARAM-DEF UUID="DCE:b7e08452-a30f-4c2f-9579-1e48f92966b7">
+									<SHORT-NAME>CanTpRxChannel</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Link to the Rx connection channel, which has to be used for receiving this N-Pdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpRxDl -->
+								<INTEGER-PARAM-DEF UUID="DCE:e76f19a8-9dee-4691-b97f-8e13bd655f72">
+									<SHORT-NAME>CanTpRxDl</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Data Length Code of this Rx N-Sdu. 
+
+In case of variable message length, this value indicates the minimum data length.
+Depending on SF or FF N-Sdu the value will be limited to 7 (6 for an Extended Addressing format) and 4095 respectively.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>8</DEFAULT-VALUE>
+									<MAX>4095</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpRxPaddingActivation -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:d1234a3e-ccb1-4bbc-86f9-d945477c0ca3">
+									<SHORT-NAME>CanTpRxPaddingActivation</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines if the receive frame uses padding or not.
+
+Enumeration values:
+
+CANTP_ON: The N-Pdu received uses padding for SF, FC and the last CF. (N-Pdu length is always 8 bytes)
+CANTP_OFF: The N-Pdu received does not use padding for SF, FC and the last CF. (N-Pdu length is dynamic)
+
+Note: GENy uses a boolean value instead of an enumeration value. "Enabled" equals CANTP_ON, "disabled" equals CANTP_OFF.
+
+RESTRICTIONS: This setting is only available if "CanTpPaddingActive" is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>CANTP_ON</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:cc099c83-755e-4b67-a67f-10963671715d">
+											<SHORT-NAME>CANTP_OFF</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:4bf6187b-b071-4b6f-9571-3d5b646f12bd">
+											<SHORT-NAME>CANTP_ON</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpRxTaType -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:67bcd486-505b-4115-9392-1bd42de629b6">
+									<SHORT-NAME>CanTpRxTaType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the communication type of this Rx N-Sdu.
+
+Enumeration values:
+CANTP_PHYSICAL: Used for 1-to-1 connections
+CANTP_FUNCTIONAL: Used for 1-to-n connections (Only allowed for Single Frame reception)</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>CANTP_PHYSICAL</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="2f083385-4e5e-4647-817f-d72b8faaa6c1">
+											<SHORT-NAME>CANTP_FUNCTIONAL</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="41da31fe-6292-438c-bd50-aea68701adb5">
+											<SHORT-NAME>CANTP_PHYSICAL</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpRxWftMax -->
+								<INTEGER-PARAM-DEF UUID="DCE:53fb4e84-5984-4212-9a3c-f1e1f4655a36">
+									<SHORT-NAME>CanTpRxWftMax</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter defines how many Flow Control wait N-Pdus can be consecutively transmitted by the receiver. It is local to the node and is not transmitted inside the FC protocol data unit.
+
+CanTpRxWftMax is used to avoid sender nodes being potentially hooked-up in case of a temporarily reception inability on the part of the receiver nodes, whereas the sender could be waiting continuously.
+
+For more details see ISO 15765-2  (chapter "Maximum number of FC.Wait frame transmissions").</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>15</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpSTmin -->
+								<INTEGER-PARAM-DEF UUID="DCE:23ddc2f7-2345-40cb-b70d-faee4cc08f99">
+									<SHORT-NAME>CanTpSTmin</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the duration of the minimum time the CanTp sender shall wait between the transmissions of two CF N-Pdus.
+
+For further details on this parameter value see ISO 15765-2 specification.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>20</DEFAULT-VALUE>
+									<MAX>249</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:14af52ed-9994-4385-8a3b-a38a555ac7e1">
+									<SHORT-NAME>CanTpCreatedByTool</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">NOT USED - META INFORMATION
+
+Marker used by the configuration tool</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<!-- Reference Definition: CanTpRxNSduRef -->
+								<REFERENCE-PARAM-DEF UUID="DCE:d274f296-a1f5-4928-a75d-e258f22aa769">
+									<SHORT-NAME>CanTpRxNSduRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Reference to a Pdu in the COM-Stack.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+							<SUB-CONTAINERS>
+								<!-- Parameter Container Definition: CanTpNSa -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:1e60d4d1-b1c3-4437-9255-8c4b31cc6a1f">
+									<SHORT-NAME>CanTpNSa</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Contains the parameters needed to configure each Rx N-Sdu or Tx N-Sdu with CanTpAddressingFormat set to CANTP_EXTENDED</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: CanTpNSa -->
+										<INTEGER-PARAM-DEF UUID="DCE:f27047b7-7605-4d21-8c8c-13833e5c4ef3">
+											<SHORT-NAME>CanTpNSa</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If an Rx N-Sdu is configured to use the Extended Addressing format, this parameter contains the transport protocol source address of the Sdu.
+
+RESTRICTIONS: This setting is only relevant if Extended Addressing is configured for the respective Sdu</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>255</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: CanTpNTa -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:2cd33af0-4a57-443e-935d-7ec3bf9eda7d">
+									<SHORT-NAME>CanTpNTa</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The following parameters need to be configured for each Rx N-Sdu or Tx N-Sdu with the CanTpAddressingFormat set to CANTP_EXTENDED or CANTP_MIXED11</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: CanTpNTa -->
+										<INTEGER-PARAM-DEF UUID="DCE:e36d7530-b27b-437b-a77c-684c729186dd">
+											<SHORT-NAME>CanTpNTa</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If an Rx N-Sdu  is configured to use the Extended Addressing format, this parameter contains the transport protocol target address (NTa).
+In the case of Mixed11 Addressing, this parameter contains the transport protocol address extension value (NAe).
+
+RESTRICTIONS: This setting is only relevant if Extended Addressing or Mixed11 Addressing is used.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+											<DEFAULT-VALUE>0</DEFAULT-VALUE>
+											<MAX>255</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: CanTpRxNPdu -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:f540b4b0-39f7-484d-8a39-536bcbeaa7b3">
+									<SHORT-NAME>CanTpRxNPdu</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Used for grouping of the ID of a Pdu and the Reference to a Pdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: CanTpRxNPduId -->
+										<INTEGER-PARAM-DEF UUID="DCE:aecbfa44-f642-4ded-9907-05c1986731a4">
+											<SHORT-NAME>CanTpRxNPduId</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Unique idenifier used by CanTp to receive the Pdu referenced by CanTpRxNpduRef.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+											<MAX>65535</MAX>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Reference Definition: CanTpRxNPduRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:ca042f0c-a1c4-48d3-92d6-6b2b76baabaf">
+											<SHORT-NAME>CanTpRxNPduRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the Rx N-Pdu in the COM-Stack used for the reception of this Rx N-Sdu.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: CanTpTxFcNPdu -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:ede34a52-765d-4025-be72-2fb3048743f1">
+									<SHORT-NAME>CanTpTxFcNPdu</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Used for grouping of the ID of a Pdu and the Reference to a Pdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<REFERENCES>
+										<!-- Reference Definition: CanTpTxFcNPduRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:bd68c0ee-1634-44b1-b4f1-8594526c0286">
+											<SHORT-NAME>CanTpTxFcNPduRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the Fc N-Pdu in the COM-Stack used for the reception of this Rx N-Sdu.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<!-- Parameter Container Definition: CanTpTxNSdu -->
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:f1d8f210-dc8c-43c4-b4f6-9d20b73ff766">
+							<SHORT-NAME>CanTpTxNSdu</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">The following parameters needs to be configured for each CAN N-Sdu that the CanTp module shall transmit.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+							<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+							<PARAMETERS>
+								<!-- PARAMETER DEFINITION: CanTpAddressingMode -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:5bb3d525-a468-4aaf-bc90-d5167d8df9d3">
+									<SHORT-NAME>CanTpAddressingMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines which communication addressing format is used for this Tx N-Sdu.
+
+Enumeration values:
+CANTP_STANDARD  to use normal addressing format.
+CANTP_EXTENDED  to use extended addressing format.
+CANTP_MIXED11 to use mixed11 addressing format.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>CANTP_STANDARD</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="c2dc3148-e693-4d7b-b46a-33e105d6929c">
+											<SHORT-NAME>CANTP_EXTENDED</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="d7142676-0574-48c8-8f2d-e864b3fa55be">
+											<SHORT-NAME>CANTP_STANDARD</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="0e99ea80-18f1-49a6-9a46-96f2e4188bb3">
+											<SHORT-NAME>CANTP_MIXED11</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpNas -->
+								<FLOAT-PARAM-DEF UUID="DCE:fd6e402d-12ed-4e85-bf8a-af184c01b119">
+									<SHORT-NAME>CanTpNas</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Value of the Nas timeout. 
+
+Nas is the time for transmission of a CAN frame (any N-Pdu) on the sender side.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.1</DEFAULT-VALUE>
+									<MAX>9999</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpNbs -->
+								<FLOAT-PARAM-DEF UUID="DCE:0e01c716-beb0-4a88-94f5-fcc848f5fb25">
+									<SHORT-NAME>CanTpNbs</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Value of the Nbs timeout. 
+
+Nbs is the time of transmission until reception of the next Flow Control N-Pdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.15</DEFAULT-VALUE>
+									<MAX>9999</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpNcs -->
+								<FLOAT-PARAM-DEF UUID="DCE:62c8d851-ca21-45af-8e07-060f411e0035">
+									<SHORT-NAME>CanTpNcs</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Value of the performance requirement of (Ncs + Nas). 
+
+Ncs is the time which elapses between the transmit request of a CF N-Pdu until the transmit request of the next CF N-Pdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0.15</DEFAULT-VALUE>
+									<MAX>9999</MAX>
+									<MIN>0</MIN>
+								</FLOAT-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpTxChannel -->
+								<INTEGER-PARAM-DEF UUID="DCE:65731cf5-e8a6-47f6-b6cc-ef1e20b4e7e9">
+									<SHORT-NAME>CanTpTxChannel</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Link to the connection channel which has to be used for transmission of this N-Pdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpTxDl -->
+								<INTEGER-PARAM-DEF UUID="DCE:5798457d-96a6-4332-9e5b-0467700c8b6b">
+									<SHORT-NAME>CanTpTxDl</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Data Length Code of this Tx N-Sdu. 
+
+In case of variable length message, this value indicates the minimum data length.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>8</DEFAULT-VALUE>
+									<MAX>4095</MAX>
+									<MIN>1</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpTxNSduId -->
+								<INTEGER-PARAM-DEF UUID="DCE:e8fa71fe-845d-4093-8848-425430d74d3c">
+									<SHORT-NAME>CanTpTxNSduId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Unique identifier to a structure that contains all relevant information to process the transmission of a Tx N-Sdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpTxPaddingActivation -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:6d65ad3b-2f58-4391-ba5b-7073f4c3e761">
+									<SHORT-NAME>CanTpTxPaddingActivation</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines if the transmit frame use padding or not.
+
+Enumeration values:
+
+CANTP_ON: The transmit N-Pdu uses padding for SF, FC and the last CF. (N-Pdu length is always 8 bytes)
+CANTP_OFF: The transmit N-Pdu does not use padding for SF, FC and the last CF. (N-Pdu length is dynamic)
+
+Note: GENy uses a boolean value instead of an enumeration value. "Enabled" equals CANTP_ON, "disabled" equals CANTP_OFF.
+
+RESTRICTIONS: This setting is only available if "CanTpPaddingActive" is enabled.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>CANTP_ON</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:27c68b37-ad20-48b9-b72c-72cb5ec37d76">
+											<SHORT-NAME>CANTP_OFF</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:6d6035e4-86c0-4efa-a58f-06a3d20eabbf">
+											<SHORT-NAME>CANTP_ON</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<!-- PARAMETER DEFINITION: CanTpTxTaType -->
+								<ENUMERATION-PARAM-DEF UUID="DCE:0e36e354-a239-4803-b4e5-679868f13e2a">
+									<SHORT-NAME>CanTpTxTaType</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Defines the communication type of this Tx N-Sdu.
+
+Enumeration values:
+CANTP_PHYSICAL: Used for 1:1 communication.
+CANTP_FUNCTIONAL: Used for 1:n communication.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>CANTP_PHYSICAL</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:50ae2f59-ada7-4612-9dc6-c48032fa12ef">
+											<SHORT-NAME>CANTP_FUNCTIONAL</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:acf2844d-6435-48c0-a947-3c2e6d73198b">
+											<SHORT-NAME>CANTP_PHYSICAL</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="DCE:5cb0121f-d23d-441d-a287-d80a8db8475a">
+									<SHORT-NAME>CanTpCreatedByTool</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">NOT USED - META INFORMATION
+
+Marker used by the configuration tool</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>false</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+								<INTEGER-PARAM-DEF UUID="74f44148-470b-4c27-9ce4-eb85ad101f27">
+									<SHORT-NAME>CanTpTxUpperLayerNSduId</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">This parameter contains the N-Sdu Id which shall be used for the upper layer communication.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>0</DEFAULT-VALUE>
+									<MAX>65535</MAX>
+									<MIN>0</MIN>
+								</INTEGER-PARAM-DEF>
+								<BOOLEAN-PARAM-DEF UUID="0da4f055-ca2f-485f-8304-aef0d465e461">
+									<SHORT-NAME>CanTpTxTc</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Enables support for transmit cancellation for this Sdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>true</DEFAULT-VALUE>
+								</BOOLEAN-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<!-- Reference Definition: CanTpTxNSduRef -->
+								<REFERENCE-PARAM-DEF UUID="DCE:a703282e-e7b6-4ea0-a330-2d10366864ae">
+									<SHORT-NAME>CanTpTxNSduRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Reference to a Pdu in the COM-Stack.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>LINK</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+							<SUB-CONTAINERS>
+								<!-- Parameter Container Definition: CanTpNSa -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:cff7007f-58bb-4b50-8e2f-1dc65587469e">
+									<SHORT-NAME>CanTpNSa</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Contains the parameters needed to configure each Rx N-Sdu or Tx N-Sdu with CanTpAddressingFormat set to CANTP_EXTENDED.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: CanTpNSa -->
+										<INTEGER-PARAM-DEF UUID="DCE:cef858c4-34b5-48b7-ad15-5ae1a6351871">
+											<SHORT-NAME>CanTpNSa</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If an Tx N-Sdu is configured to use the Extended Addressing format, this parameter contains the transport protocol source address of the Sdu.
+
+RESTRICTIONS: This setting is only relevant if Extended Addressing is configured for the respective Sdu</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: CanTpNTa -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:891b0df8-be77-46a1-bd4d-4b3966741971">
+									<SHORT-NAME>CanTpNTa</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The following parameters need to be configured for each Rx N-Sdu or Tx N-Sdu with the CanTpAddressingFormat set to CANTP_EXTENDED or CANTP_MIXED11.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: CanTpNTa -->
+										<INTEGER-PARAM-DEF UUID="DCE:c72705ae-2f6e-4760-8bb1-3fe26693b372">
+											<SHORT-NAME>CanTpNTa</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">If a Tx N-Sdu  is configured to use the Extended Addressing format, this parameter contains the transport protocol target address (NTa).
+In the case of Mixed11 Addressing, this parameter contains the transport protocol address extension value (NAe).
+
+RESTRICTIONS: This setting is only relevant if Extended Addressing or Mixed11 Addressing is used.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: CanTpRxFcNPdu -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:bcc2c4a3-b4c7-4113-a086-07195a2aabfa">
+									<SHORT-NAME>CanTpRxFcNPdu</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Used for grouping of the ID of a Pdu and the Reference to a Pdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<PARAMETERS>
+										<!-- PARAMETER DEFINITION: CanTpRxFcNPduId -->
+										<INTEGER-PARAM-DEF UUID="DCE:dd415b83-3978-4bd6-908a-815e4ef84f04">
+											<SHORT-NAME>CanTpRxFcNPduId</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Unique identifier used by CanTp to receive the Fc Pdu referenced by CanTpRxFcNPduRef.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+											<MIN>0</MIN>
+										</INTEGER-PARAM-DEF>
+									</PARAMETERS>
+									<REFERENCES>
+										<!-- Reference Definition: CanTpRxFcNPduRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:5dfd10a7-9848-41c1-8911-7bfab968d05c">
+											<SHORT-NAME>CanTpRxFcNPduRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the Fc N-Pdu in the COM-Stack used for the transmission of this Tx N-Sdu.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+								<!-- Parameter Container Definition: CanTpTxNPdu -->
+								<PARAM-CONF-CONTAINER-DEF UUID="DCE:82174119-f4fe-46e4-b474-5a38eab80d2f">
+									<SHORT-NAME>CanTpTxNPdu</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Used for grouping of the ID of a Pdu and the Reference to a Pdu.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<MULTIPLE-CONFIGURATION-CONTAINER>false</MULTIPLE-CONFIGURATION-CONTAINER>
+									<REFERENCES>
+										<!-- Reference Definition: CanTpTxNPduRef -->
+										<REFERENCE-PARAM-DEF UUID="DCE:801931c4-66a1-4563-95f2-eaf6ea747db4">
+											<SHORT-NAME>CanTpTxNPduRef</SHORT-NAME>
+											<DESC>
+												<L-2 L="EN">Reference to the Tx N-Pdu in the COM-Stack used for the transmission of this Tx N-Sdu.</L-2>
+											</DESC>
+											<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+											<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+											<IMPLEMENTATION-CONFIG-CLASSES>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+												<IMPLEMENTATION-CONFIG-CLASS>
+													<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+													<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+												</IMPLEMENTATION-CONFIG-CLASS>
+											</IMPLEMENTATION-CONFIG-CLASSES>
+											<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+											<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcuC/PduCollection/Pdu</DESTINATION-REF>
+										</REFERENCE-PARAM-DEF>
+									</REFERENCES>
+								</PARAM-CONF-CONTAINER-DEF>
+							</SUB-CONTAINERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:1b9f9d5a-60ca-4805-9cde-19ed4dc24bd7">
+							<SHORT-NAME>VectorCommonData</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">NOT USED - META INFORMATION
+
+Marker used by the configuration tool</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<STRING-PARAM-DEF UUID="DCE:b8e4bc67-ff29-4952-84f4-e045795dba21">
+									<SHORT-NAME>BswmdVersion</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">NOT USED - META INFORMATION
+
+Marker used by the configuration tool</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<CONFIGURATION-CLASS-AFFECTION>
+										<AFFECTION-KIND>NO-AFFECT</AFFECTION-KIND>
+									</CONFIGURATION-CLASS-AFFECTION>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>1.25.00</DEFAULT-VALUE>
+								</STRING-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="88b91cfd-eb0d-4845-b1f3-5723a0014b8d">
+							<SHORT-NAME>CanTpConfigSet</SHORT-NAME>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<MULTIPLE-CONFIGURATION-CONTAINER>true</MULTIPLE-CONFIGURATION-CONTAINER>
+							<REFERENCES>
+								<REFERENCE-PARAM-DEF UUID="e6402278-da86-4474-8a2a-83c327c06021">
+									<SHORT-NAME>CanTpActiveRxNSduRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">References active Rx connections in this identity</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/CanTp/CanTpRxNSdu</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+								<REFERENCE-PARAM-DEF UUID="9c20ec13-33f6-4e30-b8b3-74bb255046c5">
+									<SHORT-NAME>CanTpActiveTxNSduRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">References active Tx connections in this identity</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>AUTOSAR_ECUC</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/AUTOSAR/CanTp/CanTpTxNSdu</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+						</PARAM-CONF-CONTAINER-DEF>
+						<PARAM-CONF-CONTAINER-DEF UUID="db002777-c14c-45b4-a9ac-bf23a2e9bbf6">
+							<SHORT-NAME>CanTpChannel</SHORT-NAME>
+							<DESC>
+								<L-2 L="EN">This container contains the configuration parameters of the CanTp channel.</L-2>
+							</DESC>
+							<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>*</UPPER-MULTIPLICITY>
+							<POST-BUILD-CHANGEABLE>true</POST-BUILD-CHANGEABLE>
+							<PARAMETERS>
+								<ENUMERATION-PARAM-DEF UUID="1a60578e-dd96-4c5a-a54c-135e603546f4">
+									<SHORT-NAME>CanTpChannelMode</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">The CAN Transport Layer supports half and full duplex channel modes.</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="2bea10a3-ed11-4896-af20-89e3ab0381c0">
+											<SHORT-NAME>CANTP_MODE_FULL_DUPLEX</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="3423c438-d31d-4f4e-a800-3e2f158d7e86">
+											<SHORT-NAME>CANTP_MODE_HALF_DUPLEX</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+							</PARAMETERS>
+							<REFERENCES>
+								<REFERENCE-PARAM-DEF UUID="aa057607-5e57-4066-bd90-9adaee9e5da5">
+									<SHORT-NAME>CanTpRxNSduRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Reference to the Rx NSdu used when receiving on this channel</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/CanTp/CanTpRxNSdu</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+								<REFERENCE-PARAM-DEF UUID="b38f4561-6d48-4e7c-8852-ff4bfd1aff48">
+									<SHORT-NAME>CanTpTxNSduRef</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">Reference to the Tx NSdu used to transmit on this channel</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<IMPLEMENTATION-CONFIG-CLASSES>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+										<IMPLEMENTATION-CONFIG-CLASS>
+											<CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+											<CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+										</IMPLEMENTATION-CONFIG-CLASS>
+									</IMPLEMENTATION-CONFIG-CLASSES>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<DESTINATION-REF DEST="PARAM-CONF-CONTAINER-DEF">/MICROSAR/CanTp/CanTpTxNSdu</DESTINATION-REF>
+								</REFERENCE-PARAM-DEF>
+							</REFERENCES>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+				<MODULE-CONFIGURATION UUID="DCE:560c9632-219d-4bbe-aca4-621ffd00aa59">
+					<SHORT-NAME>CanTp_Pre</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/CanTp</DEFINITION-REF>
+					<CONTAINERS/>
+				</MODULE-CONFIGURATION>
+				<MODULE-CONFIGURATION UUID="DCE:4ec621b2-5e2d-4412-8654-8ef168d8bdcf">
+					<SHORT-NAME>CanTp_Rec</SHORT-NAME>
+					<DEFINITION-REF DEST="MODULE-DEF">/MICROSAR/CanTp</DEFINITION-REF>
+					<CONTAINERS/>
+				</MODULE-CONFIGURATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

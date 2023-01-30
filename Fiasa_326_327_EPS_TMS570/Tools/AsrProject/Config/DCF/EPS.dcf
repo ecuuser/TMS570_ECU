@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE DCF [
+	<!ELEMENT DCF ((NAME,ATTRDEF?,PROFILESETTINGS?,FILEREF*)?)>
+	<!ATTLIST DCF
+	ARSCHEMA (21XSDREV0017|30XSDREV0003|31XSDREV0004|314DAI4|32XSDREV0001) "21XSDREV0017">
+	<!ELEMENT NAME (#PCDATA)>
+	<!ELEMENT ATTRDEF (#PCDATA)>
+	<!ELEMENT FILEREF (ARXML, DCB?, ECUC?, GENATTR?)>
+	<!ELEMENT ARXML (#PCDATA)>
+	<!ATTLIST ARXML TYPE CDATA "" 
+    ROOTITEM (CONSTANT|DATATYPE|PORTINTERFACE|SIGNAL|COMPONENTTYPE|ECUPROJECT|VEHICLEPROJECT) #REQUIRED >
+	<!ELEMENT DCB (#PCDATA)>
+	<!ELEMENT ECUC (#PCDATA)>
+  <!ELEMENT GENATTR (#PCDATA)>
+  <!ELEMENT PROFILESETTINGS (#PCDATA)>
+]>
+<DCF ARSCHEMA="31XSDREV0004">
+	<NAME>EPS</NAME>
+	<ATTRDEF>EPS_attr_def.xml</ATTRDEF>
+	<PROFILESETTINGS>ProfileSettings.xml</PROFILESETTINGS>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_AbsHwPos.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_AbsHwPos.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_AbsHwPos_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_ActivePull.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_ActivePull.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_ActivePull_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_ApXcp.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_ApXcp.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_ApXcp_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_Assist.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_Assist.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_Assist_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_AssistFirewall.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_AssistFirewall.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_AssistFirewall_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_AstLmt.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_AstLmt.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_AstLmt_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_AvgFricLrn.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_AvgFricLrn.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_AvgFricLrn_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_BatteryVoltage.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_BatteryVoltage.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_BatteryVoltage_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_BVDiag.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_BVDiag.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_BVDiag_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_ChkPtAp10.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_ChkPtAp10.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_ChkPtAp10_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_ChkPtAp8.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_ChkPtAp8.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_ChkPtAp8_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_ChkPtAp9.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_ChkPtAp9.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_ChkPtAp9_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_ComplErr.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_ComplErr.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_ComplErr_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_CtrldDisShtdn.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_CtrldDisShtdn.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_CtrldDisShtdn_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_CurrCmd.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_CurrCmd.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_CurrCmd_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_CurrParamComp.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_CurrParamComp.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_CurrParamComp_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_Damping.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_Damping.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_Damping_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_DampingFirewall.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_DampingFirewall.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_DampingFirewall_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_DemIf.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_DemIf.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_DemIf_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_DiagMgr10.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_DiagMgr10.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_DiagMgr10_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_DiagMgr8.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_DiagMgr8.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_DiagMgr8_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_DiagMgr9.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_DiagMgr9.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_DiagMgr9_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_DiagSvc.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_DiagSvc.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_DiagSvc_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_DigPhsReasDiag.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_DigPhsReasDiag.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_DigPhsReasDiag_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_ElePwr.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_ElePwr.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_ElePwr_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_EOTActuatorMng.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_EOTActuatorMng.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_EOTActuatorMng_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_ePWM2.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_ePWM2.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_ePWM2_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_EtDmpFw.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_EtDmpFw.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_EtDmpFw_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_FltInjection.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_FltInjection.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_FltInjection_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_FrqDepDmpnInrtCmp.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_FrqDepDmpnInrtCmp.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_FrqDepDmpnInrtCmp_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_Gsod.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_Gsod.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_Gsod_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_HighFreqAssist.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_HighFreqAssist.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_HighFreqAssist_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_HiLoadStall.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_HiLoadStall.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_HiLoadStall_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_HwPwUp.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_HwPwUp.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_HwPwUp_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_HystComp.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_HystComp.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_HystComp_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_LmtCod.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_LmtCod.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_LmtCod_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_LrnEOT.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_LrnEOT.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_LrnEOT_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_MtrTempEst.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_MtrTempEst.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_MtrTempEst_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_PeakCurrEst.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_PeakCurrEst.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_PeakCurrEst_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_PICurrCntrl.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_PICurrCntrl.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_PICurrCntrl_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_Polarity.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_Polarity.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_Polarity_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_PwrLmtFuncCr.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_PwrLmtFuncCr.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_PwrLmtFuncCr_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_QuadDet.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_QuadDet.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_QuadDet_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_Return.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_Return.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_Return_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_ReturnFirewall.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_ReturnFirewall.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_ReturnFirewall_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_SignlCondn.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_SignlCondn.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_SignlCondn_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_SrlComInput.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_SrlComInput.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_SrlComInput_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_SrlComOutput.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_SrlComOutput.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_SrlComOutput_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_StabilityComp.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_StabilityComp.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_StabilityComp_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_StabilityComp2.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_StabilityComp2.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_StabilityComp2_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_StaMd.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_StaMd.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_StaMd_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_StaMd8.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_StaMd8.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_StaMd8_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_StaMd9.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_StaMd9.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_StaMd9_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_StOpCtrl.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_StOpCtrl.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_StOpCtrl_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_Sweep.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_Sweep.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_Sweep_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_Sweep2.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_Sweep2.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_Sweep2_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_ThrmlDutyCycle.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_ThrmlDutyCycle.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_ThrmlDutyCycle_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_TqRsDg.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_TqRsDg.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_TqRsDg_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_TrqCanc.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_TrqCanc.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_TrqCanc_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_TrqCmdScl.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_TrqCmdScl.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_TrqCmdScl_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_TuningSelAuth.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_TuningSelAuth.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_TuningSelAuth_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_VehDyn.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_VehDyn.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_VehDyn_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_VehPwrMd.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_VehPwrMd.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_VehPwrMd_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Ap_VehSpdLmt.arxml</ARXML>
+		<DCB>ComponentTypes\Ap_VehSpdLmt.dcb</DCB>
+		<GENATTR>ComponentTypes\Ap_VehSpdLmt_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Cd_Nhet1.arxml</ARXML>
+		<DCB>ComponentTypes\Cd_Nhet1.dcb</DCB>
+		<GENATTR>ComponentTypes\Cd_Nhet1_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Cd_uDiag.arxml</ARXML>
+		<DCB>ComponentTypes\Cd_uDiag.dcb</DCB>
+		<GENATTR>ComponentTypes\Cd_uDiag_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\CDD.arxml</ARXML>
+		<DCB>ComponentTypes\CDD.dcb</DCB>
+		<GENATTR>ComponentTypes\CDD_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\ComM.arxml</ARXML>
+		<DCB>ComponentTypes\ComM.dcb</DCB>
+		<GENATTR>ComponentTypes\ComM_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Dcm.arxml</ARXML>
+		<DCB>ComponentTypes\Dcm.dcb</DCB>
+		<GENATTR>ComponentTypes\Dcm_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\IoHwAbstraction.arxml</ARXML>
+		<DCB>ComponentTypes\IoHwAbstraction.dcb</DCB>
+		<GENATTR>ComponentTypes\IoHwAbstraction_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\IoHwAbstractionUsr.arxml</ARXML>
+		<DCB>ComponentTypes\IoHwAbstractionUsr.dcb</DCB>
+		<GENATTR>ComponentTypes\IoHwAbstractionUsr_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\NexteerLibs.arxml</ARXML>
+		<DCB>ComponentTypes\NexteerLibs.dcb</DCB>
+		<GENATTR>ComponentTypes\NexteerLibs_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\NtWrap.arxml</ARXML>
+		<DCB>ComponentTypes\NtWrap.dcb</DCB>
+		<GENATTR>ComponentTypes\NtWrap_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\NvM.arxml</ARXML>
+		<DCB>ComponentTypes\NvM.dcb</DCB>
+		<GENATTR>ComponentTypes\NvM_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\NvMProxy.arxml</ARXML>
+		<DCB>ComponentTypes\NvMProxy.dcb</DCB>
+		<GENATTR>ComponentTypes\NvMProxy_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\RteErrata10.arxml</ARXML>
+		<DCB>ComponentTypes\RteErrata10.dcb</DCB>
+		<GENATTR>ComponentTypes\RteErrata10_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\RteErrata8.arxml</ARXML>
+		<DCB>ComponentTypes\RteErrata8.dcb</DCB>
+		<GENATTR>ComponentTypes\RteErrata8_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\RteErrata9.arxml</ARXML>
+		<DCB>ComponentTypes\RteErrata9.dcb</DCB>
+		<GENATTR>ComponentTypes\RteErrata9_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_BkCpPc.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_BkCpPc.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_BkCpPc_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_CDDInterface.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_CDDInterface.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_CDDInterface_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_CmMtrCurr.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_CmMtrCurr.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_CmMtrCurr_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_CtrlTemp.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_CtrlTemp.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_CtrlTemp_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_DigColPs.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_DigColPs.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_DigColPs_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_DigHwTrqSENT.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_DigHwTrqSENT.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_DigHwTrqSENT_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_DigMSB.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_DigMSB.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_DigMSB_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_MtrDrvDiag.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_MtrDrvDiag.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_MtrDrvDiag_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_MtrVel.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_MtrVel.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_MtrVel_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_MtrVel2.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_MtrVel2.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_MtrVel2_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_MtrVel3.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_MtrVel3.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_MtrVel3_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_OvrVoltMon.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_OvrVoltMon.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_OvrVoltMon_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_ShtdnMech.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_ShtdnMech.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_ShtdnMech_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_TmprlMon.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_TmprlMon.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_TmprlMon_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\Sa_TmprlMon2.arxml</ARXML>
+		<DCB>ComponentTypes\Sa_TmprlMon2.dcb</DCB>
+		<GENATTR>ComponentTypes\Sa_TmprlMon2_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="COMPONENTTYPE" TYPE="">ComponentTypes\WdgM.arxml</ARXML>
+		<DCB>ComponentTypes\WdgM.dcb</DCB>
+		<GENATTR>ComponentTypes\WdgM_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="CONSTANT" TYPE="">Constants.arxml</ARXML>
+		<GENATTR>Constants_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="DATATYPE" TYPE="">DataTypes.arxml</ARXML>
+		<GENATTR>DataTypes_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML TYPE="LOCAL" ROOTITEM="ECUPROJECT">ECUProjects\EPS.arxml</ARXML>
+		<DCB>ECUProjects\EPS.dcb</DCB>
+		<ECUC>..\ECUC\EPS.ecuc.arxml</ECUC>
+		<GENATTR>ECUProjects\EPS_gen_attr.xml</GENATTR>
+	</FILEREF>
+	<FILEREF>
+		<ARXML ROOTITEM="PORTINTERFACE" TYPE="">PortInterfaces.arxml</ARXML>
+		<GENATTR>PortInterfaces_gen_attr.xml</GENATTR>
+	</FILEREF>
+</DCF>

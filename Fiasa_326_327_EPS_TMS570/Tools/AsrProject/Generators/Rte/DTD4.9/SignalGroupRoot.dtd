@@ -1,0 +1,33 @@
+<!-- Entities -->
+
+<!ENTITY ti.SignalGroupRoot         "SignalGroupRoot">
+<!ENTITY ti.Signal                  "Signal">
+<!ENTITY ti.PDUTiming               "PDUTiming">
+<!-- Elements -->
+
+<!ELEMENT SignalGroupRoot      (%C.DefAttr;,ATTRLink*, GenAttrList?, SignalGroupRoot*, SignalLayout*, SignalGroupRootLink*, PDUTiming? )>
+<!ELEMENT SignalLayout         (ATTRLink*)>
+
+<!ATTLIST SignalGroupRoot
+	    %A.ConfigItem; 
+          ByteOrder     (Motorola|Intel) "Motorola"
+          BitLength     CDATA "0"
+          SubType       (Hierarchical|Layout|PDU) "Hierarchical"
+          PDUType       (None|SignalIPDU|DcmIPDU|NmPDU|DataNPDU|FlowControlNPDU) "None"
+          BitPattern    CDATA ""
+>
+
+<!ATTLIST SignalLayout %A.ChildItem;
+          SignalLink   NMTOKEN #FIXED "&ti.Signal;"
+          StartBit        CDATA "0"
+>
+
+<!-- Links -->
+<!ELEMENT SignalGroupRootLink EMPTY>
+<!ATTLIST SignalGroupRootLink %A.LinkGUID;
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.SignalGroupRoot;"
+          %A.LinkName; CDATA ""
+>
+

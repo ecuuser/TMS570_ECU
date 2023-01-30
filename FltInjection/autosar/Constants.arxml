@@ -1,0 +1,2645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/3.1.4 autosar_314_ext.xsd" xmlns="http://autosar.org/3.1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>Constant</SHORT-NAME>
+			<ELEMENTS>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_180OVRPI_ULS_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_180OVRPI_ULS_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>57.295779513082</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_2MS_SEC_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_2MS_SEC_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>0.002</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_2PI_ULS_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_2PI_ULS_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>6.2831853071796</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ENERGYMODESTATEINIT_CNT_ENUM</SHORT-NAME>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ENERGYMODESTATEINIT_CNT_ENUM</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/EnergyModeStateType</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_FALSE_CNT_LGC</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<BOOLEAN-LITERAL>
+							<SHORT-NAME>D_FALSE_CNT_LGC</SHORT-NAME>
+							<TYPE-TREF DEST="BOOLEAN-TYPE">/DataType/Boolean</TYPE-TREF>
+							<VALUE>false</VALUE>
+						</BOOLEAN-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_LKTOLKSTRSTATEINIT_CNT_ENUM</SHORT-NAME>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_LKTOLKSTRSTATEINIT_CNT_ENUM</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/LktoLkStrStateType</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_MANUFMODEINIT_CNT_ENUM</SHORT-NAME>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_MANUFMODEINIT_CNT_ENUM</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/ManufModeType</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_MTRPOLESDIV2_CNT_U8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_MTRPOLESDIV2_CNT_U8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+							<VALUE>3</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_MTRTRQCMDHILMT_MTRNM_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_MTRTRQCMDHILMT_MTRNM_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>8.8</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_MTRTRQCMDLOLMT_MTRNM_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_MTRTRQCMDLOLMT_MTRNM_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>-8.8</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_NEGONE_CNT_S16</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_NEGONE_CNT_S16</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/SInt16</TYPE-TREF>
+							<VALUE>-1</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_NEGONE_CNT_S32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_NEGONE_CNT_S32</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/SInt32</TYPE-TREF>
+							<VALUE>-1</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_NEGONE_CNT_S8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_NEGONE_CNT_S8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/SInt8</TYPE-TREF>
+							<VALUE>-1</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ONE_CNT_S16</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ONE_CNT_S16</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/SInt16</TYPE-TREF>
+							<VALUE>1</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ONE_CNT_S32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ONE_CNT_S32</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/SInt32</TYPE-TREF>
+							<VALUE>1</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ONE_CNT_S8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ONE_CNT_S8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/SInt8</TYPE-TREF>
+							<VALUE>1</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ONE_CNT_U16</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ONE_CNT_U16</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt16</TYPE-TREF>
+							<VALUE>1</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ONE_CNT_U32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ONE_CNT_U32</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt32</TYPE-TREF>
+							<VALUE>1</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ONE_CNT_U8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ONE_CNT_U8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+							<VALUE>1</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ONE_ULS_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_ONE_ULS_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>1</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_OSCTRAJCMDSTATEINIT_CNT_ENUM</SHORT-NAME>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_OSCTRAJCMDSTATEINIT_CNT_ENUM</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/OscTrajCmdStateType</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_PERSONALIZATIONINIT_CNT_ENUM</SHORT-NAME>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_PERSONALIZATIONINIT_CNT_ENUM</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/PersonalizationType</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_PI_ULS_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_PI_ULS_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>3.1415926535898</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_PIOVR180_ULS_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_PIOVR180_ULS_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>0.0174532925199</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_QUADRANT1_CNT_U8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_QUADRANT1_CNT_U8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+							<VALUE>1</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_QUADRANT2_CNT_U8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_QUADRANT2_CNT_U8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+							<VALUE>2</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_QUADRANT3_CNT_U8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_QUADRANT3_CNT_U8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+							<VALUE>3</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_QUADRANT4_CNT_U8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_QUADRANT4_CNT_U8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+							<VALUE>4</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_RACKTOVEHCNTRINVALID_CNT_U16</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_RACKTOVEHCNTRINVALID_CNT_U16</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt16</TYPE-TREF>
+							<VALUE>4095</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_RACKTOVEHCNTRUNLEARNED_CNT_U16</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_RACKTOVEHCNTRUNLEARNED_CNT_U16</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt16</TYPE-TREF>
+							<VALUE>4094</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_SFINVMILLI_ULS_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_SFINVMILLI_ULS_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Double</TYPE-TREF>
+							<VALUE>1000</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_STOFFSQUADEPSINIT_CNT_U08</SHORT-NAME>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_STOFFSQUADEPSINIT_CNT_U08</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/ST_OFFS_QUAD_EPS</TYPE-TREF>
+							<VALUE>8</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_TRUE_CNT_LGC</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<BOOLEAN-LITERAL>
+							<SHORT-NAME>D_TRUE_CNT_LGC</SHORT-NAME>
+							<TYPE-TREF DEST="BOOLEAN-TYPE">/DataType/Boolean</TYPE-TREF>
+							<VALUE>true</VALUE>
+						</BOOLEAN-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_TURNSCNTRPARTNUMINIT_CNT_U08</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_TURNSCNTRPARTNUMINIT_CNT_U08</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+							<VALUE>255</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_TURNSCNTRVALSTATEINIT_CNT_ENUM</SHORT-NAME>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_TURNSCNTRVALSTATEINIT_CNT_ENUM</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/TurnsCntrValStateType</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ZERO_CNT_S16</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ZERO_CNT_S16</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/SInt16</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ZERO_CNT_S32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ZERO_CNT_S32</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/SInt32</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ZERO_CNT_S8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ZERO_CNT_S8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/SInt8</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ZERO_CNT_U16</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ZERO_CNT_U16</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt16</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ZERO_CNT_U32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ZERO_CNT_U32</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt32</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ZERO_CNT_U8</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<INTEGER-LITERAL>
+							<SHORT-NAME>D_ZERO_CNT_U8</SHORT-NAME>
+							<TYPE-TREF DEST="INTEGER-TYPE">/DataType/UInt8</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</INTEGER-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>D_ZERO_ULS_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">DEFINE</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<REAL-LITERAL>
+							<SHORT-NAME>D_ZERO_ULS_F32</SHORT-NAME>
+							<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+							<VALUE>0</VALUE>
+						</REAL-LITERAL>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>T_SINELKPTBL_ULS_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">CONST</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<ARRAY-SPECIFICATION>
+							<SHORT-NAME>T_SINELKPTBL_ULS_F32</SHORT-NAME>
+							<TYPE-TREF DEST="ARRAY-TYPE">/DataType/DT_SinTanLkpTbl_f32</TYPE-TREF>
+							<ELEMENTS>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_0</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_1</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.00818114</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_2</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.016361732</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_3</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.024541229</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_4</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.032719083</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_5</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.040894747</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_6</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.049067674</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_7</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.057237317</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_8</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.065403129</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_9</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.073564564</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_10</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.081721074</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_11</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.089872115</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_12</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.09801714</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_13</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.106155605</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_14</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.114286965</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_15</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.122410675</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_16</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.130526192</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_17</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.138632973</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_18</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.146730475</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_19</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.154818155</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_20</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.162895473</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_21</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.170961889</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_22</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.179016861</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_23</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.187059852</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_24</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.195090322</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_25</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.203107734</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_26</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.211111552</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_27</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.21910124</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_28</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.227076263</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_29</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.235036087</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_30</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.24298018</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_31</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.250908009</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_32</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.258819045</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_33</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.266712758</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_34</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.274588618</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_35</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.2824461</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_36</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.290284677</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_37</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.298103825</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_38</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.30590302</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_39</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.31368174</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_40</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.321439465</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_41</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.329175676</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_42</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.336889853</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_43</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.344581482</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_44</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.352250048</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_45</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.359895037</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_46</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.367515937</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_47</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.375112238</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_48</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.382683432</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_49</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.390229013</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_50</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.397748475</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_51</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.405241314</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_52</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.41270703</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_53</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.420145122</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_54</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.427555093</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_55</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.434936447</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_56</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.44228869</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_57</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.44961133</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_58</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.456903876</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_59</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.46416584</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_60</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.471396737</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_61</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.478596082</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_62</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.485763394</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_63</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.492898192</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_64</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.5</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_65</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.507068342</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_66</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.514102744</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_67</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.521102737</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_68</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.528067851</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_69</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.53499762</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_70</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.541891581</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_71</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.548749271</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_72</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.555570233</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_73</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.562354009</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_74</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.569100146</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_75</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.575808191</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_76</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.582477697</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_77</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.589108216</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_78</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.595699305</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_79</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.602250522</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_80</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.608761429</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_81</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.615231591</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_82</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.621660573</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_83</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.628047947</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_84</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.634393284</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_85</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.64069616</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_86</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.646956153</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_87</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.653172843</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_88</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.659345815</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_89</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.665474656</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_90</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.671558955</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_91</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.677598305</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_92</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.683592302</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_93</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.689540545</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_94</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.695442635</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_95</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.701298178</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_96</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.707106781</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_97</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.712868056</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_98</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.718581618</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_99</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.724247083</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_100</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.729864073</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_101</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.735432211</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_102</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.740951125</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_103</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.746420446</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_104</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.751839808</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_105</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.757208847</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_106</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.762527204</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_107</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.767794524</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_108</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.773010453</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_109</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.778174644</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_110</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.783286749</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_111</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.788346428</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_112</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.79335334</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_113</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.798307152</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_114</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.803207532</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_115</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.80805415</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_116</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.812846685</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_117</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.817584813</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_118</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.822268219</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_119</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.826896589</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_120</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.831469612</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_121</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.835986984</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_122</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.840448401</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_123</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.844853565</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_124</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.849202182</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_125</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.853493959</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_126</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.85772861</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_127</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.861905852</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_128</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.866025404</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_129</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.870086991</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_130</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.874090342</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_131</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.878035187</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_132</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.881921264</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_133</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.885748312</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_134</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.889516075</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_135</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.893224301</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_136</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.896872742</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_137</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.900461152</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_138</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.903989293</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_139</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.907456928</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_140</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.910863825</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_141</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.914209756</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_142</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.917494496</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_143</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.920717827</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_144</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.923879533</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_145</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.926979401</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_146</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.930017224</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_147</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.932992799</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_148</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.935905927</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_149</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.938756413</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_150</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.941544065</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_151</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.944268698</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_152</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.94693013</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_153</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.949528181</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_154</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.952062678</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_155</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.954533451</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_156</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.956940336</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_157</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.95928317</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_158</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.961561798</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_159</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.963776066</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_160</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.965925826</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_161</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.968010935</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_162</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.970031253</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_163</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.971986645</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_164</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.973876979</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_165</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.97570213</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_166</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.977461975</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_167</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.979156396</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_168</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.98078528</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_169</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.982348519</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_170</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.983846006</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_171</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.985277642</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_172</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.986643332</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_173</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.987942984</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_174</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.98917651</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_175</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.990343829</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_176</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.991444861</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_177</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.992479535</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_178</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.993447779</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_179</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.99434953</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_180</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.995184727</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_181</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.995953314</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_182</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.996655239</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_183</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.997290457</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_184</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.997858923</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_185</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.998360601</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_186</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.998795456</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_187</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.99916346</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_188</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.999464588</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_189</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.999698819</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_190</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.999866138</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_191</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.999966534</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_192</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1</VALUE>
+								</REAL-LITERAL>
+							</ELEMENTS>
+						</ARRAY-SPECIFICATION>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+				<CONSTANT-SPECIFICATION>
+					<SHORT-NAME>T_TANLKPTBL_ULS_F32</SHORT-NAME>
+					<ADMIN-DATA>
+						<SDGS>
+							<SDG GID="DV_SDG">
+								<SD GID="DV_ConstGenSymbol">CONST</SD>
+							</SDG>
+						</SDGS>
+					</ADMIN-DATA>
+					<VALUE>
+						<ARRAY-SPECIFICATION>
+							<SHORT-NAME>T_TANLKPTBL_ULS_F32</SHORT-NAME>
+							<TYPE-TREF DEST="ARRAY-TYPE">/DataType/DT_SinTanLkpTbl_f32</TYPE-TREF>
+							<ELEMENTS>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_0</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.004090638</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_1</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.012272462</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_2</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.02045593</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_3</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.028642137</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_4</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.036832181</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_5</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.045027163</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_6</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.053228185</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_7</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.061436353</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_8</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.069652776</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_9</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.077878569</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_10</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.086114851</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_11</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.094362747</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_12</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.102623388</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_13</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.110897912</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_14</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.119187464</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_15</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.127493199</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_16</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.135816279</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_17</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.144157876</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_18</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.152519173</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_19</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.160901363</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_20</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.16930565</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_21</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.177733252</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_22</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.1861854</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_23</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.194663336</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_24</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.203168319</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_25</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.211701624</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_26</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.22026454</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_27</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.228858373</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_28</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.237484449</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_29</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.24614411</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_30</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.254838719</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_31</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.26356966</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_32</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.272338336</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_33</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.281146175</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_34</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.289994626</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_35</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.298885164</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_36</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.307819289</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_37</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.316798527</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_38</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.325824432</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_39</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.334898586</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_40</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.344022602</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_41</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.353198123</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_42</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.362426827</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_43</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.371710423</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_44</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.381050656</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_45</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.390449308</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_46</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.399908199</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_47</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.409429188</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_48</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.419014177</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_49</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.42866511</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_50</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.438383974</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_51</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.448172804</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_52</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.458033683</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_53</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.467968746</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_54</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.477980176</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_55</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.488070214</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_56</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.498241156</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_57</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.508495358</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_58</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.518835235</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_59</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.529263268</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_60</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.539782003</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_61</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.550394056</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_62</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.561102113</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_63</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.571908936</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_64</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.582817365</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_65</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.593830322</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_66</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.604950811</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_67</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.616181926</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_68</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.627526852</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_69</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.638988871</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_70</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.650571362</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_71</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.662277811</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_72</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.674111811</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_73</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.686077068</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_74</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.698177407</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_75</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.710416776</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_76</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.722799253</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_77</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.735329049</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_78</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.748010517</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_79</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.760848156</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_80</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.77384662</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_81</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.787010724</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_82</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.80034545</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_83</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.813855957</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_84</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.827547589</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_85</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.841425884</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_86</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.855496581</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_87</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.869765633</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_88</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.884239215</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_89</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.898923737</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_90</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.913825852</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_91</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.928952473</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_92</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.944310785</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_93</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.959908255</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_94</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.97575265</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_95</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>0.991852054</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_96</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.008214881</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_97</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.024849894</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_98</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.041766226</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_99</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.058973397</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_100</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.076481336</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_101</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.094300405</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_102</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.112441422</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_103</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.130915688</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_104</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.149735011</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_105</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.168911743</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_106</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.188458804</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_107</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.208389721</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_108</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.228718659</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_109</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.249460468</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_110</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.270630717</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_111</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.292245742</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_112</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.314322696</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_113</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.336879599</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_114</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.359935394</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_115</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.383510008</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_116</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.407624417</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_117</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.432300717</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_118</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.4575622</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_119</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.483433437</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_120</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.509940366</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_121</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.53711039</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_122</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.564972483</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_123</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.593557306</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_124</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.622897326</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_125</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.65302696</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_126</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.683982719</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_127</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.715803371</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_128</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.74853012</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_129</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.782206799</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_130</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.816880088</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_131</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.852599743</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_132</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.889418859</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_133</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.927394157</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_134</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>1.966586293</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_135</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.007060212</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_136</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.048885533</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_137</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.092136977</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_138</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.136894845</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_139</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.183245548</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_140</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.231282201</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_141</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.281105287</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_142</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.332823403</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_143</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.386554093</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_144</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.442424793</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_145</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.500573891</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_146</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.561151937</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_147</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.624323002</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_148</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.690266237</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_149</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.759177648</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_150</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.831272122</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_151</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.906785762</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_152</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>2.985978571</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_153</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>3.069137557</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_154</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>3.156580334</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_155</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>3.248659312</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_156</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>3.345766601</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_157</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>3.448339762</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_158</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>3.556868595</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_159</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>3.671903171</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_160</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>3.7940634</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_161</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>3.924050484</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_162</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>4.062660691</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_163</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>4.210802034</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_164</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>4.369514589</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_165</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>4.539995414</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_166</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>4.723629328</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_167</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>4.92202723</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_168</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>5.137074201</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_169</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>5.370990435</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_170</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>5.626409169</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_171</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>5.90647743</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_172</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>6.214987771</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_173</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>6.556552741</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_174</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>6.936839169</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_175</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>7.362887641</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_176</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>7.843555652</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_177</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>8.390144119</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_178</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>9.01730236</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_179</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>9.744367451</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_180</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>10.59740238</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_181</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>11.61239886</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_182</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>12.84050299</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_183</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>14.35692958</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_184</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>16.27700796</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_185</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>18.78703932</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_186</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>22.20881656</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_187</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>27.15017067</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_188</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>34.91359651</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_189</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>48.88558064</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_190</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>81.48324021</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_191</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>244.460629</VALUE>
+								</REAL-LITERAL>
+								<REAL-LITERAL>
+									<SHORT-NAME>Float_192</SHORT-NAME>
+									<TYPE-TREF DEST="REAL-TYPE">/DataType/Float</TYPE-TREF>
+									<VALUE>244.460629</VALUE>
+								</REAL-LITERAL>
+							</ELEMENTS>
+						</ARRAY-SPECIFICATION>
+					</VALUE>
+				</CONSTANT-SPECIFICATION>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<AR-PACKAGE>
+			<SHORT-NAME>DaVinci</SHORT-NAME>
+			<ELEMENTS/>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

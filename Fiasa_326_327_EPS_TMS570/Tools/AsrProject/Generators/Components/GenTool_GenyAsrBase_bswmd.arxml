@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Harald Brunner (Vector Informatik GmbH) -->
+<!--
+============================================================================
+This file is generated with MICROSAR EAD Toolsuite 1.3.0.55
+Date: Mon, 14 Apr 2008 13:33:57 GMT
+============================================================================
+-->
+<AUTOSAR xmlns="http://autosar.org/3.0.1">
+	<TOP-LEVEL-PACKAGES>
+		<AR-PACKAGE UUID="DCE:273332eb-7f75-4ba9-94be-0a28c6bce630">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<ELEMENTS>
+				<BSW-IMPLEMENTATION UUID="DCE:dbe74fd1-0b2a-40a6-b097-818555262032">
+					<SHORT-NAME>GenyAsrBase_Impl</SHORT-NAME>
+					<PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+					<VENDOR-ID>30</VENDOR-ID>
+					<AR-MAJOR-VERSION>3</AR-MAJOR-VERSION>
+					<AR-MINOR-VERSION>0</AR-MINOR-VERSION>
+					<AR-PATCH-VERSION>1</AR-PATCH-VERSION>
+					<VENDOR-SPECIFIC-MODULE-DEF-REF DEST="MODULE-DEF">/MICROSAR/GenTool_GenyAsrBase_Def</VENDOR-SPECIFIC-MODULE-DEF-REF>
+				</BSW-IMPLEMENTATION>
+				<MODULE-DEF UUID="DCE:79e3df81-bd29-459b-bd1f-8f2b458f793d">
+					<SHORT-NAME>GenTool_GenyAsrBase_Def</SHORT-NAME>
+					<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+					<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+					<SUPPORTED-CONFIG-VARIANTS>
+						<SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+					</SUPPORTED-CONFIG-VARIANTS>
+					<CONTAINERS>
+						<PARAM-CONF-CONTAINER-DEF UUID="DCE:51b261a3-930c-4e85-9d79-4390cb40d091">
+							<SHORT-NAME>General</SHORT-NAME>
+							<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+							<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+							<PARAMETERS>
+								<ENUMERATION-PARAM-DEF UUID="DCE:fa44117b-aaae-460f-904a-892d199f09b0">
+									<SHORT-NAME>AsrBaseMaxShortnameLength</SHORT-NAME>
+									<DESC>
+										<L-2 L="EN">If a Short Name exeeds this length during import/export, warnings will be displayed</L-2>
+									</DESC>
+									<LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+									<UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+									<ORIGIN>Vector Informatik</ORIGIN>
+									<SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+									<DEFAULT-VALUE>32</DEFAULT-VALUE>
+									<LITERALS>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:f3b1e786-d674-4e0b-af25-a5957c066097">
+											<SHORT-NAME>L32</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+										<ENUMERATION-LITERAL-DEF UUID="DCE:ff3bed80-a058-476c-88e8-9dae64bb9912">
+											<SHORT-NAME>L128</SHORT-NAME>
+										</ENUMERATION-LITERAL-DEF>
+									</LITERALS>
+								</ENUMERATION-PARAM-DEF>
+							</PARAMETERS>
+						</PARAM-CONF-CONTAINER-DEF>
+					</CONTAINERS>
+				</MODULE-DEF>
+			</ELEMENTS>
+		</AR-PACKAGE>
+	</TOP-LEVEL-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,774 @@
+<?xml version="1.0" ?>
+<config ver="1">
+	<common spec="07B">
+		<service _id="0000" address="NULL_PTR" block="" length1="0" length2="0" length3="0" name="Invalid/Null selection" sizeof="N" type="PID" writeable="N"/>
+		<service _id="0001" address="ModeMachine_StaMd_SystemState_Mode" block="" length1="0" length2="0" length3="0" name="System State" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0002" address="BatteryVoltage_Vecu_Volts_f32" block="" length1="0" length2="0" length3="0" name="Battery Voltage" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0003" address="Adc_T1" block="" length1="2" length2="0" length3="0" name="T1 - Analog - ADC Counts" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0004" address="Analog_T1_Volts" block="" length1="0" length2="0" length3="0" name="T1 - Analog - Volts" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0005" address="Adc_T2" block="" length1="2" length2="0" length3="0" name="T2 - Analog - ADC Counts" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0006" address="Analog_T2_Volts" block="" length1="0" length2="0" length3="0" name="T2 - Analog - Volts" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0007" address="HwTrqArb_HwTrq_HwNm_f32" block="" length1="0" length2="0" length3="0" name="Hw Trq" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0008" address="FinalHwPos_FinHwPos_HwDeg_f32" block="" length1="0" length2="0" length3="0" name="AbsHw Position (Final HW Pos)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0009" address="ScaledMtrPos_HwDeg_M_f32" block="" length1="4" length2="0" length3="0" name="Scaled Motor Position (formally MtrPos_MfgMtrBasedPos_HwDeg_f32)" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="000A" address="KeFBckTyH_VpRadpS_f32" block="" length1="4" length2="0" length3="0" name="KeFBckTyH_VpRadpS_f32" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="000B" address="RFBckTyH_Ohm_f32" block="" length1="4" length2="0" length3="0" name="RFBckTyH_Ohm_f32" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="000C" address="Sin1MaxTyH_Volts_f32" block="" length1="0" length2="0" length3="0" name="Sin 1 Max Type H" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="000D" address="Sin1MinTyH_Volts_f32" block="" length1="0" length2="0" length3="0" name="Sin 1 Min Type H" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="000E" address="Cos1MaxTyH_Volts_f32" block="" length1="0" length2="0" length3="0" name="Cos 1 Max Type H" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="000F" address="Cos1MinTyH_Volts_f32" block="" length1="0" length2="0" length3="0" name="Cos 1 Min Type H" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0010" address="MtrTrqLmt_MRFMtrTrqCmd_MtrNm_f32" block="" length1="0" length2="0" length3="0" name="Motor Torque Limit" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0011" address="MtrPos_MRFCumMtrPos_Deg_f32" block="" length1="0" length2="0" length3="0" name="Cumulative Motor Position" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0012" address="MtrVel_MRFMtrVel_MtrRadpS_f32" block="" length1="0" length2="0" length3="0" name="Motor Velocity MRF Cord" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0013" address="VehicleSpeed_VehSpd_Kph_f32" block="" length1="0" length2="0" length3="0" name="Vehicle Speed (KPH)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0014" address="Digital_PWM_T1_DutyCycle" block="" length1="0" length2="0" length3="0" name="Digital (PWM) T1 Duty Cycle" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0015" address="Digital_PWM_T1_Volts" block="" length1="4" length2="0" length3="0" name="Digital (PWM) T1 Volts" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0016" address="Digital_PWM_T2_DutyCycle" block="" length1="0" length2="0" length3="0" name="Digital (PWM) T2 Duty Cycle" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0017" address="Digital_PWM_T2_Volts" block="" length1="4" length2="0" length3="0" name="Digital (PWM) T2 Volts" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0018" address="Rte_DigHwTrq_DigHwTrq_HwNm_f32" block="" length1="0" length2="0" length3="0" name="Digital Hw Trq" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0019" address="k_TbarStiff_NmpDeg_F32" block="" length1="0" length2="0" length3="0" name="Tbar Stiffness" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="001A" address="k_HwTrqSclNom_VoltspDeg_f32" block="" length1="0" length2="0" length3="0" name="Hw Trq Scale Analog" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="001B" address="k_DigHwTrqSensScaleNom_VoltspDeg_f32" block="" length1="0" length2="0" length3="0" name="Hw Trq Scale Digital" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="001C" address="T1_Trim_Volts_Analog" block="" length1="0" length2="0" length3="0" name="T1 Trim Volts Analog" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="001D" address="T2_Trim_Volts_Analog" block="" length1="0" length2="0" length3="0" name="T2 Trim Volts Analog" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="001E" address="HwTrq_Trim_Volts_Analog" block="" length1="0" length2="0" length3="0" name="HwTrqTrim Volts Analog" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="001F" address="T1_Trim_Volts_Digital" block="" length1="0" length2="0" length3="0" name="T1 Trim Volts Digital" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0020" address="T2_Trim_Volts_Digital" block="" length1="0" length2="0" length3="0" name="T2 Trim Volts Digital" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0021" address="HwTrq_Trim_Volts_Digital" block="" length1="0" length2="0" length3="0" name="HwTrqTrim Volts Digital" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0022" address="CtrlTemp_FiltMeasTemp_DegC_f32" block="" length1="0" length2="0" length3="0" name="Controller Temperature" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0023" address="QaxCurrFiltSV_Amp_M_s11p20" block="" length1="4" length2="0" length3="0" name="Motor Current State Variable (QAX, s11p20)" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0024" address="CDDInterface_Sin1Theta_Volts_f32" block="" length1="0" length2="0" length3="0" name="Sin 1 Amplitude" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0025" address="CDDInterface_Cos1Theta_Volts_f32" block="" length1="0" length2="0" length3="0" name="Cos 1 Amplitude" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0026" address="ParamComp_ExpIq_Amp_f32" block="" length1="0" length2="0" length3="0" name="Estimated QAX Current (from Param Comp)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0027" address="MtrTempEst_MagTempEst_DegC_f32" block="" length1="0" length2="0" length3="0" name="Mag Temp Estimate (DegC)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0028" address="VltgCtrl_ModIdx_Uls_f32" block="" length1="0" length2="0" length3="0" name="Mod Index" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0029" address="TemperatureADC_Volt_f32" block="" length1="0" length2="0" length3="0" name="Controller Temperature (ADC Volts)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="002A" address="P1_Volt_f32" block="" length1="0" length2="0" length3="0" name="P1 (ADC Volts)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="002B" address="P2_Volt_f32" block="" length1="0" length2="0" length3="0" name="P2 (ADC Volts)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="002C" address="RawP1ADC_Cnt_u16" block="" length1="0" length2="0" length3="0" name="P1 (ADC Counts)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="002D" address="RawP2ADC_Cnt_u16" block="" length1="0" length2="0" length3="0" name="P2 (ADC Counts)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="002E" address="HwDeg_G_s11p4" block="" length1="0" length2="0" length3="0" name="Relative Hw Position" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="002F" address="MtrCurrMeas_Amp_f32" block="" length1="0" length2="0" length3="0" name="Motor Current Measurement" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0030" address="SrlComEngineSpeed_Rpm_f32" block="" length1="0" length2="0" length3="0" name="Engine Speed (RPM)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0031" address="EOLMtrCurr1Gain_AmpspVolt_u7p9" block="" length1="0" length2="0" length3="0" name="Motor Current Gain 1 (Brushed)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0032" address="EOLMtrCurr2Gain_AmpspVolt_u7p9" block="" length1="0" length2="0" length3="0" name="Motor Current Gain 2 (Brushed)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0033" address="EOLMtrCurr1Offset_Volts_u3p13" block="" length1="0" length2="0" length3="0" name="Motor Current Offset 1 (Brushed)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0034" address="EOLMtrCurr2Offset_Volts_u3p13" block="" length1="0" length2="0" length3="0" name="Motor Current Offset 2 (Brushed)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0035" address="NomRmtr_Ohm_f32" block="" length1="0" length2="0" length3="0" name="Learned R (Brushed)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0036" address="NomKe_VpRadpS_f32" block="" length1="0" length2="0" length3="0" name="Learned Ke(Brushed)" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0037" address="RawCurrFiltered1_Amp_f32" block="" length1="0" length2="0" length3="0" name="RawCurrent1" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0038" address="RawCurrFiltered2_Amp_f32" block="" length1="0" length2="0" length3="0" name="RawCurrent2" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="0039" address="MtrCurrQax_Amp_f32" block="" length1="0" length2="0" length3="0" name="Motor Current QAX" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="003A" address="MtrCurrDax_Amp_f32" block="" length1="0" length2="0" length3="0" name="Motor Current DAX" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="003B" address="ValidSampleFlag_Cnt_lgc" block="" length1="0" length2="0" length3="0" name="Valid Current Sample" sizeof="Y" type="XCP" writeable="N"/>
+		<service _id="003C" address="TcSpiBuffer_Cnt_M_str" block="" length1="10" length2="0" length3="0" name="Turns Counter SPI Data" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="003D" address="Rte_MtrPosSnsrLearning_Sin1RTOffset_Volts_F32" block="" length1="4" length2="0" length3="0" name="Sin 1 RT Offset" sizeof="N" type="XCP" writeable="Y"/>
+		<service _id="003E" address="Rte_MtrPosSnsrLearning_Cos1RTOffset_Volts_F3" block="" length1="4" length2="0" length3="0" name="Cos 1 RT Offset" sizeof="N" type="XCP" writeable="Y"/>
+		<service _id="003F" address="Rte_MtrPos_EOLMtrSnsrAdjParam_EOLSin1Offset" block="" length1="0" length2="0" length3="0" name="EOL Sin 1 Offset" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="0040" address="Rte_MtrPos_EOLMtrSnsrAdjParam_EOLCos1Offset" block="" length1="0" length2="0" length3="0" name="EOL Cos 1 Offset" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="0041" address="Nhet1_DigHwTrqT1_HwNm_S16" block="" length1="2" length2="0" length3="0" name="Digitall HandWheel Torque 1" sizeof="N" type="XCP" writeable="Y"/>
+		<service _id="0042" address="Nhet1_DigHwTrqT2_HwNm_S16" block="" length1="2" length2="0" length3="0" name="Digital HandWheel Torque 2" sizeof="N" type="XCP" writeable="Y"/>
+		<service _id="0043" address="DigColPs_I2CHwColAngle_Deg_U16" block="" length1="2" length2="0" length3="0" name="HandWheel Column Angle" sizeof="N" type="XCP" writeable="Y"/>
+		<service _id="0044" address="DigColPs_I2CHwSpurAngle_Deg_U16" block="" length1="2" length2="0" length3="0" name="HandWheel Spur Angle" sizeof="N" type="XCP" writeable="Y"/>
+		<service _id="0045" address="DigColPs_I2CHwAbsPos_HwDeg_S16" block="" length1="2" length2="0" length3="0" name="Absolute HandWheel Position" sizeof="N" type="XCP" writeable="Y"/>
+		<service _id="0046" address="DigColPs_VernDiagError_Deg_D_F32" block="" length1="4" length2="0" length3="0" name="Vernier Error" sizeof="N" type="XCP" writeable="Y"/>
+		<service _id="0047" address="Rte_Cd_Nhet_DigHwTrqT1_HwNm_f32" block="" length1="0" length2="0" length3="0" name="Digital Handwheel Torque T1" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="0048" address="Rte_Cd_Nhet_DigHwTrqT2_HwNm_f32" block="" length1="0" length2="0" length3="0" name="Digital Handwheel Toqrue T2" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="0049" address="Rte_Sa_DigColPs_I2CHwAbsPos_HwDeg_f32" block="" length1="0" length2="0" length3="0" name="Digital Absolute Handwheel Position" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="0050" address="AnPrMeas_P1_bar_f32" block="" length1="0" length2="0" length3="0" name="Analog Pressure P1" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="0051" address="AnPrMeas_P2_bar_f32" block="" length1="0" length2="0" length3="0" name="Analog Pressure P2" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="0052" address="CDDInterface_CoilCurrMeas_Amp_f32" block="" length1="0" length2="0" length3="0" name="Coil Current" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="0053" address="TrqCmdScl_MRFMtrTrqCmdScl_MtrNm_f32" block="" length1="0" length2="0" length3="0" name="Motor Torque Command Scale" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="00FF" address="Rte_DigMSB_DigMSBEOLData" block="" length1="0" length2="0" length3="0" name="Digital MSB EOL Data" sizeof="Y" type="XCP" writeable="Y"/>
+		<service _id="0100" address="NULL_PTR" block="" length1="0" length2="0" length3="0" name="Static DAQ: Not Defined" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0101" address="NULL_PTR" block="" length1="6" length2="0" length3="0" name="Static DAQ: Motor Learning" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0102" address="NULL_PTR" block="" length1="1" length2="0" length3="0" name="Static DAQ: Torque Ratio" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0103" address="NULL_PTR" block="" length1="4" length2="0" length3="0" name="Static DAQ: Torque Sweep" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0104" address="NULL_PTR" block="" length1="5" length2="0" length3="0" name="Static DAQ: Static Effort Long Sweept" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0105" address="NULL_PTR" block="" length1="2" length2="0" length3="0" name="Static DAQ: Rotor Stiffness" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0106" address="NULL_PTR" block="" length1="2" length2="0" length3="0" name="Static DAQ: Noise Test" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0107" address="NULL_PTR" block="" length1="5" length2="0" length3="0" name="Static DAQ: Position" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0108" address="NULL_PTR" block="" length1="1" length2="0" length3="0" name="Static DAQ: Turns Counter SPI Data" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="0109" address="NULL_PTR" block="" length1="5" length2="0" length3="0" name="Static DAQ: Motor Current" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="010A" address="NULL_PTR" block="" length1="2" length2="0" length3="0" name="Static DAQ: Analog Torque Sensor Info" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="010B" address="NULL_PTR" block="" length1="3" length2="0" length3="0" name="Static DAQ: Static Effort Long Sweep Analog" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="010C" address="NULL_PTR" block="" length1="5" length2="0" length3="0" name="Static DAQ: Digital Torque and HwPos Info" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="010D" address="NULL_PTR" block="" length1="4" length2="0" length3="0" name="Static DAQ: Vernier Error, Digital Torque, and HwPos Info" sizeof="N" type="XCP" writeable="N"/>
+		<service _id="010E" address="NULL_PTR" block="" length1="5" length2="0" length3="0" name="Static DAQ: Another Position" sizeof="N" type="XCP" writeable="Y"/>
+		<service _id="010F" address="NULL_PTR" block="" length1="2" length2="0" length3="0" name="Digital T1 and T2 Only" sizeof="N" type="XCP" writeable="Y"/>
+		<service _id="1160" address="" block="" length1="0" length2="0" length3="0" name="Nexteer ECU Reset" sizeof="N" type="RESET" writeable="N">
+			<options>
+				<option default="" format="Decimal" index="0" label="ECU Reset SCom" max="0" min="0" name="CM_StaMd_SCom_EcuReset" tooltip="SCom function called to initial the ECU reset." type="Function"/>
+			</options>
+		</service>
+		<service _id="F000" address="" block="" length1="3" length2="0" length3="0" name="Manufacturing Variable Reset" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+				<check bit="2"/>
+			</checks>
+			<options>
+				<option default="True" format="Decimal" index="0" label="Enable NMEC Reset" max="0.0" min="0.0" name="D_F000NMEC_CNT_LGC" tooltip="Check this box to enable resetting the Nexteer MEC counter using bit 0." type="Checkbox"/>
+				<option default="True" format="Decimal" index="1" label="Enable Ignition Counter Reset" max="0.0" min="0.0" name="D_F000IGNCNTR_CNT_LGC" tooltip="Check to enable resetting the ignition counter using bit 1." type="Checkbox"/>
+				<option default="True" format="Decimal" index="2" label="Enable LT Loss VehSpd Cntr Reset" max="0.0" min="0.0" name="D_F000LTLVEHSPDCNTR_CNT_LGC" tooltip="Enable the Long Term Loss of Vehicle Speed counter reset using bit 2." type="Checkbox"/>
+				<option default="True" format="Decimal" index="3" label="Enable Last Pos. Invalid Reset" max="0.0" min="0.0" name="D_F000STOREDLASTPOSINVALD_CNT_LGC" tooltip="Enable reset of Stored Last Position invalid using bit 3." type="Checkbox"/>
+				<option default="False" format="Decimal" index="4" label="Enable Tach Gain Reset" max="0.0" min="0.0" name="D_F000TACHGAIN_CNT_LGC" tooltip="Enable reset of Tach Gain using bit 4.\n\nThis service is not currently implemented." type="Checkbox"/>
+				<option default="False" format="Decimal" index="5" label="Enable Sensorless Last Pos.Valid Reset" max="0.0" min="0.0" name="D_F000SNSRLESSSTOREDLASTPOSINVALID_CNT_LGC" tooltip="Enable reset of sensorless stored last position invalid using bit 5." type="Checkbox"/>
+				<option default="True" format="Decimal" index="6" label="Enable Learned EOT Reset" max="0.0" min="0.0" name="D_F000LEARNEDEOT_CNT_LGC" tooltip="Enable reset of learned end of travel using bit 6." type="Checkbox"/>
+				<option default="True" format="Decimal" index="7" label="Enable LT Comp Reset" max="0.0" min="0.0" name="D_F000ACTIVEPULLCOMP_CNT_LGC" tooltip="Enable reset of long term pull compensation using bit 7." type="Checkbox"/>
+				<option default="True" format="Decimal" index="8" label="Enable Clear NTCs" max="0.0" min="0.0" name="D_F000NXTRDTCTBL_CNT_LGC" tooltip="Enable clearing of NTCs using byte 1 bit 0." type="Checkbox"/>
+				<option default="True" format="Decimal" index="9" label="Enable Clear NTC Snapshot" max="0.0" min="0.0" name="D_F000NXTRDTCBLACKBOX_CNT_LGC" tooltip="Enable clearing of NTC snapshot data using byte 1 bit 1." type="Checkbox"/>
+				<option default="True" format="Decimal" index="10" label="Enable Clear CTCs" max="0.0" min="0.0" name="D_F000CUSTDTCTBL_CNT_LGC" tooltip="Enable clearing of customer trouble codes using byte 1 bit 2." type="Checkbox"/>
+				<option default="True" format="Decimal" index="11" label="Enable AvgFricLrn Table Reset" max="0.0" min="0.0" name="D_F000FRICTIONDETECTPARAM_CNT_LGC" tooltip="Enable reset of average friction learn tables to zeros using byte 1 bit 5." type="Checkbox"/>
+				<option default="False" format="Decimal" index="12" label="Enable WIR Reset" max="0.0" min="0.0" name="D_F000WIRPARAM_CNT_LGC" tooltip="Enable reset of wheel imbalance rejection learned values using byte 1 bit 4." type="Checkbox"/>
+				<option default="True" format="Decimal" index="13" label="Enable AvgFricLrn Table Init" max="0.0" min="0.0" name="D_F000INITLRNDTBLS_CNT_LGC" tooltip="Enable reset of average friction learning tables to initial (flash calibration) values." type="Checkbox"/>
+				<option default="True" format="Decimal" index="14" label="Enable Clear Trans. OV Data" max="0.0" min="0.0" name="D_F000TRANSOVDATA_CNT_LGC" tooltip="Enable clearing of transient overvoltage data using byte 1 bit 6." type="Checkbox"/>
+				<option default="" format="Decimal" index="15" label="Loss of Veh Spd. Reset Func" max="0.0" min="0.0" name="CM_LTLVehSpdCntr_Scom_ResetToZero" tooltip="SCom function to call to reset the long term loss of vehicle speec counter." type="Function"/>
+				<option default="" format="Decimal" index="16" label="Learned EOT Reset Func" max="0.0" min="0.0" name="CM_Reset_LrnEOT_Scom_ResetEOT" tooltip="SCom function to call to reset learned end of travel value." type="Function"/>
+				<option default="" format="Decimal" index="17" label="Set LT Comp Func" max="0.0" min="0.0" name="CM_Reset_ActivePull_SCom_SetLTComp" tooltip="SCom function to call to set LT comp, will be passed a single parameter D_ZERO_ULS_F32 to zero out long term compensation." type="Function"/>
+				<option default="" format="Decimal" index="18" label="Clear NTC Func" max="0.0" min="0.0" name="CM_Reset_ClearNTCs_SComm" tooltip="SCom function to call to clear NTCs." type="Function"/>
+				<option default="" format="Decimal" index="19" label="Clear Blackbox Func" max="0.0" min="0.0" name="CM_DiagMgr_SCom_ClearBlackBox" tooltip="SCom function to call to clear blackbox data." type="Function"/>
+				<option default="" format="Decimal" index="20" label="Clear CTCs Func" max="0.0" min="0.0" name="CM_Reset_ClearCustDTCs_SComm" tooltip="SCom function called to clear customer trouble codes, passed three parameters: D_ALLDTC_MASK_CNT_U32, DEM_DTC_KIND_ALL_DTCS, and DEM_DTC_ORIGIN_PRIMARY_MEMORY in that order." type="Function"/>
+				<option default="" format="Decimal" index="21" label="AvgFricLrn Reset Func" max="0.0" min="0.0" name="CM_AvgFricLrn_SCom_ResetToZero" tooltip="SCom function to call to reset average friction learn tables to zero values." type="Function"/>
+				<option default="" format="Decimal" index="22" label="AvgFricLrn Init Func" max="0.0" min="0.0" name="CM_AvgFricLrn_SCom_InitLearnedTables" tooltip="SCom function to initialize average friction learn tables to their initial flash calibration values." type="Function"/>
+				<option default="" format="Decimal" index="23" label="Clear Trans. OV Data Func" max="0.0" min="0.0" name="CM_BatteryVoltage_SCom_ClearTransOvData" tooltip="SCom function to clear transient overvoltage data." type="Function"/>
+			</options>
+		</service>
+		<service _id="F001" address="" block="" length1="2" length2="0" length3="0" name="Clear Diagnostic Trouble Codes (NTC/CTC)" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Clear NTCs SCom:" max="0.0" min="0.0" name="CM_ClearNTCs_SComm" tooltip="SCom function called to clear NTCs, passed no parameters, returns no data." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Clear BlackBox SCom" max="0.0" min="0.0" name="CM_DiagMgr_SCom_ClearBlackBox" tooltip="SCom function called to clear blackbox data, passed no parameters, returns no data." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Clear CTCs SCom" max="0.0" min="0.0" name="CM_ClearCustDTCs_SComm" tooltip="SCom function called to clear customer trouble codes (CTCs), passed 3 parameters: D_ALLDTC_MASK_CNT_U32, DEM_DTC_KIND_ALL_DTCS, DEM_DTC_ORIGIN_PRIMARY_MEMORY in that order." type="Function"/>
+			</options>
+		</service>
+		<service _id="F002" address="" block="" length1="1" length2="0" length3="0" name="Torque Sensor End of Line Calibration" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Clear Trim SCom" max="0.0" min="0.0" name="CM_HwTrq_SCom_ClrHwTrqTrim" tooltip="SCom function called to clear trim, passed no parameters, returns possible NRC." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Clear Scale SCom" max="0.0" min="0.0" name="CM_HwTrq_SCom_ClrHwTrqScale" tooltip="SCom function called to clear scale, passed no parameters, returns possible NRC." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Set Trim SCom" max="0.0" min="0.0" name="CM_HwTrq_SCom_SetHwTrqTrim" tooltip="SCom function called to set trim, passed no parameters, returns possible NRC." type="Function"/>
+			</options>
+		</service>
+		<service _id="F003" address="" block="" length1="1" length2="0" length3="0" name="Position Sensor End of Line Calibration" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+				<check bit="2"/>
+			</checks>
+			<options>
+				<option default="True" format="Decimal" index="0" label="ClrTrim Has No Return Value" max="0" min="0" name="D_F003CLRTRIMNORET_CNT_LGC" tooltip="Set to true if the Position Clear Trim function does not have a return type (void function)" type="Checkbox"/>
+				<option default="" format="Decimal" index="1" label="Clear Trim SCom" max="0.0" min="0.0" name="CM_HwPos_SCom_ClrHwPosTrim" tooltip="SCom function called to clear handwheel position trim." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Set Trim SCom" max="0.0" min="0.0" name="CM_HwPos_SCom_SetHwPosTrim()" tooltip="SCom function called to set handwheel position trim, passed no parameters, returns possible NRC." type="Function"/>
+				<option default="True" format="Decimal" index="3" label="Disable Learn Trim Functionality (05)" max="0" min="0" name="D_F003DISABLELRNTRIM_CNT_LGC" tooltip="Disables the subfunction 05 learn trim functionality." type="Checkbox"/>
+				<option default="" format="Decimal" index="4" label="Learn Trim SCom" max="0.0" min="0.0" name="CM_HwPos_SCom_LrnHwPosTrim" tooltip="SCom function called to learn the trim based upon the current sensor readings." type="Function"/>
+				<option default="False" format="Decimal" index="5" label="Enable Post-Trim Call" max="0.0" min="0.0" name="D_F003ENABLERELPOSTRIM_CNT_LGC" tooltip="Enable calling of CM_AbsHwPos_SCom_SetZeroRev() function after calling set trim or manufacturing learn trim functions." type="Checkbox"/>
+				<option default="" format="Decimal" index="6" label="Set Zero Rev SCom" max="0.0" min="0.0" name="CM_AbsHwPos_SCom_SetZeroRev" tooltip="SCom function to set zero revs if D_F003_RELPOSTRIMSUPPORTED_CNT_LGC is enabled." type="Function"/>
+			</options>
+		</service>
+		<service _id="F004" address="" block="" length1="1" length2="0" length3="0" name="Torque Sensor End of Line Calibration - Digital" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+				<check bit="2"/>
+			</checks>
+			<options>
+				<option default="True" format="Decimal" index="0" label="Digital SENT HwTrq Sensor" max="0" min="0" name="D_SENTBASEDSENSOR_CNT_LGC" tooltip="If this is checked, the clear scale portion of this service will always report out an NRC since the Digital SENT sensor does not have a scaling." type="Checkbox"/>
+				<option default="" format="Decimal" index="1" label="Clear Trim SCom" max="0.0" min="0.0" name="CM_DigHwTrq_SCom_ClrHwTrqTrim" tooltip="SCom function clear digital handwheel torque trim." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Clear Scale SCom" max="0.0" min="0.0" name="CM_DigHwTrq_SCom_ClrHwTrqScale" tooltip="SCom function to clear digital handwheel torque scale." type="Function"/>
+				<option default="" format="Decimal" index="3" label="Set Trim SCom" max="0.0" min="0.0" name="CM_DigHwTrq_SCom_SetHwTrqTrim" tooltip="SCom function to set digital handwheel torque trim." type="Function"/>
+			</options>
+		</service>
+		<service _id="F005" address="" block="" length1="2" length2="0" length3="0" name="DTC Status By Number" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Get NTC Info SCom" max="0.0" min="0.0" name="CM_DiagMgr_SCom_GetNTCInfo" tooltip="SCom function called and passed NTC number that will return parameter, status and aging counter for the NTC in three passed pointers respectively." type="Function"/>
+			</options>
+		</service>
+		<service _id="F006" address="" block="" length1="1" length2="0" length3="0" name="Turns Counter Flash Programming" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Start Programming SCom" max="0.0" min="0.0" name="CM_TcFlshPrg_Scom_StartPrg" tooltip="SCom function called to initiate the Turns Counter flash programming routine." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Flash Programming Status SCom" max="0.0" min="0.0" name="CM_TcFlshPrg_Scom_FlshPrgStatus" tooltip="SCom function used to fetch the current flash programming status.  Returns active boolean, current address, and state enum into three passed pointer parameters." type="Function"/>
+			</options>
+		</service>
+		<service _id="F007" address="" block="" length1="1" length2="0" length3="0" name="Turns Counter Position EOL Calibration" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Clear Center Position SCom" max="0.0" min="0.0" name="CM_AbsHwPos_Scom_ClearCenterPosition" tooltip="SCom function called to clear center position." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Clear Rack to Veh Center SCom" max="0.0" min="0.0" name="CM_AbsHwPos_Scom_ClearRacktoVehCntrOffset" tooltip="SCom function called to clear rack to vehicle center offset value." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Reset EOT SCom" max="0.0" min="0.0" name="CM_LrnEOT_Scom_ResetEOT" tooltip="SCom function called to reset end of travel." type="Function"/>
+				<option default="" format="Decimal" index="3" label="Reset Rack Center Performed SCom" max="0.0" min="0.0" name="CM_LrnEOT_Scom_ResetRckCntrPrf" tooltip="SCom function to clear rack center perfored value." type="Function"/>
+				<option default="" format="Decimal" index="4" label="Reset TC SCom" max="0.0" min="0.0" name="CM_TurnsCounter_SCom_ResetTC" tooltip="SCom function to perform Turns Counter reset." type="Function"/>
+				<option default="" format="Decimal" index="5" label="Set Center Position SCom" max="0.0" min="0.0" name="CM_AbsHwPos_Scom_SetCenterPosition" tooltip="SCom function to set the center position, passed a single offset value parameter that will always be D_ZERO_ULS_F32." type="Function"/>
+			</options>
+		</service>
+		<service _id="F008" address="" block="" length1="1" length2="0" length3="0" name="Current Mode - Current Gain Calc" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Calibrate Gain SCom" max="0.0" min="0.0" name="CM_CmMtrCurr_SCom_CalGain" tooltip="SCom function to calibrate current mode motor current gain.  No parameters, returns possible NRC value." type="Function"/>
+			</options>
+		</service>
+		<service _id="F009" address="" block="" length1="0" length2="0" length3="0" name="Current Mode - Current Offset Calc" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Offset Status SCom" max="0" min="0" name="CM_CmMtrCurr_SCom_MtrCurrOffReadStatus" tooltip="SCom function for fetching the offset calibration status.  Passed a single pointer as a parameter to get status, returns nothing." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Cal Offset SCom" max="0.0" min="0.0" name="CM_CmMtrCurr_SCom_CalOffset" tooltip="SCom function to perform calibration offset, passed no parameters, returns possible NRC value." type="Function"/>
+				<option default="boolean" format="Decimal" index="2" label="Offset Process Flag Type" max="0.0" min="0.0" name="MtrCurrOffProcessFlag" tooltip="Variable type used for motor current offset process flag." type="Text"/>
+				<option default="301.0" format="Hexadecimal" index="3" label="Set Defeat Bits" max="FFFF" min="0" name="D_RIDF009SVCDFTBITSSET_CNT_U16" tooltip="Serial comm service defeat bits set to put the system into the correct state to perform the current offset and gain calibration services." type="Number"/>
+				<option default="(~D_RIDF009SVCDFTBITSSET_CNT_U16)" format="Decimal" index="4" label="Clear Defeat Bits" max="0" min="0" name="D_RIDF009SVCDFTBITSCLR_CNT_U16" tooltip="Inverse of D_RIDF009SVCDFTBITSSET_CNT_U16, used to clear the bits set in the start routine effectively removing the system from operate." type="Text"/>
+			</options>
+		</service>
+		<service _id="F00A" address="" block="" length1="1" length2="0" length3="0" name="Write RAM to EEPROM Service" sizeof="N" type="RID" writeable="N"/>
+		<service _id="F00B" address="" block="" length1="1" length2="0" length3="0" name="Unused" sizeof="N" type="RID" writeable="N"/>
+		<service _id="F00C" address="" block="" length1="1" length2="0" length3="0" name="Clear Turns Counter EOL Calibrations" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Clear TC EOL Cals SCom" max="0" min="0" name="CM_TcEOLCals_Scom_ClearTcEOLCals" tooltip="SCom function for clearing Turns Counter EOL calibrations." type="Function"/>
+			</options>
+		</service>
+		<service _id="F00D" address="" block="" length1="1" length2="0" length3="0" name="Voltage Mode - Calculate Current Gain" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Cal Gain SCom" max="0" min="0" name="CM_MtrCurr_SCom_CalGain" tooltip="SCom function called to start motor current gain calibration routine." type="Function"/>
+			</options>
+		</service>
+		<service _id="F00E" address="" block="" length1="1" length2="0" length3="0" name="Voltage Mode - Set Current Offset" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Call Offset SCom" max="0" min="0" name="CM_MtrCurr_SCom_CalOffset" tooltip="SCom function to start motor current offset calibration routine." type="Function"/>
+				<option default="301.0" format="Hexadecimal" index="1" label="Set Defeat Bits" max="FFFF" min="0" name="D_RIDF00ESVCDFTBITSSET_CNT_U16" tooltip="Defeat bits to set to place the system into the correct state to perform the current offset calibration routine.  The default (Operate, Mod Idx = 0, Ramp Disable) should be adequate." type="Number"/>
+			</options>
+		</service>
+		<service _id="F00F" address="" block="" length1="5" length2="0" length3="0" name="Neteer Goto Position" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="k_SComTrqPosPol_Cnt_s08" format="Decimal" index="0" label="Polarity Calibration" max="0" min="0" name="CM_k_SComTrqPosPol_Cnt_s08" tooltip="Trajectory position polarity calibration." type="Text"/>
+				<option default="" format="Decimal" index="1" label="HW Pos Var" max="0" min="0" name="CM_Rte_AbsHwPos_SrlComHwPos_HwDeg_f32" tooltip="RTE variable containing current handwheel position.  Should reference an unfiltered handwheel position such as the SrlComHwPos if available." type="Text"/>
+				<option default="" format="Decimal" index="2" label="HW Auth Var" max="0" min="0" name="CM_HandwheelAuthority_Uls_f32" tooltip="RTE veriable that gives the HW authority." type="Text"/>
+				<option default="" format="Decimal" index="3" label="VehSpd Valid Var" max="0" min="0" name="CM_VehSpdValid_Cnt_lgc" tooltip="Boolean RTE variable that gives vehicle speed validity." type="Text"/>
+				<option default="" format="Decimal" index="4" label="Set Input Param SCom" max="0" min="0" name="CM_GenPosTraj_SCom_SetInputParam" tooltip="SCom function to pass input parameters to Position Trajectory component.  Passes three parameters: target position, target velocity, and target acceleration.  Returns nothing." type="Function"/>
+			</options>
+		</service>
+		<service _id="F0FF" address="" block="" length1="6" length2="0" length3="0" name="MPU/Program Flow Test" sizeof="N" type="RID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="EnableTestMode_Cnt_lgc" format="Decimal" index="0" label="Enable Test Mode Const" max="0" min="0" name="CM_EnableTestMode_Cnt_lgc" tooltip="Flash constant used to enable test mode.  This is typicall sharred with the XCP component and is FALSE by default.  The value can then be changed post-build to true to enable the use of the F0FF service.  This constant adds an additional layer of security to this service." type="Text"/>
+				<option default="" format="Decimal" index="1" label="Process F0FF Func" max="0" min="0" name="CM_ProcessF0FF" tooltip="Function call to process the F0FF service.  Use this to make the appropriate trusted function &quot;Call_&quot; if required for your program." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Checkpoint Reached Func" max="0" min="0" name="CM_WdgM_CheckpointReached" tooltip="Function called to indicate that a checkpoint was reached." type="Function"/>
+				<option default="" format="Decimal" index="3" label="Disable Sys Tick Int Func" max="0" min="0" name="CM_DisableSysTickInterrupt" tooltip="Function to call to disable the Sys Tick interrupt." type="Function"/>
+				<option default="" format="Decimal" index="4" label="Enable Sys Tic Int Func" max="0" min="0" name="CM_EnableSysTickInterrupt" tooltip="Function to call to enable the Sys Tick interrupt." type="Function"/>
+				<option default="" format="Decimal" index="5" label="Get Alarm Func" max="0" min="0" name="CM_GetAlarm" tooltip="Function to call to get an alarm." type="Function"/>
+				<option default="" format="Decimal" index="6" label="Cancel Alarm Func" max="0" min="0" name="CM_CancelAlarm" tooltip="Function to call to cancel an alarm." type="Function"/>
+				<option default="" format="Decimal" index="7" label="Set Relative Alarm Func" max="0" min="0" name="CM_SetRelAlarm" tooltip="Function to cal to set a relative alarm." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD01" address="" block="" length1="322" length2="0" length3="0" name="Internal Software Identifier" sizeof="N" type="PID" writeable="N">
+			<options>
+				<option default="k_SWRelNum_Cnt_u8" format="Decimal" index="0" label="SW Rel Num Cal" max="0" min="0" name="CM_SwRelNum_Cnt_u08" tooltip="Calibration that contains the software release number." type="Text"/>
+				<option default="k_CalRelNum_Cnt_u8" format="Decimal" index="1" label="Release Number Cal" max="0" min="0" name="CM_CalRelNum_Cnt_u08" tooltip="Release number calibration." type="Text"/>
+				<option default="Lnk_BootRelNum_Addr" format="Decimal" index="2" label="Boot Rel Num Cal" max="0" min="0" name="CM_BootRelNum_Cnt_u08" tooltip="Bootloader release number.  If no boot release number symbol exists - will not be defined and will be ommitted from service." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD02" address="" block="" length1="4" length2="0" length3="0" name="Serial Communication Service Active (Defeats)" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Srl Com Srvc Defeat Var:" max="0" min="0" name="CM_SrlComSvcDft_Cnt_b32" tooltip="Serial communications service defeat bit variable commonly defined in CDD interface.  Contains bits corresponding to defeat bits." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD03" address="" block="" length1="4" length2="0" length3="0" name="End of Line Position Sensor" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Read HW Pos Cals SCom" max="0" min="0" name="CM_HwPosRel_SCom_ReadHwPosCals" tooltip="SCom function to return EOL handwheel position calibrations." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Set HW Pos Cals SCom" max="0" min="0" name="CM_HwPosRel_SCom_SetHwPosCals" tooltip="SCom function to call to set the handwheel position EOL cals." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD04" address="" block="" length1="322" length2="0" length3="0" name="End of Line Sine/Cosine Motor Parameters" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="MtrPosCal_DataType" format="Decimal" index="0" label="Mtr Pos Cal Type" max="0" min="0" name="CM_MtrPosCal_DataType" tooltip="Motor position calibration structure data type.\nUsed to define temporary structure passed by reference\nto SCom function when reading/writing." type="Text"/>
+				<option default="" format="Decimal" index="1" label="Set EOL Mtr Cals SCom" max="0" min="0" name="CM_MtrPos_SCom_SetEOLMtrCals" tooltip="SCom function called to set EOL motor calibrations." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Read EOL Mtr Cals SCom" max="0" min="0" name="CM_MtrPos_SCom_ReadEOLMtrCals" tooltip="SCom function used to read EOL motor calibrations." type="Function"/>
+				<option default="144.0" format="Decimal" index="3" label="Harmonic Table Size" max="4061" min="0" name="D_HARTBLSIZE_CNT_U16" tooltip="Size (in bytes) of the harmonic compensation tables.  This number is\nused to perform the memcpy operation between the diagnostic\nservice buffer and the motor position cal structure." type="Number"/>
+			</options>
+		</service>
+		<service _id="FD05" address="" block="" length1="13" length2="0" length3="0" name="End of Line Torque Sensor - Analog" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Manual Set HW Trq Trim SCom" max="0" min="0" name="CM_HwTrq_SCom_ManualSetHwTrqTrim" tooltip="SCom function used to manually force a trim value for handwheel torque.\nThis differs from the &quot;learn&quot; function where the ECU calculates the trim value." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read HW Trq Trim SCom" max="0" min="0" name="CM_HwTrq_SCom_ReadHwTrqTrim" tooltip="SCom to read the currently stored handwheel torque trim values." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD06" address="" block="" length1="15" length2="0" length3="0" name="End of Line Digital Motor Parameters" sizeof="N" type="PID" writeable="N"/>
+		<service _id="FD07" address="" block="" length1="1" length2="0" length3="0" name="End of Line Polarity" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="False" format="Decimal" index="0" label="Use 8-bit polarity" max="0.0" min="0.0" name="D_FD07_USE8BITPOLARITY_CNT_LGC" tooltip="The updated version of the polarity component uses an 8-bit interface for it's SCom function. Functionally there is no difference, however, if you choose to use the updated polarity component you will need to enable this option." type="checkbox"/>
+				<option default="" format="Decimal" index="1" label="Set Polarity SCom" max="0" min="0" name="CM_Polarity_SCom_SetPolarity" tooltip="SCom function to set EOL polarity calibration." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Read Polarity SCom" max="0" min="0" name="CM_Polarity_SCom_ReadPolarity" tooltip="SCom function to read the EOL polarity calibration." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD08" address="" block="" length1="5" length2="0" length3="0" name="End of Line Torque Sensor Scaling - Analog" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set HW Trq Scale SCom" max="0" min="0" name="CM_HwTrq_SCom_SetHwTrqScale" tooltip="SCom function to manually set the handweel torque scale EOL calibration." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read HW Trq Scale SCom" max="0" min="0" name="CM_HwTrq_SCom_ReadHwTrqScale" tooltip="SCom function to read the current value of the handwheel tourque scale EOL calibration." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD09" address="" block="" length1="4" length2="0" length3="0" name="Learned Ke" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+				<check bit="2"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set Ke Intg SV Param SCom" max="0" min="0" name="CM_SCom_KeIntgSVParam_Set" tooltip="SCom fucnction to set the learned Ke SV parameter in VoltRad per Sec." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read Ke Intg SV Param SCom" max="0" min="0" name="CM_SCom_KeIntgSVParam_Get" tooltip="SCom function to read the learned Ke parameter in VoltRad per Sec." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD0A" address="" block="" length1="4" length2="0" length3="0" name="Learned R" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+				<check bit="2"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set R Intg SV Param SCom" max="0" min="0" name="CM_SCom_RIntgSVParam_Set" tooltip="SCom function to set the R parameter state variable in units of Ohms." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read R Intg SV Param SCom" max="0" min="0" name="CM_SCom_RIntgSVParam_Get" tooltip="SCom function to read the R parameter in units of Ohms." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD0B" address="" block="" length1="2" length2="0" length3="0" name="EOL Wheel Imbalance Select" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="WIR Select Var" max="0" min="0" name="CM_WIRSel_Cnt_u16" tooltip="Uint16 WIR slect variable name." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD0C" address="" block="" length1="6" length2="0" length3="0" name="End of Line Ke, R and L Motor Parameters" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set EOL Mtr Param SCom" max="0" min="0" name="CM_SCom_EOLNomMtrParam_Set" tooltip="SCom function to set EOL nominal motor parameters." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read EOL Mtr Param SCom" max="0" min="0" name="CM_SCom_EOLNomMtrParam_Get" tooltip="SCom function to read EOL mtr parameters." type="Function"/>
+				<option default="True" format="Decimal" index="2" label="Ignore Rel Param" max="0" min="0" name="D_PIDFD0CIGNORELPARAM_CNT_LGC" tooltip="Ignore the NomL_Henry_f32 parameter a.k.a the third float parameter." type="Checkbox"/>
+			</options>
+		</service>
+		<service _id="FD0D" address="" block="" length1="2" length2="0" length3="0" name="I/O Control: Motor Torque Command" sizeof="N" type="IOC" writeable="N">
+			<checks>
+				<check bit="1"/>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Manual Trq Cmd SCom" max="0" min="0" name="CM_MtrTrqLmt_SCom_ManualTrqCmd" tooltip="SCom function called to set the manual torque command value or to return the control to the ECU." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD0E" address="" block="" length1="8" length2="0" length3="0" name="Motor Stiffness Check" sizeof="N" type="PID" writeable="N">
+			<options>
+				<option default="" format="Decimal" index="0" label="Motor Torque Cmd Var" max="0" min="0" name="CM_MtrTrqCmd_MtrNm_f32" tooltip="Motor torque command variable as float." type="Text"/>
+				<option default="" format="Decimal" index="1" label="Cum Mtr Pos Var" max="0" min="0" name="CM_CumMtrPos_Deg_f32" tooltip="Cumulative motor position variable as float." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD0F" address="" block="" length1="59" length2="0" length3="0" name="ECU Hardware Description Table" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+		</service>
+		<service _id="FD10" address="" block="" length1="10" length2="0" length3="0" name="Nexteer CCP/XCP Transmit and Receive IDs" sizeof="N" type="PID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+		</service>
+		<service _id="FD11" address="" block="" length1="2" length2="0" length3="0" name="I/O Control: Control Assist Gain" sizeof="N" type="IOC" writeable="N">
+			<options>
+				<option default="CDD_DftAsstTbl_Cnt_G_lgc" format="Decimal" index="0" label="Defeat Asst Tbl Var" max="0" min="0" name="CM_DFTASSTTBL_CNT_LGC" tooltip="Global variable used to defeat assist table." type="Text"/>
+				<option default="CDD_DwnldAsstGain_Uls_G_f32" format="Decimal" index="1" label="Download Asst Gain Var" max="0" min="0" name="CM_DWNLDASSTGAIN_ULS_F32" tooltip="Global variable used to set the assist gain." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD12" address="" block="" length1="28" length2="0" length3="0" name="Current Mode Offset and Gain" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="PhaseCurrCal_DataType" format="Decimal" index="0" label="PhaseCurrCal DataType Name" max="0" min="0" name="CM_PhaseCurrCal_DataType" tooltip="Name of the Phase Current Calibration datatype" type="Text"/>
+				<option default="" format="Decimal" index="1" label="Set Mtr Curr Cals SCom" max="0" min="0" name="CM_CmMtrCurr_SCom_SetMtrCurrCals" tooltip="SCom function to set motor current calibrations." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Read Mtr Curr Cals SCom" max="0" min="0" name="CM_CmMtrCurr_SCom_ReadMtrCurrCals" tooltip="SCom function to read motor current calibrations." type="Function"/>
+				<option default="True" format="Decimal" index="3" label="Ignore Offset Diff" max="0" min="0" name="D_PIDFD12IGNOREOFFSETDIFF_CNT_LGC" tooltip="Ignore offset difference values." type="Checkbox"/>
+				<option default="True" format="Decimal" index="4" label="Ignore VCal Cmd" max="0" min="0" name="D_PIDFD12IGNOREVCALCMD_CNT_LGC" tooltip="Ignore VCal command value." type="Checkbox"/>
+				<option default="True" format="Decimal" index="5" label="16 Bit Data String" max="0" min="0" name="D_PIDFD1216BITDATASTRG_CNT_LGC" tooltip="Motor current 1 &amp; 2, gain and offsets are 16 bit values as u2p13_T.\nIf not checked, values are assummed to be floats." type="Checkbox"/>
+			</options>
+		</service>
+		<service _id="FD13" address="" block="" length1="75" length2="0" length3="0" name="Read Nexteer DTCs" sizeof="N" type="PID" writeable="N">
+			<options>
+				<option default="" format="Decimal" index="0" label="Read Storage Array SCom" max="0" min="0" name="CM_DiagMgr_SCom_ReadStrgArray" tooltip="SCom function to trigger reading of NTC storage array." type="Function"/>
+				<option default="D_MAXDTCSTORAGE_CNT_U16" format="Decimal" index="1" label="Max DTC Storage" max="0" min="0" name="CM_DTCMaxStorage_Cnt_u16" tooltip="Maximum number of storred DTCs." type="Text"/>
+				<option default="NTCStrgArray" format="Decimal" index="2" label="NTC Storage Array Type" max="0" min="0" name="CM_NTCStrgArray_Type" tooltip="NTC storage array structure type." type="Text"/>
+				<option default="" format="Decimal" index="3" label="Get NTC Info SCom" max="0" min="0" name="CM_DiagMgr_SCom_GetNTCInfo" tooltip="SCom function to return NTC information for a given NTC number." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD14" address="" block="" length1="2" length2="0" length3="0" name="Vehicle System State" sizeof="N" type="PID" writeable="N">
+			<options>
+				<option default="" format="Decimal" index="0" label="Read Veh Sys Status SCom" max="0" min="0" name="CM_AbsHwPos_SCom_VehicleSystemStatus(ptr)" tooltip="SCom function to read the vehicle system status." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD15" address="" block="" length1="13" length2="0" length3="0" name="End of Line Torque Sensor - Digital" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Manual Set HW Trq Trim SCom" max="0" min="0" name="CM_DigHwTrq_SCom_ManualSetHwTrqTrim" tooltip="SCom function to manually force a HW torque trim value." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read HW Trq Trim SCom" max="0" min="0" name="CM_DigHwTrq_SCom_ReadHwTrqTrim" tooltip="SCom to read the currently stored HW torque trim value." type="Function"/>
+				<option default="CM_HwTrqTrim_Datatype" format="Decimal" index="2" label="Hw Trq Trim Type" max="0" min="0" name="CM_HwTrqTrim_Datatype" tooltip="Handwheel torque trim structure type used to define temporary cal structure." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD16" address="" block="" length1="5" length2="0" length3="0" name="End of Line Torque Sensor Scaling - Digital" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set HW Trq Scale SCom" max="0" min="0" name="CM_DigHwTrq_SCom_SetHwTrqScale" tooltip="SCom function to manually force a handweel toqrue scale factor." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read HW Trq Scale SCom" max="0" min="0" name="DigHwTrq_SCom_ReadHwTrqScale" tooltip="SCom function to read the currently stored value of the handweel torque scale factor." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD17" address="" block="" length1="2" length2="0" length3="0" name="Flash Memory Size" sizeof="N" type="PID" writeable="N"/>
+		<service _id="FD18" address="" block="" length1="4" length2="0" length3="0" name="EOL Handwheel Position Sensor Select" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+		</service>
+		<service _id="FD19" address="" block="" length1="1" length2="0" length3="0" name="Nexteer MEC" sizeof="N" type="PID" writeable="Y">
+			<options>
+				<option default="Nvm_NMEC_Cnt_u8" format="Decimal" index="0" label="Nexteer MEC Counter" max="0" min="0" name="CM_NxtrMEC_Cnt_G_u8" tooltip="Nexteer Manufacturing Enable Counter global variable." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD1A" address="" block="" length1="1" length2="0" length3="0" name="System State" sizeof="N" type="PID" writeable="N">
+			<options>
+				<option default="Rte_ModeType_StaMd_Mode" format="Decimal" index="0" label="StaMd Mode Type" max="0" min="0" name="CM_Rte_ModeType_StaMd_Mode" tooltip="States and Modes mode type enum." type="Text"/>
+				<option default="" format="Decimal" index="1" label="System State Var" max="0" min="0" name="CM_SystemState_Cnt_enum" tooltip="System state enumerated variable." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD1B" address="" block="" length1="1" length2="0" length3="0" name="Manual Vehicle Speed Override" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Manual Veh Spd SCom" max="0" min="0" name="CM_ManualVehSpd_SCom" tooltip="SCom function to manually set the vehicle speed value." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD1C" address="" block="" length1="3" length2="0" length3="0" name="Manufacturing Services Version" sizeof="N" type="PID" writeable="N"/>
+		<service _id="FD1D" address="" block="" length1="2" length2="0" length3="0" name="EOL Return Range" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set EOL Rtn Range SCom" max="0" min="0" name="CM_Return_SCom_SetEOLRtnRange" tooltip="SCom function to set the EOL return range value." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read EOL Rtn Range SCom" max="0" min="0" name="CM_Return_SCom_GetEOLRtnRange" tooltip="SCom function to read the EOL return range value." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD1E" address="" block="" length1="2" length2="0" length3="0" name="Torque Sensor Diagnostic Defeat" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+				<check bit="1"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Mfg Diag Inhibit Var" max="0" min="0" name="CM_MfgDiagInhibit_Cnt_lgc" tooltip="Manufacturing diagnostic inhibit variable as boolean." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD1F" address="" block="" length1="1" length2="0" length3="0" name="Serial Comm Handwheel Position Defeat" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set Hw Pos Defeat SCom" max="0" min="0" name="CM_AbsHwPosScom_Scom_HwPosSrvSetToZero" tooltip="SCom function used to set handwheel position to zero defeat." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read Hw Pos Defeat SCom" max="0" min="0" name="CM_AbsHwPosScom_Scom_HwPosSrvRead" tooltip="SCom function to read current state of handwheel position defeat to zero." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD20" address="" block="" length1="3" length2="0" length3="0" name="Read Transient Overvoltage Data" sizeof="N" type="PID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Read Trans OV Data SCom" max="0" min="0" name="CM_BatteryVoltage_SCom_ReadTransOvData" tooltip="SCom function to read the transient overvoltage data." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Write Trans OV Data SCom" max="0" min="0" name="CM_BatteryVoltage_SCom_WriteTransOvData" tooltip="SCom function to write the transient overvoltage data." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD21" address="" block="" length1="1" length2="0" length3="0" name="Vehicle Tuning Select" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set Select" max="0" min="0" name="CM_VehicleTune_SCom_SetSelect" tooltip="SCom function to select the Tuning Set X" type="Function"/>
+				<option default="" format="Decimal" index="1" label="Get Select" max="0" min="0" name="CM_VehicleTune_SCom_GetSelect" tooltip="SCom function to read the Tuning Set X" type="Function"/>
+				<option default="1" format="Decimal" index="2" label="Max Limit" max="0" min="0" name="D_TUNINGSETMAXLIM_CNT_U08" tooltip="Tuning set max limit" type="Text"/>
+			</options>
+		</service>
+		<service _id="FD22" address="" block="" length1="20" length2="0" length3="0" name="Turns Counter Software Identifiers" sizeof="N" type="PID" writeable="N">
+			<options>
+				<option default="TcPartNumType" format="Decimal" index="0" label="Turns Cntr Part Num Type" max="0" min="0" name="CM_TcPartNumType" tooltip="Turns counter part number structure type." type="Text"/>
+				<option default="" format="Decimal" index="1" label="Part Num SCom" max="0" min="0" name="CM_TurnsCounter_Scom_PartNumSvc" tooltip="SCom function to get the turns counter part number information." type="Function"/>
+				<option default="D_TcPNArraySize_Cnt_U16" format="Decimal" index="2" label="String Length" max="0" min="0" name="D_PIDFD22STRLEN_CNT_U08" tooltip="Turns counter part number string length." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD23" address="" block="" length1="1" length2="0" length3="0" name="Turns Counter Energy Mode" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set Operating Mode SCom" max="0" min="0" name="CM_Vsm_Scom_SetOperatingMode(val)" tooltip="SCom function used to set the operating mode." type="Function"/>
+				<option default="Vsm_OperatingModeType" format="Decimal" index="1" label="Operating Mode Type" max="0" min="0" name="CM_Vsm_OperatingModeType" tooltip="Type used to cast vehicle operating mode." type="Text"/>
+				<option default="" format="Decimal" index="2" label="Energy Mode State Var" max="0" min="0" name="CM_Rte_VehCfg_EnergyModeState_Cnt_enum" tooltip="Global variable that holds the turns counter energy mode state." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD24" address="" block="" length1="6" length2="0" length3="0" name="Turns Counter EOL Calibrations" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="EOLTurnsCntrCals_Datatype" format="Decimal" index="0" label="Turns Cntr Cals Type" max="0" min="0" name="CM_EOLTurnsCntrCals_Datatype" tooltip="Turns counter calibrations data type." type="Text"/>
+				<option default="" format="Decimal" index="1" label="Set TC EOL Cals SCom" max="0" min="0" name="CM_TcEOLCals_Scom_SetTcEOLCals" tooltip="SCom function used to set the turns counter EOL calibrations." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Read TC EOL Cals SCom" max="0" min="0" name="CM_TcEOLCals_Scom_ReadTcEOLCals" tooltip="SCom function used to read the turns counter EOL calibrations." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD25" address="" block="" length1="2" length2="0" length3="0" name="Motor Torque Scale Factor" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set Trq Cmd SCom" max="0" min="0" name="CM_TrqCmdScl_SCom_Set" tooltip="SCom fuction to set torque command." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read Trq Cmd SCom" max="0" min="0" name="CM_TrqCmdScl_SCom_Get" tooltip="SCom function to read torque command." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD26" address="" block="" length1="3" length2="0" length3="0" name="Average Friction Learning Select" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set Select SCom" max="0" min="0" name="CM_AvgFricLrn_SCom_SetSelect" tooltip="SCom function to set the select bits for AvgFricLrn." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Get Select SCom" max="0" min="0" name="CM_AvgFricLrn_SCom_GetSelect" tooltip="SCom function to get the current AvgFricLrn select bits." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD27" address="" block="" length1="1" length2="0" length3="0" name="Friction Offset Output Defeat" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set Off Out Defeat SCom" max="0" min="0" name="CM_AvgFricLrn_SCom_SetOffsetOutputDefeat" tooltip="SCom function used to set the offset output defeat flag." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read Off Out Defeat SCom" max="0" min="0" name="CM_AvgFricLrn_SCom_GetOffsetOutputDefeat" tooltip="SCom function used to read the current value of the AvgFricLrn offset output defeat flag." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD28" address="" block="" length1="12" length2="0" length3="0" name="Turns Counter Flash Traceability ID" sizeof="N" type="PID" writeable="N">
+			<options>
+				<option default="" format="Decimal" index="0" label="Get Flash Traceability ID Scom" max="0" min="0" name="CM_TurnsCounter_Scom_GetFlashTraceabilityID" tooltip="SCom function to read Turns Counter Flash Traceability ID" type="Function"/>
+				<option default="" format="Decimal" index="1" label="Flash ID Type" max="0" min="0" name="CM_TcFlashIDType" tooltip="Flash ID Type for Turns Counter Flash Traceability ID" type="Text"/>
+			</options>
+		</service>
+		<service _id="FD29" address="" block="" length1="2" length2="0" length3="0" name="Set EOL Friction Learned" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set EOL Fric SCom" max="0" min="0" name="CM_AvgFricLrn_SCom_SetEOLFric" tooltip="SCom function to set the EOL friction value." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Read EOL Fric SCom" max="0" min="0" name="CM_AvgFricLrn_SCom_GetEOLFric" tooltip="SCom function to read the current EOL friction value." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD30" address="" block="" length1="5" length2="0" length3="0" name="End of Line Torque Trim Value - Digital SENT" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Read Trim SCom" max="0" min="0" name="CM_DigHwTrqSENT_SCom_ReadTrim" tooltip="SCom function to read the Digitial Handwheel Torque trim value and trim performed flag." type="Function"/>
+				<option default="" format="Decimal" index="1" label="Write Trim Scom" max="0" min="0" name="CM_DigHwTrqSENT_SCom_WriteTrim" tooltip="SCom function to write the Digitial Handwheel Torque trim value and trim performed flag." type="Function"/>
+			</options>
+		</service>
+		<service _id="FD31" address="" block="" length1="12" length2="0" length3="0" name="Torque Sensor Value - Digital SENT" sizeof="N" type="PID" writeable="N">
+			<options>
+				<option default="" format="Decimal" index="0" label="Handwheet Torque" max="0" min="0" name="CM_Rte_Sa_DigHwTrqSENT_HwTorque_HwNm_f32" tooltip="RTE variable for handwheel torque.  Expects a float." type="Text"/>
+				<option default="" format="Decimal" index="1" label="T1 Torque" max="0" min="0" name="CM_Rte_Cd_Nhet1_DigHwTrqT1_HwNm_f32" tooltip="RTE variable for T1 torque in HwNm.  Expects a float." type="Text"/>
+				<option default="" format="Decimal" index="2" label="T2 Torque" max="0" min="0" name="CM_Rte_Cd_Nhet1_DigHwTrqT2_HwNm_f32" tooltip="RTE variable for T2 torque in HwNm.  Expects a float." type="Text"/>
+			</options>
+		</service>
+		<service _id="FD41" address="" block="" length1="4" length2="0" length3="0" name="Torque Sensor 1 and 2 Voltage" sizeof="N" type="PID" writeable="N">
+			<options>
+				<option default="" format="Decimal" index="0" label="T1 ADC Variable" max="0" min="0" name="CM_Rte_IoHwAbstractionUsr_T1ADC_Volt_f32" tooltip="RTE variable for T1 ADC voltage." type="Text"/>
+				<option default="" format="Decimal" index="1" label="T2 ADC Variable" max="0" min="0" name="CM_Rte_IoHwAbstractionUsr_T2ADC_Volt_f32" tooltip="RTE variable for T2 ADC voltage." type="Text"/>
+			</options>
+		</service>
+		<service _id="FDA0" address="" block="" length1="1" length2="0" length3="0" name="Unused" sizeof="N" type="PID" writeable="Y"/>
+		<service _id="FDA1" address="" block="" length1="4" length2="0" length3="0" name="ECU Serial Number" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="Nvm_EcuSrlNum_Cnt_u8" format="Decimal" index="0" label="ECU Serial Number Var" max="0" min="0" name="CM_ECUSerialNumber" tooltip="ECU serial number NvM RAM shadow variable." type="Text"/>
+			</options>
+		</service>
+		<service _id="FDA2" address="" block="" length1="4" length2="0" length3="0" name="EPS Serial Number" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="Nvm_EpsSrlNum_Cnt_u8" format="Decimal" index="0" label="EPS Serial Number Var" max="0" min="0" name="CM_EPSSerialNumber" tooltip="EPS serial number NvM RAM shadow variable." type="Text"/>
+			</options>
+		</service>
+		<service _id="FDA3" address="" block="" length1="12" length2="0" length3="0" name="ECU Hardware Part Number" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="Nvm_EcuHwPn_Cnt_u8" format="Decimal" index="0" label="ECU HW Par Num Var" max="0" min="0" name="CM_ECUHardwarePN" tooltip="ECU hardware part number NvM RAM shadow variable." type="Text"/>
+			</options>
+		</service>
+		<service _id="FDA4" address="" block="" length1="12" length2="0" length3="0" name="OBSOLETE: Ship State Part Number" sizeof="N" type="PID" writeable="N"/>
+		<service _id="FDA5" address="" block="" length1="4" length2="0" length3="0" name="Shunt Current Offset and Gain" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="ShCurrCal_DataType" format="Decimal" index="0" label="Shunt Curr Cal Type" max="0" min="0" name="CM_ShCurrCal_DataType" tooltip="Shunt current calibration structure data type." type="Text"/>
+				<option default="" format="Decimal" index="1" label="Set Mtr Curr Cal SCom" max="0" min="0" name="CM_MtrCurr_SCom_SetMtrCurrCals" tooltip="SCom function to set motor current calibrations." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Read Mtr Curr Cals SCom" max="0" min="0" name="CM_MtrCurr_SCom_ReadMtrCurrCals" tooltip="SCom function to read the motor current calibrations." type="Function"/>
+			</options>
+		</service>
+		<service _id="FDA7" address="" block="" length1="38" length2="0" length3="0" name="Non-Contacting Sensor Calibration Set 1" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="HwPosRelCal_DataType" format="Decimal" index="0" label="Hw Pos Rel Cal Type" max="0" min="0" name="CM_HwPosRelCal_DataType" tooltip="Handwheel position calibration data type." type="Text"/>
+				<option default="" format="Decimal" index="1" label="Read HW Pos Cal SCom" max="0" min="0" name="CM_HwPosRel_SCom_ReadHwPosCals" tooltip="SCom function to read Relative Handwheel Position EOL calibrations." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Set HW Pos Cols SCom" max="0" min="0" name="CM_HwPosRel_SCom_SetHwPosCals" tooltip="SCom function to write Relative Handwheel Position EOL calibrations." type="Function"/>
+			</options>
+		</service>
+		<service _id="FDA8" address="" block="" length1="20" length2="0" length3="0" name="Non-Contacting Sensor Calibration Set 2" sizeof="N" type="PID" writeable="N"/>
+		<service _id="FDA9" address="" block="" length1="20" length2="0" length3="0" name="Non-Contacting Sensor Calibration Set 3" sizeof="N" type="PID" writeable="N"/>
+		<service _id="FDAC" address="" block="" length1="64" length2="0" length3="0" name="Nexteer Manufacturing Scratchpad" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="Nvm_NxtrManfScrpd_Cnt_u8" format="Decimal" index="0" label="Scratchpad Variable" max="0" min="0" name="CM_MfgScratchPad_Cnt_G_u8" tooltip="Nexteer manufacturing scratchpad NvM data RAM shadow variable." type="Text"/>
+			</options>
+		</service>
+		<service _id="FDAD" address="" block="" length1="7" length2="0" length3="0" name="Active Pull Compensation" sizeof="N" type="PID" writeable="N">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Read Param SCom" max="0" min="0" name="CM_ActivePull_SCom_ReadParam" tooltip="SCom function to read active pull parameters." type="Function"/>
+			</options>
+		</service>
+		<service _id="FDAE" address="" block="" length1="2" length2="0" length3="0" name="Ignition Counter" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+		</service>
+		<service _id="FDAF" address="" block="" length1="176" length2="0" length3="0" name="NTC Snapshot Data" sizeof="N" type="PID" writeable="N">
+			<options>
+				<option default="True" format="Decimal" index="0" label="Enable Generic Parameters" max="0" min="0" name="D_ENABLEGENERICPARAMS_CNT_LGC" tooltip="If using DiagMgr v001.23 or later, the HwTrq and MtrTrq structure elements changed to a more generic Param1 and Param2.\n\nTicked: DiagMgr &gt;= v001.23\nUnticked: DiagMgr &lt; v001.23" type="Checkbox"/>
+			</options>
+		</service>
+		<service _id="FDB0" address="" block="" length1="256" length2="0" length3="0" name="IPM Cogging Table (1 of 5)" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Cogging Table Type" max="0" min="0" name="CM_IPMCoggingCancTrq" tooltip="Cogging torque table type (typically this is an array of uint16 variables)." type="Text"/>
+				<option default="" format="Decimal" index="1" label="Set Cog Trq Cal SCom" max="0" min="0" name="CM_IPMTrqCanc_Scom_SetCogTrqCal" tooltip="SCom function to set the cogging torque table values for a specific block of the table." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Read Cog Trq Cal SCom" max="0" min="0" name="CM_IPMTrqCanc_Scom_ReadCogTrqCal" tooltip="SCom function to read the cogging torque table values for a given piece." type="Function"/>
+			</options>
+		</service>
+		<service _id="FDB1" address="" block="" length1="256" length2="0" length3="0" name="IPM Cogging Table (2 of 5)" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+		</service>
+		<service _id="FDB2" address="" block="" length1="256" length2="0" length3="0" name="IPM Cogging Table (3 of 5)" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+		</service>
+		<service _id="FDB3" address="" block="" length1="256" length2="0" length3="0" name="IPM Cogging Table (4 of 5)" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+		</service>
+		<service _id="FDB4" address="" block="" length1="8" length2="0" length3="0" name="Current Mode Analog Ke, R, Ld, and Lq" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="True" format="Decimal" index="0" label="R and Ke Support Only" max="0" min="0" name="D_RANDKESUPPORTONLY_CNT_LGC" tooltip="Check if your SCom functions only support R and Ke read/write (Lq and Ld became flash calibrations on some versions)" type="Checkbox"/>
+				<option default="" format="Decimal" index="1" label="Set EOL Mtr Parm SCom" max="0" min="0" name="CM_SCom_EOLNomMtrParam_Set_FDB4" tooltip="SCom function o set EOL motor parameters." type="Function"/>
+				<option default="" format="Decimal" index="2" label="Read EOL Mtr Param SCom" max="0" min="0" name="CM_SCom_EOLNomMtrParam_Get_FDB4" tooltip="SCom function to read EOL motor parameters." type="Function"/>
+			</options>
+		</service>
+		<service _id="FDB5" address="" block="" length1="4" length2="0" length3="0" name="Active Pull Set Short Term Comp" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set ST Comp SCom" max="0" min="0" name="CM_ActivePull_SCom_SetSTComp" tooltip="SCom function to set the short term compensation parameter for active pull compensation." type="Function"/>
+			</options>
+		</service>
+		<service _id="FDB6" address="" block="" length1="4" length2="0" length3="0" name="Active Pull Set Long Term Comp" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+			<options>
+				<option default="" format="Decimal" index="0" label="Set LT Comp SCom" max="0" min="0" name="CM_ActivePull_SCom_SetLTComp" tooltip="SCom function to set the long term compensation value for active pull compensation." type="Function"/>
+			</options>
+		</service>
+		<service _id="FDB7" address="" block="" length1="18" length2="0" length3="0" name="IPM Cogging Table (5 of 5)" sizeof="N" type="PID" writeable="Y">
+			<checks>
+				<check bit="0"/>
+			</checks>
+		</service>
+	</common>
+	<nrcs>
+		<nrc bit="0" desc="MEC Counter Equals Zero" nrc="FB"/>
+		<nrc bit="1" desc="Vehicle Speed Too High" nrc="88"/>
+		<nrc bit="2" desc="Handwheel Torque Too High" nrc="FE"/>
+	</nrcs>
+</config>

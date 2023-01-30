@@ -1,0 +1,141 @@
+<!-- Entities -->
+<!ENTITY DtdVersion "4.7">
+
+<!ENTITY % A.DTDVersion  "DTDVersion CDATA '&DtdVersion;'">
+<!ENTITY % A.GUID        "GUID      CDATA '{00000000-0000-0000-0000-000000000000}'">
+<!ENTITY % A.Version     "Version   CDATA '0'">
+<!ENTITY % A.CMVersion   "CMVersion CDATA ''">
+<!ENTITY % A.CMState     "CMState   CDATA ''">
+<!ENTITY % A.ReadOnly    "RO        CDATA '0'">
+
+<!ENTITY % A.LinkGUID           "LinkGUID CDATA ''">
+<!ENTITY % A.LinkChildGUID      "LinkChildGUID CDATA ''">
+<!ENTITY % A.LinkVersion        "LinkVersion  CDATA ''">
+<!ENTITY % A.LinkType           "LinkType  NMTOKEN #FIXED">
+<!ENTITY % A.LinkTypeAny        "LinkType  CDATA ''">
+<!ENTITY % A.LinkName           "LinkName">
+
+<!ENTITY % A.ConfigItem  "%A.CMVersion;
+                          %A.CMState;
+                          %A.GUID;
+                          %A.Version;
+                          %A.DTDVersion;
+                          %A.ReadOnly;">
+
+<!ENTITY % A.ChildItem   "%A.GUID;">
+
+<!ENTITY % C.DefAttr     "NAME,LONGNAME?,DESC?">
+
+<!ENTITY % SignalTypeDtd            SYSTEM "SignalType.dtd">
+<!ENTITY % SignalDtd                SYSTEM "Signal.dtd">
+<!ENTITY % AttrDefSetDtd            SYSTEM "AttrDefSet.dtd">
+<!ENTITY % SignalGroupRootDtd       SYSTEM "SignalGroupRoot.dtd">
+<!ENTITY % ConstantDtd              SYSTEM "Constant.dtd">
+<!ENTITY % DataTypeDtd              SYSTEM "DataType.dtd">
+<!ENTITY % PortInterfaceDtd         SYSTEM "PortInterface.dtd">
+<!ENTITY % ComponentTypeDtd         SYSTEM "ComponentType.dtd">
+<!ENTITY % CategoryDtd              SYSTEM "Category.dtd">
+<!ENTITY % CANBusDtd                SYSTEM "CANBus.dtd">
+<!ENTITY % LINBusDtd                SYSTEM "LINBus.dtd">
+<!ENTITY % FlexRayClusterDtd        SYSTEM "FlexRayCluster.dtd">
+<!ENTITY % VehicleProjectDtd        SYSTEM "VehicleProject.dtd">
+<!ENTITY % FunctionDtd              SYSTEM "Function.dtd">
+<!ENTITY % ECUProjectDtd            SYSTEM "ECUProject.dtd">
+<!ENTITY % VehicleConfigDtd         SYSTEM "VehicleConfig.dtd">
+<!ENTITY % VPDerivedSWDtd           SYSTEM "VPDerivedSW.dtd">
+<!ENTITY % FunctionTriggerDtd       SYSTEM "FunctionTrigger.dtd">
+<!ENTITY % DeviceDtd                SYSTEM "Device.dtd">
+<!ENTITY % SignalPoolDtd            SYSTEM "SignalPool.dtd">
+<!ENTITY % SignalTypePoolDtd        SYSTEM "SignalTypePool.dtd">
+<!ENTITY % PortInterfacePoolDtd     SYSTEM "PortInterfacePool.dtd">
+
+<!ENTITY ti.AttrDefSet  "AttrDefSet">
+
+<!NOTATION EntityType   SYSTEM "">
+
+<!-- DTD includes -->
+
+%SignalDtd;
+%SignalTypeDtd;
+%AttrDefSetDtd;
+%SignalGroupRootDtd;
+%ConstantDtd;
+%DataTypeDtd;
+%PortInterfaceDtd;
+%ComponentTypeDtd;
+%CANBusDtd;
+%LINBusDtd;
+%FlexRayClusterDtd;
+%VehicleProjectDtd;
+%VPDerivedSWDtd;
+%FunctionDtd;
+%ECUProjectDtd;
+%VehicleConfigDtd;
+%CategoryDtd;
+%FunctionTriggerDtd;
+%DeviceDtd;
+%SignalPoolDtd;
+%SignalTypePoolDtd;
+%PortInterfacePoolDtd;
+
+<!-- Elements -->
+
+<!ELEMENT DVW (NAME?,LONGNAME?,ATTRLink*,SignalGroupRootLink*,AttrDefSetLink*,CategoryLink*,SignalLink*,SignalTypeLink*,ConstantLink*,DataTypeLink*,ComponentTypeLink*,CANBusLink*,LINBusLink*,FlexRayClusterLink*,VehicleProjectLink*,FunctionLink*,VehicleConfigLink*,ECUProjectLink*,VPDerivedSWLink*,FunctionTriggerLink*,DeviceLink*,PortInterfaceLink*)>
+
+<!ATTLIST DVW %A.ConfigItem; 
+          InstVers      CDATA  #IMPLIED
+          SpecialBuild  CDATA  ""
+          AttrDefSetLink NMTOKEN #FIXED "&ti.AttrDefSet;"
+>
+
+<!ELEMENT DESC          (#PCDATA)>
+<!ELEMENT NAME          (#PCDATA)>
+<!ELEMENT LONGNAME      (#PCDATA)>
+<!ELEMENT CONTENT       (#PCDATA)>
+
+<!ATTLIST CONTENT       
+          Version   CDATA '0'
+>
+
+<!ELEMENT ATTRLink EMPTY>
+<!ATTLIST ATTRLink 
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkChildGUID;
+          %A.LinkTypeAny; 
+          %A.LinkName;  CDATA ""
+>
+
+<!ELEMENT AttrValue         (DESC?,ATTRLink*,AttrDefinition?)>
+<!ATTLIST AttrValue  
+          %A.ChildItem;
+          BaseAttrDefLink    NMTOKEN #FIXED "&ti.AttrDefinition;"
+>
+
+<!ELEMENT GenAttrList       (ATTRLink*,GenAttr*)>
+<!ATTLIST GenAttrList    
+          %A.ChildItem;
+          AttrDefSetLink    NMTOKEN #FIXED "&ti.AttrDefSet;"
+>
+
+<!ELEMENT GenAttr  (%C.DefAttr;,AttrValue)>
+<!ATTLIST GenAttr    
+          %A.ChildItem;
+          Category          CDATA ""
+>
+
+<!ELEMENT FileEntry         (%C.DefAttr;,CONTENT*)>
+<!ATTLIST FileEntry    
+          %A.ChildItem;
+          FileName          CDATA ""
+          FileType          CDATA ""
+          FileCategory      CDATA ""
+          FilePath          CDATA ""
+          FileUsage         (ALL|SKIP) "ALL"
+          Parameter         CDATA ""
+          AssignedAdapter   CDATA ""
+          TimeStamp         CDATA ""
+          AdptCreationStr   CDATA ""
+>
+
+

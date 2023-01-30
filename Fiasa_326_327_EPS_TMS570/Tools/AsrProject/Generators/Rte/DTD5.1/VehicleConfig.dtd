@@ -1,0 +1,26 @@
+<!-- Entities -->
+
+<!ENTITY ti.VehicleConfig  "VehicleConfig">
+
+
+<!-- Elements -->
+
+<!ELEMENT VehicleConfig             (%C.DefAttr;,CONTENT*,ATTRLink*,ECUProjectMap*,GenAttrList?)>
+<!ELEMENT ECUProjectMap             (ATTRLink*,GenAttrList?)>
+
+<!ATTLIST VehicleConfig %A.ConfigItem;
+          VehicleProjectLink            NMTOKEN #FIXED "&ti.VehicleProject;"
+>
+
+<!ATTLIST ECUProjectMap             %A.ChildItem;
+          ECUProjectLink            NMTOKEN #FIXED "&ti.ECUProject;"
+>
+<!-- Links -->
+
+<!ELEMENT VehicleConfigLink EMPTY>
+<!ATTLIST VehicleConfigLink
+          %A.LinkGUID;
+          %A.LinkVersion;
+          %A.LinkType; "&ti.VehicleConfig;"
+>
+

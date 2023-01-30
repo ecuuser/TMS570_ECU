@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectAssistant Version="1.10.7.0">
+  <General>
+    <Name>EPS</Name>
+  </General>
+  <Environment>
+    <Platform>Tms470</Platform>
+    <Derivative>Tmsx70_Tms570ls2125</Derivative>
+    <Compiler>TexasInstruments</Compiler>
+  </Environment>
+  <Folders>
+    <ECUC>.\Config\ECUC</ECUC>
+    <GenData>..\..\SwProject\Source\GenData</GenData>
+    <Source>..\..\SwProject\Source</Source>
+    <ServiceComponents>.\Config\ServiceComponents</ServiceComponents>
+    <Logs>.\</Logs>
+    <SIP>.\Generators\Components</SIP>
+    <StartMenu>
+    </StartMenu>
+  </Folders>
+  <Tools>
+    <DEV>C:\Program Files (x86)\Vector DaVinci Developer 3.0 (SP5)\bin\DaVinciDEV.exe</DEV>
+    <CFG>C:\Program Files (x86)\Vector DaVinci Configurator 4.2 SP2\DaVinciCFG.exe</CFG>
+    <GENy>C:\Program Files (x86)\Vector GENy 1.4\GENy.exe</GENy>
+  </Tools>
+  <Input>
+    <ECUINST>EPS</ECUINST>
+    <ECUEX>.\Config\System\EPS_SystemDescr_EPS.arxml</ECUEX>
+    <PackageImportMode>UseDefaultPackages</PackageImportMode>
+  </Input>
+  <References>
+    <DVWorkspace>.\Config\DCF\EPS.dcf</DVWorkspace>
+  </References>
+  <Display>
+    <File Order="0">.\Config\System\P3271_C-CAN [07339]_6A_R1_CR1664.dbc</File>
+  </Display>
+</ProjectAssistant>

@@ -1,0 +1,11 @@
+<!-- Entities -->
+
+<!ENTITY ti.ConstantPool  "ConstantPool">
+
+<!-- Elements -->
+
+<!ELEMENT ConstantPool (Constant*)>
+
+<!ATTLIST ConstantPool  %A.ConfigItem;
+>
+
